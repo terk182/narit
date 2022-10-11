@@ -5,7 +5,7 @@ using App.ExampleTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Controllers;
 
-namespace Narit_API.Controllers
+namespace narit_mis_api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

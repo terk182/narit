@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Narit_API.Models
+namespace narit_mis_api.Models
 {
     public partial class AgreementMemorandum
     {

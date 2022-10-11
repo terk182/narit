@@ -4,9 +4,9 @@ using App.Accounting;
 using App.Accounting.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Narit_API.Models;
+using narit_mis_api.Models;
 
-namespace Narit_API.Controllers
+namespace narit_mis_api.Controllers
 {
    
     [ApiController]

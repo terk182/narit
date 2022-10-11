@@ -2,9 +2,10 @@ using App.ExampleTest;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Narit_API.Models;
+
 using System.Configuration;
 using App.Resolver;
+using narit_mis_api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

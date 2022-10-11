@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Narit_API.Models
+namespace narit_mis_api.Models
 {
     public partial class NARIT_MIS_LINKContext : DbContext
     {

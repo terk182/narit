@@ -2077,23 +2077,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\daisy\\.nuget\\packages\\": {},
+    "C:\\Users\\KKN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Resolver\\App.Resolver.csproj",
+      "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Resolver\\App.Resolver.csproj",
-      "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Resolver\\obj\\",
+      "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj",
+      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2109,17 +2109,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Accommodations\\App.Accommodations.csproj"
+            "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Accounting\\App.Accounting.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.Accounting\\App.Accounting.csproj"
+            "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj"
             },
-            "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.ExampleTest\\App.ExampleTest.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.ExampleTest\\App.ExampleTest.csproj"
+            "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj"
             },
-            "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.PathDetail\\App.PathDetail.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit_mis_api\\App.PathDetail\\App.PathDetail.csproj"
+            "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj"
             }
           }
         }
