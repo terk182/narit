@@ -1,0 +1,14 @@
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\bin\Debug\net6.0\Data.Context.deps.json
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\bin\Debug\net6.0\Data.Context.runtimeconfig.json
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\bin\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.csproj.AssemblyReference.cache
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.AssemblyInfoInputs.cache
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.AssemblyInfo.cs
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.csproj.CoreCompileInputs.cache
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\refint\Data.Context.dll
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\Data.Context.genruntimeconfig.cache
+C:\Users\daisy\source\repos\narit_mis_api\Data.Context\obj\Debug\net6.0\ref\Data.Context.dll

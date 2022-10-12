@@ -2,6 +2,7 @@
 using App.Accommodations;
 using App.Accounting;
 using App.ExampleTest;
+using App.PathDetail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,7 +19,8 @@ namespace App.Resolver
         {
             services.AddScoped<IExampleTests, ExampleTests>(); 
             services.AddScoped<IService, Service>();
-            services.AddScoped<IAccommodationsService, AccommodationsService>();
+            services.AddScoped<IAccommodationsService, AccommodationsService>(); 
+            services.AddScoped<IPathDetailService, PathDetailService>(); 
             return services;
         }
     }

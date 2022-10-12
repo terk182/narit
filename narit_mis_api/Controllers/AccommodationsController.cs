@@ -2,11 +2,13 @@
 using App.Accommodations.Model.Requests;
 using App.Accounting;
 using App.Accounting.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Narit_API.Models;
 
 namespace Narit_API.Controllers
 {
+   
     [ApiController]
     [Route("api/[controller]")]
     public class AccommodationsController : Controller

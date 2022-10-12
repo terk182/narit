@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataModels", "DataModels", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Context", "Data.Context\Data.Context.csproj", "{F6A1C46E-23DB-4545-AA69-BAD6B0FADFEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Context", "Data.Context\Data.Context.csproj", "{F6A1C46E-23DB-4545-AA69-BAD6B0FADFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Accommodations", "App.Accommodations\App.Accommodations.csproj", "{285BF3AF-138A-484E-B513-E0CBE3DDB10F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Accommodations", "App.Accommodations\App.Accommodations.csproj", "{285BF3AF-138A-484E-B513-E0CBE3DDB10F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Accounting", "App.Accounting\App.Accounting.csproj", "{B61A306A-26C9-406A-8570-3B10B46F34DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Accounting", "App.Accounting\App.Accounting.csproj", "{B61A306A-26C9-406A-8570-3B10B46F34DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.ExampleTest", "App.ExampleTest\App.ExampleTest.csproj", "{8DB3B799-EC3A-4625-ACC8-966EB224BBBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.ExampleTest", "App.ExampleTest\App.ExampleTest.csproj", "{8DB3B799-EC3A-4625-ACC8-966EB224BBBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Paths", "App.Paths\App.Paths.csproj", "{B52D92A3-5360-4D5A-A99D-3CB9013E846B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Paths", "App.Paths\App.Paths.csproj", "{B52D92A3-5360-4D5A-A99D-3CB9013E846B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Resolver", "App.Resolver\App.Resolver.csproj", "{86C8907D-3D9E-48D4-ABDE-838C06F4E902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Resolver", "App.Resolver\App.Resolver.csproj", "{86C8907D-3D9E-48D4-ABDE-838C06F4E902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.PathDetail", "App.PathDetail\App.PathDetail.csproj", "{E10D0460-2735-4C43-A5E5-030D9552E9C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{86C8907D-3D9E-48D4-ABDE-838C06F4E902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C8907D-3D9E-48D4-ABDE-838C06F4E902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C8907D-3D9E-48D4-ABDE-838C06F4E902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10D0460-2735-4C43-A5E5-030D9552E9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10D0460-2735-4C43-A5E5-030D9552E9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10D0460-2735-4C43-A5E5-030D9552E9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10D0460-2735-4C43-A5E5-030D9552E9C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{8DB3B799-EC3A-4625-ACC8-966EB224BBBB} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 		{B52D92A3-5360-4D5A-A99D-3CB9013E846B} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 		{86C8907D-3D9E-48D4-ABDE-838C06F4E902} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
+		{E10D0460-2735-4C43-A5E5-030D9552E9C5} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E6D8F12-3D7D-4A71-95A2-6942109D3A30}
