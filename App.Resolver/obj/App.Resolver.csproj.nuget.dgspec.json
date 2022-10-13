@@ -1,40 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj": {}
+    "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+    "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj",
         "projectName": "App.Accommodations",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/App.Accommodations/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\Data.Context.csproj"
+              "/Users/top/Projects/narit/Data.Context/Data.Context.csproj": {
+                "projectPath": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj"
               }
             }
           }
@@ -64,33 +58,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj": {
+    "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj",
         "projectName": "App.Accounting",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/App.Accounting/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -124,33 +112,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj": {
+    "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj",
         "projectName": "App.ExampleTest",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/App.ExampleTest/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -184,33 +166,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+    "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj",
         "projectName": "App.PathDetail",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/App.PathDetail/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -254,50 +230,44 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj": {
+    "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
         "projectName": "App.Resolver",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\App.Resolver.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Resolver\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/App.Resolver/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accommodations\\App.Accommodations.csproj"
+              "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj": {
+                "projectPath": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj"
               },
-              "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.Accounting\\App.Accounting.csproj"
+              "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj": {
+                "projectPath": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj"
               },
-              "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.ExampleTest\\App.ExampleTest.csproj"
+              "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj": {
+                "projectPath": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj"
               },
-              "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\App.PathDetail\\App.PathDetail.csproj"
+              "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj": {
+                "projectPath": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj"
               }
             }
           }
@@ -333,33 +303,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\Data.Context.csproj": {
+    "/Users/top/Projects/narit/Data.Context/Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\Data.Context.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Source\\Repos\\narit\\Data.Context\\obj\\",
+        "projectPath": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj",
+        "packagesPath": "/Users/top/.nuget/packages/",
+        "outputPath": "/Users/top/Projects/narit/Data.Context/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/top/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -415,7 +379,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
         }
       }
     }

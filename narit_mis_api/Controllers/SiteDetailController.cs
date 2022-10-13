@@ -1,7 +1,7 @@
 ﻿using App.Accommodations;
 using App.PathDetail;
 using Microsoft.AspNetCore.Mvc;
-using Narit_API.Controllers;
+using narit_mis_api.Controllers;
 
 namespace narit_mis_api.Controllers
 {
