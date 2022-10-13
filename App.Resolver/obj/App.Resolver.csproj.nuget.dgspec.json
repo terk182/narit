@@ -1,34 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj": {}
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj": {}
   },
   "projects": {
-    "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj",
         "projectName": "App.Accommodations",
-        "projectPath": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/App.Accommodations/obj/",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/top/Projects/narit/Data.Context/Data.Context.csproj": {
-                "projectPath": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj"
+              "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -58,27 +64,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj",
         "projectName": "App.Accounting",
-        "projectPath": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/App.Accounting/obj/",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -112,27 +124,97 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj",
-        "projectName": "App.ExampleTest",
-        "projectPath": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/App.ExampleTest/obj/",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectName": "App.EIS",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj",
+        "projectName": "App.FIN",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -166,27 +248,153 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj",
+        "projectName": "App.Individual",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj",
+        "projectName": "App.General",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj",
         "projectName": "App.PathDetail",
-        "projectPath": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/App.PathDetail/obj/",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -230,44 +438,129 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
-        "projectName": "App.Resolver",
-        "projectPath": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/App.Resolver/obj/",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj",
+        "projectName": "App.Plan",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj": {
-                "projectPath": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj"
+              "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj",
+        "projectName": "App.Resolver",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj"
               },
-              "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj": {
-                "projectPath": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj"
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj"
               },
-              "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj": {
-                "projectPath": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj"
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj": {
-                "projectPath": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj"
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj"
+              },
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj"
+              },
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj"
+              },
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj"
+              },
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj"
+              },
+              "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {
+                "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj"
               }
             }
           }
@@ -303,27 +596,93 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/top/Projects/narit/Data.Context/Data.Context.csproj": {
+    "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj",
-        "projectName": "Data.Context",
-        "projectPath": "/Users/top/Projects/narit/Data.Context/Data.Context.csproj",
-        "packagesPath": "/Users/top/.nuget/packages/",
-        "outputPath": "/Users/top/Projects/narit/Data.Context/obj/",
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj",
+        "projectName": "App.SEC",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/top/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj",
+        "projectName": "Data.Context",
+        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -379,7 +738,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,8 +10,13 @@
         "dependencies": {
           "App.Accommodations": "1.0.0",
           "App.Accounting": "1.0.0",
-          "App.ExampleTest": "1.0.0",
+          "App.EIS": "1.0.0",
+          "App.FIN": "1.0.0",
+          "App.General": "1.0.0",
+          "App.Individual": "1.0.0",
           "App.PathDetail": "1.0.0",
+          "App.Plan": "1.0.0",
+          "App.SEC": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "runtime": {
@@ -58,22 +63,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           }
         }
       },
@@ -492,9 +497,27 @@
           "App.Accounting.dll": {}
         }
       },
-      "App.ExampleTest/1.0.0": {
+      "App.EIS/1.0.0": {
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
         "runtime": {
-          "App.ExampleTest.dll": {}
+          "App.EIS.dll": {}
+        }
+      },
+      "App.FIN/1.0.0": {
+        "runtime": {
+          "App.FIN.dll": {}
+        }
+      },
+      "App.General/1.0.0": {
+        "runtime": {
+          "App.General.dll": {}
+        }
+      },
+      "App.Individual/1.0.0": {
+        "runtime": {
+          "App.Individual.dll": {}
         }
       },
       "App.PathDetail/1.0.0": {
@@ -504,6 +527,19 @@
         },
         "runtime": {
           "App.PathDetail.dll": {}
+        }
+      },
+      "App.Plan/1.0.0": {
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "runtime": {
+          "App.Plan.dll": {}
+        }
+      },
+      "App.SEC/1.0.0": {
+        "runtime": {
+          "App.SEC.dll": {}
         }
       },
       "Data.Context/1.0.0": {
@@ -827,12 +863,37 @@
       "serviceable": false,
       "sha512": ""
     },
-    "App.ExampleTest/1.0.0": {
+    "App.EIS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.FIN/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.General/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.Individual/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "App.PathDetail/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.Plan/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.SEC/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

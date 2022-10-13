@@ -1,8 +1,13 @@
 ﻿
 using App.Accommodations;
 using App.Accounting;
-using App.ExampleTest;
+using App.EIS;
+using App.FIN;
+using App.General;
+using App.Individual;
 using App.PathDetail;
+using App.Plan;
+using App.SEC;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,10 +22,16 @@ namespace App.Resolver
     {
         public static IServiceCollection AddCustomServices(this IServiceCollection services)
         {
-            services.AddScoped<IExampleTests, ExampleTests>(); 
+          
             services.AddScoped<IService, Service>();
             services.AddScoped<IAccommodationsService, AccommodationsService>(); 
             services.AddScoped<IPathDetailService, PathDetailService>(); 
+            services.AddScoped<IEisServices, EisServices>(); 
+            services.AddScoped<IFinServices, FinServices>(); 
+            services.AddScoped<IIndividualServices, IndividualServices>();  
+            services.AddScoped<IGeneralServices, GeneralServices>(); 
+            services.AddScoped<ISecServices, SecServices>(); 
+            services.AddScoped<IPlanServices, PlanServices>(); 
             return services;
         }
     }

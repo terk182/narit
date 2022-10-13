@@ -10,9 +10,9 @@ namespace App.PathDetail
 {
     public class PathDetailService : IPathDetailService
     {
-        public List<SiteMap> Sitemap(string path)
+        public List<sitePage> Sitemap(string path)
         {
-            var json = new readjson<SiteMap>(path);
+            var json = new readjson<sitePage>(path);
 
             return json.JsonNetResult()!;
         }

@@ -1,0 +1,15 @@
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\bin\Debug\net6.0\App.EIS.deps.json
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\bin\Debug\net6.0\App.EIS.dll
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\bin\Debug\net6.0\App.EIS.pdb
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.csproj.AssemblyReference.cache
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.AssemblyInfoInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.AssemblyInfo.cs
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.dll
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\refint\App.EIS.dll
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.pdb
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\ref\App.EIS.dll
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\bin\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\Source\Repos\narit\App.CollaborationNetwork\obj\Debug\net6.0\App.EIS.csproj.CopyComplete

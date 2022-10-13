@@ -22,3 +22,15 @@ C:/Users/daisy/source/repos/narit_mis_api/App.ExampleTest/obj/Debug/net6.0/ref/A
 /Users/top/Projects/narit/App.ExampleTest/obj/Debug/net6.0/refint/App.ExampleTest.dll
 /Users/top/Projects/narit/App.ExampleTest/obj/Debug/net6.0/App.ExampleTest.pdb
 /Users/top/Projects/narit/App.ExampleTest/obj/Debug/net6.0/ref/App.ExampleTest.dll
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\bin\Debug\net6.0\App.ExampleTest.deps.json
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\bin\Debug\net6.0\App.ExampleTest.dll
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\bin\Debug\net6.0\App.ExampleTest.pdb
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.csproj.AssemblyReference.cache
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.AssemblyInfoInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.AssemblyInfo.cs
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.dll
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\refint\App.ExampleTest.dll
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\App.ExampleTest.pdb
+C:\Users\daisy\Source\Repos\narit\App.ExampleTest\obj\Debug\net6.0\ref\App.ExampleTest.dll

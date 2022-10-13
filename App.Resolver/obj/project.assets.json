@@ -790,14 +790,47 @@
           "bin/placeholder/App.Accounting.dll": {}
         }
       },
-      "App.ExampleTest/1.0.0": {
+      "App.EIS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.EIS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.EIS.dll": {}
+        }
+      },
+      "App.FIN/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/App.ExampleTest.dll": {}
+          "bin/placeholder/App.FIN.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.ExampleTest.dll": {}
+          "bin/placeholder/App.FIN.dll": {}
+        }
+      },
+      "App.General/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/App.General.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.General.dll": {}
+        }
+      },
+      "App.Individual/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/App.Individual.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Individual.dll": {}
         }
       },
       "App.PathDetail/1.0.0": {
@@ -812,6 +845,29 @@
         },
         "runtime": {
           "bin/placeholder/App.PathDetail.dll": {}
+        }
+      },
+      "App.Plan/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Plan.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Plan.dll": {}
+        }
+      },
+      "App.SEC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/App.SEC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.SEC.dll": {}
         }
       },
       "Data.Context/1.0.0": {
@@ -2051,15 +2107,40 @@
       "path": "../App.Accounting/App.Accounting.csproj",
       "msbuildProject": "../App.Accounting/App.Accounting.csproj"
     },
-    "App.ExampleTest/1.0.0": {
+    "App.EIS/1.0.0": {
       "type": "project",
-      "path": "../App.ExampleTest/App.ExampleTest.csproj",
-      "msbuildProject": "../App.ExampleTest/App.ExampleTest.csproj"
+      "path": "../App.CollaborationNetwork/App.EIS.csproj",
+      "msbuildProject": "../App.CollaborationNetwork/App.EIS.csproj"
+    },
+    "App.FIN/1.0.0": {
+      "type": "project",
+      "path": "../App.Executive/App.FIN.csproj",
+      "msbuildProject": "../App.Executive/App.FIN.csproj"
+    },
+    "App.General/1.0.0": {
+      "type": "project",
+      "path": "../App.Operation/App.General.csproj",
+      "msbuildProject": "../App.Operation/App.General.csproj"
+    },
+    "App.Individual/1.0.0": {
+      "type": "project",
+      "path": "../App.Individual/App.Individual.csproj",
+      "msbuildProject": "../App.Individual/App.Individual.csproj"
     },
     "App.PathDetail/1.0.0": {
       "type": "project",
       "path": "../App.PathDetail/App.PathDetail.csproj",
       "msbuildProject": "../App.PathDetail/App.PathDetail.csproj"
+    },
+    "App.Plan/1.0.0": {
+      "type": "project",
+      "path": "../App.Plan/App.Plan.csproj",
+      "msbuildProject": "../App.Plan/App.Plan.csproj"
+    },
+    "App.SEC/1.0.0": {
+      "type": "project",
+      "path": "../App.SEC/App.SEC.csproj",
+      "msbuildProject": "../App.SEC/App.SEC.csproj"
     },
     "Data.Context/1.0.0": {
       "type": "project",
@@ -2071,48 +2152,75 @@
     "net6.0": [
       "App.Accommodations >= 1.0.0",
       "App.Accounting >= 1.0.0",
-      "App.ExampleTest >= 1.0.0",
+      "App.EIS >= 1.0.0",
+      "App.FIN >= 1.0.0",
+      "App.General >= 1.0.0",
+      "App.Individual >= 1.0.0",
       "App.PathDetail >= 1.0.0",
+      "App.Plan >= 1.0.0",
+      "App.SEC >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0"
     ]
   },
   "packageFolders": {
-    "/Users/top/.nuget/packages/": {}
+    "C:\\Users\\daisy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "/Users/top/Projects/narit/App.Resolver/App.Resolver.csproj",
-      "packagesPath": "/Users/top/.nuget/packages/",
-      "outputPath": "/Users/top/Projects/narit/App.Resolver/obj/",
+      "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\App.Resolver.csproj",
+      "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Resolver\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/top/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj": {
-              "projectPath": "/Users/top/Projects/narit/App.Accommodations/App.Accommodations.csproj"
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj": {
-              "projectPath": "/Users/top/Projects/narit/App.Accounting/App.Accounting.csproj"
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accounting\\App.Accounting.csproj"
             },
-            "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj": {
-              "projectPath": "/Users/top/Projects/narit/App.ExampleTest/App.ExampleTest.csproj"
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj": {
-              "projectPath": "/Users/top/Projects/narit/App.PathDetail/App.PathDetail.csproj"
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Executive\\App.FIN.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Individual\\App.Individual.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Operation\\App.General.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj"
             }
           }
         }
@@ -2148,7 +2256,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,12 @@
+C:\Users\daisy\Source\Repos\narit\App.SEC\bin\Debug\net6.0\App.SEC.deps.json
+C:\Users\daisy\Source\Repos\narit\App.SEC\bin\Debug\net6.0\App.SEC.dll
+C:\Users\daisy\Source\Repos\narit\App.SEC\bin\Debug\net6.0\App.SEC.pdb
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.csproj.AssemblyReference.cache
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.AssemblyInfoInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.AssemblyInfo.cs
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.dll
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\refint\App.SEC.dll
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\App.SEC.pdb
+C:\Users\daisy\Source\Repos\narit\App.SEC\obj\Debug\net6.0\ref\App.SEC.dll

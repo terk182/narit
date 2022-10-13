@@ -9,6 +9,6 @@ namespace App.PathDetail
 {
     public interface IPathDetailService
     {
-        List<SiteMap> Sitemap(string path);
+        List<sitePage> Sitemap(string path);
     }
 }

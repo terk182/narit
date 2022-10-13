@@ -13,8 +13,13 @@
   <ItemGroup>
     <ProjectReference Include="..\App.Accommodations\App.Accommodations.csproj" />
     <ProjectReference Include="..\App.Accounting\App.Accounting.csproj" />
-    <ProjectReference Include="..\App.ExampleTest\App.ExampleTest.csproj" />
+    <ProjectReference Include="..\App.CollaborationNetwork\App.EIS.csproj" />
+    <ProjectReference Include="..\App.Executive\App.FIN.csproj" />
+    <ProjectReference Include="..\App.Individual\App.Individual.csproj" />
+    <ProjectReference Include="..\App.Operation\App.General.csproj" />
     <ProjectReference Include="..\App.PathDetail\App.PathDetail.csproj" />
+    <ProjectReference Include="..\App.Plan\App.Plan.csproj" />
+    <ProjectReference Include="..\App.SEC\App.SEC.csproj" />
   </ItemGroup>
 
 </Project>

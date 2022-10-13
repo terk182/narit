@@ -22,3 +22,15 @@ C:/Users/daisy/source/repos/narit_mis_api/App.Accounting/obj/Debug/net6.0/ref/Ap
 /Users/top/Projects/narit/App.Accounting/obj/Debug/net6.0/refint/App.Accounting.dll
 /Users/top/Projects/narit/App.Accounting/obj/Debug/net6.0/App.Accounting.pdb
 /Users/top/Projects/narit/App.Accounting/obj/Debug/net6.0/ref/App.Accounting.dll
+C:\Users\daisy\Source\Repos\narit\App.Accounting\bin\Debug\net6.0\App.Accounting.deps.json
+C:\Users\daisy\Source\Repos\narit\App.Accounting\bin\Debug\net6.0\App.Accounting.dll
+C:\Users\daisy\Source\Repos\narit\App.Accounting\bin\Debug\net6.0\App.Accounting.pdb
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.csproj.AssemblyReference.cache
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.AssemblyInfoInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.AssemblyInfo.cs
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.dll
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\refint\App.Accounting.dll
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\App.Accounting.pdb
+C:\Users\daisy\Source\Repos\narit\App.Accounting\obj\Debug\net6.0\ref\App.Accounting.dll
