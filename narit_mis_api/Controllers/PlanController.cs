@@ -66,7 +66,24 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("RequestFormPlanViews/{year}")]
+        public IActionResult RequestFormPlanViewsByyear(int year)
+        {
+            var data = _Service.RequestFormPlanViewsByYear(year);
+
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("CheckFormPlanViews/{year}")]
+        public IActionResult CheckFormPlanViewsByyear(int year)
+        {
+            var data = _Service.CheckFormPlanViewByYear(year);
+
+            return Json(data);
+        }
         
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using narit_mis_api.Models;
+﻿using App.EIS;
+using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,6 +76,18 @@ namespace App.Plan
                 BudgetTransfers.Add(activity);
             }
             return BudgetTransfers;
+        }
+
+        public List<RequestFormPlanView> RequestFormPlanViewsByYear(int Year)
+        {
+            var AllReqProcurePlanViewList = _database.RequestFormPlanViews.Where(c => c.Active && c.FiscalYear == Year && c.ApprovalStatusEnum != (int)ProcureApprovalStatus.Denied);
+            return AllReqProcurePlanViewList.ToList();
+        }
+
+        public List<CheckFormPlanView> CheckFormPlanViewByYear(int Year)
+        {
+            return _database.CheckFormPlanViews.Where(c => c.Active && c.FiscalYear == Year).ToList();
+            
         }
     }
 }

@@ -1,0 +1,17 @@
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\App.Procure.deps.json
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\App.Procure.dll
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\App.Procure.pdb
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\App.EIS.dll
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\App.EIS.pdb
+C:\Users\daisy\source\repos\narit\App.Procure\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.csproj.AssemblyReference.cache
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.AssemblyInfoInputs.cache
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.AssemblyInfo.cs
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.csproj.CoreCompileInputs.cache
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.csproj.CopyComplete
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.dll
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\refint\App.Procure.dll
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\App.Procure.pdb
+C:\Users\daisy\source\repos\narit\App.Procure\obj\Debug\net6.0\ref\App.Procure.dll

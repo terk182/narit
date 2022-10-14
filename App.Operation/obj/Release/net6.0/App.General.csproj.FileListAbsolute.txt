@@ -1,0 +1,12 @@
+C:\Users\daisy\source\repos\narit\App.Operation\bin\Release\net6.0\App.General.deps.json
+C:\Users\daisy\source\repos\narit\App.Operation\bin\Release\net6.0\App.General.dll
+C:\Users\daisy\source\repos\narit\App.Operation\bin\Release\net6.0\App.General.pdb
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.csproj.AssemblyReference.cache
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.AssemblyInfoInputs.cache
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.AssemblyInfo.cs
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.csproj.CoreCompileInputs.cache
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.dll
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\refint\App.General.dll
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\App.General.pdb
+C:\Users\daisy\source\repos\narit\App.Operation\obj\Release\net6.0\ref\App.General.dll

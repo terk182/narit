@@ -851,6 +851,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "App.EIS": "1.0.0",
           "Data.Context": "1.0.0"
         },
         "compile": {
@@ -858,6 +859,20 @@
         },
         "runtime": {
           "bin/placeholder/App.Plan.dll": {}
+        }
+      },
+      "App.Procure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "App.EIS": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Procure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Procure.dll": {}
         }
       },
       "App.SEC/1.0.0": {
@@ -2137,6 +2152,11 @@
       "path": "../App.Plan/App.Plan.csproj",
       "msbuildProject": "../App.Plan/App.Plan.csproj"
     },
+    "App.Procure/1.0.0": {
+      "type": "project",
+      "path": "../App.Procure/App.Procure.csproj",
+      "msbuildProject": "../App.Procure/App.Procure.csproj"
+    },
     "App.SEC/1.0.0": {
       "type": "project",
       "path": "../App.SEC/App.SEC.csproj",
@@ -2158,6 +2178,7 @@
       "App.Individual >= 1.0.0",
       "App.PathDetail >= 1.0.0",
       "App.Plan >= 1.0.0",
+      "App.Procure >= 1.0.0",
       "App.SEC >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0"
     ]
@@ -2218,6 +2239,9 @@
             },
             "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj": {
               "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Plan\\App.Plan.csproj"
+            },
+            "C:\\Users\\daisy\\source\\repos\\narit\\App.Procure\\App.Procure.csproj": {
+              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Procure\\App.Procure.csproj"
             },
             "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {
               "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj"

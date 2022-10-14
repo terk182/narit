@@ -13,3 +13,5 @@ C:\Users\daisy\source\repos\narit\App.Plan\obj\Debug\net6.0\App.Plan.dll
 C:\Users\daisy\source\repos\narit\App.Plan\obj\Debug\net6.0\refint\App.Plan.dll
 C:\Users\daisy\source\repos\narit\App.Plan\obj\Debug\net6.0\App.Plan.pdb
 C:\Users\daisy\source\repos\narit\App.Plan\obj\Debug\net6.0\ref\App.Plan.dll
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Debug\net6.0\App.EIS.dll
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Debug\net6.0\App.EIS.pdb

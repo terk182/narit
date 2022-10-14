@@ -19,6 +19,7 @@
     <ProjectReference Include="..\App.Operation\App.General.csproj" />
     <ProjectReference Include="..\App.PathDetail\App.PathDetail.csproj" />
     <ProjectReference Include="..\App.Plan\App.Plan.csproj" />
+    <ProjectReference Include="..\App.Procure\App.Procure.csproj" />
     <ProjectReference Include="..\App.SEC\App.SEC.csproj" />
   </ItemGroup>
 

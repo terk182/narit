@@ -16,6 +16,7 @@
           "App.Individual": "1.0.0",
           "App.PathDetail": "1.0.0",
           "App.Plan": "1.0.0",
+          "App.Procure": "1.0.0",
           "App.SEC": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
@@ -531,10 +532,20 @@
       },
       "App.Plan/1.0.0": {
         "dependencies": {
+          "App.EIS": "1.0.0",
           "Data.Context": "1.0.0"
         },
         "runtime": {
           "App.Plan.dll": {}
+        }
+      },
+      "App.Procure/1.0.0": {
+        "dependencies": {
+          "App.EIS": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "runtime": {
+          "App.Procure.dll": {}
         }
       },
       "App.SEC/1.0.0": {
@@ -889,6 +900,11 @@
       "sha512": ""
     },
     "App.Plan/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.Procure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

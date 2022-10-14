@@ -77,3 +77,5 @@ C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.General.pdb
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.SEC.pdb
 C:\Users\daisy\source\repos\narit\App.Resolver\bin\Debug\net6.0\App.Plan.dll
 C:\Users\daisy\source\repos\narit\App.Resolver\bin\Debug\net6.0\App.Plan.pdb
+C:\Users\daisy\source\repos\narit\App.Resolver\bin\Debug\net6.0\App.Procure.dll
+C:\Users\daisy\source\repos\narit\App.Resolver\bin\Debug\net6.0\App.Procure.pdb

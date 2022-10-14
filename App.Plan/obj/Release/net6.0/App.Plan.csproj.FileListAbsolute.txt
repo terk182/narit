@@ -1,0 +1,15 @@
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Release\net6.0\App.Plan.deps.json
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Release\net6.0\App.Plan.dll
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Release\net6.0\App.Plan.pdb
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Release\net6.0\Data.Context.dll
+C:\Users\daisy\source\repos\narit\App.Plan\bin\Release\net6.0\Data.Context.pdb
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.csproj.AssemblyReference.cache
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfoInputs.cache
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfo.cs
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.csproj.CoreCompileInputs.cache
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.csproj.CopyComplete
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.dll
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\refint\App.Plan.dll
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\App.Plan.pdb
+C:\Users\daisy\source\repos\narit\App.Plan\obj\Release\net6.0\ref\App.Plan.dll

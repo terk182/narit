@@ -14,5 +14,7 @@ namespace App.Plan
         List<BudgetTransfer> BudgetTransferByPlanItemId(int PlanItemId);
         List<BudgetTransfer> BudgetTransferByPlanCoreId(int PlanCoreId);
         List<BudgetTransfer> BudgetTransferPlanActivityId(int PlanActivityId);
+        List<RequestFormPlanView> RequestFormPlanViewsByYear(int Year);
+        List<CheckFormPlanView> CheckFormPlanViewByYear(int Year);
     }
 }

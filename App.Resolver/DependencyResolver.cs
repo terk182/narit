@@ -7,6 +7,7 @@ using App.General;
 using App.Individual;
 using App.PathDetail;
 using App.Plan;
+using App.Procure;
 using App.SEC;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,7 @@ namespace App.Resolver
             services.AddScoped<IGeneralServices, GeneralServices>(); 
             services.AddScoped<ISecServices, SecServices>(); 
             services.AddScoped<IPlanServices, PlanServices>(); 
+            services.AddScoped<IProcureServices, ProcureServices>(); 
             return services;
         }
     }
