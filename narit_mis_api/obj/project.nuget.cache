@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "trzxiJdbNLhKAjwwUZdk8cETnmzoxXoVKcHoECPcPoAg5t897so0BrYuppBFEkanfEqviCGMYV4TxG1uWQoG0A==",
+  "dgSpecHash": "fvi2+CnGpFFyRfnVSKf5zoGmzzjct7Hl7FLfCsC/yxKfSKGivGi51TgzB3jOXjNIsgKGVCbJhneHz06MkGvWRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\daisy\\source\\repos\\narit\\narit_mis_api\\narit_mis_api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\daisy\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\daisy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\daisy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",

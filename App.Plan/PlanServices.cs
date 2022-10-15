@@ -1,4 +1,5 @@
 ﻿using App.EIS;
+using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,11 @@ namespace App.Plan
         {
             return _database.CheckFormPlanViews.Where(c => c.Active && c.FiscalYear == Year).ToList();
             
+        }
+
+        public List<CheckFormPlanView> CheckFormPlanViewByRequestFormPlanViewId(int RequestFormPlanViewId)
+        {
+            return _database.CheckFormPlanViews.Where(x=> x.RequestFormPlanViewId == RequestFormPlanViewId).ToList();
         }
     }
 }

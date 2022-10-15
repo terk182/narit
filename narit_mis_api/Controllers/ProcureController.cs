@@ -1,6 +1,9 @@
 ﻿using App.Plan;
 using App.Procure;
+using App.Procure.Dtos;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using narit_mis_api.Models;
 
 namespace narit_mis_api.Controllers
 {
@@ -65,7 +68,31 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
-        
+        [HttpGet]
+        [Route("ApproveItems/{year}")]
+        public IActionResult getApproveItemsbyYear(int year)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.getApproveItemsbyYear(year);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("WaitForDeliveryAmount")]
+        public IActionResult getApproveItemsbyYear(List<OrderFormDto> OrderForm)
+        {
+            _Logger.LogInformation("sql");
+            var config = new MapperConfiguration(cfg =>cfg.CreateMap<List<OrderFormDto>, List<OrderForm>>());
+            var mapper = new Mapper(config);
+
+            var OrderForm_cv = mapper.Map< List<OrderForm>>(OrderForm);
+            var data = _Service.WaitForDeliveryAmount(OrderForm_cv);
+
+            return Json(data);
+        }
+       
+
+
 
     }
 }

@@ -1,8 +1,10 @@
 ﻿using App.EIS.Models;
+using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 

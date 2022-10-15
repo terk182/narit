@@ -243,3 +243,4 @@ C:\Users\daisy\source\repos\narit\narit_mis_api\bin\Debug\net6.0\App.Plan.dll
 C:\Users\daisy\source\repos\narit\narit_mis_api\bin\Debug\net6.0\App.Plan.pdb
 C:\Users\daisy\source\repos\narit\narit_mis_api\bin\Debug\net6.0\App.Procure.dll
 C:\Users\daisy\source\repos\narit\narit_mis_api\bin\Debug\net6.0\App.Procure.pdb
+C:\Users\daisy\source\repos\narit\narit_mis_api\bin\Debug\net6.0\AutoMapper.dll
