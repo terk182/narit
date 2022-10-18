@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YJ36yJlIQqG3TtmeI98+0Du5leffak9bXJFq82lkBg6AknKweD1i90ItcJgYV0EC77Ssdj5v2nmvX01lW1FUNA==",
+  "dgSpecHash": "+sGDojwhWDMtG/llOFXzuCWMaYy+smZgxrukz24zMVjK/FdmGnP+aIlaquA9EI3xy1vECSJfTcbaHC6ZXp3aQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daisy\\source\\repos\\narit\\App.PathDetail\\App.PathDetail.csproj",
+  "projectFilePath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\daisy\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\daisy\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    "C:\\Users\\KKN\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\KKN\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }

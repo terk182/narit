@@ -10,3 +10,15 @@ C:\Users\daisy\Source\Repos\narit\App.Operation\obj\Debug\net6.0\App.General.dll
 C:\Users\daisy\Source\Repos\narit\App.Operation\obj\Debug\net6.0\refint\App.General.dll
 C:\Users\daisy\Source\Repos\narit\App.Operation\obj\Debug\net6.0\App.General.pdb
 C:\Users\daisy\Source\Repos\narit\App.Operation\obj\Debug\net6.0\ref\App.General.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\bin\Debug\net6.0\App.General.deps.json
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\bin\Debug\net6.0\App.General.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\bin\Debug\net6.0\App.General.pdb
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.csproj.AssemblyReference.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.AssemblyInfoInputs.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.AssemblyInfo.cs
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.csproj.CoreCompileInputs.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\refint\App.General.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\App.General.pdb
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Operation\obj\Debug\net6.0\ref\App.General.dll

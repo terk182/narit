@@ -90,8 +90,16 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+
+        [HttpGet]
+        [Route("GetPlanItemByBudgetId/{Id}")]
+        public IActionResult GetPlanItemByBudgetId(int Id)
+        {
+            var data = _Service.GetPlanItemByBudgetTypeId(Id);
+
+            return Json(data);
+        }
+
         
-
-
     }
 }

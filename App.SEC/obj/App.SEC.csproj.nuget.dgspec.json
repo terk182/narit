@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {}
+    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj": {
+    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj",
+        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj",
         "projectName": "App.SEC",
-        "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\App.SEC.csproj",
-        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.SEC\\obj\\",
+        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj",
+        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -10,3 +10,15 @@ C:\Users\daisy\Source\Repos\narit\App.Executive\obj\Debug\net6.0\App.FIN.dll
 C:\Users\daisy\Source\Repos\narit\App.Executive\obj\Debug\net6.0\refint\App.FIN.dll
 C:\Users\daisy\Source\Repos\narit\App.Executive\obj\Debug\net6.0\App.FIN.pdb
 C:\Users\daisy\Source\Repos\narit\App.Executive\obj\Debug\net6.0\ref\App.FIN.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\bin\Debug\net6.0\App.FIN.deps.json
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\bin\Debug\net6.0\App.FIN.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\bin\Debug\net6.0\App.FIN.pdb
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.csproj.AssemblyReference.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.AssemblyInfoInputs.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.AssemblyInfo.cs
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.csproj.CoreCompileInputs.cache
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\refint\App.FIN.dll
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\App.FIN.pdb
+C:\Users\KKN\Desktop\naritapiprojectardin\App.Executive\obj\Debug\net6.0\ref\App.FIN.dll

@@ -95,5 +95,23 @@ namespace App.Plan
         {
             return _database.CheckFormPlanViews.Where(x=> x.RequestFormPlanViewId == RequestFormPlanViewId).ToList();
         }
+
+        public List<BudgetType> GetByFiscalYear(int Year)
+        {
+            
+            return _database.BudgetTypes.Where(x => x.FiscalYear == Year && x.Active).OrderBy(x => x.Name).ToList();
+            
+             
+        }
+
+        public List<PlanItem> GetPlanItemByBudgetTypeId(int BudgetId)
+        {
+            return _database.PlanItems.Where(x => x.Id == BudgetId).ToList();
+        }
+
+        //List<PlanType> IPlanServices.GetByFiscalYear(int Year)
+        //{
+        //    return _database.PlanTypes.Where(x => x.FiscalYear == Year && x.Active).OrderBy(x => x.Name).ToList();
+        //}
     }
 }
