@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.Accommodations\App.Accommodations.csproj" />
-    <ProjectReference Include="..\App.Accounting\App.Accounting.csproj" />
     <ProjectReference Include="..\App.Resolver\App.Resolver.csproj" />
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />
   </ItemGroup>

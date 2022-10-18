@@ -48,11 +48,9 @@ C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Resolver.dep
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Resolver.dll
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Resolver.pdb
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Accommodations.dll
-C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Accounting.dll
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.PathDetail.dll
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\Data.Context.dll
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Accommodations.pdb
-C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.Accounting.pdb
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\App.PathDetail.pdb
 C:\Users\daisy\Source\Repos\narit\App.Resolver\bin\Debug\net6.0\Data.Context.pdb
 C:\Users\daisy\Source\Repos\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.csproj.AssemblyReference.cache
