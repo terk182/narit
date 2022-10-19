@@ -1948,23 +1948,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KKN\\.nuget\\packages\\": {},
+    "C:\\Users\\daisy\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj",
       "projectName": "App.Plan",
-      "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj",
-      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\obj\\",
+      "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj",
+      "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1980,11 +1980,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\narit_mis_api\\narit_mis_api.csproj": {}
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj",
         "projectName": "App.Accommodations",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -68,20 +68,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj",
         "projectName": "App.Accounting",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,20 +128,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
         "projectName": "App.EIS",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -157,8 +157,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -192,20 +192,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\App.FIN.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\App.FIN.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj",
         "projectName": "App.FIN",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\App.FIN.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -252,20 +252,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\App.Individual.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\App.Individual.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj",
         "projectName": "App.Individual",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\App.Individual.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -312,20 +312,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\App.General.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\App.General.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj",
         "projectName": "App.General",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\App.General.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -372,20 +372,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
         "projectName": "App.PathDetail",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -442,20 +442,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj",
         "projectName": "App.Plan",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -471,11 +471,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -509,20 +509,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\App.Procure.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\App.Procure.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
         "projectName": "App.Procure",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\App.Procure.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -538,11 +538,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -576,20 +576,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\App.Resolver.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\App.Resolver.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
         "projectName": "App.Resolver",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\App.Resolver.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -605,35 +605,35 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.CollaborationNetwork\\App.EIS.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\App.FIN.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Executive\\App.FIN.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\App.Individual.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Individual\\App.Individual.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\App.General.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Operation\\App.General.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.PathDetail\\App.PathDetail.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Plan\\App.Plan.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\App.Procure.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Procure\\App.Procure.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
               }
             }
           }
@@ -673,20 +673,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
         "projectName": "App.SEC",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\App.SEC.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.SEC\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.SEC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -733,20 +733,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -815,20 +815,20 @@
         }
       }
     },
-    "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\narit_mis_api\\narit_mis_api.csproj": {
+    "C:\\Users\\daisy\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\narit_mis_api\\narit_mis_api.csproj",
+        "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj",
         "projectName": "narit_mis_api",
-        "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\narit_mis_api\\narit_mis_api.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\narit_mis_api\\obj\\",
+        "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj",
+        "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\narit_mis_api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -844,17 +844,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accommodations\\App.Accommodations.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Accounting\\App.Accounting.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\App.Resolver.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\App.Resolver\\App.Resolver.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj"
               },
-              "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Desktop\\naritapiprojectardin\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
