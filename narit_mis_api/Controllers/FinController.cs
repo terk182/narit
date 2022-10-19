@@ -1,0 +1,513 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace narit_mis_api.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class FinController : Controller
+    {
+        #region Operate
+        [HttpGet]
+        [Route("Finance/MainFinancePage")]
+        public IActionResult MainFinancePage()
+        {
+            return Json("MainFinancePage");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ApproveRequestFormWithFrame")]
+        public IActionResult ApproveRequestFormWithFrame()
+        {
+            return Json("ApproveRequestFormWithFrame");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditDeniedRequestFormPlanViewDate")]
+        public IActionResult EditDeniedRequestFormPlanViewDate()
+        {
+            return Json("EditDeniedRequestFormPlanViewDate");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditExtraWithdrawalForm")]
+        public IActionResult EditExtraWithdrawalForm()
+        {
+            return Json("EditExtraWithdrawalForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditFinancialReimbursementForm")]
+        public IActionResult EditFinancialReimbursementForm()
+        {
+            return Json("EditFinancialReimbursementForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditGeneralExpenseCancelForm")]
+        public IActionResult EditGeneralExpenseCancelForm()
+        {
+            return Json("EditGeneralExpenseCancelForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditGeneralExpenseReturnForm")]
+        public IActionResult EditGeneralExpenseReturnForm()
+        {
+            return Json("EditGeneralExpenseReturnForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditMultiplePaymentRecord")]
+        public IActionResult EditMultiplePaymentRecord()
+        {
+            return Json("EditMultiplePaymentRecord");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditPaymentRecord")]
+        public IActionResult EditPaymentRecord()
+        {
+            return Json("EditPaymentRecord");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditPlanStatementTemporaryInvolveList")]
+        public IActionResult EditPlanStatementTemporaryInvolveList()
+        {
+            return Json("EditPlanStatementTemporaryInvolveList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureLoaningCancelForm")]
+        public IActionResult EditProcureLoaningCancelForm()
+        {
+            return Json("EditProcureLoaningCancelForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureLoaningMemoForm")]
+        public IActionResult EditProcureLoaningMemoForm()
+        {
+            return Json("EditProcureLoaningMemoForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureLoaningMultiplePaymentRecord")]
+        public IActionResult EditProcureLoaningMultiplePaymentRecord()
+        {
+            return Json("EditProcureLoaningMultiplePaymentRecord");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureLoaningReturnForm")]
+        public IActionResult EditProcureLoaningReturnForm()
+        {
+            return Json("EditProcureLoaningReturnForm");
+        }
+
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureLoaningWithdrawalForm")]
+        public IActionResult EditProcureLoaningWithdrawalForm()
+        {
+            return Json("EditProcureLoaningWithdrawalForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcurePaymentRecord")]
+        public IActionResult EditProcurePaymentRecord()
+        {
+            return Json("EditProcurePaymentRecord");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureReimbursementMemoForm")]
+        public IActionResult EditProcureReimbursementMemoForm()
+        {
+            return Json("EditProcureReimbursementMemoForm");
+        }
+
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureSettleMemoForm")]
+        public IActionResult EditProcureSettleMemoForm()
+        {
+            return Json("EditProcureSettleMemoForm");
+        }
+
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProcureSettleReceiptForm")]
+        public IActionResult EditProcureSettleReceiptForm()
+        {
+            return Json("EditProcureSettleReceiptForm");
+        }
+
+
+        [HttpGet]
+        [Route("Finance/Operate/EditProtectBudget")]
+        public IActionResult EditProtectBudget()
+        {
+            return Json("EditProtectBudget");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditReserveBudgetByForm")]
+        public IActionResult EditReserveBudgetByForm()
+        {
+            return Json("EditReserveBudgetByForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditReserveBudgetFormMonthlyReason")]
+        public IActionResult EditReserveBudgetFormMonthlyReason()
+        {
+            return Json("EditReserveBudgetFormMonthlyReason");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditReturnBudgetDateFromApproveForm")]
+        public IActionResult EditReturnBudgetDateFromApproveForm()
+        {
+            return Json("EditReturnBudgetDateFromApproveForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditStatementCalculationDateList")]
+        public IActionResult EditStatementCalculationDateList()
+        {
+            return Json("EditStatementCalculationDateList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditTemporaryInvolvePlanStatement")]
+        public IActionResult EditTemporaryInvolvePlanStatement()
+        {
+            return Json("EditTemporaryInvolvePlanStatement");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditUndefineReserveBudget")]
+        public IActionResult EditUndefineReserveBudget()
+        {
+            return Json("EditUndefineReserveBudget");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/EditWithdrawalForm")]
+        public IActionResult EditWithdrawalForm()
+        {
+            return Json("EditWithdrawalForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/SelectPlanForEditStatementTemporaryInvolveList")]
+        public IActionResult SelectPlanForEditStatementTemporaryInvolveList()
+        {
+            return Json("SelectPlanForEditStatementTemporaryInvolveList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/SelectPlanForStatementCalculationDateList")]
+        public IActionResult SelectPlanForStatementCalculationDateList()
+        {
+            return Json("SelectPlanForStatementCalculationDateList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewApproveDocForProcureLoaning")]
+        public IActionResult ViewApproveDocForProcureLoaning()
+        {
+            return Json("ViewApproveDocForProcureLoaning");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewApproveItemsForProcureLoaning")]
+        public IActionResult ViewApproveItemsForProcureLoaning()
+        {
+            return Json("ViewApproveItemsForProcureLoaning");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewFinancialReimbursementFormList")]
+        public IActionResult ViewFinancialReimbursementFormList()
+        {
+            return Json("ViewFinancialReimbursementFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewFormForApprovalByFinance")]
+        public IActionResult ViewFormForApprovalByFinance()
+        {
+            return Json("ViewFormForApprovalByFinance");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewFormForApprovalByFinanceChecker")]
+        public IActionResult ViewFormForApprovalByFinanceChecker()
+        {
+            return Json("ViewFormForApprovalByFinanceChecker");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewFormForApprovalByHeadOfFinance")]
+        public IActionResult ViewFormForApprovalByHeadOfFinance()
+        {
+            return Json("ViewFormForApprovalByHeadOfFinance");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewFormForApprovalBySecretary")]
+        public IActionResult ViewFormForApprovalBySecretary()
+        {
+            return Json("ViewFormForApprovalBySecretary");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewGEMemoFormListForFinancialReimbursementForm")]
+        public IActionResult ViewGEMemoFormListForFinancialReimbursementForm()
+        {
+            return Json("ViewGEMemoFormListForFinancialReimbursementForm");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewPaymentRecordList")]
+        public IActionResult ViewPaymentRecordList()
+        {
+            return Json("ViewPaymentRecordList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewPlanStatementTemporaryInvolveList")]
+        public IActionResult ViewPlanStatementTemporaryInvolveList()
+        {
+            return Json("ViewPlanStatementTemporaryInvolveList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureLoaningFormForSettlement")]
+        public IActionResult ViewProcureLoaningFormForSettlement()
+        {
+            return Json("ViewProcureLoaningFormForSettlement");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureLoaningMemoFormList")]
+        public IActionResult ViewProcureLoaningMemoFormList()
+        {
+            return Json("ViewProcureLoaningMemoFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureLoaningMemoFormListForApproval")]
+        public IActionResult ViewProcureLoaningMemoFormListForApproval()
+        {
+            return Json("ViewProcureLoaningMemoFormListForApproval");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureLoaningWithdrawalFormForSettle")]
+        public IActionResult ViewProcureLoaningWithdrawalFormForSettle()
+        {
+            return Json("ViewProcureLoaningWithdrawalFormForSettle");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureReimbursementMemoFormList")]
+        public IActionResult ViewProcureReimbursementMemoFormList()
+        {
+            return Json("ViewProcureReimbursementMemoFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureReimbursementMemoFormListForApproval")]
+        public IActionResult ViewProcureReimbursementMemoFormListForApproval()
+        {
+            return Json("ViewProcureReimbursementMemoFormListForApproval");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureSettleMemoFormList")]
+        public IActionResult ViewProcureSettleMemoFormList()
+        {
+            return Json("ViewProcureSettleMemoFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureSettleMemoFormListForApproval")]
+        public IActionResult ViewProcureSettleMemoFormListForApproval()
+        {
+            return Json("ViewProcureSettleMemoFormListForApproval");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureSettleReceiptFormList")]
+        public IActionResult ViewProcureSettleReceiptFormList()
+        {
+            return Json("ViewProcureSettleReceiptFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewProcureSettleReceiptFormListForApproval")]
+        public IActionResult ViewProcureSettleReceiptFormListForApproval()
+        {
+            return Json("ViewProcureSettleReceiptFormListForApproval");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewRequestFormListForFinancialApproval")]
+        public IActionResult ViewRequestFormListForFinancialApproval()
+        {
+            return Json("ViewRequestFormListForFinancialApproval");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewReserveBudgetFormList")]
+        public IActionResult ViewReserveBudgetFormList()
+        {
+            return Json("ViewReserveBudgetFormList");
+        }
+
+        [HttpGet]
+        [Route("Finance/Operate/ViewUndefineReserveBudgetList")]
+        public IActionResult ViewUndefineReserveBudgetList()
+        {
+            return Json("ViewUndefineReserveBudgetList");
+        }
+        #endregion
+
+        [HttpGet]
+        [Route("Finance/Report/FinanceFormReportStream")]
+        public IActionResult FinanceFormReportStream()
+        {
+            return Json("FinanceFormReportStream");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinanceFormReportViewer")]
+        public IActionResult FinanceFormReportViewer()
+        {
+            return Json("FinanceFormReportViewer");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementMonthlyBriefReportByBudgetType")]
+        public IActionResult FinancialReserveStatementMonthlyBriefReportByBudgetType()
+        {
+            return Json("FinancialReserveStatementMonthlyBriefReportByBudgetType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementMonthlyReportByBudgetType")]
+        public IActionResult FinancialReserveStatementMonthlyReportByBudgetType()
+        {
+            return Json("FinancialReserveStatementMonthlyReportByBudgetType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementMonthlyReportByPlanCore")]
+        public IActionResult FinancialReserveStatementMonthlyReportByPlanCore()
+        {
+            return Json("FinancialReserveStatementMonthlyReportByPlanCore");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementMonthlyReportByPlanType")]
+        public IActionResult FinancialReserveStatementMonthlyReportByPlanType()
+        {
+            return Json("FinancialReserveStatementMonthlyReportByPlanType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementYearEndBriefReportByBudgetType")]
+        public IActionResult FinancialReserveStatementYearEndBriefReportByBudgetType()
+        {
+            return Json("FinancialReserveStatementYearEndBriefReportByBudgetType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementYearEndReportByBudgetType")]
+        public IActionResult FinancialReserveStatementYearEndReportByBudgetType()
+        {
+            return Json("FinancialReserveStatementYearEndReportByBudgetType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementYearEndReportByPlanCore")]
+        public IActionResult FinancialReserveStatementYearEndReportByPlanCore()
+        {
+            return Json("FinancialReserveStatementYearEndReportByPlanCore");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialReserveStatementYearEndReportByPlanType")]
+        public IActionResult FinancialReserveStatementYearEndReportByPlanType()
+        {
+            return Json("FinancialReserveStatementYearEndReportByPlanType");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialStatementReportByPlanActivity")]
+        public IActionResult FinancialStatementReportByPlanActivity()
+        {
+            return Json("FinancialStatementReportByPlanActivity");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialStatementReportByPlanCore")]
+        public IActionResult FinancialStatementReportByPlanCore()
+        {
+            return Json("FinancialStatementReportByPlanCore");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialStatementReportByPlanItem")]
+        public IActionResult FinancialStatementReportByPlanItem()
+        {
+            return Json("FinancialStatementReportByPlanItem");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/FinancialUserNotificationMailReport")]
+        public IActionResult FinancialUserNotificationMailReport()
+        {
+            return Json("FinancialUserNotificationMailReport");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/GroupSelectorForFinancialStatementReport")]
+        public IActionResult GroupSelectorForFinancialStatementReport()
+        {
+            return Json("GroupSelectorForFinancialStatementReport");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/PlanCoreFinancialByQuarterReport")]
+        public IActionResult PlanCoreFinancialByQuarterReport()
+        {
+            return Json("PlanCoreFinancialByQuarterReport");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/PlanCoreListFinancialStatementReport")]
+        public IActionResult PlanCoreListFinancialStatementReport()
+        {
+            return Json("PlanCoreListFinancialStatementReport");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/PlanFormFinancialStatusReport")]
+        public IActionResult PlanFormFinancialStatusReport()
+        {
+            return Json("PlanFormFinancialStatusReport");
+        }
+
+        [HttpGet]
+        [Route("Finance/Report/ReserveBudgetForecastReport")]
+        public IActionResult ReserveBudgetForecastReport()
+        {
+            return Json("ReserveBudgetForecastReport");
+        }
+
+    }
+}

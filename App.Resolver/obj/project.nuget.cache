@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HN9QVGSlWnQmHjWweQBt50zQ66ujDt2iSaDE7zPS/cBarkxR+MStoQcKd/aYBQn9dP67Us3iz1ijbWkHLzCdFg==",
+  "dgSpecHash": "LbbDUr+MkndRjIEQ7jHDVbKTny+M2iNsWWHTEh72MtFTP8lMqijbDHAN+zH9XRrJ/Y3FHjh+THK9wl9KkahebA==",
   "success": true,
   "projectFilePath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
   "expectedPackageFiles": [
@@ -47,5 +47,12 @@
     "C:\\Users\\daisy\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Resolver\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

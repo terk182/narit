@@ -18,9 +18,8 @@ namespace App.Plan
         List<CheckFormPlanView> CheckFormPlanViewByYear(int Year);
 
         List<CheckFormPlanView> CheckFormPlanViewByRequestFormPlanViewId(int RequestFormPlanViewId);
-        List<BudgetType> GetByFiscalYear(int Year);
-      
-        List<PlanItem> GetPlanItemByBudgetTypeId(int BudgetId);
-        //List<PlanType> GetByFiscalYear(int Year);
+        List<GeneralExpenseMemoForm> GetWaitingForApprove(int staffId, int yearNow);
+
+        List<BudgetType> BudgetTypeByYear(int Year);
     }
 }

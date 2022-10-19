@@ -96,22 +96,17 @@ namespace App.Plan
             return _database.CheckFormPlanViews.Where(x=> x.RequestFormPlanViewId == RequestFormPlanViewId).ToList();
         }
 
-        public List<BudgetType> GetByFiscalYear(int Year)
+
+        //----------home check staff-------
+        public List<GeneralExpenseMemoForm> GetWaitingForApprove(int staffId, int yearNow)
         {
-            
-            return _database.BudgetTypes.Where(x => x.FiscalYear == Year && x.Active).OrderBy(x => x.Name).ToList();
-            
-             
+            return  _database.GeneralExpenseMemoForms.Where(c => (c.Active && c.IsSent && c.FiscalYear == yearNow && !c.IsHidden && c.ApprovalStatusEnum == 10 && ((!c.DocCheckerStaffId.HasValue && c.PlanFormApprovalStatusEnum == 10) || c.PlanFormApprovalStatusEnum == 230) && c.UnitChiefStaffId.HasValue && c.UnitChiefStaffId.Value == staffId && !c.UnitChiefSignDate.HasValue) || (c.PlanFormApprovalStatusEnum == 330 && ((c.ProjectManager1StaffId.HasValue && c.ProjectManager1StaffId.Value == staffId && !c.ProjectManager1SignDate.HasValue) || (c.ProjectManager2StaffId.HasValue && c.ProjectManager2StaffId.Value == staffId && !c.ProjectManager2SignDate.HasValue) || (c.ProjectManager3StaffId.HasValue && c.ProjectManager3StaffId.Value == staffId && !c.ProjectManager3SignDate.HasValue) || (c.ProjectManager4StaffId.HasValue && c.ProjectManager4StaffId.Value == staffId && !c.ProjectManager4SignDate.HasValue))) || (c.ApproverStaffId.HasValue && c.ApproverStaffId.Value == staffId && c.PlanFormApprovalStatusEnum == 980)).ToList();
         }
 
-        public List<PlanItem> GetPlanItemByBudgetTypeId(int BudgetId)
+        public List<BudgetType> BudgetTypeByYear(int Year)
         {
-            return _database.PlanItems.Where(x => x.Id == BudgetId).ToList();
+            return _database.BudgetTypes.Where(c => c.FiscalYear == Year && c.Active).OrderBy(c => c.Name).ToList();
+            
         }
-
-        //List<PlanType> IPlanServices.GetByFiscalYear(int Year)
-        //{
-        //    return _database.PlanTypes.Where(x => x.FiscalYear == Year && x.Active).OrderBy(x => x.Name).ToList();
-        //}
     }
 }
