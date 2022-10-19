@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.Accommodations\App.Accommodations.csproj" />
-    <ProjectReference Include="..\App.Accounting\App.Accounting.csproj" />
     <ProjectReference Include="..\App.CollaborationNetwork\App.EIS.csproj" />
     <ProjectReference Include="..\App.Executive\App.FIN.csproj" />
     <ProjectReference Include="..\App.Individual\App.Individual.csproj" />

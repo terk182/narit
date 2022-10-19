@@ -780,16 +780,6 @@
           "bin/placeholder/App.Accommodations.dll": {}
         }
       },
-      "App.Accounting/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/App.Accounting.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/App.Accounting.dll": {}
-        }
-      },
       "App.EIS/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2117,11 +2107,6 @@
       "path": "../App.Accommodations/App.Accommodations.csproj",
       "msbuildProject": "../App.Accommodations/App.Accommodations.csproj"
     },
-    "App.Accounting/1.0.0": {
-      "type": "project",
-      "path": "../App.Accounting/App.Accounting.csproj",
-      "msbuildProject": "../App.Accounting/App.Accounting.csproj"
-    },
     "App.EIS/1.0.0": {
       "type": "project",
       "path": "../App.CollaborationNetwork/App.EIS.csproj",
@@ -2171,7 +2156,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "App.Accommodations >= 1.0.0",
-      "App.Accounting >= 1.0.0",
       "App.EIS >= 1.0.0",
       "App.FIN >= 1.0.0",
       "App.General >= 1.0.0",
@@ -2218,9 +2202,6 @@
           "projectReferences": {
             "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
               "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
-            },
-            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj": {
-              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accounting\\App.Accounting.csproj"
             },
             "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
               "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"

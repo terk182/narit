@@ -1,7 +1,6 @@
 ﻿using App.Accommodations;
 using App.Accommodations.Model.Requests;
-using App.Accounting;
-using App.Accounting.Models;
+
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
