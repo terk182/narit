@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Controls\\App.Controls.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
       "projectName": "App.Controls",
-      "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Controls\\App.Controls.csproj",
+      "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
       "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Controls\\obj\\",
+      "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

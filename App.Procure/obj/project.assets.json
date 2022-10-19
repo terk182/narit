@@ -1954,11 +1954,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\daisy\\source\\repos\\narit\\App.Procure\\App.Procure.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
       "projectName": "App.Procure",
-      "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Procure\\App.Procure.csproj",
+      "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
       "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Procure\\obj\\",
+      "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1980,11 +1980,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\daisy\\source\\repos\\narit\\Data.Context\\Data.Context.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
