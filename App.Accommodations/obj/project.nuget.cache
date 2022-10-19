@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JKOmcI+ei5gQ7eO7eQVi+H7e6I4cnmvxHXR8wZLQv+PnsUBA25Acii1iVFCfZ8EuD5CDAMbd4U4PRAFUXDhX6A==",
+  "dgSpecHash": "GufLdoVUPgs0y73KAU/rIvJn/VlWTykE9zwLK4TzLGz2e8mXKFebNdz+xieuSYaab5gyKqXeaaG4TgvGPUdJZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daisy\\source\\repos\\narit\\App.Accommodations\\App.Accommodations.csproj",
+  "projectFilePath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\daisy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\daisy\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
