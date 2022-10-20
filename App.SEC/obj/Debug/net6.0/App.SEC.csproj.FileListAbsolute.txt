@@ -22,3 +22,6 @@ C:\Users\daisy\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\App.SEC.dll
 C:\Users\daisy\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\refint\App.SEC.dll
 C:\Users\daisy\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\App.SEC.pdb
 C:\Users\daisy\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\ref\App.SEC.dll
+C:\Users\daisy\Documents\GitHub\narit\App.SEC\bin\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\Documents\GitHub\narit\App.SEC\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\App.SEC.csproj.CopyComplete

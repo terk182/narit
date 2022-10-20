@@ -2,6 +2,8 @@
 using App.Plan;
 using App.Plan.Dtos;
 using App.Procure;
+using App.SEC;
+using App.SEC.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
@@ -17,12 +19,13 @@ namespace narit_mis_api.Controllers
     public class SecController : Controller
     {
         protected readonly IPlanServices _Service;
+        protected readonly ISecServices _SecServices;
         private readonly ILogger _Logger;
 
-        public SecController(ILogger<SecController> logger, IPlanServices PlanServices)
+        public SecController(ILogger<SecController> logger, IPlanServices PlanServices, ISecServices SecServices)
         {
             _Service = PlanServices;
-
+            _SecServices = SecServices;
             _Logger = logger;
 
             //_configuration = Configuration;
@@ -2039,10 +2042,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/SelectViewPlanForActivityByDepartment")]
-        public IActionResult SelectViewPlanForActivityByDepartment()
+        [Route("/Plan/Operate/SelectViewPlanForActivityByDepartment/GetByFiscalYear/{year}")]
+        public IActionResult SelectViewPlanForActivityByDepartment(int year)
         {
-            return Json("SelectViewPlanForActivityByDepartment");
+            var data = _SecServices.DepartmentGetByFiscalYear(year);
+            return Json(data);
         }
 
 
@@ -2836,9 +2840,34 @@ namespace narit_mis_api.Controllers
         [Route("/Plan/Setup/BudgetTypeSetup")]
         public IActionResult BudgetTypeSetup()
         {
+
             return Json("BudgetTypeSetup");
         }
+        [HttpGet]
+        [Route("/Plan/Setup/BudgetTypeSetup/GetByFiscalYear/{GetByFiscalYear}")]
+        public IActionResult BudgetTypeSetupGetByFiscalYear(int GetByFiscalYear)
+        {
+            var data = _SecServices.GetByFiscalYear(GetByFiscalYear);
+            var _BudgetType = new List<BudgetTypeDto>();
+            foreach (var item in data)
+            {
+                _BudgetType.Add(new BudgetTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    ParentBudgetTypeId = item.ParentBudgetTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ExpenseTypeEnum = item.ExpenseTypeEnum,
+                    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
 
+                });
+
+            }
+
+            return Json(_BudgetType);
+        }
 
         [HttpGet]
         [Route("/Plan/Setup/CostTypeSetup")]
@@ -2880,6 +2909,20 @@ namespace narit_mis_api.Controllers
         public IActionResult PlanCRUDPolicySetup()
         {
             return Json("PlanCRUDPolicySetup");
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/PlanCRUDPolicySetup/GetPolicy/{year}")]
+        public IActionResult PlanCRUDPolicySetupGetPolicy(int year)
+        {
+            var data = _SecServices.GetPolicy(year);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/PlanCRUDPolicySetup/SaveButton")]
+        public IActionResult PlanCRUDPolicySaveButton_Click_add(PlanCrudpolicy _PlanCrudpolicy)
+        {
+            var response = _SecServices.AddUpdatePlanCrudpolicy(_PlanCrudpolicy);
+            return Json(response);
         }
 
 
