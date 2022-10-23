@@ -148,9 +148,23 @@ namespace App.SEC
                                 _UsedBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
                                 _RemainBudgetPlanView = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
                                 _TotalBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
-                                //_InwardBudgetTransfers = _MonthlyForecasts.BudgetTransferInwardPlanItems.Where()
-                                //_InProcessBudget = 
-
+                            //_InwardBudgetTransfers = _MonthlyForecasts.BudgetTransferInwardPlanItems.Where()
+                            //_InProcessBudget = 
+                            //var BudgetTrans_obj = new List<ViewPlanForActivityByDepartmentTable>();
+                            //foreach (var BudgetTrans in _MonthlyForecasts.BudgetTransferInwardPlanItems)
+                            //{
+                            //    BudgetTrans_obj.Add(new ViewPlanForActivityByDepartmentTable
+                            //    {
+                            //        Id = BudgetTrans.Id,
+                            //        Name = BudgetTrans.Name,
+                            //        FiscalYear = BudgetTrans.FiscalYear,
+                            //        TotalBudget = BudgetTrans,
+                            //        TotalBudgetCache = _TotalBudgetCache,
+                            //        NetBudgetCache = _NetBudgetCache,
+                            //        UsedBudgetCache = _UsedBudgetCache,
+                            //        RemainBudgetCache = _RemainBudgetPlanView,
+                            //    });
+                            //}
                             }
                             _datalist_sub2.Add(new ViewPlanForActivityByDepartmentTable
                             {
@@ -162,6 +176,7 @@ namespace App.SEC
                                 NetBudgetCache = _NetBudgetCache,
                                 UsedBudgetCache = _UsedBudgetCache,
                                 RemainBudgetCache = _RemainBudgetPlanView,
+                                
                             });
 
 
@@ -211,6 +226,36 @@ namespace App.SEC
           
         }
 
-        
+        public List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear)
+        {
+            var _PlanTypes =  _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear).Include(x => x.InverseParentPlanType).Include(x => x.PlanCores).ToList();
+            var _PlanTypeDto_list = new List<PlanTypeDto>();
+            
+            string n = "";
+            foreach (var item in _PlanTypes)
+            {
+                if (item.ParentPlanType != null)
+                {
+                    
+                    n = item.ParentPlanType.Name;
+                }
+                
+                
+                _PlanTypeDto_list.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight,
+                    ParentPlanType = n
+                  
+
+                }); 
+            }
+            return _PlanTypeDto_list;
+        }
     }
 }

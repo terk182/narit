@@ -2052,10 +2052,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType")]
-        public IActionResult SelectViewPlanForActivityByPlanType()
+        [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYear/{year}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYear(int year)
         {
-            return Json("SelectViewPlanForActivityByPlanType");
+            var data = _SecServices.PlanTypeGetByFiscalYear(year);
+            return Json(data);
         }
 
 
