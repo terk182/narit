@@ -73,3 +73,11 @@ C:/Users/daisy/Documents/GitHub/narit/App.Accommodations/obj/Debug/net6.0/ref/Ap
 /Users/top/development/narit/App.Accommodations/obj/Debug/net6.0/refint/App.Accommodations.dll
 /Users/top/development/narit/App.Accommodations/obj/Debug/net6.0/App.Accommodations.pdb
 /Users/top/development/narit/App.Accommodations/obj/Debug/net6.0/ref/App.Accommodations.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\refint\App.Accommodations.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Accommodations\obj\Debug\net6.0\App.Accommodations.pdb

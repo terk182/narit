@@ -49,3 +49,11 @@ C:/Users/daisy/Documents/GitHub/narit/App.Plan/obj/Debug/net6.0/ref/App.Plan.dll
 /Users/top/development/narit/App.Plan/obj/Debug/net6.0/refint/App.Plan.dll
 /Users/top/development/narit/App.Plan/obj/Debug/net6.0/App.Plan.pdb
 /Users/top/development/narit/App.Plan/obj/Debug/net6.0/ref/App.Plan.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\refint\App.Plan.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Plan\obj\Debug\net6.0\App.Plan.pdb

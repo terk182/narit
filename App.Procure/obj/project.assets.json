@@ -1948,36 +1948,43 @@
     ]
   },
   "packageFolders": {
-    "/Users/top/.nuget/packages/": {}
+    "C:\\Users\\daisy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/top/development/narit/App.Procure/App.Procure.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
       "projectName": "App.Procure",
-      "projectPath": "/Users/top/development/narit/App.Procure/App.Procure.csproj",
-      "packagesPath": "/Users/top/.nuget/packages/",
-      "outputPath": "/Users/top/development/narit/App.Procure/obj/",
+      "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
+      "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/top/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/top/development/narit/App.CollaborationNetwork/App.EIS.csproj": {
-              "projectPath": "/Users/top/development/narit/App.CollaborationNetwork/App.EIS.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "/Users/top/development/narit/Data.Context/Data.Context.csproj": {
-              "projectPath": "/Users/top/development/narit/Data.Context/Data.Context.csproj"
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -2007,7 +2014,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-rc.2.22477.23/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

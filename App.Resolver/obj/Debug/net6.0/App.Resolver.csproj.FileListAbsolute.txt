@@ -143,3 +143,11 @@ C:/Users/daisy/Documents/GitHub/narit/App.Resolver/obj/Debug/net6.0/ref/App.Reso
 /Users/top/development/narit/App.Resolver/obj/Debug/net6.0/refint/App.Resolver.dll
 /Users/top/development/narit/App.Resolver/obj/Debug/net6.0/App.Resolver.pdb
 /Users/top/development/narit/App.Resolver/obj/Debug/net6.0/ref/App.Resolver.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\refint\App.Resolver.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.pdb

@@ -49,3 +49,11 @@ C:/Users/daisy/Documents/GitHub/narit/App.Procure/obj/Debug/net6.0/ref/App.Procu
 /Users/top/development/narit/App.Procure/obj/Debug/net6.0/refint/App.Procure.dll
 /Users/top/development/narit/App.Procure/obj/Debug/net6.0/App.Procure.pdb
 /Users/top/development/narit/App.Procure/obj/Debug/net6.0/ref/App.Procure.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\refint\App.Procure.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Procure\obj\Debug\net6.0\App.Procure.pdb
