@@ -44,34 +44,38 @@ namespace App.SEC
             var result = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active).OrderBy(x => x.Name).ToList();
             foreach(var item in result)
             {
-               // department.Id = item.ParentDepartment;
-                foreach(var sub_department in item.InverseParentDepartment)
+                // department.Id = item.ParentDepartment;
+                
+                foreach (var sub_department in item.InverseParentDepartment)
                 {
-                    foreach (var sub1_department in sub_department.InverseParentDepartment)
-                    {
-                        department_Parent.Add(new DepartmentDto
-                        {
-                            Id = sub1_department.Id,
-                            Name = sub1_department.Name,
-                            FiscalYear = sub1_department.FiscalYear,
-                            Active = sub1_department.Active,
-                            ReferenceOldId = sub1_department.ReferenceOldId,
-                            ParentDepartmentId = sub1_department.ParentDepartmentId,
-                        });
-                    }
+                    
+                    
+                            foreach (var sub1_department in sub_department.InverseParentDepartment)
+                            {
+                                department_Parent.Add(new DepartmentDto
+                                {
+                                    Id = sub1_department.Id,
+                                    Name = sub1_department.Name,
+                                    FiscalYear = sub1_department.FiscalYear,
+                                    Active = sub1_department.Active,
+                                    ReferenceOldId = sub1_department.ReferenceOldId,
+                                    ParentDepartmentId = sub1_department.ParentDepartmentId,
+                                });
+                            }
+
+
                         department.Add(new DepartmentDto
-                    {
-                        Id = sub_department.Id,
-                        Name = sub_department.Name,
-                        FiscalYear = sub_department.FiscalYear,
-                        Active = sub_department.Active,
-                        ReferenceOldId = sub_department.ReferenceOldId,
-                        ParentDepartmentId = sub_department.ParentDepartmentId,
-                        Department = department_Parent,
-                        }
-
-
-                    );
+                        {
+                                Id = sub_department.Id,
+                                Name = sub_department.Name,
+                                FiscalYear = sub_department.FiscalYear,
+                                Active = sub_department.Active,
+                                ReferenceOldId = sub_department.ReferenceOldId,
+                                ParentDepartmentId = sub_department.ParentDepartmentId,
+                                Department = department_Parent,
+                                }
+                        );
+                    
                 }
                 response.Add(new DepartmentDto
                 {
@@ -82,9 +86,8 @@ namespace App.SEC
                     ReferenceOldId = item.ReferenceOldId,
                     ParentDepartmentId = item.ParentDepartmentId,
                     Department = department
-                }
-
-            );
+                });
+       
             }
              return response;
         }
@@ -93,6 +96,34 @@ namespace App.SEC
         {
             return _database.BudgetTypes.Where(x => x.FiscalYear == FiscalYear ).ToList();
 
+        }
+
+        public List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId)
+        {
+            decimal _TotalBudgetCache = 0;
+            decimal _TotalAmount = 0;
+            decimal _NetAmount = 0;
+            decimal ll = 0;
+            var loop1 = new List<PlanItem>();
+            var _datalist = new List<ViewPlanForActivityByDepartmentTable>();
+            var _datalist_sub = new List<ViewPlanForActivityByDepartmentTable>();
+            var data = _database.Departments.Where(x => x.ParentDepartmentId == departmentId && x.Active ).Include(x => x.PlanActivities).Include(x=> x.PlanCores).ToList();
+            foreach (var department in data)
+            {
+                foreach(var item in department.PlanActivities)
+                {
+                    var planItem_list = _database.PlanItems.Where(x => x.PlanActivityId == item.Id).Include(x => x.MonthlyForecasts).Include(x => x.BudgetTransferInwardPlanItems).Include(x => x.BudgetTransferOutwardPlanItems).ToList();
+                    foreach (var _MonthlyForecasts in planItem_list)
+                    {
+                        _TotalBudgetCache +=  _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece);
+                        _TotalAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount );
+                        _NetAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
+                    }
+                }
+
+            }
+           // var table_data = _database.Departments.Where(x => x.FiscalYear == data[0].FiscalYear).ToList();
+            return _datalist;
         }
 
         public PlanCrudpolicy GetPolicy(int year)
