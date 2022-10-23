@@ -32,6 +32,9 @@ namespace App.SEC.Dtos
 
         public decimal EntireNetBudget { get; set; }
 
+        public decimal InProcessBudget { get; set; }
+        public decimal CheckViewUsedBudget { get; set; }
+        public decimal UsedBudget { get; set; }
         public List<ViewPlanForActivityByDepartmentTable>? subdata { get; set; }
     }
 }

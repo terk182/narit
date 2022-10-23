@@ -2257,10 +2257,10 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanForActivityByDepartment/GetById/{DepartmentID}")]
-        public IActionResult ViewPlanForActivityByDepartment(int DepartmentID)
+        [Route("/Plan/Operate/ViewPlanForActivityByDepartment/GetById/{DepartmentID}/{FiscalYear}")]
+        public IActionResult ViewPlanForActivityByDepartment(int DepartmentID, int FiscalYear)
         {
-            var data = _SecServices.GetById(DepartmentID);
+            var data = _SecServices.GetById(DepartmentID, FiscalYear);
             return Json(data);
         }
 

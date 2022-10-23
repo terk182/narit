@@ -16,6 +16,6 @@ namespace App.SEC
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
-        List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId);
+        List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
     }
 }
