@@ -112,6 +112,9 @@ namespace App.SEC
             {
                 foreach(var item in department.PlanActivities)
                 {
+                    _TotalBudgetCache = 0;
+                    _TotalAmount = 0;
+                    _NetAmount = 0;
                     var planItem_list = _database.PlanItems.Where(x => x.PlanActivityId == item.Id).Include(x => x.MonthlyForecasts).Include(x => x.BudgetTransferInwardPlanItems).Include(x => x.BudgetTransferOutwardPlanItems).ToList();
                     foreach (var _MonthlyForecasts in planItem_list)
                     {
@@ -119,7 +122,28 @@ namespace App.SEC
                         _TotalAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount );
                         _NetAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
                     }
+                    _datalist_sub.Add(new ViewPlanForActivityByDepartmentTable
+                    {
+                        Name = item.Name,
+                        TotalBudget = _TotalBudgetCache,
+                       
+                        
+
+
+                    });
+
+
                 }
+
+
+                _datalist.Add(new ViewPlanForActivityByDepartmentTable
+                {
+                    Name = department.Name,
+                    TotalBudget = _TotalBudgetCache,
+                    subdata = _datalist_sub
+
+
+                });
 
             }
            // var table_data = _database.Departments.Where(x => x.FiscalYear == data[0].FiscalYear).ToList();
