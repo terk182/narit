@@ -1,4 +1,21 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{B2BE3EFC-6435-4EBB-8A9A-194E67CFB182}|Default">
-  <MonoDevelop.Ide.ItemProperties.Presentation.narit__mis__api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Presentation.narit__mis__api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="narit_mis_api" expanded="True">
+            <Node name="Libraries" expanded="True" />
+            <Node name="Presentation" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
