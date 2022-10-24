@@ -1,7 +1,14 @@
 ﻿using App.EIS.Models;
+using App.PathDetail;
 using App.Plan;
 using App.Plan.Dtos;
 using App.Procure;
+using App.SEC;
+using App.SEC.Dtos;
+using App.SEC.enums;
+using App.SEC.helper;
+using App.SEC.Models;
+using App.SEC.Models.Requests;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
@@ -17,11 +24,14 @@ namespace narit_mis_api.Controllers
     public class SecController : Controller
     {
         protected readonly IPlanServices _Service;
+        protected readonly ISecServices _SecServices;
+       
         private readonly ILogger _Logger;
 
-        public SecController(ILogger<SecController> logger, IPlanServices PlanServices)
+        public SecController(ILogger<SecController> logger, IPlanServices PlanServices, ISecServices SecServices)
         {
             _Service = PlanServices;
+            _SecServices = SecServices;
 
             _Logger = logger;
 
@@ -2039,19 +2049,21 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/SelectViewPlanForActivityByDepartment")]
-        public IActionResult SelectViewPlanForActivityByDepartment()
+        [Route("/Plan/Operate/SelectViewPlanForActivityByDepartment/GetByFiscalYear/{year}")]
+        public IActionResult SelectViewPlanForActivityByDepartment(int year)
         {
-            return Json("SelectViewPlanForActivityByDepartment");
+            var data = _SecServices.DepartmentGetByFiscalYear(year);
+            return Json(data);
         }
 
 
 
         [HttpGet]
-        [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType")]
-        public IActionResult SelectViewPlanForActivityByPlanType()
+        [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYear/{year}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYear(int year)
         {
-            return Json("SelectViewPlanForActivityByPlanType");
+            var data = _SecServices.PlanTypeGetByFiscalYear(year);
+            return Json(data);
         }
 
 
@@ -2253,10 +2265,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanForActivityByDepartment")]
-        public IActionResult ViewPlanForActivityByDepartment()
+        [Route("/Plan/Operate/ViewPlanForActivityByDepartment/GetById/{DepartmentID}/{FiscalYear}")]
+        public IActionResult ViewPlanForActivityByDepartment(int DepartmentID, int FiscalYear)
         {
-            return Json("ViewPlanForActivityByDepartment");
+            var data = _SecServices.GetById(DepartmentID, FiscalYear);
+            return Json(data);
         }
 
 
@@ -2832,13 +2845,56 @@ namespace narit_mis_api.Controllers
         #endregion
 
         #region Plan Setup
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/BudgetTypeSetup")]
-        public IActionResult BudgetTypeSetup()
+        public IActionResult BudgetTypeSetup(BudgetTypeRequest request)
         {
-            return Json("BudgetTypeSetup");
+            var data = _SecServices.BudgetTypeSetup(request);
+            return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Plan/Setup/BudgetTypeSetup/GovExpenseType")]
+        public IActionResult GovExpenseType()
+        {
+
+            var data = _SecServices.GovExpenseType("./json/GovExpenseType.json");
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/BudgetTypeSetup/ExpenseType")]
+        public IActionResult ExpenseType()
+        {
+
+            var data = _SecServices.GovExpenseType("./json/ExpenseType.json");
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Setup/BudgetTypeSetup/GetByFiscalYear/{GetByFiscalYear}")]
+        public IActionResult BudgetTypeSetupGetByFiscalYear(int GetByFiscalYear)
+        {
+            var data = _SecServices.GetByFiscalYear(GetByFiscalYear);
+            var _BudgetType = new List<BudgetTypeDto>();
+            foreach (var item in data)
+            {
+                _BudgetType.Add(new BudgetTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    ParentBudgetTypeId = item.ParentBudgetTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ExpenseTypeEnum = item.ExpenseTypeEnum,
+                    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+
+                });
+
+            }
+
+            return Json(_BudgetType);
+        }
 
         [HttpGet]
         [Route("/Plan/Setup/CostTypeSetup")]
@@ -2849,30 +2905,52 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/DepartmentSetup")]
-        public IActionResult DepartmentSetup()
+        public IActionResult DepartmentSetup(DepartmentRequest request)
         {
-            return Json("DepartmentSetup");
+            var data = _SecServices.DepartmentSetup(request);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/DepartmentSetup/GetByFiscalYear/{year}")]
+        public IActionResult DepartmentSetupGetByFiscalYear(int year)
+        {
+            var data = _SecServices.DepartmentListGetByFiscalYear(year);
+            return Json(data);
         }
 
-
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/FundTypeSetup")]
-        public IActionResult FundTypeSetup()
+        public IActionResult FundTypeSetup(FundTypeRequest request)
         {
-            return Json("FundTypeSetup");
+            var data = _SecServices.FundTypeSetup(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Setup/FundTypeSetup/GetByFiscalYear/{year}")]
+        public IActionResult FundTypeSetupGetByFiscalYear(int year)
+        {
+            var data = _SecServices.FundTypeSetupByFiscalYear(year);
+            return Json(data);
         }
 
 
-
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/GovernmentDisbursementGoalSetup")]
-        public IActionResult GovernmentDisbursementGoalSetup()
+        public IActionResult GovernmentDisbursementGoalSetup(GovernmentDisbursementGoal request)
         {
+            var data = _SecServices.GovernmentDisbursementGoalSetup(request);
             return Json("GovernmentDisbursementGoalSetup");
         }
-
+        [HttpGet]
+        [Route("/Plan/Setup/GovernmentDisbursementGoalSetup/GetByFiscalYear/{year}")]
+        public IActionResult GovernmentDisbursementGoalView(int year)
+        {
+            var data = _SecServices.GovernmentDisbursementGoalByFiscalYear(year);
+            return Json(data);
+        }
 
 
         [HttpGet]
@@ -2880,6 +2958,20 @@ namespace narit_mis_api.Controllers
         public IActionResult PlanCRUDPolicySetup()
         {
             return Json("PlanCRUDPolicySetup");
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/PlanCRUDPolicySetup/GetPolicy/{year}")]
+        public IActionResult PlanCRUDPolicySetupGetPolicy(int year)
+        {
+            var data = _SecServices.GetPolicy(year);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/PlanCRUDPolicySetup/SaveButton")]
+        public IActionResult PlanCRUDPolicySaveButton_Click_add(PlanCrudpolicy _PlanCrudpolicy)
+        {
+            var response = _SecServices.AddUpdatePlanCrudpolicy(_PlanCrudpolicy);
+            return Json(response);
         }
 
 
@@ -2911,11 +3003,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/PlanTypeSetup")]
-        public IActionResult PlanTypeSetup()
+        public IActionResult PlanTypeSetup(PlanTypeRequest request)
         {
-            return Json("PlanTypeSetup");
+            var data = _SecServices.PlanTypeSetup(request);
+            return Json(data);
         }
 
 
@@ -2933,27 +3026,49 @@ namespace narit_mis_api.Controllers
 
         [HttpGet]
         [Route("/Plan/Setup/PrinciplePlanTagSetup")]
-        public IActionResult PrinciplePlanTagSetup()
+        public IActionResult PrinciplePlanTag()
         {
-            return Json("PrinciplePlanTagSetup");
+            var data = _SecServices.PrinciplePlanTagSetup();
+            return Json(data);
         }
 
+        [HttpPost]
+        [Route("/Plan/Setup/PrinciplePlanTagSetup/Setup")]
+        public IActionResult PrinciplePlanTagSetup(PrinciplePlanTagsRequest request)
+        {
+            var data = _SecServices.PrinciplePlanTagSetupData(request);
+            return Json(data);
+        }
 
-
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/StrategicIndicatorSetup")]
-        public IActionResult StrategicIndicatorSetup()
+        public IActionResult StrategicIndicatorSetup(StrategicIndicatorRequest request)
         {
-            return Json("StrategicIndicatorSetup");
+            var data = _SecServices.StrategicIndicatorSetup(request);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/StrategicIndicatorSetup/FiscalYear/{year}")]
+        public IActionResult StrategicIndicatorSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.StrategicIndicatorSetupByFiscalYear(year);
+            return Json(data);
         }
 
-
-
         [HttpGet]
-        [Route("/Plan/Setup/StrategySetup")]
-        public IActionResult StrategySetup()
+        [Route("/Plan/Setup/StrategySetup/FiscalYear/{year}")]
+        public IActionResult StrategySetupByFiscalYear(int year)
         {
-            return Json("StrategySetup");
+            var data = _SecServices.StrategySetupByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/Plan/Setup/StrategySetup")]
+        public IActionResult StrategySetup(StrategySetupModel request)
+        {
+            var data = _SecServices.StrategySetup(request);
+            return Json(data);
         }
 
 

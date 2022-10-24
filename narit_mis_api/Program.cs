@@ -12,7 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 //var r = new DependencyResolver();
 builder.Services.AddCustomServices();
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
+
 //builder.Services.AddCors(c =>
 //{
 //    c.AddPolicy("AllowOrigin", Options => Options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

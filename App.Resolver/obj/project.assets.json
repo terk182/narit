@@ -868,6 +868,9 @@
       "App.SEC/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/App.SEC.dll": {}
         },
