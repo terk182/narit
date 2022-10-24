@@ -4,6 +4,7 @@ using App.Plan.Dtos;
 using App.Procure;
 using App.SEC;
 using App.SEC.Dtos;
+using App.SEC.Models.Requests;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
@@ -2992,13 +2993,20 @@ namespace narit_mis_api.Controllers
             return Json("StrategicIndicatorSetup");
         }
 
-
-
         [HttpGet]
-        [Route("/Plan/Setup/StrategySetup")]
-        public IActionResult StrategySetup()
+        [Route("/Plan/Setup/StrategySetup/FiscalYear/{year}")]
+        public IActionResult StrategySetupByFiscalYear(int year)
         {
-            return Json("StrategySetup");
+            var data = _SecServices.StrategySetupByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/Plan/Setup/StrategySetup")]
+        public IActionResult StrategySetup(StrategySetupModel request)
+        {
+            var data = _SecServices.StrategySetup(request);
+            return Json(data);
         }
 
 

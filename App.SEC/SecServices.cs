@@ -1,5 +1,6 @@
 ﻿using App.SEC.Dtos;
 using App.SEC.Models;
+using App.SEC.Models.Requests;
 using App.SEC.Responses;
 using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
@@ -256,6 +257,52 @@ namespace App.SEC
                 }); 
             }
             return _PlanTypeDto_list;
+        }
+
+        public SecBaseResponse StrategySetup(StrategySetupModel request)
+        {
+
+            var _Strategy = new Strategy();
+            _Strategy.Id = (int)request.Id;
+            _Strategy.Name = request.mame;
+            _Strategy.Active = request.Active;
+            _Strategy.FiscalYear = (int)request.FiscalYear;
+            if (request.ParentStrategyId != 0)
+            {
+                _Strategy.ParentStrategyId = (int)request.ParentStrategyId;
+            }
+            
+
+
+            _database.Entry(_Strategy).State = _Strategy.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear)
+        {
+
+            var result = new List<StrategySetupModel>();
+            var data =   _database.Strategies.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategySetupModel
+                {
+                    Id = item.Id,
+                    mame = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategyId = item.ParentStrategyId,
+                });
+            }
+            return result;
         }
     }
 }

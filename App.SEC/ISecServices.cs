@@ -1,5 +1,6 @@
 ﻿using App.SEC.Dtos;
 using App.SEC.Models;
+using App.SEC.Models.Requests;
 using App.SEC.Responses;
 using narit_mis_api.Models;
 using System;
@@ -17,7 +18,9 @@ namespace App.SEC
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
-
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
+
+        SecBaseResponse StrategySetup(StrategySetupModel request);
+        List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
     }
 }
