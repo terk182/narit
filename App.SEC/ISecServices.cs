@@ -22,5 +22,7 @@ namespace App.SEC
 
         SecBaseResponse StrategySetup(StrategySetupModel request);
         List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
+
+        SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
     }
 }

@@ -259,6 +259,29 @@ namespace App.SEC
             return _PlanTypeDto_list;
         }
 
+        public SecBaseResponse PlanTypeSetup(PlanTypeRequest request)
+        {
+            var _PlanType = new PlanType();
+            _PlanType.Id = request.Id;
+            _PlanType.Name = request.Name;
+            _PlanType.FiscalYear = request.FiscalYear;
+            _PlanType.Active = request.Active;
+            if(request.ParentPlanTypeId != 0)
+            {
+                _PlanType.ParentPlanTypeId = request.ParentPlanTypeId;
+            }
+            _database.Entry(_PlanType).State = _PlanType.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _PlanType.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
         public SecBaseResponse StrategySetup(StrategySetupModel request)
         {
 

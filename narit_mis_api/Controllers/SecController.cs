@@ -2957,11 +2957,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/PlanTypeSetup")]
-        public IActionResult PlanTypeSetup()
+        public IActionResult PlanTypeSetup(PlanTypeRequest request)
         {
-            return Json("PlanTypeSetup");
+            var data = _SecServices.PlanTypeSetup(request);
+            return Json(data);
         }
 
 
