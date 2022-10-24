@@ -10,3 +10,15 @@ C:\Users\daisy\source\repos\narit\App.Controls\obj\Debug\net6.0\App.Controls.dll
 C:\Users\daisy\source\repos\narit\App.Controls\obj\Debug\net6.0\refint\App.Controls.dll
 C:\Users\daisy\source\repos\narit\App.Controls\obj\Debug\net6.0\App.Controls.pdb
 C:\Users\daisy\source\repos\narit\App.Controls\obj\Debug\net6.0\ref\App.Controls.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\bin\Debug\net6.0\App.Controls.deps.json
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\bin\Debug\net6.0\App.Controls.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\bin\Debug\net6.0\App.Controls.pdb
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\refint\App.Controls.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\App.Controls.pdb
+C:\Users\daisy\Documents\GitHub\narit\App.Controls\obj\Debug\net6.0\ref\App.Controls.dll
