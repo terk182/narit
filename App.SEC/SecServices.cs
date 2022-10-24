@@ -1,6 +1,9 @@
 ﻿using App.SEC.Dtos;
+using App.SEC.enums;
+using App.SEC.helper;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
+using App.SEC.Models.Responses;
 using App.SEC.Responses;
 using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
@@ -91,6 +94,93 @@ namespace App.SEC
        
             }
              return response;
+        }
+
+        public List<DepartmentRespone> DepartmentListGetByFiscalYear(int FiscalYear)
+        {
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
+            var result = new List<DepartmentRespone>();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentRespone
+                {
+                    Id=item.Id,
+                    Name=item.Name,
+                    FiscalYear=item.FiscalYear,
+                    Active=item.Active,
+                    ParentDepartmentId =item.ParentDepartmentId,
+                });
+
+                
+            }
+            return result;
+        }
+
+        public SecBaseResponse DepartmentSetup(DepartmentRequest request)
+        {
+            var _Department = new Department();
+            _Department.Id = request.Id;
+            _Department.Name = request.Name;
+            _Department.FiscalYear = request.FiscalYear;
+            _Department.Active = request.Active;
+           
+            if(request.ParentDepartmentId != 0)
+            {
+                _Department.ParentDepartmentId = request.ParentDepartmentId;
+            }
+            _database.Entry(_Department).State = _Department.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Department.Id == 0 ? "update" : "insert";
+            return response;
+     
+        }
+
+        public SecBaseResponse FundTypeSetup(FundTypeRequest request)
+        {
+            var _FundType = new FundType();
+            _FundType.Id = request.Id;
+            _FundType.Name = request.Name;
+            _FundType.FiscalYear = request.FiscalYear;
+            _FundType.Active = request.Active;
+
+            if (request.ParentFundTypeId != 0)
+            {
+                _FundType.ParentFundTypeId = request.ParentFundTypeId;
+            }
+            _database.Entry(_FundType).State = _FundType.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _FundType.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear)
+        { 
+            var _result = new List<FundTypeRespone>();
+            var data = _database.FundTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new FundTypeRespone
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    ParentFundTypeId = item.ParentFundTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                });
+            }
+            return _result;
         }
 
         public List<BudgetType> GetByFiscalYear(int FiscalYear)
@@ -227,6 +317,15 @@ namespace App.SEC
           
         }
 
+        public List<GovExpenseList> GovExpenseType(string path)
+        {
+           
+                var json = new enumconvent<GovExpenseList>(path);
+
+                return json.JsonNetResult()!;
+            
+        }
+
         public List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear)
         {
             var _PlanTypes =  _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear).Include(x => x.InverseParentPlanType).Include(x => x.PlanCores).ToList();
@@ -292,7 +391,7 @@ namespace App.SEC
             _Strategy.FiscalYear = (int)request.FiscalYear;
             if (request.ParentStrategyId != 0)
             {
-                _Strategy.ParentStrategyId = (int)request.ParentStrategyId;
+                _Strategy.ParentStrategyId = request.ParentStrategyId;
             }
             
 
@@ -326,6 +425,171 @@ namespace App.SEC
                 });
             }
             return result;
+        }
+
+        public SecBaseResponse BudgetTypeSetup(BudgetTypeRequest request)
+        {
+            var _BudgetType = new BudgetType();
+            _BudgetType.Id = request.Id;
+            _BudgetType.Name = request.Name;
+            _BudgetType.Active = request.Active;
+            _BudgetType.FiscalYear = (int)request.FiscalYear;
+            _BudgetType.GovExpenseTypeEnum = request.GovExpenseTypeEnum;
+            _BudgetType.ExpenseTypeEnum = request.ExpenseTypeEnum;
+            if (request.ParentBudgetTypeId != 0)
+            {
+                _BudgetType.ParentBudgetTypeId = request.ParentBudgetTypeId;
+            }
+
+
+
+            _database.Entry(_BudgetType).State = _BudgetType.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _BudgetType.Id == 0 ? "update" : "insert";
+            return response;
+           
+        }
+
+        public SecBaseResponse StrategicIndicatorSetup(StrategicIndicatorRequest request)
+        {
+            var _StrategicIndicator = new StrategicIndicator();
+            _StrategicIndicator.Id = request.Id;
+            _StrategicIndicator.Name = request.Name;
+            _StrategicIndicator.Active = request.Active;
+            _StrategicIndicator.FiscalYear = request.FiscalYear;
+            _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+            _StrategicIndicator.Unit = request.Unit;
+            _StrategicIndicator.Amount = request.Amount;
+            _StrategicIndicator.Weight = request.Weight;
+            if (request.ParentStrategicIndicatorId != 0)
+            {
+                _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+            }
+
+
+
+            _database.Entry(_StrategicIndicator).State = _StrategicIndicator.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _StrategicIndicator.Id == 0 ? "update" : "insert";
+            return response;
+         
+        }
+
+        public List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
+        {
+            var result = new List<StrategicIndicatorResponse>();
+            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategicIndicatorResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    Unit = item.Unit,
+                    Amount = item.Amount,
+                    Weight = item.Weight
+
+                });
+            }
+            return result;
+        }
+
+        public List<PrinciplePlanTagsResponse> PrinciplePlanTagSetup()
+        {
+            var loop1 = new List<PrinciplePlanTagsResponse>();
+            var data = _database.PrinciplePlanTags.Where(x=> x.ParentPrinciplePlanTagId == null && x.Active).Include(x => x.InverseParentPrinciplePlanTag).ToList();
+
+            foreach(var item in data)
+            {
+
+                        var loop2 = new List<PrinciplePlanTagsResponse>();
+            
+            
+                        foreach (var item_1 in item.InverseParentPrinciplePlanTag)
+                        {
+                            loop2.Add(new PrinciplePlanTagsResponse
+                            {
+                                Id = item_1.Id,
+                                Name = item_1.Name,
+                                Active = item_1.Active,
+                                Weight = item_1.Weight,
+                                ParentPrinciplePlanTagId = item_1.ParentPrinciplePlanTagId
+                            });
+                        }
+                loop1.Add(new PrinciplePlanTagsResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    Weight = item.Weight,
+                    ParentPrinciplePlanTagId = item.ParentPrinciplePlanTagId,
+                    ParentPrinciplePlanTag = loop2
+                });
+
+            }
+            return loop1;
+        }
+
+        public SecBaseResponse PrinciplePlanTagSetupData(PrinciplePlanTagsRequest request)
+        {
+            var _PrinciplePlanTag = new PrinciplePlanTag();
+            _PrinciplePlanTag.Id = request.Id;
+            _PrinciplePlanTag.Name = request.Name;
+            _PrinciplePlanTag.Active = request.Active;
+            
+            if (request.ParentPrinciplePlanTagId != 0)
+            {
+                _PrinciplePlanTag.ParentPrinciplePlanTagId = request.ParentPrinciplePlanTagId;
+            }
+
+
+
+            _database.Entry(_PrinciplePlanTag).State = _PrinciplePlanTag.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _PrinciplePlanTag.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
+
+        public SecBaseResponse GovernmentDisbursementGoalSetup(GovernmentDisbursementGoal request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<GovernmentDisbursementGoal> GovernmentDisbursementGoalByFiscalYear(int FiscalYear)
+        {
+            return _database.GovernmentDisbursementGoals.Where(x => x.FiscalYear == FiscalYear && x.Active).ToList();
+            
         }
     }
 }
