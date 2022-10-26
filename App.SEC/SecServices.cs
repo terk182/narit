@@ -661,5 +661,145 @@ namespace App.SEC
             return _PlanTypeDto_list;
         }
 
+        public List<FundTypeRespone> SearchPlanActivityFundTypeSetupByFiscalYear(int FiscalYear)
+        {
+            var _result = new List<FundTypeRespone>();
+            var data = _database.FundTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new FundTypeRespone
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    ParentFundTypeId = item.ParentFundTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                });
+            }
+            return _result;
+        }
+
+        public List<DepartmentRespone> SearchPlanActivityDepartmentListGetByFiscalYear(int FiscalYear)
+        {
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
+            var result = new List<DepartmentRespone>();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentRespone
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                });
+
+
+            }
+            return result;
+        }
+
+        public List<PlanTypeDto> SearchPlanActivityPlanTypeGetByFiscalYear(int FiscalYear)
+        {
+            var _PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear).Include(x => x.InverseParentPlanType).Include(x => x.PlanCores).ToList();
+            var _PlanTypeDto_list = new List<PlanTypeDto>();
+
+            string n = "";
+            foreach (var item in _PlanTypes)
+            {
+                if (item.ParentPlanType != null)
+                {
+
+                    n = item.ParentPlanType.Name;
+                }
+
+
+                _PlanTypeDto_list.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight,
+                    ParentPlanType = n
+
+
+                });
+            }
+            return _PlanTypeDto_list;
+        }
+
+        public List<FundTypeRespone> SearchPlanItemFundTypeSetupByFiscalYear(int FiscalYear)
+        {
+            var _result = new List<FundTypeRespone>();
+            var data = _database.FundTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new FundTypeRespone
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    ParentFundTypeId = item.ParentFundTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                });
+            }
+            return _result;
+        }
+
+        public List<DepartmentRespone> SearchPlanItemDepartmentListGetByFiscalYear(int FiscalYear)
+        {
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
+            var result = new List<DepartmentRespone>();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentRespone
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                });
+
+
+            }
+            return result;
+        }
+
+        public List<PlanTypeDto> SearchPlanItemPlanTypeGetByFiscalYear(int FiscalYear)
+        {
+            var _PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear).Include(x => x.InverseParentPlanType).Include(x => x.PlanCores).ToList();
+            var _PlanTypeDto_list = new List<PlanTypeDto>();
+
+            string n = "";
+            foreach (var item in _PlanTypes)
+            {
+                if (item.ParentPlanType != null)
+                {
+
+                    n = item.ParentPlanType.Name;
+                }
+
+
+                _PlanTypeDto_list.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight,
+                    ParentPlanType = n
+
+
+                });
+            }
+            return _PlanTypeDto_list;
+        }
+
     }
 }
