@@ -58,3 +58,15 @@ C:\Users\daisy\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDe
 C:\Users\daisy\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\refint\App.PathDetail.dll
 C:\Users\daisy\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.pdb
 C:\Users\daisy\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\ref\App.PathDetail.dll
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\bin\Debug\net6.0\App.PathDetail.deps.json
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\bin\Debug\net6.0\App.PathDetail.dll
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\bin\Debug\net6.0\App.PathDetail.pdb
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.csproj.AssemblyReference.cache
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.AssemblyInfoInputs.cache
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.AssemblyInfo.cs
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.csproj.CoreCompileInputs.cache
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.dll
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\refint\App.PathDetail.dll
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\App.PathDetail.pdb
+C:\Users\KKN\Documents\GitHub\narit\App.PathDetail\obj\Debug\net6.0\ref\App.PathDetail.dll

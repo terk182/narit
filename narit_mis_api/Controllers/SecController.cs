@@ -2369,9 +2369,77 @@ namespace narit_mis_api.Controllers
             return Json("ViewWithdrawalFormForSettle");
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/FundTypeList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityFundTypeSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityFundTypeSetupByFiscalYear(year);
+            return Json(data);
+        }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/DepartmentList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityDepartmentListGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityDepartmentListGetByFiscalYear(year);
+            return Json(data);
+        }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/PlanList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityPlanTypeGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityPlanTypeGetByFiscalYear(year);
+            return Json(data);
+        }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanActivity/FundTypeList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanActivityFundTypeSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanActivityFundTypeSetupByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanActivity/DepartmentList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanActivityDepartmentListGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanActivityDepartmentListGetByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanActivity/PlanList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanActivityPlanTypeGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanActivityPlanTypeGetByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanItem/FundTypeList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanItemFundTypeSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanItemFundTypeSetupByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanItem/DepartmentList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanItemDepartmentListGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanItemDepartmentListGetByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanItem/PlanList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanItemPlanTypeGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanItemPlanTypeGetByFiscalYear(year);
+            return Json(data);
+        }
         #endregion
 
 
