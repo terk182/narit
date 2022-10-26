@@ -2369,7 +2369,29 @@ namespace narit_mis_api.Controllers
             return Json("ViewWithdrawalFormForSettle");
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/FundTypeList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityFundTypeSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityFundTypeSetupByFiscalYear(year);
+            return Json(data);
+        }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/DepartmentList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityDepartmentListGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityDepartmentListGetByFiscalYear(year);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Operate/SearchPlanForActivity/PlanList/GetByFiscalYear/{year}")]
+        public IActionResult SearchPlanForActivityPlanTypeGetByFiscalYear(int year)
+        {
+            var data = _SecServices.SearchPlanForActivityPlanTypeGetByFiscalYear(year);
+            return Json(data);
+        }
 
 
         #endregion

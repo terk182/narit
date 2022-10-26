@@ -44,6 +44,9 @@ namespace App.SEC
 
         SecBaseResponse GovernmentDisbursementGoalSetup(GovernmentDisbursementGoal request);
         List<GovernmentDisbursementGoal> GovernmentDisbursementGoalByFiscalYear(int FiscalYear);
-
+        //งานนโยบายและแผน/ค้นหา/ค้นหาโครงการ(รายการหลัก)
+        List<FundTypeRespone> SearchPlanForActivityFundTypeSetupByFiscalYear(int FiscalYear);
+        List<DepartmentRespone> SearchPlanForActivityDepartmentListGetByFiscalYear(int FiscalYear);
+        List<PlanTypeDto> SearchPlanForActivityPlanTypeGetByFiscalYear(int FiscalYear);
     }
 }
