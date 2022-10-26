@@ -2014,23 +2014,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KKN\\.nuget\\packages\\": {},
+    "C:\\Users\\daisy\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
+      "projectUniqueName": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
       "projectName": "Data.Context",
-      "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
-      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\obj\\",
+      "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
+      "packagesPath": "C:\\Users\\daisy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\daisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

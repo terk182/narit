@@ -10,7 +10,9 @@ using narit_mis_api.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -213,85 +215,51 @@ namespace App.SEC
             {
                  data = _database.Departments.Where(x =>  x.Active && x.FiscalYear == FiscalYear).Include(x => x.PlanActivities).Include(x => x.PlanCores).ToList();
             }
-              
-            
 
-
-
-
-
-
-                foreach (var department in data)
+            var _datalist_main = new List<ViewPlanForActivityByDepartmentTable>();
+            foreach (var item in data)
             {
-
-  
-                var _datalist_sub = new List<ViewPlanForActivityByDepartmentTable>();
-                foreach (var item_PlanCores in department.PlanCores)
+                foreach(var item_l1 in item.InverseParentDepartment)
                 {
-                       
-   
-                    var _datalist_sub2 = new List<ViewPlanForActivityByDepartmentTable>();
-                    var _PlanActivities = _database.PlanActivities.Where(x => x.PlanCoreId == item_PlanCores.Id).Include(x => x.PlanItems).ToList();
-                    foreach (var item in _PlanActivities)
+                    var _datalist_sub = new List<ViewPlanForActivityByDepartmentTable>();
+                    var planCore = _database.PlanCores.Where(x => x.DepartmentId == item_l1.Id).Include(x => x.PlanActivities).ToList();
+                    foreach (var item_l2 in planCore)
+                    {
+                        var _datalist_sub2 = new List<ViewPlanForActivityByDepartmentTable>();
+
+                    
+                        foreach (var l3 in item_l2.PlanActivities)
                         {
-                            _TotalBudgetCache = 0;
-                            _TotalAmount = 0;
-                            _NetAmount = 0;
-                            _NetBudgetCache = 0;
-                            //_NetBudget = 0;
-                            _UsedBudgetCache = 0;
-                           
-                            //_InProcessBudget = 0;
-                            var planItem_list = _database.PlanItems.Where(x => x.PlanActivityId == item.Id).Include(x => x.MonthlyForecasts).Include(x => x.BudgetTransferInwardPlanItems).Include(x => x.BudgetTransferOutwardPlanItems).Include(x => x.SummaryStatementCaches).ToList();
-                      
-                            foreach (var _MonthlyForecasts in planItem_list)
+                            var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == l3.Id).Include(x =>x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
+                            foreach (var _MonthlyForecasts in _PlanItems)
                             {
-                                _TotalBudget += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece);
-                                _TotalAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
-                                _NetAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
-                                _NetBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView;
-                                _UsedBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
-                                _RemainBudgetPlanView = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
-                                _TotalBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
-                            //_InwardBudgetTransfers = _MonthlyForecasts.BudgetTransferInwardPlanItems.Where()
-                            //_InProcessBudget = 
-                            //var BudgetTrans_obj = new List<ViewPlanForActivityByDepartmentTable>();
-                            //foreach (var BudgetTrans in _MonthlyForecasts.BudgetTransferInwardPlanItems)
-                            //{
-                            //    BudgetTrans_obj.Add(new ViewPlanForActivityByDepartmentTable
-                            //    {
-                            //        Id = BudgetTrans.Id,
-                            //        Name = BudgetTrans.Name,
-                            //        FiscalYear = BudgetTrans.FiscalYear,
-                            //        TotalBudget = BudgetTrans,
-                            //        TotalBudgetCache = _TotalBudgetCache,
-                            //        NetBudgetCache = _NetBudgetCache,
-                            //        UsedBudgetCache = _UsedBudgetCache,
-                            //        RemainBudgetCache = _RemainBudgetPlanView,
-                            //    });
-                            //}
+                                    _TotalBudget += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece);
+                                    _TotalAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
+                                    _NetAmount += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount);
+                                    _NetBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView;
+                                    _UsedBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
+                                    _RemainBudgetPlanView = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
+                                    _TotalBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
+                               
                             }
                             _datalist_sub2.Add(new ViewPlanForActivityByDepartmentTable
                             {
-                                Id = item.Id,
-                                Name = item.Name,
-                                FiscalYear = item.FiscalYear,
+                                Id = l3.Id,
+                                Name = l3.Name,
+                                FiscalYear = l3.FiscalYear,
                                 TotalBudget = _TotalBudget,
                                 TotalBudgetCache = _TotalBudgetCache,
                                 NetBudgetCache = _NetBudgetCache,
                                 UsedBudgetCache = _UsedBudgetCache,
                                 RemainBudgetCache = _RemainBudgetPlanView,
-                                
+
                             });
-
-
                         }
-
                         _datalist_sub.Add(new ViewPlanForActivityByDepartmentTable
                         {
-                            Id = item_PlanCores.Id,
-                            Name = item_PlanCores.Name,
-                            FiscalYear = item_PlanCores.FiscalYear,
+                            Id = item_l2.Id,
+                            Name = item_l2.Name,
+                            FiscalYear = item_l2.FiscalYear,
                             TotalBudget = _datalist_sub2.Sum(x => x.TotalBudget),
                             TotalBudgetCache = _datalist_sub2.Sum(x => x.TotalBudgetCache),
                             NetBudgetCache = _datalist_sub2.Sum(x => x.NetBudgetCache),
@@ -299,30 +267,36 @@ namespace App.SEC
                             RemainBudgetCache = _datalist_sub2.Sum(x => x.RemainBudgetCache),
                             subdata = _datalist_sub2
                         });
-                  
-                 
-
-
-
+                    }
+                    _datalist.Add(new ViewPlanForActivityByDepartmentTable
+                    {
+                        Id = item_l1.Id,
+                        Name = item_l1.Name,
+                        FiscalYear = item_l1.FiscalYear,
+                        TotalBudget = _datalist_sub.Sum(x => x.TotalBudget),
+                        TotalBudgetCache = _datalist_sub.Sum(x => x.TotalBudgetCache),
+                        NetBudgetCache = _datalist_sub.Sum(x => x.NetBudgetCache),
+                        UsedBudgetCache = _datalist_sub.Sum(x => x.UsedBudgetCache),
+                        RemainBudgetCache = _datalist_sub.Sum(x => x.RemainBudgetCache),
+                        subdata = _datalist_sub
+                    });
                 }
-                _datalist.Add(new ViewPlanForActivityByDepartmentTable
+                _datalist_main.Add(new ViewPlanForActivityByDepartmentTable
                 {
-                    Id = department.Id,
-                    Name = department.Name,
-                    FiscalYear = department.FiscalYear,
-                    TotalBudget = _datalist_sub.Sum(x => x.TotalBudget),
-                    TotalBudgetCache = _datalist_sub.Sum(x => x.TotalBudgetCache),
-                    NetBudgetCache = _datalist_sub.Sum(x => x.NetBudgetCache),
-                    UsedBudgetCache = _datalist_sub.Sum(x => x.UsedBudgetCache),
-                    RemainBudgetCache = _datalist_sub.Sum(x => x.RemainBudgetCache),
-                    subdata = _datalist_sub
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    TotalBudget = _datalist.Sum(x => x.TotalBudget),
+                    TotalBudgetCache = _datalist.Sum(x => x.TotalBudgetCache),
+                    NetBudgetCache = _datalist.Sum(x => x.NetBudgetCache),
+                    UsedBudgetCache = _datalist.Sum(x => x.UsedBudgetCache),
+                    RemainBudgetCache = _datalist.Sum(x => x.RemainBudgetCache),
+                    subdata = _datalist
                 });
 
-
-
             }
-           // var table_data = _database.Departments.Where(x => x.FiscalYear == data[0].FiscalYear).ToList();
-            return _datalist;
+
+            return _datalist_main;
         }
 
         public PlanCrudpolicy GetPolicy(int year)
