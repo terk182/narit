@@ -204,10 +204,24 @@ namespace App.SEC
            
             var loop1 = new List<PlanItem>();
             var _datalist = new List<ViewPlanForActivityByDepartmentTable>();
+            var data  = new List<Department>();
+            if (departmentId != 0)
+            {
+                 data = _database.Departments.Where(x => x.Id == departmentId && x.Active && x.FiscalYear==FiscalYear).Include(x => x.PlanActivities).Include(x => x.PlanCores).Include(x => x.InverseParentDepartment).ToList();  
+            }
+            else
+            {
+                 data = _database.Departments.Where(x =>  x.Active && x.FiscalYear == FiscalYear).Include(x => x.PlanActivities).Include(x => x.PlanCores).ToList();
+            }
+              
+            
 
 
-            var data = _database.Departments.Where(x => x.ParentDepartmentId == departmentId && x.Active && x.FiscalYear == FiscalYear).Include(x => x.PlanActivities).Include(x=> x.PlanCores).ToList();
-            foreach (var department in data)
+
+
+
+
+                foreach (var department in data)
             {
 
   
