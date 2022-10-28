@@ -6,6 +6,7 @@ using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
 using App.SEC.Responses;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using narit_mis_api.Models;
 using System;
 using System.Collections;
@@ -869,5 +870,32 @@ namespace App.SEC
             return _PlanTypeDto_list;
         }
 
+        public List<PlanCore> SearchPlanCoreById(int PlanCoreId)
+        {
+
+
+            var plancoredata = _database.PlanCores.Where(x => x.Id == PlanCoreId && x.Active).Include(x => x.PlanActivities).Include(x => x.Strategies).Include(x => x.ResponsiblePeople).SingleOrDefault();
+
+
+            foreach (var item in plancoredata.PlanActivities)
+            {
+                var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == item.Id).Include(x => x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
+            }
+
+            
+
+            throw new NotImplementedException();
+        }
+
+        public List<PlanType> ReceivedReservedBudgetByPlanCreateTableData(int planTypeId, int fiscalYear, int depId = 0)
+        {
+            var objectList = new List<PlanType>();
+            if (planTypeId != 0) objectList = _database.PlanTypes.Where(x => x.Id == planTypeId && x.Active).Include(x => x.PlanCores).ToList();  // _PlanTService.GetAllChildHierarchy(planTypeId);
+            else objectList = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+
+            var gg = 0;
+            
+            throw new NotImplementedException();
+        }
     }
 }

@@ -58,5 +58,9 @@ namespace App.SEC
         List<FundTypeRespone> SearchPlanItemFundTypeSetupByFiscalYear(int FiscalYear);
         List<DepartmentRespone> SearchPlanItemDepartmentListGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> SearchPlanItemPlanTypeGetByFiscalYear(int FiscalYear);
+
+        List<PlanCore> SearchPlanCoreById(int DepartmentId );
+        List<PlanType> ReceivedReservedBudgetByPlanCreateTableData(int planTypeId, int fiscalYear, int depId = 0);
+
     }
 }
