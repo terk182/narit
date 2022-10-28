@@ -228,7 +228,7 @@ namespace App.SEC
                     foreach (var item_l1 in item.InverseParentDepartment)
                     {
                         var _datalist_sub = new List<ViewPlanForActivityByDepartmentTable>();
-                        var planCore = _database.PlanCores.Where(x => x.DepartmentId == item_l1.Id).Include(x => x.PlanActivities).ToList();
+                        var planCore = _database.PlanCores.Where(x => x.DepartmentId == item_l1.Id && x.Active).Include(x => x.PlanActivities).ToList();
                         foreach (var item_l2 in planCore)
                         {
                             var _datalist_sub2 = new List<ViewPlanForActivityByDepartmentTable>();
@@ -243,7 +243,7 @@ namespace App.SEC
 
                             foreach (var l3 in item_l2.PlanActivities)
                             {
-                                var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == l3.Id).Include(x => x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
+                                var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == l3.Id && x.Active).Include(x => x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
                                 foreach (var _MonthlyForecasts in _PlanItems)
                                 {
                                     _TotalBudget += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece);
@@ -304,16 +304,17 @@ namespace App.SEC
                     foreach (var item_l1 in item.PlanCores)
                     {
                         var _datalist_sub2 = new List<ViewPlanForActivityByDepartmentTable>();
+                        _TotalBudgetCache = 0;
+                        _TotalAmount = 0;
+                        _NetAmount = 0;
+                        _NetBudgetCache = 0;
+                        _UsedBudgetCache = 0;
+                        _RemainBudgetPlanView = 0;
+                        _TotalBudget = 0;
                         foreach (var l1 in item_l1.PlanActivities)
                         {
-                            _TotalBudgetCache = 0;
-                            _TotalAmount = 0;
-                            _NetAmount = 0;
-                            _NetBudgetCache = 0;
-                            _UsedBudgetCache = 0;
-                            _RemainBudgetPlanView = 0;
-                            _TotalBudget = 0;
-                            var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == l1.Id).Include(x => x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
+                        
+                            var _PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == l1.Id && x.Active).Include(x => x.MonthlyForecasts).Include(x => x.SummaryStatementCaches).ToList();
                             foreach (var _MonthlyForecasts in _PlanItems)
                             {
                                 _TotalBudget += _MonthlyForecasts.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece);
