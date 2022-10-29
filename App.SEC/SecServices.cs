@@ -1040,7 +1040,7 @@ namespace App.SEC
 
                     list = _database.BudgetTypes.Where(x => x.Id == num).FirstOrDefault().Name,
                     Budget = _list.Where(x => x.BudgetTypeId == num).Sum(x => x.TotalBudgetCache)
-            }) ; 
+                }) ; 
             }
             _projectDetailDto.Budgetmode = Budgetmode;
             result.data = _total;
