@@ -59,8 +59,8 @@ namespace App.SEC
         List<DepartmentRespone> SearchPlanItemDepartmentListGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> SearchPlanItemPlanTypeGetByFiscalYear(int FiscalYear);
 
-        List<PlanCore> SearchPlanCoreById(int DepartmentId );
-        List<PlanType> ReceivedReservedBudgetByPlanCreateTableData(int planTypeId, int fiscalYear, int depId = 0);
+        ViewPlanActivityListDataDto SearchPlanItemById(int PlanActivityId);
+        List<ViewPlanForActivityByDepartmentTable> ReceivedReservedBudgetByPlanCreateTableData(int planTypeId, int fiscalYear, int depId = 0);
 
     }
 }
