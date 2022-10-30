@@ -2249,10 +2249,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore")]
-        public IActionResult ViewPlanActivityOperationPeriodByPlanCore()
+        [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore/{PlanCoreId}")]
+        public IActionResult ViewPlanActivityOperationPeriodByPlanCore(int PlanCoreId)
         {
-            return Json("ViewPlanActivityOperationPeriodByPlanCore");
+            var data = _SecServices.ViewPlanActivityOperationPeriodByPlanCore(PlanCoreId);
+            return Json(data);
         }
 
 
@@ -2321,10 +2322,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanActivity")]
-        public IActionResult ViewReceivedReservedBudgetByPlanActivity()
+        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanActivity/{PlanActivityId}")]
+        public IActionResult ViewReceivedReservedBudgetByPlanActivity(int PlanActivityId)
         {
-            return Json("ViewReceivedReservedBudgetByPlanActivity");
+            var data = _SecServices.ViewReceivedReservedBudgetByPlanActivity(PlanActivityId);
+            return Json(data);
         }
 
 
