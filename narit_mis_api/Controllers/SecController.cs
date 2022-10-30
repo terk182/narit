@@ -2284,10 +2284,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanForActivityByPlanTypeBudgetType")]
-        public IActionResult ViewPlanForActivityByPlanTypeBudgetType()
+        [Route("/Plan/Operate/ViewPlanForActivityByPlanTypeBudgetType/{planTypeId}/{fiscalYear}/{depId}")]
+        public IActionResult ViewPlanForActivityByPlanTypeBudgetType(int planTypeId, int fiscalYear, int depId = 0)
         {
-            return Json("ViewPlanForActivityByPlanTypeBudgetType");
+            var data = _SecServices.ViewPlanForActivityByPlanTypeBudgetTypeCreateTableData(planTypeId, fiscalYear, depId);
+            return Json(data);
         }
 
 
