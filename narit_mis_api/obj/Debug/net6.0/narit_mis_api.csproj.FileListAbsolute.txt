@@ -422,7 +422,6 @@ C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\scopedcss\b
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.csproj.CopyComplete
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.genruntimeconfig.cache
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\ref\narit_mis_api.dll
-C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\json\GovExpenseType.json
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\json\ExpenseType.json
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\appsettings.Development.json

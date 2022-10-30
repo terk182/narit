@@ -1597,5 +1597,94 @@ namespace App.SEC
             result.Detail = _projectDetailDto;
             return result;
         }
+
+        public ViewPlanActivityOperationPeriodByPlanCoreDto EditPlanActivityOperationPeriodResult(int PlanActivityId)
+        {
+            var result = new ViewPlanActivityOperationPeriodByPlanCoreDto();
+            var _List_PlanMonthlyOperation = new List<PlanMonthlyOperationDto>();
+           
+            var PlanMonthlyOperations = _database.PlanMonthlyOperations.Where(x => x.Id == PlanActivityId && x.Active).Include(x => x.PlanFiles).ToList();
+            var PlanActivitiesId = PlanMonthlyOperations.Select(x => x.PlanActivityId).FirstOrDefault();
+             var PlanActivities = _database.PlanActivities.Where(x => x.Id == PlanActivitiesId && x.Active).Include(x => x.PlanMonthlyOperations).Include(x => x.PlanItems).Include(x => x.ResponsiblePeople).ToList();
+            var _Team = new List<Team>();
+           
+            var _projectDetailDto = new projectDetailAddBugetDto();
+            var plancoreId  = PlanActivities.Select(x => x.PlanCoreId).FirstOrDefault();
+            var _PlanCores = _database.PlanCores.Where(x => x.Id == plancoreId).FirstOrDefault();
+            _projectDetailDto.Name = PlanActivities.Select(x => x.Name).FirstOrDefault();
+            _projectDetailDto.FiscalYear_main = PlanActivities.Select(x => x.FiscalYear).FirstOrDefault();
+            _projectDetailDto.ProjectName = _PlanCores.Name;
+            _projectDetailDto.step = PlanMonthlyOperations.Select(x => x.Name).FirstOrDefault();
+            _projectDetailDto.Weight = PlanMonthlyOperations.Select(x => x.Weight).FirstOrDefault();
+            _projectDetailDto.PlanName = _database.PlanTypes.Where(x => x.Id == _PlanCores.PlanTypeId).FirstOrDefault().Name;
+            _projectDetailDto.Department = _database.Departments.Where(x => x.Id == _PlanCores.DepartmentId).FirstOrDefault().Name;
+            var PlanA = PlanActivities.SelectMany(x => x.ResponsiblePeople).ToList();
+            int index = 0;
+            foreach (var team_item in PlanA)
+            {
+
+                _Team.Add(new Team
+                {
+                    HrdepartmentName = team_item.HrdepartmentName,
+                    Position = index == 0 ? "ผู้รับผิดชอบโครงการ (Project Manager)" : "ผู้ร่วมโครงการ (Team)",
+                    Name = team_item.Name,
+                });
+                index++;
+            }
+
+            foreach (var s2 in PlanMonthlyOperations)
+            {
+                _List_PlanMonthlyOperation.Add(new PlanMonthlyOperationDto
+                {
+                    Id = s2.Id,
+                    Name = s2.Name,
+                    Active = s2.Active,
+                    FiscalYear = s2.FiscalYear,
+                    January = s2.January,
+                    February = s2.February,
+                    March = s2.March,
+                    April = s2.April,
+                    May = s2.May,
+                    June = s2.June,
+                    July = s2.July,
+                    August = s2.August,
+                    September = s2.September,
+                    October = s2.October,
+                    November = s2.November,
+                    December = s2.December,
+                    Weight = s2.Weight,
+                    PlanActivityId = s2.PlanActivityId,
+                    ResultJanuary = s2.ResultJanuary,
+                    ResultFebruary = s2.ResultFebruary,
+                    ResultMarch = s2.ResultMarch,
+                    ResultApril = s2.ResultApril,
+                    ResultMay = s2.ResultMay,
+                    ResultJune = s2.ResultJune,
+                    ResultJuly = s2.ResultJuly,
+                    ResultAugust = s2.ResultAugust,
+                    ResultSeptember = s2.ResultSeptember,
+                    ResultOctober = s2.ResultOctober,
+                    ResultNovember = s2.ResultNovember,
+                    ResultDecember = s2.ResultDecember,
+                    DetailJanuary = s2.DetailJanuary,
+                    DetailFebruary = s2.DetailFebruary,
+                    DetailMarch = s2.DetailMarch,
+                    DetailApril = s2.DetailApril,
+                    DetailMay = s2.DetailMay,
+                    DetailJune = s2.DetailJune,
+                    DetailJuly = s2.DetailJuly,
+                    DetailAugust = s2.DetailAugust,
+                    DetailSeptember = s2.DetailSeptember,
+                    DetailOctober = s2.DetailOctober,
+                    DetailNovember = s2.DetailNovember,
+                    DetailDecember = s2.DetailDecember,
+                    ParentPlanMonthlyOperationId = s2.ParentPlanMonthlyOperationId
+                });
+            }
+            result.data = _List_PlanMonthlyOperation;
+            result.Detail = _projectDetailDto;
+            result.Persons = _Team;
+            return result;
+        }
     }
 }

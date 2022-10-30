@@ -25,6 +25,7 @@ namespace App.SEC.Dtos
         public string? PlanName { get; set; }
         public string? Department { get; set; }
         public string? ProjectName { get; set; }
+
         public List<Team>? ResponsiblePeople { get; set; }
 
         public List<Budgetmode>? Budgetmode { get; set; }
@@ -34,8 +35,10 @@ namespace App.SEC.Dtos
         public int? FiscalYear_main { get; set; }
         public string? StrategiesName { get; set; }
         public string? PlanName { get; set; }
+        public string? step { get; set; }
         public string? Department { get; set; }
         public string? ProjectName { get; set; }
+        public decimal? Weight { get; set; }
         public List<Team>? ResponsiblePeople { get; set; }
 
         public List<Budgetmode>? Budgetmode { get; set; }

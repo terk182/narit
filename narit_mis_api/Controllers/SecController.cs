@@ -1946,10 +1946,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/EditPlanActivityOperationPeriodResult")]
-        public IActionResult EditPlanActivityOperationPeriodResult()
+        [Route("/Plan/Operate/EditPlanActivityOperationPeriodResult/{PlanActivityId}")]
+        public IActionResult EditPlanActivityOperationPeriodResult(int PlanActivityId)
         {
-            return Json("EditPlanActivityOperationPeriodResult");
+            var data = _SecServices.EditPlanActivityOperationPeriodResult(PlanActivityId);
+            return Json(data);
         }
 
 
