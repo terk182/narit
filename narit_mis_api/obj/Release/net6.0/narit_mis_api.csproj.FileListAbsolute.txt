@@ -244,3 +244,5 @@ C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\refint\na
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\narit_mis_api.pdb
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\narit_mis_api.genruntimeconfig.cache
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\ref\narit_mis_api.dll
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\json\ExpenseType.json
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\json\GovExpenseType.json
