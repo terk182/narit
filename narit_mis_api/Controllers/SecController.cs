@@ -1946,10 +1946,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/EditPlanActivityOperationPeriodResult")]
-        public IActionResult EditPlanActivityOperationPeriodResult()
+        [Route("/Plan/Operate/EditPlanActivityOperationPeriodResult/{PlanActivityId}")]
+        public IActionResult EditPlanActivityOperationPeriodResult(int PlanActivityId)
         {
-            return Json("EditPlanActivityOperationPeriodResult");
+            var data = _SecServices.EditPlanActivityOperationPeriodResult(PlanActivityId);
+            return Json(data);
         }
 
 
@@ -2239,19 +2240,21 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanActivityList")]
-        public IActionResult ViewPlanActivityList()
+        [Route("/Plan/Operate/ViewPlanActivityList/{PlanActivityId}")]
+        public IActionResult ViewPlanActivityList(int PlanActivityId)
         {
-            return Json("ViewPlanActivityList");
+            var data = _SecServices.SearchPlanItemById(PlanActivityId);
+            return Json(data);
         }
 
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore")]
-        public IActionResult ViewPlanActivityOperationPeriodByPlanCore()
+        [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore/{PlanCoreId}")]
+        public IActionResult ViewPlanActivityOperationPeriodByPlanCore(int PlanCoreId)
         {
-            return Json("ViewPlanActivityOperationPeriodByPlanCore");
+            var data = _SecServices.ViewPlanActivityOperationPeriodByPlanCore(PlanCoreId);
+            return Json(data);
         }
 
 
@@ -2283,10 +2286,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPlanForActivityByPlanTypeBudgetType")]
-        public IActionResult ViewPlanForActivityByPlanTypeBudgetType()
+        [Route("/Plan/Operate/ViewPlanForActivityByPlanTypeBudgetType/{planTypeId}/{fiscalYear}/{depId}")]
+        public IActionResult ViewPlanForActivityByPlanTypeBudgetType(int planTypeId, int fiscalYear, int depId = 0)
         {
-            return Json("ViewPlanForActivityByPlanTypeBudgetType");
+            var data = _SecServices.ViewPlanForActivityByPlanTypeBudgetTypeCreateTableData(planTypeId, fiscalYear, depId);
+            return Json(data);
         }
 
 
@@ -2319,18 +2323,20 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanActivity")]
-        public IActionResult ViewReceivedReservedBudgetByPlanActivity()
+        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanActivity/{PlanActivityId}")]
+        public IActionResult ViewReceivedReservedBudgetByPlanActivity(int PlanActivityId)
         {
-            return Json("ViewReceivedReservedBudgetByPlanActivity");
+            var data = _SecServices.ViewReceivedReservedBudgetByPlanActivity(PlanActivityId);
+            return Json(data);
         }
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanCore")]
-        public IActionResult ViewReceivedReservedBudgetByPlanCore()
+        [Route("/Plan/Operate/ViewReceivedReservedBudgetByPlanCore/{planTypeId}/{fiscalYear}/{depId}")]
+        public IActionResult ViewReceivedReservedBudgetByPlanCore(int planTypeId, int fiscalYear, int depId = 0)
         {
-            return Json("ViewReceivedReservedBudgetByPlanCore");
+            var data = _SecServices.ReceivedReservedBudgetByPlanCreateTableData(planTypeId, fiscalYear, depId);
+            return Json(data);
         }
 
 
