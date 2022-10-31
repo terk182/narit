@@ -514,3 +514,4 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\refint\narit_
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.pdb
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.genruntimeconfig.cache
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\ref\narit_mis_api.dll
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.MvcApplicationPartsAssemblyInfo.cs

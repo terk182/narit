@@ -2231,10 +2231,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPerformanceIndicatorByPlanActivityList")]
-        public IActionResult ViewPerformanceIndicatorByPlanActivityList()
+        [Route("/Plan/Operate/ViewPerformanceIndicatorByPlanActivityList/{PlanCoreId}")]
+        public IActionResult ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId)
         {
-            return Json("ViewPerformanceIndicatorByPlanActivityList");
+            var data = _SecServices.ViewPerformanceIndicatorByPlanActivityList(PlanCoreId);
+            return Json(data);
         }
 
 

@@ -1686,5 +1686,20 @@ namespace App.SEC
             result.Persons = _Team;
             return result;
         }
+
+        public ViewPlanActivityOperationPeriodByPlanCoreDto ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId)
+        {
+            var planCore = _database.PlanCores.Where(x => x.Id == PlanCoreId && x.Active).Include(x => x.PerformanceIndicators).Include(x => x.ResponsiblePeople).Include(x => x.PlanActivities).ToList();
+            var result = new List<List<PerformanceIndicator>>();
+            foreach (var s1 in planCore.Select(x => x.PlanActivities))
+            {
+
+                var data = _database.PerformanceIndicators.Where(x => x.PlanActivityId == s1.Select(x => x.Id).FirstOrDefault()).ToList();
+                result.Add(data);
+            }
+
+            //PerformanceIndicatorDto
+            throw new NotImplementedException();
+        }
     }
 }

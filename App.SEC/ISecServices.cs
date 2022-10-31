@@ -67,5 +67,7 @@ namespace App.SEC
         ViewPlanActivityOperationPeriodByPlanCoreDto ViewPlanActivityOperationPeriodByPlanCore(int PlanCoreId);
         ViewPlanActivityOperationPeriodByPlanCoreDto EditPlanActivityOperationPeriodResult(int PlanActivityId);
 
+        ViewPlanActivityOperationPeriodByPlanCoreDto ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId);
+
     }
 }
