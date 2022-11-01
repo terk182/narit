@@ -6,6 +6,20 @@ using System.Threading.Tasks;
 
 namespace App.SEC.Dtos
 {
+
+    public class PerformanceIndicatorData
+    {
+        
+        public List<Team>? ResponsiblePeople { get; set; }
+        public ViewPlanForActivityByPlanTypeBudgetTypeTable? BugetDetail { get; set; }
+        public List<Budgetmode>? budgetmodes { get; set; }
+        public List<PerformanceIndicatorDetail>? PerformanceIndicatorDetail { get; set; }
+    }
+    public class PerformanceIndicatorDetail
+    {
+        public string? Name {get; set;}
+        public List<PerformanceIndicatorDto>? data { get; set; }
+    }
     public class PerformanceIndicatorDto
     {
         public int Id { get; set; }

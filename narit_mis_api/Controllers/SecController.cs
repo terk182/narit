@@ -2616,11 +2616,13 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Report/PlanCoreApproveStatusReport")]
-        public IActionResult PlanCoreApproveStatusReport()
+        public IActionResult PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request)
         {
-            return Json("PlanCoreApproveStatusReport");
+            _Logger.LogInformation("sql");
+            var data = _SecServices.PlanCoreApproveStatusReport(request);
+            return Json(data);
         }
 
 

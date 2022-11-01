@@ -591,6 +591,7 @@
       },
       "App.SEC/1.0.0": {
         "dependencies": {
+          "AutoMapper": "12.0.0",
           "Data.Context": "1.0.0"
         },
         "runtime": {

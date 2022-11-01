@@ -15,8 +15,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.WebSockets;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -904,7 +906,7 @@ namespace App.SEC
                     foreach (var s1 in PlanTypesItem.InverseParentPlanType)
                     {
                         var _list2_d = new List<ViewPlanForActivityByDepartmentTable>();
-                        var planCoreData = _database.PlanCores.Where(x => x.PlanTypeId == s1.Id && x.Active).ToList();
+                        var planCoreData = _database.PlanCores.Where(x => x.PlanTypeId == s1.Id && x.Active && depId != 0? x.DepartmentId == depId:true).ToList();
                         foreach (var loop1 in planCoreData)
                         {
 
@@ -1165,13 +1167,15 @@ namespace App.SEC
             }
             else
             {
-                startPlanType = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).Include(x => x.PlanCores).ToList();
+                startPlanType = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).Include(x => x.PlanCores).Include(x => x.InverseParentPlanType).ToList();
             }
 
 
             var _list_m = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
 
-            if (planTypeIdStatus == true)
+
+           
+            if (startPlanType.Select(x => x.PlanCores).Count() <1)
             {
                 foreach (var s1 in startPlanType)
                 {
@@ -1179,7 +1183,7 @@ namespace App.SEC
                     foreach (var s2 in s1.InverseParentPlanType)
                     {
                         var _list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
-                        var PlanCoreDetail = _database.PlanCores.Where(x => x.PlanTypeId == s2.Id && x.Active).Include(x => x.PlanActivities).ToList();
+                        var PlanCoreDetail = _database.PlanCores.Where(x => x.PlanTypeId == s2.Id && x.Active &&( depId != 0 ? x.DepartmentId == depId : true) ).Include(x => x.PlanActivities).ToList();
                         foreach (var s3 in PlanCoreDetail)
                         {
                             var _list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
@@ -1196,10 +1200,10 @@ namespace App.SEC
                                 foreach (var _MonthlyForecasts in data_l)
                                 {
 
-                                    _NetBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView;
-                                    _UsedBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
-                                    _RemainBudgetPlanView += _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
-                                    _TotalBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
+                                    _NetBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Count > 0? _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView : 0;
+                                    _UsedBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Count > 0 ? _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView : 0;
+                                    _RemainBudgetPlanView += _MonthlyForecasts.SummaryStatementCaches.Count > 0 ? _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView : 0;
+                                    _TotalBudgetCache += _MonthlyForecasts.SummaryStatementCaches.Count > 0 ? _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView : 0;
 
                                 }
 
@@ -1265,7 +1269,7 @@ namespace App.SEC
                     var _list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
                     foreach (var l1 in PlanCores.PlanCores)
                     {
-                        var PlanActivities = _database.PlanActivities.Where(x => x.PlanCoreId == l1.Id && x.Active).Include(x => x.PlanItems).ToList();
+                        var PlanActivities = _database.PlanActivities.Where(x => x.PlanCoreId == l1.Id && x.Active && (depId != 0 ? x.DepartmentId == depId : true)).Include(x => x.PlanItems).ToList();
                         var _list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
                         foreach (var l2 in PlanActivities)
                         {
@@ -1687,19 +1691,311 @@ namespace App.SEC
             return result;
         }
 
-        public ViewPlanActivityOperationPeriodByPlanCoreDto ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId)
+        public PerformanceIndicatorData ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId)
         {
+            var PerformanceIndicatorData = new PerformanceIndicatorData();
+            var data_result = new List<PerformanceIndicatorDetail>();
             var planCore = _database.PlanCores.Where(x => x.Id == PlanCoreId && x.Active).Include(x => x.PerformanceIndicators).Include(x => x.ResponsiblePeople).Include(x => x.PlanActivities).ToList();
-            var result = new List<List<PerformanceIndicator>>();
-            foreach (var s1 in planCore.Select(x => x.PlanActivities))
+        
+            foreach (var s2 in planCore)
             {
 
-                var data = _database.PerformanceIndicators.Where(x => x.PlanActivityId == s1.Select(x => x.Id).FirstOrDefault()).ToList();
-                result.Add(data);
+
+                foreach (var s1 in s2.PlanActivities)
+                {
+                
+                    var result = new List<PerformanceIndicatorDto>();
+                    var data = _database.PerformanceIndicators.Where(x => x.PlanActivityId == s1.Id).ToList();
+                    foreach (var item in data)
+                    {
+
+                        result.Add(new PerformanceIndicatorDto
+                        {
+                            Id = item.Id,
+                            Name = item.Name,
+                            FiscalYear = item.FiscalYear,
+                            Active = item.Active,
+                            TargetValueQ1 = item.TargetValueQ1,
+                            TargetUnit = item.TargetUnit,
+                            Detail = item.Detail,
+                            PlanActivityId = item.PlanActivityId,
+                            TargetValueQ2 = item.TargetValueQ2,
+                            TargetValueQ3 = item.TargetValueQ3,
+                            TargetValueQ4 = item.TargetValueQ4,
+                            PlanCoreId = item.PlanCoreId,
+                            StrategicIndicatorId = item.StrategicIndicatorId,
+                            ResultQ1 = item.ResultQ1,
+                            ResultQ2 = item.ResultQ2,
+                            ResultQ3 = item.ResultQ3,
+                            ResultQ4 = item.ResultQ4,
+                            DetailQ1 = item.DetailQ1,
+                            DetailQ2 = item.DetailQ2,
+                            DetailQ3 = item.DetailQ3,
+                            DetailQ4 = item.DetailQ4,
+                            SupportFactorQ1 = item.SupportFactorQ1,
+                            SupportFactorQ2 = item.SupportFactorQ2,
+                            SupportFactorQ3 = item.SupportFactorQ3,
+                            SupportFactorQ4 = item.SupportFactorQ4,
+                            ObstacleQ1 = item.ObstacleQ1,
+                            ObstacleQ2 = item.ObstacleQ2,
+                            ObstacleQ3 = item.ObstacleQ3,
+                            ObstacleQ4 = item.ObstacleQ4,
+                            ParentPerformanceIndicatorId = item.ParentPerformanceIndicatorId,
+                            January = item.January,
+                            February = item.February,
+                            March = item.March,
+                            April = item.April,
+                            May = item.May,
+                            June = item.June,
+                            July = item.July,
+                            August = item.August,
+                            September = item.September,
+                            October = item.October,
+                            November = item.November,
+                            December = item.December,
+                            ResultJanuary = item.ResultJanuary,
+                            ResultFebruary = item.ResultFebruary,
+                            ResultMarch = item.ResultMarch,
+                            ResultApril = item.ResultApril,
+                            ResultMay = item.ResultMay,
+                            ResultJune = item.ResultJune,
+                            ResultJuly = item.ResultJuly,
+                            ResultAugust = item.ResultAugust,
+                            ResultSeptember = item.ResultSeptember,
+                            ResultOctober = item.ResultOctober,
+                            ResultNovember = item.ResultNovember,
+                            ResultDecember = item.ResultDecember,
+                            SupportFactorJanuary = item.SupportFactorJanuary,
+                            SupportFactorFebruary = item.SupportFactorFebruary,
+                            SupportFactorMarch = item.SupportFactorMarch,
+                            SupportFactorApril = item.SupportFactorApril,
+                            SupportFactorMay = item.SupportFactorMay,
+                            SupportFactorJune = item.SupportFactorJune,
+                            SupportFactorJuly = item.SupportFactorJuly,
+                            SupportFactorAugust = item.SupportFactorAugust,
+                            SupportFactorSeptember = item.SupportFactorSeptember,
+                            SupportFactorOctober = item.SupportFactorOctober,
+                            SupportFactorNovember = item.SupportFactorNovember,
+                            SupportFactorDecember = item.SupportFactorDecember,
+                            DetailJanuary = item.DetailJanuary,
+                            DetailFebruary = item.DetailFebruary,
+                            DetailMarch = item.DetailMarch,
+                            DetailApril = item.DetailApril,
+                            DetailMay = item.DetailMay,
+                            DetailJune = item.DetailJune,
+                            DetailJuly = item.DetailJuly,
+                            DetailAugust = item.DetailAugust,
+                            DetailSeptember = item.DetailSeptember,
+                            DetailOctober = item.DetailOctober,
+                            DetailNovember = item.DetailNovember,
+                            DetailDecember = item.DetailDecember,
+                            ObstacleJanuary = item.ObstacleJanuary,
+                            ObstacleFebruary = item.ObstacleFebruary,
+                            ObstacleMarch = item.ObstacleMarch,
+                            ObstacleApril = item.ObstacleApril,
+                            ObstacleMay = item.ObstacleMay,
+                            ObstacleJune = item.ObstacleJune,
+                            ObstacleJuly = item.ObstacleJuly,
+                            ObstacleAugust = item.ObstacleAugust,
+                            ObstacleSeptember = item.ObstacleSeptember,
+                            ObstacleOctober = item.ObstacleOctober,
+                            ObstacleNovember = item.ObstacleNovember,
+                            ObstacleDecember = item.ObstacleDecember,
+                        });
+
+
+                    }
+                    data_result.Add(new PerformanceIndicatorDetail
+                    {
+                        Name = s1.Name,
+                        data = result
+                    });
+
+                }
+            }
+            var budget_list = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
+            PerformanceIndicatorData.BugetDetail = budget_list.Budget;
+            PerformanceIndicatorData.PerformanceIndicatorDetail = data_result;
+            PerformanceIndicatorData.ResponsiblePeople = ResponsiblePeopleData(planCore.SelectMany(x => x.ResponsiblePeople).ToList());
+            PerformanceIndicatorData.budgetmodes = budget_list.budgetmodes;
+            return PerformanceIndicatorData;
+        }
+
+        public calBudgetDetail calbudget(ICollection<PlanActivity> planActivity)
+        {
+            var calBudgetDetail = new calBudgetDetail();
+            var _list_result = new ViewPlanForActivityByPlanTypeBudgetTypeTable();
+            var _list_main = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+            var b_num = new List<int>();
+            var b_list = new List<butgetW>();
+            foreach (var s1 in planActivity)
+            {
+
+
+                decimal _TotalBudgetCache = 0;
+                decimal _TotalAmount = 0;
+                decimal _NetAmount = 0;
+                decimal _NetBudgetCache = 0;
+                decimal _UsedBudgetCache = 0;
+                decimal _RemainBudgetPlanView = 0;
+                decimal _TotalBudget = 0;
+                var PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == s1.Id && x.Active).Include(x => x.SummaryStatementCaches).ToList();
+                var _list = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+                foreach (var item in PlanItems)
+                {
+
+                    //_NetBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView;
+                    //_UsedBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
+                    //_RemainBudgetPlanView = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
+                    //_TotalBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
+                    _list.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        Unit = item.Unit,
+                        BudgetTypeId = item.BudgetTypeId,
+                        TotalBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView : 0,
+                        NetBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView : 0,
+                        UsedBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView : 0,
+                        RemainBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView : 0,
+                    });
+                    b_num.Add((int)item.BudgetTypeId);
+                    b_list.Add(new butgetW
+                    {
+                        BudgetTypeId = (int)item.BudgetTypeId,
+                        TotalBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView : 0
+
+                    });
+
+                }
+                _list_main.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                {
+                    Id = s1.Id,
+                    Name = s1.Name,
+                    FiscalYear = s1.FiscalYear,
+                    TotalBudget = _list.Sum(x => x.TotalBudget),
+                    TotalBudgetCache = _list.Sum(x => x.TotalBudgetCache),
+                    NetBudgetCache = _list.Sum(x => x.NetBudgetCache),
+                    UsedBudgetCache = _list.Sum(x => x.UsedBudgetCache),
+                    RemainBudgetCache = _list.Sum(x => x.RemainBudgetCache),
+                    
+                });
+
+
+
+               
             }
 
-            //PerformanceIndicatorDto
-            throw new NotImplementedException();
+            var Budgetmode = new List<Budgetmode>();
+
+
+            var bb = b_num.Distinct().ToArray();
+            foreach (var num in bb)
+            {
+
+                var hh = b_list.Where(x => x.BudgetTypeId == num).ToList();
+                Budgetmode.Add(new Budgetmode
+                {
+                    BudgetTypeId = num,
+                    list = _database.BudgetTypes.Where(x => x.Id == num).FirstOrDefault().Name,
+                    Budget = hh.Select(x => x.TotalBudgetCache).Sum()
+                });
+            }
+
+
+
+            _list_result.TotalBudget = _list_main.Sum(x => x.TotalBudget);
+            _list_result.TotalBudgetCache = _list_main.Sum(x => x.TotalBudgetCache);
+            _list_result.NetBudgetCache = _list_main.Sum(x => x.NetBudgetCache);
+            _list_result.UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache);
+            _list_result.RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache);
+
+            calBudgetDetail.Budget = _list_result;
+            calBudgetDetail.budgetmodes = Budgetmode;
+
+            return calBudgetDetail;
+        }
+
+        
+        public List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson)
+        {
+            var _Team = new List<Team>();
+            int index = 0;
+            foreach (var team_item in ResponsiblePerson)
+            {
+
+                _Team.Add(new Team
+                {
+                    HrdepartmentName = team_item.HrdepartmentName,
+                    Position = index == 0 ? "ผู้รับผิดชอบโครงการ (Project Manager)" : "ผู้ร่วมโครงการ (Team)",
+                    Name = team_item.Name,
+                });
+                index++;
+            }
+            return _Team;
+        }
+
+        public List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request)
+        {
+            decimal resTotalBudget = 0.00m;
+            decimal total_tBudget = 0.00m;
+            decimal total_pTypeB = 0.00m;
+            decimal total_devB = 0.00m;
+            int count = 1;
+            var result = new List<PlanCoreApproveStatusReportResponse>();
+            var data = _database.PlanCores.Where(x => x.Active && x.FiscalYear == request.fiscalYear && (request.depId != 0 ? x.DepartmentId == request.depId:true) && (request.planTypeId != 0? x.PlanTypeId == request.planTypeId : true  ) && (request.projectName != "" ? x.Name.Contains(request.projectName):true ) && (request.status != 0 ? (request.status == 1 ? x.IsApproved : !x.IsApproved) : true)).Include(x => x.PerformanceIndicators).Include(x => x.PlanActivities).Include(x => x.ResponsiblePeople).ToList();
+            var aListNum =  aList(request.fiscalYear);
+            decimal pTypeB = 0.00m;
+            var tBudget = aListNum.Select(x => x.TotalBudget).Sum();
+            foreach (var pCore in data)
+            {
+
+
+                decimal pcBudget = calbudget(pCore.PlanActivities).Budget.TotalBudgetCache;
+                resTotalBudget += pcBudget;
+                decimal tb = tBudget != 0.00m ? pcBudget / tBudget : 0.00m;
+
+
+                pTypeB = aListNum.Where(c => c.PlanTypeId == pCore.PlanTypeId).Sum(c => c.TotalBudget);
+                decimal pt = pTypeB != 0.00m ? pcBudget / pTypeB : 0.00m;
+                decimal devB = 0.00m;
+                devB = aListNum.Where(c => c.DepartmentId == pCore.DepartmentId).Sum(c => c.TotalBudget);
+                decimal db = devB != 0.00m ? pcBudget / devB : 0.00m;
+                result.Add(new PlanCoreApproveStatusReportResponse
+                {
+                    Approved = pCore.IsApproved,
+                    Name = pCore.Name,
+                    budget = total_tBudget,
+                    Weight_organization = decimal.Round(tb, 4),
+                    Weight_plan = decimal.Round(pt, 4),
+                    Weight_departmant = decimal.Round(db, 4),
+                    PlanType = _database.PlanTypes.Where(x => x.Id == pCore.PlanTypeId).FirstOrDefault().Name,
+                    departmant = _database.Departments.Where(x => x.Id == pCore.DepartmentId).FirstOrDefault().Name,
+                    ResponsiblePerson = pCore.ResponsiblePeople.Count > 0 ? pCore.ResponsiblePeople.Select(x => x.Name).FirstOrDefault() : "",
+                }); 
+            }
+            return result;
+        }
+
+        public List<aListModel> aList(int fiscalYear)
+        {
+            var result = new List<aListModel>();
+            var PlanCores = _database.PlanCores.Where(x => x.Active && x.FiscalYear == fiscalYear).ToList();
+            decimal total = 0;
+            foreach (var s1 in PlanCores)
+            {
+                result.Add(new aListModel
+                {
+                    Id = s1.Id,
+                    DepartmentId = s1.DepartmentId,
+                    PlanTypeId = s1.PlanTypeId,
+                    TotalBudget = calbudget(s1.PlanActivities).Budget.TotalBudgetCache
+
+            });
+                
+            }
+            return result;
         }
     }
 }
