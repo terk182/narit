@@ -1911,12 +1911,44 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/EditPlan")]
-        public IActionResult EditPlan()
+        [Route("/Plan/Operate/EditPlan/{PlanCoreId}")]
+        public IActionResult EditPlan(int PlanCoreId)
         {
-            return Json("EditPlan");
+            var data = _SecServices.GetEditPlan(PlanCoreId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/PrinciplePlanTags")]
+        public IActionResult EditPlanPrinciplePlanTags()
+        {
+            var data = _SecServices.EditPlanPrinciplePlanTags();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/StrategicIndicatorServ/{fiscalYear}")]
+        public IActionResult EditStrategicIndicatorServ(int fiscalYear)
+        {
+            var data = _SecServices.EditPlanStrategicIndicatorServ(fiscalYear);
+            return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/PlanTypeTree/{fiscalYear}")]
+        public IActionResult EditPlanTypeTree(int fiscalYear)
+        {
+            var data = _SecServices.EditPlanStrategicIndicatorServ(fiscalYear);
+            return Json(data);
+        }
+
+
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/EditPerformanceIndicator/{fiscalYear}")]
+        public IActionResult EditPlanEditPerformanceIndicator(int fiscalYear)
+        {
+            var data = _SecServices.EditPerformanceIndicator(fiscalYear);
+            return Json(data);
+        }
+        
 
         [HttpGet]
         [Route("/Plan/Operate/EditPlanActivity")]
@@ -2231,10 +2263,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/ViewPerformanceIndicatorByPlanActivityList")]
-        public IActionResult ViewPerformanceIndicatorByPlanActivityList()
+        [Route("/Plan/Operate/ViewPerformanceIndicatorByPlanActivityList/{PlanCoreId}")]
+        public IActionResult ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId)
         {
-            return Json("ViewPerformanceIndicatorByPlanActivityList");
+            var data = _SecServices.ViewPerformanceIndicatorByPlanActivityList(PlanCoreId);
+            return Json(data);
         }
 
 
@@ -2615,11 +2648,13 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Report/PlanCoreApproveStatusReport")]
-        public IActionResult PlanCoreApproveStatusReport()
+        public IActionResult PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request)
         {
-            return Json("PlanCoreApproveStatusReport");
+            _Logger.LogInformation("sql");
+            var data = _SecServices.PlanCoreApproveStatusReport(request);
+            return Json(data);
         }
 
 

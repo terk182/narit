@@ -67,5 +67,20 @@ namespace App.SEC
         ViewPlanActivityOperationPeriodByPlanCoreDto ViewPlanActivityOperationPeriodByPlanCore(int PlanCoreId);
         ViewPlanActivityOperationPeriodByPlanCoreDto EditPlanActivityOperationPeriodResult(int PlanActivityId);
 
+        PerformanceIndicatorData ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId);
+        calBudgetDetail calbudget(ICollection<PlanActivity> planActivity);
+
+        List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson);
+        List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request);
+
+        List<aListModel> aList(int fiscalYear);
+        PlanCoreListDto GetEditPlan(int PlanCoreId);
+
+        List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();
+
+        List<StrategyDto> EditPlanStrategicIndicatorServ(int fiscalYear);
+        List<PlanTypeTreeDto> PlanTypeTree(int fiscalYear);
+        List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear);
+
     }
 }

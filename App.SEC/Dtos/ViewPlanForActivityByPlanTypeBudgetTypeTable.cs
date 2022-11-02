@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace App.SEC.Dtos
 {
+
+    public class calBudgetDetail
+    {
+        public List<Budgetmode>? budgetmodes { get; set; }
+        public  ViewPlanForActivityByPlanTypeBudgetTypeTable? Budget { get;set;}
+    }
     public class ViewPlanForActivityByPlanTypeBudgetTypeTable
     {
         public int Id { get; set; }
