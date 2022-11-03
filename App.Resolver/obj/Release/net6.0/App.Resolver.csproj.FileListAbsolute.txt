@@ -120,3 +120,5 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\Ap
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\refint\App.Resolver.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\App.Resolver.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\ref\App.Resolver.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\bin\Release\net6.0\App.Common.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\bin\Release\net6.0\App.Common.pdb

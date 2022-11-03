@@ -1,6 +1,5 @@
 ﻿using App.Common;
-using App.EIS;
-using App.PathDetail;
+
 using App.SEC;
 using Microsoft.AspNetCore.Mvc;
 

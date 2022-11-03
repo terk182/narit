@@ -62,6 +62,7 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\P
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Accommodations.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Common.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Resolver.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.SEC.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Data.Context.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.EIS.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.FIN.pdb
@@ -70,5 +71,4 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\P
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.PathDetail.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Plan.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Procure.pdb
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.SEC.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\narit_mis_api.deps.json
