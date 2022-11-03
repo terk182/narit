@@ -1976,7 +1976,7 @@ namespace App.SEC
                 {
                     Approved = pCore.IsApproved,
                     Name = pCore.Name,
-                    budget = total_tBudget,
+                    budget = pcBudget,
                     Weight_organization = decimal.Round(tb, 4),
                     Weight_plan = decimal.Round(pt, 4),
                     Weight_departmant = decimal.Round(db, 4),
@@ -2231,6 +2231,101 @@ namespace App.SEC
             }
 
             return list1;
+        }
+
+        public SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto _PlanCore_request)
+        {
+            var _PlanCore = new PlanCore();
+         
+            _PlanCore.Id = _PlanCore_request.Id;
+            _PlanCore.Name = _PlanCore_request.Name;
+            _PlanCore.FiscalYear = _PlanCore_request.FiscalYear;
+            _PlanCore.Active = _PlanCore_request.Active;
+
+            _PlanCore.DepartmentId = _PlanCore_request.DepartmentId;
+            _PlanCore.PlanTypeId = _PlanCore_request.PlanTypeId;
+            _PlanCore.ReferenceOldId = _PlanCore_request.ReferenceOldId;
+            _PlanCore.Detail = _PlanCore_request.Detail;
+            _PlanCore.Objective = _PlanCore_request.Objective;
+            _PlanCore.Benefit = _PlanCore_request.Benefit;
+            _PlanCore.PlanCategoryEnum = _PlanCore_request.PlanCategoryEnum;
+            _PlanCore.ContinuousStatusEnum = _PlanCore_request.ContinuousStatusEnum;
+            _PlanCore.FundTypeId = _PlanCore_request.FundTypeId;
+            _PlanCore.CreateDate = _PlanCore_request.CreateDate;
+            _PlanCore.CreateByStaffId = _PlanCore_request.CreateByStaffId;
+            _PlanCore.PrinciplePlanTagId = _PlanCore_request.PrinciplePlanTagId;
+            _PlanCore.Weight = _PlanCore_request.Weight;
+            _PlanCore.IsApproved = _PlanCore_request.IsApproved;
+            _PlanCore.CodeNumber = _PlanCore_request.CodeNumber;
+            _PlanCore.ProjectDuration = _PlanCore_request.ProjectDuration;
+            _PlanCore.MonthStart = _PlanCore_request.MonthStart;
+            _PlanCore.MonthEnd = _PlanCore_request.MonthEnd;
+            _PlanCore.TargetIdListValue = _PlanCore_request.TargetIdListValue;
+            _PlanCore.OtherTarget = _PlanCore_request.OtherTarget;
+            _PlanCore.ExpenseTypeEnum = _PlanCore_request.ExpenseTypeEnum;
+            _PlanCore.Output = _PlanCore_request.Output;
+            _PlanCore.Outcome = _PlanCore_request.Outcome;
+            _PlanCore.FundSourceEnum = _PlanCore_request.FundSourceEnum;
+            _PlanCore.FundCategoryEnum = _PlanCore_request.FundCategoryEnum;
+
+           
+            _database.Entry(_PlanCore).State = _PlanCore.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _PlanCore.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<DepartmentListDto> GetDepartments(int fiscalYear)
+        {
+            var list1 = new List<DepartmentListDto>();
+            var Departments = _database.Departments.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = Departments.Where(x => x.ParentDepartmentId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<DepartmentListDto>();
+                foreach (var s in Departments)
+                {
+                    if (s.ParentDepartmentId == item.Id)
+                    {
+                        list2.Add(new DepartmentListDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            FiscalYear  = s.FiscalYear,
+                            Active = s.Active,
+                            ParentDepartmentId = s.ParentDepartmentId,
+                            ReferenceOldId = s.ReferenceOldId,
+
+                        });
+                    }
+                }
+                list1.Add(new DepartmentListDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ParentDepartment = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public List<ResponsiblePerson> getResponsiblePerson()
+        {
+            throw new NotImplementedException();
         }
     }
 }
