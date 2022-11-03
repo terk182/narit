@@ -3,6 +3,7 @@ using App.Accommodations;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
 using App.EIS;
+using App.EIS.Dtos;
 using App.PathDetail;
 using App.PathDetail.Models;
 
@@ -396,18 +397,20 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("Operation/Setup/BillingLocationSetup")]
-        public IActionResult BillingLocationSetup()
+        [Route("Operation/Setup/BillingLocationSetup/getAllBillingLocation")]
+        public IActionResult getAllBillingLocation()
         {
-            return Json("BillingLocationSetup");
+            var data = _Service.getAllBillingLocation();
+            return Json(data);
         }
 
 
         [HttpGet]
-        [Route("Operation/Setup/BuildingPlanSetting")]
-        public IActionResult BuildingPlanSetting()
+        [Route("Operation/Setup/BuildingPlanSetting/getAllBuildingPlan")]
+        public IActionResult getAllBuildingPlan()
         {
-            return Json("BuildingPlanSetting");
+            var data = _Service.getAllBuildingPlan();
+            return Json(data);
         }
 
 
