@@ -61,3 +61,6 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\ref
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\App.FIN.csproj.CopyComplete
+C:\Users\daisy\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\daisy\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\App.FIN.csproj.CopyComplete
