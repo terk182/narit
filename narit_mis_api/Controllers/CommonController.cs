@@ -39,7 +39,7 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("/Common/EditPlan/PlanTypeTree/{fiscalYear}")]
+        [Route("/Common/PlanTypeTree/{fiscalYear}")]
         public IActionResult EditPlanTypeTree(int fiscalYear)
         {
             var data = _SecServices.EditPlanStrategicIndicatorServ(fiscalYear);
@@ -48,14 +48,14 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Common/EditPlan/EditPerformanceIndicator/{fiscalYear}")]
+        [Route("/Common/PerformanceIndicator/{fiscalYear}")]
         public IActionResult EditPlanEditPerformanceIndicator(int fiscalYear)
         {
             var data = _SecServices.EditPerformanceIndicator(fiscalYear);
             return Json(data);
         }
         [HttpGet]
-        [Route("/Common/GetDepartments/{fiscalYear}")]
+        [Route("/Common/Departments/{fiscalYear}")]
         public IActionResult EditPlanEditGetDepartments(int fiscalYear)
         {
             var data = _SecServices.GetDepartments(fiscalYear);
