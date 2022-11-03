@@ -1974,6 +1974,7 @@ namespace App.SEC
                 decimal db = devB != 0.00m ? pcBudget / devB : 0.00m;
                 result.Add(new PlanCoreApproveStatusReportResponse
                 {
+                    Id = pCore.Id,
                     Approved = pCore.IsApproved,
                     Name = pCore.Name,
                     budget = pcBudget,
