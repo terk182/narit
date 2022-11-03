@@ -916,6 +916,19 @@
           "bin/placeholder/App.Accommodations.dll": {}
         }
       },
+      "App.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Common.dll": {}
+        }
+      },
       "App.EIS/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1009,6 +1022,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "App.Accommodations": "1.0.0",
+          "App.Common": "1.0.0",
           "App.EIS": "1.0.0",
           "App.FIN": "1.0.0",
           "App.General": "1.0.0",
@@ -2444,6 +2458,11 @@
       "path": "../App.Accommodations/App.Accommodations.csproj",
       "msbuildProject": "../App.Accommodations/App.Accommodations.csproj"
     },
+    "App.Common/1.0.0": {
+      "type": "project",
+      "path": "../App.Common/App.Common.csproj",
+      "msbuildProject": "../App.Common/App.Common.csproj"
+    },
     "App.EIS/1.0.0": {
       "type": "project",
       "path": "../App.CollaborationNetwork/App.EIS.csproj",
@@ -2498,7 +2517,9 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "App.Accommodations >= 1.0.0",
+      "App.Common >= 1.0.0",
       "App.Resolver >= 1.0.0",
+      "App.SEC >= 1.0.0",
       "AutoMapper >= 12.0.0",
       "Data.Context >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.10",
@@ -2541,8 +2562,14 @@
             "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
               "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+            },
             "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj": {
               "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj"
+            },
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
             },
             "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
               "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
@@ -2597,5 +2624,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\KKN\\Documents\\GitHub\\narit\\narit_mis_api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

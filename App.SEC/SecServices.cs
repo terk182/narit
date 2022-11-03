@@ -1173,9 +1173,10 @@ namespace App.SEC
 
             var _list_m = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
 
+            var count_InverseParentPlanType = startPlanType.SelectMany(x => x.InverseParentPlanType).Count();
 
-           
-            if (startPlanType.Select(x => x.PlanCores).Count() <1)
+
+            if (count_InverseParentPlanType > 0)
             {
                 foreach (var s1 in startPlanType)
                 {
@@ -1183,7 +1184,16 @@ namespace App.SEC
                     foreach (var s2 in s1.InverseParentPlanType)
                     {
                         var _list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
-                        var PlanCoreDetail = _database.PlanCores.Where(x => x.PlanTypeId == s2.Id && x.Active &&( depId != 0 ? x.DepartmentId == depId : true) ).Include(x => x.PlanActivities).ToList();
+                        var PlanCoreDetail = new List<PlanCore>();
+                        if (depId == 0)
+                        {
+                             PlanCoreDetail = _database.PlanCores.Where(x => x.PlanTypeId == s2.Id && x.Active).Include(x => x.PlanActivities).ToList();
+                        }
+                        else
+                        {
+                             PlanCoreDetail = _database.PlanCores.Where(x => x.PlanTypeId == s2.Id && x.DepartmentId == depId && x.Active).Include(x => x.PlanActivities).ToList();
+                        }
+
                         foreach (var s3 in PlanCoreDetail)
                         {
                             var _list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
@@ -1269,7 +1279,7 @@ namespace App.SEC
                     var _list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
                     foreach (var l1 in PlanCores.PlanCores)
                     {
-                        var PlanActivities = _database.PlanActivities.Where(x => x.PlanCoreId == l1.Id && x.Active && (depId != 0 ? x.DepartmentId == depId : true)).Include(x => x.PlanItems).ToList();
+                        var PlanActivities = _database.PlanActivities.Where(x => x.PlanCoreId == l1.Id && x.Active).Include(x => x.PlanItems).ToList();
                         var _list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
                         foreach (var l2 in PlanActivities)
                         {
@@ -1966,7 +1976,7 @@ namespace App.SEC
                 {
                     Approved = pCore.IsApproved,
                     Name = pCore.Name,
-                    budget = total_tBudget,
+                    budget = pcBudget,
                     Weight_organization = decimal.Round(tb, 4),
                     Weight_plan = decimal.Round(pt, 4),
                     Weight_departmant = decimal.Round(db, 4),
@@ -1996,6 +2006,326 @@ namespace App.SEC
                 
             }
             return result;
+        }
+
+        public PlanCoreListDto GetEditPlan(int PlanCoreId)
+        {
+            var result = new PlanCoreListDto();
+            var data = _database.PlanCores.Where(x => x.Id == PlanCoreId).Include(x => x.PerformanceIndicators).Include(x => x.Strategies).Include(x => x.ResponsiblePeople).ToList();
+            foreach (var item in data)
+            {
+                result.Id = item.Id;
+                result.Name = item.Name;
+                result.FiscalYear = item.FiscalYear;
+                result.Code = item.Code;
+                result.Active = item.Active;
+                result.DepartmentId = item.DepartmentId;
+                result.PlanTypeId = item.PlanTypeId;
+                result.ReferenceOldId = item.ReferenceOldId;
+                result.Detail = item.Detail;
+                result.Objective = item.Objective;
+                result.Benefit = item.Benefit;
+                result.PlanCategoryEnum = item.PlanCategoryEnum;
+                result.ContinuousStatusEnum = item.ContinuousStatusEnum;
+                result.FundTypeId = item.FundTypeId;
+                result.CreateDate = item.CreateDate;
+                result.CreateByStaffId = item.CreateByStaffId;
+                result.PrinciplePlanTagId = item.PrinciplePlanTagId;
+                result.Weight = item.Weight;
+                result.IsApproved = item.IsApproved;
+                result.CodeNumber = item.CodeNumber;
+                result.ProjectDuration = item.ProjectDuration;
+                result.MonthStart = item.MonthStart;
+                result.MonthEnd = item.MonthEnd;
+                result.TargetIdListValue = item.TargetIdListValue;
+                result.OtherTarget = item.OtherTarget;
+                result.ExpenseTypeEnum = item.ExpenseTypeEnum;
+                result.Output = item.Output;
+                result.Outcome = item.Outcome;
+                result.FundSourceEnum = item.FundCategoryEnum;
+                result.FundCategoryEnum = item.FundCategoryEnum;
+                var ResponsiblePerson = new List<ResponsiblePerson>();
+                foreach(var s in item.ResponsiblePeople)
+                {
+                    ResponsiblePerson.Add(new narit_mis_api.Models.ResponsiblePerson
+                    {
+                        Id = s.Id,
+                        Name = s.Name,
+                        Active = s.Active,
+                        FiscalYear = s.FiscalYear,
+                        StaffId = s.StaffId,
+                        PlanPersonResponsibilityEnum = s.PlanPersonResponsibilityEnum,
+                        PlanCoreId = s.PlanCoreId,
+                        PlanActivityId = s.PlanActivityId,
+                        HrdepartmentId = s.HrdepartmentId,
+                        HrdepartmentName = s.HrdepartmentName,
+                    });
+                }
+
+
+
+                result.ResponsiblePeople = ResponsiblePerson;
+    }
+            return result;
+        }
+
+        public List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags()
+        {
+            var list1 = new List<PrinciplePlanTagDto>();
+            
+            var PrinciplePlanTags = _database.PrinciplePlanTags.ToList();
+
+            var data = PrinciplePlanTags.Where(x => x.ParentPrinciplePlanTagId == null).ToList();
+            foreach(var item in data)
+            {
+                var list2 = new List<PrinciplePlanTagDto>();
+                foreach (var s in PrinciplePlanTags)
+                {
+                    if (s.ParentPrinciplePlanTagId == item.Id)
+                    {
+                        list2.Add(new PrinciplePlanTagDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            Active = s.Active,
+                            Weight = s.Weight,
+                            ParentPrinciplePlanTagId = s.ParentPrinciplePlanTagId
+                           // PrinciplePlanTag { get; set; }
+                        });
+                    }
+                }
+                list1.Add(new PrinciplePlanTagDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    Weight = item.Weight,
+                    ParentPrinciplePlanTagId = item.ParentPrinciplePlanTagId,
+                    PrinciplePlanTag = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public List<StrategyDto> EditPlanStrategicIndicatorServ(int fiscalYear)
+        {
+            var list1 = new List<StrategyDto>();
+            var Strategies = _database.Strategies.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = Strategies.Where(x => x.ParentStrategyId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<StrategyDto>();
+                foreach (var s in Strategies)
+                {
+                    if (s.ParentStrategyId == item.Id)
+                    {
+                        list2.Add(new StrategyDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            Active = s.Active,
+                            ParentStrategyId = s.ParentStrategyId
+                            // PrinciplePlanTag { get; set; }
+                        });
+                    }
+                }
+                list1.Add(new StrategyDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    ParentStrategyId = item.ParentStrategyId,
+                    Strategy = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public List<PlanTypeTreeDto> PlanTypeTree(int fiscalYear)
+        {
+            var list1 = new List<PlanTypeTreeDto>();
+            var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<PlanTypeTreeDto>();
+                foreach (var s in PlanTypes)
+                {
+                    if (s.ParentPlanTypeId == item.Id)
+                    {
+                        list2.Add(new PlanTypeTreeDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            Active = s.Active,
+                            ParentPlanTypeId = s.ParentPlanTypeId
+                            // PrinciplePlanTag { get; set; }
+                        });
+                    }
+                }
+                list1.Add(new PlanTypeTreeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    PlanType = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear)
+        {
+            var list1 = new List<PerformanceIndicatorsDto>();
+            var PerformanceIndicators = _database.PerformanceIndicators.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = PerformanceIndicators.Where(x => x.ParentPerformanceIndicatorId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<PerformanceIndicatorsDto>();
+                foreach (var s in PerformanceIndicators)
+                {
+                    if (s.ParentPerformanceIndicatorId == item.Id)
+                    {
+                        list2.Add(new PerformanceIndicatorsDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            FiscalYear = s.FiscalYear,
+                            Active = s.Active,
+                            TargetValueQ1 = s.TargetValueQ1,
+                            TargetUnit = s.TargetUnit,
+                            Detail = s.Detail,
+                            PlanActivityId = s.PlanActivityId,
+                          
+                        });
+                    }
+                }
+                list1.Add(new PerformanceIndicatorsDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    TargetValueQ1 = item.TargetValueQ1,
+                    TargetUnit = item.TargetUnit,
+                    Detail = item.Detail,
+                    PlanActivityId = item.PlanActivityId,
+                    PerformanceIndicators = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto _PlanCore_request)
+        {
+            var _PlanCore = new PlanCore();
+         
+            _PlanCore.Id = _PlanCore_request.Id;
+            _PlanCore.Name = _PlanCore_request.Name;
+            _PlanCore.FiscalYear = _PlanCore_request.FiscalYear;
+            _PlanCore.Active = _PlanCore_request.Active;
+
+            _PlanCore.DepartmentId = _PlanCore_request.DepartmentId;
+            _PlanCore.PlanTypeId = _PlanCore_request.PlanTypeId;
+            _PlanCore.ReferenceOldId = _PlanCore_request.ReferenceOldId;
+            _PlanCore.Detail = _PlanCore_request.Detail;
+            _PlanCore.Objective = _PlanCore_request.Objective;
+            _PlanCore.Benefit = _PlanCore_request.Benefit;
+            _PlanCore.PlanCategoryEnum = _PlanCore_request.PlanCategoryEnum;
+            _PlanCore.ContinuousStatusEnum = _PlanCore_request.ContinuousStatusEnum;
+            _PlanCore.FundTypeId = _PlanCore_request.FundTypeId;
+            _PlanCore.CreateDate = _PlanCore_request.CreateDate;
+            _PlanCore.CreateByStaffId = _PlanCore_request.CreateByStaffId;
+            _PlanCore.PrinciplePlanTagId = _PlanCore_request.PrinciplePlanTagId;
+            _PlanCore.Weight = _PlanCore_request.Weight;
+            _PlanCore.IsApproved = _PlanCore_request.IsApproved;
+            _PlanCore.CodeNumber = _PlanCore_request.CodeNumber;
+            _PlanCore.ProjectDuration = _PlanCore_request.ProjectDuration;
+            _PlanCore.MonthStart = _PlanCore_request.MonthStart;
+            _PlanCore.MonthEnd = _PlanCore_request.MonthEnd;
+            _PlanCore.TargetIdListValue = _PlanCore_request.TargetIdListValue;
+            _PlanCore.OtherTarget = _PlanCore_request.OtherTarget;
+            _PlanCore.ExpenseTypeEnum = _PlanCore_request.ExpenseTypeEnum;
+            _PlanCore.Output = _PlanCore_request.Output;
+            _PlanCore.Outcome = _PlanCore_request.Outcome;
+            _PlanCore.FundSourceEnum = _PlanCore_request.FundSourceEnum;
+            _PlanCore.FundCategoryEnum = _PlanCore_request.FundCategoryEnum;
+
+           
+            _database.Entry(_PlanCore).State = _PlanCore.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _PlanCore.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<DepartmentListDto> GetDepartments(int fiscalYear)
+        {
+            var list1 = new List<DepartmentListDto>();
+            var Departments = _database.Departments.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = Departments.Where(x => x.ParentDepartmentId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<DepartmentListDto>();
+                foreach (var s in Departments)
+                {
+                    if (s.ParentDepartmentId == item.Id)
+                    {
+                        list2.Add(new DepartmentListDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            FiscalYear  = s.FiscalYear,
+                            Active = s.Active,
+                            ParentDepartmentId = s.ParentDepartmentId,
+                            ReferenceOldId = s.ReferenceOldId,
+
+                        });
+                    }
+                }
+                list1.Add(new DepartmentListDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ParentDepartment = list2
+                });
+
+
+
+            }
+
+            return list1;
+        }
+
+        public List<ResponsiblePerson> getResponsiblePerson()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -605,3 +605,5 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\ref
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.genruntimeconfig.cache
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\ref\narit_mis_api.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Common.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Common.pdb

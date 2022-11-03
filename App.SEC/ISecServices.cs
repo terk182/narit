@@ -74,6 +74,17 @@ namespace App.SEC
         List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request);
 
         List<aListModel> aList(int fiscalYear);
+        PlanCoreListDto GetEditPlan(int PlanCoreId);
+
+        List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();
+
+        List<StrategyDto> EditPlanStrategicIndicatorServ(int fiscalYear);
+        List<PlanTypeTreeDto> PlanTypeTree(int fiscalYear);
+        List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear);
+        List<DepartmentListDto> GetDepartments(int fiscalYear);
+
+        List<ResponsiblePerson> getResponsiblePerson();
+        SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto request);
 
     }
 }

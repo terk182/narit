@@ -1,5 +1,6 @@
 ﻿
 using App.Accommodations;
+using App.Common;
 using App.EIS;
 using App.FIN;
 using App.General;
@@ -32,7 +33,8 @@ namespace App.Resolver
             services.AddScoped<IGeneralServices, GeneralServices>(); 
             services.AddScoped<ISecServices, SecServices>(); 
             services.AddScoped<IPlanServices, PlanServices>(); 
-            services.AddScoped<IProcureServices, ProcureServices>(); 
+            services.AddScoped<IProcureServices, ProcureServices>();
+            services.AddScoped<ICommonServices, CommonServices>();
             return services;
         }
     }
