@@ -1948,6 +1948,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.EditPerformanceIndicator(fiscalYear);
             return Json(data);
         }
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetDepartments/{fiscalYear}")]
+        public IActionResult EditPlanEditGetDepartments(int fiscalYear)
+        {
+            var data = _SecServices.GetDepartments(fiscalYear);
+            return Json(data);
+        }
         
 
         [HttpGet]
