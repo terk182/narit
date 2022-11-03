@@ -1,4 +1,6 @@
-﻿using System;
+﻿using narit_mis_api.Models;
+using App.FIN.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,12 @@ namespace App.FIN
 {
     public interface IFinServices
     {
+        List<RegisterProcureItemTypeDto> getAllRegis();
+        //RegisterProcureItemType getById(int id);
+        List<SupplierDto> getAllSupplier();
+
+        List<SupplierDto> getSupplierbyName(string name);
+
+        List<ProcureStoreLocationDto> getAllStoreLocation();
     }
 }

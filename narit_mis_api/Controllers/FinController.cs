@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using narit_mis_api.Models;
+using Microsoft.AspNetCore.Mvc;
+using App.FIN;
+using App.FIN.Dtos;
 
 namespace narit_mis_api.Controllers
 {
@@ -6,6 +9,19 @@ namespace narit_mis_api.Controllers
     [Route("api/[controller]")]
     public class FinController : Controller
     {
+        protected readonly IFinServices _FinServices;
+
+        private readonly ILogger _Logger;
+
+        public FinController(ILogger<FinController> logger, IFinServices FinServices)
+        {
+            _FinServices = FinServices;
+
+            _Logger = logger;
+
+            //_configuration = Configuration;
+            // connecttion = _configuration.GetConnectionString("Defaultconnectton");
+        }
         #region Operate
         [HttpGet]
         [Route("Finance/MainFinancePage")]
@@ -509,5 +525,46 @@ namespace narit_mis_api.Controllers
             return Json("ReserveBudgetForecastReport");
         }
 
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/SetRegisterProcureItemType/getAllRegis")]
+        public IActionResult getAllRegis()
+        {
+            var data = _FinServices.getAllRegis();
+            return Json(data);
+        }
+
+        //[HttpGet]
+        //[Route("/FIN/Procure/Setup/SetRegisterProcureItemType/GetById/{Id}")]
+        //public IActionResult getById(int Id)
+        //{
+
+        //    var data = _FinServices.getById(Id);
+
+        //    return Json(data);
+        //}
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ViewSupplierListForSetup/getAllSupplier")]
+        public IActionResult getAllSupplier()
+        {
+            var data = _FinServices.getAllSupplier();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ViewSupplierListForSetup/getSupplierbyName")]
+        public IActionResult getSupplierbyName(string name)
+        {
+            var data = _FinServices.getSupplierbyName(name);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ProcureStoreLocationSetup/getAllStoreLocation")]
+        public IActionResult getAllStoreLocation()
+        {
+            var data = _FinServices.getAllStoreLocation();
+            return Json(data);
+        }
     }
 }

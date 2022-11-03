@@ -541,6 +541,9 @@
         }
       },
       "App.FIN/1.0.0": {
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
         "runtime": {
           "App.FIN.dll": {}
         }

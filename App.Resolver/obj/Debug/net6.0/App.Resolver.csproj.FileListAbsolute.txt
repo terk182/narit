@@ -211,3 +211,5 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\ref\App.Resolver.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.Common.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.Common.pdb
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.Common.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.Common.pdb

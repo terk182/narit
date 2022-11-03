@@ -58,3 +58,6 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\App
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\refint\App.FIN.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\App.FIN.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\ref\App.FIN.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Executive\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Debug\net6.0\App.FIN.csproj.CopyComplete

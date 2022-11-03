@@ -1,4 +1,5 @@
-﻿using narit_mis_api.Models;
+﻿using App.EIS.Dtos;
+using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,9 @@ namespace App.EIS
         List<PlanCore> getPlanCore();
         List<GovernmentDisbursementGoal> getGovernmentDisbursementGoal();
         List<PlanCore> planCoreList(int year);
+        List<BillingLocationDto> getAllBillingLocation();
+
+        List<ProcureStoreLocationDto> getAllBuildingPlan();
+
     }
 }
