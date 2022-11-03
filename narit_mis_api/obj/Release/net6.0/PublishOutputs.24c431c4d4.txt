@@ -48,6 +48,7 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\P
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Accommodations.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Common.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.EIS.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.FIN.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.General.dll
@@ -59,6 +60,7 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\P
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.SEC.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Data.Context.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Accommodations.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Common.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Resolver.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Data.Context.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.EIS.pdb
