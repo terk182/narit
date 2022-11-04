@@ -2721,10 +2721,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanItemByBudgetTypeAndPlanTypeReport")]
-        public IActionResult PlanItemByBudgetTypeAndPlanTypeReport()
+        [Route("/Plan/Report/PlanItemByBudgetTypeAndPlanTypeReport/{fiscalYear}/{month}/{planTypeId}/{budgetTypeId}")]
+        public IActionResult PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId)
         {
-            return Json("PlanItemByBudgetTypeAndPlanTypeReport");
+            var data = _SecServices.PlanItemByBudgetTypeAndPlanTypeReport(fiscalYear, month, planTypeId, budgetTypeId);
+            return Json(data);
         }
 
 
@@ -2771,10 +2772,11 @@ namespace narit_mis_api.Controllers
        
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByDepartment")]
-        public IActionResult PlanReportByDepartment()
+        [Route("/Plan/Report/PlanReportByDepartment/{fiscalYear}")]
+        public IActionResult PlanReportByDepartment(int fiscalYear)
         {
-            return Json("PlanReportByDepartment");
+            var data = _SecServices.PlanReportByDepartment(fiscalYear);
+            return Json(data);
         }
 
 
@@ -2789,10 +2791,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByPlanType")]
-        public IActionResult PlanReportByPlanType()
+        [Route("/Plan/Report/PlanReportByPlanType/{fiscalYear}")]
+        public IActionResult PlanReportByPlanType(int fiscalYear)
         {
-            return Json("PlanReportByPlanType");
+            var data = _SecServices.PlanReportByPlanType(fiscalYear);
+            return Json(data);
         }
 
 

@@ -70,3 +70,5 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\App.SEC.d
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\refint\App.SEC.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\App.SEC.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\obj\Debug\net6.0\ref\App.SEC.dll
+C:\Users\daisy\Documents\GitHub\narit\App.SEC\bin\Debug\net6.0\App.Common.dll
+C:\Users\daisy\Documents\GitHub\narit\App.SEC\bin\Debug\net6.0\App.Common.pdb

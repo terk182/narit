@@ -901,6 +901,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "App.Common": "1.0.0",
           "AutoMapper": "12.0.0",
           "Data.Context": "1.0.0"
         },

@@ -10,13 +10,13 @@ namespace narit_mis_api.Controllers
     public class CommonController : Controller
     {
     
-        protected readonly ICommonServices _Service;
+        protected readonly ICommonServices _CommonServices;
         protected readonly ISecServices _SecServices;
         private readonly ILogger _Logger;
 
         public CommonController(ILogger<CommonController> logger, ICommonServices Service, ISecServices SecServices)
         {
-            _Service = Service;
+            _CommonServices = Service;
             _Logger = logger;
             _SecServices = SecServices;
 
@@ -38,14 +38,6 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-        [HttpGet]
-        [Route("/Common/PlanTypeTree/{fiscalYear}")]
-        public IActionResult EditPlanTypeTree(int fiscalYear)
-        {
-            var data = _SecServices.EditPlanStrategicIndicatorServ(fiscalYear);
-            return Json(data);
-        }
-
 
         [HttpGet]
         [Route("/Common/PerformanceIndicator/{fiscalYear}")]
@@ -62,5 +54,21 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Common/BudgetTypes/{fiscalYear}")]
+        public IActionResult BudgetTypes(int fiscalYear)
+        {
+            var data = _CommonServices.GetBudgetTypes(fiscalYear);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Common/PlanType/{fiscalYear}")]
+        public IActionResult GetPlanType(int fiscalYear)
+        {
+            var data = _CommonServices.GetPlanType(fiscalYear);
+            return Json(data);
+        }
+        
     }
 }

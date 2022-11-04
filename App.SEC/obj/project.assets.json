@@ -754,6 +754,19 @@
           }
         }
       },
+      "App.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Common.dll": {}
+        }
+      },
       "Data.Context/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1949,6 +1962,11 @@
         "version.txt"
       ]
     },
+    "App.Common/1.0.0": {
+      "type": "project",
+      "path": "../App.Common/App.Common.csproj",
+      "msbuildProject": "../App.Common/App.Common.csproj"
+    },
     "Data.Context/1.0.0": {
       "type": "project",
       "path": "../Data.Context/Data.Context.csproj",
@@ -1957,6 +1975,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "App.Common >= 1.0.0",
       "AutoMapper >= 12.0.0",
       "Data.Context >= 1.0.0"
     ]
@@ -1994,6 +2013,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+            },
             "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
               "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }

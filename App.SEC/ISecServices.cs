@@ -85,6 +85,10 @@ namespace App.SEC
 
         List<ResponsiblePerson> getResponsiblePerson();
         SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto request);
+        SecBaseResponse PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId);
 
+        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanType(int fiscalYear);
+        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear);
+        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByBudgetType(int fiscalYear);
     }
 }

@@ -44,6 +44,7 @@ namespace App.SEC.Dtos
         public decimal BudgetPerPiece { get; set; }
         public string? Unit { get; set; }
         public int? BudgetTypeId { get; set; }
+        public int? PlanTypeId { get; set; }
         public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? subdata { get; set; }
     }
 }

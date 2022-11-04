@@ -710,6 +710,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+                "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+              },
               "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
                 "projectPath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }

@@ -1,4 +1,5 @@
-﻿using App.SEC.Dtos;
+﻿using App.Common.Dtos;
+using App.SEC.Dtos;
 using App.SEC.enums;
 using App.SEC.helper;
 using App.SEC.Models;
@@ -2326,6 +2327,218 @@ namespace App.SEC
 
         public List<ResponsiblePerson> getResponsiblePerson()
         {
+            throw new NotImplementedException();
+        }
+
+        public SecBaseResponse PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId)
+        {
+
+            decimal _NetBudgetCache = 0;
+         
+            var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active && x.Id == planTypeId).Include(x => x.PlanCores).Include(x => x.InverseParentPlanType).FirstOrDefault();
+            foreach (var s in PlanTypes.InverseParentPlanType)
+            {
+                var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id && x.Active).Include(x => x.PlanActivities).ToList();
+                _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.NetBudgetCache;
+                
+            }
+
+           // var v1 = _TotalBudgetCache;
+      
+            return new SecBaseResponse();
+        }
+
+        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanType(int fiscalYear)
+        {
+            var list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+            var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+                foreach (var s in PlanTypes)
+                {
+                    if (s.ParentPlanTypeId == item.Id)
+                    {
+                        var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id).Include(x => x.PlanActivities);
+                        var d = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
+                        list2.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                        {
+                             Id = s.Id,
+                             Name = s.Name,
+                             FiscalYear = s.FiscalYear,
+                             TotalBudgetCache = d.Budget.TotalBudgetCache,
+                             NetBudgetCache = d.Budget.NetBudgetCache,
+                             UsedBudgetCache = d.Budget.UsedBudgetCache,
+                             RemainBudgetCache = d.Budget.RemainBudgetCache,
+                             TotalBudget = d.Budget.TotalBudget,
+                             NetBudget = d.Budget.NetBudget,
+
+                        });
+                    }
+                }
+                list1.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    TotalBudgetCache = list2.Sum(x => x.TotalBudgetCache),
+                    NetBudgetCache = list2.Sum(x => x.NetBudgetCache),
+                    UsedBudgetCache = list2.Sum(x => x.UsedBudgetCache),
+                    RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
+                    TotalBudget = list2.Sum(x => x.TotalBudget),
+                    NetBudget = list2.Sum(x => x.NetBudget),
+                    subdata = list2
+                }); 
+
+
+
+            }
+            return list1;
+        }
+
+        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear)
+        {
+            bool one_check = true;
+            var list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+            var Departments = _database.Departments.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = Departments.Where(x => x.ParentDepartmentId == null).ToList();
+            foreach (var item in data)
+            {
+             
+                var list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+                foreach (var s in Departments)
+                {
+                    var planCore = _database.PlanCores.Where(x => x.DepartmentId == s.Id).Include(x => x.PlanActivities);
+                    var d = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
+                    if (s.ParentDepartmentId == item.Id)
+                    {
+                        list2.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            FiscalYear = s.FiscalYear,
+                            TotalBudgetCache = d.Budget.TotalBudgetCache,
+                            NetBudgetCache = d.Budget.NetBudgetCache,
+                            UsedBudgetCache = d.Budget.UsedBudgetCache,
+                            RemainBudgetCache = d.Budget.RemainBudgetCache,
+                            TotalBudget = d.Budget.TotalBudget,
+                            NetBudget = d.Budget.NetBudget,
+                            PlanTypeId = planCore.Select(x => x.PlanTypeId).FirstOrDefault()
+                        }) ;
+                    }
+                }
+
+
+                if (one_check == true)
+                {
+                    one_check = false;
+                    var b = list2.Select(x => x.PlanTypeId).FirstOrDefault();
+
+                    var h = _database.PlanTypes.Where(x => x.Id == b).FirstOrDefault().ParentPlanTypeId;
+
+                    decimal _TotalBudgetCache = 0;
+                    decimal _TotalAmount = 0;
+                    decimal _NetAmount = 0;
+                    decimal _NetBudgetCache = 0;
+                    decimal _UsedBudgetCache = 0;
+                    decimal _RemainBudgetPlanView = 0;
+                    decimal _TotalBudget = 0;
+
+                    var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active && x.Id == h).Include(x => x.PlanCores).Include(x => x.InverseParentPlanType).FirstOrDefault();
+                    foreach (var s in PlanTypes.InverseParentPlanType)
+                    {
+                        var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id && x.Active).Include(x => x.PlanActivities).ToList();
+                        _TotalBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.TotalBudgetCache;
+                        _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.NetBudgetCache;
+                        _UsedBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.UsedBudgetCache;
+                        _RemainBudgetPlanView += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.RemainBudgetCache;
+                    }
+
+
+                    list1.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        TotalBudgetCache = _TotalBudgetCache,
+                        NetBudgetCache = _NetBudgetCache,
+                        UsedBudgetCache = _UsedBudgetCache,
+                        RemainBudgetCache = _RemainBudgetPlanView,
+                        //TotalBudget = list2.Sum(x => x.TotalBudget),
+                        //NetBudget = list2.Sum(x => x.NetBudget),
+                        subdata = list2
+                    });
+                }
+                else
+                {
+                    list1.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        TotalBudgetCache = list2.Sum(x => x.TotalBudgetCache),
+                        NetBudgetCache = list2.Sum(x => x.NetBudgetCache),
+                        UsedBudgetCache = list2.Sum(x => x.UsedBudgetCache),
+                        RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
+                        TotalBudget = list2.Sum(x => x.TotalBudget),
+                        NetBudget = list2.Sum(x => x.NetBudget),
+                        subdata = list2
+                    });
+                }
+               
+
+
+            }
+            return list1;
+        }
+
+        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByBudgetType(int fiscalYear)
+        {
+        
+            var BudgetTypes = _database.BudgetTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+            var data = BudgetTypes.Where(x => x.ParentBudgetTypeId == null).ToList();
+            foreach (var item in data)
+            {
+                var list2 = new List<BudgetTypeCommonDto>();
+                foreach (var s in BudgetTypes)
+                {
+                    var planCore = _database.PlanCores.Where(x => x.Id == s.Id).Include(x => x.PlanActivities);
+                    var d = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
+                    if (s.ParentBudgetTypeId == item.Id)
+                    {
+                        list2.Add(new BudgetTypeCommonDto
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            Active = s.Active,
+                            FiscalYear = s.FiscalYear,
+                            ParentBudgetTypeId = s.ParentBudgetTypeId,
+                            ReferenceOldId = s.ReferenceOldId,
+                            ExpenseTypeEnum = s.ExpenseTypeEnum,
+                            GovExpenseTypeEnum = s.GovExpenseTypeEnum,
+
+                        });
+                    }
+                }
+                //list1.Add(new BudgetTypeCommonDto
+                //{
+                //    Id = item.Id,
+                //    Name = item.Name,
+                //    Active = item.Active,
+                //    FiscalYear = item.FiscalYear,
+                //    ParentBudgetTypeId = item.ParentBudgetTypeId,
+                //    ReferenceOldId = item.ReferenceOldId,
+                //    ExpenseTypeEnum = item.ExpenseTypeEnum,
+                //    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+                //    ParentBudgetType = list2
+                //});
+
+
+
+            }
+
+          
             throw new NotImplementedException();
         }
     }
