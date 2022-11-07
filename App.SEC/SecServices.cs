@@ -2085,14 +2085,31 @@ namespace App.SEC
                 {
                     if (s.ParentPrinciplePlanTagId == item.Id)
                     {
+                        var list3 = new List<PrinciplePlanTagDto>();
+                        foreach (var s1 in PrinciplePlanTags)
+                        {
+                            if (s1.ParentPrinciplePlanTagId == s.Id)
+                            {
+                                list3.Add(new PrinciplePlanTagDto
+                                {
+                                    Id = s1.Id,
+                                    Name = s1.Name,
+                                    Active = s1.Active,
+                                    Weight = s1.Weight,
+                                    ParentPrinciplePlanTagId = s1.ParentPrinciplePlanTagId
+                                    // PrinciplePlanTag { get; set; }
+                                });
+                            }
+
+                        }
                         list2.Add(new PrinciplePlanTagDto
                         {
                             Id = s.Id,
                             Name = s.Name,
                             Active = s.Active,
                             Weight = s.Weight,
-                            ParentPrinciplePlanTagId = s.ParentPrinciplePlanTagId
-                           // PrinciplePlanTag { get; set; }
+                            ParentPrinciplePlanTagId = s.ParentPrinciplePlanTagId,
+                            PrinciplePlanTag = list3
                         });
                     }
                 }
