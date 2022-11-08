@@ -29,6 +29,45 @@ namespace App.Common
                 {
                     if (s.ParentBudgetTypeId == item.Id)
                     {
+                        var list3 = new List<BudgetTypeCommonDto>();
+                        foreach (var s1 in Departments)
+                        {
+                            if (s1.ParentBudgetTypeId == s.Id)
+                            {
+                                var list4 = new List<BudgetTypeCommonDto>();
+                                foreach (var s2 in Departments)
+                                {
+                                    if (s2.ParentBudgetTypeId == s1.Id)
+                                    {
+                                        list4.Add(new BudgetTypeCommonDto
+                                        {
+                                            Id = s2.Id,
+                                            Name = s2.Name,
+                                            Active = s2.Active,
+                                            FiscalYear = s2.FiscalYear,
+                                            ParentBudgetTypeId = s2.ParentBudgetTypeId,
+                                            ReferenceOldId = s2.ReferenceOldId,
+                                            ExpenseTypeEnum = s2.ExpenseTypeEnum,
+                                            GovExpenseTypeEnum = s2.GovExpenseTypeEnum,
+                                        });
+                                    }
+
+                                }
+                                list3.Add(new BudgetTypeCommonDto
+                                {
+                                    Id = s1.Id,
+                                    Name = s1.Name,
+                                    Active = s1.Active,
+                                    FiscalYear = s1.FiscalYear,
+                                    ParentBudgetTypeId = s1.ParentBudgetTypeId,
+                                    ReferenceOldId = s1.ReferenceOldId,
+                                    ExpenseTypeEnum = s1.ExpenseTypeEnum,
+                                    GovExpenseTypeEnum = s1.GovExpenseTypeEnum,
+                                    ParentBudgetType = list4
+                                });
+                            }
+
+                        }
                         list2.Add(new BudgetTypeCommonDto
                         {
                             Id = s.Id,
@@ -39,7 +78,7 @@ namespace App.Common
                             ReferenceOldId = s.ReferenceOldId,
                             ExpenseTypeEnum = s.ExpenseTypeEnum,
                             GovExpenseTypeEnum = s.GovExpenseTypeEnum,
-
+                            ParentBudgetType = list3
                         });
                     }
                 }
@@ -75,6 +114,25 @@ namespace App.Common
                 {
                     if (s.ParentPlanTypeId == item.Id)
                     {
+                        var list3 = new List<PlanTypeCommonDto>();
+                        foreach (var s1 in PlanTypes)
+                        {
+                            if (s1.ParentPlanTypeId == s.Id)
+                            {
+                                list3.Add(new PlanTypeCommonDto
+                                {
+                                    Id = s1.Id,
+                                    Name = s1.Name,
+                                    FiscalYear = s1.FiscalYear,
+                                    Active = s1.Active,
+                                    ParentPlanTypeId = s1.ParentPlanTypeId,
+                                    ReferenceOldId = s1.ReferenceOldId,
+                                    Weight = s1.Weight,
+                                    // PrinciplePlanTag { get; set; }
+                                });
+                            }
+
+                        }
                         list2.Add(new PlanTypeCommonDto
                         {
                             Id = s.Id,
@@ -84,7 +142,7 @@ namespace App.Common
                             ParentPlanTypeId = s.ParentPlanTypeId,
                             ReferenceOldId = s.ReferenceOldId,
                             Weight = s.Weight,
-
+                            ParentPlanType = list3
                         });
                     }
                 }

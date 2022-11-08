@@ -47,4 +47,21 @@ namespace App.SEC.Dtos
         public int? PlanTypeId { get; set; }
         public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? subdata { get; set; }
     }
+    public class planItemCal
+    {
+        public int Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public int FiscalYear { get; set; }
+
+
+        public decimal TotalBudgetCache { get; set; }
+
+        public decimal NetBudgetCache { get; set; }
+
+        public decimal UsedBudgetCache { get; set; }
+
+        public decimal RemainBudgetCache { get; set; }
+    }
 }

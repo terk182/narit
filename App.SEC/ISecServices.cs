@@ -1,4 +1,5 @@
-﻿using App.SEC.Dtos;
+﻿using App.Common.Dtos;
+using App.SEC.Dtos;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
@@ -70,6 +71,7 @@ namespace App.SEC
         PerformanceIndicatorData ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId);
         calBudgetDetail calbudget(ICollection<PlanActivity> planActivity);
 
+
         List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson);
         List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request);
 
@@ -89,6 +91,8 @@ namespace App.SEC
 
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanType(int fiscalYear);
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear);
-        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByBudgetType(int fiscalYear);
+        List<BudgetTypeCommonDto> PlanReportByBudgetType(int fiscalYear);
+        planItemCal calPlanItem(int Id,int fiscalYear);
+        List<StrategyDto> PlanReportByStrategy(int fiscalYear);
     }
 }

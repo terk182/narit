@@ -2762,10 +2762,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByBudgetType")]
-        public IActionResult PlanReportByBudgetType()
+        [Route("/Plan/Report/PlanReportByBudgetType/{fiscalYear}")]
+        public IActionResult PlanReportByBudgetType(int fiscalYear)
         {
-            return Json("PlanReportByBudgetType");
+            var data = _SecServices.PlanReportByBudgetType(fiscalYear);
+            return Json(data);
         }
 
 

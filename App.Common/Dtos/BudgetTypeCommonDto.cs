@@ -17,6 +17,13 @@ namespace App.Common.Dtos
         public int? ReferenceOldId { get; set; }
         public int ExpenseTypeEnum { get; set; }
         public int GovExpenseTypeEnum { get; set; }
+        public decimal TotalBudgetCache { get; set; }
+
+        public decimal NetBudgetCache { get; set; }
+
+        public decimal UsedBudgetCache { get; set; }
+
+        public decimal RemainBudgetCache { get; set; }
 
         public  List<BudgetTypeCommonDto>? ParentBudgetType { get; set; }
     }
