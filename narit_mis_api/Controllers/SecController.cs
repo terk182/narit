@@ -2344,11 +2344,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewPlanItemBudgetTransferListForApprove")]
-        public IActionResult ViewPlanItemBudgetTransferListForApprove()
+        public IActionResult ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request)
         {
-            return Json("ViewPlanItemBudgetTransferListForApprove");
+            var data = _SecServices.ViewPlanItemBudgetTransferListForApprove(request);
+            return Json(data);
         }
 
 

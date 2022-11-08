@@ -94,5 +94,7 @@ namespace App.SEC
         List<BudgetTypeCommonDto> PlanReportByBudgetType(int fiscalYear);
         planItemCal calPlanItem(int Id,int fiscalYear);
         List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear);
+
+        List<BudgetTransferFormResponse> ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request);
     }
 }

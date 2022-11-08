@@ -30,7 +30,8 @@ namespace App.SEC.Dtos
         public decimal RemainBudgetCache { get; set; }
 
         public decimal TotalBudget { get; set; }
-
+        public decimal TotalAmount { get; set; }
+        public decimal NetAmount { get; set; }
         public decimal EntireTotalBudget { get; set; }
 
         public decimal NetBudget { get; set; }
@@ -63,5 +64,12 @@ namespace App.SEC.Dtos
         public decimal UsedBudgetCache { get; set; }
 
         public decimal RemainBudgetCache { get; set; }
+        public decimal TotalBudget { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal NetAmount { get; set; }
+        public decimal EntireTotalBudget { get; set; }
+
+        public decimal NetBudget { get; set; }
+
     }
 }

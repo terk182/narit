@@ -2548,7 +2548,9 @@ namespace App.SEC
                                             TotalBudgetCache = PlanItem_cal.TotalBudgetCache,
                                             NetBudgetCache = PlanItem_cal.NetBudgetCache,
                                             UsedBudgetCache = PlanItem_cal.UsedBudgetCache,
-                                            RemainBudgetCache = PlanItem_cal.RemainBudgetCache
+                                            RemainBudgetCache = PlanItem_cal.RemainBudgetCache,
+                                            TotalBudget = PlanItem_cal.TotalBudget
+
 
 
                                         });;
@@ -2570,6 +2572,7 @@ namespace App.SEC
                                     NetBudgetCache = list4.Sum(x => x.NetBudgetCache),
                                     UsedBudgetCache = list4.Sum(x => x.UsedBudgetCache),
                                     RemainBudgetCache = list4.Sum(x => x.RemainBudgetCache),
+                                    TotalBudget = list4.Sum(x => x.TotalBudget),
                                     ParentBudgetType = list4
                                 });
                             }
@@ -2589,6 +2592,7 @@ namespace App.SEC
                             NetBudgetCache = list3.Sum(x => x.NetBudgetCache),
                             UsedBudgetCache = list3.Sum(x => x.UsedBudgetCache),
                             RemainBudgetCache = list3.Sum(x => x.RemainBudgetCache),
+                            TotalBudget = list3.Sum(x => x.TotalBudget),
                             ParentBudgetType = list3
                         });
                     }
@@ -2607,6 +2611,7 @@ namespace App.SEC
                     NetBudgetCache = list2.Sum(x => x.NetBudgetCache),
                     UsedBudgetCache = list2.Sum(x => x.UsedBudgetCache),
                     RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
+                    TotalBudget = list2.Sum(x => x.TotalBudget),
                     ParentBudgetType = list2
                 });
 
@@ -2630,7 +2635,7 @@ namespace App.SEC
             decimal _RemainBudgetPlanView = 0;
             decimal _TotalBudget = 0;
             var _list = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
-            var PlanItems = _database.PlanItems.Where(x => x.BudgetTypeId == Id && x.Active && x.FiscalYear == fiscalYear).Include(x => x.SummaryStatementCaches).ToList();
+            var PlanItems = _database.PlanItems.Where(x => x.BudgetTypeId == Id && x.Active && x.FiscalYear == fiscalYear).Include(x => x.SummaryStatementCaches).Include(x => x.MonthlyForecasts).ToList();
             foreach (var item in PlanItems)
             {
 
@@ -2649,7 +2654,11 @@ namespace App.SEC
                     NetBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView : 0,
                     UsedBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView : 0,
                     RemainBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView : 0,
-                });
+
+                    TotalBudget  = item.MonthlyForecasts.Sum(x => x.Amount * x.BudgetPerPiece),
+                    TotalAmount  = item.MonthlyForecasts.Sum(x => x.Amount),
+                    NetAmount  = item.MonthlyForecasts.Sum(x => x.Amount),
+            });
 
 
             }
@@ -2659,12 +2668,63 @@ namespace App.SEC
             result.NetBudgetCache = _list.Sum(x => x.NetBudgetCache);
             result.UsedBudgetCache = _list.Sum(x => x.UsedBudgetCache);
             result.RemainBudgetCache = _list.Sum(x => x.RemainBudgetCache);
+            result.TotalBudget = _list.Sum(x => x.TotalBudget);
+           
             return result;
+
         }
 
         public List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear)
         {
             throw new NotImplementedException();
+        }
+
+        public List<BudgetTransferFormResponse> ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request)
+        {
+            var result = new List<BudgetTransferFormResponse>();
+            var data = _database.BudgetTransferForms.Where(c => c.Active && (request.fiscalYear > 0? c.FiscalYear == request.fiscalYear: true) && (request.documentnumber != ""? c.DocumentNumber == request.documentnumber:true)).Include(x => x.BudgetTransfers).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new BudgetTransferFormResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    Remark = item.Remark,
+                    ApprovalStatusEnum = item.ApprovalStatusEnum,
+                    RequestDate = item.RequestDate,
+                    ApprovedDate = item.ApprovedDate,
+                    DocumentNumber = item.DocumentNumber,
+                    CreateDate = item.CreateDate,
+                    CreateByStaffId = item.CreateByStaffId,
+                    StatementCalculationDate = item.StatementCalculationDate,
+                    WriteDate = item.WriteDate,
+                    Inform = item.Inform,
+                    Enclosures = item.Enclosures,
+                    Purpose = item.Purpose,
+                    RequesterName = item.RequesterName,
+                    RequesterSignDate = item.RequesterSignDate,
+                    UnitChiefName = item.UnitChiefName,
+                    UnitChiefSignDate = item.UnitChiefSignDate,
+                    BudgetCheckerName = item.BudgetCheckerName,
+                    BudgetCheckerSignDate = item.BudgetCheckerSignDate,
+                    Approver = item.Approver,
+                    ApproverSignDate = item.ApproverSignDate,
+                    StatementName = item.StatementName,
+                    SeniorUnitChiefName = item.SeniorUnitChiefName,
+                    FinanceName = item.FinanceName,
+                    SeniorUnitChiefSignDate = item.SeniorUnitChiefSignDate,
+                    FinanceSignDate = item.FinanceSignDate,
+                    RequestDepartmentId = item.RequestDepartmentId,
+                    UnitChiefStaffId = item.UnitChiefStaffId,
+                    ApproverStaffId = item.ApproverStaffId,
+                    PlanFormApprovalStatusEnum = item.PlanFormApprovalStatusEnum,
+                    BudgetTransferTypeEnum = item.BudgetTransferTypeEnum,
+                    BudgetTransfer = item.BudgetTransfers.Select(x => x.TransferBudget).FirstOrDefault(),
+                });
+            }
+            return result;
         }
     }
 }

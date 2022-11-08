@@ -18,7 +18,7 @@ namespace App.Common.Dtos
         public int ExpenseTypeEnum { get; set; }
         public int GovExpenseTypeEnum { get; set; }
         public decimal TotalBudgetCache { get; set; }
-
+        public decimal TotalBudget { get; set; }
         public decimal NetBudgetCache { get; set; }
 
         public decimal UsedBudgetCache { get; set; }
