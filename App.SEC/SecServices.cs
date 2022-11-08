@@ -2555,6 +2555,7 @@ namespace App.SEC
                                     }
 
                                 }
+
                                 list3.Add(new BudgetTypeCommonDto
                                 {
                                     Id = s1.Id,
@@ -2661,90 +2662,9 @@ namespace App.SEC
             return result;
         }
 
-        public List<StrategyDto> PlanReportByStrategy(int fiscalYear)
+        public List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear)
         {
-            var list1 = new List<StrategyDto>();
-            var Strategies = _database.Strategies.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
-            var data = Strategies.Where(x => x.ParentStrategyId == null).ToList();
-            foreach (var item in data)
-            {
-                var list2 = new List<StrategyDto>();
-                foreach (var s in Strategies)
-                {
-                    if (s.ParentStrategyId == item.Id)
-                    {
-                        list2.Add(new StrategyDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            Active = s.Active,
-                            ParentStrategyId = s.ParentStrategyId
-                            // PrinciplePlanTag { get; set; }
-                        });
-                    }
-                }
-                list1.Add(new StrategyDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    Active = item.Active,
-                    ParentStrategyId = item.ParentStrategyId,
-                    Strategy = list2
-                });
-
-
-
-            }
-
-            return list1;
-        }
-        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanTypeCal(int fiscalYear)
-        {
-            var list1 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
-            var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
-            var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
-            foreach (var item in data)
-            {
-                var list2 = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
-                foreach (var s in PlanTypes)
-                {
-                    if (s.ParentPlanTypeId == item.Id)
-                    {
-                        var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id).Include(x => x.PlanActivities);
-                        var d = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
-                        list2.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            FiscalYear = s.FiscalYear,
-                            TotalBudgetCache = d.Budget.TotalBudgetCache,
-                            NetBudgetCache = d.Budget.NetBudgetCache,
-                            UsedBudgetCache = d.Budget.UsedBudgetCache,
-                            RemainBudgetCache = d.Budget.RemainBudgetCache,
-                            TotalBudget = d.Budget.TotalBudget,
-                            NetBudget = d.Budget.NetBudget,
-
-                        });
-                    }
-                }
-                list1.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    TotalBudgetCache = list2.Sum(x => x.TotalBudgetCache),
-                    NetBudgetCache = list2.Sum(x => x.NetBudgetCache),
-                    UsedBudgetCache = list2.Sum(x => x.UsedBudgetCache),
-                    RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
-                    TotalBudget = list2.Sum(x => x.TotalBudget),
-                    NetBudget = list2.Sum(x => x.NetBudget),
-                    subdata = list2
-                });
-
-
-
-            }
-            return list1;
+            throw new NotImplementedException();
         }
     }
 }

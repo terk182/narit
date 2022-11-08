@@ -93,6 +93,6 @@ namespace App.SEC
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear);
         List<BudgetTypeCommonDto> PlanReportByBudgetType(int fiscalYear);
         planItemCal calPlanItem(int Id,int fiscalYear);
-        List<StrategyDto> PlanReportByStrategy(int fiscalYear);
+        List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear);
     }
 }
