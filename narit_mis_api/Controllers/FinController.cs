@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using App.FIN;
 using App.FIN.Dtos;
+using App.SEC.Models.Requests;
+using App.FIN.Models.Requests;
 
 namespace narit_mis_api.Controllers
 {
@@ -530,6 +532,14 @@ namespace narit_mis_api.Controllers
         public IActionResult getAllRegis()
         {
             var data = _FinServices.getAllRegis();
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetRegisterProcureItemType")]
+        public IActionResult ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            var data = _FinServices.ProcureItemTypeSetup(request);
             return Json(data);
         }
 

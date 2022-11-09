@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.FIN.Models.Responses;
+using App.FIN.Models.Requests;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.FIN
 {
@@ -154,6 +157,30 @@ namespace App.FIN
             return result;
         }
 
+        public FinBaseResponse ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            var _ProcureItemType = new RegisterProcureItemType();
+            _ProcureItemType.Id = request.Id;
+            _ProcureItemType.Name = request.Name;
+            _ProcureItemType.Active = request.Active;
+            _ProcureItemType.EnduranceTypeEnum = request.EnduranceTypeEnum; 
+            _ProcureItemType.TypeCode = request.TypeCode;
+            _ProcureItemType.UsefulLife = request.UsefulLife;
 
+            if (request.ParentRegisterProcureItemTypeId != 0)
+            {
+                _ProcureItemType.ParentRegisterProcureItemTypeId = request.ParentRegisterProcureItemTypeId;
+            }
+            _database.Entry(_ProcureItemType).State = _ProcureItemType.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _ProcureItemType.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
     }
 }
