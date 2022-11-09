@@ -21,5 +21,7 @@ namespace App.FIN
         List<ProcureStoreLocationDto> getAllStoreLocation();
 
         FinBaseResponse ProcureItemTypeSetup(ProcureItemTypeRequest request);
+
+        FinBaseResponse SetupSupplierDetail(SupplierRequest request);
     }
 }

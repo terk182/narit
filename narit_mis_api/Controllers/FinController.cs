@@ -543,6 +543,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetupSupplierDetail")]
+        public IActionResult SetupSupplierDetail(SupplierRequest request)
+        {
+            var data = _FinServices.SetupSupplierDetail(request);
+            return Json(data);
+        }
         //[HttpGet]
         //[Route("/FIN/Procure/Setup/SetRegisterProcureItemType/GetById/{Id}")]
         //public IActionResult getById(int Id)

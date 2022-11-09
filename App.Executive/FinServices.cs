@@ -182,5 +182,39 @@ namespace App.FIN
             return response;
 
         }
+
+        public FinBaseResponse SetupSupplierDetail(SupplierRequest request)
+        {
+            var _SupplierSetup = new Supplier();
+            _SupplierSetup.Id = request.Id;
+            _SupplierSetup.Name = request.Name; 
+            _SupplierSetup.ContactPerson = request.ContactPerson;
+            _SupplierSetup.AddressNumber = request.AddressNumber;
+            _SupplierSetup.RoadName = request.RoadName;
+            _SupplierSetup.MooBaan = request.MooBaan;
+            _SupplierSetup.TamBon = request.TamBon;
+            _SupplierSetup.AmPhur = request.AmPhur;
+            _SupplierSetup.Province = request.Province;
+            _SupplierSetup.Active = request.Active;
+            _SupplierSetup.PostCode = request.PostCode;
+            _SupplierSetup.CommercialRegistrationId = request.CommercialRegistrationId;
+            _SupplierSetup.TaxRegistrationId = request.TaxRegistrationId;
+            _SupplierSetup.CertificateOfPartnershipId = request.CertificateOfPartnershipId;
+            _SupplierSetup.CertificateOfPartnershipDate = request.CertificateOfPartnershipDate; 
+            _SupplierSetup.TelephoneNumber = request.TelephoneNumber;
+            _SupplierSetup.FaxNumber = request.FaxNumber;
+           // _SupplierSetup.SupplierTypeId = request.SupplierTypeId;
+            _SupplierSetup.IsJuristicPerson = request.IsJuristicPerson;
+
+            _database.Entry(_SupplierSetup).State = _SupplierSetup.Id == 0 ?
+                                             EntityState.Added :
+                                             EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _SupplierSetup.Id == 0 ? "update" : "insert";
+            return response;
+        }
     }
 }
