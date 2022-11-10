@@ -545,9 +545,17 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("/FIN/Procure/Setup/SetupSupplierDetail")]
-        public IActionResult SetupSupplierDetail(SupplierRequest request)
+        public IActionResult SupplierDetailSetup(SupplierRequest request)
         {
-            var data = _FinServices.SetupSupplierDetail(request);
+            var data = _FinServices.SupplierDetailSetup(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/ProcureStoreLocationSetup")]
+        public IActionResult ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            var data = _FinServices.ProcureStoreLocationSetup(request);
             return Json(data);
         }
         //[HttpGet]

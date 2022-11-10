@@ -22,6 +22,8 @@ namespace App.FIN
 
         FinBaseResponse ProcureItemTypeSetup(ProcureItemTypeRequest request);
 
-        FinBaseResponse SetupSupplierDetail(SupplierRequest request);
+        FinBaseResponse SupplierDetailSetup(SupplierRequest request);
+
+        FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request);
     }
 }

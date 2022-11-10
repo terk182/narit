@@ -183,7 +183,7 @@ namespace App.FIN
 
         }
 
-        public FinBaseResponse SetupSupplierDetail(SupplierRequest request)
+        public FinBaseResponse SupplierDetailSetup(SupplierRequest request)
         {
             var _SupplierSetup = new Supplier();
             _SupplierSetup.Id = request.Id;
@@ -214,6 +214,35 @@ namespace App.FIN
             var response = new FinBaseResponse();
             response.Success = result > 0 ? true : false;
             response.Messsage = _SupplierSetup.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            var _ProcureStoreLocationSetup = new ProcureStoreLocation();
+            _ProcureStoreLocationSetup.Id = request.Id;
+            _ProcureStoreLocationSetup.Name = request.Name;
+            _ProcureStoreLocationSetup.Active = request.Active;
+            _ProcureStoreLocationSetup.ProcureStoreLocationTypeEnum = request.ProcureStoreLocationTypeEnum;
+            _ProcureStoreLocationSetup.Detail = request.Detail;
+            _ProcureStoreLocationSetup.Code = request.Code;
+            _ProcureStoreLocationSetup.Area = request.Area;
+            _ProcureStoreLocationSetup.CanvasPosition = request.CanvasPosition;
+            _ProcureStoreLocationSetup.HrdepartmentId = request.HrdepartmentId;
+            _ProcureStoreLocationSetup.ImagePath = request.ImagePath;
+
+            if (request.ParentProcureStoreLocationId != 0)
+            {
+                _ProcureStoreLocationSetup.ParentProcureStoreLocationId = request.ParentProcureStoreLocationId;
+            }
+            _database.Entry(_ProcureStoreLocationSetup).State = _ProcureStoreLocationSetup.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _ProcureStoreLocationSetup.Id == 0 ? "update" : "insert";
             return response;
         }
     }
