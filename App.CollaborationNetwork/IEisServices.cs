@@ -1,4 +1,6 @@
 ﻿using App.EIS.Dtos;
+using App.EIS.Models.Requests;
+using App.EIS.Models.Responses;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,8 @@ namespace App.EIS
         List<BillingLocationDto> getAllBillingLocation();
 
         List<ProcureStoreLocationDto> getAllBuildingPlan();
+
+        EisBaseResponse BillingLocationSetup(BillingLocationRequest request);
 
     }
 }

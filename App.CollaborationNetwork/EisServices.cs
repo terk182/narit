@@ -8,6 +8,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using App.EIS.Models.Responses;
+using App.EIS.Models.Requests;
 
 namespace App.EIS
 {
@@ -18,6 +20,37 @@ namespace App.EIS
         public EisServices(NARIT_MIS_LINKContext context)
         {
             _database = context;
+        }
+
+        public EisBaseResponse BillingLocationSetup(BillingLocationRequest request)
+        {
+            var _BillingLocationSetup = new BillingLocation();
+            _BillingLocationSetup.Id = request.Id;
+            _BillingLocationSetup.Name = request.Name;
+            _BillingLocationSetup.Active = request.Active;
+            _BillingLocationSetup.Detail = request.Detail;
+            _BillingLocationSetup.BillingLocationTypeEnum = request.BillingLocationTypeEnum;
+            _BillingLocationSetup.MeterId = request.MeterId;
+            _BillingLocationSetup.MeterSize = request.MeterSize;
+            _BillingLocationSetup.UserCode = request.UserCode;
+            _BillingLocationSetup.Multiplier = request.Multiplier;
+            _BillingLocationSetup.Location = request.Location;
+            _BillingLocationSetup.ServiceProviderCode = request.ServiceProviderCode;
+            _BillingLocationSetup.UserType = request.UserType;
+
+            if (request.ParentBillingLocationId != 0)
+            {
+                _BillingLocationSetup.ParentBillingLocationId = request.ParentBillingLocationId;
+            }
+            _database.Entry(_BillingLocationSetup).State = _BillingLocationSetup.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new EisBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _BillingLocationSetup.Id == 0 ? "update" : "insert";
+            return response;
         }
 
         public List<BillingLocationDto> getAllBillingLocation()
