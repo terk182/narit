@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.FIN.Models.Responses;
+using App.FIN.Models.Requests;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.FIN
 {
@@ -154,6 +157,93 @@ namespace App.FIN
             return result;
         }
 
+        public FinBaseResponse ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            var _ProcureItemType = new RegisterProcureItemType();
+            _ProcureItemType.Id = request.Id;
+            _ProcureItemType.Name = request.Name;
+            _ProcureItemType.Active = request.Active;
+            _ProcureItemType.EnduranceTypeEnum = request.EnduranceTypeEnum; 
+            _ProcureItemType.TypeCode = request.TypeCode;
+            _ProcureItemType.UsefulLife = request.UsefulLife;
 
+            if (request.ParentRegisterProcureItemTypeId != 0)
+            {
+                _ProcureItemType.ParentRegisterProcureItemTypeId = request.ParentRegisterProcureItemTypeId;
+            }
+            _database.Entry(_ProcureItemType).State = _ProcureItemType.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _ProcureItemType.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
+
+        public FinBaseResponse SupplierDetailSetup(SupplierRequest request)
+        {
+            var _SupplierSetup = new Supplier();
+            _SupplierSetup.Id = request.Id;
+            _SupplierSetup.Name = request.Name; 
+            _SupplierSetup.ContactPerson = request.ContactPerson;
+            _SupplierSetup.AddressNumber = request.AddressNumber;
+            _SupplierSetup.RoadName = request.RoadName;
+            _SupplierSetup.MooBaan = request.MooBaan;
+            _SupplierSetup.TamBon = request.TamBon;
+            _SupplierSetup.AmPhur = request.AmPhur;
+            _SupplierSetup.Province = request.Province;
+            _SupplierSetup.Active = request.Active;
+            _SupplierSetup.PostCode = request.PostCode;
+            _SupplierSetup.CommercialRegistrationId = request.CommercialRegistrationId;
+            _SupplierSetup.TaxRegistrationId = request.TaxRegistrationId;
+            _SupplierSetup.CertificateOfPartnershipId = request.CertificateOfPartnershipId;
+            _SupplierSetup.CertificateOfPartnershipDate = request.CertificateOfPartnershipDate; 
+            _SupplierSetup.TelephoneNumber = request.TelephoneNumber;
+            _SupplierSetup.FaxNumber = request.FaxNumber;
+           // _SupplierSetup.SupplierTypeId = request.SupplierTypeId;
+            _SupplierSetup.IsJuristicPerson = request.IsJuristicPerson;
+
+            _database.Entry(_SupplierSetup).State = _SupplierSetup.Id == 0 ?
+                                             EntityState.Added :
+                                             EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _SupplierSetup.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            var _ProcureStoreLocationSetup = new ProcureStoreLocation();
+            _ProcureStoreLocationSetup.Id = request.Id;
+            _ProcureStoreLocationSetup.Name = request.Name;
+            _ProcureStoreLocationSetup.Active = request.Active;
+            _ProcureStoreLocationSetup.ProcureStoreLocationTypeEnum = request.ProcureStoreLocationTypeEnum;
+            _ProcureStoreLocationSetup.Detail = request.Detail;
+            _ProcureStoreLocationSetup.Code = request.Code;
+            _ProcureStoreLocationSetup.Area = request.Area;
+            _ProcureStoreLocationSetup.CanvasPosition = request.CanvasPosition;
+            _ProcureStoreLocationSetup.HrdepartmentId = request.HrdepartmentId;
+            _ProcureStoreLocationSetup.ImagePath = request.ImagePath;
+
+            if (request.ParentProcureStoreLocationId != 0)
+            {
+                _ProcureStoreLocationSetup.ParentProcureStoreLocationId = request.ParentProcureStoreLocationId;
+            }
+            _database.Entry(_ProcureStoreLocationSetup).State = _ProcureStoreLocationSetup.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+
+            var result = _database.SaveChanges();
+            var response = new FinBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _ProcureStoreLocationSetup.Id == 0 ? "update" : "insert";
+            return response;
+        }
     }
 }

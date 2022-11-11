@@ -30,7 +30,8 @@ namespace App.SEC.Dtos
         public decimal RemainBudgetCache { get; set; }
 
         public decimal TotalBudget { get; set; }
-
+        public decimal TotalAmount { get; set; }
+        public decimal NetAmount { get; set; }
         public decimal EntireTotalBudget { get; set; }
 
         public decimal NetBudget { get; set; }
@@ -44,6 +45,31 @@ namespace App.SEC.Dtos
         public decimal BudgetPerPiece { get; set; }
         public string? Unit { get; set; }
         public int? BudgetTypeId { get; set; }
+        public int? PlanTypeId { get; set; }
         public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? subdata { get; set; }
+    }
+    public class planItemCal
+    {
+        public int Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public int FiscalYear { get; set; }
+
+
+        public decimal TotalBudgetCache { get; set; }
+
+        public decimal NetBudgetCache { get; set; }
+
+        public decimal UsedBudgetCache { get; set; }
+
+        public decimal RemainBudgetCache { get; set; }
+        public decimal TotalBudget { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal NetAmount { get; set; }
+        public decimal EntireTotalBudget { get; set; }
+
+        public decimal NetBudget { get; set; }
+
     }
 }

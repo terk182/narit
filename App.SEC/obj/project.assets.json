@@ -754,6 +754,19 @@
           }
         }
       },
+      "App.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Common.dll": {}
+        }
+      },
       "Data.Context/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1949,6 +1962,11 @@
         "version.txt"
       ]
     },
+    "App.Common/1.0.0": {
+      "type": "project",
+      "path": "../App.Common/App.Common.csproj",
+      "msbuildProject": "../App.Common/App.Common.csproj"
+    },
     "Data.Context/1.0.0": {
       "type": "project",
       "path": "../Data.Context/Data.Context.csproj",
@@ -1957,28 +1975,29 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "App.Common >= 1.0.0",
       "AutoMapper >= 12.0.0",
       "Data.Context >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\terk\\.nuget\\packages\\": {},
+    "C:\\Users\\KKN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
+      "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
       "projectName": "App.SEC",
-      "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
-      "packagesPath": "C:\\Users\\terk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.SEC\\obj\\",
+      "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
+      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\terk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1994,8 +2013,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+            },
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -2031,7 +2053,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

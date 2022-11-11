@@ -567,6 +567,7 @@
       },
       "App.SEC/1.0.0": {
         "dependencies": {
+          "App.Common": "1.0.0",
           "AutoMapper": "12.0.0",
           "Data.Context": "1.0.0"
         },

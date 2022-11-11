@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.FIN.Models.Responses;
+using App.FIN.Models.Requests;
 
 namespace App.FIN
 {
@@ -17,5 +19,11 @@ namespace App.FIN
         List<SupplierDto> getSupplierbyName(string name);
 
         List<ProcureStoreLocationDto> getAllStoreLocation();
+
+        FinBaseResponse ProcureItemTypeSetup(ProcureItemTypeRequest request);
+
+        FinBaseResponse SupplierDetailSetup(SupplierRequest request);
+
+        FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request);
     }
 }
