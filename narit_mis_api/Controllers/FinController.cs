@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using App.FIN;
 using App.FIN.Dtos;
+using App.SEC.Models.Requests;
+using App.FIN.Models.Requests;
 
 namespace narit_mis_api.Controllers
 {
@@ -533,6 +535,29 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetRegisterProcureItemType")]
+        public IActionResult ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            var data = _FinServices.ProcureItemTypeSetup(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetupSupplierDetail")]
+        public IActionResult SupplierDetailSetup(SupplierRequest request)
+        {
+            var data = _FinServices.SupplierDetailSetup(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/ProcureStoreLocationSetup")]
+        public IActionResult ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            var data = _FinServices.ProcureStoreLocationSetup(request);
+            return Json(data);
+        }
         //[HttpGet]
         //[Route("/FIN/Procure/Setup/SetRegisterProcureItemType/GetById/{Id}")]
         //public IActionResult getById(int Id)

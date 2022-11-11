@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Y4IPYKqtHpErsXiS3Aj1Ef1rNZim0hdqifJJOmsIuKRwoAdxW07xFMDmETLSpKexKFHeU9zvh4V6W7vOG1l4BQ==",
+=======
+  "dgSpecHash": "dSXHrxmk0rvr7HuUyU+xKkIP7F63s/w18tHkGPutSJSGmyOBwXHHA0a+mBsHuKMYqZ2otBL6k3EUX9nYhCOJdA==",
+>>>>>>> 12c9900849700cb5f0de27dab39d947b3a0a50da
   "success": true,
-  "projectFilePath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
+  "projectFilePath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
