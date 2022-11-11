@@ -1,12 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "ljY5osDM0uT12wDI6oPsFP5VDe1JwCstw7ilmkv+rZUJjCRR1zjvWHczaKLILmevRawdWoBaxnKxKSJTHdFpZg==",
-=======
-  "dgSpecHash": "RBH9+buCin7gcRtB3dNMIcJIdsTW6TbulUJL7Jy3y6Q2LWiH4FzBioDsdoobBRH7A5lJll8js8NsnDC2s1CCdA==",
->>>>>>> 12c9900849700cb5f0de27dab39d947b3a0a50da
   "success": true,
-  "projectFilePath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj",
+  "projectFilePath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Individual\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
