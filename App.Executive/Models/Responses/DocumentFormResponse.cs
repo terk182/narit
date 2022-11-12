@@ -157,6 +157,7 @@ namespace App.FIN.Models.Responses
         public string ThirdBorrowerPositionTypeName { get; set; } = null!;
         public string FourthBorrowerPositionTypeName { get; set; } = null!;
         public string FifthBorrowerPositionTypeName { get; set; } = null!;
+        //public decimal TotalBudget { get; set; }
 
     }
 }
