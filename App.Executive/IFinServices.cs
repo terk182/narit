@@ -25,5 +25,7 @@ namespace App.FIN
         FinBaseResponse SupplierDetailSetup(SupplierRequest request);
 
         FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request);
+
+        DocumentFormResponse DocumentForm(DocumentFormRequest request);
     }
 }
