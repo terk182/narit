@@ -260,11 +260,12 @@ namespace narit_mis_api.Controllers
             return Json("ViewFormForApprovalByFinance");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewFormForApprovalByFinanceChecker")]
-        public IActionResult ViewFormForApprovalByFinanceChecker()
+        public IActionResult ViewFormForApprovalByFinanceChecker(DocumentFormRequest request)
         {
-            return Json("ViewFormForApprovalByFinanceChecker");
+            var data = _FinServices.DocumentForm(request);
+            return Json(data);
         }
 
         [HttpGet]
