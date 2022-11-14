@@ -27,5 +27,7 @@ namespace App.FIN
         FinBaseResponse ProcureStoreLocationSetup(ProcureStoreLocationRequest request);
 
         DocumentFormResponse DocumentForm(DocumentFormRequest request);
+
+        ViewRequestFormListResponse ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request);
     }
 }

@@ -373,11 +373,12 @@ namespace narit_mis_api.Controllers
             return Json("ViewProcureSettleReceiptFormListForApproval");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewRequestFormListForFinancialApproval")]
-        public IActionResult ViewRequestFormListForFinancialApproval()
+        public IActionResult ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
         {
-            return Json("ViewRequestFormListForFinancialApproval");
+            var data = _FinServices.ViewRequestFormListForFinancialApproval(request);
+            return Json(data);
         }
 
         [HttpGet]

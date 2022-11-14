@@ -2180,11 +2180,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseMemoFormListForApproval")]
-        public IActionResult ViewGeneralExpenseMemoFormListForApproval()
+        public IActionResult ViewGeneralExpenseMemoFormListForApproval(ViewGeneralExpenseMemoFormLisRequest request)
         {
-            return Json("ViewGeneralExpenseMemoFormListForApproval");
+            var data = _SecServices.ViewGeneralExpenseMemoFormListForApproval(request);
+            return Json(data);
         }
 
 
@@ -2243,11 +2244,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseSettleFormListForApproval")]
-        public IActionResult ViewGeneralExpenseSettleFormListForApproval()
+        public IActionResult ViewGeneralExpenseSettleFormListForApproval(ViewGeneralExpenseSettleFormListRequest request)
         {
-            return Json("ViewGeneralExpenseSettleFormListForApproval");
+            var data = _SecServices.ViewGeneralExpenseSettleFormListForApproval(request);
+            return Json(data);
         }
 
 
@@ -2400,11 +2402,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewSettleReceiptFormListForApproval")]
-        public IActionResult ViewSettleReceiptFormListForApproval()
+        public IActionResult ViewSettleReceiptFormListForApproval(ViewSettleReceiptFormListRequest request)
         {
-            return Json("ViewSettleReceiptFormListForApproval");
+            var data = _SecServices.ViewSettleReceiptFormListForApproval(request);
+            return Json(data);
         }
 
 

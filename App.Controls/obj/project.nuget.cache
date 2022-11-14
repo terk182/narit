@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y4IPYKqtHpErsXiS3Aj1Ef1rNZim0hdqifJJOmsIuKRwoAdxW07xFMDmETLSpKexKFHeU9zvh4V6W7vOG1l4BQ==",
+  "dgSpecHash": "18oarbbjgeVaTV4KYIr74Rq3r8kDoAmralyGURJD9mnPxFGwsUIpecMri421072kYcW0HjrjkxJ3LRbFJG/IOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
+  "projectFilePath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Controls\\App.Controls.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\daisy\\Documents\\GitHub\\narit\\App.Controls\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
