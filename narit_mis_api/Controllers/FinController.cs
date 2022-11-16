@@ -593,5 +593,14 @@ namespace narit_mis_api.Controllers
             var data = _FinServices.getAllStoreLocation();
             return Json(data);
         }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/RegisterProcureItemSearch/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.RegisterProcureItemSearch(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
     }
 }

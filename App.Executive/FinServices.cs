@@ -538,5 +538,80 @@ namespace App.FIN
             return result;
       
         }
+
+        List<RegisterProcureItemTypeDto> IFinServices.getAllRegis()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SupplierDto> IFinServices.getAllSupplier()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SupplierDto> IFinServices.getSupplierbyName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<ProcureStoreLocationDto> IFinServices.getAllStoreLocation()
+        {
+            throw new NotImplementedException();
+        }
+
+        FinBaseResponse IFinServices.ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        FinBaseResponse IFinServices.SupplierDetailSetup(SupplierRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        FinBaseResponse IFinServices.ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        DocumentFormResponse IFinServices.DocumentForm(DocumentFormRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        ViewRequestFormListResponse IFinServices.ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<RegisterProcureItem> RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId).ToList();
+            if (checkBox == 0)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId).ToList();
+                
+            }
+            else if (checkBox == 10)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 10).ToList();
+            }
+            else if(checkBox == 30)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 30).ToList();
+            }
+            else if (checkBox == 40)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 40).ToList();
+            }
+            else if (checkBox == 50)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 50).ToList();
+            }
+            return data;
+
+        }
+
+
     }
 }

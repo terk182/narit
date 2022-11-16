@@ -29,5 +29,7 @@ namespace App.FIN
         DocumentFormResponse DocumentForm(DocumentFormRequest request);
 
         ViewRequestFormListResponse ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request);
+
+        List<RegisterProcureItem> RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId);
     }
 }

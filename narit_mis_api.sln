@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Common", "App.Common\Ap
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "mis_web", "mis_web\mis_web.esproj", "{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Authenticator", "App.Authenticator\App.Authenticator.csproj", "{9093C294-D50D-4951-853B-7357DA05DD9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9093C294-D50D-4951-853B-7357DA05DD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9093C294-D50D-4951-853B-7357DA05DD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9093C294-D50D-4951-853B-7357DA05DD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9093C294-D50D-4951-853B-7357DA05DD9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +139,7 @@ Global
 		{DBF77E9B-5BE1-4996-85EF-C5C390AF98D2} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 		{EE7FD4E5-849F-4A50-951F-D7A6BBC44E43} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 		{DE621E37-60A2-4DC1-B0A7-F1B882652611} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
+		{9093C294-D50D-4951-853B-7357DA05DD9E} = {A1D0D1B6-32C8-4D86-8A77-2FCC94E4D1D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E6D8F12-3D7D-4A71-95A2-6942109D3A30}

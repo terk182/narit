@@ -916,6 +916,20 @@
           "bin/placeholder/App.Accommodations.dll": {}
         }
       },
+      "App.Authenticator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "App.Common": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.Authenticator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Authenticator.dll": {}
+        }
+      },
       "App.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1022,6 +1036,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "App.Accommodations": "1.0.0",
+          "App.Authenticator": "1.0.0",
           "App.Common": "1.0.0",
           "App.EIS": "1.0.0",
           "App.FIN": "1.0.0",
@@ -2458,6 +2473,11 @@
       "type": "project",
       "path": "../App.Accommodations/App.Accommodations.csproj",
       "msbuildProject": "../App.Accommodations/App.Accommodations.csproj"
+    },
+    "App.Authenticator/1.0.0": {
+      "type": "project",
+      "path": "../App.Authenticator/App.Authenticator.csproj",
+      "msbuildProject": "../App.Authenticator/App.Authenticator.csproj"
     },
     "App.Common/1.0.0": {
       "type": "project",
