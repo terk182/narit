@@ -602,5 +602,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/FIN/Procure/Report/ShowRegisterProcureItemListByDepartment/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.ShowRegisterProcureItemListByDepartment(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
     }
 }

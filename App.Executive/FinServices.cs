@@ -612,6 +612,33 @@ namespace App.FIN
 
         }
 
+        public List<RegisterProcureItem> ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId).ToList();
+            if (checkBox == 0)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId).ToList();
+
+            }
+            else if (checkBox == 10)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 10).ToList();
+            }
+            else if (checkBox == 30)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 30).ToList();
+            }
+            else if (checkBox == 40)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 40).ToList();
+            }
+            else if (checkBox == 50)
+            {
+                data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 50).ToList();
+            }
+            return data;
+
+        }
 
     }
 }

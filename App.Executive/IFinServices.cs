@@ -31,5 +31,7 @@ namespace App.FIN
         ViewRequestFormListResponse ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request);
 
         List<RegisterProcureItem> RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId);
+
+        List<RegisterProcureItem> ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId);
     }
 }
