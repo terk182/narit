@@ -33,5 +33,7 @@ namespace App.FIN
         List<RegisterProcureItem> RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId);
 
         List<RegisterProcureItem> ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId);
+
+        RequestApproveOrderCheckformDto SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear);
     }
 }

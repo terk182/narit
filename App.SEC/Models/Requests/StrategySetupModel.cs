@@ -9,7 +9,7 @@ namespace App.SEC.Models.Requests
     public class StrategySetupModel
     {
         public int? Id { get; set; }
-        public string? mame { get; set; }
+        public string? Name { get; set; }
         public int? FiscalYear { get; set; }
         public bool Active { get; set; }
         public int? ParentStrategyId { get; set; }

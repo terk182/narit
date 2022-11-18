@@ -610,5 +610,12 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/FIN/Procure/Report/SearchProcureDocForTrackingRoute/{document}/{fiscalYear}")]
+        public IActionResult SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear)
+        {
+            var data = _FinServices.SearchProcureDocForTrackingRoute(document, documentNumber, fiscalYear);
+            return Json(data);
+        }
     }
 }

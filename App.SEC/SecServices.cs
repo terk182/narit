@@ -473,7 +473,7 @@ namespace App.SEC
 
             var _Strategy = new Strategy();
             _Strategy.Id = (int)request.Id;
-            _Strategy.Name = request.mame;
+            _Strategy.Name = request.Name;
             _Strategy.Active = request.Active;
             _Strategy.FiscalYear = (int)request.FiscalYear;
             if (request.ParentStrategyId != 0)
@@ -505,7 +505,7 @@ namespace App.SEC
                 result.Add(new StrategySetupModel
                 {
                     Id = item.Id,
-                    mame = item.Name,
+                    Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
                     ParentStrategyId = item.ParentStrategyId,
