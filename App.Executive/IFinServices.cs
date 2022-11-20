@@ -35,5 +35,8 @@ namespace App.FIN
         List<RegisterProcureItem> ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId);
 
         RequestApproveOrderCheckformDto SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear);
+        List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
+        PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
+
     }
 }

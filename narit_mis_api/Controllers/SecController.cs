@@ -9,6 +9,7 @@ using App.SEC.enums;
 using App.SEC.helper;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
+using App.SEC.Models.Responses;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
@@ -2171,11 +2172,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseMemoFormList")]
-        public IActionResult ViewGeneralExpenseMemoFormList()
+        public IActionResult ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request)
         {
-            return Json("ViewGeneralExpenseMemoFormList");
+            var data = _SecServices.ViewGeneralExpenseMemoFormList(request);
+            return Json(data);
         }
 
 
@@ -2337,11 +2339,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewPlanItemBudgetTransferList")]
-        public IActionResult ViewPlanItemBudgetTransferList()
+        public IActionResult ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request)
         {
-            return Json("ViewPlanItemBudgetTransferList");
+            var data = _SecServices.ViewPlanItemBudgetTransferList( request);
+            return Json(data);
         }
 
 

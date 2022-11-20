@@ -372,6 +372,13 @@ namespace narit_mis_api.Controllers
         {
             return Json("ViewProcureSettleReceiptFormListForApproval");
         }
+        [HttpPost]
+        [Route("Finance/Operate/ViewRequestFormList")]
+        public IActionResult ViewRequestFormList(ViewRequestFormListMainRequest request)
+        {
+            var data = _FinServices.ViewRequestFormList(request);
+            return Json(data);
+        }
 
         [HttpPost]
         [Route("Finance/Operate/ViewRequestFormListForFinancialApproval")]
@@ -515,11 +522,12 @@ namespace narit_mis_api.Controllers
             return Json("PlanCoreListFinancialStatementReport");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Report/PlanFormFinancialStatusReport")]
-        public IActionResult PlanFormFinancialStatusReport()
+        public IActionResult PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request)
         {
-            return Json("PlanFormFinancialStatusReport");
+            var data = _FinServices.PlanFormFinancialStatusReport(request);
+            return Json(data);
         }
 
         [HttpGet]

@@ -22,6 +22,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace App.SEC
@@ -3228,6 +3229,228 @@ namespace App.SEC
         {
             return _database.GeneralExpenseSettleForms.Where (c => c.Active && c.FiscalYear == fiscalYear && ( c.ApprovalStatusEnum == approvalStatus) && (!(documentNumber != "") || c.DocumentNumber.Contains(documentNumber)) && (!(statementName != "") || c.GeneralExpenseMemoForm.StatementName.Contains(statementName))).Include(c => c.SettlementItems).Include(c => c.SettleDirectPaymentItems).Include(c => c.AdditionalSettleItems).OrderByDescending(c => c.Id).ToList();
 
+        }
+
+        public List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request)
+        {
+            var result = new List<GeneralExpenseMemoFormDto>();
+            var query = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.documentNumber != "") ? c.DocumentNumber.Contains(request.documentNumber) : true)  && (request.reqdepId != 0 ? c.RequestDepartmentId == request.reqdepId : true)
+         && (request.stateName != "" ? c.StatementName.Contains(request.stateName) : true) && ((request.objId != 0) ? (request.PlanObjectTypeRadioButtonList == "PlanType" ? (c.PlanTypeId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.PlanTypeId == request.objId)) : (c.DepartmentId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.DepartmentId == request.objId))) : true)
+         && (request.appState != 0 ? c.ApprovalStatusEnum == request.appState : true) && (request.isBorrow != 0 ? (c.IsBorrow == (request.isBorrow == 10)) : true) && (request.staffId != 0 ? c.CreateByStaffId == request.staffId : true)).Include(c => c.GeneralExpenses).OrderByDescending(c => c.Id).Take(50).ToList();
+            foreach (var item in query)
+            {
+                result.Add(new GeneralExpenseMemoFormDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    WriteDate = item.WriteDate,
+                    Inform = item.Inform,
+                    Enclosures = item.Enclosures,
+                    Purpose = item.Purpose,
+                    RequesterName = item.RequesterName,
+                    RequesterSignDate = item.RequesterSignDate,
+                    UnitChiefName = item.UnitChiefName,
+                    UnitChiefSignDate = item.UnitChiefSignDate,
+                    BudgetCheckerName = item.BudgetCheckerName,
+                    BudgetCheckerSignDate = item.BudgetCheckerSignDate,
+                    Approver = item.Approver,
+                    ApproverSignDate = item.ApproverSignDate,
+                    ApprovalStatusEnum = item.ApprovalStatusEnum,
+                    DepartmentName = item.DepartmentName,
+                    DepartmentId = item.DepartmentId,
+                    PlanTypeName = item.PlanTypeName,
+                    PlanTypeId = item.PlanTypeId,
+                    PlanCoreName = item.PlanCoreName,
+                    PlanCoreId = item.PlanCoreId,
+                    BudgetTypeName = item.BudgetTypeName,
+                    BudgetTypeId = item.BudgetTypeId,
+                    PlanCoreRemainBudget = item.PlanCoreRemainBudget,
+                    PlanCoreCode = item.PlanCoreCode,
+                    ApprovedDate = item.ApprovedDate,
+                    DocumentNumber = item.DocumentNumber,
+                    StatementPayStatusEnum = item.StatementPayStatusEnum,
+                    NetPayValue = item.NetPayValue,
+                    CreateDate = item.CreateDate,
+                    CreateByStaffId = item.CreateByStaffId,
+                    IsBorrow = item.IsBorrow,
+                    IsTemporaryInvolve = item.IsTemporaryInvolve,
+                    StatementCalculationDate = item.StatementCalculationDate,
+                    PlanActivityIdOld = item.PlanActivityIdOld,
+                    FundTypeName = item.FundTypeName,
+                    FundTypeId = item.FundTypeId,
+                    StatementName = item.StatementName,
+                    RealInvolvePlanItemId = item.RealInvolvePlanItemId,
+                    UsedToInvolvePlanItemId = item.UsedToInvolvePlanItemId,
+                    ReserveByStaffName = item.ReserveByStaffName,
+                    ReserveRemark = item.ReserveRemark,
+                    ReserveForecastValue = item.ReserveForecastValue,
+                    ReserveByStaffId = item.ReserveByStaffId,
+                    ReserveDate = item.ReserveDate,
+                    IsReserve = item.IsReserve,
+                    DevelopmentRecordGroupId = item.DevelopmentRecordGroupId,
+                    OutsideDutyGroupId = item.OutsideDutyGroupId,
+                    ReserveDepartmentId = item.ReserveDepartmentId,
+                    ReserveDepartmentName = item.ReserveDepartmentName,
+                    SuppliesOfficerName = item.SuppliesOfficerName,
+                    HrofficerName = item.HrofficerName,
+                    SuppliesOfficerSignDate = item.SuppliesOfficerSignDate,
+                    HrofficerSignDate = item.HrofficerSignDate,
+                    RequesterDepartmentName = item.RequestDepartmentName,
+                    RequesterPositionName = item.RequesterPositionName,
+                    ProcureRequest = item.ProcureRequest,
+                    FirstProcureComittee = item.FirstProcureComittee,
+                    FirstCheckComittee = item.FirstCheckComittee,
+                    OtherRequest = item.OtherRequest,
+                    FirstBorrower = item.FirstBorrower,
+                    SecondBorrower = item.SecondBorrower,
+                    ThirdBorrower = item.ThirdBorrower,
+                    FirstBorrowAmount = item.FirstBorrowAmount,
+                    SecondBorrowAmount = item.SecondBorrowAmount,
+                    ThirdBorrowAmount = item.ThirdBorrowAmount,
+                    FirstBorrowerPosition = item.FirstBorrowerPosition,
+                    ThirdBorrowerPosition = item.ThirdBorrowerPosition,
+                    SecondBorrowerPosition = item.SecondBorrowerPosition,
+                    FirstBorrowerDepartment = item.FirstBorrowerDepartment,
+                    SecondBorrowerDepartment = item.SecondBorrowerDepartment,
+                    ThirdBorrowerDepartment = item.ThirdBorrowerDepartment,
+                    FourthBorrower = item.FourthBorrower,
+                    FourthBorrowAmount = item.FourthBorrowAmount,
+                    FourthBorrowerPosition = item.FourthBorrowerPosition,
+                    FourthBorrowerDepartment = item.FourthBorrowerDepartment,
+                    FifthBorrower = item.FifthBorrower,
+                    FifthBorrowAmount = item.FifthBorrowAmount,
+                    FifthBorrowerPosition = item.FifthBorrowerPosition,
+                    FifthBorrowerDepartment = item.FifthBorrowerDepartment,
+                    RequestDepartmentId = item.RequestDepartmentId,
+                    RequestDepartmentName = item.RequestDepartmentName,
+                    SettleDay = item.SettleDay,
+                    DueDate = item.DueDate,
+                    StartCountingDate = item.StartCountingDate,
+                    UnitChiefStaffId = item.UnitChiefStaffId,
+                    ApproverStaffId = item.ApproverStaffId,
+                    PlanFormApprovalStatusEnum = item.PlanFormApprovalStatusEnum,
+                    IsHidden = item.IsHidden,
+                    ScheduleTitle = item.ScheduleTitle,
+                    RelatedRegulation = item.RelatedRegulation,
+                    ApproverSignatureId = item.ApproverSignatureId,
+                    UnitChiefSignatureId = item.UnitChiefSignatureId,
+                    SuppliesOfficerSignatureId = item.SuppliesOfficerSignatureId,
+                    ProjectManagerSignatureId = item.ProjectManagerSignatureId,
+                    BudgetCheckerSignatureId = item.BudgetCheckerSignatureId,
+                    SuppliesOfficerStaffId = item.SuppliesOfficerStaffId,
+                    ProjectManagerStaffId = item.ProjectManagerStaffId,
+                    RequesterStaffId = item.RequesterStaffId,
+                    BudgetCheckerStaffId = item.BudgetCheckerStaffId,
+                    RequesterSignatureId = item.RequesterSignatureId,
+                    ProjectManager = item.ProjectManager,
+                    ProjectManagerSignDate = item.ProjectManagerSignDate,
+                    HrofficerStaffId = item.HrofficerStaffId,
+                    HrofficerSignatureId = item.HrofficerSignatureId,
+                    ProjectManager1SignatureId = item.ProjectManager1SignatureId,
+                    ProjectManager1 = item.ProjectManager1,
+                    ProjectManager1SignDate = item.ProjectManager1SignDate,
+                    ProjectManager1StaffId = item.ProjectManager1StaffId,
+                    ProjectManager2SignatureId = item.ProjectManager2SignatureId,
+                    ProjectManager2 = item.ProjectManager2,
+                    ProjectManager2SignDate = item.ProjectManager2SignDate,
+                    ProjectManager2StaffId = item.ProjectManager2StaffId,
+                    ProjectManager3SignatureId = item.ProjectManager3SignatureId,
+                    ProjectManager3 = item.ProjectManager3,
+                    ProjectManager3SignDate = item.ProjectManager3SignDate,
+                    ProjectManager3StaffId = item.ProjectManager3StaffId,
+                    ProjectManager4SignatureId = item.ProjectManager4SignatureId,
+                    ProjectManager4 = item.ProjectManager4,
+                    ProjectManager4SignDate = item.ProjectManager4SignDate,
+                    ProjectManager4StaffId = item.ProjectManager4StaffId,
+                    UnitChiefPosition = item.UnitChiefPosition,
+                    BudgetCheckerPosition = item.BudgetCheckerPosition,
+                    ApproverPosition = item.ApproverPosition,
+                    SuppliesOfficerPosition = item.SuppliesOfficerPosition,
+                    HrofficerPosition = item.HrofficerPosition,
+                    ProjectManager1Position = item.ProjectManager1Position,
+                    ProjectManager2Position = item.ProjectManager2Position,
+                    ProjectManager3Position = item.ProjectManager3Position,
+                    ProjectManager4Position = item.ProjectManager3Position,
+                    IsApproveInstead = item.IsApproveInstead,
+                    DocCheckerName = item.DocCheckerName,
+                    DocCheckerPosition = item.DocCheckerPosition,
+                    DocCheckerSignDate = item.DocCheckerSignDate,
+                    DocCheckerStaffId = item.DocCheckerStaffId,
+                    DocCheckerSignatureId = item.DocCheckerSignatureId,
+                    IsSent = item.IsSent,
+                    FirstBorrowerPositionTypeName = item.FirstBorrowerPositionTypeName,
+                    SecondBorrowerPositionTypeName = item.SecondBorrowerPositionTypeName,
+                    ThirdBorrowerPositionTypeName = item.ThirdBorrowerPositionTypeName,
+                    FourthBorrowerPositionTypeName = item.FourthBorrowerPositionTypeName,
+                    FifthBorrowerPositionTypeName = item.FifthBorrowerPositionTypeName,
+                    TotalBudget = item.GeneralExpenses.Sum( x => x.TotalBudget)
+                }); ;
+            }
+            return result;
+        }
+
+        public List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request)
+        {
+            var data = new List<BudgetTransferForm>();
+            var result = new List<BudgetTransferFormDto>();
+            switch (request.DirectionRadioButtonList)
+            {
+                case "Inward":
+                    data = _database.BudgetTransferForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (request.pTypeId != 0 ? c.BudgetTransfers.Any(d => d.Active && d.InwardPlanTypeId == request.pTypeId) : true)
+                    && (request.depId != 0 ? c.BudgetTransfers.Any(d => d.Active && d.InwardDepartmentId == request.depId) : true) && (request.documentNumber != "" ? c.DocumentNumber.Contains(request.documentNumber) : true)).OrderByDescending(c => c.Id).Include(c => c.BudgetTransfers).ToList();
+                    break;
+                case "Outward":
+                    data = _database.BudgetTransferForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (request.pTypeId != 0 ? c.BudgetTransfers.Any(d => d.Active && d.OutwardPlanTypeId == request.pTypeId) : true)
+                     && (request.depId != 0 ? c.BudgetTransfers.Any(d => d.Active && d.OutwardDepartmentId == request.depId) : true) && (request.documentNumber != "" ? c.DocumentNumber.Contains(request.documentNumber) : true)).OrderByDescending(c => c.Id).Include(c => c.BudgetTransfers).ToList();
+                    break;
+                default:
+                    break;
+            }
+            foreach (var item in data)
+            {
+                result.Add(new BudgetTransferFormDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    Remark = item.Remark,
+                    ApprovalStatusEnum = item.ApprovalStatusEnum,
+                    RequestDate = item.RequestDate,
+                    ApprovedDate = item.ApprovedDate,
+                    DocumentNumber = item.DocumentNumber,
+                    CreateDate = item.CreateDate,
+                    CreateByStaffId = item.CreateByStaffId,
+                    StatementCalculationDate = item.StatementCalculationDate,
+                    WriteDate = item.WriteDate,
+                    Inform = item.Inform,
+                    Enclosures = item.Enclosures,
+                    Purpose = item.Purpose,
+                    RequesterName = item.RequesterName,
+                    RequesterSignDate = item.RequesterSignDate,
+                    UnitChiefName = item.UnitChiefName,
+                    UnitChiefSignDate = item.UnitChiefSignDate,
+                    BudgetCheckerName = item.BudgetCheckerName,
+                    BudgetCheckerSignDate = item.BudgetCheckerSignDate,
+                    Approver = item.Approver,
+                    ApproverSignDate = item.ApproverSignDate,
+                    StatementName = item.StatementName,
+                    SeniorUnitChiefName = item.SeniorUnitChiefName,
+                    FinanceName = item.FinanceName,
+                    SeniorUnitChiefSignDate = item.SeniorUnitChiefSignDate,
+                    FinanceSignDate = item.FinanceSignDate,
+                    RequestDepartmentId = item.RequestDepartmentId,
+                    UnitChiefStaffId = item.UnitChiefStaffId,
+                    ApproverStaffId = item.ApproverStaffId,
+                    PlanFormApprovalStatusEnum = item.PlanFormApprovalStatusEnum,
+                    BudgetTransferTypeEnum = item.BudgetTransferTypeEnum,
+                    TransferBudget = item.BudgetTransfers.Where(x => x.Active).Sum(c => c.TransferBudget)
+                }); 
+            }
+
+            return result;
         }
     }
 }

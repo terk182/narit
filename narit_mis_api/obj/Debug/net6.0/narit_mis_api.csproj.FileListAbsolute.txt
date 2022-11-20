@@ -623,3 +623,5 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\sta
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
