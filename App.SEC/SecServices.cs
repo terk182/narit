@@ -473,7 +473,7 @@ namespace App.SEC
 
             var _Strategy = new Strategy();
             _Strategy.Id = (int)request.Id;
-            _Strategy.Name = request.mame;
+            _Strategy.Name = request.Name;
             _Strategy.Active = request.Active;
             _Strategy.FiscalYear = (int)request.FiscalYear;
             if (request.ParentStrategyId != 0)
@@ -505,7 +505,7 @@ namespace App.SEC
                 result.Add(new StrategySetupModel
                 {
                     Id = item.Id,
-                    mame = item.Name,
+                    Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
                     ParentStrategyId = item.ParentStrategyId,
@@ -2048,6 +2048,7 @@ namespace App.SEC
                 result.FundSourceEnum = item.FundCategoryEnum;
                 result.FundCategoryEnum = item.FundCategoryEnum;
                 var ResponsiblePerson = new List<ResponsiblePerson>();
+                var PerformanceIndicator = new List<PerformanceIndicator>();
                 foreach (var s in item.ResponsiblePeople)
                 {
                     ResponsiblePerson.Add(new narit_mis_api.Models.ResponsiblePerson
@@ -2068,6 +2069,25 @@ namespace App.SEC
 
 
                 result.ResponsiblePeople = ResponsiblePerson;
+
+                foreach (var s in item.PerformanceIndicators)
+                {
+                    if (s.Active == true)
+                    {
+                        PerformanceIndicator.Add(new narit_mis_api.Models.PerformanceIndicator
+                        {
+                            Id = s.Id,
+                            Name = s.Name,
+                            Active = s.Active,
+                            FiscalYear = s.FiscalYear,
+
+                        });
+                    }
+                }
+
+
+                result.PerformanceIndicators = PerformanceIndicator;
+                
             }
             return result;
         }
@@ -2207,51 +2227,95 @@ namespace App.SEC
             return list1;
         }
 
-        public List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear)
+        //public List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear)
+        //{
+        //    var list1 = new List<PerformanceIndicatorsDto>();
+        //    var PerformanceIndicators = _database.PerformanceIndicators.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+        //    var data = PerformanceIndicators.Where(x => x.ParentPerformanceIndicatorId == null).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        var list2 = new List<PerformanceIndicatorsDto>();
+        //        foreach (var s in PerformanceIndicators)
+        //        {
+        //            if (s.ParentPerformanceIndicatorId == item.Id)
+        //            {
+        //                list2.Add(new PerformanceIndicatorsDto
+        //                {
+        //                    Id = s.Id,
+        //                    Name = s.Name,
+        //                    FiscalYear = s.FiscalYear,
+        //                    Active = s.Active,
+        //                    TargetValueQ1 = s.TargetValueQ1,
+        //                    TargetUnit = s.TargetUnit,
+        //                    Detail = s.Detail,
+        //                    PlanActivityId = s.PlanActivityId,
+
+        //                });
+        //            }
+        //        }
+        //        list1.Add(new PerformanceIndicatorsDto
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            FiscalYear = item.FiscalYear,
+        //            Active = item.Active,
+        //            TargetValueQ1 = item.TargetValueQ1,
+        //            TargetUnit = item.TargetUnit,
+        //            Detail = item.Detail,
+        //            PlanActivityId = item.PlanActivityId,
+        //            PerformanceIndicators = list2
+        //        });
+
+
+
+        //    }
+
+        //    return list1;
+        //}
+
+        public List<StrategicIndicatorResponse> EditPerformanceIndicator(int FiscalYear)
         {
-            var list1 = new List<PerformanceIndicatorsDto>();
-            var PerformanceIndicators = _database.PerformanceIndicators.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
-            var data = PerformanceIndicators.Where(x => x.ParentPerformanceIndicatorId == null).ToList();
+            var result = new List<StrategicIndicatorResponse>();
+            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear).ToList();
             foreach (var item in data)
             {
-                var list2 = new List<PerformanceIndicatorsDto>();
-                foreach (var s in PerformanceIndicators)
-                {
-                    if (s.ParentPerformanceIndicatorId == item.Id)
-                    {
-                        list2.Add(new PerformanceIndicatorsDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            FiscalYear = s.FiscalYear,
-                            Active = s.Active,
-                            TargetValueQ1 = s.TargetValueQ1,
-                            TargetUnit = s.TargetUnit,
-                            Detail = s.Detail,
-                            PlanActivityId = s.PlanActivityId,
-
-                        });
-                    }
-                }
-                list1.Add(new PerformanceIndicatorsDto
+                result.Add(new StrategicIndicatorResponse
                 {
                     Id = item.Id,
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    TargetValueQ1 = item.TargetValueQ1,
-                    TargetUnit = item.TargetUnit,
-                    Detail = item.Detail,
-                    PlanActivityId = item.PlanActivityId,
-                    PerformanceIndicators = list2
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    Unit = item.Unit,
+                    Amount = item.Amount,
+                    Weight = item.Weight
+
                 });
-
-
-
             }
-
-            return list1;
+            return result;
+            
         }
+        //public List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
+        //{
+        //    var result = new List<StrategicIndicatorResponse>();
+        //    var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        result.Add(new StrategicIndicatorResponse
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            FiscalYear = item.FiscalYear,
+        //            Active = item.Active,
+        //            ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+        //            Unit = item.Unit,
+        //            Amount = item.Amount,
+        //            Weight = item.Weight
+
+        //        });
+        //    }
+        //    return result;
+        //}
 
         public SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto _PlanCore_request)
         {

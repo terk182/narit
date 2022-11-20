@@ -593,5 +593,29 @@ namespace narit_mis_api.Controllers
             var data = _FinServices.getAllStoreLocation();
             return Json(data);
         }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/RegisterProcureItemSearch/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.RegisterProcureItemSearch(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/ShowRegisterProcureItemListByDepartment/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.ShowRegisterProcureItemListByDepartment(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/SearchProcureDocForTrackingRoute/{document}/{fiscalYear}")]
+        public IActionResult SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear)
+        {
+            var data = _FinServices.SearchProcureDocForTrackingRoute(document, documentNumber, fiscalYear);
+            return Json(data);
+        }
     }
 }

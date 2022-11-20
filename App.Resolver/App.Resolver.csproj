@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.Accommodations\App.Accommodations.csproj" />
+    <ProjectReference Include="..\App.Authenticator\App.Authenticator.csproj" />
     <ProjectReference Include="..\App.CollaborationNetwork\App.EIS.csproj" />
     <ProjectReference Include="..\App.Common\App.Common.csproj" />
     <ProjectReference Include="..\App.Executive\App.FIN.csproj" />

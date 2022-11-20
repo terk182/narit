@@ -1,5 +1,6 @@
 ﻿
 using App.Accommodations;
+using App.Authenticator;
 using App.Common;
 using App.EIS;
 using App.FIN;
@@ -35,6 +36,7 @@ namespace App.Resolver
             services.AddScoped<IPlanServices, PlanServices>(); 
             services.AddScoped<IProcureServices, ProcureServices>();
             services.AddScoped<ICommonServices, CommonServices>();
+            services.AddScoped<IAuthenticatorServices, AuthenticatorServices>();
             return services;
         }
     }
