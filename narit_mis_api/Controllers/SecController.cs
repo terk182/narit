@@ -3197,9 +3197,18 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategySetup(request);
             return Json(data);
         }
+        
+        [HttpDelete]
+        [Route("/Plan/Setup/StrategySetup/DeleteStrategy/{Id}")]
+        public IActionResult DeleteStrategy(int Id)
+        {
+
+            var data = _SecServices.DeleteStrategy(Id);
+
+            return Json(data);
+        }
 
 
-     
 
 
         #endregion

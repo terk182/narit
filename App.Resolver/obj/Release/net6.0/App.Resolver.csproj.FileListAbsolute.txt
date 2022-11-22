@@ -159,3 +159,5 @@ C:\Users\KKN\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\App.Resolver
 C:\Users\KKN\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\refint\App.Resolver.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\App.Resolver.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Resolver\obj\Release\net6.0\ref\App.Resolver.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Release\net6.0\App.Authenticator.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Release\net6.0\App.Authenticator.pdb

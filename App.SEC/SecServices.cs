@@ -3452,5 +3452,25 @@ namespace App.SEC
 
             return result;
         }
+
+        public SecBaseResponse DeleteStrategy(int StrategyId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Strategies.Where(x => x.Id == StrategyId).FirstOrDefault();
+            if (data != null)
+            {
+                _database.Remove(data);
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delect Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
     }
 }
