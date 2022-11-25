@@ -15,5 +15,11 @@ namespace App.ACC
         {
             _databaseACC = context;
         }
+
+        public List<Accbook> GetAccbooks()
+        {
+            var data = _databaseACC.Accbooks.ToList();
+            return data;
+        }
     }
 }

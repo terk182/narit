@@ -23,7 +23,8 @@ namespace narit_mis_api.Controllers
         [Route("Accounting/test")]
         public IActionResult MainGeneralUserPage()
         {
-            return Json("MainGeneralUserPage");
+            var data = _AccServices.GetAccbooks();
+            return Json(data);
         }
     }
 }
