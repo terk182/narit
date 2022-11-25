@@ -1,0 +1,12 @@
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\bin\Debug\net6.0\Acc.accounting.deps.json
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\bin\Debug\net6.0\Acc.accounting.dll
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\bin\Debug\net6.0\Acc.accounting.pdb
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.dll
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\refint\Acc.accounting.dll
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\Acc.accounting.pdb
+C:\Users\daisy\Documents\GitHub\narit\ACC.accounting\obj\Debug\net6.0\ref\Acc.accounting.dll

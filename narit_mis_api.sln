@@ -39,9 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Procure", "App.Procure\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Common", "App.Common\App.Common.csproj", "{DE621E37-60A2-4DC1-B0A7-F1B882652611}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "mis_web", "mis_web\mis_web.esproj", "{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Authenticator", "App.Authenticator\App.Authenticator.csproj", "{9093C294-D50D-4951-853B-7357DA05DD9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Authenticator", "App.Authenticator\App.Authenticator.csproj", "{9093C294-D50D-4951-853B-7357DA05DD9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,12 +107,6 @@ Global
 		{DE621E37-60A2-4DC1-B0A7-F1B882652611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE621E37-60A2-4DC1-B0A7-F1B882652611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE621E37-60A2-4DC1-B0A7-F1B882652611}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1F1C951-2E00-47F8-9ED6-9844C92C46E6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{9093C294-D50D-4951-853B-7357DA05DD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9093C294-D50D-4951-853B-7357DA05DD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9093C294-D50D-4951-853B-7357DA05DD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU

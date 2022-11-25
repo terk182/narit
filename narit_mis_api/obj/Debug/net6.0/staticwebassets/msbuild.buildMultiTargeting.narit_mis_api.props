@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\narit_mis_api.props" />
-</Project>
