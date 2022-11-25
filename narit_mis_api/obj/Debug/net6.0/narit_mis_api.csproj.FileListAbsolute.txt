@@ -625,3 +625,5 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authentic
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
