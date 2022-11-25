@@ -90,23 +90,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KKN\\.nuget\\packages\\": {},
+    "C:\\Users\\terk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
+      "projectUniqueName": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
       "projectName": "App.PathDetail",
-      "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
-      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.PathDetail\\obj\\",
+      "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
+      "packagesPath": "C:\\Users\\terk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.PathDetail\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\terk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -159,7 +159,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

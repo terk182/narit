@@ -593,7 +593,6 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\nar
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.AssemblyInfoInputs.cache
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.AssemblyInfo.cs
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.csproj.CoreCompileInputs.cache
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\staticwebassets.development.json
@@ -625,3 +624,7 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authentic
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.dll
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.pdb

@@ -434,3 +434,10 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\narit_mis_a
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\ref\narit_mis_api.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.Authenticator.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.Authenticator.pdb
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.Authenticator.dll
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.Authenticator.pdb
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.narit_mis_api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.build.narit_mis_api.props
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.narit_mis_api.props
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.narit_mis_api.props
+C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets.pack.json
