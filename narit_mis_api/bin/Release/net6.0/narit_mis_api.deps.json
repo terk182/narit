@@ -524,6 +524,15 @@
           "App.Accommodations.dll": {}
         }
       },
+      "App.Authenticator/1.0.0": {
+        "dependencies": {
+          "App.Common": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "runtime": {
+          "App.Authenticator.dll": {}
+        }
+      },
       "App.Common/1.0.0": {
         "dependencies": {
           "Data.Context": "1.0.0"
@@ -588,6 +597,7 @@
       "App.Resolver/1.0.0": {
         "dependencies": {
           "App.Accommodations": "1.0.0",
+          "App.Authenticator": "1.0.0",
           "App.Common": "1.0.0",
           "App.EIS": "1.0.0",
           "App.FIN": "1.0.0",
@@ -988,6 +998,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "App.Accommodations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.Authenticator/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
