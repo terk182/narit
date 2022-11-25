@@ -628,3 +628,4 @@ C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authent
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Authenticator.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis_api.MvcApplicationPartsAssemblyInfo.cs
