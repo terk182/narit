@@ -1948,23 +1948,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\terk\\.nuget\\packages\\": {},
+    "C:\\Users\\Ittipon\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
+      "projectUniqueName": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
       "projectName": "App.Procure",
-      "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
-      "packagesPath": "C:\\Users\\terk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
+      "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
+      "packagesPath": "C:\\Users\\Ittipon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\terk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ittipon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1980,11 +1980,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
