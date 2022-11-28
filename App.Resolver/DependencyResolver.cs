@@ -41,8 +41,8 @@ namespace App.Resolver
             services.AddScoped<IAuthenticatorServices, AuthenticatorServices>();
 
 
-            //---------accounting -------------------
-            services.AddScoped<IAccServices, AccServices>();
+      
+
 
             
             return services;

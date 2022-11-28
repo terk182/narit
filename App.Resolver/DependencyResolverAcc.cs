@@ -27,8 +27,7 @@ namespace App.Resolver
         public static IServiceCollection AddAccServices(this IServiceCollection services)
         {
 
-            //---------MIS-------------------------
-
+            services.AddScoped<IAccServices, AccServices>();
 
             return services;
         }
