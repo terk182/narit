@@ -20,7 +20,7 @@ namespace narit_mis_api.Controllers
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("/LogIn/{username}/{password}")]
         public IActionResult LogIn(string username, string password)
         {

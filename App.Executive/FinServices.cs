@@ -654,14 +654,15 @@ namespace App.FIN
                 if(documentNumber == "0")
                 {
                     dataRequest = _database.RequestForms.Where(x => x.FiscalYear == fiscalYear).ToList();
-                    var RequestForm = new List<RequestForm>();
+                    var RequestForm = new List<RequestFormDtoForSearchProcureDocForTrackingRoute>();
                     foreach (var item in dataRequest)
                     {
 
                         //var RequestForm = new List<RequestForm>();
                         //foreach (var item2 in item.)
                         //{
-                            RequestForm.Add(new narit_mis_api.Models.RequestForm
+                            RequestForm.Add(new RequestFormDtoForSearchProcureDocForTrackingRoute
+                            //narit_mis_api.Models.RequestForm
                             {
                                 Id = item.Id,
                                 Name = item.Name,
@@ -673,7 +674,7 @@ namespace App.FIN
 
                             });
                         //}
-                        result.requestForms = RequestForm;
+                        result.requestFormsDto = RequestForm;
 
                     }
 

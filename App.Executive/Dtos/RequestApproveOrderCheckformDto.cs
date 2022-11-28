@@ -23,7 +23,8 @@ namespace App.FIN.Dtos
             //public string RequestDtoDepartmentName { get; set; } = null!;
             //public decimal? RequestDtoMedianPrice { get; set; }
         public List<RequestForm>? requestForms { get; set; }
+        public List<RequestFormDtoForSearchProcureDocForTrackingRoute>? requestFormsDto { get; set; }
 
-            
+
     }
 }

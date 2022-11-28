@@ -262,3 +262,5 @@ C:\Users\Ittipon\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolv
 C:\Users\Ittipon\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\refint\App.Resolver.dll
 C:\Users\Ittipon\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.pdb
 C:\Users\Ittipon\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\ref\App.Resolver.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.ACC.dll
+C:\Users\KKN\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.ACC.pdb
