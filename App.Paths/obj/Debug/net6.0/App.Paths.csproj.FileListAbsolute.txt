@@ -46,3 +46,15 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Pat
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\refint\App.Paths.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.pdb
 C:\Users\terk\OneDrive\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\ref\App.Paths.dll
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\bin\Debug\net6.0\App.Paths.deps.json
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\bin\Debug\net6.0\App.Paths.dll
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\bin\Debug\net6.0\App.Paths.pdb
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.csproj.AssemblyReference.cache
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.AssemblyInfoInputs.cache
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.AssemblyInfo.cs
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.csproj.CoreCompileInputs.cache
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.dll
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\refint\App.Paths.dll
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\App.Paths.pdb
+C:\Users\Ittipon\Documents\GitHub\narit\App.Paths\obj\Debug\net6.0\ref\App.Paths.dll
