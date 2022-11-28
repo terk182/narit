@@ -441,3 +441,5 @@ C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticweb
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.narit_mis_api.props
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.narit_mis_api.props
 C:\Users\daisy\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.ACC.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\App.ACC.pdb
