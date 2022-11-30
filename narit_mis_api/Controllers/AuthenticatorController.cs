@@ -1,5 +1,6 @@
 ﻿
 using App.Authenticator;
+using App.Authenticator.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace narit_mis_api.Controllers
@@ -21,10 +22,10 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpPost]
-        [Route("/LogIn/{username}/{password}")]
-        public IActionResult LogIn(string username, string password)
+        [Route("/LogIn")]
+        public IActionResult LogIn([FromBody]AuthenticatorRequest request)
         {
-            var data = _AuthenticatorServices.LogIn(username, password);
+            var data = _AuthenticatorServices.LogIn(request);
             return Json(data);
         }
 
