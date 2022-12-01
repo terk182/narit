@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Requests\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\App.Common\App.Common.csproj" />
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />
   </ItemGroup>

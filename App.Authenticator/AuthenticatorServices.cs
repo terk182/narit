@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using App.Authenticator.Models.Requests;
 
 namespace App.Authenticator
 {
@@ -18,13 +18,14 @@ namespace App.Authenticator
         {
             _database = context;
         }
-        public AuthenticatorBaseResponse LogIn(string username, string password)
+
+        public AuthenticatorBaseResponse LogIn(AuthenticatorRequest request)
         {
             int checknullusername;
             int checknullpassword;
             Guid checkUserIdofUsername;
             Guid checkUserIdofPassword;
-            var datausername = _database.AspnetUsers.Where(x => x.UserName == username).FirstOrDefault();
+            var datausername = _database.AspnetUsers.Where(x => x.UserName == request.UserName).FirstOrDefault();
             if (datausername == null) { checknullusername = 0; }
             else { checknullusername = 1; }
             if (checknullusername == 0)
@@ -35,7 +36,7 @@ namespace App.Authenticator
             {
                 checkUserIdofUsername = datausername.UserId;
             }
-            var datapassword = _database.AspnetMemberships.Where(x => x.Password == password).FirstOrDefault();
+            var datapassword = _database.AspnetMemberships.Where(x => x.Password == request.Password).FirstOrDefault();
             if (datapassword == null) { checknullpassword = 0; }
             else { checknullpassword = 1; }
             if (checknullpassword == 0)
@@ -47,7 +48,7 @@ namespace App.Authenticator
                 checkUserIdofPassword = datapassword.UserId;
             }
             var response = new AuthenticatorBaseResponse();
-            if (checkUserIdofUsername == checkUserIdofPassword && checkUserIdofUsername != Guid.Empty && checkUserIdofPassword != Guid.Empty )
+            if (checkUserIdofUsername == checkUserIdofPassword && checkUserIdofUsername != Guid.Empty && checkUserIdofPassword != Guid.Empty)
             {
                 response.Success = true;
                 response.Messsage = "Congrats";
@@ -71,5 +72,6 @@ namespace App.Authenticator
             }
             return response;
         }
+        
     }
 }
