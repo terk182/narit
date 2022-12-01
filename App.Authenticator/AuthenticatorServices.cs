@@ -80,7 +80,6 @@ namespace App.Authenticator
             catch (Exception e)
             {
                 respone.Success = false;
-                respone.Errors = "success";
                 respone.Errors = e.Message;
             }
 
