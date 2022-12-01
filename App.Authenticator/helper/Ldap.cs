@@ -16,7 +16,7 @@ namespace App.Authenticator.helper
             ldapConnection.Username = username;
             ldapConnection.Password = password;
 
-            ldapConnection.AuthenticationType = AuthenticationTypes.Signing;
+            ldapConnection.AuthenticationType = AuthenticationTypes.None;
 
             return ldapConnection;
         }
