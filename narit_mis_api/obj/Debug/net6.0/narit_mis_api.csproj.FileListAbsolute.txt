@@ -560,12 +560,8 @@ C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\run
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.Accommodations.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.EIS.dll
 C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.FIN.dll
@@ -732,3 +728,8 @@ C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\narit_mis
 C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\obj\Debug\net6.0\ref\narit_mis_api.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\App.ACC.pdb
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\System.DirectoryServices.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

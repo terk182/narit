@@ -183,3 +183,12 @@ C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\refint\narit_
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.pdb
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.genruntimeconfig.cache
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\ref\narit_acc_api.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.csproj.AssemblyReference.cache
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.AssemblyInfoInputs.cache
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.AssemblyInfo.cs
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.csproj.CoreCompileInputs.cache
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\refint\narit_acc_api.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\narit_acc_api\obj\Debug\net6.0\narit_acc_api.pdb

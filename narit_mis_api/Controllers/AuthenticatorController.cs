@@ -28,6 +28,13 @@ namespace narit_mis_api.Controllers
             var data = _AuthenticatorServices.LogIn(request);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/ldep/LogIn")]
+        public IActionResult ldepLogIn([FromBody] AuthenticatorRequest request)
+        {
+            var data = _AuthenticatorServices.LdapLogIn(request);
+            return Json(data);
+        }
 
     }
 }
