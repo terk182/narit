@@ -120,7 +120,7 @@ namespace App.Authenticator
             {
                 response.Success = true;
                 response.Messsage = "Congrats";
-                response.userid = checkUserIdofUsername;
+              //  response.userid = checkUserIdofUsername;
 
             }
             else if (checkUserIdofUsername == Guid.Empty && checkUserIdofPassword != Guid.Empty)
@@ -141,6 +141,77 @@ namespace App.Authenticator
             return response;
         }
 
-     
+        public AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request)
+        {
+            var response = new AuthenticatorBaseResponse();
+            int checknullpassword;
+            Guid checkUserIdofPassword;
+            var datausername = _database.AspnetUsers.Where(x => x.UserName == request.UserName).Include(x => x.StaffSecurities).FirstOrDefault();
+            if (datausername == null) 
+            {
+                response.Success = false;
+                response.Messsage = "Your username is wrong";
+                return response;
+            }
+           
+            var datapassword = _database.AspnetMemberships.Where(x => x.Password == request.Password).FirstOrDefault();
+
+            if (datapassword == null) 
+            {
+                response.Success = false;
+                response.Messsage = "Your password is wrong";
+                return response;
+            }
+
+            var _staffSecurityRolesGroup = new StaffSecurityRolesGroupDirect(Configuration);
+            int id = datausername.StaffSecurities.Select(x => x.Id).FirstOrDefault();
+            var _staffSecurityRolesData = _staffSecurityRolesGroup.GetAll_data(id);
+            var id_list = new List<int>();
+            foreach(var item in _staffSecurityRolesData)
+            {
+                id_list.Add(item.RolesGroups_Id);
+            }
+            var _RolesGroups = _database.RolesGroups.Where(x => id_list.Contains(x.Id)).Include(x => x.AspnetRolesRoles).ToList();
+            var rolesGroupDto = new List<RolesGroupDto>();
+            foreach (var item1 in _RolesGroups)
+            {
+                rolesGroupDto.Add(new RolesGroupDto
+                {
+                    Id = item1.Id,
+                    Name = item1.Name
+                });
+            }
+
+
+            //var oldMisPage = new List<oldRolesPage>();
+
+
+            //foreach (var item2 in _RolesGroups.SelectMany(x => x.AspnetRolesRoles))
+            //{
+            //    oldMisPage.Add(new oldRolesPage { 
+            //        ApplicationId = item2.ApplicationId,
+            //        RoleId = item2.RoleId,
+            //        RoleName = item2.RoleName,
+            //        LoweredRoleName = item2.LoweredRoleName,
+            //        Description = item2.Description,
+            //    });
+            //}
+
+            var user = new userData();
+            user.userid = datapassword.UserId;
+            user.name = datausername.StaffSecurities.Select(x => x.Name).FirstOrDefault();
+            user.IsFinancialDepPowerUser = datausername.StaffSecurities.Select(x => x.IsFinancialDepPowerUser).FirstOrDefault();
+            user.IsPlanDepPowerUser = datausername.StaffSecurities.Select(x => x.IsPlanDepPowerUser).FirstOrDefault();
+            user.IsProcureDepPowerUser = datausername.StaffSecurities.Select(x => x.IsProcureDepPowerUser).FirstOrDefault();
+            user.IsHrdepPowerUser = datausername.StaffSecurities.Select(x => x.IsHrdepPowerUser).FirstOrDefault();
+            user.IsFilingDepPowerUser = datausername.StaffSecurities.Select(x => x.IsFilingDepPowerUser).FirstOrDefault();
+
+            response.Success = true;
+            response.Messsage = "Congrats";
+            response.data = user;
+            response.rolesGroup = rolesGroupDto;
+            return response;
+       
+        }
     }
 }

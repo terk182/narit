@@ -13,6 +13,7 @@ namespace App.Authenticator
     {
         AuthenticatorBaseResponse LogIn(AuthenticatorRequest request);
         LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request);
+        AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request);
     }
 
 }
