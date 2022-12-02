@@ -13,14 +13,11 @@ namespace App.Authenticator.helper
     public class StaffSecurityRolesGroupDirect
     {
 
-        private readonly IConfiguration Configuration;
+     
         private readonly string contextDb;
         public StaffSecurityRolesGroupDirect(IConfiguration configuration)
         {
-            Configuration = configuration;
-
             contextDb = configuration.GetConnectionString("Defaultconnectton");
-         
         }
 
         public List<StaffSecurityRolesGroupModel> GetAll_data(int StaffSecurities_Id)
