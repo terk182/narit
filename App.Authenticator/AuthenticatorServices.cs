@@ -13,6 +13,9 @@ using App.Authenticator.helper;
 using System.DirectoryServices;
 using App.Authenticator.Models.Dtos;
 using App.Authenticator.Dtos;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace App.Authenticator
 {
@@ -182,8 +185,7 @@ namespace App.Authenticator
         public AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request)
         {
             var response = new AuthenticatorBaseResponse();
-            int checknullpassword;
-            Guid checkUserIdofPassword;
+          
             var datausername = _database.AspnetUsers.Where(x => x.UserName == request.UserName).Include(x => x.StaffSecurities).FirstOrDefault();
             if (datausername == null) 
             {
@@ -219,7 +221,21 @@ namespace App.Authenticator
                     Name = item1.Name
                 });
             }
-
+            if (true)
+            {
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                var tokeOptions = new JwtSecurityToken(
+                    issuer: "https://localhost:5001",
+                    audience: "https://localhost:5001",
+                    claims: new List<Claim>(),
+                    expires: DateTime.Now.AddMinutes(5),
+                    signingCredentials: signinCredentials
+                );
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+                response.token = new AuthenticatedResponse { Token = tokenString };
+                //return Ok(new AuthenticatedResponse { Token = tokenString });
+            }
 
             //var oldMisPage = new List<oldRolesPage>();
 
