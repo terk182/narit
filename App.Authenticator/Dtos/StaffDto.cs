@@ -16,5 +16,7 @@ namespace App.Authenticator.Dtos
         public int StaffId { get; set; }
         public Guid? AspnetUsersUserId { get; set; }
         public string UserName { get; set; } = null!;
+        public int WorkStatusEnum { get; set; }
+        public int AccessRight { get; set; }
     }
 }

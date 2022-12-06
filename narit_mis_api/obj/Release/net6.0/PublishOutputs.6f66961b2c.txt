@@ -29,6 +29,7 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\System.DirectoryServices.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\System.Drawing.Common.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\System.Runtime.Caching.dll
@@ -41,12 +42,12 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.DirectoryServices.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.ACC.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Accommodations.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\App.Authenticator.dll

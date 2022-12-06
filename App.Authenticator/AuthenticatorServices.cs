@@ -33,7 +33,7 @@ namespace App.Authenticator
         public List<StaffDto> getAllUser()
         {
             var result = new List<StaffDto>();
-            var data = _database.Staffs.ToList();
+            var data = _database.Staffs.Where(c => c.Active).ToList();
             foreach (var item in data)
             {
                 result.Add(new StaffDto
@@ -43,9 +43,11 @@ namespace App.Authenticator
                     EMailAddress = item.EMailAddress,
                     ImageUrl = item.ImageUrl,
                     HrdepartmentId = item.HrdepartmentId,
-                    StaffId = item.Id
+                    StaffId = item.Id,
+                    WorkStatusEnum = item.WorkStatusEnum
                     //AspnetUsersUserId = item.,
                     //UserName = item.
+                    //AccessRight = item.
                 });
             }
             return result;
