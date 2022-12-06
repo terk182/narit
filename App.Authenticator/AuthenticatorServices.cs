@@ -34,22 +34,36 @@ namespace App.Authenticator
         {
             var result = new List<StaffDto>();
             var data = _database.Staffs.Where(c => c.Active).ToList();
-            foreach (var item in data)
+            var hrdepartmentname = _database.Hrdepartments.Where(c => c.Active).ToList();
+            var QSOuterJoin = from user in data
+                              join department in hrdepartmentname
+                              on user.HrdepartmentId equals department.Id
+                              into UserDepartmentGroup
+                              from address in UserDepartmentGroup.DefaultIfEmpty()
+                              select new {user, address };
+                              
+            foreach (var item in QSOuterJoin)
             {
                 result.Add(new StaffDto
                 {
-                    Name = item.Name,
-                    Surname = item.Surname,
-                    EMailAddress = item.EMailAddress,
-                    ImageUrl = item.ImageUrl,
-                    HrdepartmentId = item.HrdepartmentId,
-                    StaffId = item.Id,
-                    WorkStatusEnum = item.WorkStatusEnum
+                    Name = item.user.Name,
+                    Surname = item.user.Surname,
+                    EMailAddress = item.user.EMailAddress,
+                    ImageUrl = item.user.ImageUrl,
+                    HrdepartmentId = item.user.HrdepartmentId,
+                    StaffId = item.user.Id,
+                    WorkStatusEnum = item.user.WorkStatusEnum,
+                    Hrdepartmentname = item.address?.Name
+
+
                     //AspnetUsersUserId = item.,
                     //UserName = item.
                     //AccessRight = item.
                 });
+                
+
             }
+           
             return result;
         }
 

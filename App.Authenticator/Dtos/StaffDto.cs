@@ -1,4 +1,5 @@
-﻿using System;
+﻿using narit_mis_api.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,13 @@ namespace App.Authenticator.Dtos
         public string EMailAddress { get; set; } = null!;
         public string ImageUrl { get; set; } = null!;
         public int? HrdepartmentId { get; set; }
+        //public string HrdepartmentName { get; set; }
         public int StaffId { get; set; }
         public Guid? AspnetUsersUserId { get; set; }
         public string UserName { get; set; } = null!;
         public int WorkStatusEnum { get; set; }
+        public string WorkStatus { get; set; }
         public int AccessRight { get; set; }
+        public string  Hrdepartmentname { get; set; }
     }
 }
