@@ -28,7 +28,15 @@ namespace narit_mis_api.Controllers
             var data = _AuthenticatorServices.LogInCheck(request);
             return Json(data);
         }
-      
+
+        [HttpGet]
+        [Route("/ManageUser/getAllUser")]
+        public IActionResult getAllUser()
+        {
+            var data = _AuthenticatorServices.getAllUser();
+            return Json(data);
+        }
+
 
     }
 }

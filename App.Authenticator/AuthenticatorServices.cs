@@ -12,6 +12,7 @@ using System.Reflection.PortableExecutable;
 using App.Authenticator.helper;
 using System.DirectoryServices;
 using App.Authenticator.Models.Dtos;
+using App.Authenticator.Dtos;
 
 namespace App.Authenticator
 {
@@ -27,6 +28,27 @@ namespace App.Authenticator
             _database = context;
             _LdapDomain = Configuration["Ldap:LdapDomain"];
             _LdapServerIp = Configuration["Ldap:IpLdapSever"];
+        }
+
+        public List<StaffDto> getAllUser()
+        {
+            var result = new List<StaffDto>();
+            var data = _database.Staffs.ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StaffDto
+                {
+                    Name = item.Name,
+                    Surname = item.Surname,
+                    EMailAddress = item.EMailAddress,
+                    ImageUrl = item.ImageUrl,
+                    HrdepartmentId = item.HrdepartmentId,
+                    StaffId = item.Id
+                    //AspnetUsersUserId = item.,
+                    //UserName = item.
+                });
+            }
+            return result;
         }
 
         public LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request)
