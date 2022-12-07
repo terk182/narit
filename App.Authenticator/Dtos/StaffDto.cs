@@ -22,5 +22,8 @@ namespace App.Authenticator.Dtos
         public string WorkStatus { get; set; }
         public int AccessRight { get; set; }
         public string  Hrdepartmentname { get; set; }
+        public string MobilePhoneNumber { get; set; } = null!;
+        public string PositionName { get; set; } = null!;
+        public int? JobPositionId { get; set; }
     }
 }

@@ -40,13 +40,18 @@ namespace App.Authenticator
             var result = new List<StaffDto>();
             var data = _database.Staffs.Where(c => c.Active).ToList();
             var hrdepartmentname = _database.Hrdepartments.Where(c => c.Active).ToList();
+            var jobpostion = _database.JobPositions.Where(c => c.Active).ToList();
             var QSOuterJoin = from user in data
                               join department in hrdepartmentname
                               on user.HrdepartmentId equals department.Id
                               into UserDepartmentGroup
                               from address in UserDepartmentGroup.DefaultIfEmpty()
-                              select new {user, address };
-                              
+                              join jobposi in jobpostion
+                              on user.JobPositionId equals jobposi.Id
+                              into JobPositionGroup
+                              from wherejobposi in JobPositionGroup.DefaultIfEmpty()
+                              select new { user, address, wherejobposi };
+
             foreach (var item in QSOuterJoin)
             {
                 result.Add(new StaffDto
@@ -65,7 +70,11 @@ namespace App.Authenticator
                     //< asp:ListItem Text = "ศึกษาต่อ" Value = "40" ></ asp:ListItem >
                     //< asp:ListItem Text = "พักงาน" Value = "50" ></ asp:ListItem >
                     WorkStatus = item.user.WorkStatusEnum == 10 ? "ปฏิบัติงาน" : item.user.WorkStatusEnum == 20 ? "ลาออก" : item.user.WorkStatusEnum == 30 ? "ทดลองงาน" : item.user.WorkStatusEnum == 40 ? "ศึกษาต่อ" : item.user.WorkStatusEnum == 50 ? "พักงาน" : "ไม่ปรากฎข้อมูล",
-                    Hrdepartmentname = item.address?.Name
+                    Hrdepartmentname = item.address?.Name,
+                    MobilePhoneNumber = item.user.MobilePhoneNumber,
+                    PositionName = item.wherejobposi?.Name,
+                    JobPositionId = item.user.JobPositionId
+
                     //AspnetUsersUserId = item.,
                     //UserName = item.
                     //AccessRight = item.
@@ -82,12 +91,17 @@ namespace App.Authenticator
             var result = new List<StaffDto>();
             var data = _database.Staffs.Where(c => c.Id == id).ToList();
             var hrdepartmentname = _database.Hrdepartments.Where(c => c.Active).ToList();
+            var jobpostion = _database.JobPositions.Where(c => c.Active).ToList();
             var QSOuterJoin = from user in data
                               join department in hrdepartmentname
                               on user.HrdepartmentId equals department.Id
                               into UserDepartmentGroup
                               from address in UserDepartmentGroup.DefaultIfEmpty()
-                              select new { user, address };
+                              join jobposi in jobpostion
+                              on user.JobPositionId equals jobposi.Id
+                              into JobPositionGroup
+                              from wherejobposi in JobPositionGroup.DefaultIfEmpty()
+                              select new { user, address, wherejobposi };
 
             foreach (var item in QSOuterJoin)
             {
@@ -107,7 +121,10 @@ namespace App.Authenticator
                     //< asp:ListItem Text = "ศึกษาต่อ" Value = "40" ></ asp:ListItem >
                     //< asp:ListItem Text = "พักงาน" Value = "50" ></ asp:ListItem >
                     WorkStatus = item.user.WorkStatusEnum == 10 ? "ปฏิบัติงาน" : item.user.WorkStatusEnum == 20 ? "ลาออก" : item.user.WorkStatusEnum == 30 ? "ทดลองงาน" : item.user.WorkStatusEnum == 40 ? "ศึกษาต่อ" : item.user.WorkStatusEnum == 50 ? "พักงาน" : "ไม่ปรากฎข้อมูล",
-                    Hrdepartmentname = item.address?.Name
+                    Hrdepartmentname = item.address?.Name,
+                    MobilePhoneNumber = item.user.MobilePhoneNumber,
+                    PositionName = item.wherejobposi?.Name,
+                    JobPositionId = item.user.JobPositionId
                     //AspnetUsersUserId = item.,
                     //UserName = item.
                     //AccessRight = item.
