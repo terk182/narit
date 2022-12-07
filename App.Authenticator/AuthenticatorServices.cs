@@ -56,9 +56,14 @@ namespace App.Authenticator
                     HrdepartmentId = item.user.HrdepartmentId,
                     StaffId = item.user.Id,
                     WorkStatusEnum = item.user.WorkStatusEnum,
+                    //WorkStatusEnum สถานะการทำงาน
+                    //< asp:ListItem Text = "ปฏิบัติงาน" Value = "10" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ลาออก" Value = "20" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ทดลองงาน" Value = "30" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ศึกษาต่อ" Value = "40" ></ asp:ListItem >
+                    //< asp:ListItem Text = "พักงาน" Value = "50" ></ asp:ListItem >
+                    WorkStatus = item.user.WorkStatusEnum == 10 ? "ปฏิบัติงาน" : item.user.WorkStatusEnum == 20 ? "ลาออก" : item.user.WorkStatusEnum == 30 ? "ทดลองงาน" : item.user.WorkStatusEnum == 40 ? "ศึกษาต่อ" : item.user.WorkStatusEnum == 50 ? "พักงาน" : "ไม่ปรากฎข้อมูล",
                     Hrdepartmentname = item.address?.Name
-
-
                     //AspnetUsersUserId = item.,
                     //UserName = item.
                     //AccessRight = item.
