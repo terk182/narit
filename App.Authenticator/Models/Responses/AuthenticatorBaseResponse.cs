@@ -37,10 +37,12 @@ namespace App.Authenticator.Models.Responses
     {
         public Guid userid { get; set; }
         public string? name { get; set; }
+        public int StaffId { get; set; }
         public bool IsFinancialDepPowerUser { get; set; }
         public bool IsPlanDepPowerUser { get; set; }
         public bool IsProcureDepPowerUser { get; set; }
         public bool IsHrdepPowerUser { get; set; }
         public bool IsFilingDepPowerUser { get; set; }
+        public bool IsPDPA { get; set; }
     }
 }

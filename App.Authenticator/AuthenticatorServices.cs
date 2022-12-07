@@ -322,11 +322,13 @@ namespace App.Authenticator
             var user = new userData();
             user.userid = datapassword.UserId;
             user.name = datausername.StaffSecurities.Select(x => x.Name).FirstOrDefault();
+            user.StaffId = datausername.StaffSecurities.Select(x => x.StaffId).FirstOrDefault();
             user.IsFinancialDepPowerUser = datausername.StaffSecurities.Select(x => x.IsFinancialDepPowerUser).FirstOrDefault();
             user.IsPlanDepPowerUser = datausername.StaffSecurities.Select(x => x.IsPlanDepPowerUser).FirstOrDefault();
             user.IsProcureDepPowerUser = datausername.StaffSecurities.Select(x => x.IsProcureDepPowerUser).FirstOrDefault();
             user.IsHrdepPowerUser = datausername.StaffSecurities.Select(x => x.IsHrdepPowerUser).FirstOrDefault();
             user.IsFilingDepPowerUser = datausername.StaffSecurities.Select(x => x.IsFilingDepPowerUser).FirstOrDefault();
+            user.IsPDPA = datausername.StaffSecurities.Select(x => x.IsPdpa).FirstOrDefault();
 
             response.Success = true;
             response.Messsage = "Congrats";
