@@ -335,5 +335,33 @@ namespace App.Authenticator
             return response;
        
         }
+
+        public AuthenticatorBaseResponse PDPASetup(PDPADto request)
+        {
+
+            var response = new AuthenticatorBaseResponse();
+            var data = _database.StaffSecurities.FirstOrDefault(x => x.StaffId == request.StaffId);
+            if (data != null)
+            {
+                data.IsPdpa = request.IsPdpa;
+
+                _database.Entry(data).State = EntityState.Modified;
+
+                int returnValue = _database.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "update complete" : "update error";
+
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+
+            }
+
+            response.Success = true;
+
+            return response;
+        }
     }
 }
