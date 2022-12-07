@@ -333,7 +333,11 @@ namespace narit_mis_api.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=192.168.2.176,49176;Database=NARIT_MIS_LINK;User ID=admin;Password=Aa!12345;Trusted_Connection=false ;");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -8435,6 +8439,12 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.IsHrdepPowerUser).HasColumnName("IsHRDepPowerUser");
 
+                entity.Property(e => e.IsPdpa)
+                    .IsRequired()
+                    .HasColumnName("IsPDPA")
+                    .HasDefaultValueSql("('0')")
+                    .HasComment("");
+
                 entity.HasOne(d => d.AspnetUsersUser)
                     .WithMany(p => p.StaffSecurities)
                     .HasForeignKey(d => d.AspnetUsersUserId)
@@ -8543,6 +8553,8 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.Amount)
                     .HasColumnType("decimal(12, 2)")
                     .HasDefaultValueSql("((0.00))");
+
+                entity.Property(e => e.StrategyId).HasComment("");
 
                 entity.Property(e => e.Unit).HasDefaultValueSql("('')");
 

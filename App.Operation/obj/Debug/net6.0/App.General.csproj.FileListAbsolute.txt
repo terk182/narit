@@ -82,3 +82,15 @@ C:\Users\Pakpoom\Documents\GitHub\narit\App.Operation\obj\Debug\net6.0\App.Gener
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Operation\obj\Debug\net6.0\refint\App.General.dll
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Operation\obj\Debug\net6.0\App.General.pdb
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Operation\obj\Debug\net6.0\ref\App.General.dll
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\bin\Debug\net6.0\App.General.deps.json
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\bin\Debug\net6.0\App.General.dll
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\bin\Debug\net6.0\App.General.pdb
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.csproj.AssemblyReference.cache
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.AssemblyInfoInputs.cache
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.AssemblyInfo.cs
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.csproj.CoreCompileInputs.cache
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.dll
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\refint\App.General.dll
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\App.General.pdb
+C:\Users\Natthaphong\Desktop\Github\narit\App.Operation\obj\Debug\net6.0\ref\App.General.dll

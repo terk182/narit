@@ -37,6 +37,5 @@ namespace narit_mis_api.Models
         public virtual ProcureLoaningSettleItem? ProcureLoaningSettleItem { get; set; }
         public virtual RegisterProcureItemType? RegisterProcureItemType { get; set; }
         public virtual ICollection<RegisterDurableItem> RegisterDurableItems { get; set; }
-       
     }
 }
