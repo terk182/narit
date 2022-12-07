@@ -11,6 +11,7 @@ namespace App.Authenticator.Models.Responses
     public class AuthenticatorBaseResponse : CommonBaseResponse
     {
         public userData data { get; set; }
+        public AuthenticatedResponse? token { get; set; }
         public List<RolesGroupDto>? rolesGroup { get; set; }
         //public List<oldRolesPage>? oldPage { get; set; }
         // public userdetail userdetail { get; set; }

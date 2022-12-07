@@ -303,3 +303,5 @@ C:\Users\Pakpoom\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolv
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\refint\App.Resolver.dll
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\App.Resolver.pdb
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Resolver\obj\Debug\net6.0\ref\App.Resolver.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.ACC.dll
+C:\Users\daisy\Documents\GitHub\narit\App.Resolver\bin\Debug\net6.0\App.ACC.pdb

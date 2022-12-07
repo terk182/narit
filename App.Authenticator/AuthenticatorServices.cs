@@ -13,6 +13,9 @@ using App.Authenticator.helper;
 using System.DirectoryServices;
 using App.Authenticator.Models.Dtos;
 using App.Authenticator.Dtos;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace App.Authenticator
 {
@@ -53,9 +56,14 @@ namespace App.Authenticator
                     HrdepartmentId = item.user.HrdepartmentId,
                     StaffId = item.user.Id,
                     WorkStatusEnum = item.user.WorkStatusEnum,
+                    //WorkStatusEnum สถานะการทำงาน
+                    //< asp:ListItem Text = "ปฏิบัติงาน" Value = "10" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ลาออก" Value = "20" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ทดลองงาน" Value = "30" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ศึกษาต่อ" Value = "40" ></ asp:ListItem >
+                    //< asp:ListItem Text = "พักงาน" Value = "50" ></ asp:ListItem >
+                    WorkStatus = item.user.WorkStatusEnum == 10 ? "ปฏิบัติงาน" : item.user.WorkStatusEnum == 20 ? "ลาออก" : item.user.WorkStatusEnum == 30 ? "ทดลองงาน" : item.user.WorkStatusEnum == 40 ? "ศึกษาต่อ" : item.user.WorkStatusEnum == 50 ? "พักงาน" : "ไม่ปรากฎข้อมูล",
                     Hrdepartmentname = item.address?.Name
-
-
                     //AspnetUsersUserId = item.,
                     //UserName = item.
                     //AccessRight = item.
@@ -182,8 +190,7 @@ namespace App.Authenticator
         public AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request)
         {
             var response = new AuthenticatorBaseResponse();
-            int checknullpassword;
-            Guid checkUserIdofPassword;
+          
             var datausername = _database.AspnetUsers.Where(x => x.UserName == request.UserName).Include(x => x.StaffSecurities).FirstOrDefault();
             if (datausername == null) 
             {
@@ -219,7 +226,21 @@ namespace App.Authenticator
                     Name = item1.Name
                 });
             }
-
+            if (true)
+            {
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                var tokeOptions = new JwtSecurityToken(
+                    issuer: "https://localhost:5001",
+                    audience: "https://localhost:5001",
+                    claims: new List<Claim>(),
+                    expires: DateTime.Now.AddMinutes(5),
+                    signingCredentials: signinCredentials
+                );
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+                response.token = new AuthenticatedResponse { Token = tokenString };
+                //return Ok(new AuthenticatedResponse { Token = tokenString });
+            }
 
             //var oldMisPage = new List<oldRolesPage>();
 

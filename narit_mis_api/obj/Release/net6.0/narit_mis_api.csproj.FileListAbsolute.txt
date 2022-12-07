@@ -444,3 +444,4 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\runtimes\wi
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

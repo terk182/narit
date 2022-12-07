@@ -8,6 +8,7 @@ C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\narit_mis_api.runtimeconfig.json
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\narit_mis_api.pdb
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\AutoMapper.dll
+C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\KKN\Documents\GitHub\narit\narit_mis_api\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
