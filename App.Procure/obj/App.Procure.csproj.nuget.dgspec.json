@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj": {}
+    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
         "projectName": "App.EIS",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
-        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\obj\\",
+        "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -59,21 +64,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj": {
+    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj",
+        "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
         "projectName": "App.Procure",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj",
-        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\obj\\",
+        "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj",
+        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Procure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,17 +90,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+              "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -121,21 +131,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
+    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
-        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\obj\\",
+        "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -143,6 +157,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -198,7 +213,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

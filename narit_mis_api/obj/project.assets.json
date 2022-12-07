@@ -2672,19 +2672,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
+    "C:\\Users\\KKN\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\narit_mis_api.csproj",
+      "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj",
       "projectName": "narit_mis_api",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\narit_mis_api.csproj",
-      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\obj\\",
+      "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\narit_mis_api\\narit_mis_api.csproj",
+      "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\narit_mis_api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2692,26 +2697,27 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+            "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -2764,7 +2770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
