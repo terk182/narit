@@ -1,5 +1,6 @@
 ﻿
 using App.Authenticator;
+using App.Authenticator.Models.Dtos;
 using App.Authenticator.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +58,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpPost]
+        [Route("PDPA")]
+        public IActionResult PDPASetup(PDPADto request)
+        {
+            var data = _AuthenticatorServices.PDPASetup(request);
+            return Json(data);
+        }
 
     }
 }

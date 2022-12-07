@@ -5,6 +5,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using App.Authenticator.Dtos;
+using App.Authenticator.Models.Dtos;
 using App.Authenticator.Models.Requests;
 using App.Authenticator.Models.Responses;
 
@@ -18,6 +19,8 @@ namespace App.Authenticator
         List<StaffDto> getAllUser();
         List<StaffDto> getUserId(int id);
         UserResponse deleteUser(int id);
+        AuthenticatorBaseResponse PDPASetup(PDPADto request);
+
     }
 
 }
