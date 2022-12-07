@@ -33,6 +33,8 @@ namespace App.Authenticator
             _LdapServerIp = Configuration["Ldap:IpLdapSever"];
         }
 
+      
+
         public List<StaffDto> getAllUser()
         {
             var result = new List<StaffDto>();
@@ -73,6 +75,67 @@ namespace App.Authenticator
             }
            
             return result;
+        }
+
+        public List<StaffDto> getUserId(int id)
+        {
+            var result = new List<StaffDto>();
+            var data = _database.Staffs.Where(c => c.Id == id).ToList();
+            var hrdepartmentname = _database.Hrdepartments.Where(c => c.Active).ToList();
+            var QSOuterJoin = from user in data
+                              join department in hrdepartmentname
+                              on user.HrdepartmentId equals department.Id
+                              into UserDepartmentGroup
+                              from address in UserDepartmentGroup.DefaultIfEmpty()
+                              select new { user, address };
+
+            foreach (var item in QSOuterJoin)
+            {
+                result.Add(new StaffDto
+                {
+                    Name = item.user.Name,
+                    Surname = item.user.Surname,
+                    EMailAddress = item.user.EMailAddress,
+                    ImageUrl = item.user.ImageUrl,
+                    HrdepartmentId = item.user.HrdepartmentId,
+                    StaffId = item.user.Id,
+                    WorkStatusEnum = item.user.WorkStatusEnum,
+                    //WorkStatusEnum สถานะการทำงาน
+                    //< asp:ListItem Text = "ปฏิบัติงาน" Value = "10" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ลาออก" Value = "20" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ทดลองงาน" Value = "30" ></ asp:ListItem >
+                    //< asp:ListItem Text = "ศึกษาต่อ" Value = "40" ></ asp:ListItem >
+                    //< asp:ListItem Text = "พักงาน" Value = "50" ></ asp:ListItem >
+                    WorkStatus = item.user.WorkStatusEnum == 10 ? "ปฏิบัติงาน" : item.user.WorkStatusEnum == 20 ? "ลาออก" : item.user.WorkStatusEnum == 30 ? "ทดลองงาน" : item.user.WorkStatusEnum == 40 ? "ศึกษาต่อ" : item.user.WorkStatusEnum == 50 ? "พักงาน" : "ไม่ปรากฎข้อมูล",
+                    Hrdepartmentname = item.address?.Name
+                    //AspnetUsersUserId = item.,
+                    //UserName = item.
+                    //AccessRight = item.
+                });
+
+
+            }
+
+            return result;
+        }
+        public UserResponse deleteUser(int id)
+        {
+            var response = new UserResponse();
+            var data = _database.Staffs.Where(x => x.Id == id).FirstOrDefault();
+            if (data != null)
+            {
+                _database.Remove(data);
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delect Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
         }
 
         public LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request)

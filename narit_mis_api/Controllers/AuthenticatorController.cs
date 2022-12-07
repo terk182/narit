@@ -37,6 +37,26 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("GetUserId/{Id}")]
+        public IActionResult getUserId(int Id)
+        {
+
+            var data = _AuthenticatorServices.getUserId(Id);
+
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("DeleteUserId/{Id}")]
+        public IActionResult deleteUser(int Id)
+        {
+
+            var data = _AuthenticatorServices.deleteUser(Id);
+
+            return Json(data);
+        }
+
 
     }
 }

@@ -16,6 +16,8 @@ namespace App.Authenticator
         LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request);
         AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request);
         List<StaffDto> getAllUser();
+        List<StaffDto> getUserId(int id);
+        UserResponse deleteUser(int id);
     }
 
 }
