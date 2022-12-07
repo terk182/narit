@@ -1,11 +1,13 @@
 ﻿using App.Common;
 
 using App.SEC;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace narit_mis_api.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class CommonController : Controller
     {
