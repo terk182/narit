@@ -30,6 +30,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<AgreementMemorandum> AgreementMemorandums { get; set; } = null!;
         public virtual DbSet<AgreementVisiting> AgreementVisitings { get; set; } = null!;
         public virtual DbSet<AppFormActionLog> AppFormActionLogs { get; set; } = null!;
+        public virtual DbSet<Application> Applications { get; set; } = null!;
         public virtual DbSet<ApproveForm> ApproveForms { get; set; } = null!;
         public virtual DbSet<ApproveItem> ApproveItems { get; set; } = null!;
         public virtual DbSet<ApproveItemPlanReferenceItem> ApproveItemPlanReferenceItems { get; set; } = null!;
@@ -627,6 +628,36 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.ApproveFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ApproveFormAppFormActionLog");
+            });
+
+            modelBuilder.Entity<Application>(entity =>
+            {
+                entity.ToTable("Application");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.Detail)
+                    .HasMaxLength(255)
+                    .HasDefaultValueSql("('')");
+
+                entity.Property(e => e.ImageUrl)
+                    .HasMaxLength(255)
+                    .HasColumnName("ImageURL")
+                    .HasDefaultValueSql("('')");
+
+                entity.Property(e => e.Link)
+                    .HasMaxLength(255)
+                    .HasDefaultValueSql("('')");
+
+                entity.Property(e => e.Shortform)
+                    .HasMaxLength(255)
+                    .HasDefaultValueSql("('')");
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(255)
+                    .HasDefaultValueSql("('')");
             });
 
             modelBuilder.Entity<ApproveForm>(entity =>

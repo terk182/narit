@@ -9,6 +9,6 @@ namespace App.Authenticator.Models.Dtos
     public class PDPADto
     {
         public int StaffId { get; set; }
-        public bool IsPdpa { get; set; }
+        public bool? IsPdpa { get; set; }
     }
 }

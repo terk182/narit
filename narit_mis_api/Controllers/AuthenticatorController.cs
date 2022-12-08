@@ -66,5 +66,14 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("GetApp")]
+        public IActionResult getApp()
+        {
+
+            var data = _AuthenticatorServices.getApp();
+
+            return Json(data);
+        }
     }
 }

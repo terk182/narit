@@ -382,5 +382,10 @@ namespace App.Authenticator
 
             return response;
         }
+
+        public List<Application> getApp()
+        {
+            return _database.Applications.ToList();
+        }
     }
 }

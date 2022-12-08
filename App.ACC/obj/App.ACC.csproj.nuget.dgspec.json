@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj": {}
+    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj": {
+    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj",
+        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj",
         "projectName": "App.ACC",
-        "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\App.ACC\\obj\\",
+        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
+              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -64,25 +59,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj",
-        "packagesPath": "C:\\Users\\KKN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KKN\\Documents\\GitHub\\narit\\Data.Context\\obj\\",
+        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KKN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +81,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -146,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

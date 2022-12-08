@@ -8,6 +8,7 @@ using App.Authenticator.Dtos;
 using App.Authenticator.Models.Dtos;
 using App.Authenticator.Models.Requests;
 using App.Authenticator.Models.Responses;
+using narit_mis_api.Models;
 
 namespace App.Authenticator
 {
@@ -20,6 +21,7 @@ namespace App.Authenticator
         List<StaffDto> getUserId(int id);
         UserResponse deleteUser(int id);
         AuthenticatorBaseResponse PDPASetup(PDPADto request);
+        List<Application> getApp();
 
     }
 

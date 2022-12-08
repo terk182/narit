@@ -43,6 +43,6 @@ namespace App.Authenticator.Models.Responses
         public bool IsProcureDepPowerUser { get; set; }
         public bool IsHrdepPowerUser { get; set; }
         public bool IsFilingDepPowerUser { get; set; }
-        public bool IsPDPA { get; set; }
+        public bool? IsPDPA { get; set; }
     }
 }
