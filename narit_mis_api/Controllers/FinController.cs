@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using narit_mis_api.Models;
+using Microsoft.AspNetCore.Mvc;
+using App.FIN;
+using App.FIN.Dtos;
+using App.SEC.Models.Requests;
+using App.FIN.Models.Requests;
 
 namespace narit_mis_api.Controllers
 {
@@ -6,6 +11,19 @@ namespace narit_mis_api.Controllers
     [Route("api/[controller]")]
     public class FinController : Controller
     {
+        protected readonly IFinServices _FinServices;
+
+        private readonly ILogger _Logger;
+
+        public FinController(ILogger<FinController> logger, IFinServices FinServices)
+        {
+            _FinServices = FinServices;
+
+            _Logger = logger;
+
+            //_configuration = Configuration;
+            // connecttion = _configuration.GetConnectionString("Defaultconnectton");
+        }
         #region Operate
         [HttpGet]
         [Route("Finance/MainFinancePage")]
@@ -242,11 +260,12 @@ namespace narit_mis_api.Controllers
             return Json("ViewFormForApprovalByFinance");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewFormForApprovalByFinanceChecker")]
-        public IActionResult ViewFormForApprovalByFinanceChecker()
+        public IActionResult ViewFormForApprovalByFinanceChecker(DocumentFormRequest request)
         {
-            return Json("ViewFormForApprovalByFinanceChecker");
+            var data = _FinServices.DocumentForm(request);
+            return Json(data);
         }
 
         [HttpGet]
@@ -353,12 +372,20 @@ namespace narit_mis_api.Controllers
         {
             return Json("ViewProcureSettleReceiptFormListForApproval");
         }
-
-        [HttpGet]
-        [Route("Finance/Operate/ViewRequestFormListForFinancialApproval")]
-        public IActionResult ViewRequestFormListForFinancialApproval()
+        [HttpPost]
+        [Route("Finance/Operate/ViewRequestFormList")]
+        public IActionResult ViewRequestFormList(ViewRequestFormListMainRequest request)
         {
-            return Json("ViewRequestFormListForFinancialApproval");
+            var data = _FinServices.ViewRequestFormList(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Finance/Operate/ViewRequestFormListForFinancialApproval")]
+        public IActionResult ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
+        {
+            var data = _FinServices.ViewRequestFormListForFinancialApproval(request);
+            return Json(data);
         }
 
         [HttpGet]
@@ -495,11 +522,12 @@ namespace narit_mis_api.Controllers
             return Json("PlanCoreListFinancialStatementReport");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Report/PlanFormFinancialStatusReport")]
-        public IActionResult PlanFormFinancialStatusReport()
+        public IActionResult PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request)
         {
-            return Json("PlanFormFinancialStatusReport");
+            var data = _FinServices.PlanFormFinancialStatusReport(request);
+            return Json(data);
         }
 
         [HttpGet]
@@ -509,5 +537,93 @@ namespace narit_mis_api.Controllers
             return Json("ReserveBudgetForecastReport");
         }
 
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/SetRegisterProcureItemType/getAllRegis")]
+        public IActionResult getAllRegis()
+        {
+            var data = _FinServices.getAllRegis();
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetRegisterProcureItemType")]
+        public IActionResult ProcureItemTypeSetup(ProcureItemTypeRequest request)
+        {
+            var data = _FinServices.ProcureItemTypeSetup(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/SetupSupplierDetail")]
+        public IActionResult SupplierDetailSetup(SupplierRequest request)
+        {
+            var data = _FinServices.SupplierDetailSetup(request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/FIN/Procure/Setup/ProcureStoreLocationSetup")]
+        public IActionResult ProcureStoreLocationSetup(ProcureStoreLocationRequest request)
+        {
+            var data = _FinServices.ProcureStoreLocationSetup(request);
+            return Json(data);
+        }
+        //[HttpGet]
+        //[Route("/FIN/Procure/Setup/SetRegisterProcureItemType/GetById/{Id}")]
+        //public IActionResult getById(int Id)
+        //{
+
+        //    var data = _FinServices.getById(Id);
+
+        //    return Json(data);
+        //}
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ViewSupplierListForSetup/getAllSupplier")]
+        public IActionResult getAllSupplier()
+        {
+            var data = _FinServices.getAllSupplier();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ViewSupplierListForSetup/getSupplierbyName")]
+        public IActionResult getSupplierbyName(string name)
+        {
+            var data = _FinServices.getSupplierbyName(name);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Setup/ProcureStoreLocationSetup/getAllStoreLocation")]
+        public IActionResult getAllStoreLocation()
+        {
+            var data = _FinServices.getAllStoreLocation();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/RegisterProcureItemSearch/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.RegisterProcureItemSearch(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/ShowRegisterProcureItemListByDepartment/{checkBox}/{fiscalYear}/{departmentId}")]
+        public IActionResult ShowRegisterProcureItemListByDepartment(int checkBox, int fiscalYear, int departmentId)
+        {
+            var data = _FinServices.ShowRegisterProcureItemListByDepartment(checkBox, fiscalYear, departmentId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/FIN/Procure/Report/SearchProcureDocForTrackingRoute/{document}/{fiscalYear}")]
+        public IActionResult SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear)
+        {
+            var data = _FinServices.SearchProcureDocForTrackingRoute(document, documentNumber, fiscalYear);
+            return Json(data);
+        }
     }
 }

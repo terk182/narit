@@ -9,6 +9,7 @@ using App.SEC.enums;
 using App.SEC.helper;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
+using App.SEC.Models.Responses;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
@@ -2171,20 +2172,22 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseMemoFormList")]
-        public IActionResult ViewGeneralExpenseMemoFormList()
+        public IActionResult ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request)
         {
-            return Json("ViewGeneralExpenseMemoFormList");
+            var data = _SecServices.ViewGeneralExpenseMemoFormList(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseMemoFormListForApproval")]
-        public IActionResult ViewGeneralExpenseMemoFormListForApproval()
+        public IActionResult ViewGeneralExpenseMemoFormListForApproval(ViewGeneralExpenseMemoFormLisRequest request)
         {
-            return Json("ViewGeneralExpenseMemoFormListForApproval");
+            var data = _SecServices.ViewGeneralExpenseMemoFormListForApproval(request);
+            return Json(data);
         }
 
 
@@ -2243,11 +2246,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseSettleFormListForApproval")]
-        public IActionResult ViewGeneralExpenseSettleFormListForApproval()
+        public IActionResult ViewGeneralExpenseSettleFormListForApproval(ViewGeneralExpenseSettleFormListRequest request)
         {
-            return Json("ViewGeneralExpenseSettleFormListForApproval");
+            var data = _SecServices.ViewGeneralExpenseSettleFormListForApproval(request);
+            return Json(data);
         }
 
 
@@ -2335,20 +2339,22 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewPlanItemBudgetTransferList")]
-        public IActionResult ViewPlanItemBudgetTransferList()
+        public IActionResult ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request)
         {
-            return Json("ViewPlanItemBudgetTransferList");
+            var data = _SecServices.ViewPlanItemBudgetTransferList( request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewPlanItemBudgetTransferListForApprove")]
-        public IActionResult ViewPlanItemBudgetTransferListForApprove()
+        public IActionResult ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request)
         {
-            return Json("ViewPlanItemBudgetTransferListForApprove");
+            var data = _SecServices.ViewPlanItemBudgetTransferListForApprove(request);
+            return Json(data);
         }
 
 
@@ -2399,11 +2405,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewSettleReceiptFormListForApproval")]
-        public IActionResult ViewSettleReceiptFormListForApproval()
+        public IActionResult ViewSettleReceiptFormListForApproval(ViewSettleReceiptFormListRequest request)
         {
-            return Json("ViewSettleReceiptFormListForApproval");
+            var data = _SecServices.ViewSettleReceiptFormListForApproval(request);
+            return Json(data);
         }
 
 
@@ -2721,10 +2728,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanItemByBudgetTypeAndPlanTypeReport")]
-        public IActionResult PlanItemByBudgetTypeAndPlanTypeReport()
+        [Route("/Plan/Report/PlanItemByBudgetTypeAndPlanTypeReport/{fiscalYear}/{month}/{planTypeId}/{budgetTypeId}")]
+        public IActionResult PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId)
         {
-            return Json("PlanItemByBudgetTypeAndPlanTypeReport");
+            var data = _SecServices.PlanItemByBudgetTypeAndPlanTypeReport(fiscalYear, month, planTypeId, budgetTypeId);
+            return Json(data);
         }
 
 
@@ -2761,20 +2769,22 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByBudgetType")]
-        public IActionResult PlanReportByBudgetType()
+        [Route("/Plan/Report/PlanReportByBudgetType/{fiscalYear}")]
+        public IActionResult PlanReportByBudgetType(int fiscalYear)
         {
-            return Json("PlanReportByBudgetType");
+            var data = _SecServices.PlanReportByBudgetType(fiscalYear);
+            return Json(data);
         }
 
 
        
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByDepartment")]
-        public IActionResult PlanReportByDepartment()
+        [Route("/Plan/Report/PlanReportByDepartment/{fiscalYear}")]
+        public IActionResult PlanReportByDepartment(int fiscalYear)
         {
-            return Json("PlanReportByDepartment");
+            var data = _SecServices.PlanReportByDepartment(fiscalYear);
+            return Json(data);
         }
 
 
@@ -2789,10 +2799,11 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Report/PlanReportByPlanType")]
-        public IActionResult PlanReportByPlanType()
+        [Route("/Plan/Report/PlanReportByPlanType/{fiscalYear}")]
+        public IActionResult PlanReportByPlanType(int fiscalYear)
         {
-            return Json("PlanReportByPlanType");
+            var data = _SecServices.PlanReportByPlanType(fiscalYear);
+            return Json(data);
         }
 
 
@@ -3186,9 +3197,18 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategySetup(request);
             return Json(data);
         }
+        
+        [HttpDelete]
+        [Route("/Plan/Setup/StrategySetup/DeleteStrategy/{Id}")]
+        public IActionResult DeleteStrategy(int Id)
+        {
+
+            var data = _SecServices.DeleteStrategy(Id);
+
+            return Json(data);
+        }
 
 
-     
 
 
         #endregion

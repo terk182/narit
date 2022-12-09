@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "PyuLV6NvvdGv1lZEYMRIfmvJhdVimJtXmKwFGvu7zoE=",
+  "Hash": "JTh6AAUfxvOgzW2NbLZplPcCpr0T2tNFiqJvK+YzYZg=",
   "Source": "narit_mis_api",
   "BasePath": "_content/narit_mis_api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "narit_mis_api\\wwwroot",
+      "Source": "narit_mis_api",
+      "ContentRoot": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\wwwroot\\",
+      "BasePath": "_content/narit_mis_api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\wwwroot\\Home.html",
+      "SourceId": "narit_mis_api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\wwwroot\\",
+      "BasePath": "_content/narit_mis_api",
+      "RelativePath": "Home.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Home.html"
+    }
+  ]
 }

@@ -1,4 +1,5 @@
-﻿using App.SEC.Dtos;
+﻿using App.Common.Dtos;
+using App.SEC.Dtos;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
@@ -70,6 +71,7 @@ namespace App.SEC
         PerformanceIndicatorData ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId);
         calBudgetDetail calbudget(ICollection<PlanActivity> planActivity);
 
+
         List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson);
         List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request);
 
@@ -80,11 +82,26 @@ namespace App.SEC
 
         List<StrategyDto> EditPlanStrategicIndicatorServ(int fiscalYear);
         List<PlanTypeTreeDto> PlanTypeTree(int fiscalYear);
-        List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear);
+        //List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear);
+        List<StrategicIndicatorResponse> EditPerformanceIndicator(int fiscalYear);
         List<DepartmentListDto> GetDepartments(int fiscalYear);
 
         List<ResponsiblePerson> getResponsiblePerson();
         SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto request);
+        SecBaseResponse PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId);
 
+        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanType(int fiscalYear);
+        List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear);
+        List<BudgetTypeCommonDto> PlanReportByBudgetType(int fiscalYear);
+        planItemCal calPlanItem(int Id,int fiscalYear);
+        List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear);
+
+        List<BudgetTransferFormResponse> ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request);
+        ViewGeneralExpenseMemoFormResponse ViewGeneralExpenseMemoFormListForApproval(ViewGeneralExpenseMemoFormLisRequest request);
+        ViewSettleReceiptFormListResponse ViewSettleReceiptFormListForApproval(ViewSettleReceiptFormListRequest request);
+        ViewGeneralExpenseSettleFormListResponse ViewGeneralExpenseSettleFormListForApproval(ViewGeneralExpenseSettleFormListRequest request);
+        List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
+        List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
+        SecBaseResponse DeleteStrategy (int StrategyId);
     }
 }

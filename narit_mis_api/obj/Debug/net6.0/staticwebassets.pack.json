@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\wwwroot\\Home.html",
+      "PackagePath": "staticwebassets\\Home.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.narit_mis_api.props",
+      "PackagePath": "build\\narit_mis_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.narit_mis_api.props",
+      "PackagePath": "buildMultiTargeting\\narit_mis_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.narit_mis_api.props",
+      "PackagePath": "buildTransitive\\narit_mis_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.narit_mis_api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -41,5 +41,6 @@ namespace App.SEC.Dtos
         public int FundSourceEnum { get; set; }
         public int FundCategoryEnum { get; set; }
         public  List<ResponsiblePerson>? ResponsiblePeople { get; set; }
+        public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
     }
 }

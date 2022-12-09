@@ -19,6 +19,7 @@ namespace narit_mis_api.Models
         public string Unit { get; set; } = null!;
         public decimal Amount { get; set; }
         public decimal Weight { get; set; }
+        public int? StrategyId { get; set; }
 
         public virtual StrategicIndicator? ParentStrategicIndicator { get; set; }
         public virtual ICollection<StrategicIndicator> InverseParentStrategicIndicator { get; set; }

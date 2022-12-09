@@ -1,5 +1,8 @@
 ﻿
+using App.ACC;
 using App.Accommodations;
+using App.Authenticator;
+using App.Common;
 using App.EIS;
 using App.FIN;
 using App.General;
@@ -23,7 +26,8 @@ namespace App.Resolver
         public static IServiceCollection AddCustomServices(this IServiceCollection services)
         {
           
-          
+            //---------MIS-------------------------
+
             services.AddScoped<IAccommodationsService, AccommodationsService>(); 
             services.AddScoped<IPathDetailService, PathDetailService>(); 
             services.AddScoped<IEisServices, EisServices>(); 
@@ -32,7 +36,15 @@ namespace App.Resolver
             services.AddScoped<IGeneralServices, GeneralServices>(); 
             services.AddScoped<ISecServices, SecServices>(); 
             services.AddScoped<IPlanServices, PlanServices>(); 
-            services.AddScoped<IProcureServices, ProcureServices>(); 
+            services.AddScoped<IProcureServices, ProcureServices>();
+            services.AddScoped<ICommonServices, CommonServices>();
+            services.AddScoped<IAuthenticatorServices, AuthenticatorServices>();
+
+
+      
+
+
+            
             return services;
         }
     }
