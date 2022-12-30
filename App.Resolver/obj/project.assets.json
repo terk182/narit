@@ -2324,19 +2324,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
+    "C:\\Users\\Ittipon\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj",
+      "projectUniqueName": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj",
-      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\obj\\",
+      "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
+      "packagesPath": "C:\\Users\\Ittipon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ittipon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2344,47 +2349,48 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Authenticator\\App.Authenticator.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Authenticator\\App.Authenticator.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Executive\\App.FIN.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Executive\\App.FIN.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Operation\\App.General.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Operation\\App.General.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.PathDetail\\App.PathDetail.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.PathDetail\\App.PathDetail.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj"
+            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
             }
           }
         }
