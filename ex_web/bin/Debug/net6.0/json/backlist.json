@@ -30,5 +30,79 @@
   {
     "name": "Leaves",
     "target": "Leaf"
+  },
+  {
+    "name": "JobResponsibilities",
+    "target": "JobResponsibility"
+  },
+  {
+    "name": "ParentBudgetType",
+    "target": "BudgetType"
+  },
+  {
+    "name": "InverseParentBudgetType",
+    "target": "BudgetType"
+  },
+  {
+    "name": "ParentCostType",
+    "target": "CostType"
+  },
+  {
+    "name": "InverseParentCostType",
+    "target": "CostType"
+  },
+  {
+    "name": "ParentDepartment",
+    "target": "Department"
+  },
+  {
+    "name": "InverseParentDepartment",
+    "target": "Department"
+  },
+  {
+    "name": "ParentDocumentWarehouse",
+    "target": "DocumentWarehouse"
+  },
+  {
+    "name": "InverseParentDocumentWarehouse",
+    "target": "DocumentWarehouse"
+  },
+  {
+    "name": "ParentFilingProject",
+    "target": "FilingProject"
+  },
+  {
+    "name": "InverseParentFilingProject",
+    "target": "FilingProject"
+  },
+  {
+    "name": "ParentFilingRegisterBook",
+    "target": "FilingRegisterBook"
+  },
+  {
+    "name": "ParentFilingTag",
+    "target": "FilingTag"
+  },
+  {
+    "name": "InverseParentFilingTag",
+    "target": "FilingTag"
+  },
+  {
+    "name": "ParentFundType",
+    "target": "FundType"
+  },
+  {
+    "name": "InverseParentFundType",
+    "target": "FundType"
+  },
+  {
+    "name": "ParentHrdepartment",
+    "target": "Hrdepartment"
+  },
+  {
+    "name": "InverseParentHrdepartment",
+    "target": "Hrdepartment"
   }
+
+
 ]
