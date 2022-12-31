@@ -1,0 +1,34 @@
+[
+  {
+    "name": "RelativePeople",
+    "target": "RelativePerson"
+  },
+  {
+    "name": "staff",
+    "target": "Staff"
+  },
+  {
+    "name": "StaffSecurities",
+    "target": "StaffSecurity"
+  },
+  {
+    "name": "AspnetRolesRoles",
+    "target": "AspnetRole"
+  },
+  {
+    "name": "ProcureComitteePeople",
+    "target": "ProcureComitteePerson"
+  },
+  {
+    "name": "PlanActivities",
+    "target": "PlanActivity"
+  },
+  {
+    "name": "PlanPeople",
+    "target": "PlanPerson"
+  },
+  {
+    "name": "Leaves",
+    "target": "Leaf"
+  }
+]

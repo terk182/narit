@@ -37,5 +37,25 @@ namespace narit_mis_api.Controllers
 
             return Json(result);
         }
+        [HttpGet]
+        [Route("clss_list")]
+        public IActionResult get_clss_list()
+        {
+            var data = _Service.get_db_class("./json/database_class_list.json");
+          
+
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("clss_list/{table}")]
+        public IActionResult get_clss_list_by_table(string table)
+        {
+            var data = _Service.get_db_class("./json/database_class_list.json");
+            var result = data.Where(x => x.table == table).ToList();
+
+            return Json(result);
+
+         
+        }
     }
 }

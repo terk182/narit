@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+@foreach (var item in ViewBag.db)
+{
+    <div class="terk-border">
+
+        <p class="btn btn-primary">@item.table</p>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">field</th>
+                        <th scope="col">type</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var loop1 in item.data)
+                    {
+                        if (loop1.type == "virtual")
+                        {
+                            <tr>
+                                <td><a href="@Url.Action("relation", "Home", new { table = loop1.field })" class="btn btn-success" role="button" aria-pressed="true">@loop1.field</a></td>
+                                <td>@loop1.type</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>@loop1.field</td>
+                                <td>@loop1.type</td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <br />
+}

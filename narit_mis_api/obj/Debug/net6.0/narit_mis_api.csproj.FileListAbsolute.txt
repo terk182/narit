@@ -946,3 +946,4 @@ C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\
 C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.dll
 C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Ittipon\Documents\GitHub\narit\narit_mis_api\bin\Debug\net6.0\json\database_class_list.json
