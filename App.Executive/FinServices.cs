@@ -845,8 +845,10 @@ namespace App.FIN
          
         }
 
-       
-
+        public ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance()
+        {
+            return new ViewFormForApprovalByFinanceRequest();
+        }
     }
 
 

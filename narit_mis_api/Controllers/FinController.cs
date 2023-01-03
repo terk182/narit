@@ -257,7 +257,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewFormForApprovalByFinance")]
         public IActionResult ViewFormForApprovalByFinance()
         {
-            return Json("ViewFormForApprovalByFinance");
+            var data = _FinServices.ViewFormForApprovalByFinance();
+            return Json(data);
         }
 
         [HttpPost]

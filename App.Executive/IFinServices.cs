@@ -38,5 +38,7 @@ namespace App.FIN
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
 
+        ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance();
+
     }
 }
