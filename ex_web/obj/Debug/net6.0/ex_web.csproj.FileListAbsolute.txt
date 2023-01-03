@@ -36,3 +36,4 @@ C:\Users\Ittipon\Documents\GitHub\narit\ex_web\bin\Debug\net6.0\App.PathDetail.d
 C:\Users\Ittipon\Documents\GitHub\narit\ex_web\bin\Debug\net6.0\App.PathDetail.pdb
 C:\Users\Ittipon\Documents\GitHub\narit\ex_web\obj\Debug\net6.0\ex_web.csproj.CopyComplete
 C:\Users\Ittipon\Documents\GitHub\narit\ex_web\bin\Debug\net6.0\json\backlist.json
+C:\Users\Ittipon\Documents\GitHub\narit\ex_web\bin\Debug\net6.0\json\back_list_check.json

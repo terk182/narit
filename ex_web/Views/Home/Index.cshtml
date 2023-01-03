@@ -7,8 +7,8 @@
 @foreach (var item in ViewBag.db)
 {
     <div class="terk-border">
-
-        <p class="btn btn-primary">@item.table</p>
+        <a href="@Url.Action("Tree", "Home", new { table = item.table})" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">@item.table</a>
+        @*<p class="btn btn-primary">@item.table</p>*@
         <div>
             <table class="table">
                 <thead>
