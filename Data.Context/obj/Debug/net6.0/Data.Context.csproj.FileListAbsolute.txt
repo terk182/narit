@@ -138,3 +138,17 @@ C:\Users\Natthaphong\Desktop\Github\narit\Data.Context\obj\Debug\net6.0\refint\D
 C:\Users\Natthaphong\Desktop\Github\narit\Data.Context\obj\Debug\net6.0\Data.Context.pdb
 C:\Users\Natthaphong\Desktop\Github\narit\Data.Context\obj\Debug\net6.0\Data.Context.genruntimeconfig.cache
 C:\Users\Natthaphong\Desktop\Github\narit\Data.Context\obj\Debug\net6.0\ref\Data.Context.dll
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\bin\Debug\net6.0\Data.Context.deps.json
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\bin\Debug\net6.0\Data.Context.runtimeconfig.json
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\bin\Debug\net6.0\Data.Context.dll
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\bin\Debug\net6.0\Data.Context.pdb
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.csproj.AssemblyReference.cache
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.AssemblyInfoInputs.cache
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.AssemblyInfo.cs
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.csproj.CoreCompileInputs.cache
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.dll
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\refint\Data.Context.dll
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.pdb
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\Data.Context.genruntimeconfig.cache
+C:\Users\bossb\OneDrive\Documents\GitHub\narit\Data.Context\obj\Debug\net6.0\ref\Data.Context.dll

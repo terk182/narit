@@ -12,6 +12,7 @@ namespace App.FIN
 {
     public interface IFinServices
     {
+        ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
         List<RegisterProcureItemTypeDto> getAllRegis();
         //RegisterProcureItemType getById(int id);
         List<SupplierDto> getAllSupplier();
@@ -37,6 +38,8 @@ namespace App.FIN
         RequestApproveOrderCheckformDto SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear);
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
+
+        ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
 
     }
 }

@@ -845,7 +845,10 @@ namespace App.FIN
          
         }
 
-       
+       public ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval()
+        {
+            return new ViewProcureReimbursementMemoFormListForApprovalRequest();
+    }
 
     }
 
