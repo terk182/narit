@@ -427,14 +427,16 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementMonthlyBriefReportByBudgetType")]
         public IActionResult FinancialReserveStatementMonthlyBriefReportByBudgetType()
         {
-            return Json("FinancialReserveStatementMonthlyBriefReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementMonthlyBriefReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
         [Route("Finance/Report/FinancialReserveStatementMonthlyReportByBudgetType")]
         public IActionResult FinancialReserveStatementMonthlyReportByBudgetType()
         {
-            return Json("FinancialReserveStatementMonthlyReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementMonthlyReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
@@ -455,14 +457,16 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementYearEndBriefReportByBudgetType")]
         public IActionResult FinancialReserveStatementYearEndBriefReportByBudgetType()
         {
-            return Json("FinancialReserveStatementYearEndBriefReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementYearEndBriefReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
         [Route("Finance/Report/FinancialReserveStatementYearEndReportByBudgetType")]
         public IActionResult FinancialReserveStatementYearEndReportByBudgetType()
         {
-            return Json("FinancialReserveStatementYearEndReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementYearEndReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
@@ -476,7 +480,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementYearEndReportByPlanType")]
         public IActionResult FinancialReserveStatementYearEndReportByPlanType()
         {
-            return Json("FinancialReserveStatementYearEndReportByPlanType");
+            var data = _FinServices.FinancialReserveStatementYearEndReportByPlanType();
+            return Json(data);
         }
 
         [HttpGet]

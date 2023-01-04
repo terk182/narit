@@ -44,6 +44,10 @@ namespace App.FIN
         ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
         ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();
         ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval();
-
+        FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest FinancialReserveStatementYearEndBriefReportByBudgetType();
+        FinancialReserveStatementYearEndReportByBudgetTypeRequest FinancialReserveStatementYearEndReportByBudgetType();
+        FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType();
+        FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest FinancialReserveStatementMonthlyBriefReportByBudgetType();
+        FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType();
     }
 }

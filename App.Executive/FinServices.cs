@@ -874,6 +874,31 @@ namespace App.FIN
         {
             return new ViewProcureSettleMemoFormListForApprovalRequest();
         }
+
+        public FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest FinancialReserveStatementYearEndBriefReportByBudgetType()
+        {
+            return new FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementYearEndReportByBudgetTypeRequest FinancialReserveStatementYearEndReportByBudgetType()
+        {
+            return new FinancialReserveStatementYearEndReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType()
+        {
+            return new FinancialReserveStatementYearEndReportByPlanTypeRequest();
+        }
+
+        public FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest FinancialReserveStatementMonthlyBriefReportByBudgetType()
+        {
+            return new FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType()
+        {
+            return new FinancialReserveStatementMonthlyReportByBudgetTypeRequest();
+        }
     }
 
 
