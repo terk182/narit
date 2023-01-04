@@ -39,6 +39,11 @@ namespace App.FIN
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
 
         ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance();
+        ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance();
+        ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval();
+        ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
+        ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();
+        ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval();
 
     }
 }

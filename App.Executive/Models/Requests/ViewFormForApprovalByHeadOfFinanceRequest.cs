@@ -8,5 +8,11 @@ namespace App.FIN.Models.Requests
 {
     public class ViewFormForApprovalByHeadOfFinanceRequest
     {
+        public string docNumber { get; set; }
+        public decimal budgetVal { get; set; }
+        public int year { get; set; }
+        public string userName { get; set; }
+        public int depId { get; set; }
+        public int planTId { get; set; }
     }
 }

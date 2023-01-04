@@ -273,7 +273,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewFormForApprovalByHeadOfFinance")]
         public IActionResult ViewFormForApprovalByHeadOfFinance()
         {
-            return Json("ViewFormForApprovalByHeadOfFinance");
+            var data = _FinServices.ViewFormForApprovalByHeadOfFinance();
+            return Json(data);
         }
 
         [HttpGet]
@@ -322,7 +323,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureLoaningMemoFormListForApproval")]
         public IActionResult ViewProcureLoaningMemoFormListForApproval()
         {
-            return Json("ViewProcureLoaningMemoFormListForApproval");
+            var data = _FinServices.ViewProcureLoaningMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -343,7 +345,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureReimbursementMemoFormListForApproval")]
         public IActionResult ViewProcureReimbursementMemoFormListForApproval()
         {
-            return Json("ViewProcureReimbursementMemoFormListForApproval");
+            var data = _FinServices.ViewProcureReimbursementMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -357,7 +360,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureSettleMemoFormListForApproval")]
         public IActionResult ViewProcureSettleMemoFormListForApproval()
         {
-            return Json("ViewProcureSettleMemoFormListForApproval");
+            var data = _FinServices.ViewProcureSettleMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -371,7 +375,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureSettleReceiptFormListForApproval")]
         public IActionResult ViewProcureSettleReceiptFormListForApproval()
         {
-            return Json("ViewProcureSettleReceiptFormListForApproval");
+            var data = _FinServices.ViewProcureSettleReceiptFormListForApproval();
+            return Json(data);
         }
         [HttpPost]
         [Route("Finance/Operate/ViewRequestFormList")]

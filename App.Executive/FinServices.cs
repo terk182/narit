@@ -849,6 +849,31 @@ namespace App.FIN
         {
             return new ViewFormForApprovalByFinanceRequest();
         }
+
+        public ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance()
+        {
+            return new ViewFormForApprovalByHeadOfFinanceRequest();
+        }
+
+        public ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval()
+        {
+            return new ViewProcureLoaningMemoFormListForApprovalRequest();
+        }
+
+        public ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval()
+        {
+            return new ViewProcureReimbursementMemoFormListForApprovalRequest();
+        }
+
+        public ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval()
+        {
+            return new ViewProcureSettleReceiptFormListForApprovalRequest();
+        }
+
+        public ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval()
+        {
+            return new ViewProcureSettleMemoFormListForApprovalRequest();
+        }
     }
 
 
