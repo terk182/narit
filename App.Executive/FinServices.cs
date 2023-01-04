@@ -408,7 +408,7 @@ namespace App.FIN
                 });
             }
 
-            response.Success = data != null? true:false;
+            response.Success = data != null ? true : false;
             response.data = _list;
             return response;
         }
@@ -418,21 +418,22 @@ namespace App.FIN
             var result = new ViewRequestFormListResponse();
             var respose = new List<RequestFormDto>();
             var data = new List<RequestForm>();
-            if (request.perspective == 0) {
-                 data = _database.RequestForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000
-                    && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
+            if (request.perspective == 0)
+            {
+                data = _database.RequestForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000
+                   && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
             }
             else
             {
                 switch (request.perspective)
                 {
                     case 1:
-                         data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.PlanTypeId == request.PlanTypeId
-                            && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
+                        data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.PlanTypeId == request.PlanTypeId
+                           && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
                         break;
                     case 2:
-                         data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.DepartmentId == request.DepartmentId
-                            && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList(); 
+                        data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.DepartmentId == request.DepartmentId
+                           && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
                         break;
                     default:
                         break;
@@ -470,10 +471,10 @@ namespace App.FIN
                     UnitChief = item.UnitChief,
                     UnitChiefSignDate = item.UnitChiefSignDate,
                     BudgetChecker = item.BudgetChecker,
-                   // BudgetCheckerSignDate = item.BudgetCheckerSignDate.ToString(),
+                    // BudgetCheckerSignDate = item.BudgetCheckerSignDate.ToString(),
                     SuppliesOfficer = item.SuppliesOfficer,
                     SuppliesUnitChief = item.SuppliesUnitChief,
-                   // SuppliesUnitChiefSignDate = item.SuppliesUnitChiefSignDate,
+                    // SuppliesUnitChiefSignDate = item.SuppliesUnitChiefSignDate,
                     PlanCoreId = item.PlanCoreId,
                     PlanTypeId = item.PlanTypeId,
                     DepartmentId = item.DepartmentId,
@@ -524,7 +525,7 @@ namespace App.FIN
                     IsSent = item.IsSent,
                     ProjectManagerSignDate = item.ProjectManagerSignDate,
                     ProjectManager = item.ProjectManager,
-                   // ProjectManagerPosition = item.ProjectManagerSignatureId,
+                    // ProjectManagerPosition = item.ProjectManagerSignatureId,
                     //UnitChiefSignatureId = item.UnitChiefSignatureId,
                     ProjectManagerSignatureId = item.ProjectManagerSignatureId,
                     RequesterSignatureId = item.RequesterSignatureId,
@@ -534,10 +535,10 @@ namespace App.FIN
                     SuppliesOfficerPosition = item.SuppliesOfficerPosition,
                 });
             }
-            result.Success = data != null? true: false;
-            result.data = respose; 
+            result.Success = data != null ? true : false;
+            result.data = respose;
             return result;
-      
+
         }
 
         List<RegisterProcureItemTypeDto> IFinServices.getAllRegis()
@@ -591,13 +592,13 @@ namespace App.FIN
             if (checkBox == 0)
             {
                 data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId).ToList();
-                
+
             }
             else if (checkBox == 10)
             {
                 data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 10).ToList();
             }
-            else if(checkBox == 30)
+            else if (checkBox == 30)
             {
                 data = _database.RegisterProcureItems.Where(x => x.FiscalYear == fiscalYear && x.Active && x.DepartmentId == departmentId && x.EnduranceTypeEnum == 30).ToList();
             }
@@ -640,7 +641,7 @@ namespace App.FIN
             return data;
 
         }
-            
+
         public RequestApproveOrderCheckformDto SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear)
         {
             var result = new RequestApproveOrderCheckformDto();
@@ -651,7 +652,7 @@ namespace App.FIN
 
             if (document == 1)
             {
-                if(documentNumber == "0")
+                if (documentNumber == "0")
                 {
                     dataRequest = _database.RequestForms.Where(x => x.FiscalYear == fiscalYear).ToList();
                     var RequestForm = new List<RequestFormDtoForSearchProcureDocForTrackingRoute>();
@@ -661,18 +662,18 @@ namespace App.FIN
                         //var RequestForm = new List<RequestForm>();
                         //foreach (var item2 in item.)
                         //{
-                            RequestForm.Add(new RequestFormDtoForSearchProcureDocForTrackingRoute
-                            //narit_mis_api.Models.RequestForm
-                            {
-                                Id = item.Id,
-                                Name = item.Name,
-                                Active = item.Active,
-                                WriteDate = item.WriteDate,
-                                DocumentNumber = item.DocumentNumber,
-                                DepartmentName = item.DepartmentName,
-                                MedianPrice = item.MedianPrice,
+                        RequestForm.Add(new RequestFormDtoForSearchProcureDocForTrackingRoute
+                        //narit_mis_api.Models.RequestForm
+                        {
+                            Id = item.Id,
+                            Name = item.Name,
+                            Active = item.Active,
+                            WriteDate = item.WriteDate,
+                            DocumentNumber = item.DocumentNumber,
+                            DepartmentName = item.DepartmentName,
+                            MedianPrice = item.MedianPrice,
 
-                            });
+                        });
                         //}
                         result.requestFormsDto = RequestForm;
 
@@ -683,7 +684,7 @@ namespace App.FIN
                 {
                     dataRequest = _database.RequestForms.Where(x => x.FiscalYear == fiscalYear && x.DocumentNumber == documentNumber).ToList();
                 }
-                
+
             }
             else if (document == 2)
             {
@@ -729,15 +730,15 @@ namespace App.FIN
             var result = new List<CheckForm>();
             var query = _database.CheckForms.Where(c => c.Active && (request.isProcurePowerUser ? true : c.CreateByStaffId == request.staffId) && ((request.documentNumber != "") ? c.DocumentNumber.Contains(request.documentNumber) : true)
                && ((request.SupplierName != "") ? c.SupplierName.Contains(request.SupplierName) : true) && ((request.procureTypeEnum != 0) ? (c.ProcureTypeEnum == request.procureTypeEnum) : true)
-               && ((request.DocumentTypeRadioButtonList != "All") ? ((request.DocumentTypeRadioButtonList == "Form" ? (c.ProcureMethodEnum == 10): (c.ProcureMethodEnum != 10))) : true)).OrderByDescending(c => c.Id).ToList();
+               && ((request.DocumentTypeRadioButtonList != "All") ? ((request.DocumentTypeRadioButtonList == "Form" ? (c.ProcureMethodEnum == 10) : (c.ProcureMethodEnum != 10))) : true)).OrderByDescending(c => c.Id).ToList();
 
             if (request.PlanTypeId == 0)
             {
-                result=  query.Where(c => c.FiscalYear == request.FiscalYear).OrderByDescending(c => c.Id).ToList();
+                result = query.Where(c => c.FiscalYear == request.FiscalYear).OrderByDescending(c => c.Id).ToList();
             }
             else
             {
-                result= query.Where(c => c.PlanTypeId == request.PlanTypeId).OrderByDescending(c => c.Id).ToList();
+                result = query.Where(c => c.PlanTypeId == request.PlanTypeId).OrderByDescending(c => c.Id).ToList();
             }
 
 
@@ -749,42 +750,42 @@ namespace App.FIN
             var respons = new PlanFormFinancialStatusReportRespone();
             var fromRequest = new List<FromRequest>();
             var offerRequest = new List<OfferRequest>();
-            var  gMemoFormList = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (request.reqDepId != 0 ? c.RequestDepartmentId == request.reqDepId : true) && (request.pTypeId != 0 ? c.GeneralExpenses.Any(d => c.Active && d.PlanTypeId == request.pTypeId) : true)
-            && (request.documentNumber != "" ? c.DocumentNumber.Contains(request.documentNumber) : true) && (request.name != "" ? c.StatementName.Contains(request.name) : true)).Include(c=> c.GeneralExpenses).Include(c => c.WithdrawalItems).ToList();
+            var gMemoFormList = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (request.reqDepId != 0 ? c.RequestDepartmentId == request.reqDepId : true) && (request.pTypeId != 0 ? c.GeneralExpenses.Any(d => c.Active && d.PlanTypeId == request.pTypeId) : true)
+            && (request.documentNumber != "" ? c.DocumentNumber.Contains(request.documentNumber) : true) && (request.name != "" ? c.StatementName.Contains(request.name) : true)).Include(c => c.GeneralExpenses).Include(c => c.WithdrawalItems).ToList();
 
 
 
             if (gMemoFormList != null && gMemoFormList.Count > 0)
             {
                 int i = 1;
-                
+
 
                 foreach (var gMemoForm in gMemoFormList)
                 {
-                   
+
                     fromRequest.Add(new FromRequest
                     {
                         No = i++,
                         documentNumber = gMemoForm.DocumentNumber,
                         WriteDate = gMemoForm.WriteDate.ToString(),
-                        PlanTypeName = gMemoForm.PlanTypeName + " " + gMemoForm.PlanCoreName +" " + gMemoForm.BudgetTypeName, //+ " " + gMemoForm.PlanActivityName + " "
+                        PlanTypeName = gMemoForm.PlanTypeName + " " + gMemoForm.PlanCoreName + " " + gMemoForm.BudgetTypeName, //+ " " + gMemoForm.PlanActivityName + " "
                         RequestDepartmentName = gMemoForm.RequestDepartmentName,
                         StatementName = gMemoForm.StatementName,
-                        totalBudget= gMemoForm.GeneralExpenses.Where(c => c.Active && !c.IsPostApprovedAdded).Sum(d => d.TotalBudget),
+                        totalBudget = gMemoForm.GeneralExpenses.Where(c => c.Active && !c.IsPostApprovedAdded).Sum(d => d.TotalBudget),
 
                         approveBudget = gMemoForm.FirstBorrowAmount + gMemoForm.SecondBorrowAmount + gMemoForm.ThirdBorrowAmount + gMemoForm.FourthBorrowAmount + gMemoForm.FifthBorrowAmount,
                         UsedBudget = UsedBudget(),
-                        disbursedBudget =0,
+                        disbursedBudget = 0,
                         remaining = 0,
                         borrowBudget = 0,
                         amountBudget = 0,
-                    }) ;
+                    });
 
 
 
 
 
-                   
+
                 }
             }
 
@@ -796,8 +797,8 @@ namespace App.FIN
 
             foreach (var rqpvForm in rqpvFormList)
             {
-      
-                    
+
+
 
                 offerRequest.Add(new OfferRequest
                 {
@@ -832,22 +833,291 @@ namespace App.FIN
 
 
 
-                    var data = _database.WithdrawalItems.Any((WithdrawalItem c) => c.Active);
-                   
-                        decimal num = _database.WithdrawalItems.Where((WithdrawalItem c) => c.Active).Sum((WithdrawalItem c) => c.WithDrawnAmount);
-                        decimal num2 = 0.00m;
-                        if (_database.SettlementItems.Any((SettlementItem c) => c.Active && c.GeneralExpenseSettleForm.ApprovalStatusEnum == 20))
-                        {
-                            num2 = _database.SettlementItems.Where((SettlementItem c) => c.Active).Sum((SettlementItem c) => c.SettleAmount);
-                        }
+            var data = _database.WithdrawalItems.Any((WithdrawalItem c) => c.Active);
 
-                        return num - num2;
-         
+            decimal num = _database.WithdrawalItems.Where((WithdrawalItem c) => c.Active).Sum((WithdrawalItem c) => c.WithDrawnAmount);
+            decimal num2 = 0.00m;
+            if (_database.SettlementItems.Any((SettlementItem c) => c.Active && c.GeneralExpenseSettleForm.ApprovalStatusEnum == 20))
+            {
+                num2 = _database.SettlementItems.Where((SettlementItem c) => c.Active).Sum((SettlementItem c) => c.SettleAmount);
+            }
+
+            return num - num2;
+
         }
 
-       
+        public List<ViewPaymentRecordListResponse> ViewPaymentRecordList(ViewPaymentRecordListRequest request)
+        {
 
+
+            var result = new List<ViewPaymentRecordListResponse>();
+
+            switch (request.PlanStatementTypeRBL)
+            {
+                case "ChekFormPlanView":
+                    if (request.PaymentStatusRBL == "NotPayYet")
+                    {
+
+
+                        var checkFServ = GetByStatementPayStatusForPayment_sec1(request.fYear, request.StatementPayStatus, request.planTypeId, request.docNumber);
+                        foreach (var item in checkFServ)
+                        {
+                            result.Add(new ViewPaymentRecordListResponse
+                            {
+                                no = 0,
+                                description = item.Name,
+                                docNum = item.DocumentNumber,
+                                date = item.CreateDate,
+                                amout = checkFServ_TotalBudget(item.CheckFormId),
+                                paymentVoucherNumber = item.PaymentDocumentNumber,
+
+                            }); 
+                        }
+                    }
+                    else
+                    {
+
+
+                        var gEMemoServ1 = GetByStatementPayStatusForPayment_sec2(request.fYear, request.StatementPayStatus, request.planTypeId, request.docNumber);
+                        foreach (var item in gEMemoServ1)
+                        {
+                            result.Add(new ViewPaymentRecordListResponse
+                            {
+                                no = 0,
+                                description = item.Name,
+                                docNum = item.DocumentNumber,
+                                date = item.CreateDate,
+                                //amout = item.
+                                paymentVoucherNumber = item.BudgetCheckerName,
+
+                            });
+                        }
+
+                    }
+                    break;
+                case "GeneralExpenseMemoForm":
+                    var gEMemoServ = new List<GeneralExpenseMemoForm>();
+                    if (request.PaymentStatusRBL == "NotPayYet")
+                    {
+                        gEMemoServ = GetByStatementPayStatusForPayment_sec3(request.fYear, request.StatementPayStatus, request.planTypeId, request.docNumber);
+
+
+                    }
+                    else
+                    {
+                        gEMemoServ = GetByStatementPayStatusForPayment_sec3(request.fYear, 30, request.planTypeId, request.docNumber);
+                    }
+
+                    foreach (var item in gEMemoServ)
+                    {
+                        result.Add(new ViewPaymentRecordListResponse
+                        {
+                            no = 0,
+                            description = item.Name,
+                            docNum = item.DocumentNumber,
+                            date = item.CreateDate,
+                            //amout = item.
+                            paymentVoucherNumber = item.DocCheckerName,
+
+                        });
+                    }
+                    break;
+                case "GeneralExpenseSettleForm":
+                    var gESettleServ = new List<GeneralExpenseSettleForm>();
+                    if (request.PaymentStatusRBL == "NotPayYet")
+                    {
+                        gESettleServ = GetByStatementPayStatusForPayment_sec4(request.fYear, request.StatementPayStatus, request.planTypeId, request.docNumber);
+                    }
+                    else
+                    {
+                        gESettleServ = GetByStatementPayStatusForPayment_sec4(request.fYear, 30, request.planTypeId, request.docNumber);
+                    }
+
+                    foreach (var item in gESettleServ)
+                    {
+                        result.Add(new ViewPaymentRecordListResponse
+                        {
+                            no = 0,
+                            description = item.Name,
+                            docNum = item.DocumentNumber,
+                            date = item.CreateDate,
+                            //amout = item.
+                            paymentVoucherNumber = item.BudgetCheckerName,
+
+                        });
+                    }
+                    break;
+                case "ProcureLoaningForm":
+                    var pLoaningServ = new List<ProcureLoaningMemoForm>(); // ถ้ายืมไปหน้า ProcreLoaningMultiplePayment ถ้าไม่ยืมไปหน้า EditProcurePaymentRecord
+                    if (request.PaymentStatusRBL == "NotPayYet")
+                    {
+                        pLoaningServ = GetByStatementPayStatusForPayment_sec5(request.fYear, request.StatementPayStatus, request.planTypeId, request.docNumber);
+                    }
+                    else
+                    {
+                        pLoaningServ = GetByStatementPayStatusForPayment_sec5(request.fYear, 30, request.planTypeId, request.docNumber);
+                    }
+
+                    foreach (var item in pLoaningServ)
+                    {
+                        result.Add(new ViewPaymentRecordListResponse
+                        {
+                            no = 0,
+                            description = item.Name,
+                            docNum = item.DocumentNumber,
+                            date = item.CreateDate,
+                            //amout = item.
+                            paymentVoucherNumber = item.RefDocumentNumber,
+
+                        });
+                    }
+                    break;
+                case "ProcureSettleForm":
+                    if (request.PaymentStatusRBL == "NotPayYet")
+                    {
+
+                        result = null; // เนื่องจากเป็นการตีคืนอัตโนมัติหลังอนุมัติ
+                    }
+                    else
+                    {
+                        var checkFPVServ = new List<CheckFormPlanView>();
+                        checkFPVServ = GetAsSettleFormByStatementPayStatusForPayment_sec6(request.fYear, 30, request.planTypeId, request.docNumber);
+
+                        foreach (var item in checkFPVServ)
+                        {
+                            result.Add(new ViewPaymentRecordListResponse
+                            {
+                                no = 0,
+                                description = item.Name,
+                                docNum = item.DocumentNumber,
+                                date = item.CreateDate,
+                                //amout = item.
+                                paymentVoucherNumber = item.OrderDocumentNumber,
+                            });
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+
+            return result;
+
+        }
+
+        public List<CheckFormPlanView> GetByStatementPayStatusForPayment_sec1(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<CheckFormPlanView> source = _database.CheckFormPlanViews.Where((CheckFormPlanView c) => c.Active && c.FiscalYear == fiscalYear && !c.ProcureLoaningWithdrawalFormPlanViewId.HasValue).Include(x => x.CheckViewUsedPlanItems);
+            if (planTypeId != 0)
+            {
+                source = source.Where((CheckFormPlanView c) => (from d in c.RequestFormPlanViews
+                                                                where d.Active
+                                                                select d.PlanTypeId).Contains(planTypeId));
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((CheckFormPlanView c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((CheckFormPlanView c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((CheckFormPlanView c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((CheckFormPlanView c) => c.Id).ToList();
+        }
+
+        public List<GeneralExpenseMemoForm> GetByStatementPayStatusForPayment_sec2(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<GeneralExpenseMemoForm> source = _database.GeneralExpenseMemoForms.Where((GeneralExpenseMemoForm c) => c.Active && c.FiscalYear == fiscalYear && c.ApprovalStatusEnum == 20);
+            if (planTypeId != 0)
+            {
+                source = source.Where((GeneralExpenseMemoForm c) => c.PlanTypeId == planTypeId || c.GeneralExpenses.Where((GeneralExpense d) => d.Active).Any((GeneralExpense d) => d.PlanTypeId == planTypeId));
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((GeneralExpenseMemoForm c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((GeneralExpenseMemoForm c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((GeneralExpenseMemoForm c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((GeneralExpenseMemoForm c) => c.Id).ToList();
+        }
+
+        public List<GeneralExpenseMemoForm> GetByStatementPayStatusForPayment_sec3(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<GeneralExpenseMemoForm> source = _database.GeneralExpenseMemoForms.Where((GeneralExpenseMemoForm c) => c.Active && c.FiscalYear == fiscalYear && c.ApprovalStatusEnum == 20);
+            if (planTypeId != 0)
+            {
+                source = source.Where((GeneralExpenseMemoForm c) => c.PlanTypeId == planTypeId || c.GeneralExpenses.Where((GeneralExpense d) => d.Active).Any((GeneralExpense d) => d.PlanTypeId == planTypeId));
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((GeneralExpenseMemoForm c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((GeneralExpenseMemoForm c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((GeneralExpenseMemoForm c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((GeneralExpenseMemoForm c) => c.Id).ToList();
+        }
+        public List<GeneralExpenseSettleForm> GetByStatementPayStatusForPayment_sec4(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<GeneralExpenseSettleForm> source = _database.GeneralExpenseSettleForms.Where((GeneralExpenseSettleForm c) => c.Active && c.FiscalYear == fiscalYear && c.ApprovalStatusEnum == 20);
+            if (planTypeId != 0)
+            {
+                source = source.Where((GeneralExpenseSettleForm c) => c.SettlementItems.Any((SettlementItem d) => d.Active && d.GeneralExpense.PlanTypeId == planTypeId));
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((GeneralExpenseSettleForm c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((GeneralExpenseSettleForm c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((GeneralExpenseSettleForm c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((GeneralExpenseSettleForm c) => c.Id).ToList();
+        }
+
+        public List<ProcureLoaningMemoForm> GetByStatementPayStatusForPayment_sec5(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<ProcureLoaningMemoForm> source = _database.ProcureLoaningMemoForms.Where((ProcureLoaningMemoForm c) => c.Active && c.FiscalYear == fiscalYear && c.ApprovalStatusEnum == 20);
+            if (planTypeId != 0)
+            {
+                source = source.Where((ProcureLoaningMemoForm c) => c.PlanTypeId == planTypeId);
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((ProcureLoaningMemoForm c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((ProcureLoaningMemoForm c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((ProcureLoaningMemoForm c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((ProcureLoaningMemoForm c) => c.Id).ToList();
+        }
+        public List<CheckFormPlanView> GetAsSettleFormByStatementPayStatusForPayment_sec6(int fiscalYear, int statementPayStatus, int planTypeId = 0, string documentNumber = "")
+        {
+            IQueryable<CheckFormPlanView> source = _database.CheckFormPlanViews.Where((CheckFormPlanView c) => c.Active && c.ProcureSettleFormId.HasValue && c.FiscalYear == fiscalYear);
+            if (planTypeId != 0)
+            {
+                source = source.Where((CheckFormPlanView c) => (from d in c.RequestFormPlanViews
+                                                                where d.Active
+                                                                select d.PlanTypeId).Contains(planTypeId));
+            }
+
+            if (documentNumber != "")
+            {
+                source = source.Where((CheckFormPlanView c) => c.DocumentNumber.Contains(documentNumber));
+            }
+
+            source = ((statementPayStatus != 10) ? source.Where((CheckFormPlanView c) => c.StatementPayStatusEnum == (int)statementPayStatus) : source.Where((CheckFormPlanView c) => c.StatementPayStatusEnum == 40 || c.StatementPayStatusEnum == 20));
+            return source.OrderByDescending((CheckFormPlanView c) => c.Id).ToList();
+        }
+
+        public Decimal checkFServ_TotalBudget(int CheckFormPlanViewId)
+        {
+
+            var result = _database.CheckViewUsedPlanItems.Where(x => x.Active == true && x.CheckFormPlanViewId == CheckFormPlanViewId).Sum(x => x.PricePerPiece);
+            return (decimal)result;
+        } 
     }
+
 
 
 }

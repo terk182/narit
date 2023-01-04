@@ -289,11 +289,12 @@ namespace narit_mis_api.Controllers
             return Json("ViewGEMemoFormListForFinancialReimbursementForm");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewPaymentRecordList")]
-        public IActionResult ViewPaymentRecordList()
+        public IActionResult ViewPaymentRecordList(ViewPaymentRecordListRequest request)
         {
-            return Json("ViewPaymentRecordList");
+            var data = _FinServices.ViewPaymentRecordList(request);
+            return Json(data);
         }
 
         [HttpGet]

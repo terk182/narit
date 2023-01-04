@@ -37,6 +37,7 @@ namespace App.FIN
         RequestApproveOrderCheckformDto SearchProcureDocForTrackingRoute(int document, string documentNumber, int fiscalYear);
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
+        List<ViewPaymentRecordListResponse> ViewPaymentRecordList(ViewPaymentRecordListRequest request);
 
     }
 }
