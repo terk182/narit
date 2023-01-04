@@ -19,11 +19,15 @@ namespace App.SEC
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
+        List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
+        List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id);
+
 
         SecBaseResponse StrategySetup(StrategySetupModel request);
         List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
+        List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id);
 
         SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
 

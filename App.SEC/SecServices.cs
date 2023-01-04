@@ -514,7 +514,66 @@ namespace App.SEC
             }
             return result;
         }
+        public List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id)
+        {
 
+            var result = new List<StrategySetupModel>();
+            var data = _database.Strategies.Where(x => x.FiscalYear == FiscalYear &  x.ParentStrategyId == id).ToList();
+                foreach (var item in data)
+                {
+                    result.Add(new StrategySetupModel
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        Active = item.Active,
+                        ParentStrategyId = item.ParentStrategyId,
+                    });
+
+                }
+            return result;
+        }
+        public List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id)
+        {
+
+            var result = new List<PlanTypeDto>();
+            var data = _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear & x.ParentPlanTypeId == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight  
+                });
+
+            }
+            return result;
+        }
+        public List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id)
+        {
+
+            var result = new List<DepartmentDto>();
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear & x.ParentDepartmentId == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ParentDepartmentId = item.ParentDepartmentId
+                });
+
+            }
+            return result;
+        }
         public SecBaseResponse BudgetTypeSetup(BudgetTypeRequest request)
         {
             var _BudgetType = new BudgetType();
@@ -748,7 +807,7 @@ namespace App.SEC
             }
             return _PlanTypeDto_list;
         }
-
+        
         public List<FundTypeRespone> SearchPlanActivityFundTypeSetupByFiscalYear(int FiscalYear)
         {
             var _result = new List<FundTypeRespone>();

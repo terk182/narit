@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace narit_mis_api.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class CommonController : Controller
     {
@@ -24,6 +24,13 @@ namespace narit_mis_api.Controllers
 
             //_configuration = Configuration;
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
+        }
+        [HttpGet]
+        [Route("/Common/StrategyDetails/{year}/{id}")]
+        public IActionResult StrategySetupByFiscalYearandStrategyId(int year, int id)
+        {
+            var data = _SecServices.StrategySetupByFiscalYearandStrategyId(year, id);
+            return Json(data);
         }
         [HttpGet]
         [Route("/Common/PrinciplePlanTags")]
@@ -55,6 +62,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.GetDepartments(fiscalYear);
             return Json(data);
         }
+        [HttpGet]
+        [Route("/Common/DepartmentDetails/{year}/{id}")]
+        public IActionResult SelectDepartmentGetByFiscalYearandDepartmentid(int year, int id)
+        {
+            var data = _SecServices.DepartmentGetByFiscalYearandDepartmentid(year, id);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("/Common/BudgetTypes/{fiscalYear}")]
@@ -71,6 +85,14 @@ namespace narit_mis_api.Controllers
             var data = _CommonServices.GetPlanType(fiscalYear);
             return Json(data);
         }
-        
+
+        [HttpGet]
+        [Route("/Common/PlanTypeDetails/{year}/{id}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int id)
+        {
+            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
+            return Json(data);
+        }
+
     }
 }

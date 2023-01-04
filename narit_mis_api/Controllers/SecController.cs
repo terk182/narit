@@ -2097,7 +2097,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-
+        [HttpGet]
+        [Route("/Plan/Operate/SelectDepartment/GetByFiscalYearandDepartmentid/{year}/{id}")]
+        public IActionResult SelectDepartmentGetByFiscalYearandDepartmentid(int year, int id)
+        {
+            var data = _SecServices.DepartmentGetByFiscalYearandDepartmentid(year, id);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYear/{year}")]
@@ -2107,6 +2113,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYearandPlanTypeid/{year}/{id}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int id)
+        {
+            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
+            return Json(data);
+        }
 
 
         [HttpGet]
@@ -3187,6 +3200,13 @@ namespace narit_mis_api.Controllers
         public IActionResult StrategySetupByFiscalYear(int year)
         {
             var data = _SecServices.StrategySetupByFiscalYear(year);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Setup/StrategySetup/FiscalYearandStrategyId/{year}/{id}")]
+        public IActionResult StrategySetupByFiscalYearandStrategyId(int year, int id)
+        {
+            var data = _SecServices.StrategySetupByFiscalYearandStrategyId(year,id);
             return Json(data);
         }
 
