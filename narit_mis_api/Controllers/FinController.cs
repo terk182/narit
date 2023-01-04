@@ -343,7 +343,7 @@ namespace narit_mis_api.Controllers
 
         [HttpGet]
         [Route("Finance/Operate/ViewProcureReimbursementMemoFormListForApproval")]
-        public IActionResult ViewProcureReimbursementMemoFormListForApproval()
+        public IActionResult ViewProcureReimbursementMemoFormListForApproval(ViewProcureReimbursementMemoFormListForApprovalRequest request)
         {
             var data = _FinServices.ViewProcureReimbursementMemoFormListForApproval();
             return Json(data);
