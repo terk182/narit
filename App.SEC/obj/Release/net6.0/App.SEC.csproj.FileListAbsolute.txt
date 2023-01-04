@@ -59,3 +59,5 @@ C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\App.SEC.dll
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\refint\App.SEC.dll
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\App.SEC.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\ref\App.SEC.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\bin\Release\net6.0\App.Common.dll
+C:\Users\terk\OneDrive\Documents\GitHub\narit\App.SEC\bin\Release\net6.0\App.Common.pdb
