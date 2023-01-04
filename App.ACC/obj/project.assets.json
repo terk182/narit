@@ -1929,33 +1929,40 @@
     ]
   },
   "packageFolders": {
-    "/Users/pakpoom/.nuget/packages/": {}
+    "C:\\Users\\terk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.ACC/App.ACC.csproj",
+      "projectUniqueName": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj",
       "projectName": "App.ACC",
-      "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.ACC/App.ACC.csproj",
-      "packagesPath": "/Users/pakpoom/.nuget/packages/",
-      "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.ACC/obj/",
+      "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj",
+      "packagesPath": "C:\\Users\\terk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.ACC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\terk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -1985,7 +1992,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

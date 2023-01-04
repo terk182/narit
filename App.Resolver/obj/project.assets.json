@@ -2324,66 +2324,73 @@
     ]
   },
   "packageFolders": {
-    "/Users/pakpoom/.nuget/packages/": {}
+    "C:\\Users\\terk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.Resolver/App.Resolver.csproj",
+      "projectUniqueName": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Resolver/App.Resolver.csproj",
-      "packagesPath": "/Users/pakpoom/.nuget/packages/",
-      "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.Resolver/obj/",
+      "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
+      "packagesPath": "C:\\Users\\terk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Resolver\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\terk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/pakpoom/Documents/GitHub/narit/App.ACC/App.ACC.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.ACC/App.ACC.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Accommodations/App.Accommodations.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Accommodations/App.Accommodations.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Authenticator/App.Authenticator.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Authenticator/App.Authenticator.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Common/App.Common.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Common/App.Common.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Executive/App.FIN.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Executive/App.FIN.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Individual/App.Individual.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Individual/App.Individual.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Operation/App.General.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Operation/App.General.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Plan/App.Plan.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Plan/App.Plan.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj"
             },
-            "/Users/pakpoom/Documents/GitHub/narit/App.SEC/App.SEC.csproj": {
-              "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.SEC/App.SEC.csproj"
+            "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "C:\\Users\\terk\\OneDrive\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
             }
           }
         }
@@ -2419,7 +2426,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
