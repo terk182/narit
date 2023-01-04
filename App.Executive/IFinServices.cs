@@ -38,5 +38,16 @@ namespace App.FIN
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
 
+        ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance();
+        ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance();
+        ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval();
+        ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
+        ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();
+        ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval();
+        FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest FinancialReserveStatementYearEndBriefReportByBudgetType();
+        FinancialReserveStatementYearEndReportByBudgetTypeRequest FinancialReserveStatementYearEndReportByBudgetType();
+        FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType();
+        FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest FinancialReserveStatementMonthlyBriefReportByBudgetType();
+        FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType();
     }
 }

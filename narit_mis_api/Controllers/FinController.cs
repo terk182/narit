@@ -257,7 +257,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewFormForApprovalByFinance")]
         public IActionResult ViewFormForApprovalByFinance()
         {
-            return Json("ViewFormForApprovalByFinance");
+            var data = _FinServices.ViewFormForApprovalByFinance();
+            return Json(data);
         }
 
         [HttpPost]
@@ -272,7 +273,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewFormForApprovalByHeadOfFinance")]
         public IActionResult ViewFormForApprovalByHeadOfFinance()
         {
-            return Json("ViewFormForApprovalByHeadOfFinance");
+            var data = _FinServices.ViewFormForApprovalByHeadOfFinance();
+            return Json(data);
         }
 
         [HttpGet]
@@ -321,7 +323,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureLoaningMemoFormListForApproval")]
         public IActionResult ViewProcureLoaningMemoFormListForApproval()
         {
-            return Json("ViewProcureLoaningMemoFormListForApproval");
+            var data = _FinServices.ViewProcureLoaningMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -342,7 +345,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureReimbursementMemoFormListForApproval")]
         public IActionResult ViewProcureReimbursementMemoFormListForApproval()
         {
-            return Json("ViewProcureReimbursementMemoFormListForApproval");
+            var data = _FinServices.ViewProcureReimbursementMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -356,7 +360,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureSettleMemoFormListForApproval")]
         public IActionResult ViewProcureSettleMemoFormListForApproval()
         {
-            return Json("ViewProcureSettleMemoFormListForApproval");
+            var data = _FinServices.ViewProcureSettleMemoFormListForApproval();
+            return Json(data);
         }
 
         [HttpGet]
@@ -370,7 +375,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/ViewProcureSettleReceiptFormListForApproval")]
         public IActionResult ViewProcureSettleReceiptFormListForApproval()
         {
-            return Json("ViewProcureSettleReceiptFormListForApproval");
+            var data = _FinServices.ViewProcureSettleReceiptFormListForApproval();
+            return Json(data);
         }
         [HttpPost]
         [Route("Finance/Operate/ViewRequestFormList")]
@@ -421,14 +427,16 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementMonthlyBriefReportByBudgetType")]
         public IActionResult FinancialReserveStatementMonthlyBriefReportByBudgetType()
         {
-            return Json("FinancialReserveStatementMonthlyBriefReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementMonthlyBriefReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
         [Route("Finance/Report/FinancialReserveStatementMonthlyReportByBudgetType")]
         public IActionResult FinancialReserveStatementMonthlyReportByBudgetType()
         {
-            return Json("FinancialReserveStatementMonthlyReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementMonthlyReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
@@ -449,14 +457,16 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementYearEndBriefReportByBudgetType")]
         public IActionResult FinancialReserveStatementYearEndBriefReportByBudgetType()
         {
-            return Json("FinancialReserveStatementYearEndBriefReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementYearEndBriefReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
         [Route("Finance/Report/FinancialReserveStatementYearEndReportByBudgetType")]
         public IActionResult FinancialReserveStatementYearEndReportByBudgetType()
         {
-            return Json("FinancialReserveStatementYearEndReportByBudgetType");
+            var data = _FinServices.FinancialReserveStatementYearEndReportByBudgetType();
+            return Json(data);
         }
 
         [HttpGet]
@@ -470,7 +480,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Report/FinancialReserveStatementYearEndReportByPlanType")]
         public IActionResult FinancialReserveStatementYearEndReportByPlanType()
         {
-            return Json("FinancialReserveStatementYearEndReportByPlanType");
+            var data = _FinServices.FinancialReserveStatementYearEndReportByPlanType();
+            return Json(data);
         }
 
         [HttpGet]

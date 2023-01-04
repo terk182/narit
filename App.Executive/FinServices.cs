@@ -845,8 +845,60 @@ namespace App.FIN
          
         }
 
-       
+        public ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance()
+        {
+            return new ViewFormForApprovalByFinanceRequest();
+        }
 
+        public ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance()
+        {
+            return new ViewFormForApprovalByHeadOfFinanceRequest();
+        }
+
+        public ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval()
+        {
+            return new ViewProcureLoaningMemoFormListForApprovalRequest();
+        }
+
+        public ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval()
+        {
+            return new ViewProcureReimbursementMemoFormListForApprovalRequest();
+        }
+
+        public ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval()
+        {
+            return new ViewProcureSettleReceiptFormListForApprovalRequest();
+        }
+
+        public ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval()
+        {
+            return new ViewProcureSettleMemoFormListForApprovalRequest();
+        }
+
+        public FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest FinancialReserveStatementYearEndBriefReportByBudgetType()
+        {
+            return new FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementYearEndReportByBudgetTypeRequest FinancialReserveStatementYearEndReportByBudgetType()
+        {
+            return new FinancialReserveStatementYearEndReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType()
+        {
+            return new FinancialReserveStatementYearEndReportByPlanTypeRequest();
+        }
+
+        public FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest FinancialReserveStatementMonthlyBriefReportByBudgetType()
+        {
+            return new FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest();
+        }
+
+        public FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType()
+        {
+            return new FinancialReserveStatementMonthlyReportByBudgetTypeRequest();
+        }
     }
 
 
