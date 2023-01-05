@@ -19,7 +19,6 @@ namespace narit_mis_api.Models
         public bool Active { get; set; }
         public int? ParentDepartmentId { get; set; }
         public int? ReferenceOldId { get; set; }
-        public int? BudgetLimit { get; set; }
 
         public virtual Department? ParentDepartment { get; set; }
         public virtual ICollection<Department> InverseParentDepartment { get; set; }

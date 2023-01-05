@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/narit_mis_api.props" />
+  <Import Project="..\buildMultiTargeting\narit_mis_api.props" />
 </Project>
