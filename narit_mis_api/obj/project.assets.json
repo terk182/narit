@@ -2677,11 +2677,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\narit_mis_api.csproj",
+      "projectUniqueName": "D:\\ACC\\narit_mis_api\\narit_mis_api.csproj",
       "projectName": "narit_mis_api",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\narit_mis_api.csproj",
+      "projectPath": "D:\\ACC\\narit_mis_api\\narit_mis_api.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\narit_mis_api\\obj\\",
+      "outputPath": "D:\\ACC\\narit_mis_api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2698,20 +2698,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj"
+            "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Common\\App.Common.csproj"
+            "D:\\ACC\\App.Common\\App.Common.csproj": {
+              "projectPath": "D:\\ACC\\App.Common\\App.Common.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Resolver\\App.Resolver.csproj"
+            "D:\\ACC\\App.Resolver\\App.Resolver.csproj": {
+              "projectPath": "D:\\ACC\\App.Resolver\\App.Resolver.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj"
+            "D:\\ACC\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "D:\\ACC\\App.SEC\\App.SEC.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+            "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
             }
           }
         }

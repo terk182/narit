@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Paths\\App.Paths.csproj",
+      "projectUniqueName": "D:\\ACC\\App.Paths\\App.Paths.csproj",
       "projectName": "App.Paths",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Paths\\App.Paths.csproj",
+      "projectPath": "D:\\ACC\\App.Paths\\App.Paths.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Paths\\obj\\",
+      "outputPath": "D:\\ACC\\App.Paths\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",

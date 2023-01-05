@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj": {}
+    "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj": {
+    "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj",
+        "projectUniqueName": "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj",
         "projectName": "App.Accommodations",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\App.Accommodations.csproj",
+        "projectPath": "D:\\ACC\\App.Accommodations\\App.Accommodations.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Accommodations\\obj\\",
+        "outputPath": "D:\\ACC\\App.Accommodations\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+              "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
+    "D:\\ACC\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "D:\\ACC\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\obj\\",
+        "outputPath": "D:\\ACC\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",

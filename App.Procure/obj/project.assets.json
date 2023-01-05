@@ -1953,11 +1953,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj",
+      "projectUniqueName": "D:\\ACC\\App.Procure\\App.Procure.csproj",
       "projectName": "App.Procure",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\App.Procure.csproj",
+      "projectPath": "D:\\ACC\\App.Procure\\App.Procure.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Procure\\obj\\",
+      "outputPath": "D:\\ACC\\App.Procure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1974,11 +1974,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+            "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+            "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
             }
           }
         }

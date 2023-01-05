@@ -2019,11 +2019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+      "projectUniqueName": "D:\\ACC\\Data.Context\\Data.Context.csproj",
       "projectName": "Data.Context",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+      "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\obj\\",
+      "outputPath": "D:\\ACC\\Data.Context\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",

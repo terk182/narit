@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g9Fgs+vulXlgRRvdw8tohKCWcvBkLap0Df6FPJ453w1Bp5mYDtYYsy1DRQnmW09+shniJzxe5+Y70RZGLGEjtQ==",
+  "dgSpecHash": "TjXXM44RqFnalgCxbw6kfCwcewNPeFp7AxrQomiLx/AjCsUGJjq2Cyc95DnAOy9+P+JOmHhoA+YdQ44FOB/83g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.SEC\\App.SEC.csproj",
+  "projectFilePath": "D:\\ACC\\App.SEC\\App.SEC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Natthaphong\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Natthaphong\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

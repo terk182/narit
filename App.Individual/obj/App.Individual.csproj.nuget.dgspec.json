@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj": {}
+    "D:\\ACC\\App.Individual\\App.Individual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj": {
+    "D:\\ACC\\App.Individual\\App.Individual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj",
+        "projectUniqueName": "D:\\ACC\\App.Individual\\App.Individual.csproj",
         "projectName": "App.Individual",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\App.Individual.csproj",
+        "projectPath": "D:\\ACC\\App.Individual\\App.Individual.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Individual\\obj\\",
+        "outputPath": "D:\\ACC\\App.Individual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1934,11 +1934,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj",
+      "projectUniqueName": "D:\\ACC\\App.ACC\\App.ACC.csproj",
       "projectName": "App.ACC",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\App.ACC.csproj",
+      "projectPath": "D:\\ACC\\App.ACC\\App.ACC.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.ACC\\obj\\",
+      "outputPath": "D:\\ACC\\App.ACC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1955,8 +1955,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+            "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
             }
           }
         }

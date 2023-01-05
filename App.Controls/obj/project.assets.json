@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Controls\\App.Controls.csproj",
+      "projectUniqueName": "D:\\ACC\\App.Controls\\App.Controls.csproj",
       "projectName": "App.Controls",
-      "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Controls\\App.Controls.csproj",
+      "projectPath": "D:\\ACC\\App.Controls\\App.Controls.csproj",
       "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Controls\\obj\\",
+      "outputPath": "D:\\ACC\\App.Controls\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj": {}
+    "D:\\ACC\\App.Plan\\App.Plan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
+    "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectUniqueName": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj",
         "projectName": "App.EIS",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectPath": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\obj\\",
+        "outputPath": "D:\\ACC\\App.CollaborationNetwork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+              "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj": {
+    "D:\\ACC\\App.Plan\\App.Plan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj",
+        "projectUniqueName": "D:\\ACC\\App.Plan\\App.Plan.csproj",
         "projectName": "App.Plan",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\App.Plan.csproj",
+        "projectPath": "D:\\ACC\\App.Plan\\App.Plan.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.Plan\\obj\\",
+        "outputPath": "D:\\ACC\\App.Plan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -87,11 +87,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+              "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
-                "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj"
+              "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
               }
             }
           }
@@ -125,14 +125,14 @@
         }
       }
     },
-    "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj": {
+    "D:\\ACC\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "projectUniqueName": "D:\\ACC\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\Data.Context.csproj",
+        "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj",
         "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Natthaphong\\Desktop\\Github\\narit\\Data.Context\\obj\\",
+        "outputPath": "D:\\ACC\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
