@@ -43,3 +43,40 @@ C:\Users\KKN\Documents\GitHub\narit\App.Common\obj\Release\net6.0\App.Common.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Common\obj\Release\net6.0\refint\App.Common.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Common\obj\Release\net6.0\App.Common.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Common\obj\Release\net6.0\ref\App.Common.dll
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\App.Common.deps.json
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\App.Common.runtimeconfig.json
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\App.Common.dll
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\App.Common.pdb
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.Common\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.AssemblyInfo.cs
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.csproj.CopyComplete
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.dll
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\refint\App.Common.dll
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.pdb
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\App.Common.genruntimeconfig.cache
+C:\Project\NARIT Project\App.Common\obj\Release\net6.0\ref\App.Common.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.Common\bin\Release\net6.0\App.Common.deps.json
+D:\ACC\App.Common\bin\Release\net6.0\App.Common.runtimeconfig.json
+D:\ACC\App.Common\bin\Release\net6.0\App.Common.dll
+D:\ACC\App.Common\bin\Release\net6.0\App.Common.pdb
+D:\ACC\App.Common\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.Common\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.csproj.AssemblyReference.cache
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.AssemblyInfoInputs.cache
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.AssemblyInfo.cs
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.csproj.CoreCompileInputs.cache
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.csproj.CopyComplete
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.dll
+D:\ACC\App.Common\obj\Release\net6.0\refint\App.Common.dll
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.pdb
+D:\ACC\App.Common\obj\Release\net6.0\App.Common.genruntimeconfig.cache
+D:\ACC\App.Common\obj\Release\net6.0\ref\App.Common.dll
+>>>>>>> origin/NAT

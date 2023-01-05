@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "At4BLlu/fzRSe+4kdsIhAxAvdicCmt8JerHzkqrjczSjwEsHPkIwimi38+e9LrzA/0MBjzRR5V+PMQM3kX8CXQ==",
+  "dgSpecHash": "SChj3w1AJWYJno41k5zKno1DhsicFhK0y0DLCygaoosi3VFJoMu2aujsphdcqjD+OpXZ02wn+WX8oTY1Soxl3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj",
+  "projectFilePath": "C:\\Project\\CGI_ACC_API\\App.Individual\\App.Individual.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Project\\CGI_ACC_API\\App.Individual\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

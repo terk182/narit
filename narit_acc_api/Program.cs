@@ -7,7 +7,7 @@ using System.Configuration;
 
 
 using narit_mis_api.Models;
-using narit_mis_api.AccModels;
+using narit_acc_api.Models;
 using App.Resolver;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<NARIT_MIS_LINKContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton")));
 
-builder.Services.AddDbContext<NARIT_MIS_ACCContext>(Options =>
+builder.Services.AddDbContext<CGI_ACCContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton_acc")));
 
 var app = builder.Build();
