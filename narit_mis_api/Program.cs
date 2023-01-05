@@ -7,7 +7,7 @@ using System.Configuration;
 using App.Resolver;
 
 using narit_mis_api.Models;
-using narit_mis_api.AccModels;
+using narit_acc_api.Models;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
