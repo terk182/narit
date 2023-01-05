@@ -253,11 +253,11 @@ namespace narit_mis_api.Controllers
             return Json("ViewFinancialReimbursementFormList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewFormForApprovalByFinance")]
-        public IActionResult ViewFormForApprovalByFinance()
+        public IActionResult ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequest request)
         {
-            var data = _FinServices.ViewFormForApprovalByFinance();
+            var data = _FinServices.ViewFormForApprovalByFinance(request);
             return Json(data);
         }
 
@@ -269,11 +269,11 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewFormForApprovalByHeadOfFinance")]
-        public IActionResult ViewFormForApprovalByHeadOfFinance()
+        public IActionResult ViewFormForApprovalByHeadOfFinance(ViewFormForApprovalByHeadOfFinanceRequest request)
         {
-            var data = _FinServices.ViewFormForApprovalByHeadOfFinance();
+            var data = _FinServices.ViewFormForApprovalByHeadOfFinance(request);
             return Json(data);
         }
 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using App.FIN.Models.Responses;
 using App.FIN.Models.Requests;
+using App.SEC.Models.Responses;
 
 namespace App.FIN
 {
@@ -38,8 +39,8 @@ namespace App.FIN
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
 
-        ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance();
-        ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance();
+        List<ViewFormForApprovalByFinanceResponses> ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequest request);
+        List<ViewFormForApprovalByHeadOfFinanceResponse> ViewFormForApprovalByHeadOfFinance(ViewFormForApprovalByHeadOfFinanceRequest request);
         ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval();
         ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
         ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();

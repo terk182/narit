@@ -580,6 +580,7 @@
       },
       "App.FIN/1.0.0": {
         "dependencies": {
+          "App.SEC": "1.0.0",
           "Data.Context": "1.0.0"
         },
         "runtime": {

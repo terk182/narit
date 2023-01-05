@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lYu3j6dodPUx6P6kk/pAxPLT9c/KMYQGuzKF5/cdcLwKl0WFMnS9Y+P4L1ytTqoPeRX5fjV1+d1m2zftOXiwqA==",
+  "dgSpecHash": "eOj8Kga96WparxFtTHdBK7iIauUBLqVWXXSIuUuxJ+ttQu0nDcIip8TKQlSH/UaqL0mRXnmzHJ+QvYUWnNUJVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",

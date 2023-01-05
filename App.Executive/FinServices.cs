@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 using System.Xml;
 using System.Drawing;
+using App.SEC.Models.Responses;
 
 namespace App.FIN
 {
@@ -845,15 +846,7 @@ namespace App.FIN
          
         }
 
-        public ViewFormForApprovalByFinanceRequest ViewFormForApprovalByFinance()
-        {
-            return new ViewFormForApprovalByFinanceRequest();
-        }
-
-        public ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance()
-        {
-            return new ViewFormForApprovalByHeadOfFinanceRequest();
-        }
+        
 
         public ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval()
         {
@@ -898,6 +891,53 @@ namespace App.FIN
         public FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType()
         {
             return new FinancialReserveStatementMonthlyReportByBudgetTypeRequest();
+        }
+
+        public List<ViewFormForApprovalByFinanceResponses> ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequest request)
+        {
+            var _viewFormForApprovalByFinanceResponses = new List<ViewFormForApprovalByFinanceResponses>();
+
+            _viewFormForApprovalByFinanceResponses.Add(new ViewFormForApprovalByFinanceResponses
+            {
+                no = 1,
+                date = DateTime.Now,
+                type = "Palm",
+                price = 100.45,
+                status = true,
+            });
+            _viewFormForApprovalByFinanceResponses.Add(new ViewFormForApprovalByFinanceResponses
+            {
+                no = 2,
+                date = DateTime.Now,
+                type = "Nuw",
+                price = 150.50,
+                status = false,
+            });
+            
+            return _viewFormForApprovalByFinanceResponses;
+        }
+
+        public List<ViewFormForApprovalByHeadOfFinanceResponse> ViewFormForApprovalByHeadOfFinance(ViewFormForApprovalByHeadOfFinanceRequest request)
+        {
+            var _viewFormForApprovalByHeadOfFinanceResponses = new List<ViewFormForApprovalByHeadOfFinanceResponse>();
+
+            _viewFormForApprovalByHeadOfFinanceResponses.Add(new ViewFormForApprovalByHeadOfFinanceResponse
+            {
+                no = 1,
+                date = DateTime.Now,
+                type = "Nuw",
+                price = 893,
+                status = true,
+            });
+            _viewFormForApprovalByHeadOfFinanceResponses.Add(new ViewFormForApprovalByHeadOfFinanceResponse
+            {
+                no = 2,
+                date = DateTime.Now,
+                type = "Slime",
+                price = 300,
+                status = true,
+            });
+            return _viewFormForApprovalByHeadOfFinanceResponses;
         }
     }
 
