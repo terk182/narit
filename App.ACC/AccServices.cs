@@ -1,4 +1,4 @@
-﻿using narit_mis_api.AccModels;
+﻿using narit_acc_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +16,9 @@ namespace App.ACC
             _databaseACC = context;
         }
 
-        public List<Accbook> GetAccbooks()
+        public List<ChartAcc> GetAccbooks()
         {
-            var data = _databaseACC.Accbooks.ToList();
+            var data = _databaseACC.ChartAccs.ToList();
             return data;
         }
     }
