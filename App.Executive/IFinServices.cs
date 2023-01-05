@@ -29,7 +29,7 @@ namespace App.FIN
 
         DocumentFormResponse DocumentForm(DocumentFormRequest request);
 
-        ViewRequestFormListResponse ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request);
+        ViewRequestFormListResponses ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request);
 
         List<RegisterProcureItem> RegisterProcureItemSearch(int checkBox, int fiscalYear, int departmentId);
 
@@ -41,7 +41,7 @@ namespace App.FIN
 
         List<ViewFormForApprovalByFinanceResponses> ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequest request);
         List<ViewFormForApprovalByHeadOfFinanceResponse> ViewFormForApprovalByHeadOfFinance(ViewFormForApprovalByHeadOfFinanceRequest request);
-        ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval();
+        List<ViewProcureLoaningMemoFormListForApprovalResponses> ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request);
         ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
         ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();
         ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval();

@@ -319,11 +319,11 @@ namespace narit_mis_api.Controllers
             return Json("ViewProcureLoaningMemoFormList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewProcureLoaningMemoFormListForApproval")]
-        public IActionResult ViewProcureLoaningMemoFormListForApproval()
+        public IActionResult ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request)
         {
-            var data = _FinServices.ViewProcureLoaningMemoFormListForApproval();
+            var data = _FinServices.ViewProcureLoaningMemoFormListForApproval(request);
             return Json(data);
         }
 

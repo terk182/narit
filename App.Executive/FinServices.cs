@@ -414,9 +414,9 @@ namespace App.FIN
             return response;
         }
 
-        public ViewRequestFormListResponse ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
+        public ViewRequestFormListResponses ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
         {
-            var result = new ViewRequestFormListResponse();
+            var result = new ViewRequestFormListResponses();
             var respose = new List<RequestFormDto>();
             var data = new List<RequestForm>();
             if (request.perspective == 0) {
@@ -581,7 +581,7 @@ namespace App.FIN
             throw new NotImplementedException();
         }
 
-        ViewRequestFormListResponse IFinServices.ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
+        ViewRequestFormListResponses IFinServices.ViewRequestFormListForFinancialApproval(ViewRequestFormListRequest request)
         {
             throw new NotImplementedException();
         }
@@ -901,7 +901,9 @@ namespace App.FIN
             {
                 no = 1,
                 date = DateTime.Now,
-                type = "Palm",
+                type = "0",
+                id = 1,
+                requester = "Palm",
                 price = 100.45,
                 status = true,
             });
@@ -909,7 +911,9 @@ namespace App.FIN
             {
                 no = 2,
                 date = DateTime.Now,
-                type = "Nuw",
+                type = "0",
+                id = 2,
+                requester = "Nuw",
                 price = 150.50,
                 status = false,
             });
@@ -925,7 +929,9 @@ namespace App.FIN
             {
                 no = 1,
                 date = DateTime.Now,
-                type = "Nuw",
+                type = "0",
+                id = 1,
+                requester = "Nuw",
                 price = 893,
                 status = true,
             });
@@ -933,11 +939,30 @@ namespace App.FIN
             {
                 no = 2,
                 date = DateTime.Now,
-                type = "Slime",
+                type = "0",
+                id = 2,
+                requester = "Slime",
                 price = 300,
                 status = true,
             });
             return _viewFormForApprovalByHeadOfFinanceResponses;
+        }
+
+        public List<ViewProcureLoaningMemoFormListForApprovalResponses> ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request)
+        {
+            var _viewProcureLoaningMemoFormListForApprovalResponses = new List<ViewProcureLoaningMemoFormListForApprovalResponses>();
+            _viewProcureLoaningMemoFormListForApprovalResponses.Add(new ViewProcureLoaningMemoFormListForApprovalResponses
+            {
+                date = DateTime.Now,
+                id = 1,
+                requester = "Kong",
+                agency = "someAgency",
+                status = true,
+                price= 200,
+                transferDate= DateTime.Now,
+                print = "Yes",
+            });
+            return _viewProcureLoaningMemoFormListForApprovalResponses;
         }
     }
 
