@@ -104,7 +104,7 @@ namespace App.SEC
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
         SecBaseResponse DeleteStrategy (int StrategyId);
 
-        ViewDirectExpenseMemoFormListRequest ViewDirectExpenseMemoFormList();
+        List<ViewDirectExpenseMemoFormListResponses> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request);
 
         ViewGeneralExpenseSettleAsBudgetFormListRequest ViewGeneralExpenseSettleAsBudgetFormList();
     }

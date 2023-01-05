@@ -227,11 +227,11 @@ namespace narit_mis_api.Controllers
             return Json("SelectPlanForEditStatementTemporaryInvolveList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/SelectPlanForStatementCalculationDateList")]
-        public IActionResult SelectPlanForStatementCalculationDateList()
+        public IActionResult SelectPlanForStatementCalculationDateList(SelectPlanForStatementCalculationDateListRequest request)
         {
-            var data = _FinServices.SelectPlanForStatementCalculationDateList();
+            var data = _FinServices.SelectPlanForStatementCalculationDateList(request);
             return Json(data);
         }
 
@@ -294,9 +294,9 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("Finance/Operate/ViewPaymentRecordList")]
-        public IActionResult ViewPaymentRecordList()
+        public IActionResult ViewPaymentRecordList(ViewPaymentRecordListRequest request)
         {
-            var data = _FinServices.ViewPaymentRecordList();
+            var data = _FinServices.ViewPaymentRecordList(request);
             return Json(data);
 
         }

@@ -11,7 +11,9 @@ namespace App.FIN.Models.Responses
 
 		public DateTime Date { get; set; }
 
+		public Double Balance { get; set; }
 
+		public string? ImpoOrDerNum { get; set; }
 		
 	}
 }

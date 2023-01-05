@@ -3473,9 +3473,20 @@ namespace App.SEC
             return response;
         }
 
-        public ViewDirectExpenseMemoFormListRequest ViewDirectExpenseMemoFormList()
+        public List<ViewDirectExpenseMemoFormListResponses> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request)
         {
-            return new ViewDirectExpenseMemoFormListRequest();
+            var _ViewDirectExpenseMemoFormListResponses = new List<ViewDirectExpenseMemoFormListResponses>();
+
+            _ViewDirectExpenseMemoFormListResponses.Add(new ViewDirectExpenseMemoFormListResponses
+            {
+                no = 1,
+                date = DateTime.Now,
+                Number ="2389f",
+                Order = "thiti",
+                Project = "thitiwut",
+                Balance = 983479437.34
+            });
+            return _ViewDirectExpenseMemoFormListResponses;
         }
 
         public ViewGeneralExpenseSettleAsBudgetFormListRequest ViewGeneralExpenseSettleAsBudgetFormList()

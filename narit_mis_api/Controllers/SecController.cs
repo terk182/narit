@@ -2118,11 +2118,11 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewDirectExpenseMemoFormList")]
-        public IActionResult ViewDirectExpenseMemoFormList()
+        public IActionResult ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request)
         {
-            var data = _SecServices.ViewDirectExpenseMemoFormList();
+            var data = _SecServices.ViewDirectExpenseMemoFormList(request);
             return Json(data);
         }
 

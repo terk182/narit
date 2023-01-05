@@ -850,9 +850,16 @@ namespace App.FIN
             return new ViewPaymentRecordListRequest();
         }
 
-        public SelectPlanForStatementCalculationDateListRequest SelectPlanForStatementCalculationDateList()
+        public List<SelectPlanForStatementCalculationDateListResponses> SelectPlanForStatementCalculationDateList(SelectPlanForStatementCalculationDateListRequest request)
         {
-            return new SelectPlanForStatementCalculationDateListRequest();
+            var _SelectPlanForStatementCalculationDateListResponses = new List<SelectPlanForStatementCalculationDateListResponses>();
+
+            _SelectPlanForStatementCalculationDateListResponses.Add(new SelectPlanForStatementCalculationDateListResponses
+            {
+                Name ="thiti",
+                Parent = "wongsue",
+            });
+            return _SelectPlanForStatementCalculationDateListResponses;
         }
 
         public EditDeniedRequestFormPlanViewDateRequest EditDeniedRequestFormPlanViewDate()
@@ -863,6 +870,37 @@ namespace App.FIN
         public EditReturnBudgetDateFromApproveFormRequest EditReturnBudgetDateFromApproveForm()
         {
             return new EditReturnBudgetDateFromApproveFormRequest();
+        }
+
+        public List<ViewPaymentRecordListResponses> ViewPaymentRecordList(ViewPaymentRecordListRequest request)
+        {
+            var _ViewPaymentRecordListResponses = new List<ViewPaymentRecordListResponses>();
+
+            _ViewPaymentRecordListResponses.Add(new ViewPaymentRecordListResponses
+            {
+                No = 12,
+                Order = "thiti",
+                DocNumber = "aa123",
+                Date = DateTime.Now,
+                Balance=123.88,
+                ImpoOrDerNum = "thitii"
+
+
+            });
+
+            _ViewPaymentRecordListResponses.Add(new ViewPaymentRecordListResponses
+            {
+                No = 12,
+                Order = "thiti",
+                DocNumber = "aa123",
+                Date = DateTime.Now,
+                Balance = 123.88,
+                ImpoOrDerNum = "thitii"
+
+
+            });
+
+            return _ViewPaymentRecordListResponses;
         }
     }
 
