@@ -2324,73 +2324,66 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ittipon\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/thitiwutw/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
+      "projectUniqueName": "/Users/thitiwutw/Documents/GitHub/narit/App.Resolver/App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\App.Resolver.csproj",
-      "packagesPath": "C:\\Users\\Ittipon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Resolver\\obj\\",
+      "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Resolver/App.Resolver.csproj",
+      "packagesPath": "/Users/thitiwutw/.nuget/packages/",
+      "outputPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Resolver/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ittipon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/thitiwutw/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Accommodations\\App.Accommodations.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.ACC/App.ACC.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.ACC/App.ACC.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.ACC\\App.ACC.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Accommodations/App.Accommodations.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Accommodations/App.Accommodations.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Authenticator\\App.Authenticator.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Authenticator/App.Authenticator.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Authenticator/App.Authenticator.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.CollaborationNetwork\\App.EIS.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Common/App.Common.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Common/App.Common.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Executive\\App.FIN.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Executive/App.FIN.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Executive/App.FIN.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Individual\\App.Individual.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Individual/App.Individual.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Individual/App.Individual.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Operation/App.General.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Operation/App.General.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Plan\\App.Plan.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Plan/App.Plan.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Plan/App.Plan.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.Procure\\App.Procure.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.Procure/App.Procure.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.Procure/App.Procure.csproj"
             },
-            "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj": {
-              "projectPath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj"
+            "/Users/thitiwutw/Documents/GitHub/narit/App.SEC/App.SEC.csproj": {
+              "projectPath": "/Users/thitiwutw/Documents/GitHub/narit/App.SEC/App.SEC.csproj"
             }
           }
         }
@@ -2426,7 +2419,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

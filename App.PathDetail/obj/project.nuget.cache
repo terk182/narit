@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fXxz9nURih0PQAASXvAJQ4SAaq9jxRo7C1jR1QR/lG+X/O01qrObV3y+Hkq3Y1Dy1+Cl6T1nxGgitUA0H0/Ttw==",
+  "dgSpecHash": "5ylbbiRf4WL4B1KznW774lrLu2uGg0sF3iM6WY8tNseVVEcL52Jlx+yxqzCElYdWDWei+tNBlsolmbzZFbSnXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ittipon\\Documents\\GitHub\\narit\\App.PathDetail\\App.PathDetail.csproj",
+  "projectFilePath": "/Users/thitiwutw/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ittipon\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\Ittipon\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    "/Users/thitiwutw/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/thitiwutw/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }
