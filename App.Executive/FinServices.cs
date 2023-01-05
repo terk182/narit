@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 using System.Xml;
 using System.Drawing;
+using narit_mis_api.AccModels;
 
 namespace App.FIN
 {
@@ -845,8 +846,45 @@ namespace App.FIN
          
         }
 
-       
+     
+        public ViewFormForApprovalByHeadOfFinanceRequest ViewFormForApprovalByHeadOfFinance()
+        {
+            return new ViewFormForApprovalByHeadOfFinanceRequest();
+        }
 
+        public List<ViewFormForApprovalByHeadOfFinanceRespone> ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequset request)
+        {
+            var _viewFormForApprovalByHeadOfFinanceRespone = new List<ViewFormForApprovalByHeadOfFinanceRespone>();
+
+            _viewFormForApprovalByHeadOfFinanceRespone.Add(new ViewFormForApprovalByHeadOfFinanceRespone{
+                                no = 1,
+                                date = DateTime.Now,
+                            type = "terk",
+                            price = 100.45,
+                            status = true,
+            });
+            _viewFormForApprovalByHeadOfFinanceRespone.Add(new ViewFormForApprovalByHeadOfFinanceRespone
+            {
+                no = 2,
+                date = DateTime.Now,
+                type = "boss",
+                price = 100.45,
+                status = true,
+            });
+            _viewFormForApprovalByHeadOfFinanceRespone.Add(new ViewFormForApprovalByHeadOfFinanceRespone
+            {
+                no = 3,
+                date = DateTime.Now,
+                type = "plam",
+                price = 100.45,
+                status = false,
+            });
+            return _viewFormForApprovalByHeadOfFinanceRespone;
+        }
+
+     
+
+      
     }
 
 
