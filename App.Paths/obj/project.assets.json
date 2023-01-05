@@ -8,25 +8,41 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/pakpoom/.nuget/packages/": {}
+<<<<<<< HEAD
+    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
+>>>>>>> origin/NAT
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.Paths/App.Paths.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Project\\NARIT Project\\App.Paths\\App.Paths.csproj",
       "projectName": "App.Paths",
-      "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Paths/App.Paths.csproj",
-      "packagesPath": "/Users/pakpoom/.nuget/packages/",
-      "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.Paths/obj/",
+      "projectPath": "C:\\Project\\NARIT Project\\App.Paths\\App.Paths.csproj",
+      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+      "outputPath": "C:\\Project\\NARIT Project\\App.Paths\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "D:\\ACC\\App.Paths\\App.Paths.csproj",
+      "projectName": "App.Paths",
+      "projectPath": "D:\\ACC\\App.Paths\\App.Paths.csproj",
+      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+      "outputPath": "D:\\ACC\\App.Paths\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/NAT
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -60,7 +76,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/NAT
       }
     }
   }

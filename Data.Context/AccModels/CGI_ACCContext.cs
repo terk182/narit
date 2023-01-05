@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace narit_acc_api.Models
 {
-    public partial class NARIT_MIS_ACCContext : DbContext
+    public partial class CGI_ACCContext : DbContext
     {
-        public NARIT_MIS_ACCContext()
+        public CGI_ACCContext()
         {
         }
 
-        public NARIT_MIS_ACCContext(DbContextOptions<NARIT_MIS_ACCContext> options)
+        public CGI_ACCContext(DbContextOptions<CGI_ACCContext> options)
             : base(options)
         {
         }

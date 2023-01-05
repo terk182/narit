@@ -9,9 +9,9 @@ namespace App.ACC
 {
     public class AccServices : IAccServices
     {
-        private readonly NARIT_MIS_ACCContext _databaseACC;
+        private readonly CGI_ACCContext _databaseACC;
 
-        public AccServices(NARIT_MIS_ACCContext context)
+        public AccServices(CGI_ACCContext context)
         {
             _databaseACC = context;
         }

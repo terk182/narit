@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "HWukNCn4XeAqWLh2y3HQL8VR0n44ylJ0r8ZvZ8HcX92iflrQsxWW2M4D/NsMPxZ5Y505iQ8dscb2sMUaIgry+A==",
+<<<<<<< HEAD
+  "dgSpecHash": "L2/xFtTTUN2Rd+t805v3KOhhns1jgti3cU+YjY/6847vNva6zvZP+pXg/4DXn9CkKFjgkd899rzqiNdwensRjQ==",
   "success": true,
-  "projectFilePath": "/Users/pakpoom/Documents/GitHub/narit/App.Individual/App.Individual.csproj",
+  "projectFilePath": "C:\\Project\\NARIT Project\\App.Individual\\App.Individual.csproj",
+=======
+  "dgSpecHash": "MfvYX7brv/MsrUMMV3VCzxtmf4HfIqEN3ob+c7uerF9kp/9hNcR0yKRiu34AvE+gjJ4/XbdxB98C2KvqyxcqqA==",
+  "success": true,
+  "projectFilePath": "D:\\ACC\\App.Individual\\App.Individual.csproj",
+>>>>>>> origin/NAT
   "expectedPackageFiles": [],
   "logs": []
 }

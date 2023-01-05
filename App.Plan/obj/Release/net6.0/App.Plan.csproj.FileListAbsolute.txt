@@ -64,3 +64,44 @@ C:\Users\KKN\Documents\GitHub\narit\App.Plan\obj\Release\net6.0\App.Plan.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Plan\obj\Release\net6.0\refint\App.Plan.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Plan\obj\Release\net6.0\App.Plan.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Plan\obj\Release\net6.0\ref\App.Plan.dll
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.Plan.deps.json
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.Plan.runtimeconfig.json
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.Plan.dll
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.Plan.pdb
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.EIS.dll
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\App.EIS.pdb
+C:\Project\NARIT Project\App.Plan\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfo.cs
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.csproj.CopyComplete
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.dll
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\refint\App.Plan.dll
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.pdb
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\App.Plan.genruntimeconfig.cache
+C:\Project\NARIT Project\App.Plan\obj\Release\net6.0\ref\App.Plan.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.Plan\bin\Release\net6.0\App.Plan.deps.json
+D:\ACC\App.Plan\bin\Release\net6.0\App.Plan.runtimeconfig.json
+D:\ACC\App.Plan\bin\Release\net6.0\App.Plan.dll
+D:\ACC\App.Plan\bin\Release\net6.0\App.Plan.pdb
+D:\ACC\App.Plan\bin\Release\net6.0\App.EIS.dll
+D:\ACC\App.Plan\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.Plan\bin\Release\net6.0\App.EIS.pdb
+D:\ACC\App.Plan\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.csproj.AssemblyReference.cache
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfoInputs.cache
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.AssemblyInfo.cs
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.csproj.CoreCompileInputs.cache
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.csproj.CopyComplete
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.dll
+D:\ACC\App.Plan\obj\Release\net6.0\refint\App.Plan.dll
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.pdb
+D:\ACC\App.Plan\obj\Release\net6.0\App.Plan.genruntimeconfig.cache
+D:\ACC\App.Plan\obj\Release\net6.0\ref\App.Plan.dll
+>>>>>>> origin/NAT

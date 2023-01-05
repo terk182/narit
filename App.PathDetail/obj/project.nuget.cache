@@ -1,11 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "qjXTPhjqQpYvYIlND+d/zLP5u3N0vMRzeE9/VryEjKrqy0iU1A9sEY7pvvYeJ+2Gxcs3NTrdvDPsm/BxjmUadw==",
+<<<<<<< HEAD
+  "dgSpecHash": "Sv3qeJs0yTmlxF8j0ZDNRy3b2FinpCUOeBu6i7k0QHo1M0i0uQttaC6KW5VYfjjQuP8uLTI0y6XMn4dKfySOwQ==",
   "success": true,
-  "projectFilePath": "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj",
+  "projectFilePath": "C:\\Project\\NARIT Project\\App.PathDetail\\App.PathDetail.csproj",
   "expectedPackageFiles": [
-    "/Users/pakpoom/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
-    "/Users/pakpoom/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    "C:\\Users\\Poonsab\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Poonsab\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+=======
+  "dgSpecHash": "yiTlCTtDAulJYBqXbPYUgVCZuekWN/b5tG9R0mlqO7PM4UpNzIligd1tgpbwEDlE6mxBtj0ADbCv2PM22KSV5w==",
+  "success": true,
+  "projectFilePath": "D:\\ACC\\App.PathDetail\\App.PathDetail.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+>>>>>>> origin/NAT
   ],
   "logs": []
 }

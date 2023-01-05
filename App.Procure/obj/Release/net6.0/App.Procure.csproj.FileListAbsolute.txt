@@ -66,3 +66,44 @@ C:\Users\KKN\Documents\GitHub\narit\App.Procure\obj\Release\net6.0\App.Procure.d
 C:\Users\KKN\Documents\GitHub\narit\App.Procure\obj\Release\net6.0\refint\App.Procure.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Procure\obj\Release\net6.0\App.Procure.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Procure\obj\Release\net6.0\ref\App.Procure.dll
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.Procure.deps.json
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.Procure.runtimeconfig.json
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.Procure.dll
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.Procure.pdb
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.EIS.dll
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\App.EIS.pdb
+C:\Project\NARIT Project\App.Procure\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.AssemblyInfo.cs
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.csproj.CopyComplete
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.dll
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\refint\App.Procure.dll
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.pdb
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\App.Procure.genruntimeconfig.cache
+C:\Project\NARIT Project\App.Procure\obj\Release\net6.0\ref\App.Procure.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.Procure\bin\Release\net6.0\App.Procure.deps.json
+D:\ACC\App.Procure\bin\Release\net6.0\App.Procure.runtimeconfig.json
+D:\ACC\App.Procure\bin\Release\net6.0\App.Procure.dll
+D:\ACC\App.Procure\bin\Release\net6.0\App.Procure.pdb
+D:\ACC\App.Procure\bin\Release\net6.0\App.EIS.dll
+D:\ACC\App.Procure\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.Procure\bin\Release\net6.0\App.EIS.pdb
+D:\ACC\App.Procure\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.csproj.AssemblyReference.cache
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.AssemblyInfoInputs.cache
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.AssemblyInfo.cs
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.csproj.CoreCompileInputs.cache
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.csproj.CopyComplete
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.dll
+D:\ACC\App.Procure\obj\Release\net6.0\refint\App.Procure.dll
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.pdb
+D:\ACC\App.Procure\obj\Release\net6.0\App.Procure.genruntimeconfig.cache
+D:\ACC\App.Procure\obj\Release\net6.0\ref\App.Procure.dll
+>>>>>>> origin/NAT
