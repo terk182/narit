@@ -1,34 +1,57 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj": {}
+<<<<<<< HEAD
+    "C:\\Project\\NARIT Project\\App.Procure\\App.Procure.csproj": {}
   },
   "projects": {
-    "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj": {
+    "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\App.EIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj",
+        "projectUniqueName": "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\App.EIS.csproj",
         "projectName": "App.EIS",
-        "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj",
-        "packagesPath": "/Users/pakpoom/.nuget/packages/",
-        "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/obj/",
+        "projectPath": "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\App.EIS.csproj",
+        "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "D:\\ACC\\App.Procure\\App.Procure.csproj": {}
+  },
+  "projects": {
+    "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj",
+        "projectName": "App.EIS",
+        "projectPath": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "D:\\ACC\\App.CollaborationNetwork\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/NAT
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj": {
-                "projectPath": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj"
+<<<<<<< HEAD
+              "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj"
+=======
+              "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
+>>>>>>> origin/NAT
               }
             }
           }
@@ -58,38 +81,65 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj": {
+    "C:\\Project\\NARIT Project\\App.Procure\\App.Procure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj",
+        "projectUniqueName": "C:\\Project\\NARIT Project\\App.Procure\\App.Procure.csproj",
         "projectName": "App.Procure",
-        "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.Procure/App.Procure.csproj",
-        "packagesPath": "/Users/pakpoom/.nuget/packages/",
-        "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.Procure/obj/",
+        "projectPath": "C:\\Project\\NARIT Project\\App.Procure\\App.Procure.csproj",
+        "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\NARIT Project\\App.Procure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\ACC\\App.Procure\\App.Procure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ACC\\App.Procure\\App.Procure.csproj",
+        "projectName": "App.Procure",
+        "projectPath": "D:\\ACC\\App.Procure\\App.Procure.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "D:\\ACC\\App.Procure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/NAT
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj": {
-                "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.CollaborationNetwork/App.EIS.csproj"
+<<<<<<< HEAD
+              "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "C:\\Project\\NARIT Project\\App.CollaborationNetwork\\App.EIS.csproj"
               },
-              "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj": {
-                "projectPath": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj"
+              "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj"
+=======
+              "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj": {
+                "projectPath": "D:\\ACC\\App.CollaborationNetwork\\App.EIS.csproj"
+              },
+              "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+                "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj"
+>>>>>>> origin/NAT
               }
             }
           }
@@ -119,27 +169,46 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj": {
+    "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj",
+        "projectUniqueName": "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj",
         "projectName": "Data.Context",
-        "projectPath": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/Data.Context.csproj",
-        "packagesPath": "/Users/pakpoom/.nuget/packages/",
-        "outputPath": "/Users/pakpoom/Documents/GitHub/narit/Data.Context/obj/",
+        "projectPath": "C:\\Project\\NARIT Project\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\NARIT Project\\Data.Context\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\ACC\\Data.Context\\Data.Context.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ACC\\Data.Context\\Data.Context.csproj",
+        "projectName": "Data.Context",
+        "projectPath": "D:\\ACC\\Data.Context\\Data.Context.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "D:\\ACC\\Data.Context\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/NAT
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -158,6 +227,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.9, )"
@@ -195,7 +268,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/NAT
         }
       }
     }

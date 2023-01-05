@@ -59,3 +59,44 @@ C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\App.SEC.dll
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\refint\App.SEC.dll
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\App.SEC.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.SEC\obj\Release\net6.0\ref\App.SEC.dll
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.SEC.deps.json
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.SEC.runtimeconfig.json
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.SEC.dll
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.SEC.pdb
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.Common.dll
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\App.Common.pdb
+C:\Project\NARIT Project\App.SEC\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.AssemblyInfo.cs
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.csproj.CopyComplete
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.dll
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\refint\App.SEC.dll
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.pdb
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\App.SEC.genruntimeconfig.cache
+C:\Project\NARIT Project\App.SEC\obj\Release\net6.0\ref\App.SEC.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.SEC\bin\Release\net6.0\App.SEC.deps.json
+D:\ACC\App.SEC\bin\Release\net6.0\App.SEC.runtimeconfig.json
+D:\ACC\App.SEC\bin\Release\net6.0\App.SEC.dll
+D:\ACC\App.SEC\bin\Release\net6.0\App.SEC.pdb
+D:\ACC\App.SEC\bin\Release\net6.0\App.Common.dll
+D:\ACC\App.SEC\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.SEC\bin\Release\net6.0\App.Common.pdb
+D:\ACC\App.SEC\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.csproj.AssemblyReference.cache
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.AssemblyInfoInputs.cache
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.AssemblyInfo.cs
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.csproj.CoreCompileInputs.cache
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.csproj.CopyComplete
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.dll
+D:\ACC\App.SEC\obj\Release\net6.0\refint\App.SEC.dll
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.pdb
+D:\ACC\App.SEC\obj\Release\net6.0\App.SEC.genruntimeconfig.cache
+D:\ACC\App.SEC\obj\Release\net6.0\ref\App.SEC.dll
+>>>>>>> origin/NAT

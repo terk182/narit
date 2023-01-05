@@ -52,3 +52,40 @@ C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Release\net6.0\App.FIN.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Release\net6.0\refint\App.FIN.dll
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Release\net6.0\App.FIN.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.Executive\obj\Release\net6.0\ref\App.FIN.dll
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\App.FIN.deps.json
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\App.FIN.runtimeconfig.json
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\App.FIN.dll
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\App.FIN.pdb
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.Executive\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.AssemblyInfo.cs
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.csproj.CopyComplete
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.dll
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\refint\App.FIN.dll
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.pdb
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\App.FIN.genruntimeconfig.cache
+C:\Project\NARIT Project\App.Executive\obj\Release\net6.0\ref\App.FIN.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.Executive\bin\Release\net6.0\App.FIN.deps.json
+D:\ACC\App.Executive\bin\Release\net6.0\App.FIN.runtimeconfig.json
+D:\ACC\App.Executive\bin\Release\net6.0\App.FIN.dll
+D:\ACC\App.Executive\bin\Release\net6.0\App.FIN.pdb
+D:\ACC\App.Executive\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.Executive\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.csproj.AssemblyReference.cache
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.AssemblyInfoInputs.cache
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.AssemblyInfo.cs
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.csproj.CoreCompileInputs.cache
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.csproj.CopyComplete
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.dll
+D:\ACC\App.Executive\obj\Release\net6.0\refint\App.FIN.dll
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.pdb
+D:\ACC\App.Executive\obj\Release\net6.0\App.FIN.genruntimeconfig.cache
+D:\ACC\App.Executive\obj\Release\net6.0\ref\App.FIN.dll
+>>>>>>> origin/NAT

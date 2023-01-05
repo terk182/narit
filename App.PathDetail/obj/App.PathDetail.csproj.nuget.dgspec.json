@@ -1,26 +1,44 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj": {}
+<<<<<<< HEAD
+    "C:\\Project\\NARIT Project\\App.PathDetail\\App.PathDetail.csproj": {}
   },
   "projects": {
-    "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj": {
+    "C:\\Project\\NARIT Project\\App.PathDetail\\App.PathDetail.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj",
+        "projectUniqueName": "C:\\Project\\NARIT Project\\App.PathDetail\\App.PathDetail.csproj",
         "projectName": "App.PathDetail",
-        "projectPath": "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/App.PathDetail.csproj",
-        "packagesPath": "/Users/pakpoom/.nuget/packages/",
-        "outputPath": "/Users/pakpoom/Documents/GitHub/narit/App.PathDetail/obj/",
+        "projectPath": "C:\\Project\\NARIT Project\\App.PathDetail\\App.PathDetail.csproj",
+        "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\NARIT Project\\App.PathDetail\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/pakpoom/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "D:\\ACC\\App.PathDetail\\App.PathDetail.csproj": {}
+  },
+  "projects": {
+    "D:\\ACC\\App.PathDetail\\App.PathDetail.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ACC\\App.PathDetail\\App.PathDetail.csproj",
+        "projectName": "App.PathDetail",
+        "projectPath": "D:\\ACC\\App.PathDetail\\App.PathDetail.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "D:\\ACC\\App.PathDetail\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/NAT
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +82,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/NAT
         }
       }
     }

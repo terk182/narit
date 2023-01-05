@@ -58,3 +58,40 @@ C:\Users\KKN\Documents\GitHub\narit\App.CollaborationNetwork\obj\Release\net6.0\
 C:\Users\KKN\Documents\GitHub\narit\App.CollaborationNetwork\obj\Release\net6.0\refint\App.EIS.dll
 C:\Users\KKN\Documents\GitHub\narit\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.pdb
 C:\Users\KKN\Documents\GitHub\narit\App.CollaborationNetwork\obj\Release\net6.0\ref\App.EIS.dll
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.deps.json
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.runtimeconfig.json
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.dll
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.pdb
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\Data.Context.dll
+C:\Project\NARIT Project\App.CollaborationNetwork\bin\Release\net6.0\Data.Context.pdb
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.AssemblyInfo.cs
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.CopyComplete
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.dll
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\refint\App.EIS.dll
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.pdb
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.genruntimeconfig.cache
+C:\Project\NARIT Project\App.CollaborationNetwork\obj\Release\net6.0\ref\App.EIS.dll
+<<<<<<< HEAD
+=======
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.deps.json
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.runtimeconfig.json
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.dll
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\App.EIS.pdb
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\Data.Context.dll
+D:\ACC\App.CollaborationNetwork\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.AssemblyReference.cache
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.AssemblyInfoInputs.cache
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.AssemblyInfo.cs
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.CoreCompileInputs.cache
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.csproj.CopyComplete
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.dll
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\refint\App.EIS.dll
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.pdb
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\App.EIS.genruntimeconfig.cache
+D:\ACC\App.CollaborationNetwork\obj\Release\net6.0\ref\App.EIS.dll
+>>>>>>> origin/NAT

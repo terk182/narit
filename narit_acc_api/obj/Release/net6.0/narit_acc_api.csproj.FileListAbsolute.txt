@@ -88,3 +88,136 @@ C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Release\net6.0\refint\nari
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Release\net6.0\narit_acc_api.pdb
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Release\net6.0\narit_acc_api.genruntimeconfig.cache
 C:\Users\KKN\Documents\GitHub\narit\narit_acc_api\obj\Release\net6.0\ref\narit_acc_api.dll
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.csproj.AssemblyReference.cache
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.AssemblyInfoInputs.cache
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.AssemblyInfo.cs
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.csproj.CoreCompileInputs.cache
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.MvcApplicationPartsAssemblyInfo.cs
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.MvcApplicationPartsAssemblyInfo.cache
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.dll
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\refint\narit_acc_api.dll
+C:\Project\NARIT Project\narit_acc_api\obj\Release\net6.0\narit_acc_api.pdb
+<<<<<<< HEAD
+=======
+D:\ACC\narit_acc_api\bin\Release\net6.0\appsettings.Development.json
+D:\ACC\narit_acc_api\bin\Release\net6.0\appsettings.json
+D:\ACC\narit_acc_api\bin\Release\net6.0\narit_acc_api.exe
+D:\ACC\narit_acc_api\bin\Release\net6.0\narit_acc_api.deps.json
+D:\ACC\narit_acc_api\bin\Release\net6.0\narit_acc_api.runtimeconfig.json
+D:\ACC\narit_acc_api\bin\Release\net6.0\narit_acc_api.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\narit_acc_api.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\AutoMapper.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\EntityFramework.SqlServer.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\EntityFramework.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Humanizer.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Logging.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Options.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Extensions.Primitives.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Identity.Client.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.OpenApi.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Mono.TextTemplating.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Newtonsoft.Json.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Newtonsoft.Json.Bson.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.CodeDom.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.DirectoryServices.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Drawing.Common.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Runtime.Caching.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Security.Permissions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Text.Encodings.Web.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Text.Json.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\System.Windows.Extensions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-arm64\native\sni.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-x64\native\sni.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win-x86\native\sni.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.ACC.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Accommodations.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Authenticator.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Common.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.EIS.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.FIN.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.General.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Individual.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.PathDetail.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Plan.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Procure.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Resolver.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.SEC.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\Data.Context.dll
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.ACC.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Resolver.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\Data.Context.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Accommodations.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Authenticator.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Common.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.EIS.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.FIN.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.General.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Individual.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.PathDetail.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Plan.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.Procure.pdb
+D:\ACC\narit_acc_api\bin\Release\net6.0\App.SEC.pdb
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.csproj.AssemblyReference.cache
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.AssemblyInfoInputs.cache
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.AssemblyInfo.cs
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.csproj.CoreCompileInputs.cache
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.MvcApplicationPartsAssemblyInfo.cs
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.MvcApplicationPartsAssemblyInfo.cache
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets\msbuild.narit_acc_api.Microsoft.AspNetCore.StaticWebAssets.props
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets\msbuild.build.narit_acc_api.props
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.narit_acc_api.props
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.narit_acc_api.props
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets.pack.json
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets.build.json
+D:\ACC\narit_acc_api\obj\Release\net6.0\staticwebassets.development.json
+D:\ACC\narit_acc_api\obj\Release\net6.0\scopedcss\bundle\narit_acc_api.styles.css
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.csproj.CopyComplete
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.dll
+D:\ACC\narit_acc_api\obj\Release\net6.0\refint\narit_acc_api.dll
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.pdb
+D:\ACC\narit_acc_api\obj\Release\net6.0\narit_acc_api.genruntimeconfig.cache
+D:\ACC\narit_acc_api\obj\Release\net6.0\ref\narit_acc_api.dll
+>>>>>>> origin/NAT
