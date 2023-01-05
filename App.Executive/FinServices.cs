@@ -845,8 +845,25 @@ namespace App.FIN
          
         }
 
-       
+        public ViewPaymentRecordListRequest ViewPaymentRecordList()
+        {
+            return new ViewPaymentRecordListRequest();
+        }
 
+        public SelectPlanForStatementCalculationDateListRequest SelectPlanForStatementCalculationDateList()
+        {
+            return new SelectPlanForStatementCalculationDateListRequest();
+        }
+
+        public EditDeniedRequestFormPlanViewDateRequest EditDeniedRequestFormPlanViewDate()
+        {
+            return new EditDeniedRequestFormPlanViewDateRequest();
+        }
+
+        public EditReturnBudgetDateFromApproveFormRequest EditReturnBudgetDateFromApproveForm()
+        {
+            return new EditReturnBudgetDateFromApproveFormRequest();
+        }
     }
 
 

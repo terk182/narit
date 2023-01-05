@@ -2122,7 +2122,8 @@ namespace narit_mis_api.Controllers
         [Route("/Plan/Operate/ViewDirectExpenseMemoFormList")]
         public IActionResult ViewDirectExpenseMemoFormList()
         {
-            return Json("ViewDirectExpenseMemoFormList");
+            var data = _SecServices.ViewDirectExpenseMemoFormList();
+            return Json(data);
         }
 
 
@@ -2232,7 +2233,8 @@ namespace narit_mis_api.Controllers
         [Route("/Plan/Operate/ViewGeneralExpenseSettleAsBudgetFormList")]
         public IActionResult ViewGeneralExpenseSettleAsBudgetFormList()
         {
-            return Json("ViewGeneralExpenseSettleAsBudgetFormList");
+            var data = _SecServices.ViewGeneralExpenseSettleAsBudgetFormList();
+            return Json(data);
         }
 
 

@@ -38,5 +38,12 @@ namespace App.FIN
         List<CheckForm> ViewRequestFormList(ViewRequestFormListMainRequest request);
         PlanFormFinancialStatusReportRespone PlanFormFinancialStatusReport(PlanFormFinancialStatusReportRequest request);
 
+        List<ViewPaymentRecordListReponses> ViewPaymentRecordList(ViewPaymentRecordListRequest);
+
+        SelectPlanForStatementCalculationDateListRequest SelectPlanForStatementCalculationDateList();
+
+        EditDeniedRequestFormPlanViewDateRequest EditDeniedRequestFormPlanViewDate();
+
+        EditReturnBudgetDateFromApproveFormRequest EditReturnBudgetDateFromApproveForm();
     }
 }

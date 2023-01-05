@@ -43,7 +43,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/EditDeniedRequestFormPlanViewDate")]
         public IActionResult EditDeniedRequestFormPlanViewDate()
         {
-            return Json("EditDeniedRequestFormPlanViewDate");
+            var data = _FinServices.EditDeniedRequestFormPlanViewDate();
+            return Json(data);
         }
 
         [HttpGet]
@@ -187,7 +188,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/EditReturnBudgetDateFromApproveForm")]
         public IActionResult EditReturnBudgetDateFromApproveForm()
         {
-            return Json("EditReturnBudgetDateFromApproveForm");
+            var data = _FinServices.EditReturnBudgetDateFromApproveForm();
+            return Json(data);
         }
 
         [HttpGet]
@@ -229,7 +231,8 @@ namespace narit_mis_api.Controllers
         [Route("Finance/Operate/SelectPlanForStatementCalculationDateList")]
         public IActionResult SelectPlanForStatementCalculationDateList()
         {
-            return Json("SelectPlanForStatementCalculationDateList");
+            var data = _FinServices.SelectPlanForStatementCalculationDateList();
+            return Json(data);
         }
 
         [HttpGet]
@@ -289,11 +292,13 @@ namespace narit_mis_api.Controllers
             return Json("ViewGEMemoFormListForFinancialReimbursementForm");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewPaymentRecordList")]
         public IActionResult ViewPaymentRecordList()
         {
-            return Json("ViewPaymentRecordList");
+            var data = _FinServices.ViewPaymentRecordList();
+            return Json(data);
+
         }
 
         [HttpGet]

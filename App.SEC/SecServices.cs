@@ -3472,5 +3472,15 @@ namespace App.SEC
 
             return response;
         }
+
+        public ViewDirectExpenseMemoFormListRequest ViewDirectExpenseMemoFormList()
+        {
+            return new ViewDirectExpenseMemoFormListRequest();
+        }
+
+        public ViewGeneralExpenseSettleAsBudgetFormListRequest ViewGeneralExpenseSettleAsBudgetFormList()
+        {
+            return new ViewGeneralExpenseSettleAsBudgetFormListRequest();
+        }
     }
 }
