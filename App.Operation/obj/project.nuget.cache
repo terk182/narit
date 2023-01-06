@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "exjRrcJzC2rlCSdP/pvzHtodcJKMb9Li0iIa4oAXaIDsjby2CpuInTl6mEXEOzU9g0VJXRFf8JVr11kHstlEdw==",
+  "dgSpecHash": "hg9MAYJkvAEaKzhIxk7ogv7mi4tVAI/fkBq1oGTmLdnTqkaiRxRiXopxkgl9xZLfhD9nekMYB6RprlSGvId22w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.Operation\\App.General.csproj",
+  "projectFilePath": "C:\\Project\\CGI_ACC_API\\App.Operation\\App.General.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

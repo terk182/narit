@@ -1981,24 +1981,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pakpoom\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
+      "projectUniqueName": "C:\\Project\\CGI_ACC_API\\App.SEC\\App.SEC.csproj",
       "projectName": "App.SEC",
-      "projectPath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.SEC\\App.SEC.csproj",
-      "packagesPath": "C:\\Users\\Pakpoom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.SEC\\obj\\",
+      "projectPath": "C:\\Project\\CGI_ACC_API\\App.SEC\\App.SEC.csproj",
+      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
+      "outputPath": "C:\\Project\\CGI_ACC_API\\App.SEC\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Pakpoom\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2006,18 +2001,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\App.Common\\App.Common.csproj"
+            "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj": {
+              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj"
             },
-            "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Users\\Pakpoom\\Documents\\GitHub\\narit\\Data.Context\\Data.Context.csproj"
+            "C:\\Project\\CGI_ACC_API\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "C:\\Project\\CGI_ACC_API\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -2053,7 +2047,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
