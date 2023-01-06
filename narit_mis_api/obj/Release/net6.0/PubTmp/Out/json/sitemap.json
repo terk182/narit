@@ -1,0 +1,2523 @@
+[
+  {
+    "th_title": "ผู้บริหาร",
+    "en_title": "Executive",
+    "description": "Executive",
+    "url": "Pages_EIS_Executive_MainExecutivePage_aspx",
+    "roles": "",
+    "siteMapNode": [
+      {
+        "th_title": "รายงานผู้บริหาร",
+        "en_title": "",
+        "url": "Executive_Report_SiteMapGroup",
+        "roles": "",
+        "comment": "<siteMapNode th_title_หน้าหลักรายงานผู้บริหาร url_Pages_EIS_Executive_Report_ExecutiveMainReport_aspx roles_Pages_EIS_Executive_Report_ExecutiveMainReport _> ",
+        "comment1": "<siteMapNode th_title_ภาพรวมผลการดำเนินงานด้านงบประมาณ url_Pages_EIS_Executive_Report_CurrentReserveStatementConclusionReport_aspx roles_Pages_EIS_Executive_Report_CurrentReserveStatementConclusionReport _>",
+        "siteMapNode": [
+          {
+            "th_title": "ผลการเบิกจ่ายเทียบกับเป้าหมายของรัฐบาล",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_GovernmentDisbursementGoalReport_aspx",
+            "roles": "Pages_EIS_Executive_Report_GovernmentDisbursementGoalReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "สรุปผลการดำเนินงานด้านงบประมาณ",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_PlanOperationFinancialResultDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_PlanOperationFinancialResultDashboard",
+            "selfclosing": true
+          },
+          {
+            "th_title": "สรุปผลการดำเนินงานโครงการ",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_PlanOperationResultDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_PlanOperationResultDashboard",
+            "selfclosing": true
+          },
+          {
+            "th_title": "Management Dashboard",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_ManagementDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_ManagementDashboard",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ค้นหาผลการดำเนินงานโครงการ",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_PlanCoreListByPerformanceDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_PlanCoreListByPerformanceDashboard",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานการบันทึกผลรายเดือน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanIncompletedResultMonthlyReport_aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanIncompletedResultMonthlyReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานการติดตามผลการดำเนินงานทางพัสดุ",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_ProcureDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_ProcureDashboard",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานการเบิกค่ารักษาพยาบาล",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_MedicalReimbursementDashboard_aspx",
+            "roles": "Pages_EIS_Executive_Report_MedicalReimbursementDashboard",
+            "selfclosing": true
+          },
+          {
+            "item": {
+              "comment2": "<siteMapNode th_title_Procure Operation Dashboard url_Pages_EIS_Operation_Report_ProcureTrackingDashboard_aspx roles_Pages_EIS_Operation_Report_ProcureTrackingDashboard _>"
+            }
+          },
+          {
+            "item": {
+              "comment3": "<siteMapNode th_title_Procure Operation Report url_Pages_EIS_Operation_Report_ProcureTrackingReport_aspx roles_Pages_EIS_Operation_Report_ProcureTrackingReport _>"
+            }
+          },
+          {
+            "th_title": "รายงานสรุปตัวชี้วัด",
+            "en_title": "",
+            "url": "Pages_EIS_Executive_Report_StrategiesDashboard_aspx",
+            "roles": "Pages_EIS_Operation_Report_StrategiesDashboard",
+            "selfclosing": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "th_title": "งานนโยบายและแผน",
+    "en_title": "",
+    "description": "Plan",
+    "url": "Pages_SEC_Plan_MainPlanPage_aspx",
+    "roles": "",
+    "siteMapNode": [
+      {
+        "th_title": "การตั้งโครงการใหม่",
+        "en_title": "",
+        "url": "Plan_PlanSetUp_SiteMapGroup",
+        "roles": "",
+        "comment": "หน้าหลักรายงานผู้บริหาร",
+        "comment1": "ภาพรวมผลการดำเนินงานด้านงบประมาณ",
+        "siteMapNode": [
+          {
+            "th_title": "บันทึกข้อมูลโครงการ(รายการหลัก)ตามหน่วยงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByDepartment_aspx",
+            "roles": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByDepartment",
+            "selfclosing": true
+          },
+          {
+            "th_title": "บันทึกข้อมูลโครงการ(รายการหลัก)ตามแผนงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType_aspx",
+            "roles": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType",
+            "selfclosing": true
+          },
+          {
+            "th_title": "บันทึกข้อมูลเงินงบประมาณ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_ViewReceivedReservedBudgetByPlanCore_aspx",
+            "roles": "Pages_SEC_Plan_Operate_ViewReceivedReservedBudgetByPlanCore",
+            "selfclosing": true
+          },
+          {
+            "th_title": "บันทึกผลตามแผนการดำเนินงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType_aspx_t_op",
+            "roles": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType",
+            "selfclosing": true
+          },
+          {
+            "th_title": "บันทึกผลตัวชี้วัดตามประเด็นยุทธศาสตร์",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType_aspx_t_pi",
+            "roles": "Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType",
+            "selfclosing": true
+          },
+          {
+            "th_title": "สรุปผลการอนุมัติโครงการ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanCoreApproveStatusReport_aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanCoreApproveStatusReport",
+            "selfclosing": true
+          }
+        ]
+      },
+      {
+        "th_title": "รายงานทั่วไป",
+        "url": "Plan_GeneralReport.SiteMapGroup",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "ข้อมูลโครงการตามประเภทแผนงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanReportByPlanType.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanReportByPlanType",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ข้อมูลโครงการตามหน่วยงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanReportByDepartment.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanReportByDepartment",
+            "selfclosing": true
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=ข้อมูลโครงการตามหมวดเงินงบประมาณ url=Pages_SEC_Plan_Report_PlanReportByFundType.aspx roles=Pages_SEC_Plan_Report_PlanReportByFundType_>"
+            }
+          },
+          {
+            "th_title": "ข้อมูลโครงการตามประเภทรายจ่ายย่อย",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanReportByBudgetType.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanReportByBudgetType",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ข้อมูลโครงการตามยุทธศาสตร์",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanReportByStrategy.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanReportByStrategy",
+            "selfclosing": true
+          }
+        ]
+      },
+      {
+        "th_title": "การบริหารงบประมาณ",
+        "en_title": "",
+        "url": "Plan_BudgetTransfer.SiteMapGroup",
+        "roles": "",
+        "comment": "<siteMapNode th_title=ใบขอโอนเปลี่ยนแปลงงบประมาณ url=Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferList.aspx roles=Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferList_>",
+        "siteMapNode": [
+          {
+            "th_title": "อนุมัติโอนเปลี่ยนแปลงงบประมาณ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferListForApprove.aspx",
+            "roles": "Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferListForApprove",
+            "selfclosing": true
+          },
+          {
+            "th_title": "การโอนเปลี่ยนแปลงรายการพัสดุ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_ViewChangedPlanItemRecordList.aspx",
+            "roles": "Pages_SEC_Plan_Operate_ViewChangedPlanItemRecordList",
+            "selfclosing": true
+          },
+          {
+            "th_title": "การปรับแผนการใช้จ่ายงบประมาณ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_ViewMonthlyForecastAdjustmentList.aspx",
+            "roles": "Pages_SEC_Plan_Operate_ViewMonthlyForecastAdjustmentList",
+            "selfclosing": true
+          }
+        ]
+      },
+      {
+        "th_title": "ค้นหา",
+        "en_title": "",
+        "url": "Plan_PlanSearch.SiteMapGroup",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "ค้นหาโครงการ(รายการหลัก)",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_
+            .aspx",
+            "roles": "Pages_SEC_Plan_Operate_SearchPlanForActivity",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ค้นหากิจกรรม",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SearchPlanActivity.aspx",
+            "roles": "Pages_SEC_Plan_Operate_SearchPlanActivity",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ค้นหารายการย่อย",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Operate_SearchPlanItem.aspx",
+            "roles": "Pages_SEC_Plan_Operate_SearchPlanItem",
+            "selfclosing": true
+          }
+        ],
+        "comment": "<siteMapNode th_title=การติดตามใบขอใช้งบประมาณ url=Pages_SEC_Plan_Report_SearchGeneralExpenseDocForTrackingRoute.aspx roles=Pages_SEC_Plan_Report_SearchGeneralExpenseDocForTrackingRoute_>"
+      },
+      {
+        "th_title": "รายงานเฉพาะด้าน",
+        "en_title": "",
+        "url": "Plan_SpecificReport.SiteMapGroup",
+        "roles": "",
+        "comment": "<siteMapNode th_title=งบตามแผนงานและหมวดเงินงบประมาณ url=Pages_SEC_Plan_Report_PlanTypeAndFundTypeReport.aspx roles=Pages_SEC_Plan_Report_PlanTypeAndFundTypeReport_>",
+        "siteMapNode": [
+          {
+            "th_title": "รายการย่อยตามประเภทรายจ่ายย่อยและแผนงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanItemByBudgetTypeAndPlanTypeReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanItemByBudgetTypeAndPlanTypeReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายละเอียดโครงการตามแผนงานรายเดือน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanCoreGroupByPlanTypeMonthlyReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanCoreGroupByPlanTypeMonthlyReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานผลการดำเนินการ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanItemOperationReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanItemOperationReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานผลการจัดซื้อจัดจ้าง",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_PlanItemProcureOperationReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_PlanItemProcureOperationReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานโอนเปลี่ยนแปลงงบประมาณรายเดือน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_BudgetTransferByMonthReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_BudgetTransferByMonthReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "รายงานตัวชี้วัดตามกิจกรรม",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_StrategicIndicatorByPlanActivityReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_StrategicIndicatorByPlanActivityReport",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ติดตามโครงการตาม Tag โครงการหลัก",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Report_ViewPrinciplePlanTagReport.aspx",
+            "roles": "Pages_SEC_Plan_Report_ViewPrinciplePlanTagReport",
+            "selfclosing": true
+          }
+        ]
+      },
+      {
+        "th_title": "ตั้งค่าเริ่มต้นปีงบประมาณ",
+        "en_title": "",
+        "url": "Plan_Setup.SiteMapGroup",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "ตั้งค่ายุทธศาสตร์",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_StrategySetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_StrategySetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าแผนงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_PlanTypeSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_PlanTypeSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าหน่วยงาน",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_DepartmentSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_DepartmentSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าประเภทหมวดเงินงบประมาณ",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_FundTypeSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_FundTypeSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าประเภทรายจ่ายย่อย",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_BudgetTypeSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_BudgetTypeSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าตัวชี้วัดตามประเด็นยุทธศาสตร์",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_StrategicIndicatorSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_StrategicIndicatorSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่า Tag โครงการหลัก",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_PrinciplePlanTagSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_PrinciplePlanTagSetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าวาระการแก้ไขข้อมูล",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_PlanCRUDPolicySetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_PlanCRUDPolicySetup",
+            "selfclosing": true
+          },
+          {
+            "th_title": "ตั้งค่าเป้าหมายการเบิกจ่าย",
+            "en_title": "",
+            "url": "Pages_SEC_Plan_Setup_GovernmentDisbursementGoalSetup.aspx",
+            "roles": "Pages_SEC_Plan_Setup_GovernmentDisbursementGoalSetup",
+            "selfclosing": true
+          }
+        ],
+        "comment": "<siteMapNode th_title=ตั้งค่าถ่วงน้ำหนักโครงการ url=Pages_SEC_Plan_Setup_PlanWeightSetup.aspx roles=Pages_SEC_Plan_Setup_PlanWeightSetup _>"
+      },
+
+      {
+        "th_title": "งานพัสดุ",
+        "en_title": "",
+        "description": "Procure",
+        "url": "Pages_FIN_Procure_MainProcurePage.aspx",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "เอกสารทางพัสดุ",
+            "en_title": "",
+            "url": "Procure_ProcureRequest.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ใบเสนอซื้อ_เสนอจ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRequestFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewRequestFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แบบรายงานขอดำเนินการจัดซื้อ_จัดจ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewAuthorizeFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewAuthorizeFormList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=บันทึกข้อความ _ ใบขอความเห็นชอบ url=Pages_FIN_Procure_Operate_ViewAgreementDocumentList.aspx roles=Pages_FIN_Procure_Operate_ViewAgreementDocumentList _>"
+                }
+              },
+              {
+                "th_title": "บันทึกข้อความ _ ใบขออนุมัติซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewApproveDocumentList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewApproveDocumentList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบสั่งซื้อ_สั่งจ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewOrderFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewOrderFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบตรวจรับซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewCheckFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewCheckFormList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=การแต่งตั้งกลุ่มคณะกรรมการพัสดุ url=Pages_EIS_Executive_Operate_ViewProcureComitteeGroupList.aspx roles=Pages_EIS_Executive_Operate_ViewProcureComitteeGroupList _>\n        <siteMapNode th_title=รายงานรายชื่อกลุ่มคณะกรรมการพัสดุ url=Pages_EIS_Executive_Report_ProcureComitteeByPersonReport.aspx roles=Pages_EIS_Executive_Report_ProcureComitteeByPersonReport _>\n        <siteMapNode th_title=รายงานกลุ่มคณะกรรมการพัสดุ url=Pages_EIS_Executive_Report_ProcureComitteeGroupReport.aspx roles=Pages_EIS_Executive_Report_ProcureComitteeGroupReport _>\n        <siteMapNode th_title=การติดตามการดำเนินงานทางพัสดุ url=Pages_EIS_Operation_Operate_ViewTrackingItemList.aspx roles=Pages_EIS_Operation_Operate_ViewTrackingItemList _>"
+                }
+              },
+              {
+                "th_title": "ใบยืมเงินทดรอง(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormList.aspx?procure=",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบเบิกเงินสำรองจ่าย(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormList.aspx?procure=",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบคืนเงินทดรองครั้งที่1_คืนเงินเหลือจ่าย(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormList.aspx?procure=",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบคืนเงินทดรองครั้งที่2_นำส่งใบสำคัญ (พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList.aspx?procure=",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "การดำเนินการ",
+            "en_title": "",
+            "url": "Procure_ProcureDocument.SiteMapGroup",
+            "roles": "",
+            "comment": "  <siteMapNode th_title=ตรวจสอบ TOR ใบเสนอซื้อ_จ้าง url=Pages_FIN_Procure_Operate_ViewRequestFormListForDocChecker.aspx roles=Pages_FIN_Procure_Operate_ViewRequestFormListForDocChecker _>\n       <siteMapNode th_title=อนุมัติดำเนินการใบเสนอซื้อ_จ้าง url=Pages_FIN_Procure_Operate_ViewRequestFormListForApproval.aspx roles=Pages_FIN_Procure_Operate_ViewRequestFormListForApproval _>",
+            "siteMapNode": [
+              {
+                "th_title": "ตรวจสอบเอกสาร(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewFormForApprovalByProcure.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewFormForApprovalByProcure",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บริหารสัญญาพัสดุ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewProcureContractFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewProcureContractFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "เอกสารทางพัสดุตามสถานะ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ProcureDocStatusReport.aspx",
+                "roles": "Pages_FIN_Procure_Report_ProcureDocStatusReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบขอโอนครุภัณฑ์",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRegisterItemTransferForApprove.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewRegisterItemTransferForApprove",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=ค้นหาเอกสารทางพัสดุ url=Procure_ProcureDocumentSearch.SiteMapGroup >\n                <siteMapNode th_title=ค้นหาใบเสนอซื้อ_จ้าง url=Pages_FIN_Procure_Operate_SearchRequestFormList.aspx roles=Pages_FIN_Procure_Operate_SearchRequestFormList _>\n                <siteMapNode th_title=ค้นหาบันทึกข้อความ _ ใบขอความเห็นชอบ url=Pages_FIN_Procure_Operate_SearchAgreementDocumentList.aspx roles=Pages_FIN_Procure_Operate_SearchAgreementDocumentList _>\n                <siteMapNode th_title=ค้นหาบันทึกข้อความ _ ใบขออนุมัติซื้อ_จ้าง url=Pages_FIN_Procure_Operate_SearchApproveDocumentList.aspx roles=Pages_FIN_Procure_Operate_SearchApproveDocumentList _>\n                <siteMapNode th_title=ค้นหาใบสั่งซื้อ_จ้าง url=Pages_FIN_Procure_Operate_SearchOrderFormList.aspx roles=Pages_FIN_Procure_Operate_SearchOrderFormList _>\n                <siteMapNode th_title=ค้นหาใบตรวจซื้อ_จ้าง url=Pages_FIN_Procure_Operate_SearchCheckFormList.aspx roles=Pages_FIN_Procure_Operate_SearchCheckFormList _>\n            <_siteMapNode>"
+            }
+          },
+          {
+            "th_title": "งานทะเบียนพัสดุ",
+            "en_title": "",
+            "url": "Procure_ProcureRegister.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ลงทะเบียนครุภัณฑ์ตามใบตรวจรับ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewQuickCheckFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewQuickCheckFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ลงทะเบียนครุภัณฑ์ _ วัสดุถาวร",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_IdentificationRegisterDurableItemList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_IdentificationRegisterDurableItemList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการครุภัณฑ์ลงทะเบียน",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ViewRegisterDurableItemList.aspx",
+                "roles": "Pages_FIN_Procure_Report_ViewRegisterDurableItemList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบแจ้งซ่อมครุภัณฑ์",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewProcureRepairFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewProcureRepairFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอโอนครุภัณฑ์",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRegisterItemTransferList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewRegisterItemTransferList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการตรวจครุภัณฑ์",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRegisterItemCheckRecordList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewRegisterItemCheckRecordList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการจำหน่ายครุภัณฑ์",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRegisterItemDisposedFormList.aspx",
+                "roles": "Pages_FIN_Procure_Operate_ViewRegisterItemDisposedFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกค่าสาธาณูปโภค",
+                "en_title": "",
+                "url": "Pages_EIS_Operation_Operate_ViewBillingFormList.aspx",
+                "roles": "Pages_EIS_Operation_Operate_ViewBillingFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการค่าสาธาณูปโภค",
+                "en_title": "",
+                "url": "Pages_EIS_Operation_Report_BillingDashboard.aspx",
+                "roles": "Pages_EIS_Operation_Report_BillingDashboard",
+                "selfclosing": true
+              }
+            ],
+            "comment": "<siteMapNode th_title=แยกประเภทพัสดุ url=Pages_FIN_Procure_Operate_CategorizeProcureItem.aspx roles=Pages_FIN_Procure_Operate_CategorizeProcureItem _>\n        <siteMapNode th_title=บันทึกพัสดุลงคลัง url=Pages_FIN_Procure_Operate_RegisterCatagorizedProcureItem.aspx roles=Pages_FIN_Procure_Operate_RegisterCatagorizedProcureItem _>"
+          },
+          {
+            "th_title": "รายงาน",
+            "en_title": "",
+            "url": "Procure_ProcureReport.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "รายงานข้อมูลพัสดุ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_RegisterProcureItemSearch.aspx",
+                "roles": "Pages_FIN_Procure_Report_RegisterProcureItemSearch",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานข้อมูลพัสดุตามหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ShowRegisterProcureItemListByDepartment.aspx",
+                "roles": "Pages_FIN_Procure_Report_ShowRegisterProcureItemListByDepartment",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานครุภัณฑ์ตามหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_RegisterDurableItemListByDepartment.aspx",
+                "roles": "Pages_FIN_Procure_Report_RegisterDurableItemListByDepartment",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานครุภัณฑ์ตามประเภท",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_RegisterDurableItemListByType.aspx",
+                "roles": "Pages_FIN_Procure_Report_RegisterDurableItemListByType",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "รายงานเฉพาะด้าน",
+            "en_title": "",
+            "url": "Procure_SpecificReport.SiteMapGroup",
+            "roles": "",
+            "comment": "<siteMapNode th_title=รายงานผลการจัดซื้อจัดจ้าง url=Pages_SEC_Plan_Report_PlanItemProcureOperationReport.aspx?user= roles=Pages_SEC_Plan_Report_PlanItemProcureOperationReport_>",
+            "siteMapNode": [
+              {
+                "th_title": "ติดตามเอกสารทางพัสดุ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_SearchProcureDocForTrackingRoute.aspx",
+                "roles": "Pages_FIN_Procure_Report_SearchProcureDocForTrackingRoute",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ติดตามรายการขอซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_SearchProcureItemForTrackingRoute.aspx",
+                "roles": "Pages_FIN_Procure_Report_SearchProcureItemForTrackingRoute",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานยอดซื้อของกับร้านค้า",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ViewGoodsListBySupplier.aspx",
+                "roles": "Pages_FIN_Procure_Report_ViewGoodsListBySupplier",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ประกาศจัดซื้อจัดจ้างกรมบัญชีกลาง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ViewGProcurementRSSReport.aspx",
+                "roles": "Pages_FIN_Procure_Report_ViewGProcurementRSSReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แบบสรุปผลการดำเนินการจัดซื้อ_จ้างในรอบเดือน",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Report_ViewOrderItemBySupplierMonthlyReport.aspx",
+                "roles": "Pages_FIN_Procure_Report_ViewOrderItemBySupplierMonthlyReport",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "ตั้งค่าระบบ",
+            "en_title": "",
+            "url": "Procure_ProcureSetup.SiteMapGroup",
+            "roles": "",
+            "comment": "<siteMapNode th_title=ตั้งค่ารายชื่อบุคลากร url=Pages_FIN_Procure_Setup_SetupStaffInfo.aspx roles=Pages_FIN_Procure_Setup_SetupStaffInfo _>\n        <siteMapNode th_title=ตั้งค่าบุคลากรประจำตำแหน่ง url=Pages_FIN_Procure_Setup_SetPlanPersonFixPosition.aspx roles=Pages_FIN_Procure_Setup_SetPlanPersonFixPosition _>\n        <siteMapNode th_title=ตั้งค่าบุคลากรตามหน่วยงาน url=Pages_FIN_Procure_Setup_SetPlanPersonPerDepartment.aspx roles=Pages_FIN_Procure_Setup_SetPlanPersonPerDepartment _>",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าประเภทคลังพัสดุ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Setup_SetRegisterProcureItemType.aspx",
+                "roles": "Pages_FIN_Procure_Setup_SetRegisterProcureItemType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่ารายชื่อร้านค้า",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Setup_ViewSupplierListForSetup.aspx",
+                "roles": "Pages_FIN_Procure_Setup_ViewSupplierListForSetup",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment4": "<siteMapNode th_title=ตั้งค่าประเภทร้านค้า url=Pages_FIN_Procure_Setup_SetSupplierType.aspx roles=Pages_FIN_Procure_Setup_SetSupplierType _>"
+                }
+              },
+              {
+                "th_title": "ตั้งค่าสถาณที่จัดเก็บ",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Setup_ProcureStoreLocationSetup.aspx",
+                "roles": "Pages_FIN_Procure_Setup_ProcureStoreLocationSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่ามิเตอร์สาธารณูปโภค",
+                "en_title": "",
+                "url": "Pages_EIS_Operation_Setup_BillingLocationSetup.aspx",
+                "roles": "Pages_EIS_Operation_Setup_BillingLocationSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าแผนผังอาคาร",
+                "en_title": "",
+                "url": "Pages_EIS_Operation_Setup_BuildingPlanSetting.aspx",
+                "roles": "Pages_EIS_Operation_Setup_BuildingPlanSetting",
+                "selfclosing": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "th_title": "งานการเงิน",
+        "en_title": "",
+        "description": "Finance",
+        "url": "Pages_FIN_Finance_MainFinancePage.aspx",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "ตรวจสอบงบประมาณ",
+            "en_title": "",
+            "url": "Finance_ProcureApprove.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตรวจสอบเอกสาร(การเงิน)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewFormForApprovalByFinanceChecker.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewFormForApprovalByFinanceChecker",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตัดงบประมาณ(การเงิน)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewFormForApprovalByFinance.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewFormForApprovalByFinance",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบเอกสาร(หัวหน้าการเงิน)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewFormForApprovalByHeadOfFinance.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewFormForApprovalByHeadOfFinance",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบงบประมาณใบเสนอซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewRequestFormListForFinancialApproval.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewRequestFormListForFinancialApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบขอใช้งบประมาณ",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseMemoFormListForApproval.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseMemoFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบคืนเงินทดรองครั้งที่ 1_คืนเงินเหลือจ่าย",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewSettleReceiptFormListForApproval.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewSettleReceiptFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบคืนเงินทดรองครั้งที่ 2_นำส่งใบสำคัญ",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleFormListForApproval.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบยืมเงินทดรอง(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormListForApproval.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบเบิกเงินสำรองจ่าย(พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormListForApproval.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบคืนเงินทดรองครั้งที่1_คืนเงินเหลือจ่าย (พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormListForApproval.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormListForApproval",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติใบคืนเงินทดรองครั้งที่2_นำส่งใบสำคัญ (พัสดุ)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormListForApproval.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormListForApproval",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "รายงาน",
+            "en_title": "",
+            "url": "Finance_FinanceReport.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "รายการยืมเงินที่ยังไม่ได้หักล้างเงินยืม",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_LateGeneralExpenseBorrowFormReport.aspx",
+                "roles": "Pages_SEC_Plan_Report_LateGeneralExpenseBorrowFormReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการลูกหนี้เงินยืมทดรอง",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseDebtList.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseDebtList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "การ์ดงบประมาณ",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_GroupSelectorForFinancialStatementReport.aspx",
+                "roles": "Pages_FIN_Finance_Report_GroupSelectorForFinancialStatementReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการเงินรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_FinancialStatementMonthlyReportByPlanType.aspx",
+                "roles": "Pages_SEC_Plan_Report_FinancialStatementMonthlyReportByPlanType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานประเภทรายจ่ายย่อยรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_FinancialStatementMonthlyReportByBudgetType.aspx",
+                "roles": "Pages_SEC_Plan_Report_FinancialStatementMonthlyReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "สรุปตามประเภทรายจ่ายย่อยรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_FinancialStatementMonthlyBriefReportByBudgetType.aspx",
+                "roles": "Pages_SEC_Plan_Report_FinancialStatementMonthlyBriefReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานกันงบเหลื่อมปีรายเดือน",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyReportByPlanType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyReportByPlanType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานกันงบเหลื่อมปีตามรายจ่ายย่อยรายเดือน",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyReportByBudgetType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "สรุปกันงบเหลื่อมปีตามประเภทรายจ่ายย่อยรายเดือน",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyBriefReportByBudgetType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyBriefReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการเงินสิ้นปีงบประมาณ",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndReportByPlanType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndReportByPlanType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการเงินสิ้นปีงบตามประเภทรายจ่ายย่อย",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndReportByBudgetType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานสรุปสิ้นปีงบตามประเภทรายจ่ายย่อย",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndBriefReportByBudgetType.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialReserveStatementYearEndBriefReportByBudgetType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการเงินสรุปการใช้จ่ายช่วงรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_FinancialStatementPeriodReportByPlanType.aspx",
+                "roles": "Pages_SEC_Plan_Report_FinancialStatementPeriodReportByPlanType",
+                "selfclosing": true
+              },
+              {
+                "th_title": "งบรายจ่ายประจำปีรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Report_FinancialDetailGroupReport.aspx?account=",
+                "roles": "Pages_SEC_Plan_Report_FinancialDetailGroupReport",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=งบรายจ่ายประจำปีจำแนกตามแผนงาน (ตรวจรับ) url=Pages_SEC_Plan_Report_FinancialSummarizeReportByPlanType.aspx?account= roles=Pages_SEC_Plan_Report_FinancialSummarizeReportByPlanType _>"
+                }
+              },
+              {
+                "item": {
+                  "comment5": "<siteMapNode th_title=รายงานการกันเงินและแผนการใช้จ่ายเหลื่อมปี url=Pages_FIN_Finance_Report_ReserveBudgetForecastReport.aspx roles=Pages_FIN_Finance_Report_ReserveBudgetForecastReport _>"
+                }
+              },
+              {
+                "th_title": "รายงานผลการเบิกจ่ายงบบริหารงานบุคคล",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_PlanCoreFinancialByQuarterReport.aspx",
+                "roles": "Pages_FIN_Finance_Report_PlanCoreFinancialByQuarterReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการแจ้งเตือน e-mail ทางการเงิน",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Report_FinancialUserNotificationMailReport.aspx",
+                "roles": "Pages_FIN_Finance_Report_FinancialUserNotificationMailReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการนำส่งค่ารักษาพยาบาล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_MedicalReimbursementSendPaymentReport.aspx",
+                "roles": "Pages_SEC_HR_Report_MedicalReimbursementSendPaymentReport",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "การบันทึกค่าทางการเงิน",
+            "en_title": "",
+            "url": "Finance_GeneralExpenseApprove.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "บันทึกการชำระเงิน",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewPaymentRecordList.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewPaymentRecordList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกการตัดงบประมาณทางตรง",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewDirectExpenseMemoFormList.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewDirectExpenseMemoFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกวันคำนวณงบประมาณ",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_SelectPlanForStatementCalculationDateList.aspx",
+                "roles": "Pages_FIN_Finance_Operate_SelectPlanForStatementCalculationDateList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แก้ไขวันยกเลิกใบขอซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_EditDeniedRequestFormPlanViewDate.aspx",
+                "roles": "Pages_FIN_Finance_Operate_EditDeniedRequestFormPlanViewDate",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แก้ไขวันตีคืนงบใบขออนุมัติซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_EditReturnBudgetDateFromApproveForm.aspx",
+                "roles": "Pages_FIN_Finance_Operate_EditReturnBudgetDateFromApproveForm",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกการคืนงบประมาณแบบ 2 ยอด",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleAsBudgetFormList.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleAsBudgetFormList",
+                "selfclosing": true
+              }
+            ]
+          }
+        ],
+        "comment": "<siteMapNode th_title=การดำเนินการ url=Finance_Operation.SiteMapGroup roles= >",
+        "comment1": "<siteMapNode th_title=รายการขออนุมัติกันเงินไว้เบิกจ่ายเหลื่อมปี url=Pages_FIN_Finance_Operate_ViewReserveBudgetFormList.aspx roles=Pages_FIN_Finance_Operate_ViewReserveBudgetFormList _>",
+        "comment2": "<siteMapNode th_title=รายงานการกันเงินลอยไว้เบิกจ่ายเหลื่อมปี url=Pages_FIN_Finance_Operate_ViewUndefineReserveBudgetList.aspx roles=Pages_FIN_Finance_Operate_ViewUndefineReserveBudgetList _>",
+        "comment3": "<siteMapNode th_title=บันทึกเงินเหลือจ่ายสิ้นปีงบประมาณ url=Pages_FIN_Finance_Operate_EditProtectBudget.aspx roles=Pages_FIN_Finance_Operate_EditProtectBudget _>",
+        "comment4": "<siteMapNode th_title=บันทึกรายการฝากงบประมาณ url=Pages_FIN_Finance_Operate_SelectPlanForEditStatementTemporaryInvolveList.aspx roles=Pages_FIN_Finance_Operate_SelectPlanForEditStatementTemporaryInvolveList  _>",
+        "comment5": "<siteMapNode th_title=จัดการรายการฝากงบประมาณ url=Pages_FIN_Finance_Operate_ViewPlanStatementTemporaryInvolveList.aspx roles=Pages_FIN_Finance_Operate_ViewPlanStatementTemporaryInvolveList  _>",
+        "comment6": " <siteMapNode th_title=ใบยืมเงินทดรอง(พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormList.aspx roles=Pages_FIN_Finance_Operate_ViewProcureLoaningMemoFormList  _>\n        <siteMapNode th_title=ใบเบิกเงินสำรองจ่าย(พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormList.aspx roles=Pages_FIN_Finance_Operate_ViewProcureReimbursementMemoFormList  _>\n         <siteMapNode th_title=ใบคืนเงินทดรองครั้งที่1_คืนเงินเหลือจ่าย(พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormList.aspx roles=Pages_FIN_Finance_Operate_ViewProcureSettleReceiptFormList  _>\n        <siteMapNode th_title=ใบคืนเงินทดรองครั้งที่2_นำส่งใบสำคัญ (พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList.aspx roles=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList  _>\n     <siteMapNode th_title=ใบคืนเงินทดรอง(พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList.aspx roles=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormList  _>",
+        "comment7": "<siteMapNode th_title=อนุมัติใบคืนเงินทดรอง(พัสดุ) url=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormListForApproval.aspx roles=Pages_FIN_Finance_Operate_ViewProcureSettleMemoFormListForApproval  _>",
+        "comment8": "<_siteMapNode>"
+      },
+
+      {
+        "th_title": "งานบุคลากร",
+        "en_title": "",
+        "description": "HR",
+        "url": "Pages_SEC_HR_MainHRPage.aspx",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "ข้อมูลบุคลากร",
+            "en_title": "",
+            "url": "HR_StaffInformation.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "รายการสัญญาจ้างงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewEmploymentContractList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewEmploymentContractList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ข้อมูลพื้นฐานบุคลากร url=Pages_SEC_HR_Operate_ViewStaffInformationList.aspx roles=Pages_SEC_HR_Operate_ViewStaffInformationList _>"
+                }
+              },
+              {
+                "th_title": "ข้อมูลที่อยู่",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffAddressesList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffAddressesList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลครอบครัว",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffFamilyList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffFamilyList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการศึกษา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffEducationList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffEducationList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการฝึกอบรมรายคน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffDevelopmentList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffDevelopmentList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการฝึกอบรมรายคนในอดีต",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffPastDevelopmentList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffPastDevelopmentList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการรับเครื่องราช ฯ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffInsigniaList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffInsigniaList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ประวัติการทำงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffWorkHistoryList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffWorkHistoryList",
+                "selfclosing": true
+              }
+            ],
+            "comment": "<siteMapNode th_title=ข้อมูลเงินเดือน url=Pages_SEC_HR_Operate_EditStaffSalaryList.aspx roles=Pages_SEC_HR_Operate_EditStaffSalaryList _>",
+            "comment1": "<siteMapNode th_title=เอกสารการประเมินผลงานบุคคล url=Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx roles=Pages_SEC_HR_Operate_ViewHREvaluationFormList _>"
+          },
+          {
+            "th_title": "การปฏิบัติราชการ",
+            "en_title": "",
+            "url": "HR_WorkAttendance.SiteMapGroup",
+            "roles": "",
+            "comment": "<siteMapNode th_title=บันทึกการมารายวัน url=Pages_SEC_HR_Operate_EditDailyAttendance.aspx roles=Pages_SEC_HR_Operate_EditDailyAttendance _>",
+            "comment1": "<siteMapNode th_title=ข้อมูลทดสอบ Finger url=Pages_SEC_HR_Test_CheckInOutPage.aspx roles=Pages_SEC_HR_Test_CheckInOutPage _>",
+            "siteMapNode": [
+              {
+                "th_title": "ตรวจสอบเอกสาร(บุคคล)",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewFormForApprovalByHR.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewFormForApprovalByHR",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติเอกสารงานบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHRFormForApprove.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewHRFormForApprove",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติเอกสารการประเมินผลงานบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormForApprove.aspx?t=20",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormForApprove",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=อนุมัติผลการทำงานกะพิเศษ url=Pages_SEC_HR_Operate_ApproveWorkShiftExtraAllowancePage.aspx roles=Pages_SEC_HR_Operate_ApproveWorkShiftExtraAllowancePage _>"
+                }
+              },
+              {
+                "th_title": "ข้อมูลกะการทำงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffWorkShiftList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffWorkShiftList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการมาปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffWorkAttendanceList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffWorkAttendanceList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอลงเวลามาปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบลา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewLeaveList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewLeaveList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ใบขอทำงานล่วงเวลา url=Pages_SEC_HR_Operate_ViewOverTimeRequestFormList.aspx roles=Pages_SEC_HR_Operate_ViewOverTimeRequestFormList _>"
+                }
+              },
+              {
+                "th_title": "ใบขอไปราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewOutsideDutyGroupList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewOutsideDutyGroupList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอฝึกอบรม",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewDevelopmentRecordGroupList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewDevelopmentRecordGroupList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ใบขอช่วยราชการ url=Pages_SEC_HR_Operate_ViewSecondmentList.aspx roles=Pages_SEC_HR_Operate_ViewSecondmentList _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ใบขอสลับกะการทำงาน url=Pages_SEC_HR_Operate_ViewWorkShiftSwitchFormList.aspx roles=Pages_SEC_HR_Operate_ViewWorkShiftSwitchFormList _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ใบขอยกเลิกวันลา url=Pages_SEC_HR_Operate_ViewLeaveCancellationFormList.aspx roles=Pages_SEC_HR_Operate_ViewLeaveCancellationFormList _>"
+                }
+              },
+              {
+                "th_title": "ปรับปรุงเวลามาปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ManualAdjustDailyAttendance.aspx",
+                "roles": "Pages_SEC_HR_Operate_ManualAdjustDailyAttendance",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ปรับปรุงเวลาปฏิบัติราชการอัตโนมัติ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_AutoAdjustDailyAttendance.aspx",
+                "roles": "Pages_SEC_HR_Operate_AutoAdjustDailyAttendance",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ปรับปรุงผลการทำงานล่วงเวลา url=Pages_SEC_HR_Operate_ManualAdjustOverTimeResult.aspx roles=Pages_SEC_HR_Operate_ManualAdjustOverTimeResult _>"
+                }
+              },
+              {
+                "th_title": "บันทึกวันหยุดราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHolidayList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewHolidayList",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=บันทึกหลักสูตรฝึกอบรม url=Pages_SEC_HR_Operate_ViewSyllabusesList.aspx roles=Pages_SEC_HR_Operate_ViewSyllabusesList _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ต้นทุนการฝึกอบรม url=Pages_SEC_HR_Operate_ViewDevelopmentRecordGroupCostList.aspx roles=Pages_SEC_HR_Operate_ViewDevelopmentRecordGroupCostList _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ข้อมูลตำแหน่งงาน(JD) url=Pages_SEC_HR_Operate_ViewJobPositionList.aspx roles=Pages_SEC_HR_Operate_ViewJobPositionList _>"
+                }
+              },
+              {
+                "th_title": "ข้อมูลตำแหน่งงาน(JD)",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewJobDescriptionList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewJobDescriptionList",
+                "selfclosing": true
+              }
+            ],
+            "comment2": "<siteMapNode th_title=ปรับปรุงการมาปฏิบัติราชการ url=Pages_SEC_HR_Operate_EditDailyAttendanceListview.aspx roles=Pages_SEC_HR_Operate_EditDailyAttendanceListview _>"
+          },
+          {
+            "th_title": "รายงานการปฏิบัติราชการ",
+            "en_title": "",
+            "url": "HR_HRWorkAttendanceReport.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ข้อมูลการมาปฏิบัติราชการรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_DailyAttendanceMonthlyReport.aspx",
+                "roles": "Pages_SEC_HR_Report_DailyAttendanceMonthlyReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "สรุปการมาปฏิบัติราชการรายบุคคลรายเดือน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_IndividualMonthlyWorkAttendanceReport.aspx",
+                "roles": "Pages_SEC_HR_Report_IndividualMonthlyWorkAttendanceReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "สรุปการมาปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_PeriodWorkAttendanceReport.aspx",
+                "roles": "Pages_SEC_HR_Report_PeriodWorkAttendanceReport",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=สรุปการมาปฏิบัติราชการแบบจำนวนครั้ง url=Pages_SEC_HR_Report_PeriodWorkAttendanceReportByTime.aspx roles=Pages_SEC_HR_Report_PeriodWorkAttendanceReportByTime _>"
+                }
+              },
+              {
+                "th_title": "ข้อมูลการลา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_LeaveReport.aspx",
+                "roles": "Pages_SEC_HR_Report_LeaveReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลการไปราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_OutsideDutyGroupReport.aspx",
+                "roles": "Pages_SEC_HR_Report_OutsideDutyGroupReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการฝึกอบรมบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_DevelopmentRecordReport.aspx",
+                "roles": "Pages_SEC_HR_Report_DevelopmentRecordReport",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ข้อมูลการช่วยราชการ url=Pages_SEC_HR_Report_SecondmentReport.aspx roles=Pages_SEC_HR_Report_SecondmentReport _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=รายงานผลการทำงานล่วงเวลา url=Pages_SEC_HR_Report_OverTimeResultReportList.aspx roles=Pages_SEC_HR_Report_OverTimeResultReportList _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=การทำงานล่วงเวลารายเดือน url=Pages_SEC_HR_Report_OverTimeReportByMonth.aspx roles=Pages_SEC_HR_Report_OverTimeReportByMonth _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=สรุปจ่ายการทำงานล่วงเวลารายเดือน url=Pages_SEC_HR_Report_OverTimeSummarizeReport.aspx roles=Pages_SEC_HR_Report_OverTimeSummarizeReport _>"
+                }
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=รายงานยอดการทำงานกะพิเศษ url=Pages_SEC_HR_Report_WorkShiftExtraAllowanceReport.aspx roles=Pages_SEC_HR_Report_WorkShiftExtraAllowanceReport _>"
+                }
+              },
+              {
+                "th_title": "รายงานวันลาคงเหลือ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_RemainLeaveDayReport.aspx",
+                "roles": "Pages_SEC_HR_Report_RemainLeaveDayReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ข้อมูลดิบจากเครื่องแสกนลายนิ้วมือ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_ViewFingerPrintDBRawData.aspx",
+                "roles": "Pages_SEC_HR_Report_ViewFingerPrintDBRawData",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ผลการอ่านค่าจากเครื่องแสกนลายนิ้วมือ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_FingerPrintDBReaderResultReport.aspx",
+                "roles": "Pages_SEC_HR_Report_FingerPrintDBReaderResultReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "การอ่านค่าจากเครื่องแสกนลายนิ้วมือรายบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_SpecificFingerPrintDBReaderPage.aspx",
+                "roles": "Pages_SEC_HR_Operate_SpecificFingerPrintDBReaderPage",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ค้นหาผลการปฏิบัติราชการไม่ปรกติ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_UnsualStaffWorkAttendanceReport.aspx",
+                "roles": "Pages_SEC_HR_Report_UnsualStaffWorkAttendanceReport",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "รายงาน",
+            "en_title": "",
+            "url": "HR_HRReport.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "รายงานสรุปข้อมูลบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_IndividualGeneralHRDataReport.aspx",
+                "roles": "Pages_SEC_HR_Report_IndividualGeneralHRDataReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานข้อมูลเบื้องต้นบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_BasicStaffInformationReport.aspx",
+                "roles": "Pages_SEC_HR_Report_BasicStaffInformationReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานบุคลากรแยกตามหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_StaffByDepartmentReport.aspx",
+                "roles": "Pages_SEC_HR_Report_StaffByDepartmentReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานบุคลากรแยกตามประเภทบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_StaffByJobPositionTypeReport.aspx",
+                "roles": "Pages_SEC_HR_Report_StaffByJobPositionTypeReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการรับเครื่องราช ฯ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_InsigniaReportByRank.aspx",
+                "roles": "Pages_SEC_HR_Report_InsigniaReportByRank",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานการศึกษาบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_EducationRecordReport.aspx",
+                "roles": "Pages_SEC_HR_Report_EducationRecordReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานข้อมูลที่อยู่",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_AddressReport.aspx",
+                "roles": "Pages_SEC_HR_Report_AddressReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานข้อมูลผู้รับผิดชอบโครงการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_StaffByPlanCoreReport.aspx",
+                "roles": "Pages_SEC_HR_Report_StaffByPlanCoreReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานผลการประเมินผลงานบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_HREvaluationResultReport.aspx",
+                "roles": "Pages_SEC_HR_Report_HREvaluationResultReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานอัตรากำลังแยกตามหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_ManpowerByDepartment.aspx",
+                "roles": "Pages_SEC_HR_Report_ManpowerByDepartment",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานเจ้าหน้าที่ลาออก",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_StaffResignedReport.aspx",
+                "roles": "Pages_SEC_HR_Report_StaffResignedReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายงานอัตรากำลังแยกรายเดือน_ไตรมาส",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Report_ManpowerMonthlyReport.aspx",
+                "roles": "Pages_SEC_HR_Report_ManpowerMonthlyReport",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=ตั้งค่าระบบ url=HR_HRSetup.SiteMapGroup roles= >\n        <siteMapNode th_title=รหัสความปลอดภัย url=Pages_SEC_HR_Operate_HRSecureCodeForm.aspx roles=Pages_SEC_HR_Operate_HRSecureCodeForm _>\n        <siteMapNode th_title=ตั้งค่าคำนำหน้านาม url=Pages_SEC_HR_Setup_NameTitleSetup.aspx roles=Pages_SEC_HR_Setup_NameTitleSetup _>\n        <siteMapNode th_title=ตั้งค่าสัญชาติ url=Pages_SEC_HR_Setup_RaceSetup.aspx roles=Pages_SEC_HR_Setup_RaceSetup _>\n        <siteMapNode th_title=ตั้งค่าเชื้อชาติ url=Pages_SEC_HR_Setup_NationalitySetup.aspx roles=Pages_SEC_HR_Setup_NationalitySetup _>\n        <siteMapNode th_title=ตั้งค่าศาสนา url=Pages_SEC_HR_Setup_ReligionSetup.aspx roles=Pages_SEC_HR_Setup_ReligionSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทญาติ url=Pages_SEC_HR_Setup_FamilialRelationshipSetup.aspx roles=Pages_SEC_HR_Setup_FamilialRelationshipSetup _>\n        <siteMapNode th_title=ตั้งค่าหน่วยงาน url=Pages_SEC_HR_Setup_HRDepartmentSetup.aspx roles=Pages_SEC_HR_Setup_HRDepartmentSetup _>\n        <siteMapNode th_title=ตั้งค่าระดับตำแหน่ง url=Pages_SEC_HR_Setup_JobPositionLevelSetup.aspx roles=Pages_SEC_HR_Setup_JobPositionLevelSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทกลุ่มตำแหน่ง url=Pages_SEC_HR_Setup_JobPositionGroupSetup.aspx roles=Pages_SEC_HR_Setup_JobPositionGroupSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทพนักงาน url=Pages_SEC_HR_Setup_JobPositionTypeSetup.aspx roles=Pages_SEC_HR_Setup_JobPositionTypeSetup _>\n        <siteMapNode th_title=ตั้งค่าตำแหน่งงาน url=Pages_SEC_HR_Setup_JobFunctionalPositionSetup.aspx roles=Pages_SEC_HR_Setup_JobFunctionalPositionSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทที่อยู่ url=Pages_SEC_HR_Setup_AddressTypeSetup.aspx roles=Pages_SEC_HR_Setup_AddressTypeSetup _>\n        <siteMapNode th_title=ตั้งค่าลักษณะที่อยู่ url=Pages_SEC_HR_Setup_AddressStyleSetup.aspx roles=Pages_SEC_HR_Setup_AddressStyleSetup _>\n        <siteMapNode th_title=ตั้งค่าระดับวุฒิการศึกษา url=Pages_SEC_HR_Setup_EducationLevelSetup.aspx roles=Pages_SEC_HR_Setup_EducationLevelSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทเครื่องราช ฯ url=Pages_SEC_HR_Setup_InsigniaRankSetup.aspx roles=Pages_SEC_HR_Setup_InsigniaRankSetup _>\n        <siteMapNode th_title=ตั้งค่าประเภทการลา url=Pages_SEC_HR_Setup_LeaveTypeSetup.aspx roles=Pages_SEC_HR_Setup_LeaveTypeSetup _>\n        <siteMapNode th_title=ตั้งค่าจำนวนวันลา url=Pages_SEC_HR_Setup_LeaveTypeLimitSetup.aspx roles=Pages_SEC_HR_Setup_LeaveTypeLimitSetup _>\n        <siteMapNode th_title=ตั้งค่ากะการทำงาน url=Pages_SEC_HR_Setup_WorkShiftDataSetup.aspx roles=Pages_SEC_HR_Setup_WorkShiftDataSetup _>\n        <siteMapNode th_title=ตั้งค่าเงินพิเศษประจำกะ url=Pages_SEC_HR_Setup_WorkShiftExtraAllowanceSetup.aspx roles=Pages_SEC_HR_Setup_WorkShiftExtraAllowanceSetup _>\n        <siteMapNode th_title=ตั้งค่าตัวคูณ OT url=Pages_SEC_HR_Setup_OverTimeMultiplyRateSetup.aspx roles=Pages_SEC_HR_Setup_OverTimeMultiplyRateSetup _>\n        <siteMapNode th_title=ตั้งค่ายอดเงิน OT ต่อชั่วโมง url=Pages_SEC_HR_Setup_StaffOverTimeRatePerHourList.aspx roles=Pages_SEC_HR_Setup_StaffOverTimeRatePerHourList _>\n        <siteMapNode th_title=ตั้งค่าการเชื่อมต่อเครื่องแสกนลายนิ้วมือ url=Pages_SEC_HR_Setup_FingerPrintDBConnectorSetup.aspx roles=Pages_SEC_HR_Setup_FingerPrintDBConnectorSetup _>\n        <siteMapNode th_title=ตั้งค่าเครื่องแสกนลายนิ้วมือ url=Pages_SEC_HR_Setup_FingerPrintReaderSensorSetup.aspx roles=Pages_SEC_HR_Setup_FingerPrintReaderSensorSetup _>\n        <siteMapNode th_title=ตั้งค่าสิทธิการเข้าถึงข้อมูลหน่วยงาน url=Pages_SEC_HR_Setup_HRDepartmentStaffPermissionForHRSetup.aspx roles=Pages_SEC_HR_Setup_HRDepartmentStaffPermissionForHRSetup _>\n        <siteMapNode th_title=ตั้งค่าจำนวนวันลาย้อนหลังคงเหลือ url=Pages_SEC_HR_Setup_LeaveArchievedRecordOverrideSetup.aspx roles=Pages_SEC_HR_Setup_LeaveArchievedRecordOverrideSetup _>\n        <siteMapNode th_title=ตั้งค่าหัวหน้าหน่วยงาน url=Pages_SEC_HR_Setup_UnitChiefSetup.aspx roles=Pages_SEC_HR_Setup_UnitChiefSetup _>\n        <siteMapNode th_title=ตั้งค่าหัวหน้างานรายบุคคล url=Pages_SEC_HR_Setup_IndividualBossSetup.aspx roles=Pages_SEC_HR_Setup_IndividualBossSetup _>\n        <siteMapNode th_title=ตั้งค่าผู้ประเมินรายบุคคล url=Pages_SEC_HR_Setup_EvaluatorSetup.aspx roles=Pages_SEC_HR_Setup_EvaluatorSetup _>\n        <siteMapNode th_title=ตั้งค่าการบันทึกเวลาปฏิบัติราชการอัตโนมัติ url=Pages_SEC_HR_Setup_AutoInsertDailyAttendanceSetup.aspx roles=Pages_SEC_HR_Setup_AutoInsertDailyAttendanceSetup _>\n        <siteMapNode th_title=ตั้งค่าแจ้งเตือนการขาดงานรายสัปดาห์ url=Pages_SEC_HR_Setup_SendWeeklyAbsentNotificationEMailSetup.aspx roles=Pages_SEC_HR_Setup_SendWeeklyAbsentNotificationEMailSetup _>\n        <siteMapNode th_title=ตั้งค่าคะแนนประเมินประจำปี 59 60 url=Pages_SEC_HR_Setup_TempYearlyEvaluation5859ScoreSetup.aspx roles=Pages_SEC_HR_Setup_TempYearlyEvaluation5859ScoreSetup _>\n        <siteMapNode th_title=ตั้งค่าน้ำหนักการประเมินประจำปี url=Pages_SEC_HR_Setup_PerformanceYearlyEvaluationWeightSetup.aspx roles=Pages_SEC_HR_Setup_PerformanceYearlyEvaluationWeightSetup _>\n        <siteMapNode th_title=ตั้งค่าหัวข้อการประเมินความสามารถ url=Pages_SEC_HR_Setup_CompetencyTopicItemSetup.aspx roles=Pages_SEC_HR_Setup_CompetencyTopicItemSetup _>\n        <siteMapNode th_title=ตั้งค่าระดับความสามารถที่คาดหวัง url=Pages_SEC_HR_Setup_CompetencyEvaluationExpectScoreSetup.aspx roles=Pages_SEC_HR_Setup_CompetencyEvaluationExpectScoreSetup _>\n        <siteMapNode th_title=ตั้งค่าตัวชี้วัดประจำตำแหน่ง url=Pages_SEC_HR_Setup_JobPositionKeyCompetencySetup.aspx roles=Pages_SEC_HR_Setup_JobPositionKeyCompetencySetup _>\n      <_siteMapNode>"
+            }
+          },
+          {
+            "th_title": "ข้อมูลองค์กรและหน่วยงาน",
+            "en_title": "",
+            "url": "HR_HRSetup_OrganizationData.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_HRDepartmentSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_HRDepartmentSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าตำแหน่ง",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobPositionSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobPositionSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าระดับตำแหน่ง",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobPositionLevelSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobPositionLevelSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเภทตำแหน่ง",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobPositionGroupSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobPositionGroupSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเภทผู้ปฏิบัติงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobPositionTypeSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobPositionTypeSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าหัวหน้าหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_UnitChiefSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_UnitChiefSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าหัวหน้างานรายบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_IndividualBossSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_IndividualBossSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าสิทธิการเข้าถึงข้อมูลหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_HRDepartmentStaffPermissionForHRSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_HRDepartmentStaffPermissionForHRSetup",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "ข้อมูลบุคลากร",
+            "en_title": "",
+            "url": "HR_HRSetup_PersonalData.SiteMapGroup",
+            "roles": "",
+            "comment": "<siteMapNode th_title=รหัสความปลอดภัย url=Pages_SEC_HR_Operate_HRSecureCodeForm.aspx roles=Pages_SEC_HR_Operate_HRSecureCodeForm _>",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าคำนำหน้านาม",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_NameTitleSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_NameTitleSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าสัญชาติ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_RaceSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_RaceSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าเชื้อชาติ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_NationalitySetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_NationalitySetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าศาสนา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_ReligionSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_ReligionSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเภทญาติ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_FamilialRelationshipSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_FamilialRelationshipSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเภทที่อยู่",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_AddressTypeSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_AddressTypeSetup",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment30": "<siteMapNode th_title=ตั้งค่าลักษณะที่อยู่ url=Pages_SEC_HR_Setup_AddressStyleSetup.aspx roles=Pages_SEC_HR_Setup_AddressStyleSetup _>"
+                }
+              },
+              {
+                "th_title": "ตั้งค่าระดับวุฒิการศึกษา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_EducationLevelSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_EducationLevelSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเภทเครื่องราช ฯ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_InsigniaRankSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_InsigniaRankSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าลายเซ็นต์บุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_StaffSignatureSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_StaffSignatureSetup",
+                "selfclosing": true
+              }
+            ],
+            "comment1": "<siteMapNode th_title=ตั้งค่าประเภทการฝึกอบรม url=Pages_SEC_HR_Setup_DevelopmentTypeSetup.aspx roles=Pages_SEC_HR_Setup_DevelopmentTypeSetup _>"
+          },
+          {
+            "th_title": "ข้อมูลเวลาการปฏิบัติงาน",
+            "en_title": "",
+            "url": "HR_HRSetup_TimeAttendanceData.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าประเภทการลา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_LeaveTypeSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_LeaveTypeSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าจำนวนวันลา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_LeaveTypeLimitSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_LeaveTypeLimitSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่ากะการทำงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_WorkShiftDataSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_WorkShiftDataSetup",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ตั้งค่าเงินพิเศษประจำกะ url=Pages_SEC_HR_Setup_WorkShiftExtraAllowanceSetup.aspx roles=Pages_SEC_HR_Setup_WorkShiftExtraAllowanceSetup _>\n        <siteMapNode th_title=ตั้งค่าตัวคูณ OT url=Pages_SEC_HR_Setup_OverTimeMultiplyRateSetup.aspx roles=Pages_SEC_HR_Setup_OverTimeMultiplyRateSetup _>\n        <siteMapNode th_title=ตั้งค่ายอดเงิน OT ต่อชั่วโมง url=Pages_SEC_HR_Setup_StaffOverTimeRatePerHourList.aspx roles=Pages_SEC_HR_Setup_StaffOverTimeRatePerHourList _>"
+                }
+              },
+              {
+                "th_title": "ตั้งค่าการเชื่อมต่อเครื่องแสกนลายนิ้วมือ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_FingerPrintDBConnectorSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_FingerPrintDBConnectorSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าเครื่องแสกนลายนิ้วมือ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_FingerPrintReaderSensorSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_FingerPrintReaderSensorSetup",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "ข้อมูลการประเมินผล",
+            "en_title": "",
+            "url": "HR_HRSetup_EvaluationData.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าตำแหน่งงาน (สำหรับประเมินผลงานบุคลากร)",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobFunctionalPositionSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobFunctionalPositionSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าผู้ประเมินรายบุคคล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_EvaluatorSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_EvaluatorSetup",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=ตั้งค่าคะแนนประเมินประจำปี 59 60 url=Pages_SEC_HR_Setup_TempYearlyEvaluation5859ScoreSetup.aspx roles=Pages_SEC_HR_Setup_TempYearlyEvaluation5859ScoreSetup _>"
+                }
+              },
+              {
+                "th_title": "ตั้งค่าน้ำหนักการประเมินประจำปี",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_PerformanceYearlyEvaluationWeightSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_PerformanceYearlyEvaluationWeightSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าหัวข้อการประเมินความสามารถ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_CompetencyTopicItemSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_CompetencyTopicItemSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าระดับความสามารถที่คาดหวัง",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_CompetencyEvaluationExpectScoreSetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_CompetencyEvaluationExpectScoreSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าตัวชี้วัดประจำตำแหน่ง",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Setup_JobPositionKeyCompetencySetup.aspx",
+                "roles": "Pages_SEC_HR_Setup_JobPositionKeyCompetencySetup",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=ผู้ใช้งานทั่วไป url=HR_GeneralUser.SiteMapGroup roles= >\n        <siteMapNode th_title=อนุมัติเอกสารงานบุคคลสำหรับหัวหน้างาน url=Pages_SEC_HR_Operate_ViewHRFormForApproveByUnitChief.aspx roles=Pages_SEC_HR_Operate_ViewHRFormForApproveByUnitChief _>\n        <siteMapNode th_title=ข้อมูลการปฏิบัติราชการ url=Pages_SEC_HR_Operate_ViewIndividualWorkAttendanceList.aspx roles=Pages_SEC_HR_Operate_ViewIndividualWorkAttendanceList _>\n        <siteMapNode th_title=ปรับปรุงผลการทำงานล่วงเวลา url=Pages_SEC_HR_Operate_ManualAdjustOverTimeResult.aspx?user= roles=Pages_SEC_HR_Operate_ManualAdjustOverTimeResult _>\n        <siteMapNode th_title=รายการเบิกค่ารักษาพยาบาล url=Pages_SEC_HR_Operate_ViewMedicalReimbursementList.aspx?user= roles=Pages_SEC_HR_Operate_ViewMedicalReimbursementList _>\n        <siteMapNode th_title=ตรวจสอบสิทธิการเบิกค่ารักษาพยาบาล url=Pages_SEC_HR_Operate_MedicalReimbursementRightCheck.aspx?user= roles=Pages_SEC_HR_Operate_MedicalReimbursementRightCheck _>\n        <siteMapNode th_title=ใบลา url=Pages_SEC_HR_Operate_ViewLeaveList.aspx?user= roles=Pages_SEC_HR_Operate_ViewLeaveList _>\n        <siteMapNode th_title=ใบขอลงเวลามาปฏิบัติราชการ url=Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList.aspx?user= roles=Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList _>\n        "
+            }
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=ข้อมูลกะงาน url=Pages_SEC_HR_Operate_ViewIndividualStaffWorkShift.aspx roles=Pages_SEC_HR_Operate_ViewIndividualStaffWorkShift _>"
+            }
+          },
+          {
+            "item": {
+              "comment": "\n      <_siteMapNode>"
+            }
+          },
+          {
+            "th_title": "ข้อมูลบุคลากร",
+            "en_title": "",
+            "url": "HR_GeneralUser_PersonalData.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ข้อมูลพื้นฐานบุคลากร",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewStaffInformationList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewStaffInformationList",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "ข้อมูลเวลาการปฏิบัติงาน",
+            "en_title": "",
+            "url": "HR_GeneralUser_WorkAttendance.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ข้อมูลการปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewIndividualWorkAttendanceList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewIndividualWorkAttendanceList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอลงเวลามาปฏิบัติราชการ",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList.aspx?user=",
+                "roles": "Pages_SEC_HR_Operate_ViewDailyAttendanceRequestFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบลา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewLeaveList.aspx?user=",
+                "roles": "Pages_SEC_HR_Operate_ViewLeaveList",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "สิทธิและประโยชน์ตอบแทน",
+            "en_title": "",
+            "url": "HR_GeneralUser_MedicalReimbursement.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "รายการเบิกค่ารักษาพยาบาล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewMedicalReimbursementList.aspx?user=",
+                "roles": "Pages_SEC_HR_Operate_ViewMedicalReimbursementList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบสิทธิการเบิกค่ารักษาพยาบาล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_MedicalReimbursementRightCheck.aspx?user=",
+                "roles": "Pages_SEC_HR_Operate_MedicalReimbursementRightCheck",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "การประเมินผล",
+            "en_title": "",
+            "url": "HR_GeneralUser_Evaluation.SiteMapGroup",
+            "roles": "",
+            "comment": "<siteMapNode th_title=เอกสารการประเมินผลงานบุคคล url=Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx roles=Pages_SEC_HR_Operate_ViewHREvaluationFormList _>",
+            "siteMapNode": [
+              {
+                "th_title": "แบบประเมินผลการปฏิบัติงานประจำปี",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx?t=3&o=t",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แบบประเมินต่อสัญญา",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx?t=4&o=t",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แบบประเมินทดลองงาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx?t=5&o=t",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "การประเมินผลหลังการฝึกอบรม",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx?t=1&o=t",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormList",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "th_title": "การอนุมัติ",
+            "en_title": "",
+            "url": "HR_GeneralUser_Approval.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "อนุมัติเอกสารงานบุคคลสำหรับหัวหน้างาน",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHRFormForApproveByUnitChief.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewHRFormForApproveByUnitChief",
+                "selfclosing": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "th_title": "งานสารบรรณ",
+        "en_title": "",
+        "description": "Filing",
+        "url": "Pages_SEC_Filing_MainFilingPage.aspx",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "งานสารบรรณ",
+            "en_title": "",
+            "url": "Filing_FilingDocument.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "กล่องหนังสือ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_FilingHomePage.aspx",
+                "roles": "Pages_SEC_Filing_Operate_FilingHomePage",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือรับภายใน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=20",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือส่งภายใน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=50",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือรับภายนอก",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=10",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือรับภายนอก(ลับ)",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=30",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือส่งภายนอก",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=40",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือส่งภายนอก(ลับ)",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=60",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนคำสั่ง",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=70",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนประกาศ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=90",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนระเบียบ ข้อบังคับ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=110",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "-  ทะเบียนระเบียบคณะกรรมการ สดร.",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?BookId=83",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "-  ทะเบียนข้อบังคับคณะกรรมการ สดร.",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?BookId=84",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "-  ทะเบียนระเบียบ สดร.",
+                "en_title": "",
+                "url": "",
+                "roles": "",
+                "selfclosing": true
+              },
+              {
+                "th_title": "-  ทะเบียนแนวปฏิบัติ สดร.",
+                "en_title": "",
+                "url": "",
+                "roles": "",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนบันทึกความร่วมมือ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx?DocType=100",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนสัญญาระหว่างหน่วยงาน",
+                "en_title": "",
+                "url": "",
+                "roles": "",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือจอง",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewReservedFilingRegisterNumber.aspx",
+                "roles": "Pages_SEC_Filing_Operate_ViewReservedFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ขอเลขหนังสือ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_EditFilingRegisterNumber.aspx",
+                "roles": "Pages_SEC_Filing_Operate_EditFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ประวัติการใช้งาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Report_PersonalAccessLogReport.aspx",
+                "roles": "Pages_SEC_Filing_Report_PersonalAccessLogReport",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แก้ไขวันที่ทะเบียนหนังสือ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_EditFilingDocumentRegisterDate.aspx",
+                "roles": "Pages_SEC_Filing_Operate_EditFilingDocumentRegisterDate",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ทะเบียนหนังสือ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber.aspx",
+                "roles": "Pages_SEC_Filing_Operate_ViewFilingRegisterNumber",
+                "selfclosing": true
+              },
+              {
+                "th_title": "เครือข่ายความร่วมมือ",
+                "en_title": "",
+                "url": "Pages_EIS_CollaborationNetwork_Operate_CollaborationNetwork.aspx",
+                "roles": "Pages_EIS_Operation_Operate_CollaborationNetwork",
+                "selfclosing": true
+              }
+            ]
+          },
+          {
+            "item": {
+              "comment": "<siteMapNode th_title=รายงาน url=Filing_FilingReport.SiteMapGroup roles= >\n      <_siteMapNode>"
+            }
+          },
+          {
+            "th_title": "คู่มือ",
+            "en_title": "",
+            "url": "Filing_Manual.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "1. ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_MainFilingPage.aspx#secondtab?",
+                "roles": "",
+                "siteMapNode": [
+                  {
+                    "th_title": "1.1 ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ พ.ศ. 2526",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule1_1.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.2 ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ (ฉบับที่ 2) พ.ศ. 2548",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule1_2.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.3 ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ (ฉบับที่ 3) พ.ศ. 2561",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule1_3.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.4 ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ (ฉบับที่ 4) พ.ศ. 2564",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule1_4.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.5 แบบฟอร์มท้ายระเบียบสำนักนายกรัฐมนตรี ว่าด้วยงานสารบรรณ",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingTemplateRule1_4.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.6 ภาคผนวกท้ายระเบียบ",
+                    "en_title": "",
+                    "roles": "",
+                    "siteMapNode": [
+                      {
+                        "th_title": "1.6.1 ภาคผนวก 1",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_1.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.2 ภาคผนวก 2",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_2.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.3 ภาคผนวก 3",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_3.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.4 ภาคผนวก 4",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_4.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.5 ภาคผนวก 5",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_5.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.6 ภาคผนวก 6",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_6.pdf'); void(0);",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "1.6.7 ภาคผนวก 7",
+                        "en_title": "",
+                        "url": "javascript:window.open('Resource_NaritFilingAppendix1_5_7.pdf'); void(0);",
+                        "roles": ""
+                      }
+                    ]
+                  },
+                  {
+                    "th_title": "1.7 คำอธิบายท้ายระเบียบ",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingAppendixRule1_6.pdf'); void(0);",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "1.8 คำอธิบายการพิมพ์หนังสือราชการภาษาไทยด้วยโปรแกรมการพิมพ์",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingAnnouncement1_7.pdf'); void(0);",
+                    "roles": ""
+                  }
+                ]
+              },
+              {
+                "th_title": "2. ระเบียบว่าด้วยการรักษาความลับของทางราชการ",
+                "en_title": "",
+                "roles": "",
+                "siteMapNode": [
+                  {
+                    "th_title": "2.1 ระเบียบว่าด้วยการรักษาความลับของทางราชการ พ.ศ. 2544",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule2_1.pdf')",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "2.2 ระเบียบว่าด้วยการรักษาความลับของทางราชการ (ฉบับที่ 2) พ.ศ. 2561",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingRule2_2.pdf')",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "2.3 ประกาศสำนักนายกรัฐมนตรี เรื่อง กำหนดแบบเอกสารตามระเบียบว่าด้วยการรักษาความลับของทางราชการ พ.ศ. 2544",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingAnnouncement2_3.pdf')",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "2.4 ประกาศสำนักนายกรัฐมนตรี เรื่อง กำหนดแบบเอกสารตามระเบียบว่าด้วยการรักษาความลับของทางราชการ (ฉบับที่ 2) พ.ศ. 2561",
+                    "en_title": "",
+                    "url": "javascript:window.open('Resource_NaritFilingAnnouncement2_4.pdf')",
+                    "roles": ""
+                  }
+                ]
+              },
+              {
+                "th_title": "3. คู่มือระบบ e-document",
+                "en_title": "",
+                "url": "javascript:window.open('Resource_NaritFilingManual.pdf')",
+                "roles": "",
+                "#text": "\n        "
+              },
+              {
+                "th_title": "4. แบบฟอร์ม",
+                "en_title": "",
+                "roles": "",
+                "siteMapNode": [
+                  {
+                    "th_title": "1. แบบหนังสือภายนอก",
+                    "en_title": "",
+                    "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate1.dotx",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "2. แบบหนังสือภายใน",
+                    "en_title": "",
+                    "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate2.docx",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "3. แบบหนังสือประทับตรา",
+                    "en_title": "",
+                    "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate3.docx",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "4. แบบหนังสือราชการภาษาอังกฤษ",
+                    "en_title": "",
+                    "roles": "",
+                    "siteMapNode": [
+                      {
+                        "th_title": "4.1  แบบหนังสือราชการภาษาอังกฤษ แบบพิธีการ แบบที่ 1",
+                        "en_title": "",
+                        "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate4_1.docx",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "4.2  แบบหนังสือราชการภาษาอังกฤษ แบบพิธีการ แบบที่ 2",
+                        "en_title": "",
+                        "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate4_2.docx",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "4.3 แบบหนังสือราชการภาษาอังกฤษ แบบที่ 3",
+                        "en_title": "",
+                        "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate4_3.docx",
+                        "roles": ""
+                      },
+                      {
+                        "th_title": "4.4 แบบหนังสือราชการภาษาอังกฤษ แบบที่ 4",
+                        "en_title": "",
+                        "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate4_4.docx",
+                        "roles": ""
+                      }
+                    ]
+                  },
+                  {
+                    "th_title": "5. แบบบันทึก",
+                    "en_title": "",
+                    "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate5.docx",
+                    "roles": ""
+                  },
+                  {
+                    "th_title": "6. แบบประกอบการเสนอทำบันทึกข้อตกลงความร่วมมือ",
+                    "en_title": "",
+                    "url": "Pages_SEC_Filing_Resource_NaritFilingTemplate6.docx",
+                    "roles": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "th_title": "ตั้งค่า",
+            "en_title": "",
+            "url": "Filing_FilingSetup.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่าสมุดทะเบียน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingRegisterBookSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingRegisterBookSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าข้อสั่งการมาตรฐาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingGeneralOrderSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingGeneralOrderSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่า Admin ในหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_HRDepartmentStaffPermissionForFilingSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_HRDepartmentStaffPermissionForFilingSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าสิทธิการเข้าถึงของแต่ละหน่วยงาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingHRDepartmentPermissionSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingHRDepartmentPermissionSetup",
+                "selfclosing": true
+              },
+              {
+                "item": {
+                  "comment": "<siteMapNode th_title=เลขหนังสือภายในประจำหน่วยงาน url=Pages_SEC_Filing_Setup_DepartmentInternalFilingNumberSetup.aspx roles=Pages_SEC_Filing_Setup_DepartmentInternalFilingNumberSetup _>"
+                }
+              },
+              {
+                "th_title": "ตั้งค่า Tag โครงการ",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingProjectSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingProjectSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าคำลงท้ายมาตรฐาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingPostscriptSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingPostscriptSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าความเห็นมาตรฐาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingOpinionSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingOpinionSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าชื่อผู้ส่ง(จาก)มาตรฐาน",
+                "en_title": "",
+                "url": "Pages_SEC_Filing_Setup_FilingSendFormSetup.aspx",
+                "roles": "Pages_SEC_Filing_Setup_FilingSendFormSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าประเทศ (เครือข่ายความร่วมมือ)",
+                "en_title": "",
+                "url": "Pages_EIS_CollaborationNetwork_Setup_CountrySetup.aspx",
+                "roles": "Pages_EIS_Operation_Setup_CountrySetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าผู้ติดต่อ (เครือข่ายความร่วมมือ)",
+                "en_title": "",
+                "url": "Pages_EIS_CollaborationNetwork_Setup_ContactPersonSetup.aspx",
+                "roles": "Pages_EIS_Operation_Setup_ContactPersonSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่า MOU (เครือข่ายความร่วมมือ)",
+                "en_title": "",
+                "url": "Pages_EIS_CollaborationNetwork_Setup_AgreementSetup.aspx",
+                "roles": "Pages_EIS_CollaborationNetwork_Setup_AgreementSetup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่าที่พัก (เครือข่ายความร่วมมือ)",
+                "en_title": "",
+                "url": "Pages_EIS_CollaborationNetwork_Setup_AccommodationSetup.aspx",
+                "roles": "Pages_EIS_CollaborationNetwork_Setup_AccommodationSetup",
+                "selfclosing": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "th_title": "ผู้ใช้ทั่วไป",
+        "en_title": "",
+        "description": "GeneralUser",
+        "url": "Pages_General_User_MainGeneralUserPage.aspx",
+        "roles": "",
+        "comment": "<siteMapNode th_title=การบริหารงบประมาณ url=GeneralUser_PlanSetUp.SiteMapGroup roles= >\n        <siteMapNode th_title=บันทึกข้อมูลโครงการ(รายการหลัก)ตามหน่วยงาน url=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByDepartment.aspx?user= roles=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByDepartment _>\n       <siteMapNode th_title=บันทึกข้อมูลโครงการ(รายการหลัก)ตามแผนงาน url=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType.aspx?user= roles=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType _>\n     <siteMapNode th_title=บันทึกผลตามแผนการดำเนินงาน url=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType.aspx?t=op&user= roles=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType _>\n        <siteMapNode th_title=บันทึกผลตัวชี้วัดตามประเด็นยุทธศาสตร์ url=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType.aspx?t=pi&user= roles=Pages_SEC_Plan_Operate_SelectViewPlanForActivityByPlanType _>\n        <siteMapNode th_title=การปรับแผนการใช้จ่ายงบประมาณ url=Pages_SEC_Plan_Operate_ViewMonthlyForecastAdjustmentList.aspx?user= roles=Pages_SEC_Plan_Operate_ViewMonthlyForecastAdjustmentList _>\n      <_siteMapNode>",
+        "siteMapNode": [
+          {
+            "th_title": "เอกสารการดำเนินงาน",
+            "en_title": "",
+            "url": "GeneralUser_ExpenseRequest.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ใบเสนอซื้อ_จ้าง",
+                "en_title": "",
+                "url": "Pages_FIN_Procure_Operate_ViewRequestFormList.aspx?user=",
+                "roles": "Pages_FIN_Procure_Operate_ViewRequestFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอใช้งบประมาณ",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseMemoFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseMemoFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบยืมเงินทดรอง",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpensePersonalBorrowFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpensePersonalBorrowFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบเบิกเงินสำรองจ่าย",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewFinancialReimbursementFormList.aspx?user=",
+                "roles": "Pages_FIN_Finance_Operate_ViewFinancialReimbursementFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบคืนเงินทดรอง ครั้งที่1 (คืนเงินเหลือจ่าย)",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewSettleReceiptFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewSettleReceiptFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบคืนเงินทดรอง ครั้งที่2 (นำส่งใบสำคัญ)",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseSettleFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอขยายเวลาคืนเงินยืมทดรองจ่าย",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewGeneralExpenseExtendFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewGeneralExpenseExtendFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "แบบรายงานการเดินทางมาปฏิบัติงาน",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewOutsideDutyReportFormList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewOutsideDutyReportFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการขออนุมัติกันเงินไว้เบิกจ่ายเหลื่อมปี",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewReserveBudgetFormList.aspx?user=",
+                "roles": "Pages_FIN_Finance_Operate_ViewReserveBudgetFormList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ใบขอโอนเปลี่ยนแปลงงบประมาณ",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferList.aspx?user=",
+                "roles": "Pages_SEC_Plan_Operate_ViewPlanItemBudgetTransferList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "รายการเบิกค่ารักษาพยาบาล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewMedicalReimbursementList.aspx",
+                "roles": "Pages_SEC_HR_Operate_ViewMedicalReimbursementList",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบสิทธิการเบิกค่ารักษาพยาบาล",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_MedicalReimbursementRightCheck.aspx",
+                "roles": "Pages_SEC_HR_Operate_MedicalReimbursementRightCheck",
+                "selfclosing": true
+              }
+            ],
+            "comment": "<siteMapNode th_title=เอกสารการประเมินผลงานบุคคล url=Pages_SEC_HR_Operate_ViewHREvaluationFormList.aspx?user= roles=Pages_SEC_HR_Operate_ViewHREvaluationFormList _>"
+          },
+          {
+            "th_title": "ตรวจสอบเอกสาร",
+            "en_title": "",
+            "url": "GeneralUser_ApproveForm.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตรวจสอบเอกสาร(หน.งาน_เจ้าของงบ_ผู้อนุมัติ)",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewFormForApprovalByUnitChief.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewFormForApprovalByUnitChief",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบเอกสาร(ผู้ตรวจสอบ)",
+                "en_title": "",
+                "url": "Pages_SEC_Plan_Operate_ViewFormForApprovalByDocChecker.aspx",
+                "roles": "Pages_SEC_Plan_Operate_ViewFormForApprovalByDocChecker",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตรวจสอบเอกสาร(เลขา)",
+                "en_title": "",
+                "url": "Pages_FIN_Finance_Operate_ViewFormForApprovalBySecretary.aspx",
+                "roles": "Pages_FIN_Finance_Operate_ViewFormForApprovalBySecretary",
+                "selfclosing": true
+              },
+              {
+                "th_title": "อนุมัติเอกสารการประเมินผลงานบุคคล (ผสดร.)",
+                "en_title": "",
+                "url": "Pages_SEC_HR_Operate_ViewHREvaluationFormForApprove.aspx?t=15",
+                "roles": "Pages_SEC_HR_Operate_ViewHREvaluationFormForApprove",
+                "selfclosing": true
+              }
+            ],
+            "comment": "<siteMapNode th_title=เอกสารงานบุคคล(หัวหน้างาน_ผู้มีอำนาจอนุมัติ) url=Pages_SEC_HR_Operate_ViewHRFormForApproveByApprover.aspx roles=Pages_SEC_HR_Operate_ViewHRFormForApproveByApprover _>"
+          }
+        ],
+        "comment1": "   <siteMapNode th_title=รายงานแผนงาน url=GeneralUser_PlanReport.SiteMapGroup roles= >\n        <siteMapNode th_title=ข้อมูลโครงการ(รายการหลัก)ตามแผนงาน url=Pages_SEC_Plan_Report_PlanReportByPlanType.aspx?user= roles=Pages_SEC_Plan_Report_PlanReportByPlanType_>\n        <siteMapNode th_title=ข้อมูลโครงการ(รายการหลัก)ตามหน่วยงาน url=Pages_SEC_Plan_Report_PlanReportByDepartment.aspx?user= roles=Pages_SEC_Plan_Report_PlanReportByDepartment_>\n        <siteMapNode th_title=รายงานการกันเงินและแผนการใช้จ่ายเหลื่อมปี url=Pages_FIN_Finance_Report_ReserveBudgetForecastReport.aspx?user= roles=Pages_FIN_Finance_Report_ReserveBudgetForecastReport _>\n        <siteMapNode th_title=รายงานติดตามรายการการกันงบเหลื่อมปี url=Pages_FIN_Finance_Report_FinancialReserveStatementMonthlyReportByBudgetType.aspx?user= _>\n        <siteMapNode th_title=รายงานติดตามใบขอใช้งบประมาณ_ใบเสนอซื้อจ้าง url=Pages_FIN_Finance_Report_PlanFormFinancialStatusReport.aspx?user= roles=Pages_FIN_Finance_Report_PlanFormFinancialStatusReport _>\n        <siteMapNode th_title=รายงานการเงินสรุปการใช้จ่ายช่วงรายเดือน url=Pages_SEC_Plan_Report_FinancialStatementPeriodReportByPlanType.aspx?user= roles=Pages_SEC_Plan_Report_FinancialStatementPeriodReportByPlanType _>\n      <_siteMapNode>\n    <siteMapNode th_title=รายงานข้อมูลทางพัสดุ url=GeneralUser_ProcureReport.SiteMapGroup roles= >\n        <siteMapNode th_title=รายงานข้อมูลพัสดุ url=Pages_FIN_Procure_Report_RegisterProcureItemSearch.aspx?user= roles=Pages_FIN_Procure_Report_RegisterProcureItemSearch _>\n        <siteMapNode th_title=รายงานข้อมูลพัสดุตามหน่วยงาน url=Pages_FIN_Procure_Report_ShowRegisterProcureItemListByDepartment.aspx?user= roles=Pages_FIN_Procure_Report_ShowRegisterProcureItemListByDepartment _>\n        <siteMapNode th_title=รายงานครุภัณฑ์ตามหน่วยงาน url=Pages_FIN_Procure_Report_RegisterDurableItemListByDepartment.aspx?user= roles=Pages_FIN_Procure_Report_RegisterDurableItemListByDepartment _>\n        <siteMapNode th_title=รายงานครุภัณฑ์ตามประเภท url=Pages_FIN_Procure_Report_RegisterDurableItemListByType.aspx?user= roles=Pages_FIN_Procure_Report_RegisterDurableItemListByType _>\n        <siteMapNode th_title=รายงานยอดซื้อของกับร้านค้า url=Pages_FIN_Procure_Report_ViewSupplierListForGoodsList.aspx?user= roles=Pages_FIN_Procure_Report_ViewSupplierListForGoodsList _>\n      <_siteMapNode>"
+      },
+      {
+        "th_title": "ผู้ดูแลระบบ",
+        "en_title": "",
+        "description": "Admin",
+        "url": "Admin_MainAdminPage.aspx",
+        "roles": "",
+        "siteMapNode": [
+          {
+            "th_title": "จัดการข้อมูลผู้ใช้และกลุ่มสิทธิ",
+            "en_title": "",
+            "description": "Permission",
+            "url": "Admin_Permission.SiteMapGroup",
+            "roles": "",
+            "siteMapNode": [
+              {
+                "th_title": "ตั้งค่ากลุ่มสิทธิ",
+                "en_title": "",
+                "url": "Admin_Permission_RolesGroupPermission.aspx",
+                "roles": "Admin_Permission_RolesGroupPermission",
+                "selfclosing": true
+              },
+              {
+                "th_title": "เพิ่ม_แก้ไขกลุ่มสิทธิ",
+                "en_title": "",
+                "url": "Admin_Permission_EditRolesGroup.aspx",
+                "roles": "Admin_Permission_EditRolesGroup",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกแก้ไขข้อมูลผู้ใช้",
+                "en_title": "",
+                "url": "Admin_Permission_StaffMembership.aspx",
+                "roles": "Admin_Permission_StaffMembership",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกผู้ใช้ลงกลุ่มสิทธิ",
+                "en_title": "",
+                "url": "Admin_Permission_RolesGroupMember.aspx",
+                "roles": "Admin_Permission_RolesGroupMember",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกผู้ใช้สิทธิพิเศษ",
+                "en_title": "",
+                "url": "Admin_Permission_PowerUserMember.aspx",
+                "roles": "Admin_Permission_PowerUserMember",
+                "selfclosing": true
+              },
+              {
+                "th_title": "บันทึกรหัสการลงนาม",
+                "en_title": "",
+                "url": "Admin_Permission_StaffCipherKeyPairsListView.aspx",
+                "roles": "Admin_Permission_StaffCipherKeyPairsListView",
+                "selfclosing": true
+              },
+              {
+                "th_title": "ตั้งค่า Email ผู้ใช้",
+                "en_title": "",
+                "url": "Admin_Permission_StaffEMailSetup.aspx",
+                "roles": "Admin_Permission_StaffEMailSetup",
+                "selfclosing": true
+              }
+            ]
+          }
+        ]
+      }
+
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\bin\Debug\net6.0\Acc.ResolverAcc.deps.json
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\bin\Debug\net6.0\Acc.ResolverAcc.dll
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\bin\Debug\net6.0\Acc.ResolverAcc.pdb
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.csproj.AssemblyReference.cache
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.AssemblyInfoInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.AssemblyInfo.cs
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.csproj.CoreCompileInputs.cache
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.dll
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\refint\Acc.ResolverAcc.dll
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\Acc.ResolverAcc.pdb
+C:\Users\daisy\Documents\GitHub\narit\Acc.Resolver\obj\Debug\net6.0\ref\Acc.ResolverAcc.dll

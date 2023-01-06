@@ -1,4 +1,4 @@
-﻿using narit_acc_api.Models;
+﻿using narit_mis_api.AccModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace App.ACC
 {
     public interface IAccServices
     {
-        List<ChartAcc> GetAccbooks();
+        List<Accbook> GetAccbooks();
     }
 }

@@ -21,6 +21,7 @@ namespace App.SEC
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
+        List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id);
 
@@ -89,7 +90,7 @@ namespace App.SEC
         //List<PerformanceIndicatorsDto> EditPerformanceIndicator(int fiscalYear);
         List<StrategicIndicatorResponse> EditPerformanceIndicator(int fiscalYear);
         List<DepartmentListDto> GetDepartments(int fiscalYear);
-
+        List<StrategySetupDto> TryGetStrategy(int fiscalYear);
         List<ResponsiblePerson> getResponsiblePerson();
         SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto request);
         SecBaseResponse PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId);
@@ -107,5 +108,11 @@ namespace App.SEC
         List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
         SecBaseResponse DeleteStrategy (int StrategyId);
+        SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId);
+        SecBaseResponse DeletePlanType(int PlanTypeId);
+        SecBaseResponse DeleteDepartment(int DepartmentId);
+        SecBaseResponse DeleteFundType(int FundTypeId);
+        SecBaseResponse DeleteBudgetType(int BudgetTypeId);
+        
     }
 }

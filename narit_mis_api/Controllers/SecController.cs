@@ -2098,6 +2098,14 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
+        [Route("/Plan/Operate/ShowStrategy/GetByFiscalYear/{year}")]
+        public IActionResult TryGetStrategy(int year)
+        {
+            var data = _SecServices.TryGetStrategy(year);
+            return Json(data);
+        }
+
+        [HttpGet]
         [Route("/Plan/Operate/SelectDepartment/GetByFiscalYearandDepartmentid/{year}/{id}")]
         public IActionResult SelectDepartmentGetByFiscalYearandDepartmentid(int year, int id)
         {
@@ -2450,7 +2458,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.SearchPlanForActivityDepartmentListGetByFiscalYear(year);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Operate/PlanTypeGetAll/GetByFiscalYear/{year}")]
+        public IActionResult PlanTypeGetAll(int year)
+        {
+            var data = _SecServices.PlanTypeGetAll(year);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Operate/SearchPlanForActivity/PlanList/GetByFiscalYear/{year}")]
         public IActionResult SearchPlanForActivityPlanTypeGetByFiscalYear(int year)
@@ -3228,7 +3242,51 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpDelete]
+        [Route("/Plan/Setup/StrategicIndicatorSetup/DeleteStrategicIndicator/{Id}")]
+        public IActionResult DeleteStrategicIndicator(int Id)
+        {
 
+            var data = _SecServices.DeleteStrategicIndicator(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/PlanTypeSetup/DeletePlanType/{Id}")]
+        public IActionResult DeletePlanType(int Id)
+        {
+
+            var data = _SecServices.DeletePlanType(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/DepartmentSetup/DeleteDepartment/{Id}")]
+        public IActionResult DeleteDepartment(int Id)
+        {
+
+            var data = _SecServices.DeleteDepartment(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/FundTypeSetup/DeleteFundType/{Id}")]
+        public IActionResult DeleteFundType(int Id)
+        {
+
+            var data = _SecServices.DeleteFundType(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/BudgetSetup/DeleteBudgetType/{Id}")]
+        public IActionResult DeleteBudgetType(int Id)
+        {
+
+            var data = _SecServices.DeleteBudgetType(Id);
+
+            return Json(data);
+        }
 
 
         #endregion
