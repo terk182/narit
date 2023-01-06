@@ -1,14 +1,8 @@
 
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-
-using System.Configuration;
-
-
-using narit_mis_api.Models;
-using narit_mis_api.AccModels;
 using App.Resolver;
+using Microsoft.EntityFrameworkCore;
+using narit_acc_api.Models;
+using narit_mis_api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

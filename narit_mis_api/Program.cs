@@ -1,17 +1,12 @@
 
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-
-using System.Configuration;
 using App.Resolver;
-
-using narit_mis_api.Models;
-using narit_mis_api.AccModels;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using narit_acc_api.Models;
+using narit_mis_api.Models;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
