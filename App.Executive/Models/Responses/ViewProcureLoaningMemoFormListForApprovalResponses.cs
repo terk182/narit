@@ -9,7 +9,7 @@ namespace App.FIN.Models.Responses
     public class ViewProcureLoaningMemoFormListForApprovalResponses
     {
         public DateTime date { get; set; }
-        public int id { get; set; }
+        public string? id { get; set; }
         public string? requester { get; set; }  
         public string? agency { get; set; }
         public bool? status { get; set; }

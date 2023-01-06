@@ -11,7 +11,7 @@ namespace App.SEC.Models.Responses
         public int no { get; set; }
         public string? type { get; set; }
         public DateTime date { get; set; }
-        public int id { get; set; }
+        public string? id { get; set; }
         public string? requester { get; set; }
         public string? detail { get; set; }
         public double? price { get; set; }

@@ -848,10 +848,6 @@ namespace App.FIN
 
         
 
-        public ViewProcureLoaningMemoFormListForApprovalRequest ViewProcureLoaningMemoFormListForApproval()
-        {
-            return new ViewProcureLoaningMemoFormListForApprovalRequest();
-        }
 
         public ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval()
         {
@@ -902,7 +898,7 @@ namespace App.FIN
                 no = 1,
                 date = DateTime.Now,
                 type = "0",
-                id = 1,
+                id = "1",
                 requester = "Palm",
                 price = 100.45,
                 status = true,
@@ -912,7 +908,7 @@ namespace App.FIN
                 no = 2,
                 date = DateTime.Now,
                 type = "0",
-                id = 2,
+                id = "2",
                 requester = "Nuw",
                 price = 150.50,
                 status = false,
@@ -930,7 +926,7 @@ namespace App.FIN
                 no = 1,
                 date = DateTime.Now,
                 type = "0",
-                id = 1,
+                id = "1",
                 requester = "Nuw",
                 price = 893,
                 status = true,
@@ -940,7 +936,7 @@ namespace App.FIN
                 no = 2,
                 date = DateTime.Now,
                 type = "0",
-                id = 2,
+                id = "2",
                 requester = "Slime",
                 price = 300,
                 status = true,
@@ -954,7 +950,7 @@ namespace App.FIN
             _viewProcureLoaningMemoFormListForApprovalResponses.Add(new ViewProcureLoaningMemoFormListForApprovalResponses
             {
                 date = DateTime.Now,
-                id = 1,
+                id = "1",
                 requester = "Kong",
                 agency = "someAgency",
                 status = true,
@@ -963,6 +959,70 @@ namespace App.FIN
                 print = "Yes",
             });
             return _viewProcureLoaningMemoFormListForApprovalResponses;
+        }
+
+        public List<ViewProcureReimbursementMemoFormListForApprovalResponses> ViewProcureReimbursementMemoFormListForApproval(ViewProcureReimbursementMemoFormListForApprovalRequest request)
+        {
+            var _viewProcureReimbursementMemoFormListForApprovalResponses = new List<ViewProcureReimbursementMemoFormListForApprovalResponses>();
+            _viewProcureReimbursementMemoFormListForApprovalResponses.Add(new ViewProcureReimbursementMemoFormListForApprovalResponses
+            {
+                date = DateTime.Now,
+                id = "1",
+                requester = "Voy",
+                agency = "someAgency",
+                status = true,
+                price = 555.55,
+                transferDate= DateTime.Now,
+                print = "No",
+
+
+            });
+            return _viewProcureReimbursementMemoFormListForApprovalResponses;
+        }
+
+        public List<ViewProcureSettleReceiptFormListForApprovalResponses> ViewProcureSettleReceiptFormListForApproval(ViewProcureSettleReceiptFormListForApprovalRequest request)
+        {
+            var _viewProcureSettleReceiptFormListForApprovalResponses = new List<ViewProcureSettleReceiptFormListForApprovalResponses>();
+            _viewProcureSettleReceiptFormListForApprovalResponses.Add(new ViewProcureSettleReceiptFormListForApprovalResponses
+            {
+                no = 1,
+                date = DateTime.Now,
+                id = "11",
+                detail = "something",
+                project = "something",
+                payBack = 630.26,
+                status = false,
+                print = "da"
+            });
+            _viewProcureSettleReceiptFormListForApprovalResponses.Add(new ViewProcureSettleReceiptFormListForApprovalResponses
+            {
+                no = 2,
+                date = DateTime.Now,
+                id = "12",
+                detail = "someDetail",
+                project = "someProject",
+                payBack = 812.37,
+                status = true,
+                print = "dada"
+            });
+
+            return _viewProcureSettleReceiptFormListForApprovalResponses;
+        }
+
+        public List<ViewProcureSettleMemoFormListForApprovalResponses> ViewProcureSettleMemoFormListForApproval(ViewProcureSettleMemoFormListForApprovalRequest request)
+        {
+            var _viewProcureSettleMemoFormListForApprovalResponses = new List<ViewProcureSettleMemoFormListForApprovalResponses>();
+            _viewProcureSettleMemoFormListForApprovalResponses.Add(new ViewProcureSettleMemoFormListForApprovalResponses 
+            {
+                date = DateTime.Now,
+                id = "13",
+                project = "somess",
+                agency = "nAgency",
+                status = false,
+                payBack = 965.71,
+                print = "dadada"
+            });
+            return _viewProcureSettleMemoFormListForApprovalResponses;
         }
     }
 

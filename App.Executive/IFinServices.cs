@@ -42,9 +42,9 @@ namespace App.FIN
         List<ViewFormForApprovalByFinanceResponses> ViewFormForApprovalByFinance(ViewFormForApprovalByFinanceRequest request);
         List<ViewFormForApprovalByHeadOfFinanceResponse> ViewFormForApprovalByHeadOfFinance(ViewFormForApprovalByHeadOfFinanceRequest request);
         List<ViewProcureLoaningMemoFormListForApprovalResponses> ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request);
-        ViewProcureReimbursementMemoFormListForApprovalRequest ViewProcureReimbursementMemoFormListForApproval();
-        ViewProcureSettleReceiptFormListForApprovalRequest ViewProcureSettleReceiptFormListForApproval();
-        ViewProcureSettleMemoFormListForApprovalRequest ViewProcureSettleMemoFormListForApproval();
+        List<ViewProcureReimbursementMemoFormListForApprovalResponses> ViewProcureReimbursementMemoFormListForApproval(ViewProcureReimbursementMemoFormListForApprovalRequest request);
+        List<ViewProcureSettleReceiptFormListForApprovalResponses> ViewProcureSettleReceiptFormListForApproval(ViewProcureSettleReceiptFormListForApprovalRequest request);
+        List<ViewProcureSettleMemoFormListForApprovalResponses> ViewProcureSettleMemoFormListForApproval(ViewProcureSettleMemoFormListForApprovalRequest request);
         FinancialReserveStatementYearEndBriefReportByBudgetTypeRequest FinancialReserveStatementYearEndBriefReportByBudgetType();
         FinancialReserveStatementYearEndReportByBudgetTypeRequest FinancialReserveStatementYearEndReportByBudgetType();
         FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType();

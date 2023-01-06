@@ -341,11 +341,11 @@ namespace narit_mis_api.Controllers
             return Json("ViewProcureReimbursementMemoFormList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewProcureReimbursementMemoFormListForApproval")]
-        public IActionResult ViewProcureReimbursementMemoFormListForApproval()
+        public IActionResult ViewProcureReimbursementMemoFormListForApproval(ViewProcureReimbursementMemoFormListForApprovalRequest request)
         {
-            var data = _FinServices.ViewProcureReimbursementMemoFormListForApproval();
+            var data = _FinServices.ViewProcureReimbursementMemoFormListForApproval(request);
             return Json(data);
         }
 
@@ -356,11 +356,11 @@ namespace narit_mis_api.Controllers
             return Json("ViewProcureSettleMemoFormList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewProcureSettleMemoFormListForApproval")]
-        public IActionResult ViewProcureSettleMemoFormListForApproval()
+        public IActionResult ViewProcureSettleMemoFormListForApproval(ViewProcureSettleMemoFormListForApprovalRequest request)
         {
-            var data = _FinServices.ViewProcureSettleMemoFormListForApproval();
+            var data = _FinServices.ViewProcureSettleMemoFormListForApproval(request);
             return Json(data);
         }
 
@@ -371,11 +371,11 @@ namespace narit_mis_api.Controllers
             return Json("ViewProcureSettleReceiptFormList");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/ViewProcureSettleReceiptFormListForApproval")]
-        public IActionResult ViewProcureSettleReceiptFormListForApproval()
+        public IActionResult ViewProcureSettleReceiptFormListForApproval(ViewProcureSettleReceiptFormListForApprovalRequest request)
         {
-            var data = _FinServices.ViewProcureSettleReceiptFormListForApproval();
+            var data = _FinServices.ViewProcureSettleReceiptFormListForApproval(request);
             return Json(data);
         }
         [HttpPost]
