@@ -34,6 +34,7 @@ namespace App.SEC
         SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
 
         SecBaseResponse DepartmentSetup(DepartmentRequest request);
+        SecBaseResponse DepartmentBudgetLimitSetup(DepartmentBudgetLimitRequest request);
         List<DepartmentRespone> DepartmentListGetByFiscalYear(int FiscalYear);
         List<DepartmentBudgetLimitDto> DepartmentBudgetLimitGetByFiscalYear(int FiscalYear);
         //we are here

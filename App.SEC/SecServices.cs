@@ -249,7 +249,27 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse DepartmentBudgetLimitSetup(DepartmentBudgetLimitRequest request)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Departments.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (data != null)
+            {
+                data.BudgetLimit = request.BudgetLimit;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Save Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
 
+            return response;
+
+        }
         public SecBaseResponse FundTypeSetup(FundTypeRequest request)
         {
             var _FundType = new FundType();
