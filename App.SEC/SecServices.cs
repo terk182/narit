@@ -618,7 +618,7 @@ namespace App.SEC
         {
 
             var result = new List<StrategySetupModel>();
-            var data = _database.Strategies.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var data = _database.Strategies.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategySetupModel
