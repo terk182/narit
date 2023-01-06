@@ -39,11 +39,11 @@ namespace narit_mis_api.Controllers
             return Json("ApproveRequestFormWithFrame");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/EditDeniedRequestFormPlanViewDate")]
-        public IActionResult EditDeniedRequestFormPlanViewDate()
+        public IActionResult EditDeniedRequestFormPlanViewDate(EditDeniedRequestFormPlanViewDateRequest request)
         {
-            var data = _FinServices.EditDeniedRequestFormPlanViewDate();
+            var data = _FinServices.EditDeniedRequestFormPlanViewDate(request);
             return Json(data);
         }
 
@@ -184,11 +184,11 @@ namespace narit_mis_api.Controllers
             return Json("EditReserveBudgetFormMonthlyReason");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Finance/Operate/EditReturnBudgetDateFromApproveForm")]
-        public IActionResult EditReturnBudgetDateFromApproveForm()
+        public IActionResult EditReturnBudgetDateFromApproveForm(EditReturnBudgetDateFromApproveFormRequest request)
         {
-            var data = _FinServices.EditReturnBudgetDateFromApproveForm();
+            var data = _FinServices.EditReturnBudgetDateFromApproveForm(request);
             return Json(data);
         }
 

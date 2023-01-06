@@ -2229,11 +2229,11 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseSettleAsBudgetFormList")]
-        public IActionResult ViewGeneralExpenseSettleAsBudgetFormList()
+        public IActionResult ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request)
         {
-            var data = _SecServices.ViewGeneralExpenseSettleAsBudgetFormList();
+            var data = _SecServices.ViewGeneralExpenseSettleAsBudgetFormList(request);
             return Json(data);
         }
 

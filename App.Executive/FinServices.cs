@@ -862,14 +862,52 @@ namespace App.FIN
             return _SelectPlanForStatementCalculationDateListResponses;
         }
 
-        public EditDeniedRequestFormPlanViewDateRequest EditDeniedRequestFormPlanViewDate()
+        public List<EditDeniedRequestFormPlanViewDateResponses> EditDeniedRequestFormPlanViewDate(EditDeniedRequestFormPlanViewDateRequest request)
         {
-            return new EditDeniedRequestFormPlanViewDateRequest();
+            var _EditDeniedRequestFormPlanViewDateReponses = new List<EditDeniedRequestFormPlanViewDateResponses>();
+
+            _EditDeniedRequestFormPlanViewDateReponses.Add(new EditDeniedRequestFormPlanViewDateResponses
+            {
+                DateRequest = DateTime.Now,
+
+                DateCancel = DateTime.Today,
+
+                NumberID = "0124ba",
+
+                Order = "salary for trainee",
+
+                Balance = 10000.11
+
+            });
+
+            return _EditDeniedRequestFormPlanViewDateReponses;
         }
 
-        public EditReturnBudgetDateFromApproveFormRequest EditReturnBudgetDateFromApproveForm()
+        public List<EditReturnBudgetDateFromApproveFormResponses> EditReturnBudgetDateFromApproveForm(EditReturnBudgetDateFromApproveFormRequest request)
         {
-            return new EditReturnBudgetDateFromApproveFormRequest();
+            var _EditReturnBudgetDateFromApproveFormResponses = new List<EditReturnBudgetDateFromApproveFormResponses>();
+
+            _EditReturnBudgetDateFromApproveFormResponses.Add(new EditReturnBudgetDateFromApproveFormResponses
+            {
+                DateFromOfferForm = DateTime.Now,
+
+                DateFromRequestForm = DateTime.Now,
+
+                DateFromCreateRequestForm = DateTime.Now,
+
+                DateReturn = DateTime.Now,
+
+                LicenseForm ="testLicenseForm",
+
+                Order = "testThitit",
+
+                BalanceRequest = 374393.34,
+
+                BalanceReturn = 100.43
+
+
+            });
+            return _EditReturnBudgetDateFromApproveFormResponses;
         }
 
         public List<ViewPaymentRecordListResponses> ViewPaymentRecordList(ViewPaymentRecordListRequest request)
@@ -902,6 +940,8 @@ namespace App.FIN
 
             return _ViewPaymentRecordListResponses;
         }
+
+        
     }
 
 

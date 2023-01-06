@@ -42,8 +42,8 @@ namespace App.FIN
 
         List<SelectPlanForStatementCalculationDateListResponses> SelectPlanForStatementCalculationDateList(SelectPlanForStatementCalculationDateListRequest request);
 
-        EditDeniedRequestFormPlanViewDateRequest EditDeniedRequestFormPlanViewDate();
+        List<EditDeniedRequestFormPlanViewDateResponses> EditDeniedRequestFormPlanViewDate(EditDeniedRequestFormPlanViewDateRequest request);
 
-        EditReturnBudgetDateFromApproveFormRequest EditReturnBudgetDateFromApproveForm();
+        List<EditReturnBudgetDateFromApproveFormResponses> EditReturnBudgetDateFromApproveForm(EditReturnBudgetDateFromApproveFormRequest request);
     }
 }

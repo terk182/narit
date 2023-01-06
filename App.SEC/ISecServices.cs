@@ -106,6 +106,6 @@ namespace App.SEC
 
         List<ViewDirectExpenseMemoFormListResponses> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request);
 
-        ViewGeneralExpenseSettleAsBudgetFormListRequest ViewGeneralExpenseSettleAsBudgetFormList();
+        List<ViewGeneralExpenseSettleAsBudgetFormListResponses> ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request);
     }
 }

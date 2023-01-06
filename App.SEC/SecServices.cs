@@ -3489,9 +3489,25 @@ namespace App.SEC
             return _ViewDirectExpenseMemoFormListResponses;
         }
 
-        public ViewGeneralExpenseSettleAsBudgetFormListRequest ViewGeneralExpenseSettleAsBudgetFormList()
+        public List<ViewGeneralExpenseSettleAsBudgetFormListResponses> ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request)
         {
-            return new ViewGeneralExpenseSettleAsBudgetFormListRequest();
+            var _ViewGeneralExpenseSettleAsBudgetFormListResponses = new List<ViewGeneralExpenseSettleAsBudgetFormListResponses>();
+
+            _ViewGeneralExpenseSettleAsBudgetFormListResponses.Add(new ViewGeneralExpenseSettleAsBudgetFormListResponses
+            {
+                No = 1,
+                Date = DateTime.Now,
+                NumberId = "23298DS",
+                Order = "helloWorld",
+                AllBorrowed = 558724.34,
+                CashBack = 33422.22,
+                Refun = 18989.23,
+                AllRefun = 100.3
+
+            });
+
+
+            return _ViewGeneralExpenseSettleAsBudgetFormListResponses;
         }
     }
 }
