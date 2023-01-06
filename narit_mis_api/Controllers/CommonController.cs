@@ -26,6 +26,20 @@ namespace narit_mis_api.Controllers
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
         [HttpGet]
+        [Route("/Common/ShowAllStrategy/FiscalYear/{year}")]
+        public IActionResult TryGetStrategy(int year)
+        {
+            var data = _SecServices.TryGetStrategy(year);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Common/Strategy/FiscalYear/{year}")]
+        public IActionResult StrategySetupByFiscalYear(int year)
+        {
+            var data = _SecServices.StrategySetupByFiscalYear(year);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Common/StrategyDetails/{year}/{id}")]
         public IActionResult StrategySetupByFiscalYearandStrategyId(int year, int id)
         {
