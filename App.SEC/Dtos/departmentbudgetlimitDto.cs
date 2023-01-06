@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.SEC.Dtos
 {
-    public class departmentbudgetlimitDto
+    public class DepartmentBudgetLimitDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

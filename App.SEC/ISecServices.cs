@@ -19,6 +19,7 @@ namespace App.SEC
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
+        
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
@@ -34,6 +35,8 @@ namespace App.SEC
 
         SecBaseResponse DepartmentSetup(DepartmentRequest request);
         List<DepartmentRespone> DepartmentListGetByFiscalYear(int FiscalYear);
+        List<DepartmentBudgetLimitDto> DepartmentBudgetLimitGetByFiscalYear(int FiscalYear);
+        //we are here
         SecBaseResponse FundTypeSetup(FundTypeRequest request);
 
         List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear);

@@ -182,7 +182,27 @@ namespace App.SEC
             return result;
         }
 
-        ///////////// มาละจ้า /////////////////
+        public List<DepartmentBudgetLimitDto> DepartmentBudgetLimitGetByFiscalYear(int FiscalYear)
+        {
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
+            var result = new List<DepartmentBudgetLimitDto>();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentBudgetLimitDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    BudgetLimit = item.BudgetLimit
+                });
+
+
+            }
+            return result;
+        }
         public List<PlanTypeDto> PlanTypeGetAll(int FiscalYear)
         {
             var data = _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear && x.Active);

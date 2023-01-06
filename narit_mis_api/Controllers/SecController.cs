@@ -3073,7 +3073,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentListGetByFiscalYear(year);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Setup/DepartmentBudgetLimitSetup/GetByFiscalYear/{year}")]
+        public IActionResult DepartmentBudgetLimitGetByFiscalYear(int year)
+        {
+            var data = _SecServices.DepartmentBudgetLimitGetByFiscalYear(year);
+            return Json(data);
+        }
         [HttpPost]
         [Route("/Plan/Setup/FundTypeSetup")]
         public IActionResult FundTypeSetup(FundTypeRequest request)
