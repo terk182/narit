@@ -728,13 +728,13 @@ namespace App.SEC
             _StrategicIndicator.Name = request.Name;
             _StrategicIndicator.Active = request.Active;
             _StrategicIndicator.FiscalYear = request.FiscalYear;
-            _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+            _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             _StrategicIndicator.Unit = request.Unit;
             _StrategicIndicator.Amount = request.Amount;
             _StrategicIndicator.Weight = request.Weight;
-            if (request.ParentStrategicIndicatorId != 0)
+            if (request.ParentStrategyId != 0)
             {
-                _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+                _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             }
 
 
@@ -764,7 +764,7 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    ParentStrategyId = item.ParentStrategyId,
                     Unit = item.Unit,
                     Amount = item.Amount,
                     Weight = item.Weight
@@ -2463,7 +2463,7 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    ParentStrategyId = item.ParentStrategyId,
                     Unit = item.Unit,
                     Amount = item.Amount,
                     Weight = item.Weight
