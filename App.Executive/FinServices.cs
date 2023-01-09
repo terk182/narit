@@ -854,11 +854,19 @@ namespace App.FIN
         {
             var _SelectPlanForStatementCalculationDateListResponses = new List<SelectPlanForStatementCalculationDateListResponses>();
 
+
+//code---------------------
+
+            
             _SelectPlanForStatementCalculationDateListResponses.Add(new SelectPlanForStatementCalculationDateListResponses
+
             {
                 Name ="thiti",
                 Parent = "wongsue",
             });
+
+//code----------------------
+
             return _SelectPlanForStatementCalculationDateListResponses;
         }
 
@@ -866,19 +874,26 @@ namespace App.FIN
         {
             var _EditDeniedRequestFormPlanViewDateReponses = new List<EditDeniedRequestFormPlanViewDateResponses>();
 
-            _EditDeniedRequestFormPlanViewDateReponses.Add(new EditDeniedRequestFormPlanViewDateResponses
+            //--------code---------
+
+            var Pla = request.FiscalYear != 0 ? _database.RequestFormPlanViews.Where(x => x.FiscalYear == request.FiscalYear).ToList() :
+                _database.RequestFormPlanViews.Where(x => x.Id == request.DocNumber).ToList();
+            foreach (var item in Pla)
             {
-                DateRequest = DateTime.Now,
+                _EditDeniedRequestFormPlanViewDateReponses.Add(new EditDeniedRequestFormPlanViewDateResponses
 
-                DateCancel = DateTime.Today,
+                { 
+                WriteDate = item.WriteDate,
 
-                NumberID = "0124ba",
+                FinishedTransformDate = item.FinishedTransformDate,
 
-                Order = "salary for trainee",
+                Id = item.Id,
 
-                Balance = 10000.11
 
-            });
+   });
+
+                 }
+            //-----------------------
 
             return _EditDeniedRequestFormPlanViewDateReponses;
         }
