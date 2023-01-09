@@ -17,7 +17,7 @@ namespace narit_acc_api.Controllers
 
         }
         [HttpGet]
-        [Route("Accounting/test")]
+        [Route("Accounting/testTTTT")]
         public IActionResult MainGeneralUserPage()
         {
             var data = _AccServices.GetAccbooks();
