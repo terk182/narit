@@ -13,10 +13,13 @@
   <ItemGroup>
     <ProjectReference Include="..\App.Accommodations\App.Accommodations.csproj" />
     <ProjectReference Include="..\App.ACC\App.ACC.csproj" />
+    <ProjectReference Include="..\App.AP\App.AP.csproj" />
+    <ProjectReference Include="..\App.AR\App.AR.csproj" />
     <ProjectReference Include="..\App.Authenticator\App.Authenticator.csproj" />
     <ProjectReference Include="..\App.CollaborationNetwork\App.EIS.csproj" />
     <ProjectReference Include="..\App.Common\App.Common.csproj" />
     <ProjectReference Include="..\App.Executive\App.FIN.csproj" />
+    <ProjectReference Include="..\App.GL\App.GL.csproj" />
     <ProjectReference Include="..\App.Individual\App.Individual.csproj" />
     <ProjectReference Include="..\App.Operation\App.General.csproj" />
     <ProjectReference Include="..\App.PathDetail\App.PathDetail.csproj" />

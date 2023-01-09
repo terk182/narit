@@ -282,3 +282,9 @@ D:\clone_devPae\App.Resolver\obj\Release\net6.0\App.Resolver.dll
 D:\clone_devPae\App.Resolver\obj\Release\net6.0\refint\App.Resolver.dll
 D:\clone_devPae\App.Resolver\obj\Release\net6.0\App.Resolver.pdb
 D:\clone_devPae\App.Resolver\obj\Release\net6.0\ref\App.Resolver.dll
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.AP.dll
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.AR.dll
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.GL.dll
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.AP.pdb
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.AR.pdb
+D:\clone_devPae\App.Resolver\bin\Release\net6.0\App.GL.pdb

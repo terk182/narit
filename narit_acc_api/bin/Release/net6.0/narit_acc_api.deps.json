@@ -9,6 +9,9 @@
       "narit_acc_api/1.0.0": {
         "dependencies": {
           "App.ACC": "1.0.0",
+          "App.AP": "1.0.0",
+          "App.AR": "1.0.0",
+          "App.GL": "1.0.0",
           "App.Resolver": "1.0.0",
           "Data.Context": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.10",
@@ -537,6 +540,16 @@
           "App.Accommodations.dll": {}
         }
       },
+      "App.AP/1.0.0": {
+        "runtime": {
+          "App.AP.dll": {}
+        }
+      },
+      "App.AR/1.0.0": {
+        "runtime": {
+          "App.AR.dll": {}
+        }
+      },
       "App.Authenticator/1.0.0": {
         "dependencies": {
           "App.Common": "1.0.0",
@@ -576,6 +589,15 @@
           "App.General.dll": {}
         }
       },
+      "App.GL/1.0.0": {
+        "dependencies": {
+          "App.Common": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "runtime": {
+          "App.GL.dll": {}
+        }
+      },
       "App.Individual/1.0.0": {
         "runtime": {
           "App.Individual.dll": {}
@@ -611,11 +633,14 @@
       "App.Resolver/1.0.0": {
         "dependencies": {
           "App.ACC": "1.0.0",
+          "App.AP": "1.0.0",
+          "App.AR": "1.0.0",
           "App.Accommodations": "1.0.0",
           "App.Authenticator": "1.0.0",
           "App.Common": "1.0.0",
           "App.EIS": "1.0.0",
           "App.FIN": "1.0.0",
+          "App.GL": "1.0.0",
           "App.General": "1.0.0",
           "App.Individual": "1.0.0",
           "App.PathDetail": "1.0.0",
@@ -1029,6 +1054,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "App.AP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.AR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "App.Authenticator/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1050,6 +1085,11 @@
       "sha512": ""
     },
     "App.General/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "App.GL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

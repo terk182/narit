@@ -975,6 +975,26 @@
           "bin/placeholder/App.Accommodations.dll": {}
         }
       },
+      "App.AP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/App.AP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.AP.dll": {}
+        }
+      },
+      "App.AR/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/App.AR.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.AR.dll": {}
+        }
+      },
       "App.Authenticator/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1039,6 +1059,20 @@
           "bin/placeholder/App.General.dll": {}
         }
       },
+      "App.GL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "App.Common": "1.0.0",
+          "Data.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/App.GL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.GL.dll": {}
+        }
+      },
       "App.Individual/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1096,11 +1130,14 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "App.ACC": "1.0.0",
+          "App.AP": "1.0.0",
+          "App.AR": "1.0.0",
           "App.Accommodations": "1.0.0",
           "App.Authenticator": "1.0.0",
           "App.Common": "1.0.0",
           "App.EIS": "1.0.0",
           "App.FIN": "1.0.0",
+          "App.GL": "1.0.0",
           "App.General": "1.0.0",
           "App.Individual": "1.0.0",
           "App.PathDetail": "1.0.0",
@@ -2597,6 +2634,16 @@
       "path": "../App.Accommodations/App.Accommodations.csproj",
       "msbuildProject": "../App.Accommodations/App.Accommodations.csproj"
     },
+    "App.AP/1.0.0": {
+      "type": "project",
+      "path": "../App.AP/App.AP.csproj",
+      "msbuildProject": "../App.AP/App.AP.csproj"
+    },
+    "App.AR/1.0.0": {
+      "type": "project",
+      "path": "../App.AR/App.AR.csproj",
+      "msbuildProject": "../App.AR/App.AR.csproj"
+    },
     "App.Authenticator/1.0.0": {
       "type": "project",
       "path": "../App.Authenticator/App.Authenticator.csproj",
@@ -2621,6 +2668,11 @@
       "type": "project",
       "path": "../App.Operation/App.General.csproj",
       "msbuildProject": "../App.Operation/App.General.csproj"
+    },
+    "App.GL/1.0.0": {
+      "type": "project",
+      "path": "../App.GL/App.GL.csproj",
+      "msbuildProject": "../App.GL/App.GL.csproj"
     },
     "App.Individual/1.0.0": {
       "type": "project",

@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<NARIT_MIS_LINKContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton")));
 
-builder.Services.AddDbContext<NARIT_MIS_ACCContext>(Options =>
+builder.Services.AddDbContext<CGI_ACCContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton_acc")));
 
 var app = builder.Build();

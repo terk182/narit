@@ -286,3 +286,9 @@ D:\clone_devPae\narit_acc_api\obj\Release\net6.0\refint\narit_acc_api.dll
 D:\clone_devPae\narit_acc_api\obj\Release\net6.0\narit_acc_api.pdb
 D:\clone_devPae\narit_acc_api\obj\Release\net6.0\narit_acc_api.genruntimeconfig.cache
 D:\clone_devPae\narit_acc_api\obj\Release\net6.0\ref\narit_acc_api.dll
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.AP.dll
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.AR.dll
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.GL.dll
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.AP.pdb
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.AR.pdb
+D:\clone_devPae\narit_acc_api\bin\Release\net6.0\App.GL.pdb

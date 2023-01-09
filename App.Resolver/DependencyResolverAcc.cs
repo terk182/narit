@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.GL;
 
 namespace App.Resolver
 {
@@ -27,7 +28,9 @@ namespace App.Resolver
         public static IServiceCollection AddAccServices(this IServiceCollection services)
         {
 
-            services.AddScoped<IAccServices, AccServices>();
+            services.AddScoped<IGlServices, GlServices>();
+            //services.AddScoped<IApServices, ApServices>();
+            //services.AddScoped<IArServices, ArServices>();
 
             return services;
         }
