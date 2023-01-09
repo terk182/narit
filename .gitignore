@@ -1,3 +1,11 @@
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+App.ACC/obj
+narit_mis_api/bin/Release
 .vs/narit_mis_api/FileContentIndex/298ade64-62bc-44b7-9174-1225bd7dcd21.vsidx
 .vs/narit_mis_api/FileContentIndex/49b2f2e7-e3aa-4855-9361-067fe480494e.vsidx
 .vs/narit_mis_api/FileContentIndex/5ea896fc-158f-4454-8ad1-affb8db38b3b.vsidx
@@ -95,4 +103,3 @@ App.AccountsReceivable/obj
 App.AccountsReceivable/bin
 App.ACC/bin
 App.ACC/obj
-.vs/narit_mis_api/FileContentIndex
