@@ -4,6 +4,7 @@ _ReSharper.*
 bin
 obj
 packages
+<<<<<<< HEAD
 App.ACC/obj/Release
 narit_mis_api/bin/Release
 narit_mis_api/obj/Release
@@ -39,3 +40,9 @@ App.AccountsReceivable/IAccountsReceivableService.cs
 .vs/narit_mis_api/FileContentIndex/948d6b9a-9384-48b3-b6aa-0d4e4bb80f63.vsidx
 .vs/narit_mis_api/FileContentIndex/a97c56b3-b3b5-434f-ba31-6a85f9764183.vsidx
 .vs/narit_mis_api/FileContentIndex/ae2f90aa-45d5-4b81-ab98-9dd61e778bba.vsidx
+=======
+**/bin/*
+**/obj/*
+*.cache
+.vs/narit_mis_api/FileContentIndex
+>>>>>>> origin/devPaeNB
