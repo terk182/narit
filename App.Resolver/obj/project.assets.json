@@ -2324,19 +2324,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\CGI_ACC_API\\App.Resolver\\App.Resolver.csproj",
+      "projectUniqueName": "D:\\clone_devPae\\App.Resolver\\App.Resolver.csproj",
       "projectName": "App.Resolver",
-      "projectPath": "C:\\Project\\CGI_ACC_API\\App.Resolver\\App.Resolver.csproj",
-      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\CGI_ACC_API\\App.Resolver\\obj\\",
+      "projectPath": "D:\\clone_devPae\\App.Resolver\\App.Resolver.csproj",
+      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+      "outputPath": "D:\\clone_devPae\\App.Resolver\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2350,41 +2350,41 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Project\\CGI_ACC_API\\App.Accommodations\\App.Accommodations.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Accommodations\\App.Accommodations.csproj"
+            "D:\\clone_devPae\\App.Accommodations\\App.Accommodations.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Accommodations\\App.Accommodations.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.ACC\\App.ACC.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.ACC\\App.ACC.csproj"
+            "D:\\clone_devPae\\App.ACC\\App.ACC.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.ACC\\App.ACC.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Authenticator\\App.Authenticator.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Authenticator\\App.Authenticator.csproj"
+            "D:\\clone_devPae\\App.Authenticator\\App.Authenticator.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Authenticator\\App.Authenticator.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.CollaborationNetwork\\App.EIS.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.CollaborationNetwork\\App.EIS.csproj"
+            "D:\\clone_devPae\\App.CollaborationNetwork\\App.EIS.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.CollaborationNetwork\\App.EIS.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj"
+            "D:\\clone_devPae\\App.Common\\App.Common.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Common\\App.Common.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Executive\\App.FIN.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Executive\\App.FIN.csproj"
+            "D:\\clone_devPae\\App.Executive\\App.FIN.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Executive\\App.FIN.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Individual\\App.Individual.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Individual\\App.Individual.csproj"
+            "D:\\clone_devPae\\App.Individual\\App.Individual.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Individual\\App.Individual.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Operation\\App.General.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Operation\\App.General.csproj"
+            "D:\\clone_devPae\\App.Operation\\App.General.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Operation\\App.General.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.PathDetail\\App.PathDetail.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.PathDetail\\App.PathDetail.csproj"
+            "D:\\clone_devPae\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.PathDetail\\App.PathDetail.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Plan\\App.Plan.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Plan\\App.Plan.csproj"
+            "D:\\clone_devPae\\App.Plan\\App.Plan.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Plan\\App.Plan.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.Procure\\App.Procure.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Procure\\App.Procure.csproj"
+            "D:\\clone_devPae\\App.Procure\\App.Procure.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Procure\\App.Procure.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\App.SEC\\App.SEC.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.SEC\\App.SEC.csproj"
+            "D:\\clone_devPae\\App.SEC\\App.SEC.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.SEC\\App.SEC.csproj"
             }
           }
         }
@@ -2420,7 +2420,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

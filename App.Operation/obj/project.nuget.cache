@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hg9MAYJkvAEaKzhIxk7ogv7mi4tVAI/fkBq1oGTmLdnTqkaiRxRiXopxkgl9xZLfhD9nekMYB6RprlSGvId22w==",
+  "dgSpecHash": "2ncyfimQjoPV9i4S2cD6r+lsAt37BkjokDp6qtGiCOmulZuz3kO+ZalptvE5Ajx8X7uazb0M5trsZZrjpcehyg==",
   "success": true,
-  "projectFilePath": "C:\\Project\\CGI_ACC_API\\App.Operation\\App.General.csproj",
+  "projectFilePath": "D:\\clone_devPae\\App.Operation\\App.General.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

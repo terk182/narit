@@ -2006,19 +2006,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\CGI_ACC_API\\App.Authenticator\\App.Authenticator.csproj",
+      "projectUniqueName": "D:\\clone_devPae\\App.Authenticator\\App.Authenticator.csproj",
       "projectName": "App.Authenticator",
-      "projectPath": "C:\\Project\\CGI_ACC_API\\App.Authenticator\\App.Authenticator.csproj",
-      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\CGI_ACC_API\\App.Authenticator\\obj\\",
+      "projectPath": "D:\\clone_devPae\\App.Authenticator\\App.Authenticator.csproj",
+      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+      "outputPath": "D:\\clone_devPae\\App.Authenticator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2032,11 +2032,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.Common\\App.Common.csproj"
+            "D:\\clone_devPae\\App.Common\\App.Common.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.Common\\App.Common.csproj"
             },
-            "C:\\Project\\CGI_ACC_API\\Data.Context\\Data.Context.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\Data.Context\\Data.Context.csproj"
+            "D:\\clone_devPae\\Data.Context\\Data.Context.csproj": {
+              "projectPath": "D:\\clone_devPae\\Data.Context\\Data.Context.csproj"
             }
           }
         }
@@ -2072,7 +2072,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

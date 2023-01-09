@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Project\\CGI_ACC_API\\App.Controls\\App.Controls.csproj": {}
+    "D:\\clone_devPae\\App.Controls\\App.Controls.csproj": {}
   },
   "projects": {
-    "C:\\Project\\CGI_ACC_API\\App.Controls\\App.Controls.csproj": {
+    "D:\\clone_devPae\\App.Controls\\App.Controls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\CGI_ACC_API\\App.Controls\\App.Controls.csproj",
+        "projectUniqueName": "D:\\clone_devPae\\App.Controls\\App.Controls.csproj",
         "projectName": "App.Controls",
-        "projectPath": "C:\\Project\\CGI_ACC_API\\App.Controls\\App.Controls.csproj",
-        "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\CGI_ACC_API\\App.Controls\\obj\\",
+        "projectPath": "D:\\clone_devPae\\App.Controls\\App.Controls.csproj",
+        "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+        "outputPath": "D:\\clone_devPae\\App.Controls\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

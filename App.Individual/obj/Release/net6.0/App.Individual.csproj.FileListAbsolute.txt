@@ -58,3 +58,15 @@ C:\Users\Pakpoom\Documents\GitHub\narit\App.Individual\obj\Release\net6.0\App.In
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Individual\obj\Release\net6.0\refint\App.Individual.dll
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Individual\obj\Release\net6.0\App.Individual.pdb
 C:\Users\Pakpoom\Documents\GitHub\narit\App.Individual\obj\Release\net6.0\ref\App.Individual.dll
+D:\clone_devPae\App.Individual\bin\Release\net6.0\App.Individual.deps.json
+D:\clone_devPae\App.Individual\bin\Release\net6.0\App.Individual.dll
+D:\clone_devPae\App.Individual\bin\Release\net6.0\App.Individual.pdb
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.csproj.AssemblyReference.cache
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.GeneratedMSBuildEditorConfig.editorconfig
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.AssemblyInfoInputs.cache
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.AssemblyInfo.cs
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.csproj.CoreCompileInputs.cache
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.dll
+D:\clone_devPae\App.Individual\obj\Release\net6.0\refint\App.Individual.dll
+D:\clone_devPae\App.Individual\obj\Release\net6.0\App.Individual.pdb
+D:\clone_devPae\App.Individual\obj\Release\net6.0\ref\App.Individual.dll

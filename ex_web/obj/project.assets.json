@@ -108,19 +108,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\CGI_ACC_API\\ex_web\\ex_web.csproj",
+      "projectUniqueName": "D:\\clone_devPae\\ex_web\\ex_web.csproj",
       "projectName": "ex_web",
-      "projectPath": "C:\\Project\\CGI_ACC_API\\ex_web\\ex_web.csproj",
-      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\CGI_ACC_API\\ex_web\\obj\\",
+      "projectPath": "D:\\clone_devPae\\ex_web\\ex_web.csproj",
+      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+      "outputPath": "D:\\clone_devPae\\ex_web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -134,8 +134,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Project\\CGI_ACC_API\\App.PathDetail\\App.PathDetail.csproj": {
-              "projectPath": "C:\\Project\\CGI_ACC_API\\App.PathDetail\\App.PathDetail.csproj"
+            "D:\\clone_devPae\\App.PathDetail\\App.PathDetail.csproj": {
+              "projectPath": "D:\\clone_devPae\\App.PathDetail\\App.PathDetail.csproj"
             }
           }
         }
@@ -168,7 +168,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

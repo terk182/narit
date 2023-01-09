@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Poonsab\\.nuget\\packages\\": {}
+    "C:\\Users\\Natthaphong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\CGI_ACC_API\\App.Individual\\App.Individual.csproj",
+      "projectUniqueName": "D:\\clone_devPae\\App.Individual\\App.Individual.csproj",
       "projectName": "App.Individual",
-      "projectPath": "C:\\Project\\CGI_ACC_API\\App.Individual\\App.Individual.csproj",
-      "packagesPath": "C:\\Users\\Poonsab\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\CGI_ACC_API\\App.Individual\\obj\\",
+      "projectPath": "D:\\clone_devPae\\App.Individual\\App.Individual.csproj",
+      "packagesPath": "C:\\Users\\Natthaphong\\.nuget\\packages\\",
+      "outputPath": "D:\\clone_devPae\\App.Individual\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Poonsab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natthaphong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
