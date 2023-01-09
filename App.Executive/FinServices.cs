@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using System.Xml;
 using System.Drawing;
 using App.SEC.Models.Responses;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace App.FIN
 {
@@ -947,17 +948,29 @@ namespace App.FIN
         public List<ViewProcureLoaningMemoFormListForApprovalResponses> ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request)
         {
             var _viewProcureLoaningMemoFormListForApprovalResponses = new List<ViewProcureLoaningMemoFormListForApprovalResponses>();
-            _viewProcureLoaningMemoFormListForApprovalResponses.Add(new ViewProcureLoaningMemoFormListForApprovalResponses
+            var pLServ = request.year != 0 ? _database.ProcureLoaningMemoForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureLoaningMemoForms.Where(_x => _x.Id == request.planTId).ToList();
+            foreach (var item in pLServ)
             {
-                date = DateTime.Now,
-                id = "1",
-                requester = "Kong",
-                agency = "someAgency",
-                status = true,
-                price= 200,
-                transferDate= DateTime.Now,
-                print = "Yes",
-            });
+
+                _viewProcureLoaningMemoFormListForApprovalResponses.Add(new ViewProcureLoaningMemoFormListForApprovalResponses
+                {
+
+
+                    WriteDate = item.WriteDate,
+
+                    Id = item.Id,
+
+                    RequesterName = item.RequesterName,
+
+                    DepartmentName = item.DepartmentName,
+
+                    IsBorrow = item.IsBorrow,
+
+                    LoaningAmount = item.LoaningAmount,
+
+                    SettleDate = item.SettleDate,
+    });
+            }
             return _viewProcureLoaningMemoFormListForApprovalResponses;
         }
 

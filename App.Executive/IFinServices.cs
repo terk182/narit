@@ -50,5 +50,7 @@ namespace App.FIN
         FinancialReserveStatementYearEndReportByPlanTypeRequest FinancialReserveStatementYearEndReportByPlanType();
         FinancialReserveStatementMonthlyBriefReportByBudgetTypeRequest FinancialReserveStatementMonthlyBriefReportByBudgetType();
         FinancialReserveStatementMonthlyReportByBudgetTypeRequest FinancialReserveStatementMonthlyReportByBudgetType();
+        
+        
     }
 }
