@@ -948,7 +948,7 @@ namespace App.FIN
         public List<ViewProcureLoaningMemoFormListForApprovalResponses> ViewProcureLoaningMemoFormListForApproval(ViewProcureLoaningMemoFormListForApprovalRequest request)
         {
             var _viewProcureLoaningMemoFormListForApprovalResponses = new List<ViewProcureLoaningMemoFormListForApprovalResponses>();
-            var pLServ = request.year != 0 ? _database.ProcureLoaningMemoForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureLoaningMemoForms.Where(_x => _x.Id == request.planTId).ToList();
+            var pLServ = request.year != 0 ? _database.ProcureLoaningMemoForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureLoaningMemoForms.Where(x => x.Id == request.planTId).ToList();
             foreach (var item in pLServ)
             {
 
@@ -969,7 +969,7 @@ namespace App.FIN
                     LoaningAmount = item.LoaningAmount,
 
                     SettleDate = item.SettleDate,
-    });
+                });
             }
             return _viewProcureLoaningMemoFormListForApprovalResponses;
         }
