@@ -15,10 +15,12 @@ namespace narit_acc_api.Models
         public int Index { get; set; }
         public string? Name { get; set; }
         public int Active { get; set; }
-        public DateTime? CreateDate { get; set; }
+        public byte[] CreateDate { get; set; } = null!;
         public int? ChartSubHeaderId { get; set; }
         public string? Detail { get; set; }
+        public int? AccTypeId { get; set; }
 
+        public virtual AccountType? AccType { get; set; }
         public virtual ChartSubHeader? ChartSubHeader { get; set; }
         public virtual ICollection<ChartSubMajor> ChartSubMajors { get; set; }
     }

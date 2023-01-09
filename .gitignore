@@ -89,3 +89,10 @@ narit_acc_api/bin/Release/net6.0/App.AccountsReceivable.dll
 .vs/narit_mis_api/FileContentIndex/3f59daf2-a56f-41d7-b440-20177ffa40a8.vsidx
 .vs/narit_mis_api/FileContentIndex/413a5a75-7551-4201-81b1-320571a0b8e8.vsidx
 .vs/narit_mis_api/FileContentIndex/f82759a5-4d8a-4bde-a9dc-8b7ffb7e484a.vsidx
+/narit_mis_api.sln
+.vs/narit_mis_api/FileContentIndex
+App.AccountsReceivable/obj
+App.AccountsReceivable/bin
+App.ACC/bin
+App.ACC/obj
+.vs/narit_mis_api/FileContentIndex
