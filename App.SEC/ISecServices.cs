@@ -30,6 +30,9 @@ namespace App.SEC
         SecBaseResponse StrategySetup(StrategySetupModel request);
         List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
         List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id);
+        SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request);
+        List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear);
+        List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id);
 
         SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
 
@@ -112,6 +115,7 @@ namespace App.SEC
         List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
         SecBaseResponse DeleteStrategy (int StrategyId);
+        SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId);
         SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId);
         SecBaseResponse DeletePlanType(int PlanTypeId);
         SecBaseResponse DeleteDepartment(int DepartmentId);

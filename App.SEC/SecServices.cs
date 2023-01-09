@@ -613,7 +613,32 @@ namespace App.SEC
             response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
             return response;
         }
+        public SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request)
+        {
 
+            var _Strategy = new StrategiesBudget();
+            _Strategy.Id = (int)request.Id;
+            _Strategy.Name = request.Name;
+            _Strategy.Active = request.Active;
+            _Strategy.FiscalYear = (int)request.FiscalYear;
+            if (request.ParentStrategyBudgetId != 0)
+            {
+                _Strategy.ParentStrategyBudgetId = request.ParentStrategyBudgetId;
+            }
+
+
+
+            _database.Entry(_Strategy).State = _Strategy.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
+            return response;
+        }
         public List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear)
         {
 
@@ -628,6 +653,24 @@ namespace App.SEC
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
                     ParentStrategyId = item.ParentStrategyId,
+                });
+            }
+            return result;
+        }
+        public List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear)
+        {
+
+            var result = new List<StrategyBudgetDto>();
+            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategyBudgetDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
                 });
             }
             return result;
@@ -649,6 +692,25 @@ namespace App.SEC
                     });
 
                 }
+            return result;
+        }
+        public List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id)
+        {
+
+            var result = new List<StrategyBudgetDto>();
+            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategyBudgetDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
+                });
+
+            }
             return result;
         }
         public List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id)
@@ -3641,7 +3703,28 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.StrategiesBudgets.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3662,7 +3745,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3683,7 +3766,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3704,7 +3787,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3725,7 +3808,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3746,7 +3829,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
