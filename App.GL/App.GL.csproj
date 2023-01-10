@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Responses\" />
-  </ItemGroup>
-
 </Project>
