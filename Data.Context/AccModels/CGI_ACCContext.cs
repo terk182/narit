@@ -20,6 +20,8 @@ namespace narit_acc_api.Models
         public virtual DbSet<AccountPayableType> AccountPayableTypes { get; set; } = null!;
         public virtual DbSet<AccountReceivableType> AccountReceivableTypes { get; set; } = null!;
         public virtual DbSet<AccountType> AccountTypes { get; set; } = null!;
+        public virtual DbSet<Bank> Banks { get; set; } = null!;
+        public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
         public virtual DbSet<ChartAcc> ChartAccs { get; set; } = null!;
         public virtual DbSet<ChartDetail> ChartDetails { get; set; } = null!;
         public virtual DbSet<ChartHeader> ChartHeaders { get; set; } = null!;
@@ -145,6 +147,9 @@ namespace narit_acc_api.Models
             {
                 entity.ToTable("AccountType");
 
+                entity.HasIndex(e => e.TypeCode, "IX_AccountType")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
@@ -163,6 +168,32 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.TypeCode)
                     .HasMaxLength(10)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Bank>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Bank");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<BusinessType>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("BusinessType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
                     .IsUnicode(false);
             });
 

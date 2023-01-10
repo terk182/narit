@@ -39,5 +39,26 @@ namespace App.GL
         CommonBaseResponse EditSubMinor(EditSubMinorRequest request);
         CommonBaseResponse DelSubMinor(int Id);
 
+        //AccountType
+        CommonBaseResponse AddAccountType(CreateAccountTypeRequest request);
+        CommonBaseResponse EditAccountType(CreateAccountTypeRequest request);
+        CommonBaseResponse DeleteAccountTypeId(int Id);
+        List<AccountType> GetAccountType();
+        AccountType GetAccountTypeId(int Id);
+
+        //AccountReceivableType
+        List<AccountReceivableType> GetAccountReceivableType();
+        AccountReceivableType GetAccountReceivableTypeId(int id);
+        CommonBaseResponse AddAccountReceivableType(AccountReceivableTypeRequest request);
+        CommonBaseResponse EditAccountReceivableType(AccountReceivableTypeRequest request);
+        CommonBaseResponse DeleteAccountReceivableTypeId(int Id);
+
+        //AccountPayableType
+        List<AccountPayableType> GetAccountPayableType();
+        AccountPayableType GetAccountPayableTypeId(int id);
+        CommonBaseResponse AddAccountPayableType(AccountPayableTypeRequest request);
+        CommonBaseResponse EditAccountPayableType(AccountPayableTypeRequest request);
+        CommonBaseResponse DeletetAccountPayableTypeId(int Id);
+
     }
 }

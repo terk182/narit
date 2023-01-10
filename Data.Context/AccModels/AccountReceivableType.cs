@@ -7,7 +7,7 @@ namespace narit_acc_api.Models
     {
         public int Id { get; set; }
         public string? AccountReceivableTypeCode { get; set; }
-        public int Index { get; set; }
+        public int? Index { get; set; }
         public string? Name { get; set; }
         public int Active { get; set; }
         public byte[] CreateDate { get; set; } = null!;

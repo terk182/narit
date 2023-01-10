@@ -21,21 +21,19 @@ namespace App.GL
         }
 
 
-// Header 
+        // Header 
         public List<ChartHeader> GetChartHeader()
         {
             var data = _databaseACC.ChartHeaders.ToList();
             return data;
         }
 
-
-//SubHeader 
+        //SubHeader 
         public List<ChartSubHeader> GetChartSubHeader(int ChartHeaderId)
         {
             var data = _databaseACC.ChartSubHeaders.Where(x => x.ChartHeaderId == ChartHeaderId).ToList();
             return data;
         }
-
         public CommonBaseResponse AddSubHeader(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -61,7 +59,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse EditSubHeader(EditChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -80,12 +77,11 @@ namespace App.GL
                 checkcode.Detail = request.Detail;
                 _databaseACC.Entry(checkcode).State = EntityState.Modified;
                 var result = _databaseACC.SaveChanges();
-                    response.Success = true;
-                    response.Messsage = "Edit complete";
+                response.Success = true;
+                response.Messsage = "Edit complete";
             }
             return response;
         }
-
         public CommonBaseResponse DelSubHeader(int Id)
         {
             var response = new CommonBaseResponse();
@@ -108,13 +104,12 @@ namespace App.GL
         }
 
 
-//Major
+        //Major
         public List<ChartMajor> GetChartMajor(int ChartSubHeaderId)
         {
             var data = _databaseACC.ChartMajors.Where(x => x.ChartSubHeaderId == ChartSubHeaderId).ToList();
             return data;
         }
-
         public CommonBaseResponse AddMajor(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -140,7 +135,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse EditMajor(EditChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -164,7 +158,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse DelMajor(int Id)
         {
             var response = new CommonBaseResponse();
@@ -191,7 +184,6 @@ namespace App.GL
             var data = _databaseACC.ChartSubMajors.Where(x => x.ChartMajorId == ChartMajorId).ToList();
             return data;
         }
-
         public CommonBaseResponse AddSubMajor(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -217,7 +209,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse EditSubMajor(EditChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -241,7 +232,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse DelSubMajor(int Id)
         {
             var response = new CommonBaseResponse();
@@ -268,7 +258,6 @@ namespace App.GL
             var data = _databaseACC.ChartMinors.Where(x => x.ChartSubMajorId == ChartMajorId).ToList();
             return data;
         }
-
         public CommonBaseResponse AddMinor(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -294,7 +283,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse EditMinor(EditChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -318,7 +306,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse DelMinor(int Id)
         {
             var response = new CommonBaseResponse();
@@ -339,14 +326,12 @@ namespace App.GL
             return response;
         }
 
-        //SubMinor
 
         public List<ChartSubMinor> GetChartSubMinor(int ChartMinorId)
         {
             var data = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == ChartMinorId).ToList();
             return data;
         }
-
         public CommonBaseResponse AddSubMinor(SubMinorRequest request)
         {
             var response = new CommonBaseResponse();
@@ -373,7 +358,6 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse EditSubMinor(EditSubMinorRequest request)
         {
             var response = new CommonBaseResponse();
@@ -399,11 +383,69 @@ namespace App.GL
             }
             return response;
         }
-
         public CommonBaseResponse DelSubMinor(int Id)
         {
             var response = new CommonBaseResponse();
             var data = _databaseACC.ChartSubMinors.Where(x => x.Id == Id).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = 0;
+                _databaseACC.Entry(data).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+            }
+            else
+            {
+
+            }
+            return response;
+        }
+
+        //AccountType
+        public CommonBaseResponse AddAccountType(CreateAccountTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            CreateAccountTypeRequest account = new CreateAccountTypeRequest();
+            account.TypeCode = request.TypeCode;
+            account.Active = request.Active;
+            account.Name = request.Name;
+            account.Detail = request.Detail;
+
+            var accountTypes = _databaseACC.AccountTypes.Where(x => x.TypeCode == request.TypeCode).ToList();
+            if (accountTypes.Count == 0)
+            {
+                _databaseACC.Entry(account).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Add Complete" : "Data Duplicate";
+            }
+            return response;
+        }
+        public CommonBaseResponse EditAccountType(CreateAccountTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var accountTypes = _databaseACC.AccountTypes.Where(x => x.TypeCode == request.TypeCode).FirstOrDefault();
+
+            if (accountTypes != null)
+            {
+                accountTypes.Id = accountTypes.Id;
+                accountTypes.Active = request.Active;
+                accountTypes.TypeCode = request.TypeCode;
+                accountTypes.Name = request.Name;
+                accountTypes.Detail = request.Detail;
+                _databaseACC.Entry(accountTypes).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Add Complete" : "Data Duplicate";
+            }
+
+            return response;
+        }
+        public CommonBaseResponse DeleteAccountTypeId(int id)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var data = _databaseACC.AccountTypes.Where(x => x.Id == id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -419,5 +461,166 @@ namespace App.GL
             }
             return response;
         }
+        public AccountType GetAccountTypeId(int id)
+        {
+            AccountType account = _databaseACC.AccountTypes.Where(x => x.Id == id).FirstOrDefault();
+            if (account != null)
+            {
+                return account;
+            }
+            return account;
+        }
+        public List<AccountType> GetAccountType()
+        {
+            List<AccountType> accountTypeList = _databaseACC.AccountTypes.ToList();
+            return accountTypeList;
+        }
+
+        //AccountReceivableType
+        public List<AccountReceivableType> GetAccountReceivableType()
+        {
+            List<AccountReceivableType> accounts = _databaseACC.AccountReceivableTypes.ToList();
+            return accounts;
+        }
+        public AccountReceivableType GetAccountReceivableTypeId(int id)
+        {
+            AccountReceivableType account = _databaseACC.AccountReceivableTypes.Where(x => x.Id == id).FirstOrDefault();
+            if (account != null)
+            {
+                return account;
+            }
+            return account;
+        }
+        public CommonBaseResponse AddAccountReceivableType(AccountReceivableTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            AccountReceivableType account = new AccountReceivableType();
+            var result = _databaseACC.AccountReceivableTypes.Where(x => x.AccountReceivableTypeCode == request.TypeCode).FirstOrDefault();
+            if (result == null)
+            {
+                account.AccountReceivableTypeCode = request.TypeCode;
+                account.Name = request.Name;
+                account.Active = request.Active;
+                account.Index = request.Index;
+                account.Detail = request.Detail;
+                account.AccountTypeId = request.AccountTypeID;
+                _databaseACC.Entry(account).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "ADD Complete" : "Add Fail";
+            }
+            return response;
+        }
+        public CommonBaseResponse EditAccountReceivableType(AccountReceivableTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            AccountReceivableType account = new AccountReceivableType();
+            AccountReceivableType result = _databaseACC.AccountReceivableTypes.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (result != null)
+            {
+                result.AccountReceivableTypeCode = request.TypeCode;
+                result.Name = request.Name;
+                result.Active = request.Active;
+                result.Index = request.Index;
+                result.Detail = request.Detail;
+                result.AccountTypeId = request.AccountTypeID;
+                _databaseACC.Entry(result).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
+            }
+            return response;
+        }
+        public CommonBaseResponse DeleteAccountReceivableTypeId(int id)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var data = _databaseACC.AccountReceivableTypes.Where(x => x.Id == id).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = 0;
+                _databaseACC.Entry(data).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+            return response;
+        }
+
+        //AccountPayableType
+        public List<AccountPayableType> GetAccountPayableType()
+        {
+            List<AccountPayableType> accountPayableTypes = _databaseACC.AccountPayableTypes.ToList();
+            return accountPayableTypes;
+        }
+        public AccountPayableType GetAccountPayableTypeId(int id)
+        {
+            AccountPayableType accountPayableType = _databaseACC.AccountPayableTypes.Where(x => x.Id == id).FirstOrDefault();
+            return accountPayableType;
+        }
+        public CommonBaseResponse AddAccountPayableType(AccountPayableTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            AccountPayableType accountPayable = new AccountPayableType();
+            var result = _databaseACC.AccountPayableTypes.Where(x => x.AccountPayableTypeCode == request.TypeCode).FirstOrDefault();
+            if (result == null)
+            {
+                accountPayable.AccountPayableTypeCode = request.TypeCode;
+                accountPayable.Name = request.Name;
+                accountPayable.Active = request.Active;
+                accountPayable.Index = request.Index;
+                accountPayable.Detail = request.Detail;
+                accountPayable.AccountTypeId = request.AccountTypeID;
+                _databaseACC.Entry(accountPayable).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "ADD Complete" : "Add Fail";
+            }
+            return response;
+        }
+        public CommonBaseResponse EditAccountPayableType(AccountPayableTypeRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            AccountPayableType account = new AccountPayableType();
+            AccountPayableType result = _databaseACC.AccountPayableTypes.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (result != null)
+            {
+                result.AccountPayableTypeCode = request.TypeCode;
+                result.Name = request.Name;
+                result.Active = request.Active;
+                result.Index = request.Index;
+                result.Detail = request.Detail;
+                result.AccountTypeId = request.AccountTypeID;
+                _databaseACC.Entry(result).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
+            }
+            return response;
+        }
+        public CommonBaseResponse DeletetAccountPayableTypeId(int id)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var data = _databaseACC.AccountPayableTypes.Where(x => x.Id == id).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = 0;
+                _databaseACC.Entry(data).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+            return response;
+        }
+
     }
 }
