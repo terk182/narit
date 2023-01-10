@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/narit_acc_api.props" />
-</Project>
