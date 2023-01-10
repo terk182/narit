@@ -2250,7 +2250,22 @@ namespace App.SEC
             }
             return result;
         }
+        public List<PlanCoreGetAllDto> GetAllPlanCore(int FiscalYear)
+        {
+            var data = _database.PlanCores.Where(x => x.FiscalYear == FiscalYear && x.Active == true);
+            var result = new List<PlanCoreGetAllDto>();
+            foreach (var item in data)
+            {
+                result.Add(new PlanCoreGetAllDto
+                {
+                    Id = item.Id,
+                    Name = item.Name
+                });
 
+
+            }
+            return result;
+        }
         public PlanCoreListDto GetEditPlan(int PlanCoreId)
         {
             var result = new PlanCoreListDto();
