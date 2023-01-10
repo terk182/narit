@@ -5,7 +5,7 @@ namespace App.FIN.Models.Requests
 	{
 		public string? PlanSelect { get; set; }
 
-		public string? DocNumber { get; set; }
+		public string? DocumentNumber { get; set; }
 
 		public int FiscalYear { get; set; }
 

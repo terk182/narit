@@ -3,18 +3,14 @@ namespace App.FIN.Models.Responses
 {
 	public class ViewPaymentRecordListResponses
 	{
-		public int No { get; set; }
+       public int? Id { get; set; }
+       public string? Name { get; set; }
+                   public DateTime? WriteDate { get; set; }
+                   public string? DocumentNumber { get; set; } 
+                   public decimal? LoaningAmount { get; set; } 
 
-		public string? Order { get; set; }
 
-		public string? DocNumber { get; set; }
 
-		public DateTime Date { get; set; }
-
-		public Double Balance { get; set; }
-
-		public string? ImpoOrDerNum { get; set; }
-		
-	}
+    }
 }
 

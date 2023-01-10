@@ -882,17 +882,18 @@ namespace App.FIN
             {
                 _EditDeniedRequestFormPlanViewDateReponses.Add(new EditDeniedRequestFormPlanViewDateResponses
 
-                { 
-                WriteDate = item.WriteDate,
+                    { 
+                        WriteDate = item.WriteDate,
 
-                FinishedTransformDate = item.FinishedTransformDate,
+                        FinishedTransformDate = item.FinishedTransformDate,
 
-                Id = item.Id,
+                        Id = item.Id,
 
+                        Name = item.Name
 
-   });
+                     });
 
-                 }
+            }
             //-----------------------
 
             return _EditDeniedRequestFormPlanViewDateReponses;
@@ -902,26 +903,44 @@ namespace App.FIN
         {
             var _EditReturnBudgetDateFromApproveFormResponses = new List<EditReturnBudgetDateFromApproveFormResponses>();
 
-            _EditReturnBudgetDateFromApproveFormResponses.Add(new EditReturnBudgetDateFromApproveFormResponses
+
+            var EditReturnBudget = request.FiscalYear != 0 ? _database.PlanTypes.Where(x => x.FiscalYear == request.FiscalYear).ToList() :
+                _database.PlanTypes.Where(x => x.Name == request.PlanSelect).ToList();
+            //-----------code------
+            foreach (var item in EditReturnBudget)
             {
-                DateFromOfferForm = DateTime.Now,
+                _EditReturnBudgetDateFromApproveFormResponses.Add(new EditReturnBudgetDateFromApproveFormResponses
 
-                DateFromRequestForm = DateTime.Now,
+                {
 
-                DateFromCreateRequestForm = DateTime.Now,
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        Active = item.Active,
+                        ParentPlanTypeId = item.ParentPlanTypeId,
+                        ReferenceOldId = item.ReferenceOldId,
+              
+                        //DateFromOfferForm = DateTime.Now,
 
-                DateReturn = DateTime.Now,
+                        //DateFromRequestForm = DateTime.Now,
 
-                LicenseForm ="testLicenseForm",
+                        //DateFromCreateRequestForm = DateTime.Now,
 
-                Order = "testThitit",
+                        //DateReturn = DateTime.Now,
 
-                BalanceRequest = 374393.34,
+                        //LicenseForm = "testLicenseForm",
 
-                BalanceReturn = 100.43
+                        //Order = "testThitit",
+
+                        //BalanceRequest = 374393.34,
+
+                        //BalanceReturn = 100.43
 
 
-            });
+                 });
+
+            }
+            //-------------------------
             return _EditReturnBudgetDateFromApproveFormResponses;
         }
 
@@ -929,30 +948,26 @@ namespace App.FIN
         {
             var _ViewPaymentRecordListResponses = new List<ViewPaymentRecordListResponses>();
 
-            _ViewPaymentRecordListResponses.Add(new ViewPaymentRecordListResponses
+
+            //-------------co---de
+            var VieqPayment = request.FiscalYear != 0 ? _database.ProcureLoaningMemoForms.Where(x => x.FiscalYear == request.FiscalYear).ToList() :
+                    _database.ProcureLoaningMemoForms.Where(x => x.DocumentNumber == request.DocumentNumber).ToList();
+            foreach (var item in VieqPayment)
             {
-                No = 12,
-                Order = "thiti",
-                DocNumber = "aa123",
-                Date = DateTime.Now,
-                Balance=123.88,
-                ImpoOrDerNum = "thitii"
+                _ViewPaymentRecordListResponses.Add(new ViewPaymentRecordListResponses
 
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    WriteDate = item.WriteDate,
+                    DocumentNumber = item.DocumentNumber,
+                    LoaningAmount = item.LoaningAmount
 
-            });
+                });
 
-            _ViewPaymentRecordListResponses.Add(new ViewPaymentRecordListResponses
-            {
-                No = 12,
-                Order = "thiti",
-                DocNumber = "aa123",
-                Date = DateTime.Now,
-                Balance = 123.88,
-                ImpoOrDerNum = "thitii"
+            }
 
-
-            });
-
+            //-----------------------
             return _ViewPaymentRecordListResponses;
         }
 

@@ -3477,15 +3477,30 @@ namespace App.SEC
         {
             var _ViewDirectExpenseMemoFormListResponses = new List<ViewDirectExpenseMemoFormListResponses>();
 
-            _ViewDirectExpenseMemoFormListResponses.Add(new ViewDirectExpenseMemoFormListResponses
-            {
-                no = 1,
-                date = DateTime.Now,
-                Number ="2389f",
-                Order = "thiti",
-                Project = "thitiwut",
-                Balance = 983479437.34
-            });
+            var ViewDirect = request.FiscalYear != 0 ? _database.PlanTypes.Where(x => x.FiscalYear == request.FiscalYear).ToList() :
+                _database.PlanTypes.Where(x => x.Name == request.StateName).ToList();
+            foreach (var item in ViewDirect)
+            { 
+
+                _ViewDirectExpenseMemoFormListResponses.Add(new ViewDirectExpenseMemoFormListResponses
+                {
+
+
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+
+                    //no = 1,
+                    //date = DateTime.Now,
+                    //Number ="2389f",
+                    //Order = "thiti",
+                    //Project = "thitiwut",
+                    //Balance = 983479437.34
+                });
+            }
             return _ViewDirectExpenseMemoFormListResponses;
         }
 

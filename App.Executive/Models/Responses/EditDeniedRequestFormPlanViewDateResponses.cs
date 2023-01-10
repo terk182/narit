@@ -9,9 +9,9 @@ namespace App.FIN.Models.Responses
 
         public int Id { get; set; }
 
-        public string? NumberID { get; set; }
+        public string? Name { get; set; }
 
-        public string Purpose { get; set; } = null!;
+        public string Purpose { get; set; } 
 
         public Double Balance { get; set; }
     }
