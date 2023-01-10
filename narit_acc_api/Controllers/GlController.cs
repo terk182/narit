@@ -19,7 +19,7 @@ namespace narit_acc_api.Controllers
 
         //Header
         [HttpGet]
-        [Route("Chart/Headerrrrr")]
+        [Route("Chart/Header")]
         public IActionResult GetChartHeader()
         {
 
@@ -126,6 +126,74 @@ namespace narit_acc_api.Controllers
         public IActionResult DelSubMajor(int Id)
         {
             var data = _AccGlServices.DelSubMajor(Id);
+            return Json(data);
+        }
+
+        //Minor
+        [HttpGet]
+        [Route("Chart/Minor")]
+        public IActionResult GetChartMinor(int ChartSubMajorId)
+        {
+            var data = _AccGlServices.GetChartMinor(ChartSubMajorId);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Chart/AddMinor")]
+        public IActionResult AddMinor(ChartRequest Request)
+        {
+            var data = _AccGlServices.AddMinor(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Chart/EditMinor")]
+        public IActionResult EditMinor(EditChartRequest request)
+        {
+            var data = _AccGlServices.EditMinor(request);
+
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("Chart/DeleteMinor")]
+        public IActionResult DelMinorr(int Id)
+        {
+            var data = _AccGlServices.DelMinor(Id);
+            return Json(data);
+        }
+
+        //SubMinor
+        [HttpGet]
+        [Route("Chart/SubMinor")]
+        public IActionResult GetChartSubMinor(int ChartMinorId)
+        {
+            var data = _AccGlServices.GetChartSubMinor(ChartMinorId);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Chart/AddSubMinor")]
+        public IActionResult AddSubMinor(SubMinorRequest Request)
+        {
+            var data = _AccGlServices.AddSubMinor(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Chart/EditSubMinor")]
+        public IActionResult EditSubMinor(EditSubMinorRequest request)
+        {
+            var data = _AccGlServices.EditSubMinor(request);
+
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("Chart/DeleteSubMinor")]
+        public IActionResult DelSubMinorr(int Id)
+        {
+            var data = _AccGlServices.DelSubMinor(Id);
             return Json(data);
         }
 
