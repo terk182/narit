@@ -8,6 +8,13 @@ packages
 **/obj/*
 *.cache
 .vs/narit_mis_api/FileContentIndex
-App.AccountsReceivable/App.AccountsReceivable.csproj
-App.AccountsReceivable/IAccountsReceivableService.cs
-App.AccountsReceivable/AccountsReceivableService.cs
+
+narit_mis_api/obj/Release
+narit_mis_api/bin/Release
+narit_acc_api/obj/Release
+narit_acc_api/bin/Release
+
+App.Accommodations/bin/Release
+App.Accommodations/obj/Release
+App.Accommodations/bin/Release
+App.Accommodations/obj/Release
