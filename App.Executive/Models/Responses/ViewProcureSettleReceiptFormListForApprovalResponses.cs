@@ -8,14 +8,12 @@ namespace App.FIN.Models.Responses
 {
     public class ViewProcureSettleReceiptFormListForApprovalResponses
     {
-        public int no { get; set; }
-        public DateTime date { get; set; }
-        public string? id { get; set; }
-        public string? detail { get; set; }
-        public string? project { get; set; }
-        public double? payBack { get; set; }
-        public bool? status { get; set; }
-        public string? print { get; set; }
+        public int Id { get; set; }
+        public DateTime? WriteDate { get; set; }
+        public string? DocumentNumber { get; set; }
+        public string? Name { get; set; }
+        public string? StatementName { get; set; }
+        public decimal? NetPayValue { get; set; }
 
 
     }

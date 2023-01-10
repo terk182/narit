@@ -8,10 +8,10 @@ namespace App.FIN.Models.Requests
 {
     public class ViewProcureSettleReceiptFormListForApprovalRequest
     {
-        public string docNumber { get; set; }
-        public string reqName { get; set; }
-        public decimal budgetVal { get; set; }
-        public int depId { get; set; }
-        public int year { get; set; }
+        public string? agency { get; set; }
+        public string? reqName { get; set; }
+        public decimal? budgetVal { get; set; }
+        public int? Id { get; set; }
+        public int? year { get; set; }
     }
 }

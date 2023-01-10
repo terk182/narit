@@ -977,64 +977,66 @@ namespace App.FIN
         public List<ViewProcureReimbursementMemoFormListForApprovalResponses> ViewProcureReimbursementMemoFormListForApproval(ViewProcureReimbursementMemoFormListForApprovalRequest request)
         {
             var _viewProcureReimbursementMemoFormListForApprovalResponses = new List<ViewProcureReimbursementMemoFormListForApprovalResponses>();
-            _viewProcureReimbursementMemoFormListForApprovalResponses.Add(new ViewProcureReimbursementMemoFormListForApprovalResponses
+            var pLServ = request.year != 0 ? _database.ProcureLoaningMemoForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureLoaningMemoForms.Where(x => x.Id == request.planTId).ToList();
+            foreach (var p in pLServ)
             {
-                date = DateTime.Now,
-                id = "1",
-                requester = "Voy",
-                agency = "someAgency",
-                status = true,
-                price = 555.55,
-                transferDate= DateTime.Now,
-                print = "No",
+                _viewProcureReimbursementMemoFormListForApprovalResponses.Add(new ViewProcureReimbursementMemoFormListForApprovalResponses
+                {
+                    WriteDate = p.WriteDate,
+                    Id = p.Id,
+                    RequesterName = p.RequesterName,
+                    DepartmentName = p.DepartmentName,
+                    IsBorrow = p.IsBorrow,
+                    LoaningAmount = p.LoaningAmount,
+                    SettleDate = p.SettleDate,
 
 
-            });
+    });
+            }
             return _viewProcureReimbursementMemoFormListForApprovalResponses;
         }
 
         public List<ViewProcureSettleReceiptFormListForApprovalResponses> ViewProcureSettleReceiptFormListForApproval(ViewProcureSettleReceiptFormListForApprovalRequest request)
         {
             var _viewProcureSettleReceiptFormListForApprovalResponses = new List<ViewProcureSettleReceiptFormListForApprovalResponses>();
-            _viewProcureSettleReceiptFormListForApprovalResponses.Add(new ViewProcureSettleReceiptFormListForApprovalResponses
+            var gEFromServ = request.year != 0 ? _database.ProcureSettleReceiptForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureSettleReceiptForms.Where(x => x.Id == request.Id).ToList();
+            foreach (var o in gEFromServ)
             {
-                no = 1,
-                date = DateTime.Now,
-                id = "11",
-                detail = "something",
-                project = "something",
-                payBack = 630.26,
-                status = false,
-                print = "da"
-            });
-            _viewProcureSettleReceiptFormListForApprovalResponses.Add(new ViewProcureSettleReceiptFormListForApprovalResponses
-            {
-                no = 2,
-                date = DateTime.Now,
-                id = "12",
-                detail = "someDetail",
-                project = "someProject",
-                payBack = 812.37,
-                status = true,
-                print = "dada"
-            });
 
+                _viewProcureSettleReceiptFormListForApprovalResponses.Add(new ViewProcureSettleReceiptFormListForApprovalResponses
+                {
+                    Id = o.Id,
+                    WriteDate = o.WriteDate,
+                    DocumentNumber = o.DocumentNumber,
+                    Name = o.Name,
+                    StatementName = o.StatementName,
+                    NetPayValue = o.NetPayValue
+
+                });
+                
+
+            }
             return _viewProcureSettleReceiptFormListForApprovalResponses;
         }
 
         public List<ViewProcureSettleMemoFormListForApprovalResponses> ViewProcureSettleMemoFormListForApproval(ViewProcureSettleMemoFormListForApprovalRequest request)
         {
             var _viewProcureSettleMemoFormListForApprovalResponses = new List<ViewProcureSettleMemoFormListForApprovalResponses>();
-            _viewProcureSettleMemoFormListForApprovalResponses.Add(new ViewProcureSettleMemoFormListForApprovalResponses 
+            var pSServ = request.year !=0 ? _database.ProcureSettleMemoForms.Where(x => x.FiscalYear == request.year).ToList() : _database.ProcureSettleMemoForms.Where(x => x.Id == request.planTId).ToList();
+            foreach (var k in pSServ)
             {
-                date = DateTime.Now,
-                id = "13",
-                project = "somess",
-                agency = "nAgency",
-                status = false,
-                payBack = 965.71,
-                print = "dadada"
-            });
+
+
+                _viewProcureSettleMemoFormListForApprovalResponses.Add(new ViewProcureSettleMemoFormListForApprovalResponses
+                {
+                    WriteDate = k.WriteDate,
+                    DocumentNumber = k.DocumentNumber,
+                    StatementName = k.StatementName,
+                    DepartmentName = k.DepartmentName,
+                    ApprovalStatusEnum = k.ApprovalStatusEnum,
+                    FundTypeId = k.FundTypeId
+                });
+            }
             return _viewProcureSettleMemoFormListForApprovalResponses;
         }
     }
