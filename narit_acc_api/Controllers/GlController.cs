@@ -19,7 +19,7 @@ namespace narit_acc_api.Controllers
 
         //Header
         [HttpGet]
-        [Route("Chart/Header")]
+        [Route("Chart/Headerrrrr")]
         public IActionResult GetChartHeader()
         {
 
