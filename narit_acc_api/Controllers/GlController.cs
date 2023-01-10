@@ -244,6 +244,133 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("AccType/GetAccountType")]
+        public IActionResult GetAccountType()
+        {
+            var data = _AccGlServices.GetAccountType();
+            if (data != null)
+            {
+                return Json(data);
+            }
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("AccType/GetAccountTypeId")]
+        public IActionResult GetAccountTypeId(int id)
+        {
+            var data = _AccGlServices.GetAccountTypeId(id);
+            if (data != null)
+            {
+                return Json(data);
+            }
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("AccType/AddAccountType")]
+        public IActionResult AddAccountType(CreateAccountTypeRequest Request)
+        {
+            var data = _AccGlServices.AddAccountType(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("AccType/EditAccountType")]
+        public IActionResult EditAccountType(CreateAccountTypeRequest Request)
+        {
+            var data = _AccGlServices.EditAccountType(Request);
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("AccType/DeleteAccountTypeId")]
+        public IActionResult DeleteAccountTypeId(int Id)
+        {
+            var data = _AccGlServices.DeleteAccountTypeId(Id);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("ARType/GetAccountReceivableType")]
+        public IActionResult GetAccountReceivableType()
+        {
+            var data = _AccGlServices.GetAccountReceivableType();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("ARType/GetAccountReceivableTypeId")]
+        public IActionResult GetAccountReceivableTypeId(int id)
+        {
+            var data = _AccGlServices.GetAccountReceivableTypeId(id);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("ARType/AddAccountReceivableType")]
+        public IActionResult AddAccountReceivableType(AccountReceivableTypeRequest Request)
+        {
+            var data = _AccGlServices.AddAccountReceivableType(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("ARType/EditAccountReceivableType")]
+        public IActionResult EditAccountReceivableType(AccountReceivableTypeRequest Request)
+        {
+            var data = _AccGlServices.EditAccountReceivableType(Request);
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("ARType/DeleteAccountReceivableTypeId")]
+        public IActionResult DeleteAccountReceivableTypeId(int Id)
+        {
+            var data = _AccGlServices.DeleteAccountReceivableTypeId(Id);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("APType/GetAccountPayableType")]
+        public IActionResult GetAccountPayableType()
+        {
+            var data = _AccGlServices.GetAccountPayableType();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("APType/GetAccountPayableTypeId")]
+        public IActionResult GetAccountPayableTypeId(int id)
+        {
+            var data = _AccGlServices.GetAccountPayableTypeId(id);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("APType/AddAccountPayableType")]
+        public IActionResult AddAccountPayableType(AccountPayableTypeRequest Request)
+        {
+            var data = _AccGlServices.AddAccountPayableType(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("APType/EditAccountPayableType")]
+        public IActionResult EditAccountPayableType(AccountPayableTypeRequest Request)
+        {
+            var data = _AccGlServices.EditAccountPayableType(Request);
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("APType/DeletetAccountPayableTypeId")]
+        public IActionResult DeletetAccountPayableTypeId(int Id)
+        {
+            var data = _AccGlServices.DeletetAccountPayableTypeId(Id);
+            return Json(data);
+        }
 
 
     }
