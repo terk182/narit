@@ -29,11 +29,15 @@ namespace App.GL
         CommonBaseResponse EditSubMajor(EditChartRequest request);
         CommonBaseResponse DelSubMajor(int Id);
         //Minor
-       // List<ChartMinor> GetChartMinor(int ChartSubMajorId);
-
-
-
-
+        List<ChartMinor> GetChartMinor(int ChartMajorId);
+        CommonBaseResponse AddMinor(ChartRequest request);
+        CommonBaseResponse EditMinor(EditChartRequest request);
+        CommonBaseResponse DelMinor(int Id);
+        //SubMinor
+        List<ChartSubMinor> GetChartSubMinor(int ChartMajorId);
+        CommonBaseResponse AddSubMinor(SubMinorRequest request);
+        CommonBaseResponse EditSubMinor(EditSubMinorRequest request);
+        CommonBaseResponse DelSubMinor(int Id);
 
     }
 }
