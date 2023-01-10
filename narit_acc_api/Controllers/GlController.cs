@@ -14,7 +14,6 @@ namespace narit_acc_api.Controllers
         {
             _AccGlServices = Service;
             _Logger = logger;
-
         }
 
         //Header
@@ -22,8 +21,15 @@ namespace narit_acc_api.Controllers
         [Route("Chart/Header")]
         public IActionResult GetChartHeader()
         {
-
             var data = _AccGlServices.GetChartHeader();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Chart/HeaderId")]
+        public IActionResult GetChartHeaderId(int id)
+        {
+            var data = _AccGlServices.GetChartHeaderId(id);
             return Json(data);
         }
 
@@ -33,6 +39,14 @@ namespace narit_acc_api.Controllers
         public IActionResult GetChartSubHeader(int ChartHeaderId)
         {
             var data = _AccGlServices.GetChartSubHeader(ChartHeaderId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Chart/SubHeaderId")]
+        public IActionResult GetChartSubHeaderId(int id)
+        {
+            var data = _AccGlServices.GetChartSubHeaderId(id);
             return Json(data);
         }
 
@@ -70,6 +84,14 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("Chart/MajorId")]
+        public IActionResult GetChartMajorId(int id)
+        {
+            var data = _AccGlServices.GetChartMajorId(id);
+            return Json(data);
+        }
+
         [HttpPost]
         [Route("Chart/AddMajor")]
         public IActionResult AddMajor(ChartRequest Request)
@@ -103,6 +125,15 @@ namespace narit_acc_api.Controllers
             var data = _AccGlServices.GetChartSubMajor(ChartMajorId);
             return Json(data);
         }
+
+        [HttpGet]
+        [Route("Chart/SubMajorId")]
+        public IActionResult GetChartSubMajorId(int id)
+        {
+            var data = _AccGlServices.GetChartSubMajorId(id);
+            return Json(data);
+        }
+
 
         [HttpPost]
         [Route("Chart/AddSubMajor")]
@@ -138,6 +169,14 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("Chart/MinorId")]
+        public IActionResult GetChartMinorId(int id)
+        {
+            var data = _AccGlServices.GetChartMinorId(id);
+            return Json(data);
+        }
+
         [HttpPost]
         [Route("Chart/AddMinor")]
         public IActionResult AddMinor(ChartRequest Request)
@@ -169,6 +208,14 @@ namespace narit_acc_api.Controllers
         public IActionResult GetChartSubMinor(int ChartMinorId)
         {
             var data = _AccGlServices.GetChartSubMinor(ChartMinorId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Chart/SubMinorId")]
+        public IActionResult GetChartSubMinorId(int id)
+        {
+            var data = _AccGlServices.GetChartSubMinorId(id);
             return Json(data);
         }
 

@@ -1,5 +1,6 @@
 ﻿using App.Common.Models.Responses;
 using App.GL.Requests;
+using App.GL.Responses;
 using Microsoft.EntityFrameworkCore;
 using narit_acc_api.Models;
 using System;
@@ -28,14 +29,24 @@ namespace App.GL
             return data;
         }
 
+        public List<ChartHeader> GetChartHeaderId(int id)
+        {
+            var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
+            return data;
+        }
 
-//SubHeader 
+        //SubHeader 
         public List<ChartSubHeader> GetChartSubHeader(int ChartHeaderId)
         {
             var data = _databaseACC.ChartSubHeaders.Where(x => x.ChartHeaderId == ChartHeaderId).ToList();
             return data;
         }
 
+        public List<ChartSubHeader> GetChartSubHeaderId(int id)
+        {
+            var data = _databaseACC.ChartSubHeaders.Where(x => x.Id == id).ToList();
+            return data;
+        }
         public CommonBaseResponse AddSubHeader(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -115,6 +126,12 @@ namespace App.GL
             return data;
         }
 
+        public List<ChartMajor> GetChartMajorId(int id)
+        {
+            var data = _databaseACC.ChartMajors.Where(x => x.Id == id).ToList();
+            return data;
+        }
+
         public CommonBaseResponse AddMajor(ChartRequest request)
         {
             var response = new CommonBaseResponse();
@@ -185,12 +202,18 @@ namespace App.GL
             return response;
         }
 
-        //SubMinor
+        //SubMajor
         public List<ChartSubMajor> GetChartSubMajor(int ChartMajorId)
         {
             var data = _databaseACC.ChartSubMajors.Where(x => x.ChartMajorId == ChartMajorId).ToList();
             return data;
         }
+        public List<ChartSubMajor> GetChartSubMajorId(int id)
+        {
+            var data = _databaseACC.ChartSubMajors.Where(x => x.Id == id).ToList();
+            return data;
+        }
+
 
         public CommonBaseResponse AddSubMajor(ChartRequest request)
         {
@@ -266,6 +289,12 @@ namespace App.GL
         public List<ChartMinor> GetChartMinor(int ChartMajorId)
         {
             var data = _databaseACC.ChartMinors.Where(x => x.ChartSubMajorId == ChartMajorId).ToList();
+            return data;
+        }
+
+        public List<ChartMinor> GetChartMinorId(int id)
+        {
+            var data = _databaseACC.ChartMinors.Where(x => x.Id == id).ToList();
             return data;
         }
 
@@ -347,6 +376,11 @@ namespace App.GL
             return data;
         }
 
+        public List<ChartSubMinor> GetChartSubMinorId(int id)
+        {
+            var data = _databaseACC.ChartSubMinors.Where(x => x.Id == id).ToList();
+            return data;
+        }
         public CommonBaseResponse AddSubMinor(SubMinorRequest request)
         {
             var response = new CommonBaseResponse();
@@ -419,5 +453,6 @@ namespace App.GL
             }
             return response;
         }
+
     }
 }
