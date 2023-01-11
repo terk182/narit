@@ -3854,5 +3854,26 @@ namespace App.SEC
 
             return response;
         }
+        public SecBaseResponse DeletePlanCore(int PlanCoreId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.PlanCores.Where(x => x.Id == PlanCoreId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
     }
 }

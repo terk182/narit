@@ -3327,7 +3327,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpDelete]
+        [Route("/Plan/Setup/PlanCoreSetup/DeletePlanCore/{Id}")]
+        public IActionResult DeletePlanCore(int Id)
+        {
 
+            var data = _SecServices.DeletePlanCore(Id);
+
+            return Json(data);
+        }
 
         #endregion
         //[HttpGet]
