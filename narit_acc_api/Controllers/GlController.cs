@@ -293,82 +293,82 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpGet]
-        [Route("ARType/GetAccountReceivableType")]
-        public IActionResult GetAccountReceivableType()
+        [Route("ARType/GetDebtorType")]
+        public IActionResult GetDebtorType()
         {
-            var data = _AccGlServices.GetAccountReceivableType();
+            var data = _AccGlServices.GetDebtorType();
             return Json(data);
         }
 
         [HttpGet]
-        [Route("ARType/GetAccountReceivableTypeId")]
-        public IActionResult GetAccountReceivableTypeId(int id)
+        [Route("ARType/GetDebtorTypeId")]
+        public IActionResult GetDebtorTypeId(int id)
         {
-            var data = _AccGlServices.GetAccountReceivableTypeId(id);
+            var data = _AccGlServices.GetDebtorTypeId(id);
             return Json(data);
         }
 
         [HttpPost]
-        [Route("ARType/AddAccountReceivableType")]
-        public IActionResult AddAccountReceivableType(AccountReceivableTypeRequest Request)
+        [Route("ARType/AddDebtorType")]
+        public IActionResult AddDebtorType(DebtorTypeRequest Request)
         {
-            var data = _AccGlServices.AddAccountReceivableType(Request);
+            var data = _AccGlServices.AddDebtorType(Request);
             return Json(data);
         }
 
         [HttpPost]
-        [Route("ARType/EditAccountReceivableType")]
-        public IActionResult EditAccountReceivableType(AccountReceivableTypeRequest Request)
+        [Route("ARType/EditDebtorType")]
+        public IActionResult EditDebtorType(DebtorTypeRequest Request)
         {
-            var data = _AccGlServices.EditAccountReceivableType(Request);
+            var data = _AccGlServices.EditDebtorType(Request);
             return Json(data);
         }
 
         [HttpDelete]
-        [Route("ARType/DeleteAccountReceivableTypeId")]
-        public IActionResult DeleteAccountReceivableTypeId(int Id)
+        [Route("ARType/DeleteDebtorTypeId")]
+        public IActionResult DeleteDebtorTypeId(int Id)
         {
-            var data = _AccGlServices.DeleteAccountReceivableTypeId(Id);
+            var data = _AccGlServices.DeleteDebtorTypeId(Id);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("APType/GetAccountPayableType")]
-        public IActionResult GetAccountPayableType()
+        [Route("APType/GetCreditorType")]
+        public IActionResult GetCreditorType()
         {
-            var data = _AccGlServices.GetAccountPayableType();
+            var data = _AccGlServices.GetCreditorType();
             return Json(data);
         }
 
         [HttpGet]
-        [Route("APType/GetAccountPayableTypeId")]
-        public IActionResult GetAccountPayableTypeId(int id)
+        [Route("APType/GetCreditorTypeId")]
+        public IActionResult GetCreditorTypeId(int id)
         {
-            var data = _AccGlServices.GetAccountPayableTypeId(id);
+            var data = _AccGlServices.GetCreditorTypeId(id);
             return Json(data);
         }
 
         [HttpPost]
-        [Route("APType/AddAccountPayableType")]
-        public IActionResult AddAccountPayableType(AccountPayableTypeRequest Request)
+        [Route("APType/AddCreditorType")]
+        public IActionResult AddCreditorType(CreditorTypeRequest Request)
         {
-            var data = _AccGlServices.AddAccountPayableType(Request);
+            var data = _AccGlServices.AddCreditorType(Request);
             return Json(data);
         }
 
         [HttpPost]
-        [Route("APType/EditAccountPayableType")]
-        public IActionResult EditAccountPayableType(AccountPayableTypeRequest Request)
+        [Route("APType/EditCreditorType")]
+        public IActionResult EditCreditorType(CreditorTypeRequest Request)
         {
-            var data = _AccGlServices.EditAccountPayableType(Request);
+            var data = _AccGlServices.EditCreditorType(Request);
             return Json(data);
         }
 
         [HttpDelete]
-        [Route("APType/DeletetAccountPayableTypeId")]
-        public IActionResult DeletetAccountPayableTypeId(int Id)
+        [Route("APType/DeletetCreditorTypeId")]
+        public IActionResult DeletetCreditorTypeId(int Id)
         {
-            var data = _AccGlServices.DeletetAccountPayableTypeId(Id);
+            var data = _AccGlServices.DeletetCreditorTypeId(Id);
             return Json(data);
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.GL.Requests
 {
-    public class AccountPayableTypeRequest
+    public class CreditorTypeRequest
     {
         public int? Id { get; set; } 
         public string? TypeCode { get; set; } 

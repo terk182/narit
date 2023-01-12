@@ -55,19 +55,19 @@ namespace App.GL
         List<AccountType> GetAccountType();
         AccountType GetAccountTypeId(int Id);
 
-        //AccountReceivableType
-        List<AccountReceivableType> GetAccountReceivableType();
-        AccountReceivableType GetAccountReceivableTypeId(int id);
-        CommonBaseResponse AddAccountReceivableType(AccountReceivableTypeRequest request);
-        CommonBaseResponse EditAccountReceivableType(AccountReceivableTypeRequest request);
-        CommonBaseResponse DeleteAccountReceivableTypeId(int Id);
+        //DebtorType
+        List<DebtorType> GetDebtorType();
+        DebtorType GetDebtorTypeId(int id);
+        CommonBaseResponse AddDebtorType(DebtorTypeRequest request);
+        CommonBaseResponse EditDebtorType(DebtorTypeRequest request);
+        CommonBaseResponse DeleteDebtorTypeId(int Id);
 
-        //AccountPayableType
-        List<AccountPayableType> GetAccountPayableType();
-        AccountPayableType GetAccountPayableTypeId(int id);
-        CommonBaseResponse AddAccountPayableType(AccountPayableTypeRequest request);
-        CommonBaseResponse EditAccountPayableType(AccountPayableTypeRequest request);
-        CommonBaseResponse DeletetAccountPayableTypeId(int Id);
+        //CreditorType
+        List<CreditorType> GetCreditorType();
+        CreditorType GetCreditorTypeId(int id);
+        CommonBaseResponse AddCreditorType(CreditorTypeRequest request);
+        CommonBaseResponse EditCreditorType(CreditorTypeRequest request);
+        CommonBaseResponse DeletetCreditorTypeId(int Id);
 
     }
 }

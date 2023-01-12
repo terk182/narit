@@ -17,8 +17,6 @@ namespace narit_acc_api.Models
         }
 
         public virtual DbSet<AccountForm> AccountForms { get; set; } = null!;
-        public virtual DbSet<AccountPayableType> AccountPayableTypes { get; set; } = null!;
-        public virtual DbSet<AccountReceivableType> AccountReceivableTypes { get; set; } = null!;
         public virtual DbSet<AccountType> AccountTypes { get; set; } = null!;
         public virtual DbSet<Bank> Banks { get; set; } = null!;
         public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
@@ -30,6 +28,8 @@ namespace narit_acc_api.Models
         public virtual DbSet<ChartSubHeader> ChartSubHeaders { get; set; } = null!;
         public virtual DbSet<ChartSubMajor> ChartSubMajors { get; set; } = null!;
         public virtual DbSet<ChartSubMinor> ChartSubMinors { get; set; } = null!;
+        public virtual DbSet<CreditorType> CreditorTypes { get; set; } = null!;
+        public virtual DbSet<DebtorType> DebtorTypes { get; set; } = null!;
         public virtual DbSet<JournalForm> JournalForms { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -71,76 +71,6 @@ namespace narit_acc_api.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.PrintForm).HasDefaultValueSql("((0))");
-            });
-
-            modelBuilder.Entity<AccountPayableType>(entity =>
-            {
-                entity.ToTable("AccountPayableType");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AccountPayableTypeCode)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("AccountPayableTypeCODE");
-
-                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
-
-                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.CreateDate)
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
-
-                entity.Property(e => e.Detail)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.AccountType)
-                    .WithMany(p => p.AccountPayableTypes)
-                    .HasForeignKey(d => d.AccountTypeId)
-                    .HasConstraintName("FK_AccountPayableType_AccountType");
-            });
-
-            modelBuilder.Entity<AccountReceivableType>(entity =>
-            {
-                entity.ToTable("AccountReceivableType");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AccountReceivableTypeCode)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("AccountReceivableTypeCODE");
-
-                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
-
-                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.CreateDate)
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
-
-                entity.Property(e => e.Detail)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.AccountType)
-                    .WithMany(p => p.AccountReceivableTypes)
-                    .HasForeignKey(d => d.AccountTypeId)
-                    .HasConstraintName("FK_AccountReceivableType_AccountType");
             });
 
             modelBuilder.Entity<AccountType>(entity =>
@@ -518,6 +448,78 @@ namespace narit_acc_api.Models
                     .WithMany(p => p.ChartSubMinors)
                     .HasForeignKey(d => d.ChartMinorId)
                     .HasConstraintName("FK_ChartSubMinor_ChartMinor");
+            });
+
+            modelBuilder.Entity<CreditorType>(entity =>
+            {
+                entity.ToTable("CreditorType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.CreateDate)
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.Property(e => e.CreditorTypeCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("CreditorTypeCODE");
+
+                entity.Property(e => e.Detail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AccountType)
+                    .WithMany(p => p.CreditorTypes)
+                    .HasForeignKey(d => d.AccountTypeId)
+                    .HasConstraintName("FK_AccountPayableType_AccountType");
+            });
+
+            modelBuilder.Entity<DebtorType>(entity =>
+            {
+                entity.ToTable("DebtorType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.ChartSubMinorId).HasColumnName("ChartSubMinorID");
+
+                entity.Property(e => e.CreateDate)
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.Property(e => e.DebtorTypeCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("DebtorTypeCODE");
+
+                entity.Property(e => e.Detail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.ChartSubMinor)
+                    .WithMany(p => p.DebtorTypes)
+                    .HasForeignKey(d => d.ChartSubMinorId)
+                    .HasConstraintName("FK_AccountReceivableType_AccountType");
             });
 
             modelBuilder.Entity<JournalForm>(entity =>

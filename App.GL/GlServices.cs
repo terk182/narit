@@ -525,29 +525,29 @@ namespace App.GL
             return accountTypeList;
         }
 
-        //AccountReceivableType
-        public List<AccountReceivableType> GetAccountReceivableType()
+        //DebtorType
+        public List<DebtorType> GetDebtorType()
         {
-            List<AccountReceivableType> accounts = _databaseACC.AccountReceivableTypes.ToList();
+            List<DebtorType> accounts = _databaseACC.DebtorTypes.ToList();
             return accounts;
         }
-        public AccountReceivableType GetAccountReceivableTypeId(int id)
+        public DebtorType GetDebtorTypeId(int id)
         {
-            AccountReceivableType account = _databaseACC.AccountReceivableTypes.Where(x => x.Id == id).FirstOrDefault();
+            DebtorType account = _databaseACC.DebtorTypes.Where(x => x.Id == id).FirstOrDefault();
             if (account != null)
             {
                 return account;
             }
             return account;
         }
-        public CommonBaseResponse AddAccountReceivableType(AccountReceivableTypeRequest request)
+        public CommonBaseResponse AddDebtorType(DebtorTypeRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            AccountReceivableType account = new AccountReceivableType();
-            var result = _databaseACC.AccountReceivableTypes.Where(x => x.AccountReceivableTypeCode == request.TypeCode).FirstOrDefault();
+            DebtorType account = new DebtorType();
+            var result = _databaseACC.DebtorTypes.Where(x => x.DebtorTypeCode == request.TypeCode).FirstOrDefault();
             if (result == null)
             {
-                account.AccountReceivableTypeCode = request.TypeCode;
+                account.DebtorTypeCode = request.TypeCode;
                 account.Name = request.Name;
                 account.Active = request.Active;
                 account.Index = request.Index;
@@ -560,14 +560,14 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse EditAccountReceivableType(AccountReceivableTypeRequest request)
+        public CommonBaseResponse EditDebtorType(DebtorTypeRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            AccountReceivableType account = new AccountReceivableType();
-            AccountReceivableType result = _databaseACC.AccountReceivableTypes.Where(x => x.Id == request.Id).FirstOrDefault();
+            DebtorType account = new DebtorType();
+            DebtorType result = _databaseACC.DebtorTypes.Where(x => x.Id == request.Id).FirstOrDefault();
             if (result != null)
             {
-                result.AccountReceivableTypeCode = request.TypeCode;
+                result.DebtorTypeCode = request.TypeCode;
                 result.Name = request.Name;
                 result.Active = request.Active;
                 result.Index = request.Index;
@@ -580,10 +580,10 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse DeleteAccountReceivableTypeId(int id)
+        public CommonBaseResponse DeleteDebtorTypeId(int id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.AccountReceivableTypes.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.DebtorTypes.Where(x => x.Id == id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -600,25 +600,25 @@ namespace App.GL
             return response;
         }
 
-        //AccountPayableType
-        public List<AccountPayableType> GetAccountPayableType()
+        //CreditorType
+        public List<CreditorType> GetCreditorType()
         {
-            List<AccountPayableType> accountPayableTypes = _databaseACC.AccountPayableTypes.ToList();
-            return accountPayableTypes;
+            List<CreditorType> CreditorTypes = _databaseACC.CreditorTypes.ToList();
+            return CreditorTypes;
         }
-        public AccountPayableType GetAccountPayableTypeId(int id)
+        public CreditorType GetCreditorTypeId(int id)
         {
-            AccountPayableType accountPayableType = _databaseACC.AccountPayableTypes.Where(x => x.Id == id).FirstOrDefault();
-            return accountPayableType;
+            CreditorType CreditorType = _databaseACC.CreditorTypes.Where(x => x.Id == id).FirstOrDefault();
+            return CreditorType;
         }
-        public CommonBaseResponse AddAccountPayableType(AccountPayableTypeRequest request)
+        public CommonBaseResponse AddCreditorType(CreditorTypeRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            AccountPayableType accountPayable = new AccountPayableType();
-            var result = _databaseACC.AccountPayableTypes.Where(x => x.AccountPayableTypeCode == request.TypeCode).FirstOrDefault();
+            CreditorType accountPayable = new CreditorType();
+            var result = _databaseACC.CreditorTypes.Where(x => x.CreditorTypeCode == request.TypeCode).FirstOrDefault();
             if (result == null)
             {
-                accountPayable.AccountPayableTypeCode = request.TypeCode;
+                accountPayable.CreditorTypeCode = request.TypeCode;
                 accountPayable.Name = request.Name;
                 accountPayable.Active = request.Active;
                 accountPayable.Index = request.Index;
@@ -631,14 +631,14 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse EditAccountPayableType(AccountPayableTypeRequest request)
+        public CommonBaseResponse EditCreditorType(CreditorTypeRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            AccountPayableType account = new AccountPayableType();
-            AccountPayableType result = _databaseACC.AccountPayableTypes.Where(x => x.Id == request.Id).FirstOrDefault();
+            CreditorType account = new CreditorType();
+            CreditorType result = _databaseACC.CreditorTypes.Where(x => x.Id == request.Id).FirstOrDefault();
             if (result != null)
             {
-                result.AccountPayableTypeCode = request.TypeCode;
+                result.CreditorTypeCode = request.TypeCode;
                 result.Name = request.Name;
                 result.Active = request.Active;
                 result.Index = request.Index;
@@ -651,10 +651,10 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse DeletetAccountPayableTypeId(int id)
+        public CommonBaseResponse DeletetCreditorTypeId(int id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.AccountPayableTypes.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.CreditorTypes.Where(x => x.Id == id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
