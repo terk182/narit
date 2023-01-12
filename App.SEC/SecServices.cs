@@ -182,7 +182,27 @@ namespace App.SEC
             return result;
         }
 
-        ///////////// มาละจ้า /////////////////
+        public List<DepartmentBudgetLimitDto> DepartmentBudgetLimitGetByFiscalYear(int FiscalYear)
+        {
+            var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
+            var result = new List<DepartmentBudgetLimitDto>();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentBudgetLimitDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    BudgetLimit = item.BudgetLimit
+                });
+
+
+            }
+            return result;
+        }
         public List<PlanTypeDto> PlanTypeGetAll(int FiscalYear)
         {
             var data = _database.PlanTypes.Where(x => x.FiscalYear == FiscalYear && x.Active);
@@ -229,7 +249,27 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse DepartmentBudgetLimitSetup(DepartmentBudgetLimitRequest request)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Departments.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (data != null)
+            {
+                data.BudgetLimit = request.BudgetLimit;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Save Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
 
+            return response;
+
+        }
         public SecBaseResponse FundTypeSetup(FundTypeRequest request)
         {
             var _FundType = new FundType();
@@ -573,12 +613,37 @@ namespace App.SEC
             response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
             return response;
         }
+        public SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request)
+        {
 
+            var _Strategy = new StrategiesBudget();
+            _Strategy.Id = (int)request.Id;
+            _Strategy.Name = request.Name;
+            _Strategy.Active = request.Active;
+            _Strategy.FiscalYear = (int)request.FiscalYear;
+            if (request.ParentStrategyBudgetId != 0)
+            {
+                _Strategy.ParentStrategyBudgetId = request.ParentStrategyBudgetId;
+            }
+
+
+
+            _database.Entry(_Strategy).State = _Strategy.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
+            return response;
+        }
         public List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear)
         {
 
             var result = new List<StrategySetupModel>();
-            var data = _database.Strategies.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var data = _database.Strategies.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategySetupModel
@@ -588,6 +653,24 @@ namespace App.SEC
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
                     ParentStrategyId = item.ParentStrategyId,
+                });
+            }
+            return result;
+        }
+        public List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear)
+        {
+
+            var result = new List<StrategyBudgetDto>();
+            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategyBudgetDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
                 });
             }
             return result;
@@ -609,6 +692,25 @@ namespace App.SEC
                     });
 
                 }
+            return result;
+        }
+        public List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id)
+        {
+
+            var result = new List<StrategyBudgetDto>();
+            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategyBudgetDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
+                });
+
+            }
             return result;
         }
         public List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id)
@@ -688,13 +790,13 @@ namespace App.SEC
             _StrategicIndicator.Name = request.Name;
             _StrategicIndicator.Active = request.Active;
             _StrategicIndicator.FiscalYear = request.FiscalYear;
-            _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+            _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             _StrategicIndicator.Unit = request.Unit;
             _StrategicIndicator.Amount = request.Amount;
             _StrategicIndicator.Weight = request.Weight;
-            if (request.ParentStrategicIndicatorId != 0)
+            if (request.ParentStrategyId != 0)
             {
-                _StrategicIndicator.ParentStrategicIndicatorId = request.ParentStrategicIndicatorId;
+                _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             }
 
 
@@ -724,7 +826,7 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    ParentStrategyId = item.ParentStrategyId,
                     Unit = item.Unit,
                     Amount = item.Amount,
                     Weight = item.Weight
@@ -2148,7 +2250,22 @@ namespace App.SEC
             }
             return result;
         }
+        public List<PlanCoreGetAllDto> GetAllPlanCore(int FiscalYear)
+        {
+            var data = _database.PlanCores.Where(x => x.FiscalYear == FiscalYear && x.Active == true);
+            var result = new List<PlanCoreGetAllDto>();
+            foreach (var item in data)
+            {
+                result.Add(new PlanCoreGetAllDto
+                {
+                    Id = item.Id,
+                    Name = item.Name
+                });
 
+
+            }
+            return result;
+        }
         public PlanCoreListDto GetEditPlan(int PlanCoreId)
         {
             var result = new PlanCoreListDto();
@@ -2423,7 +2540,7 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    ParentStrategyId = item.ParentStrategyId,
                     Unit = item.Unit,
                     Amount = item.Amount,
                     Weight = item.Weight
@@ -3601,7 +3718,28 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.StrategiesBudgets.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3622,7 +3760,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3643,7 +3781,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3664,7 +3802,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3685,7 +3823,7 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
             }
             else
             {
@@ -3706,7 +3844,28 @@ namespace App.SEC
                 _database.Entry(data).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = "Delect Complete";
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeletePlanCore(int PlanCoreId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.PlanCores.Where(x => x.Id == PlanCoreId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
             }
             else
             {

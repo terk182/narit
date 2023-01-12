@@ -3066,6 +3066,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentSetup(request);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/Plan/Setup/DepartmentBudgetLimitSetup")]
+        public IActionResult DepartmentBudgetLimitSetup(DepartmentBudgetLimitRequest request)
+        {
+            var data = _SecServices.DepartmentBudgetLimitSetup(request);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Setup/DepartmentSetup/GetByFiscalYear/{year}")]
         public IActionResult DepartmentSetupGetByFiscalYear(int year)
@@ -3073,7 +3080,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentListGetByFiscalYear(year);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Setup/DepartmentBudgetLimitSetup/GetByFiscalYear/{year}")]
+        public IActionResult DepartmentBudgetLimitGetByFiscalYear(int year)
+        {
+            var data = _SecServices.DepartmentBudgetLimitGetByFiscalYear(year);
+            return Json(data);
+        }
         [HttpPost]
         [Route("/Plan/Setup/FundTypeSetup")]
         public IActionResult FundTypeSetup(FundTypeRequest request)
@@ -3217,13 +3230,26 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Plan/Setup/StrategyBudget/FiscalYear/{year}")]
+        public IActionResult StrategyBudgetByFiscalYear(int year)
+        {
+            var data = _SecServices.StrategyBudgetByFiscalYear(year);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Plan/Setup/StrategySetup/FiscalYearandStrategyId/{year}/{id}")]
         public IActionResult StrategySetupByFiscalYearandStrategyId(int year, int id)
         {
             var data = _SecServices.StrategySetupByFiscalYearandStrategyId(year,id);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Setup/StrategyBudget/FiscalYearandStrategyId/{year}/{id}")]
+        public IActionResult StrategyBudgetByFiscalYearandStrategyId(int year, int id)
+        {
+            var data = _SecServices.StrategyBudgetByFiscalYearandStrategyId(year, id);
+            return Json(data);
+        }
         [HttpPost]
         [Route("/Plan/Setup/StrategySetup")]
         public IActionResult StrategySetup(StrategySetupModel request)
@@ -3231,7 +3257,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategySetup(request);
             return Json(data);
         }
-        
+        [HttpPost]
+        [Route("/Plan/Setup/StrategyBudgetSetup")]
+        public IActionResult StrategyBudgetSetup(StrategyBudgetDto request)
+        {
+            var data = _SecServices.StrategyBudgetSetup(request);
+            return Json(data);
+        }
         [HttpDelete]
         [Route("/Plan/Setup/StrategySetup/DeleteStrategy/{Id}")]
         public IActionResult DeleteStrategy(int Id)
@@ -3241,7 +3273,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpDelete]
+        [Route("/Plan/Setup/StrategyBudget/DeleteStrategy/{Id}")]
+        public IActionResult DeleteStrategyBudget(int Id)
+        {
 
+            var data = _SecServices.DeleteStrategyBudget(Id);
+
+            return Json(data);
+        }
         [HttpDelete]
         [Route("/Plan/Setup/StrategicIndicatorSetup/DeleteStrategicIndicator/{Id}")]
         public IActionResult DeleteStrategicIndicator(int Id)
@@ -3287,7 +3327,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpDelete]
+        [Route("/Plan/Setup/PlanCoreSetup/DeletePlanCore/{Id}")]
+        public IActionResult DeletePlanCore(int Id)
+        {
 
+            var data = _SecServices.DeletePlanCore(Id);
+
+            return Json(data);
+        }
 
         #endregion
         //[HttpGet]

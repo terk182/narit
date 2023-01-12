@@ -19,6 +19,7 @@ namespace App.SEC
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
+        
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
@@ -29,11 +30,17 @@ namespace App.SEC
         SecBaseResponse StrategySetup(StrategySetupModel request);
         List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
         List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id);
+        SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request);
+        List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear);
+        List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id);
 
         SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
 
         SecBaseResponse DepartmentSetup(DepartmentRequest request);
+        SecBaseResponse DepartmentBudgetLimitSetup(DepartmentBudgetLimitRequest request);
         List<DepartmentRespone> DepartmentListGetByFiscalYear(int FiscalYear);
+        List<DepartmentBudgetLimitDto> DepartmentBudgetLimitGetByFiscalYear(int FiscalYear);
+        //we are here
         SecBaseResponse FundTypeSetup(FundTypeRequest request);
 
         List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear);
@@ -82,6 +89,7 @@ namespace App.SEC
 
         List<aListModel> aList(int fiscalYear);
         PlanCoreListDto GetEditPlan(int PlanCoreId);
+        List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
 
         List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();
 
@@ -108,11 +116,12 @@ namespace App.SEC
         List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
         SecBaseResponse DeleteStrategy (int StrategyId);
+        SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId);
         SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId);
         SecBaseResponse DeletePlanType(int PlanTypeId);
         SecBaseResponse DeleteDepartment(int DepartmentId);
         SecBaseResponse DeleteFundType(int FundTypeId);
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
-        
+        SecBaseResponse DeletePlanCore(int PlanCoreId);
     }
 }

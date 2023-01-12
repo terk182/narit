@@ -306,6 +306,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<StaffWorkShiftSpecificDayOff> StaffWorkShiftSpecificDayOffs { get; set; } = null!;
         public virtual DbSet<StaffWorkShiftSpecificHoliday> StaffWorkShiftSpecificHolidays { get; set; } = null!;
         public virtual DbSet<StrategicIndicator> StrategicIndicators { get; set; } = null!;
+        public virtual DbSet<StrategiesBudget> StrategiesBudgets { get; set; } = null!;
         public virtual DbSet<Strategy> Strategies { get; set; } = null!;
         public virtual DbSet<SummaryStatementCache> SummaryStatementCaches { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
@@ -8597,6 +8598,13 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.InverseParentStrategicIndicator)
                     .HasForeignKey(d => d.ParentStrategicIndicatorId)
                     .HasConstraintName("FK_ParentStrategicIndicatorSubStrategicIndicator");
+            });
+
+            modelBuilder.Entity<StrategiesBudget>(entity =>
+            {
+                entity.ToTable("StrategiesBudgets", "Plan");
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Strategy>(entity =>

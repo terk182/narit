@@ -4,4 +4,8 @@ _ReSharper.*
 bin
 obj
 packages
+<<<<<<< HEAD
 .vs/narit_mis_api/FileContentIndex
+=======
+.vs/narit_mis_api/FileContentIndex
+>>>>>>> origin/master
