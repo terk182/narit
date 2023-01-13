@@ -1919,6 +1919,21 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetAllPlanCore/{year}")]
+        public IActionResult GetAllPlanCore(int year)
+        {
+            var data = _SecServices.GetAllPlanCore(year);
+            return Json(data);
+        }
+        
+        [HttpPost]
+        [Route("/Plan/Operate/EditPlan/PlanCoreSetUp")]
+        public IActionResult PlanCoreSetUp(PlanCoreRequest request)
+        {
+            var data = _SecServices.PlanCoreSetUp(request);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Plan/Operate/EditPlan/PrinciplePlanTags")]
         public IActionResult EditPlanPrinciplePlanTags()
         {

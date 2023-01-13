@@ -3875,5 +3875,55 @@ namespace App.SEC
 
             return response;
         }
+        public SecBaseResponse PlanCoreSetUp(PlanCoreRequest request)
+        {
+            var _Plancore = new PlanCore();
+            _Plancore.Id = request.Id;
+            _Plancore.Name = request.Name;
+            _Plancore.FiscalYear = request.FiscalYear;
+            _Plancore.Code = request.Code;
+            _Plancore.Active = request.Active;
+            _Plancore.DepartmentId = request.DepartmentId;
+            _Plancore.PlanTypeId = request.PlanTypeId;
+            _Plancore.ReferenceOldId = request.ReferenceOldId;
+            _Plancore.Detail = request.Detail;
+            _Plancore.Objective = request.Objective;
+            _Plancore.Benefit = request.Benefit;
+            _Plancore.PlanCategoryEnum = request.PlanCategoryEnum;
+            _Plancore.ContinuousStatusEnum = request.ContinuousStatusEnum;
+            _Plancore.FundTypeId = request.FundTypeId;
+            _Plancore.CreateDate = request.CreateDate;
+            _Plancore.CreateByStaffId = request.CreateByStaffId;
+            _Plancore.PrinciplePlanTagId = request.PrinciplePlanTagId;
+            _Plancore.Weight = request.Weight;
+            _Plancore.IsApproved = request.IsApproved;
+            _Plancore.CodeNumber = request.CodeNumber;
+            _Plancore.ProjectDuration = request.ProjectDuration;
+            _Plancore.MonthStart = request.MonthStart;
+            _Plancore.MonthEnd = request.MonthEnd;
+            _Plancore.TargetIdListValue = request.TargetIdListValue;
+            _Plancore.OtherTarget = request.OtherTarget;
+            _Plancore.ExpenseTypeEnum = request.ExpenseTypeEnum;
+            _Plancore.Output = request.Output;
+            _Plancore.Outcome = request.Outcome;
+            _Plancore.FundSourceEnum = request.FundSourceEnum;
+            _Plancore.FundCategoryEnum = request.FundCategoryEnum;
+
+        //if (request.ParentDepartmentId != 0)
+        //{
+        //    _Department.ParentDepartmentId = request.ParentDepartmentId;
+        //}
+        _database.Entry(_Plancore).State = _Plancore.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Plancore.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
     }
 }
