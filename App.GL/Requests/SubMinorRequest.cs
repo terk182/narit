@@ -13,7 +13,7 @@ namespace App.GL.Requests
         public string Name { get; set; }
         public int? AccTypeId { get; set; }
         public string? Detail { get; set; }
-        public string? Balance { get; set; }
+        public int? Balance { get; set; }
 
     }
 }

@@ -372,6 +372,44 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("Creditor/GetCreditor")]
+        public IActionResult GetCreditor()
+        {
+            var data = _AccGlServices.GetCreditor();
+            return Json(data);
+        }
 
+        [HttpGet]
+        [Route("Creditor/GetCreditorId")]
+        public IActionResult GetCreditorId(int Id)
+        {
+            var data = _AccGlServices.GetCreditorId(Id);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Creditor/AddCreditor")]
+        public IActionResult AddCreditor(CreditorRequest Request)
+        {
+            var data = _AccGlServices.AddCreditor(Request);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Creditor/EditCreditor")]
+        public IActionResult EditCreditor(CreditorRequest Request)
+        {
+            var data = _AccGlServices.EditCreditor(Request);
+            return Json(data);
+        }
+
+        [HttpDelete]
+        [Route("Creditor/DeleteCreditor")]
+        public IActionResult DeleteCreditorId(int Id)
+        {
+            var data = _AccGlServices.DeleteCreditorId(Id);
+            return Json(data);
+        }
     }
 }
