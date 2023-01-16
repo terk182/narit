@@ -91,8 +91,9 @@ namespace App.SEC
         PlanCoreListDto GetEditPlan(int PlanCoreId);
         SecBaseResponse PlanCoreSetUp(PlanCoreRequest request);
         SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request);
+        //SecBaseResponse PerformanceIndicatorSetUp(ResponsiblePersonRequest request);
         List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
-
+        List<StaffGetAllDto> GetAllStaff();
         List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();
 
         List<StrategyDto> EditPlanStrategicIndicatorServ(int fiscalYear);

@@ -2266,6 +2266,23 @@ namespace App.SEC
             }
             return result;
         }
+        public List<StaffGetAllDto> GetAllStaff()
+        {
+            var data = _database.Staffs.Where(x => x.Active == true);
+            var result = new List<StaffGetAllDto>();
+            foreach (var item in data)
+            {
+                result.Add(new StaffGetAllDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Surname = item.Surname
+                });
+
+
+            }
+            return result;
+        }
         public PlanCoreListDto GetEditPlan(int PlanCoreId)
         {
             var result = new PlanCoreListDto();

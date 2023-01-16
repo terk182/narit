@@ -1925,7 +1925,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.GetAllPlanCore(year);
             return Json(data);
         }
-        
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetAllStaff")]
+        public IActionResult GetAllStaff()
+        {
+            var data = _SecServices.GetAllStaff();
+            return Json(data);
+        }
         [HttpPost]
         [Route("/Plan/Operate/EditPlan/PlanCoreSetUp")]
         public IActionResult PlanCoreSetUp(PlanCoreRequest request)
