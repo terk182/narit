@@ -90,6 +90,7 @@ namespace App.SEC
         List<aListModel> aList(int fiscalYear);
         PlanCoreListDto GetEditPlan(int PlanCoreId);
         SecBaseResponse PlanCoreSetUp(PlanCoreRequest request);
+        SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request);
         List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
 
         List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();

@@ -1933,6 +1933,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.PlanCoreSetUp(request);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/Plan/Operate/EditPlan/ResponsiblePersonSetUp")]
+        public IActionResult ResponsiblePersonSetUp(ResponsiblePersonRequest request)
+        {
+            var data = _SecServices.ResponsiblePersonSetUp(request);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Operate/EditPlan/PrinciplePlanTags")]
         public IActionResult EditPlanPrinciplePlanTags()

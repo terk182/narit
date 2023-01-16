@@ -3925,5 +3925,35 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request)
+        {
+            var _ResponsiblePerson = new ResponsiblePerson();
+            _ResponsiblePerson.Id = request.Id;
+            _ResponsiblePerson.Name = request.Name;
+            _ResponsiblePerson.Active = request.Active;
+            _ResponsiblePerson.FiscalYear = request.FiscalYear;
+            _ResponsiblePerson.StaffId = request.StaffId;
+            _ResponsiblePerson.PlanPersonResponsibilityEnum = request.PlanPersonResponsibilityEnum;
+            _ResponsiblePerson.PlanCoreId = request.PlanCoreId;
+            _ResponsiblePerson.PlanActivityId = request.PlanActivityId;
+            _ResponsiblePerson.HrdepartmentId = request.HrdepartmentId;
+            _ResponsiblePerson.HrdepartmentName = request.HrdepartmentName;
+
+        //if (request.ParentDepartmentId != 0)
+        //{
+        //    _Department.ParentDepartmentId = request.ParentDepartmentId;
+        //}
+        _database.Entry(_ResponsiblePerson).State = _ResponsiblePerson.Id == 0 ?
+                                          EntityState.Added :
+                                          EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _ResponsiblePerson.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
     }
 }
