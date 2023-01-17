@@ -126,5 +126,6 @@ namespace App.SEC
         SecBaseResponse DeleteFundType(int FundTypeId);
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
+        SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
     }
 }

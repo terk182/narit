@@ -39,6 +39,7 @@ namespace App.SEC.Models.Requests
         public string Outcome { get; set; } = null!;
         public int FundSourceEnum { get; set; }
         public int FundCategoryEnum { get; set; }
+        public int? FundSourceId { get; set; }
         //public List<ResponsiblePerson>? ResponsiblePeople { get; set; }
         //public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
     }

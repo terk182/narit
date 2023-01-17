@@ -127,6 +127,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<FingerPrintDbrawData> FingerPrintDbrawDatas { get; set; } = null!;
         public virtual DbSet<FingerPrintReaderSensor> FingerPrintReaderSensors { get; set; } = null!;
         public virtual DbSet<FrFormActionLog> FrFormActionLogs { get; set; } = null!;
+        public virtual DbSet<FundSource> FundSources { get; set; } = null!;
         public virtual DbSet<FundType> FundTypes { get; set; } = null!;
         public virtual DbSet<GarbageBill> GarbageBills { get; set; } = null!;
         public virtual DbSet<GeBorrowFormActionLog> GeBorrowFormActionLogs { get; set; } = null!;
@@ -219,6 +220,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<PlanCrudpolicy> PlanCrudpolicies { get; set; } = null!;
         public virtual DbSet<PlanDepartmentStaffPermission> PlanDepartmentStaffPermissions { get; set; } = null!;
         public virtual DbSet<PlanFile> PlanFiles { get; set; } = null!;
+        public virtual DbSet<PlanFundSource> PlanFundSources { get; set; } = null!;
         public virtual DbSet<PlanItem> PlanItems { get; set; } = null!;
         public virtual DbSet<PlanItemActionLog> PlanItemActionLogs { get; set; } = null!;
         public virtual DbSet<PlanItemType> PlanItemTypes { get; set; } = null!;
@@ -3236,6 +3238,11 @@ namespace narit_mis_api.Models
                     .HasConstraintName("FK_FinancialReimbursementFormFrFormActionLog");
             });
 
+            modelBuilder.Entity<FundSource>(entity =>
+            {
+                entity.ToTable("FundSource", "Plan");
+            });
+
             modelBuilder.Entity<FundType>(entity =>
             {
                 entity.ToTable("FundTypes", "Plan");
@@ -5853,6 +5860,13 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.PlanFiles)
                     .HasForeignKey(d => d.SettleReceiptFormId)
                     .HasConstraintName("FK_SettleReceiptFormPlanFile");
+            });
+
+            modelBuilder.Entity<PlanFundSource>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Plan.FundSource");
             });
 
             modelBuilder.Entity<PlanItem>(entity =>

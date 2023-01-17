@@ -3364,7 +3364,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpDelete]
+        [Route("/Plan/Setup/PlanCoreSetup/DeleteResponsiblePerson/{Id}")]
+        public IActionResult DeleteResponsiblePerson(int Id)
+        {
 
+            var data = _SecServices.DeleteResponsiblePerson(Id);
+
+            return Json(data);
+        }
         #endregion
         //[HttpGet]
         //[Route("Plan/Setup/GetByFiscalYear{year}")]

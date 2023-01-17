@@ -2319,6 +2319,7 @@ namespace App.SEC
                 result.Outcome = item.Outcome;
                 result.FundSourceEnum = item.FundCategoryEnum;
                 result.FundCategoryEnum = item.FundCategoryEnum;
+                result.FundSourceId = item.FundSourceId;
                 var ResponsiblePerson = new List<ResponsiblePerson>();
                 var PerformanceIndicator = new List<PerformanceIndicator>();
                 foreach (var s in item.ResponsiblePeople)
@@ -3875,6 +3876,27 @@ namespace App.SEC
         {
             var response = new SecBaseResponse();
             var data = _database.PlanCores.Where(x => x.Id == PlanCoreId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ResponsiblePersons.Where(x => x.Id == ResponsiblePersonId).FirstOrDefault();
             if (data != null)
             {
                 //_database.Remove(data);
