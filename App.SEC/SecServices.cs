@@ -306,7 +306,25 @@ namespace App.SEC
                     Name = item.Name,
                     Active = item.Active,
                     ParentFundTypeId = item.ParentFundTypeId,
+                    ReferenceOldId = item.ReferenceOldId
+                });
+            }
+            return _result;
+        }
+        public List<FundSourceResponse> FundSourceSetupByFiscalYear(int FiscalYear)
+        {
+            var _result = new List<FundSourceResponse>();
+            var data = _database.FundSources.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new FundSourceResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
                     ReferenceOldId = item.ReferenceOldId,
+                    ParentFundSourceId = item.ParentFundSourceId
+
                 });
             }
             return _result;
