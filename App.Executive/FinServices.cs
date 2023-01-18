@@ -419,7 +419,7 @@ namespace App.FIN
             var respose = new List<RequestFormDto>();
             var data = new List<RequestForm>();
             if (request.perspective == 0) {
-                 data = _database.RequestForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000
+                 data = _database.RequestForms.Where(c => c.Active == true && c.FiscalYear == request.FiscalYear && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000
                     && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
             }
             else
@@ -427,11 +427,11 @@ namespace App.FIN
                 switch (request.perspective)
                 {
                     case 1:
-                         data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.PlanTypeId == request.PlanTypeId
+                         data = _database.RequestForms.Where(c => c.Active == true && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.PlanTypeId == request.PlanTypeId
                             && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList();
                         break;
                     case 2:
-                         data = _database.RequestForms.Where(c => c.Active && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.DepartmentId == request.DepartmentId
+                         data = _database.RequestForms.Where(c => c.Active == true  && c.ProcureApprovalStatusEnum == 10 && c.ProcureFormApprovalStatusEnum < 1000 && c.DepartmentId == request.DepartmentId
                             && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true)).OrderByDescending(c => c.Id).ToList(); 
                         break;
                     default:

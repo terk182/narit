@@ -19,7 +19,7 @@ namespace narit_mis_api.Models
         public DateTime? WriteDate { get; set; }
         public string WriteAt { get; set; } = null!;
         public string Purpose { get; set; } = null!;
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
         public string Inform { get; set; } = null!;
         public string DocumentNumber { get; set; } = null!;
         public int FiscalYear { get; set; }

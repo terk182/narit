@@ -3506,9 +3506,11 @@ namespace App.SEC
         public List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request)
         {
             var result = new List<GeneralExpenseMemoFormDto>();
-            var query = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.documentNumber != "") ? c.DocumentNumber.Contains(request.documentNumber) : true)  && (request.reqdepId != 0 ? c.RequestDepartmentId == request.reqdepId : true)
-         && (request.stateName != "" ? c.StatementName.Contains(request.stateName) : true) && ((request.objId != 0) ? (request.PlanObjectTypeRadioButtonList == "PlanType" ? (c.PlanTypeId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.PlanTypeId == request.objId)) : (c.DepartmentId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.DepartmentId == request.objId))) : true)
-         && (request.appState != 0 ? c.ApprovalStatusEnum == request.appState : true) && (request.isBorrow != 0 ? (c.IsBorrow == (request.isBorrow == 10)) : true) && (request.staffId != 0 ? c.CreateByStaffId == request.staffId : true)).Include(c => c.GeneralExpenses).OrderByDescending(c => c.Id).Take(50).ToList();
+            //   var query = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.documentNumber != "") ? c.DocumentNumber.Contains(request.documentNumber) : true)  && (request.reqdepId != 0 ? c.RequestDepartmentId == request.reqdepId : true)
+            //&& (request.stateName != "" ? c.StatementName.Contains(request.stateName) : true) && ((request.objId != 0) ? (request.PlanObjectTypeRadioButtonList == "PlanType" ? (c.PlanTypeId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.PlanTypeId == request.objId)) : (c.DepartmentId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.DepartmentId == request.objId))) : true)
+            //&& (request.appState != 0 ? c.ApprovalStatusEnum == request.appState : true) && (request.isBorrow != 0 ? (c.IsBorrow == (request.isBorrow == 10)) : true) && (request.staffId != 0 ? c.CreateByStaffId == request.staffId : true)).Include(c => c.GeneralExpenses).OrderByDescending(c => c.Id).Take(50).ToList();
+            var query = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (request.staffId != 0 ? c.CreateByStaffId == request.staffId : true))
+            .Include(c => c.GeneralExpenses).OrderByDescending(c => c.Id).Take(50).ToList();
             foreach (var item in query)
             {
                 result.Add(new GeneralExpenseMemoFormDto

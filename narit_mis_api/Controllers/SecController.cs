@@ -2014,7 +2014,8 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("/Plan/Operate/EditPlanActivityOperationPeriodResult/{PlanActivityId}")]
+        [Route("/Plan/ViewGeneralExpenseMemoFormList" +
+"OperationPeriodResult/{PlanActivityId}")]
         public IActionResult EditPlanActivityOperationPeriodResult(int PlanActivityId)
         {
             var data = _SecServices.EditPlanActivityOperationPeriodResult(PlanActivityId);

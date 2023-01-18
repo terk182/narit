@@ -18,7 +18,7 @@ namespace App.FIN.Models.Responses
         public DateTime? WriteDate { get; set; }
         public string? WriteAt { get; set; } 
         public string? Purpose { get; set; } 
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
         public string? Inform { get; set; }
         public string? DocumentNumber { get; set; }
         public int FiscalYear { get; set; }

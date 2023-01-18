@@ -62,7 +62,7 @@ namespace App.Procure
             //    RequestForm.Add(item);
             //}
             //return RequestForm;
-            var data = _database.RequestForms.Where(c => c.Active && c.FiscalYear == year && c.ProcureApprovalStatusEnum != (int)ProcureApprovalStatus.Denied).ToList();
+            var data = _database.RequestForms.Where(c => c.Active == true && c.FiscalYear == year && c.ProcureApprovalStatusEnum != (int)ProcureApprovalStatus.Denied).ToList();
             return data.ToList();
         }
 
