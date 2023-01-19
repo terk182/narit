@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace App.Common
     {
         List<BudgetTypeCommonDto>  GetBudgetTypes(int fiscalYear);
         List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
+        
     }
 }

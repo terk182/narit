@@ -1,6 +1,7 @@
 ﻿using App.Common;
 
 using App.SEC;
+using App.SEC.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ namespace narit_mis_api.Controllers
             //_configuration = Configuration;
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
+   
         [HttpGet]
         [Route("/Common/ShowAllStrategy/FiscalYear/{year}")]
         public IActionResult TryGetStrategy(int year)
@@ -105,6 +107,14 @@ namespace narit_mis_api.Controllers
         public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int id)
         {
             var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("/Common/EditGeneralExpenseMemoForms")]
+        public IActionResult EditGeneralExpenseMemoForms(GeneralExpenseMemoFormRequest request)
+        {
+            var data = _SecServices.EditGeneralExpenseExtendForm(request);
             return Json(data);
         }
 

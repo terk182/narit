@@ -129,5 +129,6 @@ namespace App.SEC
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
         SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
+        SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request);
     }
 }

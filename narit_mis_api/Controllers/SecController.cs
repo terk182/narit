@@ -1833,6 +1833,7 @@ namespace narit_mis_api.Controllers
         [Route("/Plan/Operate/EditGeneralExpenseExtendForm")]
         public IActionResult EditGeneralExpenseExtendForm()
         {
+
             return Json("EditGeneralExpenseExtendForm");
         }
 
