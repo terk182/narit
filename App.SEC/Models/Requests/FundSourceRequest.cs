@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace App.SEC.Models.Requests
 {
-    public class StrategicIndicatorRequest
+    public class FundSourceRequest
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int FiscalYear { get; set; }
         public bool Active { get; set; }
-        public int? ParentStrategicIndicatorId { get; set; }
-        public string Unit { get; set; } = null!;
-        public decimal Amount { get; set; }
-        public decimal Weight { get; set; }
-        public int? StrategyId { get; set; }
-        public int? ParentStrategyId { get; set; }
+        public int? ReferenceOldId { get; set; }
+        public int? ParentFundSourceId { get; set; }
     }
 }

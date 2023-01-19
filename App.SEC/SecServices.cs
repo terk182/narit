@@ -294,7 +294,52 @@ namespace App.SEC
             response.Messsage = _FundType.Id == 0 ? "update" : "insert";
             return response;
         }
+        public SecBaseResponse MissionSetup(MissionRequest request)
+        {
+            var _Mission = new Mission();
+            _Mission.Id = request.Id;
+            _Mission.Name = request.Name;
+            _Mission.FiscalYear = request.FiscalYear;
+            _Mission.Active = request.Active;
 
+            //if (request.ParentFundTypeId != 0)
+            //{
+            //    _FundType.ParentFundTypeId = request.ParentFundTypeId;
+            //}
+            _database.Entry(_Mission).State = _Mission.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _Mission.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse FundSourceSetup(FundSourceRequest request)
+        {
+            var _FundSource = new FundSource();
+            _FundSource.Id = request.Id;
+            _FundSource.Name = request.Name;
+            _FundSource.FiscalYear = request.FiscalYear;
+            _FundSource.Active = request.Active;
+            _FundSource.ReferenceOldId = request.ReferenceOldId;
+            if (request.ParentFundSourceId != 0)
+            {
+                _FundSource.ParentFundSourceId = request.ParentFundSourceId;
+            }
+            _database.Entry(_FundSource).State = _FundSource.Id == 0 ?
+                                      EntityState.Added :
+                                      EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _FundSource.Id == 0 ? "update" : "insert";
+            return response;
+        }
         public List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear)
         {
             var _result = new List<FundTypeRespone>();
@@ -829,6 +874,8 @@ namespace App.SEC
             _StrategicIndicator.Unit = request.Unit;
             _StrategicIndicator.Amount = request.Amount;
             _StrategicIndicator.Weight = request.Weight;
+            _StrategicIndicator.StrategyId = request.StrategyId;
+            //_StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             if (request.ParentStrategyId != 0)
             {
                 _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
@@ -852,7 +899,7 @@ namespace App.SEC
         public List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
         {
             var result = new List<StrategicIndicatorResponse>();
-            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear && x.Active == true).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategicIndicatorResponse
@@ -861,16 +908,40 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategyId = item.ParentStrategyId,
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
                     Unit = item.Unit,
                     Amount = item.Amount,
-                    Weight = item.Weight
+                    Weight = item.Weight,
+                    StrategyId = item.StrategyId,
+                    ParentStrategyId = item.ParentStrategyId
+
+    });
+            }
+            return result;
+        }
+        public List<StrategicIndicatorResponse> StrategicIndicatorGetbyStrategyId(int StrategyId)
+        {
+            var result = new List<StrategicIndicatorResponse>();
+            var data = _database.StrategicIndicators.Where(x => x.StrategyId == StrategyId && x.Active == true).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategicIndicatorResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    Unit = item.Unit,
+                    Amount = item.Amount,
+                    Weight = item.Weight,
+                    StrategyId = item.StrategyId,
+                    ParentStrategyId = item.ParentStrategyId
 
                 });
             }
             return result;
         }
-
         public List<PrinciplePlanTagsResponse> PrinciplePlanTagSetup()
         {
             var loop1 = new List<PrinciplePlanTagsResponse>();

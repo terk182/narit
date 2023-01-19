@@ -22,12 +22,18 @@ namespace App.Common
 
         public CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
         {
+
+            //_database.Entry(request).State = request.action == 0 ?
+            //                           EntityState.Added :
+            //                           EntityState.Modified;
+
             int  result = 0;
             foreach (var item in request.GeneralExpenseMemoFormsSignList)
             {
                 _database.Entry(item).State = request.action == 0 ?
                                          EntityState.Added :
                                          EntityState.Modified;
+
 
                  result = _database.SaveChanges();
             }
@@ -132,7 +138,7 @@ namespace App.Common
                     ParentBudgetType = list2
                 });
 
-
+                
 
             }
 
