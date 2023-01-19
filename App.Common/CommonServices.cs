@@ -1,4 +1,6 @@
 ﻿using App.Common.Dtos;
+using App.Common.Models.Responses;
+using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
 using System;
 using System.Collections;
@@ -17,6 +19,20 @@ namespace App.Common
         {
             _database = context;
         }
+
+        public CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
+        {
+            _database.Entry(request).State = request.action == 0 ?
+                                       EntityState.Added :
+                                       EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new CommonBaseResponse();
+            response.Success = result > 0 ? true : false;
+            return response;
+        }
+
 
         public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
         {
@@ -101,6 +117,12 @@ namespace App.Common
             }
 
             return list1;
+        }
+
+        public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
+        {
+            var data = _database.MisGeneralExpenseMemoFormsSignLists.Where(x => x.GeneralExpenseMemoFormsId == GeneralExpenseMemoFormsId).ToList();
+            return data;
         }
 
         public List<PlanTypeCommonDto> GetPlanType(int fiscalYear)

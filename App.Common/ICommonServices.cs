@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Models.Responses;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace App.Common
     {
         List<BudgetTypeCommonDto>  GetBudgetTypes(int fiscalYear);
         List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
-        
+        CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request);
+        List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
     }
 }

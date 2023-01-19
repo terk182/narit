@@ -1,5 +1,5 @@
 ﻿using App.Common;
-
+using App.Common.Dtos;
 using App.SEC;
 using App.SEC.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
@@ -117,6 +117,22 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.EditGeneralExpenseExtendForm(request);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/Common/EditMisGeneralExpenseMemoFormsSignList")]
+        public IActionResult EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
+        {
+            var data = _CommonServices.EditMisGeneralExpenseMemoFormsSignList(request);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Common/GetMisGeneralExpenseMemoFormsSignList/{id}")]
+        public IActionResult GetMisGeneralExpenseMemoFormsSignList( int id)
+        {
+            var data = _CommonServices.GetMisGeneralExpenseMemoFormsSignList(id);
+            return Json(data);
+        }
+
+
 
     }
 }

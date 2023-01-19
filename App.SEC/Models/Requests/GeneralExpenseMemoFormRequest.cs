@@ -1,4 +1,5 @@
-﻿using System;
+﻿using narit_mis_api.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,5 +49,6 @@ namespace App.SEC.Models.Requests
         public string FundTypeName { get; set; } = null!;
         public int FundTypeId { get; set; }
         public string StatementName { get; set; } = null!;
+        public List<MisGeneralExpenseMemoFormsSignList> SignList { get; set; }
     }
 }
