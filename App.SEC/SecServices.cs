@@ -4372,5 +4372,439 @@ namespace App.SEC
             }
             return gEFromServ;
         }
+
+        public List<MonthlyForecastAdjustment> ViewMonthlyForecastAdjustmentList(ViewMonthlyForecastAdjustmentListRequest request)
+        {
+            var result = new List<MonthlyForecastAdjustment>();
+            result = _database.MonthlyForecastAdjustments.Where(c => c.Active && c.FiscalYear == request.fYear && (request.planTypeId != 0 ? c.PlanTypeId == request.planTypeId : true) && (request.planCoreId != 0 ? c.PlanCoreId == request.planCoreId : true)
+            && (request.approveState != 0 ? c.ApprovalStatusEnum == request.approveState : true)).ToList();
+
+            return result;
+        }
+
+        public List<GeneralExpenseSettleForm> ViewOutsideDutyReportFormList(ViewOutsideDutyReportFormListRequest request)
+        {
+            var gEFromServ = new List<GeneralExpenseSettleForm>();
+            if (request.IsOutsideDutyReportRDL == "All")
+            {
+                gEFromServ = _database.GeneralExpenseSettleForms.Where(c => c.Active && c.FiscalYear == request.fYear  && ((request.docNum != "") ? c.DocumentNumber.Contains(request.docNum) : true)).OrderByDescending(c => c.Id).Take(50).ToList();
+            }
+            else
+            {   //Select ภายใน/ภายนอก
+
+                gEFromServ = _database.GeneralExpenseSettleForms.Where(c => c.Active && c.FiscalYear == request.fYear && ((request.docNum != "") ? c.DocumentNumber.Contains(request.docNum) : true)).OrderByDescending(c => c.Id).ToList();//Don't forget Add condition IsOutsideDuty
+            }
+            return gEFromServ;
+        }
+
+        public SecBaseResponse BudgetTransferForm(BudgetTransferFormDto request)
+        {
+            var db = new BudgetTransferForm();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.Remark = request.Remark;
+            db.ApprovalStatusEnum = request.ApprovalStatusEnum;
+            db.RequestDate = request.RequestDate;
+            db.ApprovedDate = request.ApprovedDate;
+            db.DocumentNumber = request.DocumentNumber;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.WriteDate = request.WriteDate;
+            db.Inform = request.Inform;
+            db.Enclosures = request.Enclosures;
+            db.Purpose = request.Purpose;
+            db.RequesterName = request.RequesterName;
+            db.RequesterSignDate = request.RequesterSignDate;
+            db.UnitChiefName = request.UnitChiefName;
+            db.UnitChiefSignDate = request.UnitChiefSignDate;
+            db.BudgetCheckerName = request.BudgetCheckerName;
+            db.BudgetCheckerSignDate = request.BudgetCheckerSignDate;
+            db.Approver = request.Approver;
+            db.ApproverSignDate = request.ApproverSignDate;
+            db.StatementName = request.StatementName;
+            db.SeniorUnitChiefName = request.SeniorUnitChiefName;
+            db.FinanceName = request.FinanceName;
+            db.SeniorUnitChiefSignDate = request.SeniorUnitChiefSignDate;
+            db.FinanceSignDate = request.FinanceSignDate;
+            db.RequestDepartmentId = request.RequestDepartmentId;
+            db.UnitChiefStaffId = request.UnitChiefStaffId;
+            db.ApproverStaffId = request.ApproverStaffId;
+            db.PlanFormApprovalStatusEnum = request.PlanFormApprovalStatusEnum;
+            db.BudgetTransferTypeEnum = request.BudgetTransferTypeEnum;
+            _database.Entry(db).State = request.Id == 0 ?
+                                                   EntityState.Added :
+                                                   EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+            throw new NotImplementedException();
+        }
+
+        public SecBaseResponse EditChangedPlanItemRecord(RequestFormPlanViewRequest request)
+        {
+            var db = new RequestFormPlanView();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.WriteDate = request.WriteDate;
+            db.Active = request.Active;
+            db.DocumentNumber = request.DocumentNumber;
+            db.FiscalYear = request.FiscalYear;
+            db.ProcureMethodEnum = request.ProcureMethodEnum;
+            db.ProcureTypeEnum = request.ProcureTypeEnum;
+            db.Requester = request.Requester;
+            db.Purpose = request.Purpose;
+            db.RequestFormId = request.RequestFormId;
+            db.PlanActivityIdOld = request.PlanActivityIdOld;
+            db.IsApproved = request.IsApproved;
+            db.IsFinishedTransform = request.IsFinishedTransform;
+            db.FinishedTransformDate = request.FinishedTransformDate;
+            db.PlanTypeId = request.PlanTypeId;
+            db.DepartmentId = request.DepartmentId;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.IsTemporaryInvolve = request.IsTemporaryInvolve;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.StatementName = request.StatementName;
+            db.RealInvolvePlanItemId = request.RealInvolvePlanItemId;
+            db.UsedToInvolvePlanItemId = request.UsedToInvolvePlanItemId;
+            db.PlanCoreId = request.PlanCoreId;
+            db.ApprovalStatusEnum = request.ApprovalStatusEnum;
+            db.DepartmentName = request.DepartmentName;
+            db.PlanCoreName = request.PlanCoreName;
+            db.BudgetTypeName = request.BudgetTypeName;
+            db.PlanTypeName = request.PlanTypeName;
+            db.PlanActivityName = request.PlanActivityName;
+            db.ReserveByStaffName = request.ReserveByStaffName;
+            db.ReserveRemark = request.ReserveRemark;
+            db.ReserveForecastValue = request.ReserveForecastValue;
+            db.ReserveByStaffId = request.ReserveByStaffId;
+            db.ReserveDate = request.ReserveDate;
+            db.IsReserve = request.IsReserve;
+            db.ReserveDepartmentId = request.ReserveDepartmentId;
+            db.ReserveDepartmentName = request.ReserveDepartmentName;
+            db.RequestDepartmentId = request.RequestDepartmentId;
+            db.RequestDepartmentName = request.RequestDepartmentName;
+            _database.Entry(db).State = request.Id == 0 ?
+                                                   EntityState.Added :
+                                                   EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+     
+        }
+
+        public SecBaseResponse EditDirectExpenseMemoForm(DirectExpenseMemoFormRequest request)
+        {
+            var db = new DirectExpenseMemoForm();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.WriteDate = request.WriteDate;
+            db.Purpose = request.Purpose;
+            db.RequesterName = request.RequesterName;
+            db.ApprovalStatusEnum = request.ApprovalStatusEnum;
+            db.DepartmentName = request.DepartmentName;
+            db.DepartmentId = request.DepartmentId;
+            db.PlanTypeName = request.PlanTypeName;
+            db.PlanTypeId = request.PlanTypeId;
+            db.PlanCoreName = request.PlanCoreName;
+            db.PlanCoreId = request.PlanCoreId;
+            db.BudgetTypeName = request.BudgetTypeName;
+            db.BudgetTypeId = request.BudgetTypeId;
+            db.DocumentNumber = request.DocumentNumber;
+            db.StatementPayMethodEnum = request.StatementPayMethodEnum;
+            db.StatementPayStatusEnum = request.StatementPayStatusEnum;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.IsTemporaryInvolve = request.IsTemporaryInvolve;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.FundTypeName = request.FundTypeName;
+            db.FundTypeId = request.FundTypeId;
+            db.PlanActivityIdOld = request.PlanActivityIdOld;
+            db.Remark = request.Remark;
+            db.RecieverName = request.RecieverName;
+            db.PlanCoreRemainBudget = request.PlanCoreRemainBudget;
+            db.PlanCoreNetBudget = request.PlanCoreNetBudget;
+            db.RealInvolvePlanItemId = request.RealInvolvePlanItemId;
+            db.UsedToInvolvePlanItemId = request.UsedToInvolvePlanItemId;
+            db.SupplierId = request.SupplierId;
+            db.PlanStatementDirectionEnum = request.PlanStatementDirectionEnum;
+            _database.Entry(db).State = request.Id == 0 ?
+                                         EntityState.Added :
+                                         EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
+
+        public SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseExtendFormRequest request)
+        {
+            var db = new GeneralExpenseExtendForm();
+            db.Id = request.Id;
+            db.Active = request.Active;
+            db.Name = request.Name;
+            db.FiscalYear = request.FiscalYear;
+            db.WriteDate = request.WriteDate;
+            db.DocumentNumber = request.DocumentNumber;
+            db.RequesterName = request.RequesterName;
+            db.RequesterPosition = request.RequesterPosition;
+            db.UnitChiefName = request.UnitChiefName;
+            db.UnitChiefPosition = request.UnitChiefPosition;
+            db.DepartmentName = request.DepartmentName;
+            db.DepartmentId = request.DepartmentId;
+            db.TotalBudget = request.TotalBudget;
+            db.RefDocumentNumber = request.RefDocumentNumber;
+            db.RefDocumentWriteDate = request.RefDocumentWriteDate;
+            db.Purpose = request.Purpose;
+            db.PlanDetail = request.PlanDetail;
+            db.OperationSummary = request.OperationSummary;
+            db.ExtendDay = request.ExtendDay;
+            db.GeneralExpenseMemoFormId = request.GeneralExpenseMemoFormId;
+            db.ContactNumber = request.ContactNumber;
+            _database.Entry(db).State = request.Id == 0 ?
+                             EntityState.Added :
+                             EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+           
+        }
+
+        public SecBaseResponse EditGeneralExpensePersonalBorrowForm(List<GeneralExpensePersonalBorrowItemRequest> request)
+        {
+            int result = 0;
+            var db = new GeneralExpensePersonalBorrowItem();
+            foreach (var item in  request)
+            {
+                db.Id = item.Id;
+                db.Active = item.Active;
+                db.Name = item.Name;
+                db.FiscalYear = item.FiscalYear;
+                db.BorrowBudget = item.BorrowBudget;
+                db.GeneralExpensePersonalBorrowFormId = item.GeneralExpensePersonalBorrowFormId;
+                db.GeneralExpenseId = item.GeneralExpenseId;
+                _database.Entry(db).State = item.Id == 0 ?
+                  EntityState.Added :
+                  EntityState.Modified;
+                 result = _database.SaveChanges();
+            }
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+          
+            return response;
+        }
+
+        public SecBaseResponse EditGeneralExpenseSettleForm(GeneralExpenseSettleFormRequest request)
+        {
+            var db = new GeneralExpenseSettleForm();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.WriteDate = request.WriteDate;
+            db.Inform = request.Inform;
+            db.Enclosures = request.Enclosures;
+            db.Purpose = request.Purpose;
+            db.RequesterName = request.RequesterName;
+            db.RequesterSignDate = request.RequesterSignDate;
+            db.UnitChiefName = request.UnitChiefName;
+            db.UnitChiefSignDate = request.UnitChiefSignDate;
+            db.BudgetCheckerName = request.BudgetCheckerName;
+            db.BudgetCheckerSignDate = request.BudgetCheckerSignDate;
+            db.Approver = request.Approver;
+            db.ApproverSignDate = request.ApproverSignDate;
+            db.ApprovalStatusEnum = request.ApprovalStatusEnum;
+            db.DepartmentNameOld = request.DepartmentNameOld;
+            db.DepartmentId = request.DepartmentId;
+            db.PlanTypeNameOld = request.PlanTypeNameOld;
+            db.PlanTypeId = request.PlanTypeId;
+            db.PlanCoreNameOld = request.PlanCoreNameOld;
+            db.PlanCoreId = request.PlanCoreId;
+            db.BudgetTypeName = request.BudgetTypeName;
+            db.BudgetTypeId = request.BudgetTypeId;
+            db.ApprovedDate = request.ApprovedDate;
+            db.DocumentNumber = request.DocumentNumber;
+            db.StatementPayMethodEnum = request.StatementPayMethodEnum;
+            db.StatementPayStatusEnum = request.StatementPayStatusEnum;
+            db.PayDate = request.PayDate;
+            db.NetPayValue = request.NetPayValue;
+            db.PaymentDocumentNumber = request.PaymentDocumentNumber;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.PlanCoreCode = request.PlanCoreCode;
+            db.GeneralExpenseMemoFormId = request.GeneralExpenseMemoFormId;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.PlanActivityIdOld = request.PlanActivityIdOld;
+            db.FundTypeName = request.FundTypeName;
+            db.FundTypeId = request.FundTypeId;
+            db.PaymentRemark = request.PaymentRemark;
+            db.StatementName = request.StatementName;
+            db.StatementNameAsCash = request.StatementNameAsCash;
+            db.UnitChiefStaffId = request.UnitChiefStaffId;
+            db.ApproverStaffId = request.ApproverStaffId;
+            db.PlanFormApprovalStatusEnum = request.PlanFormApprovalStatusEnum;
+            db.RelatedRegulation = request.RelatedRegulation;
+            db.OperationSummary = request.OperationSummary;
+            db.SuppliesOfficerName = request.SuppliesOfficerName;
+            db.SuppliesOfficerPosition = request.SuppliesOfficerPosition;
+            db.SuppliesOfficerSignDate = request.SuppliesOfficerSignDate;
+            db.RefWithdrawalFormText = request.RefWithdrawalFormText;
+            db.OtherRequest = request.OtherRequest;
+            db.PlanItemDetailListByBorrowerValue = request.PlanItemDetailListByBorrowerValue;
+            db.IsSent = request.IsSent;
+            db.RequesterStaffId = request.RequesterStaffId;
+            db.OtherReqDocNumber = request.OtherReqDocNumber;
+            db.OtherReqWriteDate = request.OtherReqWriteDate;
+            _database.Entry(db).State = request.Id == 0 ?
+                                EntityState.Added :
+                                EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
+
+        public SecBaseResponse EditMonthlyForecastAdjustment_t(MonthlyForecastAdjustment request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse EditOutsideDutyReportForm(List<OutsideDutyReportStaff> request)
+        {
+            int result = 0;
+            var db = new GeneralExpensePersonalBorrowItem();
+            foreach (var item in request)
+            {
+                
+                _database.Entry(item).State = item.Id == 0 ?
+                  EntityState.Added :
+                  EntityState.Modified;
+                result = _database.SaveChanges();
+            }
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+
+            return response;
+        }
+
+        public SecBaseResponse EditPerformanceIndicatorResult(PerformanceIndicator request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse EditPlanActivity(PlanActivity request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse EditPlanItem(PlanItem request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse EditSettleReceiptForm(SettleReceiptForm request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                  EntityState.Added :
+                                  EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<PlanActivity> SearchPlanActivity(SearchPlanActivityRequest request)
+        {
+            var data = _database.PlanActivities.Where(x => request.fiscalYear > 0 ? x.FiscalYear == request.fiscalYear : true && request.departmentId > 0 ? x.DepartmentId == request.departmentId : true ).ToList();
+            return data;
+        }
+
+        public List<PlanItem> SearchPlanItem(SearchPlanItemRequest request)
+        {
+            var data = _database.PlanItems.Where(x => request.fiscalYear > 0 ? x.FiscalYear == request.fiscalYear : true).ToList();
+            return data;
+        }
+
+        public List<Supplier> SelectSupplierListForForm(SelectSupplierListForFormRequest request)
+        {
+            var data = _database.Suppliers.Where(x => request.supplierTypeId > 0 ? x.SupplierTypeId == request.supplierTypeId : true && request.name != "" ? x.Name == request.name:true).ToList();
+            return data;
+        }
+
+        public List<GeneralExpenseMemoForm> ViewGeneralExpenseMemoFormListForExtend(ViewGeneralExpenseMemoFormListForExtendRequest request)
+        {
+            var gEFromServ = new List<GeneralExpenseMemoForm>();
+
+            switch (request.PlanObjectType)
+            {
+                case "PlanType":
+                    gEFromServ = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.year && (request.objId != 0 ? (c.PlanTypeId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.PlanTypeId == request.objId)) : true) && c.ApprovalStatusEnum != request.ApprovalStatusEnum && (request.docNumber != "" ? c.DocumentNumber.Contains(request.docNumber) : true) && c.GeneralExpensePersonalBorrowForms.Any(d => d.Active)).OrderByDescending(c => c.Id).ToList();
+                    break;
+                case "Department":
+                    gEFromServ = _database.GeneralExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.year && (request.objId != 0 ? (c.DepartmentId == request.objId || c.GeneralExpenses.Where(d => d.Active).Any(d => d.DepartmentId == request.objId)) : true) && c.ApprovalStatusEnum != request.ApprovalStatusEnum
+                    && (request.docNumber != "" ? c.DocumentNumber.Contains(request.docNumber) : true) && c.GeneralExpensePersonalBorrowForms.Any(d => d.Active)).OrderByDescending(c => c.Id).ToList();
+                    break;
+                default:
+                    break;
+            }
+
+            return gEFromServ;
+        }
     }
 }

@@ -140,6 +140,26 @@ namespace App.SEC
         SecBaseResponse PlanPerson(PlanPersonRequest request);
         List<GeneralExpenseSettleForm> ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request);
         List<GeneralExpenseSettleForm> viewGeneralExpenseSettleFormList(ViewGeneralExpenseSettleFormListRequest request);
+        List<MonthlyForecastAdjustment> ViewMonthlyForecastAdjustmentList(ViewMonthlyForecastAdjustmentListRequest request );
+        List<GeneralExpenseSettleForm> ViewOutsideDutyReportFormList(ViewOutsideDutyReportFormListRequest request);
+        SecBaseResponse BudgetTransferForm(BudgetTransferFormDto request);
+        SecBaseResponse EditChangedPlanItemRecord(RequestFormPlanViewRequest request);
+        SecBaseResponse EditDirectExpenseMemoForm(DirectExpenseMemoFormRequest request);
+        SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseExtendFormRequest request);//แบบฟอร์มค่าใช้จ่ายทั่วไปขยาย
+        SecBaseResponse EditGeneralExpensePersonalBorrowForm(List<GeneralExpensePersonalBorrowItemRequest> request); //แก้ไขค่าใช้จ่ายทั่วไปแบบฟอร์มการยืมส่วนบุคคล
+        SecBaseResponse EditGeneralExpenseSettleForm(GeneralExpenseSettleFormRequest request);//แบบฟอร์มชำระค่าใช้จ่ายทั่วไป 
+        SecBaseResponse EditMonthlyForecastAdjustment_t(MonthlyForecastAdjustment request);
+        SecBaseResponse EditOutsideDutyReportForm(List<OutsideDutyReportStaff> request);
+        SecBaseResponse EditPerformanceIndicatorResult(PerformanceIndicator request);
+        SecBaseResponse EditPlanActivity(PlanActivity request);
+        SecBaseResponse EditPlanItem(PlanItem request);
+        SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request);
+        SecBaseResponse EditSettleReceiptForm(SettleReceiptForm request);
+        List<PlanActivity> SearchPlanActivity(SearchPlanActivityRequest request);
+        List<PlanItem> SearchPlanItem(SearchPlanItemRequest request);
+        List<Supplier> SelectSupplierListForForm(SelectSupplierListForFormRequest request);
+        List<GeneralExpenseMemoForm> ViewGeneralExpenseMemoFormListForExtend(ViewGeneralExpenseMemoFormListForExtendRequest request);
+
 
     }
 }

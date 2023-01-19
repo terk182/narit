@@ -12,8 +12,10 @@ using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
 using narit_mis_api.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Xml.Linq;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -287,1491 +289,7 @@ namespace narit_mis_api.Controllers
         
 
 
-        #region HR 
-        
-        [HttpGet]
-        [Route("/HR/MainHRPage")]
-        public IActionResult MainHRPage()
-        {
-            return Json("MainHRPage");
-        }
-
-        #endregion
-
-        #region HR Operate
-        [HttpGet]
-        [Route("/HR/Operate/ApproveWorkShiftExtraAllowancePage")]
-        public IActionResult ApproveWorkShiftExtraAllowancePage()
-        {
-            return Json("ApproveWorkShiftExtraAllowancePage");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/AutoAdjustDailyAttendance")]
-        public IActionResult AutoAdjustDailyAttendance()
-        {
-            return Json("AutoAdjustDailyAttendance");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditCompetencyEvaluationForm")]
-        public IActionResult EditCompetencyEvaluationForm()
-        {
-            return Json("EditCompetencyEvaluationForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditContractEndEvaluationForm")]
-        public IActionResult EditContractEndEvaluationForm()
-        {
-            return Json("EditContractEndEvaluationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDailyAttendance")]
-        public IActionResult EditDailyAttendance()
-        {
-            return Json("EditDailyAttendance");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDailyAttendanceListview")]
-        public IActionResult EditDailyAttendanceListview()
-        {
-            return Json("EditDailyAttendanceListview");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDailyAttendanceRequestForm")]
-        public IActionResult EditDailyAttendanceRequestForm()
-        {
-            return Json("EditDailyAttendanceRequestForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDevelopmentGroupCancellationForm")]
-        public IActionResult EditDevelopmentGroupCancellationForm()
-        {
-            return Json("EditDevelopmentGroupCancellationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDevelopmentGroupForm")]
-        public IActionResult EditDevelopmentGroupForm()
-        {
-            return Json("EditDevelopmentGroupForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditDevelopmentRecordFollowUpForm")]
-        public IActionResult EditDevelopmentRecordFollowUpForm()
-        {
-            return Json("EditDevelopmentRecordFollowUpForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditEmploymentContract")]
-        public IActionResult EditEmploymentContract()
-        {
-            return Json("EditEmploymentContract");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditGroupStaffWorkShift")]
-        public IActionResult EditGroupStaffWorkShift()
-        {
-            return Json("EditGroupStaffWorkShift");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditJobDescription")]
-        public IActionResult EditJobDescription()
-        {
-            return Json("EditJobDescription");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditJobPositionDetail")]
-        public IActionResult EditJobPositionDetail()
-        {
-            return Json("EditJobPositionDetail");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditJobResponsibilityEvaluationForm")]
-        public IActionResult EditJobResponsibilityEvaluationForm()
-        {
-            return Json("EditJobResponsibilityEvaluationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditLeaveCancellationForm")]
-        public IActionResult EditLeaveCancellationForm()
-        {
-            return Json("EditLeaveCancellationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditLeaveForm")]
-        public IActionResult EditLeaveForm()
-        {
-            return Json("EditLeaveForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditMedicalReimbursementForm")]
-        public IActionResult EditMedicalReimbursementForm()
-        {
-            return Json("EditMedicalReimbursementForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditOutsideDutyGroup")]
-        public IActionResult EditOutsideDutyGroup()
-        {
-            return Json("EditOutsideDutyGroup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditOutsideDutyGroupCancellationForm")]
-        public IActionResult EditOutsideDutyGroupCancellationForm()
-        {
-            return Json("EditOutsideDutyGroupCancellationForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditOverTimeRequestForm")]
-        public IActionResult EditOverTimeRequestForm()
-        {
-            return Json("EditOverTimeRequestForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditOverTimeRequestFormGroup")]
-        public IActionResult EditOverTimeRequestFormGroup()
-        {
-            return Json("EditOverTimeRequestFormGroup");
-        }
-
-        [HttpGet]
-        [Route("/HR/Operate/EditOverTimeRequestResultFormGroup")]
-        public IActionResult EditOverTimeRequestResultFormGroup()
-        {
-            return Json("EditOverTimeRequestResultFormGroup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditPerformanceYearlyEvaluationForm")]
-        public IActionResult EditPerformanceYearlyEvaluationForm()
-        {
-            return Json("EditPerformanceYearlyEvaluationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditPostDevelopmentRecordEvaluationForm")]
-        public IActionResult EditPostDevelopmentRecordEvaluationForm()
-        {
-            return Json("EditPostDevelopmentRecordEvaluationForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditProbationEvaluationForm")]
-        public IActionResult EditProbationEvaluationForm()
-        {
-            return Json("EditProbationEvaluationForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditSecondment")]
-        public IActionResult EditSecondment()
-        {
-            return Json("EditSecondment");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffAbilityInformation")]
-        public IActionResult EditStaffAbilityInformation()
-        {
-            return Json("EditStaffAbilityInformation");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffAddressInformation")]
-        public IActionResult EditStaffAddressInformation()
-        {
-            return Json("EditStaffAddressInformation");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffData")]
-        public IActionResult EditStaffData()
-        {
-            return Json("EditStaffData");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffEducationInformation")]
-        public IActionResult EditStaffEducationInformation()
-        {
-            return Json("EditStaffEducationInformation");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffFamilyInformation")]
-        public IActionResult EditStaffFamilyInformation()
-        {
-            return Json("EditStaffFamilyInformation");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffInformation")]
-        public IActionResult EditStaffInformation()
-        {
-            return Json("EditStaffInformation");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffInsigniaInformation")]
-        public IActionResult EditStaffInsigniaInformation()
-        {
-            return Json("EditStaffInsigniaInformation");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffPastDevelopment")]
-        public IActionResult EditStaffPastDevelopment()
-        {
-            return Json("EditStaffPastDevelopment");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffSalaryList")]
-        public IActionResult EditStaffSalaryList()
-        {
-            return Json("EditStaffSalaryList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffWorkHistory")]
-        public IActionResult EditStaffWorkHistory()
-        {
-            return Json("EditStaffWorkHistory");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffWorkShift")]
-        public IActionResult EditStaffWorkShift()
-        {
-            return Json("EditStaffWorkShift");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditStaffWorkShiftByTablix")]
-        public IActionResult EditStaffWorkShiftByTablix()
-        {
-            return Json("EditStaffWorkShiftByTablix");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditSyllabus")]
-        public IActionResult EditSyllabus()
-        {
-            return Json("EditSyllabus");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/EditWorkShiftSwitchForm")]
-        public IActionResult EditWorkShiftSwitchForm()
-        {
-            return Json("EditWorkShiftSwitchForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/GenericStaffInfoNestedMasterPage")]
-        public IActionResult GenericStaffInfoNestedMasterPage()
-        {
-            return Json("GenericStaffInfoNestedMasterPage");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/HolidaySetup")]
-        public IActionResult HolidaySetup()
-        {
-            return Json("HolidaySetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/HRDownloadFile")]
-        public IActionResult HRDownloadFile()
-        {
-            return Json("HRDownloadFile");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/HRSecureCodeForm")]
-        public IActionResult HRSecureCodeForm()
-        {
-            return Json("HRSecureCodeForm");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/HRSecureCodeForm_ApprovedDoc")]
-        public IActionResult HRSecureCodeForm_ApprovedDoc()
-        {
-            return Json("HRSecureCodeForm_ApprovedDoc");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ManualAdjustDailyAttendance")]
-        public IActionResult ManualAdjustDailyAttendance()
-        {
-            return Json("ManualAdjustDailyAttendance");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ManualAdjustOverTimeResult")]
-        public IActionResult ManualAdjustOverTimeResult()
-        {
-            return Json("ManualAdjustOverTimeResult");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/MedicalReimbursementRightCheck")]
-        public IActionResult MedicalReimbursementRightCheck()
-        {
-            return Json("MedicalReimbursementRightCheck");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/SelectMultipleStaffList")]
-        public IActionResult SelectMultipleStaffList()
-        {
-            return Json("SelectMultipleStaffList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/SpecificFingerPrintDBReaderPage")]
-        public IActionResult SpecificFingerPrintDBReaderPage()
-        {
-            return Json("SpecificFingerPrintDBReaderPage");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewDailyAttendanceRequestFormList")]
-        public IActionResult ViewDailyAttendanceRequestFormList()
-        {
-            return Json("ViewDailyAttendanceRequestFormList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewDevelopmentGroupListForCancellation")]
-        public IActionResult ViewDevelopmentGroupListForCancellation()
-        {
-            return Json("ViewDevelopmentGroupListForCancellation");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewDevelopmentRecordGroupCostList")]
-        public IActionResult ViewDevelopmentRecordGroupCostList()
-        {
-            return Json("ViewDevelopmentRecordGroupCostList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewDevelopmentRecordGroupList")]
-        public IActionResult ViewDevelopmentRecordGroupList()
-        {
-            return Json("ViewDevelopmentRecordGroupList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewEmploymentContractList")]
-        public IActionResult ViewEmploymentContractList()
-        {
-            return Json("ViewEmploymentContractList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewFormForApprovalByHR")]
-        public IActionResult ViewFormForApprovalByHR()
-        {
-            return Json("ViewFormForApprovalByHR");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewHolidayList")]
-        public IActionResult ViewHolidayList()
-        {
-            return Json("ViewHolidayList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewHREvaluationFormForApprove")]
-        public IActionResult ViewHREvaluationFormForApprove()
-        {
-            return Json("ViewHREvaluationFormForApprove");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewHREvaluationFormList")]
-        public IActionResult ViewHREvaluationFormList()
-        {
-            return Json("ViewHREvaluationFormList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewHRFormForApprove")]
-        public IActionResult ViewHRFormForApprove()
-        {
-            return Json("ViewHRFormForApprove");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewHRFormForApproveByUnitChief")]
-        public IActionResult ViewHRFormForApproveByUnitChief()
-        {
-            return Json("ViewHRFormForApproveByUnitChief");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualAddressList")]
-        public IActionResult ViewIndividualAddressList()
-        {
-            return Json("ViewIndividualAddressList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualDevelopmentList")]
-        public IActionResult ViewIndividualDevelopmentList()
-        {
-            return Json("ViewIndividualDevelopmentList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualEducationList")]
-        public IActionResult ViewIndividualEducationList()
-        {
-            return Json("ViewIndividualEducationList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualFamilyList")]
-        public IActionResult ViewIndividualFamilyList()
-        {
-            return Json("ViewIndividualFamilyList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualInsigniaList")]
-        public IActionResult ViewIndividualInsigniaList()
-        {
-            return Json("ViewIndividualInsigniaList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualPastDevelopmentList")]
-        public IActionResult ViewIndividualPastDevelopmentList()
-        {
-            return Json("ViewIndividualPastDevelopmentList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualStaffWorkShift")]
-        public IActionResult ViewIndividualStaffWorkShift()
-        {
-            return Json("ViewIndividualStaffWorkShift");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualWorkAttendanceList")]
-        public IActionResult ViewIndividualWorkAttendanceList()
-        {
-            return Json("ViewIndividualWorkAttendanceList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewIndividualWorkHistoryList")]
-        public IActionResult ViewIndividualWorkHistoryList()
-        {
-            return Json("ViewIndividualWorkHistoryList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewJobDescriptionList")]
-        public IActionResult ViewJobDescriptionList()
-        {
-            return Json("ViewJobDescriptionList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewJobPositionList")]
-        public IActionResult ViewJobPositionList()
-        {
-            return Json("ViewJobPositionList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewLeaveCancellationFormList")]
-        public IActionResult ViewLeaveCancellationFormList()
-        {
-            return Json("ViewLeaveCancellationFormList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewLeaveList")]
-        public IActionResult ViewLeaveList()
-        {
-            return Json("ViewLeaveList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewLeaveListForCancellation")]
-        public IActionResult ViewLeaveListForCancellation()
-        {
-            return Json("ViewLeaveListForCancellation");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewMedicalReimbursementList")]
-        public IActionResult ViewMedicalReimbursementList()
-        {
-            return Json("ViewMedicalReimbursementList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewOutsideDutyGroupList")]
-        public IActionResult ViewOutsideDutyGroupList()
-        {
-            return Json("ViewOutsideDutyGroupList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewOutsideDutyGroupListForCancellation")]
-        public IActionResult ViewOutsideDutyGroupListForCancellation()
-        {
-            return Json("ViewOutsideDutyGroupListForCancellation");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewOverTimeRequestFormList")]
-        public IActionResult ViewOverTimeRequestFormList()
-        {
-            return Json("ViewOverTimeRequestFormList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewPlanItemSelectionForHRForm")]
-        public IActionResult ViewPlanItemSelectionForHRForm()
-        {
-            return Json("ViewPlanItemSelectionForHRForm");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewSecondmentList")]
-        public IActionResult ViewSecondmentList()
-        {
-            return Json("ViewSecondmentList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffAddressesList")]
-        public IActionResult ViewStaffAddressesList()
-        {
-            return Json("ViewStaffAddressesList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffAndRelativeForMedicalReimbursement")]
-        public IActionResult ViewStaffAndRelativeForMedicalReimbursement()
-        {
-            return Json("ViewStaffAndRelativeForMedicalReimbursement");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffDevelopmentList")]
-        public IActionResult ViewStaffDevelopmentList()
-        {
-            return Json("ViewStaffDevelopmentList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffEducationList")]
-        public IActionResult ViewStaffEducationList()
-        {
-            return Json("ViewStaffEducationList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffFamilyList")]
-        public IActionResult ViewStaffFamilyList()
-        {
-            return Json("ViewStaffFamilyList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffInformationList")]
-        public IActionResult ViewStaffInformationList()
-        {
-            return Json("ViewStaffInformationList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffInsigniaList")]
-        public IActionResult ViewStaffInsigniaList()
-        {
-            return Json("ViewStaffInsigniaList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffList")]
-        public IActionResult ViewStaffList()
-        {
-            return Json("ViewStaffList");
-        }
-
-
-      
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffPastDevelopmentList")]
-        public IActionResult ViewStaffPastDevelopmentList()
-        {
-            return Json("ViewStaffPastDevelopmentList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffWorkAttendanceList")]
-        public IActionResult ViewStaffWorkAttendanceList()
-        {
-            return Json("ViewStaffWorkAttendanceList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffWorkHistoryList")]
-        public IActionResult ViewStaffWorkHistoryList()
-        {
-            return Json("ViewStaffWorkHistoryList");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewStaffWorkShiftList")]
-        public IActionResult ViewStaffWorkShiftList()
-        {
-            return Json("ViewStaffWorkShiftList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewSyllabusesList")]
-        public IActionResult ViewSyllabusesList()
-        {
-            return Json("ViewSyllabusesList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Operate/ViewWorkShiftSwitchFormList")]
-        public IActionResult ViewWorkShiftSwitchFormList()
-        {
-            return Json("ViewWorkShiftSwitchFormList");
-        }
-
-
-
-
-        #endregion
-
-
-
-        #region HR report
-        [HttpGet]
-        [Route("/HR/Report/AddressReport")]
-        public IActionResult AddressReport()
-        {
-            return Json("AddressReport");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Report/BasicStaffInformationReport")]
-        public IActionResult BasicStaffInformationReport()
-        {
-            return Json("BasicStaffInformationReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/DailyAttendanceMonthlyReport")]
-        public IActionResult DailyAttendanceMonthlyReport()
-        {
-            return Json("DailyAttendanceMonthlyReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/DevelopmentRecordReport")]
-        public IActionResult DevelopmentRecordReport()
-        {
-            return Json("DevelopmentRecordReport");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Report/EducationRecordReport")]
-        public IActionResult EducationRecordReport()
-        {
-            return Json("EducationRecordReport");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Report/FingerPrintDBReaderResultReport")]
-        public IActionResult FingerPrintDBReaderResultReport()
-        {
-            return Json("FingerPrintDBReaderResultReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/HREvaluationResultReport")]
-        public IActionResult HREvaluationResultReport()
-        {
-            return Json("HREvaluationResultReport");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Report/HRFormReportViewer")]
-        public IActionResult HRFormReportViewer()
-        {
-            return Json("HRFormReportViewer");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/HRReportStream")]
-        public IActionResult HRReportStream()
-        {
-            return Json("HRReportStream");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Report/IndividualGeneralHRDataReport")]
-        public IActionResult IndividualGeneralHRDataReport()
-        {
-            return Json("IndividualGeneralHRDataReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/IndividualMonthlyWorkAttendanceReport")]
-        public IActionResult IndividualMonthlyWorkAttendanceReport()
-        {
-            return Json("IndividualMonthlyWorkAttendanceReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/InsigniaReportByRank")]
-        public IActionResult InsigniaReportByRank()
-        {
-            return Json("InsigniaReportByRank");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/LeaveReport")]
-        public IActionResult LeaveReport()
-        {
-            return Json("LeaveReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/ManpowerByDepartment")]
-        public IActionResult ManpowerByDepartment()
-        {
-            return Json("ManpowerByDepartment");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/ManpowerMonthlyReport")]
-        public IActionResult ManpowerMonthlyReport()
-        {
-            return Json("ManpowerMonthlyReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/MedicalReimbursementSendPaymentReport")]
-        public IActionResult MedicalReimbursementSendPaymentReport()
-        {
-            return Json("MedicalReimbursementSendPaymentReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/OutsideDutyGroupReport")]
-        public IActionResult OutsideDutyGroupReport()
-        {
-            return Json("OutsideDutyGroupReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/OverTimeReportByMonth")]
-        public IActionResult OverTimeReportByMonth()
-        {
-            return Json("OverTimeReportByMonth");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/OverTimeResultReport")]
-        public IActionResult OverTimeResultReport()
-        {
-            return Json("OverTimeResultReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/OverTimeResultReportList")]
-        public IActionResult OverTimeResultReportList()
-        {
-            return Json("OverTimeResultReportList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/OverTimeSummarizeReport")]
-        public IActionResult OverTimeSummarizeReport()
-        {
-            return Json("OverTimeSummarizeReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/PeriodWorkAttendanceReport")]
-        public IActionResult PeriodWorkAttendanceReport()
-        {
-            return Json("PeriodWorkAttendanceReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/PeriodWorkAttendanceReportByTime")]
-        public IActionResult PeriodWorkAttendanceReportByTime()
-        {
-            return Json("PeriodWorkAttendanceReportByTime");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/RemainLeaveDayReport")]
-        public IActionResult RemainLeaveDayReport()
-        {
-            return Json("RemainLeaveDayReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/SecondmentReport")]
-        public IActionResult SecondmentReport()
-        {
-            return Json("SecondmentReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/StaffByDepartmentReport")]
-        public IActionResult StaffByDepartmentReport()
-        {
-            return Json("StaffByDepartmentReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/StaffByJobPositionTypeReport")]
-        public IActionResult StaffByJobPositionTypeReport()
-        {
-            return Json("StaffByJobPositionTypeReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/StaffByPlanCoreReport")]
-        public IActionResult StaffByPlanCoreReport()
-        {
-            return Json("StaffByPlanCoreReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/StaffResignedReport")]
-        public IActionResult StaffResignedReport()
-        {
-            return Json("StaffResignedReport");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/UnsualStaffWorkAttendanceReport")]
-        public IActionResult UnsualStaffWorkAttendanceReport()
-        {
-            return Json("UnsualStaffWorkAttendanceReport");
-        }
-
-
-     
-
-        [HttpGet]
-        [Route("/HR/Report/ViewFingerPrintDBRawData")]
-        public IActionResult ViewFingerPrintDBRawData()
-        {
-            return Json("ViewFingerPrintDBRawData");
-        }
-
-
-
-
-        [HttpGet]
-        [Route("/HR/Report/WorkShiftExtraAllowanceReport")]
-        public IActionResult WorkShiftExtraAllowanceReport()
-        {
-            return Json("WorkShiftExtraAllowanceReport");
-        }
-
-
-
-
-        #endregion
-
-
-
-        #region HR setup
-        [HttpGet]
-        [Route("/HR/Setup/AddressStyleSetup")]
-        public IActionResult AddressStyleSetup()
-        {
-            return Json("AddressStyleSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/AddressTypeSetup")]
-        public IActionResult AddressTypeSetup()
-        {
-            return Json("AddressTypeSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/AutoInsertDailyAttendanceSetup")]
-        public IActionResult AutoInsertDailyAttendanceSetup()
-        {
-            return Json("AutoInsertDailyAttendanceSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/CompetencyEvaluationExpectScoreSetup")]
-        public IActionResult CompetencyEvaluationExpectScoreSetup()
-        {
-            return Json("CompetencyEvaluationExpectScoreSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/CompetencyTopicItemSetup")]
-        public IActionResult CompetencyTopicItemSetup()
-        {
-            return Json("CompetencyTopicItemSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/DevelopmentTypeSetup")]
-        public IActionResult DevelopmentTypeSetup()
-        {
-            return Json("DevelopmentTypeSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/EducationLevelSetup")]
-        public IActionResult EducationLevelSetup()
-        {
-            return Json("EducationLevelSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/EvaluatorSetup")]
-        public IActionResult EvaluatorSetup()
-        {
-            return Json("EvaluatorSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/FamilialRelationshipSetup")]
-        public IActionResult FamilialRelationshipSetup()
-        {
-            return Json("FamilialRelationshipSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/FingerPrintDBConnectorSetup")]
-        public IActionResult FingerPrintDBConnectorSetup()
-        {
-            return Json("FingerPrintDBConnectorSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/FingerPrintReaderSensorSetup")]
-        public IActionResult FingerPrintReaderSensorSetup()
-        {
-            return Json("FingerPrintReaderSensorSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/HRDepartmentSetup")]
-        public IActionResult HRDepartmentSetup()
-        {
-            return Json("HRDepartmentSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/HRDepartmentStaffPermissionForHRSetup")]
-        public IActionResult HRDepartmentStaffPermissionForHRSetup()
-        {
-            return Json("HRDepartmentStaffPermissionForHRSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/IndividualBossSetup")]
-        public IActionResult IndividualBossSetup()
-        {
-            return Json("IndividualBossSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/InsigniaRankSetup")]
-        public IActionResult InsigniaRankSetup()
-        {
-            return Json("InsigniaRankSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobFunctionalPositionSetup")]
-        public IActionResult JobFunctionalPositionSetup()
-        {
-            return Json("JobFunctionalPositionSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobPositionGroupSetup")]
-        public IActionResult JobPositionGroupSetup()
-        {
-            return Json("JobPositionGroupSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobPositionKeyCompetencySetup")]
-        public IActionResult JobPositionKeyCompetencySetup()
-        {
-            return Json("JobPositionKeyCompetencySetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobPositionLevelSetup")]
-        public IActionResult JobPositionLevelSetup()
-        {
-            return Json("JobPositionLevelSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobPositionSetup")]
-        public IActionResult JobPositionSetup()
-        {
-            return Json("JobPositionSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/JobPositionTypeSetup")]
-        public IActionResult JobPositionTypeSetup()
-        {
-            return Json("JobPositionTypeSetup");
-        }
-
-
-        [HttpGet]
-        [Route("/HR/Setup/LeaveArchievedRecordOverrideSetup")]
-        public IActionResult LeaveArchievedRecordOverrideSetup()
-        {
-            return Json("LeaveArchievedRecordOverrideSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/LeaveTypeLimitSetup")]
-        public IActionResult LeaveTypeLimitSetup()
-        {
-            return Json("LeaveTypeLimitSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/LeaveTypeLimitSetup_Old")]
-        public IActionResult LeaveTypeLimitSetup_Old()
-        {
-            return Json("LeaveTypeLimitSetup_Old");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/LeaveTypeSetup")]
-        public IActionResult LeaveTypeSetup()
-        {
-            return Json("LeaveTypeSetup");
-        }
-
-
-    
-
-        [HttpGet]
-        [Route("/HR/Setup/NameTitleSetup")]
-        public IActionResult NameTitleSetup()
-        {
-            return Json("NameTitleSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/NationalitySetup")]
-        public IActionResult NationalitySetup()
-        {
-            return Json("NationalitySetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/OverTimeMultiplyRateSetup")]
-        public IActionResult OverTimeMultiplyRateSetup()
-        {
-            return Json("OverTimeMultiplyRateSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/OverTimeRatePerHourSetup")]
-        public IActionResult OverTimeRatePerHourSetup()
-        {
-            return Json("OverTimeRatePerHourSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/PerformanceYearlyEvaluationWeightSetup")]
-        public IActionResult PerformanceYearlyEvaluationWeightSetup()
-        {
-            return Json("PerformanceYearlyEvaluationWeightSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/RaceSetup")]
-        public IActionResult RaceSetup()
-        {
-            return Json("RaceSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/ReligionSetup")]
-        public IActionResult ReligionSetup()
-        {
-            return Json("ReligionSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/SendWeeklyAbsentNotificationEMailSetup")]
-        public IActionResult SendWeeklyAbsentNotificationEMailSetup()
-        {
-            return Json("SendWeeklyAbsentNotificationEMailSetup");
-        }
-
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/StaffOverTimeRatePerHourList")]
-        public IActionResult StaffOverTimeRatePerHourList()
-        {
-            return Json("StaffOverTimeRatePerHourList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/StaffSignatureSetup")]
-        public IActionResult StaffSignatureSetup()
-        {
-            return Json("StaffSignatureSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/TempYearlyEvaluation5859ScoreSetup")]
-        public IActionResult TempYearlyEvaluation5859ScoreSetup()
-        {
-            return Json("TempYearlyEvaluation5859ScoreSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/UnitChiefSetup")]
-        public IActionResult UnitChiefSetup()
-        {
-            return Json("UnitChiefSetup");
-        }
-
-
-
-        [HttpGet]
-        [Route("/HR/Setup/WorkShiftDataSetup")]
-        public IActionResult WorkShiftDataSetup()
-        {
-            return Json("WorkShiftDataSetup");
-        }
-
-
-     
-
-        [HttpGet]
-        [Route("/HR/Setup/WorkShiftExtraAllowanceSetup")]
-        public IActionResult WorkShiftExtraAllowanceSetup()
-        {
-            return Json("WorkShiftExtraAllowanceSetup");
-        }
-
-
-
-        #endregion
+       
 
         #region Plan
         [HttpGet]
@@ -1803,39 +321,43 @@ namespace narit_mis_api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditBudgetTransferForm")]
-        public IActionResult EditBudgetTransferForm()
+        public IActionResult EditBudgetTransferForm(BudgetTransferFormDto request)
         {
-            return Json("EditBudgetTransferForm");
+            var data = _SecServices.BudgetTransferForm(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditChangedPlanItemRecord")]
-        public IActionResult EditChangedPlanItemRecord()
+        public IActionResult EditChangedPlanItemRecord(RequestFormPlanViewRequest request)
         {
-            return Json("EditChangedPlanItemRecord");
+            var data = _SecServices.EditChangedPlanItemRecord(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditDirectExpenseMemoForm")]
-        public IActionResult EditDirectExpenseMemoForm()
+        public IActionResult EditDirectExpenseMemoForm(DirectExpenseMemoFormRequest request)
         {
-            return Json("EditDirectExpenseMemoForm");
+            var data = _SecServices.EditDirectExpenseMemoForm(request);
+
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditGeneralExpenseExtendForm")]
-        public IActionResult EditGeneralExpenseExtendForm()
+        public IActionResult EditGeneralExpenseExtendForm(GeneralExpenseExtendFormRequest request)
         {
-
-            return Json("EditGeneralExpenseExtendForm");
+            var data = _SecServices.EditGeneralExpenseExtendForm(request);
+            return Json(data);
         }
 
 
@@ -1848,67 +370,72 @@ namespace narit_mis_api.Controllers
         }
 
 
+        //---อยู่ common-----
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditGeneralExpenseMemoForm")]
+        //public IActionResult EditGeneralExpenseMemoForm()
+        //{
+        //    return Json("EditGeneralExpenseMemoForm");
+        //}
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditGeneralExpenseMemoForm")]
-        public IActionResult EditGeneralExpenseMemoForm()
-        {
-            return Json("EditGeneralExpenseMemoForm");
-        }
 
 
-
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditGeneralExpensePersonalBorrowForm")]
-        public IActionResult EditGeneralExpensePersonalBorrowForm()
+        public IActionResult EditGeneralExpensePersonalBorrowForm(List<GeneralExpensePersonalBorrowItemRequest> request)
         {
-            return Json("EditGeneralExpensePersonalBorrowForm");
+            var data = _SecServices.EditGeneralExpensePersonalBorrowForm(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditGeneralExpenseSettleAsBudgetForm")]
-        public IActionResult EditGeneralExpenseSettleAsBudgetForm()
-        {
-            return Json("EditGeneralExpenseSettleAsBudgetForm");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditGeneralExpenseSettleAsBudgetForm")]
+        //public IActionResult EditGeneralExpenseSettleAsBudgetForm()
+        //{
+        //    return Json("EditGeneralExpenseSettleAsBudgetForm");
+        //}
 
 
 
         [HttpGet]
         [Route("/Plan/Operate/EditGeneralExpenseSettleForm")]
-        public IActionResult EditGeneralExpenseSettleForm()
+        public IActionResult EditGeneralExpenseSettleForm(GeneralExpenseSettleFormRequest request)
         {
-            return Json("EditGeneralExpenseSettleForm");
+            var data = _SecServices.EditGeneralExpenseSettleForm(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditMonthlyForecastAdjustment")]
-        public IActionResult EditMonthlyForecastAdjustment()
+        public IActionResult EditMonthlyForecastAdjustment(MonthlyForecastAdjustment request)
         {
-            return Json("EditMonthlyForecastAdjustment");
+            var data = _SecServices.EditMonthlyForecastAdjustment_t(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditOutsideDutyReportForm")]
-        public IActionResult EditOutsideDutyReportForm()
+        public IActionResult EditOutsideDutyReportForm(List<OutsideDutyReportStaff> request)
         {
-            return Json("EditOutsideDutyReportForm");
+            var data = _SecServices.EditOutsideDutyReportForm(request);
+            return Json(data);
         }
 
 
       
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditPerformanceIndicatorResult")]
-        public IActionResult EditPerformanceIndicatorResult()
+        public IActionResult EditPerformanceIndicatorResult(PerformanceIndicator request)
         {
-            return Json("EditPerformanceIndicatorResult");
+            var data = _SecServices.EditPerformanceIndicatorResult(request);
+            return Json(data);
         }
 
 
@@ -1988,30 +515,31 @@ namespace narit_mis_api.Controllers
         }
         
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditPlanActivity")]
-        public IActionResult EditPlanActivity()
+        public IActionResult EditPlanActivity(PlanActivity request)
         {
-            return Json("EditPlanActivity");
+            var data = _SecServices.EditPlanActivity( request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditPlanActivityOperationPeriod")]
-        public IActionResult EditPlanActivityOperationPeriod()
-        {
-            return Json("EditPlanActivityOperationPeriod");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditPlanActivityOperationPeriod")]
+        //public IActionResult EditPlanActivityOperationPeriod()
+        //{
+        //    return Json("EditPlanActivityOperationPeriod");
+        //}
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditPlanActivityOperationPeriodOnList")]
-        public IActionResult EditPlanActivityOperationPeriodOnList()
-        {
-            return Json("EditPlanActivityOperationPeriodOnList");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditPlanActivityOperationPeriodOnList")]
+        //public IActionResult EditPlanActivityOperationPeriodOnList()
+        //{
+        //    return Json("EditPlanActivityOperationPeriodOnList");
+        //}
 
 
 
@@ -2025,97 +553,103 @@ namespace narit_mis_api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditPlanItem")]
-        public IActionResult EditPlanItem()
+        public IActionResult EditPlanItem(PlanItem request)
         {
-            return Json("EditPlanItem");
+            var data = _SecServices.EditPlanItem(request);
+            return Json(data);
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditPlanMonthlyOperation")]
-        public IActionResult EditPlanMonthlyOperation()
+        public IActionResult EditPlanMonthlyOperation(PlanMonthlyOperation request)
         {
-            return Json("EditPlanMonthlyOperation");
+            var data = _SecServices.EditPlanMonthlyOperation(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditPlanOperationPeriod")]
-        public IActionResult EditPlanOperationPeriod()
-        {
-            return Json("EditPlanOperationPeriod");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditPlanOperationPeriod")]
+        //public IActionResult EditPlanOperationPeriod()
+        //{
+        //    return Json("EditPlanOperationPeriod");
+        //}
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/EditReceivedReservedBudgetByPlanActivity")]
-        public IActionResult EditReceivedReservedBudgetByPlanActivity()
-        {
-            return Json("EditReceivedReservedBudgetByPlanActivity");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/EditReceivedReservedBudgetByPlanActivity")]
+        //public IActionResult EditReceivedReservedBudgetByPlanActivity()
+        //{
+        //    return Json("EditReceivedReservedBudgetByPlanActivity");
+        //}
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/EditSettleReceiptForm")]
-        public IActionResult EditSettleReceiptForm()
+        public IActionResult EditSettleReceiptForm(SettleReceiptForm request)
         {
-            return Json("EditSettleReceiptForm");
+            var data = _SecServices.EditSettleReceiptForm(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/SearchPlanActivity")]
-        public IActionResult SearchPlanActivity()
+        public IActionResult SearchPlanActivity(SearchPlanActivityRequest request)
         {
-            return Json("SearchPlanActivity");
+            var data = _SecServices.SearchPlanActivity(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/SearchPlanForActivity")]
-        public IActionResult SearchPlanForActivity()
-        {
-            return Json("SearchPlanForActivity");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/SearchPlanForActivity")]
+        //public IActionResult SearchPlanForActivity()
+        //{
+        //    return Json("SearchPlanForActivity");
+        //}
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/SearchPlanItem")]
-        public IActionResult SearchPlanItem()
+        public IActionResult SearchPlanItem(SearchPlanItemRequest request)
         {
-            return Json("SearchPlanItem");
+            var data = _SecServices.SearchPlanItem(request);
+            return Json(data);
         }
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/SelectGeneralExpenseForPersonalBorrowing")]
-        public IActionResult SelectGeneralExpenseForPersonalBorrowing()
-        {
-            return Json("SelectGeneralExpenseForPersonalBorrowing");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/SelectGeneralExpenseForPersonalBorrowing")]
+        //public IActionResult SelectGeneralExpenseForPersonalBorrowing()
+        //{
+        //    return Json("SelectGeneralExpenseForPersonalBorrowing");
+        //}
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/SelectGEPersonalBorrowFormForExtend")]
-        public IActionResult SelectGEPersonalBorrowFormForExtend()
-        {
-            return Json("SelectGEPersonalBorrowFormForExtend");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/SelectGEPersonalBorrowFormForExtend")]
+        //public IActionResult SelectGEPersonalBorrowFormForExtend()
+        //{
+        //    return Json("SelectGEPersonalBorrowFormForExtend");
+        //}
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/SelectSupplierListForForm")]
-        public IActionResult SelectSupplierListForForm()
+        public IActionResult SelectSupplierListForForm(SelectSupplierListForFormRequest request) 
         {
-            return Json("SelectSupplierListForForm");
+            var data = _SecServices.SelectSupplierListForForm(request);
+            return Json(data);
         }
 
 
@@ -2244,10 +778,11 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseMemoFormListForExtend")]
-        public IActionResult ViewGeneralExpenseMemoFormListForExtend()
+        public IActionResult ViewGeneralExpenseMemoFormListForExtend(ViewGeneralExpenseMemoFormListForExtendRequest request)
         {
+            var data = _SecServices.ViewGeneralExpenseMemoFormListForExtend(request);
             return Json("ViewGeneralExpenseMemoFormListForExtend");
         }
 
@@ -2309,20 +844,22 @@ namespace narit_mis_api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewMonthlyForecastAdjustmentList")]
-        public IActionResult ViewMonthlyForecastAdjustmentList()
+        public IActionResult ViewMonthlyForecastAdjustmentList(ViewMonthlyForecastAdjustmentListRequest request)
         {
-            return Json("ViewMonthlyForecastAdjustmentList");
+            var data = _SecServices.ViewMonthlyForecastAdjustmentList(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewOutsideDutyReportFormList")]
-        public IActionResult ViewOutsideDutyReportFormList()
+        public IActionResult ViewOutsideDutyReportFormList(ViewOutsideDutyReportFormListRequest request)
         {
-            return Json("ViewOutsideDutyReportFormList");
+            var data = ViewOutsideDutyReportFormList(request);
+            return Json(data);
         }
 
 
