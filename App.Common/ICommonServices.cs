@@ -13,7 +13,10 @@ namespace App.Common
     {
         List<BudgetTypeCommonDto>  GetBudgetTypes(int fiscalYear);
         List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
-        CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request);
+        CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto GeFormActionLog);
         List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
+        CommonBaseResponse GeFormActionLog(GeFormActionLog GeFormActionLog);
+        List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
+
     }
 }

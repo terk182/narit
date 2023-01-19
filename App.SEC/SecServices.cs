@@ -6,6 +6,7 @@ using App.SEC.Models;
 using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
 using App.SEC.Responses;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using narit_mis_api.Models;
@@ -4075,6 +4076,34 @@ namespace App.SEC
 
         public SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request)
         {
+            var geLog = new GeFormActionLog();
+
+           // geLog.Id =
+            geLog.Name = request.Name;
+        //  geLog.Active
+         // geLog.StaffId = request.
+            geLog.ActionDate = DateTime.Now;
+           // geLog.Ip
+       // geLog.HostName
+            geLog.ActionTypeEnum = 20;
+       // geLog.StaffName
+      //  geLog.ClientName
+      //  geLog.GeneralExpenseMemoFormId
+      //  geLog.SignedHashText
+      //  geLog.VerifyData
+      //  geLog.SignedHashValue
+      //  geLog.CipherKeyPairId
+      //  geLog.Jwtpayload
+      //  geLog.Detail
+
+
+
+
+
+
+
+
+
             var db = new GeneralExpenseMemoForm();
             db.Active = request.Active;
             db.FiscalYear = request.FiscalYear;
@@ -4117,11 +4146,15 @@ namespace App.SEC
             var result = _database.SaveChanges();
 
 
+            var get_id = _database.GeneralExpenseMemoForms.Where(j => j.Id > 0)
+             .OrderByDescending(a => a.Id)
+             .Select(p => p).FirstOrDefault();
 
-            if(request.SignList.Count > 0)
+            if (request.SignList.Count > 0)
             {
                 foreach (var item in request.SignList)
                 {
+                    item.GeneralExpenseMemoFormsId = get_id.Id;
                     _database.Entry(item).State = EntityState.Added;
                                              
 

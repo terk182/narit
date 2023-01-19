@@ -37,6 +37,22 @@ namespace App.Common
             return response;
         }
 
+        public CommonBaseResponse GeFormActionLog(GeFormActionLog GeFormActionLog)
+        {
+            int result = 0;
+
+            _database.Entry(GeFormActionLog).State = EntityState.Added;
+            result = _database.SaveChanges();
+            var response = new CommonBaseResponse();
+            response.Success = result > 0 ? true : false;
+            return response;
+        }
+
+        public List<GeFormActionLog> GeFormActionLog(int GeneralExpenseMemoFormId)
+        {
+            var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
+            return data;
+        }
 
         public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
         {
@@ -121,6 +137,12 @@ namespace App.Common
             }
 
             return list1;
+        }
+
+        public List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId)
+        {
+
+            throw new NotImplementedException();
         }
 
         public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
