@@ -46,6 +46,7 @@ namespace App.SEC
         List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear);
 
         List<FundSourceResponse> FundSourceSetupByFiscalYear(int FiscalYear);
+        List<MissionResponse> MissionSetupByFiscalYear(int FiscalYear);
 
         List<GovExpenseList> GovExpenseType(string path);
         SecBaseResponse BudgetTypeSetup(BudgetTypeRequest request);
@@ -129,5 +130,8 @@ namespace App.SEC
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
         SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
+        SecBaseResponse DeleteFundSource(int FundSourceId);
+        SecBaseResponse DeleteMission(int MissionId);
+
     }
 }
