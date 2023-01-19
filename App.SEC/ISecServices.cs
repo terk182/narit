@@ -54,7 +54,7 @@ namespace App.SEC
 
         SecBaseResponse StrategicIndicatorSetup(StrategicIndicatorRequest request);
         List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear);
-
+        List<StrategicIndicatorResponse> StrategicIndicatorGetbyStrategyId(int StrategyId);
         List<PrinciplePlanTagsResponse> PrinciplePlanTagSetup();
 
         SecBaseResponse PrinciplePlanTagSetupData(PrinciplePlanTagsRequest request);

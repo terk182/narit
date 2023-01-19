@@ -873,6 +873,8 @@ namespace App.SEC
             _StrategicIndicator.Unit = request.Unit;
             _StrategicIndicator.Amount = request.Amount;
             _StrategicIndicator.Weight = request.Weight;
+            _StrategicIndicator.StrategyId = request.StrategyId;
+            //_StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
             if (request.ParentStrategyId != 0)
             {
                 _StrategicIndicator.ParentStrategyId = request.ParentStrategyId;
@@ -896,7 +898,7 @@ namespace App.SEC
         public List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
         {
             var result = new List<StrategicIndicatorResponse>();
-            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear && x.Active == true).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategicIndicatorResponse
@@ -905,16 +907,40 @@ namespace App.SEC
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
-                    ParentStrategyId = item.ParentStrategyId,
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
                     Unit = item.Unit,
                     Amount = item.Amount,
-                    Weight = item.Weight
+                    Weight = item.Weight,
+                    StrategyId = item.StrategyId,
+                    ParentStrategyId = item.ParentStrategyId
+
+    });
+            }
+            return result;
+        }
+        public List<StrategicIndicatorResponse> StrategicIndicatorGetbyStrategyId(int StrategyId)
+        {
+            var result = new List<StrategicIndicatorResponse>();
+            var data = _database.StrategicIndicators.Where(x => x.StrategyId == StrategyId && x.Active == true).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new StrategicIndicatorResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+                    Unit = item.Unit,
+                    Amount = item.Amount,
+                    Weight = item.Weight,
+                    StrategyId = item.StrategyId,
+                    ParentStrategyId = item.ParentStrategyId
 
                 });
             }
             return result;
         }
-
         public List<PrinciplePlanTagsResponse> PrinciplePlanTagSetup()
         {
             var loop1 = new List<PrinciplePlanTagsResponse>();

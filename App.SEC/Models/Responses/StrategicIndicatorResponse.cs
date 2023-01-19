@@ -12,9 +12,11 @@ namespace App.SEC.Models.Responses
         public string Name { get; set; } = null!;
         public int FiscalYear { get; set; }
         public bool Active { get; set; }
-        public int? ParentStrategyId { get; set; }
+        public int? ParentStrategicIndicatorId { get; set; }
         public string Unit { get; set; } = null!;
         public decimal Amount { get; set; }
         public decimal Weight { get; set; }
+        public int? StrategyId { get; set; }
+        public int? ParentStrategyId { get; set; }
     }
 }

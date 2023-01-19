@@ -3279,7 +3279,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategicIndicatorSetupByFiscalYear(year);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Setup/StrategicIndicatorSetup/StrategyId/{StrategyId}")]
+        public IActionResult StrategicIndicatorGetbyStrategyId(int StrategyId)
+        {
+            var data = _SecServices.StrategicIndicatorGetbyStrategyId(StrategyId);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Setup/StrategySetup/FiscalYear/{year}")]
         public IActionResult StrategySetupByFiscalYear(int year)
