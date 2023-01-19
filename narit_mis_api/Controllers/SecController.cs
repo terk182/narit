@@ -695,38 +695,22 @@ namespace narit_mis_api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewChangedPlanItemRecordList")]
-        public IActionResult ViewChangedPlanItemRecordList()
+        public IActionResult ViewChangedPlanItemRecordList(ViewChangedPlanItemRecordListRequest request)
         {
-            return Json("ViewChangedPlanItemRecordList");
+            var data = _SecServices.ViewChangedPlanItemRecordList(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewDirectExpenseMemoFormList")]
-        public IActionResult ViewDirectExpenseMemoFormList()
+        public IActionResult ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request)
         {
-            return Json("ViewDirectExpenseMemoFormList");
-        }
-
-
-
-        [HttpGet]
-        [Route("/Plan/Operate/ViewFormForApprovalByDocChecker")]
-        public IActionResult ViewFormForApprovalByDocChecker()
-        {
-            return Json("ViewFormForApprovalByDocChecker");
-        }
-
-
-
-        [HttpGet]
-        [Route("/Plan/Operate/ViewFormForApprovalByUnitChief")]
-        public IActionResult ViewFormForApprovalByUnitChief()
-        {
-            return Json("ViewFormForApprovalByUnitChief");
+            var data = _SecServices.ViewDirectExpenseMemoFormList(request);
+            return Json(data);
         }
 
 
@@ -749,12 +733,12 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
-        [Route("/Plan/Operate/ViewGeneralExpenseMemoFormForSettle")]
-        public IActionResult ViewGeneralExpenseMemoFormForSettle()
-        {
-            return Json("ViewGeneralExpenseMemoFormForSettle");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Operate/ViewGeneralExpenseMemoFormForSettle")]
+        //public IActionResult ViewGeneralExpenseMemoFormForSettle()
+        //{
+        //    return Json("ViewGeneralExpenseMemoFormForSettle");
+        //}
 
 
 

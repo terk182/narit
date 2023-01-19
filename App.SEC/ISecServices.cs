@@ -159,6 +159,8 @@ namespace App.SEC
         List<PlanItem> SearchPlanItem(SearchPlanItemRequest request);
         List<Supplier> SelectSupplierListForForm(SelectSupplierListForFormRequest request);
         List<GeneralExpenseMemoForm> ViewGeneralExpenseMemoFormListForExtend(ViewGeneralExpenseMemoFormListForExtendRequest request);
+        List<RequestFormPlanView> ViewChangedPlanItemRecordList(ViewChangedPlanItemRecordListRequest request);
+        List<DirectExpenseMemoForm> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request);
 
 
     }

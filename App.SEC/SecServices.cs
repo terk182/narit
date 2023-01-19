@@ -4806,5 +4806,23 @@ namespace App.SEC
 
             return gEFromServ;
         }
+
+        public List<RequestFormPlanView> ViewChangedPlanItemRecordList(ViewChangedPlanItemRecordListRequest request)
+        {
+            if (request.PlanTypeId == 0)
+            {
+                return _database.RequestFormPlanViews.Where(c => c.Active && c.FiscalYear == request.FiscalYear).ToList();
+            }
+            else {
+                return _database.RequestFormPlanViews.Where(c => c.Active && c.PlanTypeId == request.PlanTypeId && c.FiscalYear == request.FiscalYear).ToList(); 
+            }
+  
+        }
+
+        public List<DirectExpenseMemoForm> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request)
+        {
+            return _database.DirectExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true) 
+                             && (request.objId != 0) ? (request.PlanObjectType== "PlanType" ? (c.PlanTypeId == request.objId) : (c.DepartmentId == request.objId)) : true).OrderByDescending(c => c.Id).ToList();
+        }
     }
 }
