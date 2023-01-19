@@ -3139,6 +3139,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.FundSourceSetupByFiscalYear(year);
             return Json(data);
         }
+        [HttpGet]
+        [Route("/Plan/Setup/MissionSetup/GetByFiscalYear/{year}")]
+        public IActionResult MissionSetupByFiscalYear(int year)
+        {
+            var data = _SecServices.MissionSetupByFiscalYear(year);
+            return Json(data);
+        }
 
         [HttpPost]
         [Route("/Plan/Setup/GovernmentDisbursementGoalSetup")]
@@ -3378,6 +3385,24 @@ namespace narit_mis_api.Controllers
         {
 
             var data = _SecServices.DeleteResponsiblePerson(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/FundSourceSetup/DeleteFundSource/{Id}")]
+        public IActionResult DeleteFundSource(int Id)
+        {
+
+            var data = _SecServices.DeleteFundSource(Id);
+
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Plan/Setup/MissionSetup/DeleteMission/{Id}")]
+        public IActionResult DeleteMission(int Id)
+        {
+
+            var data = _SecServices.DeleteMission(Id);
 
             return Json(data);
         }

@@ -329,7 +329,23 @@ namespace App.SEC
             }
             return _result;
         }
+        public List<MissionResponse> MissionSetupByFiscalYear(int FiscalYear)
+        {
+            var _result = new List<MissionResponse>();
+            var data = _database.Missions.Where(x => x.FiscalYear == FiscalYear).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new MissionResponse
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active
 
+                });
+            }
+            return _result;
+        }
         public List<BudgetType> GetByFiscalYear(int FiscalYear)
         {
             return _database.BudgetTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
@@ -3917,6 +3933,48 @@ namespace App.SEC
         {
             var response = new SecBaseResponse();
             var data = _database.ResponsiblePersons.Where(x => x.Id == ResponsiblePersonId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeleteFundSource(int FundSourceId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.FundSources.Where(x => x.Id == FundSourceId).FirstOrDefault();
+            if (data != null)
+            {
+                //_database.Remove(data);
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        public SecBaseResponse DeleteMission(int MissionId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Missions.Where(x => x.Id == MissionId).FirstOrDefault();
             if (data != null)
             {
                 //_database.Remove(data);
