@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Models.Requests;
 using App.Common.Models.Responses;
 using narit_mis_api.Models;
 using System;
@@ -15,7 +16,7 @@ namespace App.Common
         List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
         CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto GeFormActionLog);
         List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
-        CommonBaseResponse GeFormActionLog(GeFormActionLog GeFormActionLog);
+        CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog);
         List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
 
     }

@@ -2,10 +2,12 @@
 using App.Common.Dtos;
 using App.Common.enums;
 using App.Common.Helper;
+using App.Common.Models.Requests;
 using App.SEC;
 using App.SEC.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using narit_mis_api.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -152,6 +154,13 @@ namespace narit_mis_api.Controllers
    
             //Console.WriteLine(withValues.ElementAt(1)); // { Value = 1, Name = Canada }
             return Json(mydic);
+        }
+        [HttpPost]
+        [Route("/Common/InsertGeFormActionLog")]
+        public IActionResult InsertGeFormActionLog(GeFormActionLogsRequests GeFormActionLog)
+        {
+            var data = _CommonServices.GeFormActionLog(GeFormActionLog);
+            return Json(data);
         }
 
 

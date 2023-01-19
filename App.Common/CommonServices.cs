@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Models.Requests;
 using App.Common.Models.Responses;
 using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
@@ -43,11 +44,29 @@ namespace App.Common
             return response;
         }
 
-        public CommonBaseResponse GeFormActionLog(GeFormActionLog GeFormActionLog)
+        public CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog)
         {
+            var db = new GeFormActionLog();
+            db.Id = GeFormActionLog.Id;
+            db.Name = GeFormActionLog.Name;
+            db.Active = GeFormActionLog.Active;
+            db.StaffId = GeFormActionLog.StaffId;
+            db.ActionDate = GeFormActionLog.ActionDate;
+            db.Ip = GeFormActionLog.Ip;
+            db.HostName = GeFormActionLog.HostName;
+            db.ActionTypeEnum = GeFormActionLog.ActionTypeEnum;
+            db.StaffName = GeFormActionLog.StaffName;
+            db.ClientName = GeFormActionLog.ClientName;
+            db.GeneralExpenseMemoFormId = GeFormActionLog.GeneralExpenseMemoFormId;
+            db.SignedHashText = GeFormActionLog.SignedHashText;
+            db.VerifyData = GeFormActionLog.VerifyData;
+            db.SignedHashValue = GeFormActionLog.SignedHashValue;
+            db.CipherKeyPairId = GeFormActionLog.CipherKeyPairId;
+            db.Jwtpayload = GeFormActionLog.Jwtpayload;
+            db.Detail = GeFormActionLog.Detail;
             int result = 0;
 
-            _database.Entry(GeFormActionLog).State = EntityState.Added;
+            _database.Entry(db).State = EntityState.Added;
             result = _database.SaveChanges();
             var response = new CommonBaseResponse();
             response.Success = result > 0 ? true : false;
