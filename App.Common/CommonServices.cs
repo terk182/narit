@@ -22,12 +22,22 @@ namespace App.Common
 
         public CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
         {
+
             //_database.Entry(request).State = request.action == 0 ?
             //                           EntityState.Added :
             //                           EntityState.Modified;
 
+            int  result = 0;
+            foreach (var item in request.GeneralExpenseMemoFormsSignList)
+            {
+                _database.Entry(item).State = request.action == 0 ?
+                                         EntityState.Added :
+                                         EntityState.Modified;
 
-            var result = _database.SaveChanges();
+
+                 result = _database.SaveChanges();
+            }
+          
             var response = new CommonBaseResponse();
             response.Success = result > 0 ? true : false;
             return response;

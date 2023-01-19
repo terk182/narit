@@ -4162,12 +4162,18 @@ namespace App.SEC
             var result = _database.SaveChanges();
 
 
-            _database.Entry(request.SignList).State = request.Id == 0 ?
-                             EntityState.Added :
-                             EntityState.Modified;
 
+            if(request.SignList.Count > 0)
+            {
+                foreach (var item in request.SignList)
+                {
+                    _database.Entry(item).State = EntityState.Added;
+                                             
 
-            var resultSignList = _database.SaveChanges();
+                    result = _database.SaveChanges();
+                }
+            }
+           
 
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
