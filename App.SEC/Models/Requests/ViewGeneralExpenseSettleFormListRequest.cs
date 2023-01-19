@@ -8,6 +8,7 @@ namespace App.SEC.Models.Requests
 {
     public class ViewGeneralExpenseSettleFormListRequest
     {
+        public string?  PlanObjectType { get; set; }
         public int objId { get; set; }
 
         public int type { get; set; }
@@ -19,5 +20,9 @@ namespace App.SEC.Models.Requests
         public string? documentNumber { get; set; }
 
         public string? stateName { get; set; }
+        public int ApprovalStatusEnum { get; set; }
+        public string? refDocNum { get; set; }
+        public string? borrower { get; set;}
+ 
     }
 }

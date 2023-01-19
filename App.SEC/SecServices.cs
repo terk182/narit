@@ -4241,5 +4241,136 @@ namespace App.SEC
 
           
         }
+
+        public SecBaseResponse CostTypeSetup(CostTypeRequest request)
+        {
+            var db = new CostType();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.ParentCostTypeId = request.ParentCostTypeId;
+            db.ReferenceOldId = request.ReferenceOldId;
+        _database.Entry(request).State = request.Id == 0 ?
+                                              EntityState.Added :
+                                              EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse PlanCRUDPolicySetup(PlanCrudpolicy request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                                                        EntityState.Added :
+                                                        EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse PlanItemTypes(PlanItemTypeRequest request)
+        {
+            var db = new PlanItemType();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.UpdatedDate = request.UpdatedDate;
+            db.FiscalYear = request.FiscalYear;
+            db.ParentPlanItemTypeId = request.ParentPlanItemTypeId;
+            db.ReferenceOldId = request.ReferenceOldId;
+        _database.Entry(db).State = request.Id == 0 ?
+                                                       EntityState.Added :
+                                                       EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public SecBaseResponse PlanPerson(PlanPersonRequest request)
+        {
+            var db = new PlanPerson();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.PositionTypeEnum = request.PositionTypeEnum;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.StaffId = request.StaffId;
+            db.PositionName = request.PositionName;
+            db.ReferenceOldId = request.ReferenceOldId;
+            db.DepartmentId = request.DepartmentId;
+        _database.Entry(request).State = request.Id == 0 ?
+                                               EntityState.Added :
+                                               EntityState.Modified;
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+
+        public List<GeneralExpenseSettleForm> ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request)
+        {
+            var result = new List<GeneralExpenseSettleForm>();
+            var gEFromServ = new GeneralExpenseSettleForm();
+            var check = new ViewGeneralExpenseSettleAsBudgetFormList_check(_database);
+            if (request.objId != 0)
+            {
+                switch (request.state)
+                {
+                    case "PlanType":
+                        result = check.GetByPlanTypeId(request.objId, request.PlanApprovalStatus, request.OnlyASBudget, request.docNumber, request.budgetVal);
+                        break;
+                    case "Department":
+                        result = check.GetByDepartmentId(request.objId, request.PlanApprovalStatus, request.OnlyASBudget, request.docNumber, request.budgetVal);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                result = check.GetByFiscalYear(request.year, request.PlanApprovalStatus, request.OnlyASBudget, request.docNumber, request.budgetVal);
+            }
+            return result;
+        }
+
+        public List<GeneralExpenseSettleForm> viewGeneralExpenseSettleFormList(ViewGeneralExpenseSettleFormListRequest request)
+        {
+            var gEFromServ = new List<GeneralExpenseSettleForm>();
+            if (request.objId != 0)
+            {
+                switch (request.PlanObjectType)
+                {
+                    case "PlanType":
+                        gEFromServ = _database.GeneralExpenseSettleForms.Where(c => c.Active && c.PlanTypeId == request.objId && (c.ApprovalStatusEnum == request.ApprovalStatusEnum) && (request.documentNumber == "" || c.DocumentNumber.Contains(request.documentNumber)) && (request.refDocNum == "" || c.GeneralExpenseMemoForm.DocumentNumber.Contains(request.refDocNum)) && (request.stateName == "" || c.GeneralExpenseMemoForm.StatementName.Contains(request.stateName))).Include(c => c.SettlementItems).Include(c => c.SettleDirectPaymentItems).Include(c => c.SeFormActionLogs).Include(c => c.AdditionalSettleItems).OrderByDescending(c => c.Id).ToList();
+
+                        break;
+                    case "Department":
+                        gEFromServ = _database.GeneralExpenseSettleForms.Where(c => c.Active && c.DepartmentId == request.objId && (c.ApprovalStatusEnum == request.ApprovalStatusEnum) && (request.documentNumber == "" || c.DocumentNumber.Contains(request.documentNumber)) && (request.refDocNum == "" || c.GeneralExpenseMemoForm.DocumentNumber.Contains(request.refDocNum)) && (request.stateName == "" || c.GeneralExpenseMemoForm.StatementName.Contains(request.stateName))).Include(c => c.SettlementItems).Include(c => c.SettleDirectPaymentItems).Include(c => c.SeFormActionLogs).Include(c => c.AdditionalSettleItems).OrderByDescending(c => c.Id).ToList();
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                gEFromServ = _database.GeneralExpenseSettleForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && (c.ApprovalStatusEnum == request.ApprovalStatusEnum) && (request.documentNumber == "" || c.DocumentNumber.Contains(request.documentNumber)) && (request.documentNumber != "" || c.DocumentNumber.Contains(request.documentNumber)) && (request.documentNumber == "" || c.GeneralExpenseMemoForm.StatementName.Contains(request.documentNumber)) && (request.refDocNum == "" || c.GeneralExpenseMemoForm.DocumentNumber.Contains(request.refDocNum))).Include(c => c.SettlementItems).Include(c => c.SettleDirectPaymentItems).Include(c => c.SeFormActionLogs).Include(c => c.AdditionalSettleItems).OrderByDescending(c => c.Id).Take(100).ToList();
+            }
+            return gEFromServ;
+        }
     }
 }

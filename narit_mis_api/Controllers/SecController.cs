@@ -2280,20 +2280,22 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseSettleAsBudgetFormList")]
-        public IActionResult ViewGeneralExpenseSettleAsBudgetFormList()
+        public IActionResult ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request)
         {
-            return Json("ViewGeneralExpenseSettleAsBudgetFormList");
+            var data = _SecServices.ViewGeneralExpenseSettleAsBudgetFormList(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Operate/ViewGeneralExpenseSettleFormList")]
-        public IActionResult ViewGeneralExpenseSettleFormList()
+        public IActionResult ViewGeneralExpenseSettleFormList(ViewGeneralExpenseSettleFormListRequest request)
         {
-            return Json("ViewGeneralExpenseSettleFormList");
+            var data = _SecServices.viewGeneralExpenseSettleFormList(request);
+            return Json(data);
         }
 
 
@@ -3081,11 +3083,12 @@ namespace narit_mis_api.Controllers
             return Json(_BudgetType);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/CostTypeSetup")]
-        public IActionResult CostTypeSetup()
+        public IActionResult CostTypeSetup(CostTypeRequest request)
         {
-            return Json("CostTypeSetup");
+            var data = _SecServices.CostTypeSetup(request);
+            return Json(data);
         }
 
 
@@ -3178,11 +3181,12 @@ namespace narit_mis_api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/PlanCRUDPolicySetup")]
-        public IActionResult PlanCRUDPolicySetup()
+        public IActionResult PlanCRUDPolicySetup(PlanCrudpolicy request)
         {
-            return Json("PlanCRUDPolicySetup");
+            var data = _SecServices.PlanCRUDPolicySetup( request);
+            return Json(data);
         }
         [HttpGet]
         [Route("/Plan/Setup/PlanCRUDPolicySetup/GetPolicy/{year}")]
@@ -3201,29 +3205,31 @@ namespace narit_mis_api.Controllers
 
 
 
-        [HttpGet]
-        [Route("/Plan/Setup/PlanDepartmentStaffPermissionForPlanAndProcure")]
-        public IActionResult PlanDepartmentStaffPermissionForPlanAndProcure()
-        {
-            return Json("PlanDepartmentStaffPermissionForPlanAndProcure");
-        }
+        //[HttpGet]
+        //[Route("/Plan/Setup/PlanDepartmentStaffPermissionForPlanAndProcure")]
+        //public IActionResult PlanDepartmentStaffPermissionForPlanAndProcure()
+        //{
+        //    return Json("PlanDepartmentStaffPermissionForPlanAndProcure");
+        //}
 
 
 
         [HttpGet]
         [Route("/Plan/Setup/PlanItemTypeSetup")]
-        public IActionResult PlanItemTypeSetup()
+        public IActionResult PlanItemTypeSetup(PlanItemTypeRequest request)
         {
-            return Json("PlanItemTypeSetup");
+            var data = _SecServices.PlanItemTypes(request);
+            return Json(data);
         }
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("/Plan/Setup/PlanPersonSetup")]
-        public IActionResult PlanPersonSetup()
+        public IActionResult PlanPersonSetup(PlanPersonRequest request)
         {
-            return Json("PlanPersonSetup");
+            var data = _SecServices.PlanPerson( request);
+            return Json(data);
         }
 
 

@@ -131,11 +131,15 @@ namespace App.SEC
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
         SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
-
         SecBaseResponse DeleteFundSource(int FundSourceId);
         SecBaseResponse DeleteMission(int MissionId);
-
         SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request);
+        SecBaseResponse CostTypeSetup(CostTypeRequest request);
+        SecBaseResponse PlanCRUDPolicySetup(PlanCrudpolicy request);
+        SecBaseResponse PlanItemTypes(PlanItemTypeRequest request);
+        SecBaseResponse PlanPerson(PlanPersonRequest request);
+        List<GeneralExpenseSettleForm> ViewGeneralExpenseSettleAsBudgetFormList(ViewGeneralExpenseSettleAsBudgetFormListRequest request);
+        List<GeneralExpenseSettleForm> viewGeneralExpenseSettleFormList(ViewGeneralExpenseSettleFormListRequest request);
 
     }
 }
