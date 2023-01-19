@@ -19,7 +19,7 @@ namespace App.SEC
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
-        
+
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
@@ -47,7 +47,8 @@ namespace App.SEC
 
         List<FundSourceResponse> FundSourceSetupByFiscalYear(int FiscalYear);
         List<MissionResponse> MissionSetupByFiscalYear(int FiscalYear);
-
+        SecBaseResponse MissionSetup(MissionRequest request);
+        SecBaseResponse FundSourceSetup(FundSourceRequest request);
         List<GovExpenseList> GovExpenseType(string path);
         SecBaseResponse BudgetTypeSetup(BudgetTypeRequest request);
 
@@ -112,7 +113,7 @@ namespace App.SEC
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByPlanType(int fiscalYear);
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> PlanReportByDepartment(int fiscalYear);
         List<BudgetTypeCommonDto> PlanReportByBudgetType(int fiscalYear);
-        planItemCal calPlanItem(int Id,int fiscalYear);
+        planItemCal calPlanItem(int Id, int fiscalYear);
         List<BudgetTypeCommonDto> PlanReportByStrategy(int fiscalYear);
 
         List<BudgetTransferFormResponse> ViewPlanItemBudgetTransferListForApprove(BudgetTransferFormRequest request);
@@ -121,7 +122,7 @@ namespace App.SEC
         ViewGeneralExpenseSettleFormListResponse ViewGeneralExpenseSettleFormListForApproval(ViewGeneralExpenseSettleFormListRequest request);
         List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
-        SecBaseResponse DeleteStrategy (int StrategyId);
+        SecBaseResponse DeleteStrategy(int StrategyId);
         SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId);
         SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId);
         SecBaseResponse DeletePlanType(int PlanTypeId);
@@ -130,12 +131,12 @@ namespace App.SEC
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
         SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
-<<<<<<< HEAD
+
         SecBaseResponse DeleteFundSource(int FundSourceId);
         SecBaseResponse DeleteMission(int MissionId);
 
-=======
+
         SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request);
->>>>>>> origin/master
+
     }
 }

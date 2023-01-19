@@ -232,6 +232,7 @@ namespace narit_mis_api.Controllers
         }
 
 
+
         [HttpGet]
         [Route("/Filing/Setup/FilingOpinionSetup")]
         public IActionResult FilingOpinionSetup()
@@ -3124,7 +3125,20 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.FundTypeSetup(request);
             return Json(data);
         }
-
+        [HttpPost]
+        [Route("/Plan/Setup/MissionSetup")]
+        public IActionResult MissionSetup(MissionRequest request)
+        {
+            var data = _SecServices.MissionSetup(request);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/FundSourceSetup")]
+        public IActionResult FundSourceSetup(FundSourceRequest request)
+        {
+            var data = _SecServices.FundSourceSetup(request);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Setup/FundTypeSetup/GetByFiscalYear/{year}")]
         public IActionResult FundTypeSetupGetByFiscalYear(int year)
