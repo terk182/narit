@@ -139,13 +139,7 @@ namespace narit_mis_api.Controllers
             var data = _CommonServices.GetMisGeneralExpenseMemoFormsSignList(id);
             return Json(data);
         }
-        [HttpGet]
-        [Route("/Common/GetGeFormActionLog/{GeneralExpenseMemoFormsId}")]
-        public IActionResult GetGeFormActionLog(int GeneralExpenseMemoFormsId)
-        {
-            var data = _CommonServices.GetGeFormActionLog(GeneralExpenseMemoFormsId);
-            return Json(data);
-        }
+
         [HttpGet]
         [Route("/Common/ActionTypeEnum/")]
         public IActionResult GetActionTypeEnum()
@@ -162,8 +156,13 @@ namespace narit_mis_api.Controllers
             var data = _CommonServices.GeFormActionLog(GeFormActionLog);
             return Json(data);
         }
-
-
+        [HttpGet]
+        [Route("/Common/GetGeFormActionLog/{GeneralExpenseMemoFormsId}")]
+        public IActionResult GetGeFormActionLog(int GeneralExpenseMemoFormsId)
+        {
+            var data = _CommonServices.GetGeFormActionLog(GeneralExpenseMemoFormsId);
+            return Json(data);
+        }
 
     }
 }

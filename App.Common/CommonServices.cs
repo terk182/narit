@@ -78,7 +78,12 @@ namespace App.Common
             var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
             return data;
         }
+        public List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId)
+        {
 
+            var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
+            return data;
+        }
         public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
         {
             var list1 = new List<BudgetTypeCommonDto>();
@@ -164,11 +169,7 @@ namespace App.Common
             return list1;
         }
 
-        public List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId)
-        {
 
-            throw new NotImplementedException();
-        }
 
         public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
         {
