@@ -4072,5 +4072,55 @@ namespace App.SEC
             return response;
 
         }
+
+        public SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request)
+        {
+            var db = new GeneralExpenseMemoForm();
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.Name = request.Name;
+            db.WriteDate = DateTime.Now;
+            db.CreateDate = DateTime.Now;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.Approver = request.Approver;
+            db.Enclosures = request.Enclosures;
+            db.Purpose = request.Purpose;
+            db.RequesterName = request.RequesterName;
+            db.UnitChiefName = request.UnitChiefName;
+            db.BudgetCheckerName = request.BudgetCheckerName;
+            db.ApprovalStatusEnum = request.ApprovalStatusEnum;
+            db.DepartmentName = request.DepartmentName;
+            db.PlanTypeName = request.PlanTypeName;
+            db.PlanTypeId = request.PlanTypeId;
+            db.PlanCoreName = request.PlanCoreName;
+            db.PlanCoreId = request.PlanCoreId;
+            db.BudgetTypeName = request.BudgetTypeName;
+            db.BudgetTypeId = request.BudgetTypeId;
+            db.PlanCoreRemainBudget = request.PlanCoreRemainBudget;
+            db.PlanCoreCode = request.PlanCoreCode;
+            db.DocumentNumber = request.DocumentNumber;
+            db.StatementPayStatusEnum = request.StatementPayStatusEnum;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.IsBorrow = request.IsBorrow;
+            db.IsTemporaryInvolve = request.IsTemporaryInvolve;
+            db.StatementCalculationDate = request.StatementCalculationDate;
+            db.PlanActivityIdOld = request.PlanActivityIdOld;
+            db.FundTypeName = request.FundTypeName;
+            db.FundTypeId = request.FundTypeId;
+            db.StatementName = request.StatementName;
+            db.Inform = request.Inform;
+            _database.Entry(db).State = request.Id == 0 ?
+                              EntityState.Added :
+                              EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+
+          
+        }
     }
 }

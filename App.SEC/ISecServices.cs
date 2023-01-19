@@ -130,8 +130,12 @@ namespace App.SEC
         SecBaseResponse DeleteBudgetType(int BudgetTypeId);
         SecBaseResponse DeletePlanCore(int PlanCoreId);
         SecBaseResponse DeleteResponsiblePerson(int ResponsiblePersonId);
+<<<<<<< HEAD
         SecBaseResponse DeleteFundSource(int FundSourceId);
         SecBaseResponse DeleteMission(int MissionId);
 
+=======
+        SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request);
+>>>>>>> origin/master
     }
 }
