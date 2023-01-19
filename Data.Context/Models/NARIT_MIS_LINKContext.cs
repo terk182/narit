@@ -179,7 +179,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<MedicalRightRequestForm> MedicalRightRequestForms { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<MessageHistory> MessageHistories { get; set; } = null!;
-        public virtual DbSet<MisGeneralExpenseMemoFormsNew> MisGeneralExpenseMemoFormsNews { get; set; } = null!;
+        public virtual DbSet<MisGeneralExpenseMemoFormsSignList> MisGeneralExpenseMemoFormsSignLists { get; set; } = null!;
         public virtual DbSet<Mission> Missions { get; set; } = null!;
         public virtual DbSet<MonthlyForecast> MonthlyForecasts { get; set; } = null!;
         public virtual DbSet<MonthlyForecastAdjustment> MonthlyForecastAdjustments { get; set; } = null!;
@@ -4622,79 +4622,15 @@ namespace narit_mis_api.Models
                     .HasConstraintName("FK_MessageMessageHistory");
             });
 
-            modelBuilder.Entity<MisGeneralExpenseMemoFormsNew>(entity =>
+            modelBuilder.Entity<MisGeneralExpenseMemoFormsSignList>(entity =>
             {
-                entity.ToTable("mis_GeneralExpenseMemoForms_new", "Plan");
+                entity.ToTable("MisGeneralExpenseMemoFormsSignList", "Plan");
 
-                entity.Property(e => e.ApprovedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ApproverSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.BudgetCheckerSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.Comments).HasColumnName("comments");
-
-                entity.Property(e => e.CreateDate).HasColumnType("datetime");
-
-                entity.Property(e => e.DocCheckerSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.DueDate).HasColumnType("datetime");
-
-                entity.Property(e => e.FifthBorrowAmount).HasColumnType("decimal(9, 2)");
-
-                entity.Property(e => e.FirstBorrowAmount).HasColumnType("decimal(9, 2)");
-
-                entity.Property(e => e.FourthBorrowAmount).HasColumnType("decimal(9, 2)");
-
-                entity.Property(e => e.HrofficerName).HasColumnName("HROfficerName");
-
-                entity.Property(e => e.HrofficerPosition).HasColumnName("HROfficerPosition");
-
-                entity.Property(e => e.HrofficerSignDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("HROfficerSignDate");
-
-                entity.Property(e => e.HrofficerSignatureId).HasColumnName("HROfficerSignatureId");
-
-                entity.Property(e => e.HrofficerStaffId).HasColumnName("HROfficerStaffId");
-
-                entity.Property(e => e.NetPayValue).HasColumnType("decimal(12, 2)");
-
-                entity.Property(e => e.PlanActivityIdOld).HasColumnName("PlanActivityId_Old");
-
-                entity.Property(e => e.PlanCoreRemainBudget).HasColumnType("decimal(12, 2)");
-
-                entity.Property(e => e.ProjectManager1SignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ProjectManager2SignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ProjectManager3SignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ProjectManager4SignDate).HasColumnType("datetime");
+                entity.Property(e => e.Comment).HasColumnName("comment");
 
                 entity.Property(e => e.ProjectManagerSignDate).HasColumnType("datetime");
 
-                entity.Property(e => e.RequesterSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ReserveDate).HasColumnType("datetime");
-
-                entity.Property(e => e.SecondBorrowAmount).HasColumnType("decimal(9, 2)");
-
-                entity.Property(e => e.StartCountingDate).HasColumnType("datetime");
-
-                entity.Property(e => e.StatementCalculationDate).HasColumnType("datetime");
-
-                entity.Property(e => e.SuppliesOfficerSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ThirdBorrowAmount).HasColumnType("decimal(9, 2)");
-
-                entity.Property(e => e.TypeButget)
-                    .HasMaxLength(50)
-                    .HasColumnName("typeButget");
-
-                entity.Property(e => e.UnitChiefSignDate).HasColumnType("datetime");
-
-                entity.Property(e => e.WriteDate).HasColumnType("datetime");
+                entity.Property(e => e.Seq).HasColumnName("seq");
             });
 
             modelBuilder.Entity<Mission>(entity =>

@@ -4160,6 +4160,15 @@ namespace App.SEC
 
 
             var result = _database.SaveChanges();
+
+
+            _database.Entry(request.SignList).State = request.Id == 0 ?
+                             EntityState.Added :
+                             EntityState.Modified;
+
+
+            var resultSignList = _database.SaveChanges();
+
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
             response.Messsage = request.Id == 0 ? "update" : "insert";
