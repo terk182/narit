@@ -65,7 +65,6 @@ namespace narit_mis_api.Models
         public string InwardMonthlyForecastChangedValue { get; set; } = null!;
         public string OutwardMonthlyForecastChangedValue { get; set; } = null!;
         public bool IsLateYear { get; set; }
-
         public virtual BudgetTransferForm? BudgetTransferForm { get; set; }
         public virtual PlanItem? InwardPlanItem { get; set; }
         public virtual PlanItem? OutwardPlanItem { get; set; }

@@ -91,8 +91,18 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("terktest")]
+        public IActionResult terktest(int Id)
+        {
+            var data = _Service.CheckFormPlanViewByRequestFormPlanViewId(Id);
 
-        
+            return Json(data);
+        }
+
+
+
+
 
 
     }
