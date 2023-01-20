@@ -427,8 +427,21 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-
-      
+        [HttpPost]
+        [Route("/Plan/Operate/EditOutsideDutyGroup")]
+        public IActionResult EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request)
+        {
+            var data = EditOutsideDutyGroup(request);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Operate/GetOutsideDutyGroup/{GeneralExpenseMemoFormsId}")]
+        public IActionResult GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId)
+        {
+            var data = _SecServices.GetditOutsideDutyGroup(GeneralExpenseMemoFormsId);
+            return Json(data);
+        }
+        
 
         [HttpPost]
         [Route("/Plan/Operate/EditPerformanceIndicatorResult")]

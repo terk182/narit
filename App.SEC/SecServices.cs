@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Helper;
 using App.SEC.Dtos;
 using App.SEC.enums;
 using App.SEC.helper;
@@ -2406,8 +2407,6 @@ namespace App.SEC
                     Name = item.Name,
                     Surname = item.Surname
                 });
-
-
             }
             return result;
         }
@@ -5006,6 +5005,161 @@ namespace App.SEC
         {
             return _database.DirectExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true) 
                              && (request.objId != 0) ? (request.PlanObjectType== "PlanType" ? (c.PlanTypeId == request.objId) : (c.DepartmentId == request.objId)) : true).OrderByDescending(c => c.Id).ToList();
+        }
+
+        public SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request)
+        {
+            var db = new OutsideDutyGroup();
+            int result = 0;
+            foreach (var item in request)
+            {
+                db.Id = item.Id;
+                db.Name = item.Name;
+                db.Active = item.Active;
+                db.DateStart = item.DateStart;
+                db.DateEnd = item.DateEnd;
+                db.Place = item.Place;
+                db.OrderNumber = item.OrderNumber;
+                db.Detail = item.Detail;
+                db.FiscalYear = item.FiscalYear;
+                db.WriteDate = item.WriteDate;
+                db.Inform = item.Inform;
+                db.WriteAt = item.WriteAt;
+                db.UnitChiefSignDate = item.UnitChiefSignDate;
+                db.UnitChiefName = item.UnitChiefName;
+                db.UnitChiefOpinion = item.UnitChiefOpinion;
+                db.UnitChiefPositionName = item.UnitChiefPositionName;
+                db.Approver = item.Approver;
+                db.ApproverSignDate = item.ApproverSignDate;
+                db.ApprovalStatusEnum = item.ApprovalStatusEnum;
+                db.ApprovedDate = item.ApprovedDate;
+                db.ApproverPosition = item.ApproverPosition;
+                db.DocumentNumber = item.DocumentNumber;
+                db.ApproverOpinion = item.ApproverOpinion;
+                db.HrdepartmentId = item.HrdepartmentId;
+                db.HrdepartmentName = item.HrdepartmentName;
+                db.WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum;
+                db.TimeStart = item.TimeStart;
+                db.TimeEnd = item.TimeEnd;
+                db.ExceptionDateValue = item.ExceptionDateValue;
+                db.AllowExceptionDate = item.AllowExceptionDate;
+                db.RequesterName = item.RequesterName;
+                db.ApproverId = item.ApproverId;
+                db.ApprovedSignStaffId = item.ApprovedSignStaffId;
+                db.ApprovedSignHostName = item.ApprovedSignHostName;
+                db.ApprovedSignHostAddress = item.ApprovedSignHostAddress;
+                db.CreatorStaffId = item.CreatorStaffId;
+                db.CreatedDate = item.CreatedDate;
+                db.CreatorHostName = item.CreatorHostName;
+                db.CreatorHostAddress = item.CreatorHostAddress;
+                db.GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId;
+                db.Purpose = item.Purpose;
+                db.PlanCoreRemainBudget = item.PlanCoreRemainBudget;
+                db.Remark = item.Remark;
+                db.Topic = item.Topic;
+                db.Title = item.Title;
+                db.Location = item.Location;
+                db.OperationTime = item.OperationTime;
+                db.IsForeign = item.IsForeign;
+                db.FundTypeName = item.FundTypeName;
+                db.DepartmentName = item.DepartmentName;
+                db.PlanTypeName = item.PlanTypeName;
+                db.PlanCoreName = item.PlanCoreName;
+                db.PlanActivityName = item.PlanActivityName;
+                db.OtherPeopleText = item.OtherPeopleText;
+                db.OtherPeopleAmount = item.OtherPeopleAmount;
+                db.OtherPeopleAttachText = item.OtherPeopleAttachText;
+                db.OperationDate = item.OperationDate;
+                db.RangeNumber = item.RangeNumber;
+                db.EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum;
+                db.NeedTimeStamp = item.NeedTimeStamp;
+                db.IsEventOrganize = item.IsEventOrganize;
+                _database.Entry(request).State = item.Id == 0 ?
+                             EntityState.Added :
+                             EntityState.Modified;
+                 result = _database.SaveChanges();
+             
+            }
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+          
+
+            return response;
+        }
+
+        public List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId)
+        {
+            var data = _database.OutsideDutyGroups.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormsId).ToList();
+            var _OutsideDutyGroupRequest = new List<OutsideDutyGroupRequest>();
+            foreach (var item in data)
+            {
+                _OutsideDutyGroupRequest.Add(new OutsideDutyGroupRequest
+                {
+                    Id = item.Id,
+                Name = item.Name,
+                Active = item.Active,
+                DateStart = item.DateStart,
+                DateEnd = item.DateEnd,
+                Place = item.Place,
+                OrderNumber = item.OrderNumber,
+                Detail = item.Detail,
+                FiscalYear = item.FiscalYear,
+                WriteDate = item.WriteDate,
+                Inform = item.Inform,
+                WriteAt = item.WriteAt,
+                UnitChiefSignDate = item.UnitChiefSignDate,
+                UnitChiefName = item.UnitChiefName,
+                UnitChiefOpinion = item.UnitChiefOpinion,
+                UnitChiefPositionName = item.UnitChiefPositionName,
+                Approver = item.Approver,
+                ApproverSignDate = item.ApproverSignDate,
+                ApprovalStatusEnum = item.ApprovalStatusEnum,
+                ApprovedDate = item.ApprovedDate,
+                ApproverPosition = item.ApproverPosition,
+                DocumentNumber = item.DocumentNumber,
+                ApproverOpinion = item.ApproverOpinion,
+                HrdepartmentId = item.HrdepartmentId,
+                HrdepartmentName = item.HrdepartmentName,
+                WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum,
+                TimeStart = item.TimeStart,
+                TimeEnd = item.TimeEnd,
+                ExceptionDateValue = item.ExceptionDateValue,
+                AllowExceptionDate = item.AllowExceptionDate,
+                RequesterName = item.RequesterName,
+                ApproverId = item.ApproverId,
+                ApprovedSignStaffId = item.ApprovedSignStaffId,
+                ApprovedSignHostName = item.ApprovedSignHostName,
+                ApprovedSignHostAddress = item.ApprovedSignHostAddress,
+                CreatorStaffId = item.CreatorStaffId,
+                CreatedDate = item.CreatedDate,
+                CreatorHostName = item.CreatorHostName,
+                CreatorHostAddress = item.CreatorHostAddress,
+                GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId,
+                Purpose = item.Purpose,
+                PlanCoreRemainBudget = item.PlanCoreRemainBudget,
+                Remark = item.Remark,
+                Topic = item.Topic,
+                Title = item.Title,
+                Location = item.Location,
+                OperationTime = item.OperationTime,
+                IsForeign = item.IsForeign,
+                FundTypeName = item.FundTypeName,
+                DepartmentName = item.DepartmentName,
+                PlanTypeName = item.PlanTypeName,
+                PlanCoreName = item.PlanCoreName,
+                PlanActivityName = item.PlanActivityName,
+                OtherPeopleText = item.OtherPeopleText,
+                OtherPeopleAmount = item.OtherPeopleAmount,
+                OtherPeopleAttachText = item.OtherPeopleAttachText,
+                OperationDate = item.OperationDate,
+                RangeNumber = item.RangeNumber,
+                EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum,
+                NeedTimeStamp = item.NeedTimeStamp,
+                IsEventOrganize = item.IsEventOrganize,
+
+            });
+            }
+            return _OutsideDutyGroupRequest;
         }
     }
 }
