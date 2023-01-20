@@ -164,6 +164,7 @@ namespace App.SEC
         List<DirectExpenseMemoForm> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request);
 
         SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request);
+        List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId);
 
 
     }

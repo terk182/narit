@@ -4944,5 +4944,80 @@ namespace App.SEC
 
             return response;
         }
+
+        public List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId)
+        {
+            var data = _database.OutsideDutyGroups.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormsId).ToList();
+            var _OutsideDutyGroupRequest = new List<OutsideDutyGroupRequest>();
+            foreach (var item in data)
+            {
+                _OutsideDutyGroupRequest.Add(new OutsideDutyGroupRequest
+                {
+                    Id = item.Id,
+                Name = item.Name,
+                Active = item.Active,
+                DateStart = item.DateStart,
+                DateEnd = item.DateEnd,
+                Place = item.Place,
+                OrderNumber = item.OrderNumber,
+                Detail = item.Detail,
+                FiscalYear = item.FiscalYear,
+                WriteDate = item.WriteDate,
+                Inform = item.Inform,
+                WriteAt = item.WriteAt,
+                UnitChiefSignDate = item.UnitChiefSignDate,
+                UnitChiefName = item.UnitChiefName,
+                UnitChiefOpinion = item.UnitChiefOpinion,
+                UnitChiefPositionName = item.UnitChiefPositionName,
+                Approver = item.Approver,
+                ApproverSignDate = item.ApproverSignDate,
+                ApprovalStatusEnum = item.ApprovalStatusEnum,
+                ApprovedDate = item.ApprovedDate,
+                ApproverPosition = item.ApproverPosition,
+                DocumentNumber = item.DocumentNumber,
+                ApproverOpinion = item.ApproverOpinion,
+                HrdepartmentId = item.HrdepartmentId,
+                HrdepartmentName = item.HrdepartmentName,
+                WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum,
+                TimeStart = item.TimeStart,
+                TimeEnd = item.TimeEnd,
+                ExceptionDateValue = item.ExceptionDateValue,
+                AllowExceptionDate = item.AllowExceptionDate,
+                RequesterName = item.RequesterName,
+                ApproverId = item.ApproverId,
+                ApprovedSignStaffId = item.ApprovedSignStaffId,
+                ApprovedSignHostName = item.ApprovedSignHostName,
+                ApprovedSignHostAddress = item.ApprovedSignHostAddress,
+                CreatorStaffId = item.CreatorStaffId,
+                CreatedDate = item.CreatedDate,
+                CreatorHostName = item.CreatorHostName,
+                CreatorHostAddress = item.CreatorHostAddress,
+                GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId,
+                Purpose = item.Purpose,
+                PlanCoreRemainBudget = item.PlanCoreRemainBudget,
+                Remark = item.Remark,
+                Topic = item.Topic,
+                Title = item.Title,
+                Location = item.Location,
+                OperationTime = item.OperationTime,
+                IsForeign = item.IsForeign,
+                FundTypeName = item.FundTypeName,
+                DepartmentName = item.DepartmentName,
+                PlanTypeName = item.PlanTypeName,
+                PlanCoreName = item.PlanCoreName,
+                PlanActivityName = item.PlanActivityName,
+                OtherPeopleText = item.OtherPeopleText,
+                OtherPeopleAmount = item.OtherPeopleAmount,
+                OtherPeopleAttachText = item.OtherPeopleAttachText,
+                OperationDate = item.OperationDate,
+                RangeNumber = item.RangeNumber,
+                EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum,
+                NeedTimeStamp = item.NeedTimeStamp,
+                IsEventOrganize = item.IsEventOrganize,
+
+            });
+            }
+            return _OutsideDutyGroupRequest;
+        }
     }
 }
