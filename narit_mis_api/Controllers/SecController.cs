@@ -482,6 +482,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.ResponsiblePersonSetUp(request);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/Plan/Operate/EditPlan/PerformanceIndicatorSetUp")]
+        public IActionResult PerformanceIndicatorSetUp(PerformanceIndicatorRequest request)
+        {
+            var data = _SecServices.PerformanceIndicatorSetUp(request);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Operate/EditPlan/PrinciplePlanTags")]
         public IActionResult EditPlanPrinciplePlanTags()
@@ -562,7 +569,7 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("/Plan/Operate/EditPlanItem")]
-        public IActionResult EditPlanItem(PlanItem request)
+        public IActionResult EditPlanItem(PlanItemRequest request)
         {
             var data = _SecServices.EditPlanItem(request);
             return Json(data);

@@ -95,7 +95,7 @@ namespace App.SEC
         PlanCoreListDto GetEditPlan(int PlanCoreId);
         SecBaseResponse PlanCoreSetUp(PlanCoreRequest request);
         SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request);
-        //SecBaseResponse PerformanceIndicatorSetUp(ResponsiblePersonRequest request);
+        SecBaseResponse PerformanceIndicatorSetUp(PerformanceIndicatorRequest request);
         List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
         List<PlanCoreGetAllbyStaffIdDto> GetAllPlanCorebyStaffId(int fisicalYear, int staffId);
         List<StaffGetAllDto> GetAllStaff();
@@ -153,7 +153,7 @@ namespace App.SEC
         SecBaseResponse EditOutsideDutyReportForm(List<OutsideDutyReportStaff> request);
         SecBaseResponse EditPerformanceIndicatorResult(PerformanceIndicator request);
         SecBaseResponse EditPlanActivity(PlanActivityRequest request);
-        SecBaseResponse EditPlanItem(PlanItem request);
+        SecBaseResponse EditPlanItem(PlanItemRequest request);
         SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request);
         SecBaseResponse EditSettleReceiptForm(SettleReceiptForm request);
         List<PlanActivity> SearchPlanActivity(SearchPlanActivityRequest request);
