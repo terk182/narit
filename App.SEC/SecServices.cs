@@ -2374,11 +2374,11 @@ namespace App.SEC
         }
         public List<PlanCoreGetAllbyStaffIdDto> GetAllPlanCorebyStaffId(int FiscalYear, int StaffId)
         {
-            var responsibleperson = _database.ResponsiblePersons.Where(x => x.FiscalYear == FiscalYear && x.StaffId== StaffId);
+            var responsibleperson = _database.ResponsiblePersons.Where(x => x.FiscalYear == FiscalYear && x.StaffId== StaffId).ToList();
             var result = new List<PlanCoreGetAllbyStaffIdDto>();
             foreach (var item in responsibleperson)
             {
-                var data = _database.PlanCores.Where(x => x.FiscalYear == FiscalYear && x.Id == item.PlanCoreId && x.Active == true);
+                var data = _database.PlanCores.Where(x => x.FiscalYear == FiscalYear && x.Id == item.PlanCoreId && x.Active == true).ToList();
                 //var result = new List<PlanCoreGetAllbyStaffIdDto>();
                 foreach (var item2 in data)
                 {
