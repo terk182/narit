@@ -4258,7 +4258,8 @@ namespace App.SEC
 
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
+            //response.Messsage = request.Id == 0 ? "update" : "insert";
+            response.Messsage = get_id.ToString();
             return response;
 
           
