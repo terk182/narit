@@ -97,6 +97,7 @@ namespace App.SEC
         SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request);
         //SecBaseResponse PerformanceIndicatorSetUp(ResponsiblePersonRequest request);
         List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
+        List<PlanCoreGetAllbyStaffIdDto> GetAllPlanCorebyStaffId(int fisicalYear, int staffId);
         List<StaffGetAllDto> GetAllStaff();
         List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();
 

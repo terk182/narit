@@ -1928,6 +1928,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetAllPlanCorebyStaffId/{year}/{staffid}")]
+        public IActionResult GetAllPlanCorebyStaffId(int year, int staffid)
+        {
+            var data = _SecServices.GetAllPlanCorebyStaffId(year,staffid);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Plan/Operate/EditPlan/GetAllStaff")]
         public IActionResult GetAllStaff()
         {

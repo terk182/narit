@@ -2371,6 +2371,28 @@ namespace App.SEC
             }
             return result;
         }
+        public List<PlanCoreGetAllbyStaffIdDto> GetAllPlanCorebyStaffId(int FiscalYear, int StaffId)
+        {
+            var responsibleperson = _database.ResponsiblePersons.Where(x => x.FiscalYear == FiscalYear && x.StaffId== StaffId);
+            var result = new List<PlanCoreGetAllbyStaffIdDto>();
+            foreach (var item in responsibleperson)
+            {
+                var data = _database.PlanCores.Where(x => x.FiscalYear == FiscalYear && x.Id == item.PlanCoreId && x.Active == true);
+                //var result = new List<PlanCoreGetAllbyStaffIdDto>();
+                foreach (var item2 in data)
+                {
+                    result.Add(new PlanCoreGetAllbyStaffIdDto
+                    {
+                        Id = item2.Id,
+                        Name = item2.Name,
+                        PlanTypeId = item2.PlanTypeId
+                    });
+
+
+                }
+            }
+            return result;
+        }
         public List<StaffGetAllDto> GetAllStaff()
         {
             var data = _database.Staffs.Where(x => x.Active == true);
