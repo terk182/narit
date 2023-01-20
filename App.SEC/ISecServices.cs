@@ -163,6 +163,8 @@ namespace App.SEC
         List<RequestFormPlanView> ViewChangedPlanItemRecordList(ViewChangedPlanItemRecordListRequest request);
         List<DirectExpenseMemoForm> ViewDirectExpenseMemoFormList(ViewDirectExpenseMemoFormListRequest request);
 
+        SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request);
+
 
     }
 }

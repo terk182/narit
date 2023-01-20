@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Helper;
 using App.SEC.Dtos;
 using App.SEC.enums;
 using App.SEC.helper;
@@ -2406,8 +2407,6 @@ namespace App.SEC
                     Name = item.Name,
                     Surname = item.Surname
                 });
-
-
             }
             return result;
         }
@@ -4864,6 +4863,86 @@ namespace App.SEC
         {
             return _database.DirectExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true) 
                              && (request.objId != 0) ? (request.PlanObjectType== "PlanType" ? (c.PlanTypeId == request.objId) : (c.DepartmentId == request.objId)) : true).OrderByDescending(c => c.Id).ToList();
+        }
+
+        public SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request)
+        {
+            var db = new OutsideDutyGroup();
+            int result = 0;
+            foreach (var item in request)
+            {
+                db.Id = item.Id;
+                db.Name = item.Name;
+                db.Active = item.Active;
+                db.DateStart = item.DateStart;
+                db.DateEnd = item.DateEnd;
+                db.Place = item.Place;
+                db.OrderNumber = item.OrderNumber;
+                db.Detail = item.Detail;
+                db.FiscalYear = item.FiscalYear;
+                db.WriteDate = item.WriteDate;
+                db.Inform = item.Inform;
+                db.WriteAt = item.WriteAt;
+                db.UnitChiefSignDate = item.UnitChiefSignDate;
+                db.UnitChiefName = item.UnitChiefName;
+                db.UnitChiefOpinion = item.UnitChiefOpinion;
+                db.UnitChiefPositionName = item.UnitChiefPositionName;
+                db.Approver = item.Approver;
+                db.ApproverSignDate = item.ApproverSignDate;
+                db.ApprovalStatusEnum = item.ApprovalStatusEnum;
+                db.ApprovedDate = item.ApprovedDate;
+                db.ApproverPosition = item.ApproverPosition;
+                db.DocumentNumber = item.DocumentNumber;
+                db.ApproverOpinion = item.ApproverOpinion;
+                db.HrdepartmentId = item.HrdepartmentId;
+                db.HrdepartmentName = item.HrdepartmentName;
+                db.WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum;
+                db.TimeStart = item.TimeStart;
+                db.TimeEnd = item.TimeEnd;
+                db.ExceptionDateValue = item.ExceptionDateValue;
+                db.AllowExceptionDate = item.AllowExceptionDate;
+                db.RequesterName = item.RequesterName;
+                db.ApproverId = item.ApproverId;
+                db.ApprovedSignStaffId = item.ApprovedSignStaffId;
+                db.ApprovedSignHostName = item.ApprovedSignHostName;
+                db.ApprovedSignHostAddress = item.ApprovedSignHostAddress;
+                db.CreatorStaffId = item.CreatorStaffId;
+                db.CreatedDate = item.CreatedDate;
+                db.CreatorHostName = item.CreatorHostName;
+                db.CreatorHostAddress = item.CreatorHostAddress;
+                db.GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId;
+                db.Purpose = item.Purpose;
+                db.PlanCoreRemainBudget = item.PlanCoreRemainBudget;
+                db.Remark = item.Remark;
+                db.Topic = item.Topic;
+                db.Title = item.Title;
+                db.Location = item.Location;
+                db.OperationTime = item.OperationTime;
+                db.IsForeign = item.IsForeign;
+                db.FundTypeName = item.FundTypeName;
+                db.DepartmentName = item.DepartmentName;
+                db.PlanTypeName = item.PlanTypeName;
+                db.PlanCoreName = item.PlanCoreName;
+                db.PlanActivityName = item.PlanActivityName;
+                db.OtherPeopleText = item.OtherPeopleText;
+                db.OtherPeopleAmount = item.OtherPeopleAmount;
+                db.OtherPeopleAttachText = item.OtherPeopleAttachText;
+                db.OperationDate = item.OperationDate;
+                db.RangeNumber = item.RangeNumber;
+                db.EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum;
+                db.NeedTimeStamp = item.NeedTimeStamp;
+                db.IsEventOrganize = item.IsEventOrganize;
+                _database.Entry(request).State = item.Id == 0 ?
+                             EntityState.Added :
+                             EntityState.Modified;
+                 result = _database.SaveChanges();
+             
+            }
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+          
+
+            return response;
         }
     }
 }
