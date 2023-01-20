@@ -151,7 +151,7 @@ namespace App.SEC
         SecBaseResponse EditMonthlyForecastAdjustment_t(MonthlyForecastAdjustment request);
         SecBaseResponse EditOutsideDutyReportForm(List<OutsideDutyReportStaff> request);
         SecBaseResponse EditPerformanceIndicatorResult(PerformanceIndicator request);
-        SecBaseResponse EditPlanActivity(PlanActivity request);
+        SecBaseResponse EditPlanActivity(PlanActivityRequest request);
         SecBaseResponse EditPlanItem(PlanItem request);
         SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request);
         SecBaseResponse EditSettleReceiptForm(SettleReceiptForm request);

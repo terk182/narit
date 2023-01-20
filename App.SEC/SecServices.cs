@@ -4721,15 +4721,33 @@ namespace App.SEC
             return response;
         }
 
-        public SecBaseResponse EditPlanActivity(PlanActivity request)
+        public SecBaseResponse EditPlanActivity(PlanActivityRequest request)
         {
-            _database.Entry(request).State = request.Id == 0 ?
+
+            var db = new PlanActivity();
+            db.Id = request.Id;
+            db.PlanCoreId = request.PlanCoreId;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.Code = request.Code;
+            db.ReferenceOldId = request.ReferenceOldId;
+            db.Detail = request.Detail;
+            db.IsFinished = request.IsFinished;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.OperationPeriod = request.OperationPeriod;
+            db.IsFollowUp = request.IsFollowUp;
+            db.DepartmentId = request.DepartmentId;
+            db.Weight = request.DepartmentId;
+
+            _database.Entry(db).State = request.Id == 0 ?
                                   EntityState.Added :
                                   EntityState.Modified;
             var result = _database.SaveChanges();
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
+            response.Messsage = request.Id != 0 ? "update" : "insert";
             return response;
         }
 

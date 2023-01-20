@@ -517,7 +517,7 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("/Plan/Operate/EditPlanActivity")]
-        public IActionResult EditPlanActivity(PlanActivity request)
+        public IActionResult EditPlanActivity(PlanActivityRequest request)
         {
             var data = _SecServices.EditPlanActivity( request);
             return Json(data);
