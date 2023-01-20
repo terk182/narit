@@ -1,9 +1,17 @@
 ﻿using App.Common;
 using App.Common.Dtos;
+using App.Common.enums;
+using App.Common.Helper;
+using App.Common.Models.Requests;
 using App.SEC;
 using App.SEC.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using narit_mis_api.Models;
+using Newtonsoft.Json.Linq;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace narit_mis_api.Controllers
 {
@@ -132,7 +140,29 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-
+        [HttpGet]
+        [Route("/Common/ActionTypeEnum/")]
+        public IActionResult GetActionTypeEnum()
+        {
+            var mydic = EnumHelper.EnumToObj<ActionTypeEnum>();
+   
+            //Console.WriteLine(withValues.ElementAt(1)); // { Value = 1, Name = Canada }
+            return Json(mydic);
+        }
+        [HttpPost]
+        [Route("/Common/InsertGeFormActionLog")]
+        public IActionResult InsertGeFormActionLog(GeFormActionLogsRequests GeFormActionLog)
+        {
+            var data = _CommonServices.GeFormActionLog(GeFormActionLog);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Common/GetGeFormActionLog/{GeneralExpenseMemoFormsId}")]
+        public IActionResult GetGeFormActionLog(int GeneralExpenseMemoFormsId)
+        {
+            var data = _CommonServices.GetGeFormActionLog(GeneralExpenseMemoFormsId);
+            return Json(data);
+        }
 
     }
 }

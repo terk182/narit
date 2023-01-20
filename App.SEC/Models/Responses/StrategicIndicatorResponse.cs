@@ -18,5 +18,6 @@ namespace App.SEC.Models.Responses
         public decimal Weight { get; set; }
         public int? StrategyId { get; set; }
         public int? ParentStrategyId { get; set; }
+        
     }
 }
