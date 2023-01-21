@@ -12,7 +12,11 @@ namespace narit_acc_api.Models
         public int? PaymentTypeId { get; set; }
         public int? DebtorTypeId { get; set; }
         public int? TransectionTypeId { get; set; }
+<<<<<<< HEAD
         public string RefNo { get; set; } = null!;
         public string? DebtorCode { get; set; }
+=======
+        public string? RefNo { get; set; }
+>>>>>>> origin/master_acc
     }
 }

@@ -6,7 +6,10 @@ namespace narit_acc_api.Models
     public partial class Debtor
     {
         public int Id { get; set; }
+<<<<<<< HEAD
         public string? DebtorCode { get; set; }
+=======
+>>>>>>> origin/master_acc
         public string Name { get; set; } = null!;
         public string? Address { get; set; }
         public string? SubDistrict { get; set; }

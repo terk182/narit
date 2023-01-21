@@ -69,5 +69,13 @@ namespace App.GL
         CommonBaseResponse EditCreditorType(CreditorTypeRequest request);
         CommonBaseResponse DeletetCreditorTypeId(int Id);
 
+        //Creditor
+        List<Creditor> GetCreditor();
+        Creditor GetCreditorId(int id);
+        CommonBaseResponse AddCreditor(CreditorRequest request);
+        CommonBaseResponse EditCreditor(CreditorRequest request);
+        CommonBaseResponse DeleteCreditorId(int Id);
+
+
     }
 }

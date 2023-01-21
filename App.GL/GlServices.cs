@@ -670,6 +670,113 @@ namespace App.GL
             }
             return response;
         }
- 
+
+        public List<Creditor> GetCreditor()
+        {
+           List<Creditor> creditor = _databaseACC.Creditors.ToList();
+            if(creditor.Count > 0)
+            {
+                return creditor;
+            }
+            return creditor;
+        }
+
+        public Creditor GetCreditorId(int id) 
+        {
+            Creditor creditor = _databaseACC.Creditors.Where(x=>x.Id == id).FirstOrDefault();
+            if (creditor != null)
+            {
+                return creditor;
+            }
+            return creditor;
+        }
+     
+        public CommonBaseResponse AddCreditor(CreditorRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            Creditor creditor = new Creditor();
+            var result = _databaseACC.Creditors.Where(x => x.Name == request.Name).FirstOrDefault();
+            if (result == null)
+            {
+                creditor.Name = request.Name;
+                creditor.Address = request.Address;
+                creditor.SubDistrict = request.SubDistrict;
+                creditor.District = request.District;
+                creditor.Province = request.Province;
+                creditor.Postcode = request.Postcode;
+                creditor.ContactName = request.ContactName;
+                creditor.Phone = request.Phone;
+                creditor.TaxCode = request.TaxCode;
+                creditor.Branch = request.Branch;
+                creditor.CreditorTypeId = request.CreditorTypeId;
+                creditor.ContactDate = request.ContactDate;
+                creditor.BusinessTypeId = request.BusinessTypeId;
+                creditor.BankAccountNo = request.BankAccontNo;
+                creditor.BankId = request.BankId;
+                creditor.CertificateOfPartnershipId = request.CertificateOfPartnershipId;
+                creditor.CertificateOfPartnershipDate = request.CertificateOfPartnershipDate;
+
+                _databaseACC.Entry(creditor).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "ADD Complete" : "Add Fail";
+            }
+            return response;
+        }
+
+        public CommonBaseResponse EditCreditor(CreditorRequest request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var result = _databaseACC.Creditors.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (result != null)
+            {
+                result.Name = request.Name;
+                result.Active = request.Active;
+                result.Address = request.Address;
+                result.SubDistrict = request.SubDistrict;
+                result.District = request.District;
+                result.Province = request.Province;
+                result.Postcode = request.Postcode;
+                result.ContactName = request.ContactName;
+                result.Phone = request.Phone;
+                result.TaxCode = request.TaxCode;
+                result.Branch = request.Branch;
+                result.CreditorTypeId = request.CreditorTypeId;
+                result.ContactDate = request.ContactDate;
+                result.BusinessTypeId = request.BusinessTypeId;
+                result.BankAccountNo = request.BankAccontNo;
+                result.BankId = request.BankId;
+                result.CertificateOfPartnershipId = request.CertificateOfPartnershipId;
+                result.CertificateOfPartnershipDate = request.CertificateOfPartnershipDate;
+
+                _databaseACC.Entry(result).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
+            }
+            response.Success = false;
+            response.Messsage = "Edit Fail : Not Result in DataBase";
+            return response;
+        }
+
+        public CommonBaseResponse DeleteCreditorId(int id)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var data = _databaseACC.Creditors.Where(x => x.Id == id).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = 0;
+                _databaseACC.Entry(data).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+            return response;
+        }
     }
 }
