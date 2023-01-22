@@ -39,40 +39,43 @@
 </head>
 
 <body>
-    <p>@ViewBag.data</p>
+    <p id="data_t">@ViewBag.data</p>
     <script>
-
-            var treeData = {
-              "name": "File 1",
-               "children": [{
-                    "name": "File 2",
-                    "children": [
-                    {
-                        "name": "File 3",
-                        "children": [{
-                            "name": "File 4",
-                            "type": "data"
-                            }]
-                    },
-                    {
-                        "name": "File 5",
-                        "children": [{
-                            "name": "File 6",
-                            "type": "data",
-                            "children": [
-                                {
-                                    "name": "File 7"
-                                },
-                                {
-                                    "name": "File 8",
-                                    "type": "data"
-                                }
-                                ]
-                            }]
-                    }
-                        ],
-                  }]
-            };
+        var treeData_list = document.getElementById("data_t").innerHTML;
+        var g = JSON.parse(treeData_list);
+        console.log(g);
+        var treeData = JSON.parse(treeData_list);
+                    //var treeData = {
+            //  "name": "File 1",
+            //   "children": [{
+            //        "name": "File 2",
+            //        "children": [
+            //        {
+            //            "name": "File 3",
+            //            "children": [{
+            //                "name": "File 4",
+            //                "type": "data"
+            //                }]
+            //        },
+            //        {
+            //            "name": "File 5",
+            //            "children": [{
+            //                "name": "File 6",
+            //                "type": "data",
+            //                "children": [
+            //                    {
+            //                        "name": "File 7"
+            //                    },
+            //                    {
+            //                        "name": "File 8",
+            //                        "type": "data"
+            //                    }
+            //                    ]
+            //                }]
+            //        }
+            //            ],
+            //      }]
+            //};
 
             // Set the dimensions and margins of the diagram
         var margin = {top: 20, right: 90, bottom: 30, left: 90},

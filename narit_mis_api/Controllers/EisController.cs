@@ -133,9 +133,10 @@ namespace narit_mis_api.Controllers
 
         [HttpGet]
         [Route("Executive/Report/ManagementDashboard")]
-        public IActionResult ManagementDashboard()
+        public IActionResult ManagementDashboard(int fYear, int month)
         {
-            return Json("ManagementDashboard");
+            var data = _Service.CalculatePlanTypeData(fYear, month);
+            return Json(data);
         }
 
 

@@ -2,7 +2,9 @@
 using App.PathDetail.Models;
 using ex_web.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text.Json;
 using static App.PathDetail.Models.d3_model;
 
 namespace ex_web.Controllers
@@ -13,10 +15,12 @@ namespace ex_web.Controllers
         protected readonly IPathDetailService _Service;
         protected readonly List<db_list> _db_class;
         protected readonly List<backlist> _backlist;
+        string table_c;
         public HomeController(ILogger<HomeController> logger, IPathDetailService Service)
         {
             _Service = Service;
             _logger = logger;
+            table_c = "";
             _db_class = _Service.get_db_class("./json/database_class_list.json");
             _backlist = _Service.get_backlist("./json/backlist.json");
         }
@@ -100,55 +104,115 @@ namespace ex_web.Controllers
         {
             var main = new d3_model();
             var list = new List<Child>();
-            var data = _db_class.Where(x => x.table == table).ToList();
-            if (data.Count != 0)
+            var list1 = new List<List<Child>>();
+            var _Child = new Child();
+            var data = _db_class.Where(x => x.table == table).FirstOrDefault();
+            if (data.data.Count != 0)
             {
-                main.name = table;
-                foreach (var item in data[0].data)
+                foreach(var item in data.data)
                 {
                     if (item.type == "virtual")
                     {
-                        var sub1 = _db_class.Where(x => x.table == item.field).ToList();
-
-                        if (sub1.Count != 0)
-                        {
-
-                            var list_sub1 = new List<Child>();
-                            foreach (var item1 in sub1[0].data)
-                            {
-                                if (item1.type == "virtual")
-                                {
-
-                                    list_sub1.Add(new Child
-                                    {
-                                        name = item1.field,
-                                        type = item1.type
-                                    });
-                                }
-
-                            }
-
-
-                            list.Add(new Child
-                            {
-                                name = item.field,
-                                type = item.type,
-                                children = list_sub1
-
-                            });
-                        }
+                        list.Add(check_tree(item.field));
                     }
 
                 }
-                main.children = list;
-            }
 
-            ViewBag.data = main;
+
+
+            }
+         
+            main.children = list;
+            main.name = table;
+            var _main = main;
+            string jsonString = JsonSerializer.Serialize(main);
+            //var json = new JavaScriptSerializer().Serialize(_main);
+            ViewBag.data = jsonString;
+            // ViewBag.data = main;
             return View();
         }
 
 
-        
+        public Child  check_tree(string table)
+        {
+            var result = new Child();
+            var list = new List<Child>();
+            string gg = backlist(table);
+            var data = _db_class.Where(x => x.table == gg).FirstOrDefault();
+            if(data != null)
+            {
+                foreach (var item in data.data)
+                {
+
+            
+                    if (item.type == "virtual")
+                    {
+                        
+                        if (item.field != gg)
+                        {
+                            if (table_c != gg)
+                            {
+                                table_c = table;
+                                list.Add(new Child
+                                {
+                                    name = item.field,
+                                    type = item.type,
+                                    children = check_tree(item.field).children
+
+                                });
+                            }
+
+                        }
+                       
+
+                        
+                    }
+
+                }
+                if(list.Count == 0)
+                {
+                    list.Add(new Child
+                    {
+                        name = table,
+                        type = "end",
+
+
+                    });
+                }
+            }
+            else
+            {
+                list.Add(new Child
+                {
+                    name = table,
+                    type = "end",
+
+
+                });
+            }
+            result.name= table;
+            result.children = list;
+            return result;
+        }
+         public string backlist(string table)
+        {
+            var get_backlist = _backlist;
+            var data = _db_class;
+          
+            string nane = table;
+            foreach (var backlist in get_backlist)
+            {
+                if (table == backlist.name)
+                {
+                    nane = backlist.target;
+                    break;
+
+                }
+            }
+            return nane;
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

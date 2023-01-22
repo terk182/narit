@@ -20,6 +20,15 @@ namespace App.EIS
         List<ProcureStoreLocationDto> getAllBuildingPlan();
 
         EisBaseResponse BillingLocationSetup(BillingLocationRequest request);
+        EisBaseResponse CalculatePlanTypeData(int fYear, int month);
+        void CreateAreaChart();
+        void CreateMOPAreaChart();
+        void CreatePieChart();
+        void CreateMOPPieChart(int month);
+        //CreateStackColumnChart();
+        void CreateGroupColumnChart();
+        void CreateMOPGroupColumnChart(int fYear, int month);
+        void CreateTableData(int fYear, int month);
 
     }
 }
