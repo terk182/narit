@@ -196,6 +196,43 @@
       {
         "field": "AddressTypeId",
         "type": "int?"
+      },
+      {
+        "field": "AddressStyleId",
+        "type": "string"
+      },
+      {
+        "field": "Moo",
+        "type": "string"
+      },
+      {
+        "field": "StaffId",
+        "type": "string"
+      },
+      {
+        "field": "IsCurrentAddress",
+        "type": "string"
+      },
+      {
+        "field": "IsHouseAddress",
+        "type": "string"
+      },
+
+      {
+        "field": "AddressStyle",
+        "type": "virtual"
+      },
+      {
+        "field": "AddressType",
+        "type": "virtual"
+      },
+      {
+        "field": "RelativePerson",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -291,6 +328,34 @@
       {
         "field": "Remark",
         "type": "string"
+      },
+      {
+        "field": "CollaborateReportId",
+        "type": "int"
+      },
+      {
+        "field": "FilingDocumentId",
+        "type": "int"
+      },
+      {
+        "field": "FirstRegisterNumber",
+        "type": "string"
+      },
+      {
+        "field": "RegisterDate",
+        "type": "DateTime"
+      },
+      {
+        "field": "CollaborateReport",
+        "type": "virtual"
+      },
+      {
+        "field": "Organization",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementVisiting",
+        "type": "virtual"
       }
     ]
   },
@@ -381,6 +446,46 @@
       {
         "field": "ProcureMethodEnum",
         "type": "int"
+      },
+      {
+        "field": "Purpose",
+        "type": "string"
+      },
+      {
+        "field": "CheckChairman",
+        "type": "string"
+      },
+      {
+        "field": "CheckFirstComittee",
+        "type": "string"
+      },
+      {
+        "field": "CheckSecondComittee",
+        "type": "string"
+      },
+      {
+        "field": "SuppliesOfficer",
+        "type": "string"
+      },
+      {
+        "field": "SuppliesOfficerSignDate",
+        "type": "DateTime"
+      },
+      {
+        "field": "SuppliesUnitChief ",
+        "type": "string"
+      },
+      {
+        "field": "AgreementItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
       }
     ]
   },
@@ -434,6 +539,26 @@
       {
         "field": "Date",
         "type": "DateTime?"
+      },
+      {
+        "field": "AgreementForm",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementMemorandum",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementApproveItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestAgreementItemTransform",
+        "type": "virtual"
       }
     ]
   },
@@ -491,6 +616,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "AgreementForm",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementItem",
+        "type": "virtual"
       }
     ]
   },
@@ -544,6 +677,10 @@
       {
         "field": "ProcureTypeEnum",
         "type": "int"
+      },
+      {
+        "field": "AgreementItem",
+        "type": "virtual"
       }
     ]
   },
@@ -687,6 +824,22 @@
       {
         "field": "PlanTypeName",
         "type": "string"
+      },
+      {
+        "field": "AppFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
       }
     ]
   },
@@ -740,6 +893,38 @@
       {
         "field": "FiscalYear",
         "type": "int"
+      },
+      {
+        "field": "ApproveForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveMemorandum",
+        "type": "virtual"
+      },
+      {
+        "field": "Supplier",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementApproveItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveOrderItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestApproveItemTransform",
+        "type": "virtual"
       }
     ]
   },
@@ -797,6 +982,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "ApproveForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveItem",
+        "type": "virtual"
       }
     ]
   },
@@ -850,6 +1043,10 @@
       {
         "field": "RequestFormDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "ApproveItem",
+        "type": "virtual"
       }
     ]
   },
@@ -981,6 +1178,14 @@
       {
         "field": "CreateDate",
         "type": "DateTime"
+      },
+      {
+        "field": "AspnetApplication",
+        "type": "virtual"
+      },
+      {
+        "field": "AspnetUser",
+        "type": "virtual"
       }
     ]
   },
@@ -1033,7 +1238,7 @@
         "type": "DateTime"
       },
       {
-        "field": "Path",
+        "field": "AspnetPath",
         "type": "virtual"
       }
     ]
@@ -1062,11 +1267,11 @@
         "type": "DateTime"
       },
       {
-        "field": "Path",
+        "field": "AspnetPath",
         "type": "virtual"
       },
       {
-        "field": "User",
+        "field": "AspnetUser",
         "type": "virtual"
       }
     ]
@@ -1095,7 +1300,7 @@
         "type": "DateTime"
       },
       {
-        "field": "User",
+        "field": "AspnetUser",
         "type": "virtual"
       }
     ]
@@ -1124,7 +1329,7 @@
         "type": "string?"
       },
       {
-        "field": "Application",
+        "field": "AspnetApplication",
         "type": "virtual"
       },
       {
@@ -1132,7 +1337,7 @@
         "type": "virtual"
       },
       {
-        "field": "Users",
+        "field": "AspnetUser",
         "type": "virtual"
       }
     ]
@@ -1186,7 +1391,7 @@
         "type": "DateTime"
       },
       {
-        "field": "Application",
+        "field": "AspnetApplication",
         "type": "virtual"
       },
       {
@@ -1203,6 +1408,18 @@
       },
       {
         "field": "EfilingDepartmentPermissions",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureDepartmentPermission",
+        "type": "virtual"
+      },
+      {
+        "field": "StaffSecurity",
+        "type": "virtual"
+      },
+      {
+        "field": "AspnetRole",
         "type": "virtual"
       }
     ]
@@ -1367,6 +1584,14 @@
       {
         "field": "SuppliesOfficer",
         "type": "string"
+      },
+      {
+        "field": "RequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "AuFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -1424,6 +1649,26 @@
       {
         "field": "WaterBillId",
         "type": "int?"
+      },
+      {
+        "field": "DrinkingWaterBill",
+        "type": "virtual"
+      },
+      {
+        "field": "ElectricityBill",
+        "type": "virtual"
+      },
+      {
+        "field": "GarbageBill",
+        "type": "virtual"
+      },
+      {
+        "field": "TelephoneBill",
+        "type": "virtual"
+      },
+      {
+        "field": "WaterBill",
+        "type": "virtual"
       }
     ]
   },
@@ -1477,6 +1722,34 @@
       {
         "field": "UserType",
         "type": "string"
+      },
+      {
+        "field": "BillingLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "DrinkingWaterBill",
+        "type": "virtual"
+      },
+      {
+        "field": "ElectricityBill",
+        "type": "virtual"
+      },
+      {
+        "field": "GarbageBill",
+        "type": "virtual"
+      },
+      {
+        "field": "BillingLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "TelephoneBill",
+        "type": "virtual"
+      },
+      {
+        "field": "WaterBill",
+        "type": "virtual"
       }
     ]
   },
@@ -1587,6 +1860,14 @@
       {
         "field": "OutwardDepartmentId",
         "type": "int?"
+      },
+      {
+        "field": "BudgetTransferForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -1640,6 +1921,14 @@
       {
         "field": "StatementCalculationDate",
         "type": "DateTime"
+      },
+      {
+        "field": "BtFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "BudgetTransfer",
+        "type": "virtual"
       }
     ]
   },
@@ -1679,15 +1968,11 @@
         "type": "int"
       },
       {
-        "field": "ParentBudgetType",
+        "field": "BudgetType",
         "type": "virtual"
       },
       {
-        "field": "InverseParentBudgetType",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItems",
+        "field": "PlanItem",
         "type": "virtual"
       }
     ]
@@ -1799,6 +2084,26 @@
       {
         "field": "CountTime",
         "type": "int"
+      },
+      {
+        "field": "Supplier",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
       }
     ]
   },
@@ -1905,6 +2210,22 @@
       {
         "field": "PlanActivityIdOld",
         "type": "int"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestFormPlanView",
+        "type": "virtual"
       }
     ]
   },
@@ -1958,6 +2279,30 @@
       {
         "field": "VatMethodEnum",
         "type": "int"
+      },
+      {
+        "field": "CheckForm",
+        "type": "virtual"
+      },
+      {
+        "field": "Supplier",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckRequisitionItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderCheckItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItem",
+        "type": "virtual"
       }
     ]
   },
@@ -2015,6 +2360,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "CheckForm",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckItem",
+        "type": "virtual"
       }
     ]
   },
@@ -2109,6 +2462,26 @@
       {
         "field": "PlanItemTypeId",
         "type": "int?"
+      },
+      {
+        "field": "CheckFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItemType",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItemPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -2219,6 +2592,50 @@
       {
         "field": "StaffName",
         "type": "string?"
+      },
+      {
+        "field": "Organization",
+        "type": "virtual"
+      },
+      {
+        "field": "AccommodationVisiting",
+        "type": "virtual"
+      },
+      {
+        "field": "AgreementVisiting",
+        "type": "virtual"
+      },
+      {
+        "field": "Agreement",
+        "type": "virtual"
+      },
+      {
+        "field": "CoReportRefFilingDocument",
+        "type": "virtual"
+      },
+      {
+        "field": "CoReportRefGeMomoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "CollaborateStaff",
+        "type": "virtual"
+      },
+      {
+        "field": "CollaborationNetworkFile",
+        "type": "virtual"
+      },
+      {
+        "field": "ContactPersonVisiting",
+        "type": "virtual"
+      },
+      {
+        "field": "Itinerary",
+        "type": "virtual"
+      },
+      {
+        "field": "OrganizationVisiting",
+        "type": "virtual"
       }
     ]
   },
@@ -2378,6 +2795,14 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "CompetencyEvaluationItem",
+        "type": "virtual"
       }
     ]
   },
@@ -2521,6 +2946,10 @@
       {
         "field": "CompetencyEvaluationItems",
         "type": "virtual"
+      },
+      {
+        "field": "CompetencyTopicExpectScore",
+        "type": "virtual"
       }
     ]
   },
@@ -2574,6 +3003,18 @@
       {
         "field": "Position",
         "type": "string"
+      },
+      {
+        "field": "Organization",
+        "type": "virtual"
+      },
+      {
+        "field": "ContactPersonHistory",
+        "type": "virtual"
+      },
+      {
+        "field": "ContactPersonVisiting",
+        "type": "virtual"
       }
     ]
   },
@@ -2631,6 +3072,10 @@
       {
         "field": "LatestUpdate",
         "type": "DateTime"
+      },
+      {
+        "field": "ContactPerson",
+        "type": "virtual"
       }
     ]
   },
@@ -2725,6 +3170,10 @@
       {
         "field": "SecondContractStartDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "EmploymentContract",
+        "type": "virtual"
       }
     ]
   },
@@ -2838,11 +3287,7 @@
         "type": "int?"
       },
       {
-        "field": "ParentCostType",
-        "type": "virtual"
-      },
-      {
-        "field": "InverseParentCostType",
+        "field": "CostType",
         "type": "virtual"
       },
       {
@@ -2942,6 +3387,14 @@
       {
         "field": "WorkAttendanceTimeRangeEnum",
         "type": "int"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "StaffWorkShift",
+        "type": "virtual"
       }
     ]
   },
@@ -3083,11 +3536,7 @@
         "type": "int?"
       },
       {
-        "field": "ParentDepartment",
-        "type": "virtual"
-      },
-      {
-        "field": "InverseParentDepartment",
+        "field": "Department",
         "type": "virtual"
       },
       {
@@ -3099,7 +3548,7 @@
         "type": "virtual"
       },
       {
-        "field": "PlanPeople",
+        "field": "PlanPerson",
         "type": "virtual"
       }
     ]
@@ -3179,6 +3628,26 @@
       {
         "field": "Detail",
         "type": "string"
+      },
+      {
+        "field": "DevelopmentRecordGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordFollowUpForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PostDevelopmentRecordEvaluationForm",
+        "type": "virtual"
       }
     ]
   },
@@ -3236,6 +3705,18 @@
       {
         "field": "IsInHouseTraining",
         "type": "bool"
+      },
+      {
+        "field": "DevelopmentRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordGroupCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -3293,6 +3774,10 @@
       {
         "field": "CanApplyKnowledgeReason",
         "type": "string"
+      },
+      {
+        "field": "DevelopmentRecord",
+        "type": "virtual"
       }
     ]
   },
@@ -3346,6 +3831,26 @@
       {
         "field": "Detail",
         "type": "string"
+      },
+      {
+        "field": "HrdevelopmentType",
+        "type": "virtual"
+      },
+      {
+        "field": "Syllabuse",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordGroupCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "Hrfile",
+        "type": "virtual"
       }
     ]
   },
@@ -3399,6 +3904,14 @@
       {
         "field": "TimeStart",
         "type": "TimeSpan?"
+      },
+      {
+        "field": "DevelopmentRecordGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordCancellation",
+        "type": "virtual"
       }
     ]
   },
@@ -3456,6 +3969,14 @@
       {
         "field": "FundTypeName",
         "type": "string"
+      },
+      {
+        "field": "DirectExpenseMemoForm",
+        "type": "virtual?"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -3509,6 +4030,14 @@
       {
         "field": "PlanTypeId",
         "type": "int"
+      },
+      {
+        "field": "DeFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "DirectExpense",
+        "type": "virtual"
       }
     ]
   },
@@ -3767,6 +4296,14 @@
       {
         "field": "OffPeakBill",
         "type": "decimal"
+      },
+      {
+        "field": "BillingLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "BillingFile",
+        "type": "virtual"
       }
     ]
   },
@@ -3819,6 +4356,14 @@
       },
       {
         "field": "ContractEndEvaluationForms",
+        "type": "virtual"
+      },
+      {
+        "field": "Hrfile",
+        "type": "virtual"
+      },
+      {
+        "field": "ProbationEvaluationForm",
         "type": "virtual"
       }
     ]
@@ -4013,6 +4558,58 @@
       {
         "field": "DueDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "FilingGeneralOrder",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocMessageReferrer",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocProjectRelation",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocTagRelation",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocWarehouseRelation",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocumentAccessLog",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocumentHistory",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocumentReferrer",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingFile",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingPersonalMarkup",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingRegisterNumber",
+        "type": "virtual"
+      },
+      {
+        "field": "Message",
+        "type": "virtual"
+      },
+      {
+        "field": "Receiver",
+        "type": "virtual"
       }
     ]
   },
@@ -4115,6 +4712,10 @@
       {
         "field": "FilingTypeEnum",
         "type": "int"
+      },
+      {
+        "field": "FilingDocument",
+        "type": "virtual"
       }
     ]
   },
@@ -4237,6 +4838,14 @@
       },
       {
         "field": "FilingDocument",
+        "type": "virtual"
+      },
+      {
+        "field": "Message",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingFileAccessLog",
         "type": "virtual"
       }
     ]
@@ -4480,15 +5089,11 @@
         "type": "int?"
       },
       {
-        "field": "ParentFilingProject",
+        "field": "FilingProject",
         "type": "virtual"
       },
       {
-        "field": "FilingDocProjectRelations",
-        "type": "virtual"
-      },
-      {
-        "field": "InverseParentFilingProject",
+        "field": "FilingDocProjectRelation",
         "type": "virtual"
       }
     ]
@@ -4541,7 +5146,19 @@
         "type": "int"
       },
       {
-        "field": "ParentFilingRegisterBook",
+        "field": "FilingRegisterBook",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingHrdepartmentPermission",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingRegisterNumber",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingRegisterBook",
         "type": "virtual"
       }
     ]
@@ -4600,6 +5217,14 @@
       {
         "field": "RegisterNumberIndex",
         "type": "double"
+      },
+      {
+        "field": "FilingDocument",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingRegisterBook",
+        "type": "virtual"
       }
     ]
   },
@@ -4726,15 +5351,11 @@
         "type": "int?"
       },
       {
-        "field": "ParentFilingTag",
+        "field": "FilingTag",
         "type": "virtual"
       },
       {
-        "field": "FilingDocTagRelations",
-        "type": "virtual"
-      },
-      {
-        "field": "InverseParentFilingTag",
+        "field": "FilingDocTagRelation",
         "type": "virtual"
       }
     ]
@@ -4789,6 +5410,18 @@
       {
         "field": "StaffPosition",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "FinancialReimbursementItem",
+        "type": "virtual"
+      },
+      {
+        "field": "FrFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -4846,6 +5479,10 @@
       {
         "field": "PlanActivityName",
         "type": "string"
+      },
+      {
+        "field": "FinancialReimbursementForm",
+        "type": "virtual"
       }
     ]
   },
@@ -5038,6 +5675,10 @@
       {
         "field": "ReturnDeadline",
         "type": "DateTime?"
+      },
+      {
+        "field": "FinancialReimbursementForm",
+        "type": "DateTime"
       }
     ]
   },
@@ -5189,6 +5830,10 @@
       {
         "field": "SignedHashValue",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowForm",
+        "type": "virtual"
       }
     ]
   },
@@ -5242,6 +5887,10 @@
       {
         "field": "PlanActivityName",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
       }
     ]
   },
@@ -5348,6 +5997,14 @@
       {
         "field": "SignedHashText",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanFile",
+        "type": "virtual"
       }
     ]
   },
@@ -5450,6 +6107,58 @@
       {
         "field": "DepartmentId",
         "type": "int"
+      },
+      {
+        "field": "GedataGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseCancelForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseReturnForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "AdditionalSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseCancelItem",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowItem",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseReturnItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleDirectPaymentItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SettlementItem",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalItem",
+        "type": "virtual"
       }
     ]
   },
@@ -5502,6 +6211,10 @@
       },
       {
         "field": "GeneralExpenseCancelItems",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpense",
         "type": "virtual"
       }
     ]
@@ -5613,6 +6326,18 @@
       {
         "field": "DepartmentId",
         "type": "int"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "int"
+      },
+      {
+        "field": "GeExtendFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowForm",
+        "type": "virtual"
       }
     ]
   },
@@ -5666,6 +6391,70 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "FinancialReimbursementForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "GememoFormSchedule",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseCancelForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseExtendForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseReturnForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseSettleForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanFile",
+        "type": "virtual"
+      },
+      {
+        "field": "ReserveBudgetMonthlyReason",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptForm",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalForm",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalItem",
+        "type": "virtual"
+      },
+      {
+        "field": "FinancialReimbursementForm",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyReportForm",
+        "type": "virtual"
       }
     ]
   },
@@ -5719,6 +6508,26 @@
       {
         "field": "StaffContactNumber",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeBorrowFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowItem",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanFile",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseExtendForm",
+        "type": "virtual"
       }
     ]
   },
@@ -5812,6 +6621,10 @@
       },
       {
         "field": "GeneralExpenseReturnItems",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpense",
         "type": "virtual"
       }
     ]
@@ -5923,6 +6736,26 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "AdditionalSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SeFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleDirectPaymentItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SettlementItem",
+        "type": "virtual"
       }
     ]
   },
@@ -6263,6 +7096,26 @@
       {
         "field": "EmploymentContractId",
         "type": "int?"
+      },
+      {
+        "field": "DevelopmentRecordGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "EmploymentContract",
+        "type": "virtual"
+      },
+      {
+        "field": "Leaf",
+        "type": "virtual"
+      },
+      {
+        "field": "MedicalReimbursement",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyGroup",
+        "type": "virtual"
       }
     ]
   },
@@ -6513,6 +7366,54 @@
       {
         "field": "ParentJobPositionId",
         "type": "int?"
+      },
+      {
+        "field": "EducationLevel",
+        "type": "virtual"
+      },
+      {
+        "field": "Hrdepartment",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionType",
+        "type": "virtual"
+      },
+      {
+        "field": "CompetencyTopicExpectScore",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPosition",
+        "type": "virtual"
+      },
+      {
+        "field": "JobDescription",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionKeyCompetencyDetail",
+        "type": "virtual"
+      },
+      {
+        "field": "JobQualification",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibility",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -6718,6 +7619,18 @@
       {
         "field": "JobPositionLevelId",
         "type": "int"
+      },
+      {
+        "field": "EducationLevel",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPosition",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionLevel",
+        "type": "virtual"
       }
     ]
   },
@@ -6771,6 +7684,26 @@
       {
         "field": "SuggestionScore",
         "type": "double"
+      },
+      {
+        "field": "JobPosition",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionLevel",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityExpectScore",
+        "type": "virtual"
       }
     ]
   },
@@ -6824,6 +7757,14 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityEvaluationItem",
+        "type": "virtual"
       }
     ]
   },
@@ -6881,6 +7822,14 @@
       {
         "field": "JobResponsibilityId",
         "type": "int?"
+      },
+      {
+        "field": "JobResponsibilityEvaluationForm",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityExpectScore",
+        "type": "virtual"
       }
     ]
   },
@@ -6934,6 +7883,22 @@
       {
         "field": "ScoreLevel3",
         "type": "double"
+      },
+      {
+        "field": "JobPositionLevel",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibility",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityEvaluationItem",
+        "type": "virtual"
       }
     ]
   },
@@ -7049,6 +8014,22 @@
       {
         "field": "Detail",
         "type": "string"
+      },
+      {
+        "field": "LeaveType",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "Hrfile",
+        "type": "virtual"
+      },
+      {
+        "field": "LeaveCancellationForm",
+        "type": "virtual"
       }
     ]
   },
@@ -7155,6 +8136,14 @@
       {
         "field": "UnitChiefName",
         "type": "string"
+      },
+      {
+        "field": "Leaf",
+        "type": "virtual"
+      },
+      {
+        "field": "LeaveType",
+        "type": "virtual"
       }
     ]
   },
@@ -7294,6 +8283,18 @@
       {
         "field": "ToDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "RelativePerson",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "Hrfile",
+        "type": "virtual"
       }
     ]
   },
@@ -7404,6 +8405,38 @@
       {
         "field": "FilingRoleInRouteEnum",
         "type": "int"
+      },
+      {
+        "field": "ObjectiveTypeEnum",
+        "type": "int"
+      },
+      {
+        "field": "FilingDocument",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingGeneralOrder",
+        "type": "virtual"
+      },
+      {
+        "field": "Message",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingDocMessageReferrer",
+        "type": "virtual"
+      },
+      {
+        "field": "FilingFile",
+        "type": "virtual"
+      },
+      {
+        "field": "MessageHistory",
+        "type": "virtual"
+      },
+      {
+        "field": "Receiver",
+        "type": "virtual"
       }
     ]
   },
@@ -7461,6 +8494,10 @@
       {
         "field": "FilingRoutePassMethodEnum",
         "type": "int"
+      },
+      {
+        "field": "Message",
+        "type": "virtual"
       }
     ]
   },
@@ -7559,6 +8596,10 @@
       {
         "field": "PlanItemId",
         "type": "int"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -7854,6 +8895,38 @@
       {
         "field": "SupplierId",
         "type": "int?"
+      },
+      {
+        "field": "Supplier",
+        "type": "virtual"
+      },
+      {
+        "field": "OrFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderContract",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureContract",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
+      },
+      {
+        "field": "Quotation",
+        "type": "virtual"
       }
     ]
   },
@@ -7907,6 +8980,26 @@
       {
         "field": "Date",
         "type": "DateTime?"
+      },
+      {
+        "field": "OrderForm",
+        "type": "virtual"
+      },
+      {
+        "field": "Supplier",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveOrderItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderCheckItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderItemPlanReferenceItem",
+        "type": "virtual"
       }
     ]
   },
@@ -7964,6 +9057,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "OrderForm",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderItem",
+        "type": "virtual"
       }
     ]
   },
@@ -8070,6 +9171,34 @@
       {
         "field": "Website",
         "type": "string"
+      },
+      {
+        "field": "Country",
+        "type": "virtual"
+      },
+      {
+        "field": "Accommodation",
+        "type": "virtual"
+      },
+      {
+        "field": "Agreement",
+        "type": "virtual"
+      },
+      {
+        "field": "CollaborateReport",
+        "type": "virtual"
+      },
+      {
+        "field": "CollaborationNetworkFile",
+        "type": "virtual"
+      },
+      {
+        "field": "ContactPerson",
+        "type": "virtual"
+      },
+      {
+        "field": "OrganizationVisiting",
+        "type": "virtual"
       }
     ]
   },
@@ -8172,6 +9301,18 @@
       {
         "field": "HrdepartmentId",
         "type": "int?"
+      },
+      {
+        "field": "OutsideDutyGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyCancellation",
+        "type": "virtual"
       }
     ]
   },
@@ -8229,6 +9370,18 @@
       {
         "field": "TimeEnd",
         "type": "TimeSpan?"
+      },
+      {
+        "field": "OutsideDuty",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyGroupCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -8282,6 +9435,18 @@
       {
         "field": "WriteAt",
         "type": "string"
+      },
+      {
+        "field": "Hrfile",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDuty",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyGroupCancellation",
+        "type": "virtual"
       }
     ]
   },
@@ -8335,6 +9500,14 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "OutsideDutyGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyCancellation",
+        "type": "virtual"
       }
     ]
   },
@@ -8441,6 +9614,22 @@
       {
         "field": "RefDocumentNumber",
         "type": "string"
+      },
+      {
+        "field": "OutsideDutyReportActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyReportReceipt",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyReportStaff",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
       }
     ]
   },
@@ -8686,6 +9875,18 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
+      },
+      {
+        "field": "OverTimeRequestFormGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "OverTimeRequestResultFormGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -8739,6 +9940,14 @@
       {
         "field": "UnitChiefName",
         "type": "string"
+      },
+      {
+        "field": "OverTimeRequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "OverTimeRequestResultFormGroup",
+        "type": "virtual"
       }
     ]
   },
@@ -8792,6 +10001,14 @@
       {
         "field": "ApproverPosition",
         "type": "string"
+      },
+      {
+        "field": "OverTimeRequestFormGroup ",
+        "type": "virtual"
+      },
+      {
+        "field": "OverTimeRequestForm",
+        "type": "virtual"
       }
     ]
   },
@@ -8902,7 +10119,32 @@
       {
         "field": "PlanCoreId",
         "type": "int?"
+      },
+      {
+        "field": "PerformanceIndicator",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanActivity",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanCore",
+        "type": "virtual"
+      },
+      {
+        "field": "StrategicIndicator",
+        "type": "virtual"
+      },
+      {
+        "field": "PerformanceIndicator",
+        "type": "virtual"
+      },
+      {
+        "field": "PerformanceIndicatorFile",
+        "type": "virtual"
       }
+
     ]
   },
   {
@@ -9004,7 +10246,16 @@
       {
         "field": "Section21ResponsibilityScore",
         "type": "double"
+      },
+      {
+        "field": "Staff ",
+        "type": "virtual"
+      },
+      {
+        "field": "PerfYearlyEvalFormActionLog",
+        "type": "virtual"
       }
+
     ]
   },
   {
@@ -9061,6 +10312,14 @@
       {
         "field": "Section28DisciplineWeight",
         "type": "int"
+      },
+      {
+        "field": "JobPositionGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "JobPositionLevel",
+        "type": "virtual"
       }
     ]
   },
@@ -9118,6 +10377,10 @@
       {
         "field": "VerifyData",
         "type": "string"
+      },
+      {
+        "field": "PerformanceYearlyEvaluationForm",
+        "type": "virtual"
       }
     ]
   },
@@ -9604,7 +10867,28 @@
       {
         "field": "SpecificPlanFileTypeEnum",
         "type": "int"
+      },
+      {
+        "field": "GeFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpensePersonalBorrowForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanMonthlyOperation?",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptForm",
+        "type": "virtual"
       }
+
     ]
   },
   {
@@ -9957,6 +11241,26 @@
       {
         "field": "August",
         "type": "decimal"
+      },
+      {
+        "field": "PlanMonthlyOperation",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanActivity",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanMonthlyOperation",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanFile",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanMonthlyOperationChangeLog>",
+        "type": "virtual"
       }
     ]
   },
@@ -10014,6 +11318,10 @@
       {
         "field": "DetailSeptember",
         "type": "string"
+      },
+      {
+        "field": "PlanMonthlyOperation",
+        "type": "virtual"
       }
     ]
   },
@@ -10161,6 +11469,10 @@
       {
         "field": "SecondInstructorName",
         "type": "string"
+      },
+      {
+        "field": "DevelopmentRecord",
+        "type": "virtual"
       }
     ]
   },
@@ -10255,6 +11567,10 @@
       {
         "field": "Issue12Opinion",
         "type": "string"
+      },
+      {
+        "field": "EmploymentContract",
+        "type": "virtual"
       }
     ]
   },
@@ -10286,7 +11602,7 @@
         "type": "int"
       },
       {
-        "field": "ProcureComitteePeople",
+        "field": "ProcureComitteePerson",
         "type": "virtual"
       },
       {
@@ -10398,6 +11714,18 @@
       {
         "field": "ReminderDay",
         "type": "int?"
+      },
+      {
+        "field": "OrderForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureContractInstallment",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
       }
     ]
   },
@@ -10529,6 +11857,42 @@
       {
         "field": "RequestFormId",
         "type": "int?"
+      },
+      {
+        "field": "AgreementForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveForm",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckForm",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureContract",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterDurableItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemCheckRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "RqFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -10639,6 +12003,10 @@
       {
         "field": "VerifyData",
         "type": "string"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
       }
     ]
   },
@@ -10692,6 +12060,42 @@
       {
         "field": "ApprovedDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "ApproveItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningCancelForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningReturnForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItem",
+        "type": "virtual"
       }
     ]
   },
@@ -10749,6 +12153,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
       }
     ]
   },
@@ -10802,6 +12214,42 @@
       {
         "field": "SuppliesUnitChiefSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "ProcureLoaningCancelForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningReturnForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptForm",
+        "type": "virtual"
       }
     ]
   },
@@ -10908,6 +12356,26 @@
       {
         "field": "ProcureSettleReceiptItemId",
         "type": "int?"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItem",
+        "type": "virtual"
       }
     ]
   },
@@ -10961,6 +12429,14 @@
       {
         "field": "Payee",
         "type": "string"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11014,6 +12490,18 @@
       {
         "field": "RequestFormPlanViewId",
         "type": "int"
+      },
+      {
+        "field": "RequestFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptFormPlanView",
+        "type": "virtual"
       }
     ]
   },
@@ -11071,6 +12559,26 @@
       {
         "field": "WithdrawableAmountAtDate",
         "type": "decimal?"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11124,6 +12632,14 @@
       {
         "field": "PlanItemId",
         "type": "int?"
+      },
+      {
+        "field": "RegisterDurableItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureRepairFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -11234,6 +12750,10 @@
       {
         "field": "VerifyData",
         "type": "string"
+      },
+      {
+        "field": "ProcureSettleMemoForm",
+        "type": "virtual"
       }
     ]
   },
@@ -11287,6 +12807,18 @@
       {
         "field": "BudgetCheckerSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSeFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -11340,6 +12872,14 @@
       {
         "field": "BudgetCheckerSignDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "ProcureLoaningMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11393,6 +12933,14 @@
       {
         "field": "PaymentDocumentNumber",
         "type": "string"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItemPlanView",
+        "type": "virtual"
       }
     ]
   },
@@ -11446,6 +12994,22 @@
       {
         "field": "WithdrawnAmountAtDate",
         "type": "decimal"
+      },
+      {
+        "field": "ProcureLoaningItem ",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11499,6 +13063,18 @@
       {
         "field": "PlanItemId",
         "type": "int"
+      },
+      {
+        "field": "ProcureSettleReceiptFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckViewUsedPlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11550,7 +13126,15 @@
         "type": "string"
       },
       {
-        "field": "ParentProcureStoreLocation",
+        "field": "ProcureStoreLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterDurableItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemTransferRecord",
         "type": "virtual"
       }
     ]
@@ -11605,6 +13189,18 @@
       {
         "field": "ProcureTrackingPersonInChargeEnum",
         "type": "int"
+      },
+      {
+        "field": "ProcureTrackingGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "OperationFile",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingRefForm",
+        "type": "virtual"
       }
     ]
   },
@@ -11658,6 +13254,14 @@
       {
         "field": "DepartmentName",
         "type": "string"
+      },
+      {
+        "field": "ProcureTrackingGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11752,6 +13356,14 @@
       {
         "field": "ProcureTrackingGroup",
         "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingRefItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingBaseItem",
+        "type": "virtual"
       }
     ]
   },
@@ -11804,6 +13416,14 @@
       },
       {
         "field": "ProcureTrackingAction",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingGroup",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingRefItem",
         "type": "virtual"
       }
     ]
@@ -11861,6 +13481,10 @@
       },
       {
         "field": "ProcureTrackingItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureTrackingRefForm",
         "type": "virtual"
       }
     ]
@@ -12001,6 +13625,14 @@
       {
         "field": "RoleActionShowDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "FilingDocument",
+        "type": "virtual"
+      },
+      {
+        "field": "Message",
+        "type": "virtual"
       }
     ]
   },
@@ -12107,6 +13739,42 @@
       {
         "field": "Date",
         "type": "DateTime?"
+      },
+      {
+        "field": "ProcureStoreLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemDisposedForm",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItemType",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureRepairForm",
+        "type": "virtual"
+      },
+      {
+        "field": "RegDurableItemActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemCheckRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemTransferRecord",
+        "type": "virtual"
       }
     ]
   },
@@ -12291,6 +13959,14 @@
       {
         "field": "FromDepartmentChiefName",
         "type": "string"
+      },
+      {
+        "field": "RegItemTransferFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemTransferRecord",
+        "type": "virtual"
       }
     ]
   },
@@ -12348,6 +14024,22 @@
       {
         "field": "ResponsiblePersonName",
         "type": "string"
+      },
+      {
+        "field": "ProcureStoreLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterDurableItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterItemTransferForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureStoreLocation",
+        "type": "virtual"
       }
     ]
   },
@@ -12401,6 +14093,26 @@
       {
         "field": "VatMethodEnum",
         "type": "int"
+      },
+      {
+        "field": "CheckItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningSettleItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItemType",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterDurableItem",
+        "type": "virtual"
       }
     ]
   },
@@ -12436,19 +14148,15 @@
         "type": "int?"
       },
       {
-        "field": "ParentRegisterProcureItemType",
+        "field": "RegisterProcureItemType",
         "type": "virtual"
       },
       {
-        "field": "InverseParentRegisterProcureItemType",
+        "field": "RegisterDurableItem",
         "type": "virtual"
       },
       {
-        "field": "RegisterDurableItems",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItems",
+        "field": "RegisterProcureItem",
         "type": "virtual"
       }
     ]
@@ -12556,6 +14264,38 @@
       {
         "field": "Workplace",
         "type": "string"
+      },
+      {
+        "field": "FamilialRelationship",
+        "type": "virtual"
+      },
+      {
+        "field": "NameTitle",
+        "type": "virtual"
+      },
+      {
+        "field": "Nationality",
+        "type": "virtual"
+      },
+      {
+        "field": "Race",
+        "type": "virtual"
+      },
+      {
+        "field": "Religion",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "Address",
+        "type": "virtual"
+      },
+      {
+        "field": "MedicalReimbursement",
+        "type": "virtual"
       }
     ]
   },
@@ -12708,6 +14448,26 @@
       {
         "field": "DepartmentName",
         "type": "string"
+      },
+      {
+        "field": "AuthorizeForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestItemPlanReferenceItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RqFormActionLog",
+        "type": "virtual"
       }
     ]
   },
@@ -12761,6 +14521,26 @@
       {
         "field": "PlanActivityIdOld",
         "type": "int"
+      },
+      {
+        "field": "CheckFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureLoaningWithdrawalFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ReserveBudgetMonthlyReason",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckFormPlanView",
+        "type": "virtual"
       }
     ]
   },
@@ -12814,6 +14594,22 @@
       {
         "field": "Amount",
         "type": "decimal?"
+      },
+      {
+        "field": "RequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestAgreementItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestApproveItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestItemPlanReferenceItem",
+        "type": "virtual"
       }
     ]
   },
@@ -12871,6 +14667,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "RequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestItem",
+        "type": "virtual"
       }
     ]
   },
@@ -12924,6 +14728,34 @@
       {
         "field": "PlanItemId",
         "type": "int"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItemType",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestFormPlanView",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureSettleReceiptItemPlanView",
+        "type": "virtual"
       }
     ]
   },
@@ -12976,6 +14808,10 @@
       },
       {
         "field": "RequisitionItemPlanReferenceItems",
+        "type": "virtual"
+      },
+      {
+        "field": "RequisitionItem",
         "type": "virtual"
       }
     ]
@@ -13030,6 +14866,18 @@
       {
         "field": "ProcureTypeEnum",
         "type": "int"
+      },
+      {
+        "field": "RequisitionForm",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckRequisitionItemTransform",
+        "type": "virtual"
+      },
+      {
+        "field": "RequisitionItemPlanReferenceItem",
+        "type": "virtual"
       }
     ]
   },
@@ -13087,6 +14935,14 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
+      },
+      {
+        "field": "RequisitionForm ",
+        "type": "virtual"
+      },
+      {
+        "field": "RequisitionItem",
+        "type": "virtual"
       }
     ]
   },
@@ -13255,6 +15111,14 @@
       {
         "field": "SignedHashValue",
         "type": "string"
+      },
+      {
+        "field": "RequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "ProcureFile",
+        "type": "virtual"
       }
     ]
   },
@@ -13312,6 +15176,10 @@
       {
         "field": "WriteDate",
         "type": "DateTime?"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -13369,6 +15237,10 @@
       {
         "field": "ReturnReasonValue",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseSettleForm",
+        "type": "virtual"
       }
     ]
   },
@@ -13426,6 +15298,10 @@
       {
         "field": "SignedHashValue",
         "type": "string"
+      },
+      {
+        "field": "SettleReceiptForm",
+        "type": "virtual"
       }
     ]
   },
@@ -13520,6 +15396,22 @@
       {
         "field": "UsedBudget",
         "type": "decimal"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseSettleForm",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptItem",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalItem",
+        "type": "virtual"
       }
     ]
   },
@@ -13573,6 +15465,22 @@
       {
         "field": "BudgetCheckerName",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanFile",
+        "type": "virtual"
+      },
+      {
+        "field": "SeReceiptFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptItem",
+        "type": "virtual"
       }
     ]
   },
@@ -13625,6 +15533,22 @@
       },
       {
         "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptForm",
+        "type": "virtual"
+      },
+      {
+        "field": "SettlementItem",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalItem",
         "type": "virtual"
       }
     ]
@@ -13679,6 +15603,122 @@
       {
         "field": "TaxNumber",
         "type": "string"
+      },
+      {
+        "field": "Address",
+        "type": "virtual"
+      },
+      {
+        "field": "CompetencyEvaluationForm",
+        "type": "virtual"
+      },
+      {
+        "field": "DailyAttendanceRequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "DailyAttendance",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecordCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "DevelopmentRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "EducationRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "EmploymentContract",
+        "type": "virtual"
+      },
+      {
+        "field": "Insignia",
+        "type": "virtual"
+      },
+      {
+        "field": "JobDescription",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibility",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityEvaluationForm",
+        "type": "virtual"
+      },
+      {
+        "field": "JobResponsibilityExpectScore",
+        "type": "virtual"
+      },
+      {
+        "field": "LeaveArchievedRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "Leaf",
+        "type": "virtual"
+      },
+      {
+        "field": "MedicalReimbursement",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDuty",
+        "type": "virtual"
+      },
+      {
+        "field": "OutsideDutyCancellation",
+        "type": "virtual"
+      },
+      {
+        "field": "OverTimeRatePerHour",
+        "type": "virtual"
+      },
+      {
+        "field": "OverTimeRequestForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PastDevelopmentRecord",
+        "type": "virtual"
+      },
+      {
+        "field": "PerformanceYearlyEvaluationForm",
+        "type": "virtual"
+      },
+      {
+        "field": "PersonalAbility",
+        "type": "virtual"
+      },
+      {
+        "field": "RelativePerson",
+        "type": "virtual"
+      },
+      {
+        "field": "Secondment",
+        "type": "virtual"
+      },
+      {
+        "field": "StaffWorkShift",
+        "type": "virtual"
+      },
+      {
+        "field": "TempYearlyEvaluation5859Score",
+        "type": "virtual"
+      },
+      {
+        "field": "WorkHistory",
+        "type": "virtual"
+      },
+      {
+        "field": "WorkShiftSwitchForm",
+        "type": "virtual"
       }
     ]
   },
@@ -13925,6 +15965,30 @@
       {
         "field": "TimeStart",
         "type": "TimeSpan"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
+      },
+      {
+        "field": "WorkShiftData",
+        "type": "virtual"
+      },
+      {
+        "field": "DailyAttendance",
+        "type": "virtual"
+      },
+      {
+        "field": "StaffWorkShiftSpecificDayOff",
+        "type": "virtual"
+      },
+      {
+        "field": "StaffWorkShiftSpecificHoliday",
+        "type": "virtual"
+      },
+      {
+        "field": "WorkShiftSwitchForm",
+        "type": "virtual"
       }
     ]
   },
@@ -14162,6 +16226,10 @@
       {
         "field": "CalDate",
         "type": "DateTime"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
       }
     ]
   },
@@ -14215,6 +16283,38 @@
       {
         "field": "CommercialRegistrationId",
         "type": "string?"
+      },
+      {
+        "field": "SupplierType",
+        "type": "virtual"
+      },
+      {
+        "field": "ApproveItem",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckForm",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckItem",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderContract",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderForm",
+        "type": "virtual"
+      },
+      {
+        "field": "OrderItem",
+        "type": "virtual"
+      },
+      {
+        "field": "Quotation",
+        "type": "virtual"
       }
     ]
   },
@@ -14289,6 +16389,10 @@
       {
         "field": "Remark",
         "type": "string"
+      },
+      {
+        "field": "DevelopmentRecordGroup",
+        "type": "virtual"
       }
     ]
   },
@@ -14342,6 +16446,14 @@
       {
         "field": "BillingLocationId",
         "type": "int"
+      },
+      {
+        "field": "BillingLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "BillingFile",
+        "type": "virtual"
       }
     ]
   },
@@ -14714,6 +16826,14 @@
       {
         "field": "BilingNumber",
         "type": "string"
+      },
+      {
+        "field": "BillingLocation",
+        "type": "virtual"
+      },
+      {
+        "field": "BillingFile",
+        "type": "virtual"
       }
     ]
   },
@@ -14820,6 +16940,18 @@
       {
         "field": "Payee",
         "type": "string"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "WdFormActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "WithdrawalItem",
+        "type": "virtual"
       }
     ]
   },
@@ -14873,6 +17005,22 @@
       {
         "field": "IsExtraAdded",
         "type": "bool"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpenseMemoForm",
+        "type": "virtual"
+      },
+      {
+        "field": "SettleReceiptItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SettlementItem",
+        "type": "virtual"
       }
     ]
   },
@@ -14930,6 +17078,10 @@
       {
         "field": "JobPositionGroupId",
         "type": "int?"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   },
@@ -14983,6 +17135,14 @@
       {
         "field": "UsedGenericHoliday",
         "type": "bool"
+      },
+      {
+        "field": "StaffWorkShift",
+        "type": "virtual"
+      },
+      {
+        "field": "WorkShiftExtraAllowance",
+        "type": "virtual"
       }
     ]
   },
@@ -15077,6 +17237,14 @@
       {
         "field": "UnitChiefName",
         "type": "string"
+      },
+      {
+        "field": "StaffWorkShift",
+        "type": "virtual"
+      },
+      {
+        "field": "Staff",
+        "type": "virtual"
       }
     ]
   }

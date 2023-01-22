@@ -39,7 +39,7 @@
 </head>
 
 <body>
-    <p id="data_t">@ViewBag.data</p>
+    <p id="data_t" hidden>@ViewBag.data</p>
     <script>
         var treeData_list = document.getElementById("data_t").innerHTML;
         var g = JSON.parse(treeData_list);
