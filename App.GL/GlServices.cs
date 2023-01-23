@@ -190,7 +190,6 @@ namespace App.GL
                     Code = item.chart.ChartSubHeaderCode,
                     Name = item.chart?.Name,
                     Active = item.chart.Active,
-                    AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
                 });
