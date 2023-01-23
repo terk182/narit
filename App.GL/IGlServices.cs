@@ -26,26 +26,25 @@ namespace App.GL
         CommonBaseResponse DelSubHeader(int Id);
         // Major
         List<ChartResponse> GetChartMajor(int ChartSubHeaderId);
-        List<ChartMajor> GetChartMajorId(int id);
+        List<ChartResponse> GetChartMajorId(int id);
         CommonBaseResponse AddMajor(ChartRequest request);
         CommonBaseResponse EditMajor(EditChartRequest request);
         CommonBaseResponse DelMajor(int Id);
         //SubMajor
         List<ChartResponse> GetChartSubMajor(int ChartMajorId);
-        List<ChartSubMajor> GetChartSubMajorId(int id);
-
+        List<ChartResponse> GetChartSubMajorId(int id);
         CommonBaseResponse AddSubMajor(ChartRequest request);
         CommonBaseResponse EditSubMajor(EditChartRequest request);
         CommonBaseResponse DelSubMajor(int Id);
         //Minor
         List<ChartResponse> GetChartMinor(int ChartMajorId);
-        List<ChartMinor> GetChartMinorId(int id);
+        List<ChartResponse> GetChartMinorId(int id);
         CommonBaseResponse AddMinor(ChartRequest request);
         CommonBaseResponse EditMinor(EditChartRequest request);
         CommonBaseResponse DelMinor(int Id);
         //SubMinor
         List<ChartResponse> GetChartSubMinor(int ChartMajorId);
-        List<ChartSubMinor> GetChartSubMinorId(int id);
+        List<ChartResponse> GetChartSubMinorId(int id);
         CommonBaseResponse AddSubMinor(SubMinorRequest request);
         CommonBaseResponse EditSubMinor(EditSubMinorRequest request);
         CommonBaseResponse DelSubMinor(int Id);
