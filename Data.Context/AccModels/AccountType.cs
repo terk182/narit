@@ -13,7 +13,6 @@ namespace narit_acc_api.Models
             ChartSubHeaders = new HashSet<ChartSubHeader>();
             ChartSubMajors = new HashSet<ChartSubMajor>();
             ChartSubMinors = new HashSet<ChartSubMinor>();
-            CreditorTypes = new HashSet<CreditorType>();
         }
 
         public int Id { get; set; }
@@ -29,6 +28,5 @@ namespace narit_acc_api.Models
         public virtual ICollection<ChartSubHeader> ChartSubHeaders { get; set; }
         public virtual ICollection<ChartSubMajor> ChartSubMajors { get; set; }
         public virtual ICollection<ChartSubMinor> ChartSubMinors { get; set; }
-        public virtual ICollection<CreditorType> CreditorTypes { get; set; }
     }
 }

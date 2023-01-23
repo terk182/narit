@@ -16,6 +16,13 @@ namespace narit_acc_api.Controllers
             _Logger = logger;
         }
 
+        [HttpGet]
+        [Route("Chart/GetChartAll")]
+        public IActionResult GetChartAll()
+        {
+            var data = _AccGlServices.GetChartAll();
+            return Json(data);
+        }
         //Header
         [HttpGet]
         [Route("Chart/GetHeader")]

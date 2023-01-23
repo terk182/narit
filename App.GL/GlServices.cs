@@ -21,34 +21,205 @@ namespace App.GL
             _databaseACC = context;
         }
 
-
-        // Header 
-        public List<ChartHeader> GetChartHeader()
+        public List<ChartHeader> GetChartAll()
         {
             var data = _databaseACC.ChartHeaders.ToList();
-            return data;
+            var result1 = new List<ChartHeader>();
+
+            foreach (var item1 in data)
+            {
+                var result2 = new List<ChartSubHeader>();
+                var Chart2 = _databaseACC.ChartSubHeaders.Where(x => x.ChartHeaderId == item1.Id).ToList();
+                foreach (var item2 in Chart2)
+                {
+                    var result3 = new List<ChartMajor>();
+                    var Chart3 = _databaseACC.ChartMajors.Where(x => x.ChartSubHeaderId == item2.Id).ToList();
+                    foreach (var item3 in Chart3)
+                     {
+                        var result4 = new List<ChartSubMajor>();
+                        var Chart4 = _databaseACC.ChartSubMajors.Where(x => x.ChartMajorId == item3.Id).ToList();
+                        foreach (var item4 in Chart4)
+                        {
+                            var result5 = new List<ChartMinor>();
+                            var Chart5 = _databaseACC.ChartMinors.Where(x => x.ChartSubMajorId == item4.Id).ToList();
+                            foreach (var item5 in Chart5)
+                            {
+
+                                var result6 = new List<ChartSubMinor>();
+                                var Chart6 = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == item5.Id).ToList();
+                                foreach (var item6 in Chart6)
+                                {
+                                    result6.Add(new ChartSubMinor
+                                    {
+                                        Id = item6.Id,
+                                        ChartMinorId = item6.ChartMinorId,
+                                        ChartSubMinorCode = item6.ChartSubMinorCode,
+                                        Name = item6.Name,
+                                        Index = item6.Index,
+                                        AccTypeId= item6.AccTypeId
+                                    });
+                                }
+                                result5.Add(new ChartMinor
+                                {
+                                    Id = item5.Id,
+                                    ChartSubMajorId = item5.ChartSubMajorId,
+                                    ChartMinorCode = item5.ChartMinorCode,
+                                    Name = item5.Name,
+                                    Index = item5.Index,
+                                    AccTypeId = item5.AccTypeId,
+                                    ChartSubMinors = result6
+                                });
+                            }
+                            result4.Add(new ChartSubMajor
+                            {
+                                Id = item4.Id,
+                                ChartMajorId = item4.ChartMajorId,
+                                ChartSubMajorCode = item4.ChartSubMajorCode,
+                                Name = item4.Name,
+                                Index = item4.Index,
+                                AccTypeId = item4.AccTypeId,
+                                ChartMinors = result5
+                            });
+                        }
+                        result3.Add(new ChartMajor
+                        {
+                            Id = item3.Id,
+                            ChartSubHeaderId = item3.ChartSubHeaderId,
+                            ChartMajorCode = item3.ChartMajorCode,
+                            Name = item3.Name,
+                            Index = item3.Index,
+                            AccTypeId = item3.AccTypeId,
+                            ChartSubMajors = result4
+                        });
+                    }
+                    result2.Add(new ChartSubHeader
+                    {
+                        Id= item2.Id,
+                        ChartHeaderId = item2.ChartHeaderId,
+                        ChartSubHeaderCode = item2.ChartSubHeaderCode,
+                        Name = item2.Name,
+                        Index = item2.Index,
+                        AccTypeId = item2.AccTypeId,
+                        ChartMajors = result3
+                    });
+                }
+                result1.Add(new ChartHeader
+                {
+                    Id = item1.Id,
+                    ChartHeaderCode = item1.ChartHeaderCode,
+                    Name = item1.Name,
+                    Index = item1.Index,
+                    AccTypeId = item1.AccTypeId,
+                    ChartSubHeaders = result2
+                });
+            }
+                return result1;
+        }
+
+        // Header 
+        public List<ChartResponse> GetChartHeader()
+        {
+            var result = new List<ChartResponse>();
+            var data = _databaseACC.ChartHeaders.ToList();
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartHeaderCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeId = item.chart.AccTypeId,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+
+                });
+            return result;
         }
 
 
-        public List<ChartHeader> GetChartHeaderId(int id)
+        public List<ChartResponse> GetChartHeaderId(int id)
         {
+          //  var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartHeaderCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeId = item.chart.AccTypeId,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+                });
+            return result;
         }
 
 
         //SubHeader 
-        public List<ChartSubHeader> GetChartSubHeader(int ChartHeaderId)
+        public List<ChartResponse> GetChartSubHeader(int ChartHeaderId)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartSubHeaders.Where(x => x.ChartHeaderId == ChartHeaderId).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartSubHeaderCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeId = item.chart.AccTypeId,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+                });
+            return result;
         }
 
-
-        public List<ChartSubHeader> GetChartSubHeaderId(int id)
+        public List<ChartResponse> GetChartSubHeaderId(int id)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartSubHeaders.Where(x => x.Id == id).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartSubHeaderCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeId = item.chart.AccTypeId,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+                });
+            return result;
         }
 
         public CommonBaseResponse AddSubHeader(ChartRequest request)
@@ -122,10 +293,30 @@ namespace App.GL
 
 
         //Major
-        public List<ChartMajor> GetChartMajor(int ChartSubHeaderId)
+        public List<ChartResponse> GetChartMajor(int ChartSubHeaderId)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartMajors.Where(x => x.ChartSubHeaderId == ChartSubHeaderId).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartMajorCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+
+                });
+            return result;
+
         }
 
 
@@ -205,10 +396,29 @@ namespace App.GL
         }
 
         //SubMajor
-        public List<ChartSubMajor> GetChartSubMajor(int ChartMajorId)
+        public List<ChartResponse> GetChartSubMajor(int ChartMajorId)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartSubMajors.Where(x => x.ChartMajorId == ChartMajorId).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartSubMajorCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+
+                });
+            return result;
         }
         public List<ChartSubMajor> GetChartSubMajorId(int id)
         {
@@ -286,10 +496,29 @@ namespace App.GL
         }
 
         //Minor
-        public List<ChartMinor> GetChartMinor(int ChartMajorId)
+        public List<ChartResponse> GetChartMinor(int ChartMajorId)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartMinors.Where(x => x.ChartSubMajorId == ChartMajorId).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartMinorCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+
+                });
+            return result;
         }
 
         public List<ChartMinor> GetChartMinorId(int id)
@@ -367,10 +596,30 @@ namespace App.GL
         }
 
 
-        public List<ChartSubMinor> GetChartSubMinor(int ChartMinorId)
+        public List<ChartResponse> GetChartSubMinor(int ChartMinorId)
         {
+            var result = new List<ChartResponse>();
             var data = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == ChartMinorId).ToList();
-            return data;
+            var accounttypes = _databaseACC.AccountTypes.ToList();
+            var QSOuterJoin = from chart in data
+                              join acctype in accounttypes
+                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+                              into accchartGroup
+                              from nacctype in accchartGroup.DefaultIfEmpty()
+                              select new { chart, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new ChartResponse
+                {
+                    Id = item.chart.Id,
+                    Code = item.chart.ChartSubMinorCode,
+                    Name = item.chart?.Name,
+                    Active = item.chart.Active,
+                    AccTypeId = item.chart.AccTypeId,
+                    AccTypeName = item.nacctype.Name,
+                    Detail = item.chart.Detail,
+
+                });
+            return result;
         }
  
  
@@ -550,9 +799,7 @@ namespace App.GL
                 account.DebtorTypeCode = request.TypeCode;
                 account.Name = request.Name;
                 account.Active = request.Active;
-                account.Index = request.Index;
                 account.Detail = request.Detail;
-                account.AccountTypeId = request.AccountTypeID;
                 _databaseACC.Entry(account).State = EntityState.Added;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;
@@ -570,9 +817,7 @@ namespace App.GL
                 result.DebtorTypeCode = request.TypeCode;
                 result.Name = request.Name;
                 result.Active = request.Active;
-                result.Index = request.Index;
                 result.Detail = request.Detail;
-                result.AccountTypeId = request.AccountTypeID;
                 _databaseACC.Entry(result).State = EntityState.Modified;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;
@@ -621,9 +866,7 @@ namespace App.GL
                 accountPayable.CreditorTypeCode = request.TypeCode;
                 accountPayable.Name = request.Name;
                 accountPayable.Active = request.Active;
-                accountPayable.Index = request.Index;
                 accountPayable.Detail = request.Detail;
-                accountPayable.AccountTypeId = request.AccountTypeID;
                 _databaseACC.Entry(accountPayable).State = EntityState.Added;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;
@@ -641,9 +884,7 @@ namespace App.GL
                 result.CreditorTypeCode = request.TypeCode;
                 result.Name = request.Name;
                 result.Active = request.Active;
-                result.Index = request.Index;
                 result.Detail = request.Detail;
-                result.AccountTypeId = request.AccountTypeID;
                 _databaseACC.Entry(result).State = EntityState.Modified;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;

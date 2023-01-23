@@ -12,37 +12,39 @@ namespace App.GL
 {
     public interface IGlServices
     {
+        List<ChartHeader> GetChartAll();
+
         // Header 
-        List<ChartHeader> GetChartHeader();
-        List<ChartHeader> GetChartHeaderId(int id);
+        List<ChartResponse> GetChartHeader();
+        List<ChartResponse> GetChartHeaderId(int id);
 
         // SubHeader
-        List<ChartSubHeader> GetChartSubHeader(int ChartHeaderId);
-        List<ChartSubHeader> GetChartSubHeaderId(int id);
+        List<ChartResponse> GetChartSubHeader(int ChartHeaderId);
+        List<ChartResponse> GetChartSubHeaderId(int id);
         CommonBaseResponse AddSubHeader(ChartRequest request);
         CommonBaseResponse EditSubHeader(EditChartRequest request);
         CommonBaseResponse DelSubHeader(int Id);
         // Major
-        List<ChartMajor> GetChartMajor(int ChartSubHeaderId);
+        List<ChartResponse> GetChartMajor(int ChartSubHeaderId);
         List<ChartMajor> GetChartMajorId(int id);
         CommonBaseResponse AddMajor(ChartRequest request);
         CommonBaseResponse EditMajor(EditChartRequest request);
         CommonBaseResponse DelMajor(int Id);
         //SubMajor
-        List<ChartSubMajor> GetChartSubMajor(int ChartMajorId);
+        List<ChartResponse> GetChartSubMajor(int ChartMajorId);
         List<ChartSubMajor> GetChartSubMajorId(int id);
 
         CommonBaseResponse AddSubMajor(ChartRequest request);
         CommonBaseResponse EditSubMajor(EditChartRequest request);
         CommonBaseResponse DelSubMajor(int Id);
         //Minor
-        List<ChartMinor> GetChartMinor(int ChartMajorId);
+        List<ChartResponse> GetChartMinor(int ChartMajorId);
         List<ChartMinor> GetChartMinorId(int id);
         CommonBaseResponse AddMinor(ChartRequest request);
         CommonBaseResponse EditMinor(EditChartRequest request);
         CommonBaseResponse DelMinor(int Id);
         //SubMinor
-        List<ChartSubMinor> GetChartSubMinor(int ChartMajorId);
+        List<ChartResponse> GetChartSubMinor(int ChartMajorId);
         List<ChartSubMinor> GetChartSubMinorId(int id);
         CommonBaseResponse AddSubMinor(SubMinorRequest request);
         CommonBaseResponse EditSubMinor(EditSubMinorRequest request);

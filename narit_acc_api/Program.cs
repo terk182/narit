@@ -32,6 +32,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c => {
+        c.EnableDeepLinking();
         string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
         c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "Web API");
     });

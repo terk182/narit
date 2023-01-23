@@ -36,6 +36,7 @@ namespace narit_acc_api.Models
         public virtual DbSet<JournalForm> JournalForms { get; set; } = null!;
         public virtual DbSet<TaxType> TaxTypes { get; set; } = null!;
         public virtual DbSet<Transection> Transections { get; set; } = null!;
+        public virtual DbSet<TransectionType> TransectionTypes { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -176,11 +177,15 @@ namespace narit_acc_api.Models
 
                 entity.ToView("ChartACC");
 
+                entity.Property(e => e.ChartHeaderAccTypeId).HasColumnName("ChartHeaderAccTypeID");
+
                 entity.Property(e => e.ChartHeaderId).HasColumnName("ChartHeaderID");
 
                 entity.Property(e => e.ChartHeaderName)
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ChartMajorAccTypeId).HasColumnName("ChartMajorAccTypeID");
 
                 entity.Property(e => e.ChartMajorId).HasColumnName("ChartMajorID");
 
@@ -188,11 +193,15 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
+                entity.Property(e => e.ChartMinorAccTypeId).HasColumnName("ChartMinorAccTypeID");
+
                 entity.Property(e => e.ChartMinorId).HasColumnName("ChartMinorID");
 
                 entity.Property(e => e.ChartMinorName)
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ChartSubHeaderAccTypeId).HasColumnName("ChartSubHeaderAccTypeID");
 
                 entity.Property(e => e.ChartSubHeaderId).HasColumnName("ChartSubHeaderID");
 
@@ -205,6 +214,8 @@ namespace narit_acc_api.Models
                 entity.Property(e => e.ChartSubMajorName)
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ChartSubMinorAccTypeId).HasColumnName("ChartSubMinorAccTypeID");
 
                 entity.Property(e => e.ChartSubMinorId).HasColumnName("ChartSubMinorID");
 
@@ -546,8 +557,6 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
-
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.CreateDate)
@@ -563,16 +572,9 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
-
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.AccountType)
-                    .WithMany(p => p.CreditorTypes)
-                    .HasForeignKey(d => d.AccountTypeId)
-                    .HasConstraintName("FK_AccountPayableType_AccountType");
             });
 
             modelBuilder.Entity<Debtor>(entity =>
@@ -588,12 +590,16 @@ namespace narit_acc_api.Models
                 entity.Property(e => e.BankId).HasColumnName("BankID");
 
                 entity.Property(e => e.Branch)
-                    .HasMaxLength(250)
+                    .HasMaxLength(5)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BusinessTypeId).HasColumnName("BusinessTypeID");
 
                 entity.Property(e => e.ContactDate)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DebtorCode)
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
@@ -626,8 +632,6 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.AccountTypeId).HasColumnName("AccountTypeID");
-
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.ChartSubMinorId).HasColumnName("ChartSubMinorID");
@@ -644,8 +648,6 @@ namespace narit_acc_api.Models
                 entity.Property(e => e.Detail)
                     .HasMaxLength(250)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Index).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
@@ -727,6 +729,10 @@ namespace narit_acc_api.Models
                     .IsRowVersion()
                     .IsConcurrencyToken();
 
+                entity.Property(e => e.DebtorCode)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.DebtorTypeId).HasColumnName("DebtorTypeID");
 
                 entity.Property(e => e.Detail)
@@ -740,6 +746,34 @@ namespace narit_acc_api.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.TransectionTypeId).HasColumnName("TransectionTypeID");
+            });
+
+            modelBuilder.Entity<TransectionType>(entity =>
+            {
+                entity.ToTable("TransectionType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CreateDate)
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.Property(e => e.Detail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LinkCoa)
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("LinkCOA");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TransectionGroup)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
