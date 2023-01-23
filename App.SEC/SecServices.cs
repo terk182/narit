@@ -1,4 +1,5 @@
 ﻿using App.Common.Dtos;
+using App.Common.Helper;
 using App.SEC.Dtos;
 using App.SEC.enums;
 using App.SEC.helper;
@@ -2406,8 +2407,6 @@ namespace App.SEC
                     Name = item.Name,
                     Surname = item.Surname
                 });
-
-
             }
             return result;
         }
@@ -4166,7 +4165,116 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse PerformanceIndicatorSetUp(PerformanceIndicatorRequest request)
+        {
+            var _PerformanceIndicator = new PerformanceIndicator();
+            _PerformanceIndicator.Id = request.Id;
+            _PerformanceIndicator.Name = request.Name;
+            _PerformanceIndicator.FiscalYear = request.FiscalYear;
+            _PerformanceIndicator.Active = request.Active;
+            _PerformanceIndicator.TargetValueQ1 = request.TargetValueQ1;
+            _PerformanceIndicator.TargetUnit = request.TargetUnit;
+            _PerformanceIndicator.Detail = request.Detail;
+            _PerformanceIndicator.PlanActivityId = request.PlanActivityId;
+            _PerformanceIndicator.TargetValueQ2 = request.TargetValueQ2;
+            _PerformanceIndicator.TargetValueQ3 = request.TargetValueQ3;
+            _PerformanceIndicator.TargetValueQ4 = request.TargetValueQ4;
+            _PerformanceIndicator.PlanCoreId = request.PlanCoreId;
+            _PerformanceIndicator.StrategicIndicatorId = request.StrategicIndicatorId;
+            _PerformanceIndicator.ResultQ1 = request.ResultQ1;
+            _PerformanceIndicator.ResultQ2 = request.ResultQ2;
+            _PerformanceIndicator.ResultQ3 = request.ResultQ3;
+            _PerformanceIndicator.ResultQ4 = request.ResultQ4;
+            _PerformanceIndicator.DetailQ1 = request.DetailQ1;
+            _PerformanceIndicator.DetailQ2 = request.DetailQ2;
+            _PerformanceIndicator.DetailQ3 = request.DetailQ3;
+            _PerformanceIndicator.DetailQ4 = request.DetailQ4;
+            _PerformanceIndicator.SupportFactorQ1 = request.SupportFactorQ1;
+            _PerformanceIndicator.SupportFactorQ2 = request.SupportFactorQ2;
+            _PerformanceIndicator.SupportFactorQ3 = request.SupportFactorQ3;
+            _PerformanceIndicator.SupportFactorQ4 = request.SupportFactorQ4;
+            _PerformanceIndicator.ObstacleQ1 = request.ObstacleQ1;
+            _PerformanceIndicator.ObstacleQ2 = request.ObstacleQ2;
+            _PerformanceIndicator.ObstacleQ3 = request.ObstacleQ3;
+            _PerformanceIndicator.ObstacleQ4 = request.ObstacleQ4;
+            _PerformanceIndicator.ParentPerformanceIndicatorId = request.ParentPerformanceIndicatorId;
+            _PerformanceIndicator.January = request.January;
+            _PerformanceIndicator.February = request.February;
+            _PerformanceIndicator.March = request.March;
+            _PerformanceIndicator.April = request.April;
+            _PerformanceIndicator.May = request.May;
+            _PerformanceIndicator.June = request.June;
+            _PerformanceIndicator.July = request.July;
+            _PerformanceIndicator.August = request.August;
+            _PerformanceIndicator.September = request.September;
+            _PerformanceIndicator.October = request.October;
+            _PerformanceIndicator.November = request.November;
+            _PerformanceIndicator.December = request.December;
+            _PerformanceIndicator.ResultJanuary = request.ResultJanuary;
+            _PerformanceIndicator.ResultFebruary = request.ResultFebruary;
+            _PerformanceIndicator.ResultMarch = request.ResultMarch;
+            _PerformanceIndicator.ResultApril = request.ResultApril;
+            _PerformanceIndicator.ResultMay = request.ResultMay;
+            _PerformanceIndicator.ResultJune = request.ResultJune;
+            _PerformanceIndicator.ResultJuly = request.ResultJuly;
+            _PerformanceIndicator.ResultAugust = request.ResultAugust;
+            _PerformanceIndicator.ResultSeptember = request.ResultSeptember;
+            _PerformanceIndicator.ResultOctober = request.ResultOctober;
+            _PerformanceIndicator.ResultNovember = request.ResultNovember;
+            _PerformanceIndicator.ResultDecember = request.ResultDecember;
+            _PerformanceIndicator.SupportFactorJanuary = request.SupportFactorJanuary;
+            _PerformanceIndicator.SupportFactorFebruary = request.SupportFactorFebruary;
+            _PerformanceIndicator.SupportFactorMarch = request.SupportFactorMarch;
+            _PerformanceIndicator.SupportFactorApril = request.SupportFactorApril;
+            _PerformanceIndicator.SupportFactorMay = request.SupportFactorMay;
+            _PerformanceIndicator.SupportFactorJune = request.SupportFactorJune;
+            _PerformanceIndicator.SupportFactorJuly = request.SupportFactorJuly;
+            _PerformanceIndicator.SupportFactorAugust = request.SupportFactorAugust;
+            _PerformanceIndicator.SupportFactorSeptember = request.SupportFactorSeptember;
+            _PerformanceIndicator.SupportFactorOctober = request.SupportFactorOctober;
+            _PerformanceIndicator.SupportFactorNovember = request.SupportFactorNovember;
+            _PerformanceIndicator.SupportFactorDecember = request.SupportFactorDecember;
+            _PerformanceIndicator.DetailJanuary = request.DetailJanuary;
+            _PerformanceIndicator.DetailFebruary = request.DetailFebruary;
+            _PerformanceIndicator.DetailMarch = request.DetailMarch;
+            _PerformanceIndicator.DetailApril = request.DetailApril;
+            _PerformanceIndicator.DetailMay = request.DetailMay;
+            _PerformanceIndicator.DetailJune = request.DetailJune;
+            _PerformanceIndicator.DetailJuly = request.DetailJuly;
+            _PerformanceIndicator.DetailAugust = request.DetailAugust;
+            _PerformanceIndicator.DetailSeptember = request.DetailSeptember;
+            _PerformanceIndicator.DetailOctober = request.DetailOctober;
+            _PerformanceIndicator.DetailNovember = request.DetailNovember;
+            _PerformanceIndicator.DetailDecember = request.DetailDecember;
+            _PerformanceIndicator.ObstacleJanuary = request.ObstacleJanuary;
+            _PerformanceIndicator.ObstacleFebruary = request.ObstacleFebruary;
+            _PerformanceIndicator.ObstacleMarch = request.ObstacleMarch;
+            _PerformanceIndicator.ObstacleApril = request.ObstacleApril;
+            _PerformanceIndicator.ObstacleMay = request.ObstacleMay;
+            _PerformanceIndicator.ObstacleJune = request.ObstacleJune;
+            _PerformanceIndicator.ObstacleJuly = request.ObstacleJuly;
+            _PerformanceIndicator.ObstacleAugust = request.ObstacleAugust;
+            _PerformanceIndicator.ObstacleSeptember = request.ObstacleSeptember;
+            _PerformanceIndicator.ObstacleOctober = request.ObstacleOctober;
+            _PerformanceIndicator.ObstacleNovember = request.ObstacleNovember;
+            _PerformanceIndicator.ObstacleDecember = request.ObstacleDecember;
 
+            //if (request.ParentDepartmentId != 0)
+            //{
+            //    _Department.ParentDepartmentId = request.ParentDepartmentId;
+            //}
+            _database.Entry(_PerformanceIndicator).State = _PerformanceIndicator.Id == 0 ?
+                                              EntityState.Added :
+                                              EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = _PerformanceIndicator.Id == 0 ? "update" : "insert";
+            return response;
+
+        }
         public SecBaseResponse EditGeneralExpenseExtendForm(GeneralExpenseMemoFormRequest request)
         {
             var geLog = new GeFormActionLog();
@@ -4774,9 +4882,42 @@ namespace App.SEC
             return response;
         }
 
-        public SecBaseResponse EditPlanItem(PlanItem request)
+        public SecBaseResponse EditPlanItem(PlanItemRequest request)
         {
-            _database.Entry(request).State = request.Id == 0 ?
+            var db = new PlanItem();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.PlanActivityId = request.PlanActivityId;
+            db.Unit = request.Unit;
+            db.CostTypeId = request.CostTypeId;
+            db.PlanItemTypeId = request.PlanItemTypeId;
+            db.BudgetTypeId = request.BudgetTypeId;
+            db.CreateDate = request.CreateDate;
+            db.CreateByStaffId = request.CreateByStaffId;
+            db.UndefineReserveBudget = request.UndefineReserveBudget;
+            db.ProtectBudget = request.ProtectBudget;
+            db.UndefineReserveDate = request.UndefineReserveDate;
+            db.UndefineReserveByStaffId = request.UndefineReserveByStaffId;
+            db.UndefineReserveByStaffName = request.UndefineReserveByStaffName;
+            db.UndefineReserveRemark = request.UndefineReserveRemark;
+            db.UndefineReserveForecastValue = request.UndefineReserveForecastValue;
+            db.UndefineReserveReturnBudget = request.UndefineReserveReturnBudget;
+            db.UndefineReserveReturnDate = request.UndefineReserveReturnDate;
+            db.ReservedBudget = request.ReservedBudget;
+            db.ReceivedBudget1 = request.ReceivedBudget1;
+            db.ReceivedBudget2 = request.ReceivedBudget2;
+            db.ReceivedBudget3 = request.ReceivedBudget3;
+            db.ReceivedBudget4 = request.ReceivedBudget4;
+            db.ReceivedBudgetDate1 = request.ReceivedBudgetDate1;
+            db.ReceivedBudgetDate2 = request.ReceivedBudgetDate2;
+            db.ReceivedBudgetDate3 = request.ReceivedBudgetDate3;
+            db.ReceivedBudgetDate4 = request.ReceivedBudgetDate4;
+            db.IsBlocked = request.IsBlocked;
+            db.IsNotControlByReceivedBudget = request.IsNotControlByReceivedBudget;
+            db.Remark = request.Remark;
+            _database.Entry(db).State = request.Id == 0 ?
                                   EntityState.Added :
                                   EntityState.Modified;
             var result = _database.SaveChanges();
@@ -4864,6 +5005,161 @@ namespace App.SEC
         {
             return _database.DirectExpenseMemoForms.Where(c => c.Active && c.FiscalYear == request.FiscalYear && ((request.DocumentNumber != "") ? c.DocumentNumber.Contains(request.DocumentNumber) : true) 
                              && (request.objId != 0) ? (request.PlanObjectType== "PlanType" ? (c.PlanTypeId == request.objId) : (c.DepartmentId == request.objId)) : true).OrderByDescending(c => c.Id).ToList();
+        }
+
+        public SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request)
+        {
+            var db = new OutsideDutyGroup();
+            int result = 0;
+            foreach (var item in request)
+            {
+                db.Id = item.Id;
+                db.Name = item.Name;
+                db.Active = item.Active;
+                db.DateStart = item.DateStart;
+                db.DateEnd = item.DateEnd;
+                db.Place = item.Place;
+                db.OrderNumber = item.OrderNumber;
+                db.Detail = item.Detail;
+                db.FiscalYear = item.FiscalYear;
+                db.WriteDate = item.WriteDate;
+                db.Inform = item.Inform;
+                db.WriteAt = item.WriteAt;
+                db.UnitChiefSignDate = item.UnitChiefSignDate;
+                db.UnitChiefName = item.UnitChiefName;
+                db.UnitChiefOpinion = item.UnitChiefOpinion;
+                db.UnitChiefPositionName = item.UnitChiefPositionName;
+                db.Approver = item.Approver;
+                db.ApproverSignDate = item.ApproverSignDate;
+                db.ApprovalStatusEnum = item.ApprovalStatusEnum;
+                db.ApprovedDate = item.ApprovedDate;
+                db.ApproverPosition = item.ApproverPosition;
+                db.DocumentNumber = item.DocumentNumber;
+                db.ApproverOpinion = item.ApproverOpinion;
+                db.HrdepartmentId = item.HrdepartmentId;
+                db.HrdepartmentName = item.HrdepartmentName;
+                db.WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum;
+                db.TimeStart = item.TimeStart;
+                db.TimeEnd = item.TimeEnd;
+                db.ExceptionDateValue = item.ExceptionDateValue;
+                db.AllowExceptionDate = item.AllowExceptionDate;
+                db.RequesterName = item.RequesterName;
+                db.ApproverId = item.ApproverId;
+                db.ApprovedSignStaffId = item.ApprovedSignStaffId;
+                db.ApprovedSignHostName = item.ApprovedSignHostName;
+                db.ApprovedSignHostAddress = item.ApprovedSignHostAddress;
+                db.CreatorStaffId = item.CreatorStaffId;
+                db.CreatedDate = item.CreatedDate;
+                db.CreatorHostName = item.CreatorHostName;
+                db.CreatorHostAddress = item.CreatorHostAddress;
+                db.GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId;
+                db.Purpose = item.Purpose;
+                db.PlanCoreRemainBudget = item.PlanCoreRemainBudget;
+                db.Remark = item.Remark;
+                db.Topic = item.Topic;
+                db.Title = item.Title;
+                db.Location = item.Location;
+                db.OperationTime = item.OperationTime;
+                db.IsForeign = item.IsForeign;
+                db.FundTypeName = item.FundTypeName;
+                db.DepartmentName = item.DepartmentName;
+                db.PlanTypeName = item.PlanTypeName;
+                db.PlanCoreName = item.PlanCoreName;
+                db.PlanActivityName = item.PlanActivityName;
+                db.OtherPeopleText = item.OtherPeopleText;
+                db.OtherPeopleAmount = item.OtherPeopleAmount;
+                db.OtherPeopleAttachText = item.OtherPeopleAttachText;
+                db.OperationDate = item.OperationDate;
+                db.RangeNumber = item.RangeNumber;
+                db.EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum;
+                db.NeedTimeStamp = item.NeedTimeStamp;
+                db.IsEventOrganize = item.IsEventOrganize;
+                _database.Entry(request).State = item.Id == 0 ?
+                             EntityState.Added :
+                             EntityState.Modified;
+                 result = _database.SaveChanges();
+             
+            }
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+          
+
+            return response;
+        }
+
+        public List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId)
+        {
+            var data = _database.OutsideDutyGroups.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormsId).ToList();
+            var _OutsideDutyGroupRequest = new List<OutsideDutyGroupRequest>();
+            foreach (var item in data)
+            {
+                _OutsideDutyGroupRequest.Add(new OutsideDutyGroupRequest
+                {
+                    Id = item.Id,
+                Name = item.Name,
+                Active = item.Active,
+                DateStart = item.DateStart,
+                DateEnd = item.DateEnd,
+                Place = item.Place,
+                OrderNumber = item.OrderNumber,
+                Detail = item.Detail,
+                FiscalYear = item.FiscalYear,
+                WriteDate = item.WriteDate,
+                Inform = item.Inform,
+                WriteAt = item.WriteAt,
+                UnitChiefSignDate = item.UnitChiefSignDate,
+                UnitChiefName = item.UnitChiefName,
+                UnitChiefOpinion = item.UnitChiefOpinion,
+                UnitChiefPositionName = item.UnitChiefPositionName,
+                Approver = item.Approver,
+                ApproverSignDate = item.ApproverSignDate,
+                ApprovalStatusEnum = item.ApprovalStatusEnum,
+                ApprovedDate = item.ApprovedDate,
+                ApproverPosition = item.ApproverPosition,
+                DocumentNumber = item.DocumentNumber,
+                ApproverOpinion = item.ApproverOpinion,
+                HrdepartmentId = item.HrdepartmentId,
+                HrdepartmentName = item.HrdepartmentName,
+                WorkAttendanceTimeRangeEnum = item.WorkAttendanceTimeRangeEnum,
+                TimeStart = item.TimeStart,
+                TimeEnd = item.TimeEnd,
+                ExceptionDateValue = item.ExceptionDateValue,
+                AllowExceptionDate = item.AllowExceptionDate,
+                RequesterName = item.RequesterName,
+                ApproverId = item.ApproverId,
+                ApprovedSignStaffId = item.ApprovedSignStaffId,
+                ApprovedSignHostName = item.ApprovedSignHostName,
+                ApprovedSignHostAddress = item.ApprovedSignHostAddress,
+                CreatorStaffId = item.CreatorStaffId,
+                CreatedDate = item.CreatedDate,
+                CreatorHostName = item.CreatorHostName,
+                CreatorHostAddress = item.CreatorHostAddress,
+                GeneralExpenseMemoFormId = item.GeneralExpenseMemoFormId,
+                Purpose = item.Purpose,
+                PlanCoreRemainBudget = item.PlanCoreRemainBudget,
+                Remark = item.Remark,
+                Topic = item.Topic,
+                Title = item.Title,
+                Location = item.Location,
+                OperationTime = item.OperationTime,
+                IsForeign = item.IsForeign,
+                FundTypeName = item.FundTypeName,
+                DepartmentName = item.DepartmentName,
+                PlanTypeName = item.PlanTypeName,
+                PlanCoreName = item.PlanCoreName,
+                PlanActivityName = item.PlanActivityName,
+                OtherPeopleText = item.OtherPeopleText,
+                OtherPeopleAmount = item.OtherPeopleAmount,
+                OtherPeopleAttachText = item.OtherPeopleAttachText,
+                OperationDate = item.OperationDate,
+                RangeNumber = item.RangeNumber,
+                EndWorkAttendanceTimeRangeEnum = item.EndWorkAttendanceTimeRangeEnum,
+                NeedTimeStamp = item.NeedTimeStamp,
+                IsEventOrganize = item.IsEventOrganize,
+
+            });
+            }
+            return _OutsideDutyGroupRequest;
         }
     }
 }
