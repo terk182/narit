@@ -1,0 +1,212 @@
+[
+  {
+    "project": "sso",
+    "figma_page_number": "101",
+    "parameter": {
+      "Email": "",
+      "ForgetPassword": "",
+      "Password": "",
+      "Remember": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "102",
+    "parameter": {
+      "Email": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "119,120,124",
+    "parameter": {
+      "NewPassword": "",
+      "ConfirmNewPassword": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "106",
+    "parameter": {
+      "AgreeToTerms": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "104,105,120-2",
+    "parameter": {
+      "Email": "",
+      "Department": "",
+      "FirstName": "",
+      "LastName": "",
+      "PhoneNumber": "",
+      "JobPosition": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "107",
+    "parameter": {
+      "OldPassword": "",
+      "NewPassword": "",
+      "ConfirmNewPassword": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "108,113",
+    "parameter": {
+      "Page": ""
+    },
+    "table": [
+      {
+        "Name": "",
+        "Department": "",
+        "UserName": "",
+        "License": "",
+        "Status": "",
+        "Setting": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "111,114,121,122,123",
+    "parameter": {
+      "status": "",
+      "Email": "",
+      "Department": "",
+      "FirstName": "",
+      "LastName": "",
+      "PhoneNumber": "",
+      "JobPosition": "",
+      "Search": "",
+      "Page": ""
+    },
+    "table": [
+      {
+        "LicenseList": "",
+        "Status": "",
+        "Setting": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "117",
+    "parameter": {
+      "Email": "",
+      "FirstName": "",
+      "LastName": "",
+      "Department": "",
+      "JobPosition": "",
+      "PhoneNumber": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "109",
+    "parameter": {
+      "Show": "",
+      "Search": "",
+      "Page": ""
+    },
+    "table": [
+      {
+        "LicenseList": "",
+        "Status": "",
+        "Setting": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "109-2",
+    "parameter": {
+      "PermissionGroup": "",
+      "Status": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "110",
+    "parameter": {
+      "Show": "",
+      "Search": "",
+      "Page": ""
+    },
+    "table": [
+      {
+        "LicenseList": "",
+        "Add": "",
+        "Read": "",
+        "Edit": "",
+        "Delete": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "110-2",
+    "parameter": {
+      "UnderPermission": "",
+      "Permission": ""
+    }
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "125",
+    "parameter": {
+      "Search": "",
+      "Page": ""
+    },
+    "table": [
+      {
+        "Name": "",
+        "UserName": "",
+        "Detail": "",
+        "IP": "",
+        "Browser": "",
+        "DateTime": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "126",
+    "parameter": {
+      "Show": "",
+      "Search": "",
+      "Page": ""
+    },
+    "table": [
+      {
+        "Permission": "",
+        "Setting": ""
+      }
+    ]
+  },
+
+  {
+    "project": "sso",
+    "figma_page_number": "126-2",
+    "parameter": {
+      "Department": ""
+    }
+  }
+
+]
