@@ -12,5 +12,6 @@ namespace App.SEC.Dtos
         public string Name { get; set; } = null!;
         //public int DepartmentId { get; set; }
         public int PlanTypeId { get; set; }
+        public string PlanTypeName { get; set; } = null!;
     }
 }

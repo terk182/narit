@@ -468,10 +468,10 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("/Plan/Operate/EditPlan/GetAllPlanCorebyStaffId/{year}/{staffid}")]
-        public IActionResult GetAllPlanCorebyStaffId(int year, int staffid)
+        [Route("/Plan/Operate/EditPlan/getAllPlanCorebyStaffId/{year}/{staffId}")]
+        public IActionResult GetAllPlanCorebyStaffId(int year, int staffId)
         {
-            var data = _SecServices.GetAllPlanCorebyStaffId(year,staffid);
+            var data = _SecServices.GetAllPlanCorebyStaffId(year, staffId);
             return Json(data);
         }
         [HttpGet]
