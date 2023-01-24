@@ -10729,6 +10729,7 @@
   },
   {
     "table": "PlanCrudpolicy",
+    "th_name": "นโยบายแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -10786,6 +10787,7 @@
   },
   {
     "table": "PlanDepartmentStaffPermission",
+    "th_name": "บุคลากรณ์ในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -10815,6 +10817,7 @@
   },
   {
     "table": "PlanFile",
+    "th_name": "ไฟล์ แผนงาน",
     "data": [
       {
         "field": "Id",
@@ -10893,6 +10896,7 @@
   },
   {
     "table": "PlanItem",
+    "th_name": "รายการในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11087,6 +11091,7 @@
   },
   {
     "table": "PlanItemActionLog",
+    "th_name": "ประวัติประเภทรายการแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11140,6 +11145,7 @@
   },
   {
     "table": "PlanItemType",
+    "th_name": "ประเภทรายการแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11193,6 +11199,7 @@
   },
   {
     "table": "PlanMonthlyOperation",
+    "th_name": "แผนการดำเนินงานรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11266,6 +11273,7 @@
   },
   {
     "table": "PlanMonthlyOperationChangeLog",
+    "th_name": "บันทึกการเปลี่ยนแปลงการดำเนินงานแผนรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11327,6 +11335,7 @@
   },
   {
     "table": "PlanPerson",
+    "th_name": "แผนงานบุคคล",
     "data": [
       {
         "field": "Id",
@@ -11372,6 +11381,7 @@
   },
   {
     "table": "PlanType",
+    "th_name": "ประเภทแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11417,6 +11427,7 @@
   },
   {
     "table": "PostDevelopmentRecordEvaluationForm",
+    "th_name": "แบบฟอร์มหลังการพัฒนาบันทึกการประเมิน",
     "data": [
       {
         "field": "Id",
@@ -11478,6 +11489,7 @@
   },
   {
     "table": "PrinciplePlanTag",
+    "th_name": "แผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -11515,6 +11527,7 @@
   },
   {
     "table": "ProbationEvaluationForm",
+    "th_name": "แบบฟอร์มการคุมประพฤติแบบประเมิน",
     "data": [
       {
         "field": "Id",
@@ -11576,6 +11589,7 @@
   },
   {
     "table": "ProcureComitteeGroup",
+    "th_name": "กลุ่มคณะกรรมการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11613,6 +11627,7 @@
   },
   {
     "table": "ProcureComitteePerson",
+    "th_name": "คณะกรรมการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11666,6 +11681,7 @@
   },
   {
     "table": "ProcureContract",
+    "th_name": "สัญญาจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11731,6 +11747,7 @@
   },
   {
     "table": "ProcureContractInstallment",
+    "th_name": "จัดซื้อจัดจ้างผ่อนชำระ",
     "data": [
       {
         "field": "Id",
@@ -11788,6 +11805,7 @@
   },
   {
     "table": "ProcureDepartmentPermission",
+    "th_name": "สิทธิ์การขอจัดซื้อขแงแต่ละแผนก",
     "data": [
       {
         "field": "Id",
@@ -11805,6 +11823,7 @@
   },
   {
     "table": "ProcureFile",
+    "th_name": "เก็บ ไฟล์ จัดชื่้อ",
     "data": [
       {
         "field": "Id",
@@ -11898,6 +11917,7 @@
   },
   {
     "table": "ProcureLoaningCancelForm",
+    "th_name": "แบบฟอร์มเยกเลิกเงินยืม ",
     "data": [
       {
         "field": "Id",
@@ -11951,6 +11971,7 @@
   },
   {
     "table": "ProcureLoaningFormActionLog",
+    "th_name": "ประวัติ แบบฟอร์มเงินยืม ",
     "data": [
       {
         "field": "Id",
@@ -12012,6 +12033,7 @@
   },
   {
     "table": "ProcureLoaningItem",
+    "th_name": "จัดซื้อจัดจ้างรายการเงินกู้",
     "data": [
       {
         "field": "Id",
@@ -12101,6 +12123,7 @@
   },
   {
     "table": "ProcureLoaningItemPlanReferenceItem",
+    "th_name": "จัดหารายการยืมแผนรายการอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -12166,6 +12189,7 @@
   },
   {
     "table": "ProcureLoaningMemoForm",
+    "th_name": "แบบฟอร์มเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12255,6 +12279,7 @@
   },
   {
     "table": "ProcureLoaningReturnForm",
+    "th_name": "แบบฟอร์มชำระเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12308,6 +12333,7 @@
   },
   {
     "table": "ProcureLoaningSettleItem",
+    "th_name": "ชำระเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12381,6 +12407,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalForm",
+    "th_name": "แบบฟอร์มยืมเงินการจัดชื้อ",
     "data": [
       {
         "field": "Id",
@@ -12442,6 +12469,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalFormPlanView",
+    "th_name": "แบบฟอร์มยืมเงินการจัดชื้อจากแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -12507,6 +12535,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalItem",
+    "th_name": "จัดหารายการถอนเงินกู้",
     "data": [
       {
         "field": "Id",
@@ -12584,6 +12613,7 @@
   },
   {
     "table": "ProcureRepairForm",
+    "th_name": "แบบคำร้องซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12645,7 +12675,7 @@
   },
   {
     "table": "ProcureRepairFormActionLog",
-
+    "th_name": "แบบคำร้องจัดซื้อซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12699,6 +12729,7 @@
   },
   {
     "table": "ProcureSeFormActionLog",
+    "th_name": "log แบบคำร้องจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12760,6 +12791,7 @@
   },
   {
     "table": "ProcureSettleMemoForm",
+    "th_name": "แบบคำร้องชำระพัสดุ",
     "data": [
       {
         "field": "Id",
@@ -12825,6 +12857,7 @@
   },
   {
     "table": "ProcureSettleReceiptForm",
+    "th_name": "ขอคืนเงินยืมเพื่อการพัสดุ",
     "data": [
       {
         "field": "Id",
@@ -12886,6 +12919,7 @@
   },
   {
     "table": "ProcureSettleReceiptFormPlanView",
+    "th_name": "ขอคืนเงินยืมเพื่อการพัสดุ_ไม่มีข้อมูลใน db",
     "data": [
       {
         "field": "Id",
@@ -16851,7 +16885,7 @@
   },
   {
     "table": "WaterBill",
-    "th_name": "บิลค่านำ้",
+    "th_name": "บิลค่าน้ำ",
     "data": [
       {
         "field": "Id",
