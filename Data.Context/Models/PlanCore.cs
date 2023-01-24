@@ -45,6 +45,7 @@ namespace narit_mis_api.Models
         public int FundSourceEnum { get; set; }
         public int FundCategoryEnum { get; set; }
         public int? FundSourceId { get; set; }
+        public int? ParentPlanCoreId { get; set; }
 
         public virtual Department Department { get; set; } = null!;
         public virtual FundType? FundType { get; set; }
