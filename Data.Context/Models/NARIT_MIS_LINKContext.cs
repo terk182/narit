@@ -181,6 +181,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<MessageHistory> MessageHistories { get; set; } = null!;
         public virtual DbSet<MisGeneralExpenseMemoFormsSignList> MisGeneralExpenseMemoFormsSignLists { get; set; } = null!;
+        public virtual DbSet<MisSsoMatching> MisSsoMatchings { get; set; } = null!;
         public virtual DbSet<Mission> Missions { get; set; } = null!;
         public virtual DbSet<MonthlyForecast> MonthlyForecasts { get; set; } = null!;
         public virtual DbSet<MonthlyForecastAdjustment> MonthlyForecastAdjustments { get; set; } = null!;
@@ -4645,6 +4646,19 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.ProjectManagerSignDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Seq).HasColumnName("seq");
+            });
+
+            modelBuilder.Entity<MisSsoMatching>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("MisSsoMatching");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
             });
 
             modelBuilder.Entity<Mission>(entity =>

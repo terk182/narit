@@ -21,6 +21,7 @@ namespace narit_mis_api.Models
         public bool IsHrdepPowerUser { get; set; }
         public bool IsFilingDepPowerUser { get; set; }
         public bool? IsPdpa { get; set; }
+        public string? SsoUid { get; set; }
 
         public virtual AspnetUser? AspnetUsersUser { get; set; }
 

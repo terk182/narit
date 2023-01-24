@@ -468,6 +468,20 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetPlanCorefromParentPlanCore/{plancoreId}")]
+        public IActionResult GetPlanCorefromParentPlanCore(int plancoreId)
+        {
+            var data = _SecServices.GetPlanCorefromParentPlanCore(plancoreId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetPlanActivityfromPlanCoreId/{plancoreId}")]
+        public IActionResult GetPlanActivityfromPlanCoreId(int plancoreId)
+        {
+            var data = _SecServices.GetPlanActivityfromPlanCoreId(plancoreId);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Plan/Operate/EditPlan/getAllPlanCorebyStaffId/{year}/{staffId}")]
         public IActionResult GetAllPlanCorebyStaffId(int year, int staffId)
         {
