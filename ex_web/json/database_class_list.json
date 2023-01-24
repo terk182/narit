@@ -9204,6 +9204,34 @@
       {
         "field": "OperationPeriod",
         "type": "string"
+      },
+      {
+        "field": "Department",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanCore",
+        "type": "virtual"
+      },
+      {
+        "field": "PerformanceIndicator",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanActivityActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanMonthlyOperation",
+        "type": "virtual"
+      },
+      {
+        "field": "ResponsiblePerson",
+        "type": "virtual"
       }
     ]
   },
@@ -9310,7 +9338,44 @@
       {
         "field": "PlanCategoryEnum",
         "type": "int"
+      },
+      {
+        "field": "Department",
+        "type": "virtual"
+      },
+      {
+        "field": "FundType",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanType",
+        "type": "virtual"
+      },
+      {
+        "field": "PrinciplePlanTag",
+        "type": "virtual"
+      },
+      {
+        "field": "PerformanceIndicator",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanActivity",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanCoreActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "ResponsiblePerson",
+        "type": "virtual"
+      },
+      {
+        "field": "Strategy",
+        "type": "virtual"
       }
+
     ]
   },
   {
@@ -9592,6 +9657,147 @@
       {
         "field": "UndefineReserveBudget",
         "type": "decimal"
+      },
+      {
+        "field": " ProtectBudget ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveDate ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveByStaffId ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveByStaffName ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveRemark ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveForecastValue ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveReturnBudget ",
+        "type": "string"
+      },
+      {
+        "field": " UndefineReserveReturnDate ",
+        "type": "string"
+      },
+      {
+        "field": " ReservedBudget ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudget1 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudget2 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudget3 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudget4 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudgetDate1 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudgetDate2 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudgetDate3 ",
+        "type": "string"
+      },
+      {
+        "field": " ReceivedBudgetDate4 ",
+        "type": "string"
+      },
+      {
+        "field": " IsBlocked ",
+        "type": "string"
+      },
+      {
+        "field": " IsNotControlByReceivedBudget ",
+        "type": "string"
+      },
+      {
+        "field": " Remark ",
+        "type": "string"
+      },
+
+      {
+        "field": "BudgetType",
+        "type": "virtual"
+      },
+      {
+        "field": "CostType",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanActivity",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItemType",
+        "type": "virtual"
+      },
+      {
+        "field": "BudgetTransfer",
+        "type": "virtual"
+      },
+      {
+        "field": "BudgetTransfer",
+        "type": "virtual"
+      },
+      {
+        "field": "CheckViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "DirectExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "GeneralExpense",
+        "type": "virtual"
+      },
+      {
+        "field": "MonthlyForecastAdjustment",
+        "type": "virtual"
+      },
+      {
+        "field": "MonthlyForecast",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItemActionLog",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "RequestViewUsedPlanItem",
+        "type": "virtual"
+      },
+      {
+        "field": "SummaryStatementCache",
+        "type": "virtual"
       }
     ]
   },

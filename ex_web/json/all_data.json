@@ -12645,6 +12645,7 @@
   },
   {
     "table": "ProcureRepairFormActionLog",
+
     "data": [
       {
         "field": "Id",
@@ -12946,6 +12947,7 @@
   },
   {
     "table": "ProcureSettleReceiptItem",
+    "th_name": "จัดการใบเสร็จชำระเงิน",
     "data": [
       {
         "field": "Id",
@@ -13015,6 +13017,7 @@
   },
   {
     "table": "ProcureSettleReceiptItemPlanView",
+    "th_name": "มุมมองแผนรายการรับชำระการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13080,6 +13083,7 @@
   },
   {
     "table": "ProcureStoreLocation",
+    "th_name": "จัดหาที่ตั้งสโตร์",
     "data": [
       {
         "field": "Id",
@@ -13141,6 +13145,7 @@
   },
   {
     "table": "ProcureTrackingAction",
+    "th_name": "การดำเนินการติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13206,6 +13211,7 @@
   },
   {
     "table": "ProcureTrackingBaseItem",
+    "th_name": "การดำเนินการติดตามฐานรายการ",
     "data": [
       {
         "field": "Id",
@@ -13267,6 +13273,7 @@
   },
   {
     "table": "ProcureTrackingGroup",
+    "th_name": "กลุ่มงานติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13308,6 +13315,7 @@
   },
   {
     "table": "ProcureTrackingItem",
+    "th_name": "จัดหาการติดตามรายการ",
     "data": [
       {
         "field": "Id",
@@ -13369,6 +13377,7 @@
   },
   {
     "table": "ProcureTrackingRefForm",
+    "th_name": "แบบฟอร์มอ้างอิงการติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13430,6 +13439,7 @@
   },
   {
     "table": "ProcureTrackingRefItem",
+    "th_name": "จัดหารายการอ้างอิงการติดตาม",
     "data": [
       {
         "field": "Id",
@@ -13491,6 +13501,7 @@
   },
   {
     "table": "Quotation",
+    "th_name": "คำอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -13548,6 +13559,7 @@
   },
   {
     "table": "Race",
+    "th_name": "ประเภท",
     "data": [
       {
         "field": "Id",
@@ -13573,6 +13585,7 @@
   },
   {
     "table": "Receiver",
+    "th_name": "ผู้รับ",
     "data": [
       {
         "field": "Id",
@@ -13638,6 +13651,7 @@
   },
   {
     "table": "RegDurableItemActionLog",
+    "th_name": "ลงทะเบียนบันทึกการดำเนินการรายการคครุภัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -13691,6 +13705,7 @@
   },
   {
     "table": "RegisterDurableItem",
+    "th_name": "ขึ้นทะเบียนครุภัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -13780,6 +13795,7 @@
   },
   {
     "table": "RegisterItemCheckForm",
+    "th_name": "แบบฟอร์มตรวจสอบรายการลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -13821,6 +13837,7 @@
   },
   {
     "table": "RegisterItemCheckRecord",
+    "th_name": "ลงทะเบียนบันทึกการตรวจสอบรายการ",
     "data": [
       {
         "field": "Id",
@@ -13874,6 +13891,7 @@
   },
   {
     "table": "RegisterItemDisposedForm",
+    "th_name": "แบบฟอร์มลงทะเบียนรายการกำจัด",
     "data": [
       {
         "field": "Id",
@@ -13911,6 +13929,7 @@
   },
   {
     "table": "RegisterItemTransferForm",
+    "th_name": "แบบฟอร์มแจ้งโอนรายการลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -13972,6 +13991,7 @@
   },
   {
     "table": "RegisterItemTransferRecord",
+    "th_name": "ลงทะเบียนบันทึกการโอนรายการ",
     "data": [
       {
         "field": "Id",
@@ -14045,6 +14065,7 @@
   },
   {
     "table": "RegisterProcureItem",
+    "th_name": "ลงทะเบียนจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -14118,6 +14139,7 @@
   },
   {
     "table": "RegisterProcureItemType",
+    "th_name": "ลงทะเบียนประเภทรายการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -14163,6 +14185,7 @@
   },
   {
     "table": "RegItemTransferFormActionLog",
+    "th_name": "การลงทะเบียนบันทึกการดำเนินการแบบฟอร์มการโอน",
     "data": [
       {
         "field": "Id",
@@ -14216,6 +14239,7 @@
   },
   {
     "table": "RelativePerson",
+    "th_name": "บุคคลเกี่ยวข้อง",
     "data": [
       {
         "field": "Id",
@@ -14301,6 +14325,7 @@
   },
   {
     "table": "Religion",
+    "th_name": "ศาสนา",
     "data": [
       {
         "field": "Id",
@@ -14326,6 +14351,7 @@
   },
   {
     "table": "RequestAgreementItemTransform",
+    "th_name": "การแปลงรายการข้อตกลง",
     "data": [
       {
         "field": "Id",
@@ -14363,6 +14389,7 @@
   },
   {
     "table": "RequestApproveItemTransform",
+    "th_name": "ขออนุมัติการแปลงรายการ",
     "data": [
       {
         "field": "Id",
@@ -14400,6 +14427,7 @@
   },
   {
     "table": "RequestForm",
+    "th_name": "แบบฟอร์มคำร้อง",
     "data": [
       {
         "field": "Id",
@@ -14473,6 +14501,7 @@
   },
   {
     "table": "RequestFormPlanView",
+    "th_name": "แบบฟอร์มคำร้องมุมมองแผน",
     "data": [
       {
         "field": "Id",
@@ -14546,6 +14575,7 @@
   },
   {
     "table": "RequestItem",
+    "th_name": "รายการคำร้อง",
     "data": [
       {
         "field": "RequestFormId",
@@ -14615,6 +14645,7 @@
   },
   {
     "table": "RequestItemPlanReferenceItem",
+    "th_name": "คำร้องขอรายการอ้างอิงแผนรายการ",
     "data": [
       {
         "field": "Id",
@@ -14680,6 +14711,7 @@
   },
   {
     "table": "RequestViewUsedPlanItem",
+    "th_name": "คำร้องขอดูรายการแผนการใช้",
     "data": [
       {
         "field": "Id",
@@ -14761,6 +14793,7 @@
   },
   {
     "table": "RequisitionForm",
+    "th_name": "แบบฟอร์มคำร้อง",
     "data": [
       {
         "field": "Id",
@@ -14818,6 +14851,7 @@
   },
   {
     "table": "RequisitionItem",
+    "th_name": "รายการขอรับ",
     "data": [
       {
         "field": "RequisitionFormId",
@@ -14883,6 +14917,7 @@
   },
   {
     "table": "RequisitionItemPlanReferenceItem",
+    "th_name": "รายการอ้างอิงแผนรายการใบขอเสนอซื้อ",
     "data": [
       {
         "field": "Id",
@@ -14948,6 +14983,7 @@
   },
   {
     "table": "ReserveBudgetMonthlyReason",
+    "th_name": "งบประมาณสำรองเหตุผลรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -14985,6 +15021,7 @@
   },
   {
     "table": "ResponsiblePerson",
+    "th_name": "ผู้รับผิดชอบ",
     "data": [
       {
         "field": "Id",
@@ -15038,6 +15075,7 @@
   },
   {
     "table": "RolesGroup",
+    "th_name": "กลุ่มงาน",
     "data": [
       {
         "field": "Id",
@@ -15063,6 +15101,7 @@
   },
   {
     "table": "RqFormActionLog",
+    "th_name": "แบบฟอร์มคำร้องบันทึกการดำเนินการ",
     "data": [
       {
         "field": "Id",
@@ -15124,6 +15163,7 @@
   },
   {
     "table": "Secondment",
+    "th_name": "การยืมตัวบุคคล",
     "data": [
       {
         "field": "Id",
@@ -15185,6 +15225,7 @@
   },
   {
     "table": "SeFormActionLog",
+    "th_name": "บันทึกการดำเนินการในแบบฟอร์มยืมตัวบุคคล",
     "data": [
       {
         "field": "Id",
@@ -15246,6 +15287,7 @@
   },
   {
     "table": "SeReceiptFormActionLog",
+    "th_name": "บันทึกการดำเนินการแบบฟอร์มใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15307,6 +15349,7 @@
   },
   {
     "table": "SettleDirectPaymentItem",
+    "th_name": "รายการชําระเงินโดยตรง",
     "data": [
       {
         "field": "Id",
@@ -15348,6 +15391,7 @@
   },
   {
     "table": "SettlementItem",
+    "th_name": "รายการการชำระบัญชี",
     "data": [
       {
         "field": "Id",
@@ -15417,6 +15461,7 @@
   },
   {
     "table": "SettleReceiptForm",
+    "th_name": "แบบฟอร์มใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15486,6 +15531,7 @@
   },
   {
     "table": "SettleReceiptItem",
+    "th_name": "ชำระรายการใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15555,6 +15601,7 @@
   },
   {
     "table": "Staff",
+    "th_name": "พนักงาน",
     "data": [
       {
         "field": "Id",
@@ -15724,6 +15771,7 @@
   },
   {
     "table": "StaffCipherKeyPair",
+    "th_name": "คีย์รหัสคู่พนักงาน",
     "data": [
       {
         "field": "Id",
@@ -15769,6 +15817,7 @@
   },
   {
     "table": "StaffPositionInHrdepartment",
+    "th_name": "ตำแหน่งพนักงานในแผนกบุคคล",
     "data": [
       {
         "field": "Id",
@@ -15798,6 +15847,7 @@
   },
   {
     "table": "StaffSecurity",
+    "th_name": "พนักงานรักษาความปลอดภัย",
     "data": [
       {
         "field": "Id",
@@ -15851,6 +15901,7 @@
   },
   {
     "table": "StaffSignature",
+    "th_name": "ลายมือชื่อพนักงาน",
     "data": [
       {
         "field": "Id",
@@ -15884,6 +15935,7 @@
   },
   {
     "table": "StaffSignature1",
+    "th_name": "ลายมือชื่อพนักงาน1",
     "data": [
       {
         "field": "Id",
@@ -15917,6 +15969,7 @@
   },
   {
     "table": "StaffWorkShift",
+    "th_name": "เวลาการทำงานของพนักงาน",
     "data": [
       {
         "field": "Id",
@@ -15994,6 +16047,7 @@
   },
   {
     "table": "StaffWorkShiftSpecificDayOff",
+    "th_name": "เวลาทำงานของพนักงานวันลาหยุด",
     "data": [
       {
         "field": "Id",
@@ -16047,6 +16101,7 @@
   },
   {
     "table": "StaffWorkShiftSpecificHoliday",
+    "th_name": "เวลาทำงานของพนักงานวันหยุดราชการ",
     "data": [
       {
         "field": "Id",
@@ -16080,6 +16135,7 @@
   },
   {
     "table": "StrategicIndicator",
+    "th_name": "ตัวชี้วัดยุทธศาสตร์",
     "data": [
       {
         "field": "Id",
@@ -16129,6 +16185,7 @@
   },
   {
     "table": "Strategy",
+    "th_name": "ยุทธศาสตร์",
     "data": [
       {
         "field": "Id",
@@ -16174,6 +16231,7 @@
   },
   {
     "table": "SummaryStatementCache",
+    "th_name": "แคชงบสรุป",
     "data": [
       {
         "field": "Id",
@@ -16235,6 +16293,7 @@
   },
   {
     "table": "Supplier",
+    "th_name": "ผู้ผลิต",
     "data": [
       {
         "field": "Id",
@@ -16320,6 +16379,7 @@
   },
   {
     "table": "SupplierType",
+    "th_name": "ประเภทผู้ผลิต",
     "data": [
       {
         "field": "Id",
@@ -16341,6 +16401,7 @@
   },
   {
     "table": "Syllabuse",
+    "th_name": "หลักสูตร",
     "data": [
       {
         "field": "Id",
@@ -16398,6 +16459,7 @@
   },
   {
     "table": "TelephoneBill",
+    "th_name": "บิลค่าโทรศัพท์",
     "data": [
       {
         "field": "Id",
@@ -16459,6 +16521,7 @@
   },
   {
     "table": "TemporaryEmployeeRequestForm",
+    "th_name": "แบบคำร้องลูกจ้างชั่วคราว",
     "data": [
       {
         "field": "Id",
@@ -16516,6 +16579,7 @@
   },
   {
     "table": "TempYearlyEvaluation5859Score",
+    "th_name": "การประเมินชั่วคราวประจำปี5859Sหลัก",
     "data": [
       {
         "field": "Id",
@@ -16553,6 +16617,7 @@
   },
   {
     "table": "VwAspnetApplication",
+    "th_name": "มุมมองแอพพิลเคชั่นAspnet",
     "data": [
       {
         "field": "ApplicationName",
@@ -16574,6 +16639,7 @@
   },
   {
     "table": "VwAspnetMembershipUser",
+    "th_name": "สมาชิกAspnet",
     "data": [
       {
         "field": "UserId",
@@ -16631,6 +16697,7 @@
   },
   {
     "table": "VwAspnetProfile",
+    "th_name": "โปรไฟล์Aspnet",
     "data": [
       {
         "field": "UserId",
@@ -16648,6 +16715,7 @@
   },
   {
     "table": "VwAspnetRole",
+    "th_name": "บทบาทAspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -16673,6 +16741,7 @@
   },
   {
     "table": "VwAspnetUser",
+    "th_name": "ผู้ใช้Aspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -16706,6 +16775,7 @@
   },
   {
     "table": "VwAspnetUsersInRole",
+    "th_name": "บทบาทผู้ใช้Aspnet",
     "data": [
       {
         "field": "UserId",
@@ -16719,6 +16789,7 @@
   },
   {
     "table": "VwAspnetWebPartStatePath",
+    "th_name": "เว็บสเตทพาทAspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -16740,6 +16811,7 @@
   },
   {
     "table": "VwAspnetWebPartStateShared",
+    "th_name": "เว็บสเตทพาทแชร์Aspnet",
     "data": [
       {
         "field": "PathId",
@@ -16757,6 +16829,7 @@
   },
   {
     "table": "VwAspnetWebPartStateUser",
+    "th_name": "เว็บสเตทผู้่ใช้Aspnet",
     "data": [
       {
         "field": "PathId",
@@ -16778,6 +16851,7 @@
   },
   {
     "table": "WaterBill",
+    "th_name": "บิลค่านำ้",
     "data": [
       {
         "field": "Id",
@@ -16839,6 +16913,7 @@
   },
   {
     "table": "WdFormActionLog",
+    "th_name": "บันทึกการดำเนินการแบบฟอร์ม Wd",
     "data": [
       {
         "field": "Id",
@@ -16892,6 +16967,7 @@
   },
   {
     "table": "WithdrawalForm",
+    "th_name": "แบบฟอร์มการถอนเงิน",
     "data": [
       {
         "field": "Id",
@@ -16957,6 +17033,7 @@
   },
   {
     "table": "WithdrawalItem",
+    "th_name": "รายการถอนเงิน",
     "data": [
       {
         "field": "Id",
@@ -17026,6 +17103,7 @@
   },
   {
     "table": "WorkHistory",
+    "th_name": "ประวัติการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17087,6 +17165,7 @@
   },
   {
     "table": "WorkShiftData",
+    "th_name": "ข้อมูลเวลาการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17148,6 +17227,7 @@
   },
   {
     "table": "WorkShiftExtraAllowance",
+    "th_name": "เบี้ยเลี้ยงพิเศษการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17185,7 +17265,7 @@
   },
   {
     "table": "WorkShiftSwitchForm",
-    "th_name": "",
+    "th_name": "แบบฟอร์มการเปลี่ยนเวลาการทำงาน",
     "data": [
       {
         "field": "Id",

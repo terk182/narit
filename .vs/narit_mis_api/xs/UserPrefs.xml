@@ -1,17 +1,12 @@
-﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{B2BE3EFC-6435-4EBB-8A9A-194E67CFB182}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="App.SEC/SecServices.cs">
+﻿<Properties StartupConfiguration="{B2BE3EFC-6435-4EBB-8A9A-194E67CFB182}|Default" GitUserInfo="UsingMD">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ex_web/json/database_class_list.json">
     <Files>
       <File FileName="App.SEC/SecServices.cs" Line="2127" Column="18" />
       <File FileName="App.CollaborationNetwork/IEisServices.cs" />
       <File FileName="narit_mis_api/Controllers/EisController.cs" />
       <File FileName="narit_mis_api/Controllers/FinController.cs" />
       <File FileName="narit_mis_api/Controllers/SecController.cs" />
+      <File FileName="ex_web/json/database_class_list.json" Line="1009" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,6 +17,10 @@
               <Node name="App.SEC" expanded="True" />
             </Node>
             <Node name="Presentation" expanded="True">
+              <Node name="ex_web" expanded="True">
+                <Node name="json" expanded="True" />
+                <Node name="Models" expanded="True" />
+              </Node>
               <Node name="narit_mis_api" expanded="True">
                 <Node name="Controllers" expanded="True" />
               </Node>
@@ -31,5 +30,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Presentation.narit__mis__api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Presentation.narit__mis__api PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

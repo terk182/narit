@@ -102,6 +102,10 @@
   {
     "name": "InverseParentHrdepartment",
     "target": "Hrdepartment"
+  },
+  {
+    "name": "PlanItems",
+    "target": "PlanItem"
   }
 
 

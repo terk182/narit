@@ -10,16 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using App.EIS.Models.Responses;
 using App.EIS.Models.Requests;
+using App.Common;
 
 namespace App.EIS
 {
     public class EisServices : IEisServices
     {
         private readonly NARIT_MIS_LINKContext _database;
-
-        public EisServices(NARIT_MIS_LINKContext context)
+        private readonly  ICommonServices _CommonServices;
+        public EisServices(NARIT_MIS_LINKContext context, ICommonServices CommonServices)
         {
             _database = context;
+            _CommonServices = CommonServices;
         }
 
         public EisBaseResponse BillingLocationSetup(BillingLocationRequest request)
@@ -51,6 +53,72 @@ namespace App.EIS
             response.Success = result > 0 ? true : false;
             response.Messsage = _BillingLocationSetup.Id == 0 ? "update" : "insert";
             return response;
+        }
+
+        public EisBaseResponse CalculatePlanTypeData(int fYear, int month)
+        {
+
+            decimal netBudgetByFiscalYear = 0.00m;
+            decimal netBudgetByMonth = 0.00m;
+            decimal netUsedBudget = 0.00m;
+            List<int> _MonthList;
+            int _MonthIndex = 11;
+            var _PlanTypeList = _CommonServices.GetPlanType(fYear);
+            _MonthList = new List<int>() { 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            _MonthIndex = _MonthList.FindIndex(c => c == month);
+
+
+
+            foreach (var item in _PlanTypeList)
+            {
+                foreach(var l in item.ParentPlanType)
+                {
+                    var PlanCores = _database.PlanCores.Where(x => x.Active ==true && x.PlanTypeId == l.Id).Include(x => x.PlanActivities).ToList();
+                    foreach (var l1 in PlanCores)
+                    {
+                        foreach (var l2 in l1.PlanActivities)
+                        {
+                              var PlanA = _database.PlanItems.Where(x => x.Active == true && x.PlanActivityId == l2.Id).Include(x=> x.SummaryStatementCaches).Include(x => x.SummaryStatementCaches);
+                        }
+                    }
+                }
+            }
+            throw new NotImplementedException();
+        }
+       
+        public void CreateAreaChart()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateGroupColumnChart()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateMOPAreaChart()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateMOPGroupColumnChart(int fYear, int month)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateMOPPieChart(int month)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreatePieChart()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateTableData(int fYear, int month)
+        {
+            throw new NotImplementedException();
         }
 
         public List<BillingLocationDto> getAllBillingLocation()
@@ -121,5 +189,7 @@ namespace App.EIS
             var planCore = _database.PlanCores.Where(x => x.FiscalYear == year && x.Active).OrderBy(x => x.Name).ToList();   
             return planCore;
         }
+
+ 
     }
 }
