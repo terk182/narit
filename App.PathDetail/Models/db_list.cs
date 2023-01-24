@@ -10,7 +10,8 @@ namespace App.PathDetail.Models
     {
       
             public string? table { get; set; }
-            public List<Datum>? data { get; set; }
+        public string? th_name { get; set; }
+        public List<Datum>? data { get; set; }
         
         public class Datum
         {

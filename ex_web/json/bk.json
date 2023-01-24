@@ -1,7 +1,6 @@
 [
   {
     "table": "Accommodation",
-    "th_name": "ที่พัก",
     "data": [
       {
         "field": "Id",
@@ -55,7 +54,6 @@
   },
   {
     "table": "AccommodationVisiting",
-    "th_name": "การเยี่ยมชมที่พัก",
     "data": [
       {
         "field": "Id",
@@ -101,7 +99,6 @@
   },
   {
     "table": "AdditionalSettleItem",
-    "th_name": "รายการชำระเพิ่มเติม",
     "data": [
       {
         "field": "Id",
@@ -147,7 +144,6 @@
   },
   {
     "table": "Address",
-    "th_name": "ที่อยู่",
     "data": [
       {
         "field": "Id",
@@ -200,49 +196,11 @@
       {
         "field": "AddressTypeId",
         "type": "int?"
-      },
-      {
-        "field": "AddressStyleId",
-        "type": "string"
-      },
-      {
-        "field": "Moo",
-        "type": "string"
-      },
-      {
-        "field": "StaffId",
-        "type": "string"
-      },
-      {
-        "field": "IsCurrentAddress",
-        "type": "string"
-      },
-      {
-        "field": "IsHouseAddress",
-        "type": "string"
-      },
-
-      {
-        "field": "AddressStyle",
-        "type": "virtual"
-      },
-      {
-        "field": "AddressType",
-        "type": "virtual"
-      },
-      {
-        "field": "RelativePerson",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AddressStyle",
-    "th_name": "รูปแบบที่อยู่",
     "data": [
       {
         "field": "Id",
@@ -264,7 +222,6 @@
   },
   {
     "table": "AddressType",
-    "th_name": "ประเภทที่อยู่",
     "data": [
       {
         "field": "Id",
@@ -286,7 +243,6 @@
   },
   {
     "table": "Agreement",
-    "th_name": "สัญญา",
     "data": [
       {
         "field": "Id",
@@ -335,40 +291,11 @@
       {
         "field": "Remark",
         "type": "string"
-      },
-      {
-        "field": "CollaborateReportId",
-        "type": "int"
-      },
-      {
-        "field": "FilingDocumentId",
-        "type": "int"
-      },
-      {
-        "field": "FirstRegisterNumber",
-        "type": "string"
-      },
-      {
-        "field": "RegisterDate",
-        "type": "DateTime"
-      },
-      {
-        "field": "CollaborateReport",
-        "type": "virtual"
-      },
-      {
-        "field": "Organization",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementVisiting",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AgreementApproveItemTransform",
-    "th_name": "สัญญาอนุมัติการแปลงรายการ",
     "data": [
       {
         "field": "Id",
@@ -406,7 +333,6 @@
   },
   {
     "table": "AgreementForm",
-    "th_name": "ฟอร์มสัญญา",
     "data": [
       {
         "field": "Id",
@@ -455,52 +381,11 @@
       {
         "field": "ProcureMethodEnum",
         "type": "int"
-      },
-      {
-        "field": "Purpose",
-        "type": "string"
-      },
-      {
-        "field": "CheckChairman",
-        "type": "string"
-      },
-      {
-        "field": "CheckFirstComittee",
-        "type": "string"
-      },
-      {
-        "field": "CheckSecondComittee",
-        "type": "string"
-      },
-      {
-        "field": "SuppliesOfficer",
-        "type": "string"
-      },
-      {
-        "field": "SuppliesOfficerSignDate",
-        "type": "DateTime"
-      },
-      {
-        "field": "SuppliesUnitChief ",
-        "type": "string"
-      },
-      {
-        "field": "AgreementItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AgreementItem",
-    "th_name": "รายการสัญญา",
     "data": [
       {
         "field": "AgreementFormId",
@@ -549,32 +434,11 @@
       {
         "field": "Date",
         "type": "DateTime?"
-      },
-      {
-        "field": "AgreementForm",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementMemorandum",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementApproveItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestAgreementItemTransform",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AgreementItemPlanReferenceItem",
-    "th_name": "สัญญารายการอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -627,20 +491,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "AgreementForm",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AgreementMemorandum",
-    "th_name": "การบันทึกสัญญา",
     "data": [
       {
         "field": "Id",
@@ -689,16 +544,11 @@
       {
         "field": "ProcureTypeEnum",
         "type": "int"
-      },
-      {
-        "field": "AgreementItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AgreementVisiting",
-    "th_name": "สัญญาการเยี่ยมชม",
     "data": [
       {
         "field": "Id",
@@ -736,7 +586,6 @@
   },
   {
     "table": "AppFormActionLog",
-    "th_name": "แอปฟอร์มบันทึกการดำเนินงาน",
     "data": [
       {
         "field": "Id",
@@ -790,7 +639,6 @@
   },
   {
     "table": "ApproveForm",
-    "th_name": "ฟอร์มการอนุมัติ",
     "data": [
       {
         "field": "Id",
@@ -839,28 +687,11 @@
       {
         "field": "PlanTypeName",
         "type": "string"
-      },
-      {
-        "field": "AppFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ApproveItem",
-    "th_name": "รายการอนุมัติ",
     "data": [
       {
         "field": "ApproveFormId",
@@ -909,44 +740,11 @@
       {
         "field": "FiscalYear",
         "type": "int"
-      },
-      {
-        "field": "ApproveForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveMemorandum",
-        "type": "virtual"
-      },
-      {
-        "field": "Supplier",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementApproveItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveOrderItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestApproveItemTransform",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ApproveItemPlanReferenceItem",
-    "th_name": "อนุมัติรายการอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -999,20 +797,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "ApproveForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ApproveMemorandum",
-    "th_name": "บันทึกการอนุมัติ",
     "data": [
       {
         "field": "Id",
@@ -1061,16 +850,11 @@
       {
         "field": "RequestFormDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "ApproveItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ApproveOrderItemTransform",
-    "th_name": "อนุมัติคำสั่งการเปลี่ยนแปลง",
     "data": [
       {
         "field": "Id",
@@ -1145,7 +929,6 @@
   },
   {
     "table": "AspnetMembership",
-    "th_name": "สมาชิกASP.NET",
     "data": [
       {
         "field": "ApplicationId",
@@ -1198,20 +981,11 @@
       {
         "field": "CreateDate",
         "type": "DateTime"
-      },
-      {
-        "field": "AspnetApplication",
-        "type": "virtual"
-      },
-      {
-        "field": "AspnetUser",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetPath",
-    "th_name": "ASP.NET Path",
     "data": [
       {
         "field": "ApplicationId",
@@ -1245,7 +1019,6 @@
   },
   {
     "table": "AspnetPersonalizationAllUser",
-    "th_name": "ความเป็นของส่วนบุคคลของผู้ใช้งานทั้งหมดของASP.NET",
     "data": [
       {
         "field": "PathId",
@@ -1260,14 +1033,13 @@
         "type": "DateTime"
       },
       {
-        "field": "AspnetPath",
+        "field": "Path",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetPersonalizationPerUser",
-    "th_name": "ความเป็นของส่วนบุคคลต่อผู้ใช้งานของASP.NET",
     "data": [
       {
         "field": "Id",
@@ -1290,18 +1062,17 @@
         "type": "DateTime"
       },
       {
-        "field": "AspnetPath",
+        "field": "Path",
         "type": "virtual"
       },
       {
-        "field": "AspnetUser",
+        "field": "User",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetProfile",
-    "th_name": "ประวัติส่วนตัว ASP.NET",
     "data": [
       {
         "field": "UserId",
@@ -1324,14 +1095,13 @@
         "type": "DateTime"
       },
       {
-        "field": "AspnetUser",
+        "field": "User",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetRole",
-    "th_name": "บทบาทของ ASP.NET",
     "data": [
       {
         "field": "ApplicationId",
@@ -1354,7 +1124,7 @@
         "type": "string?"
       },
       {
-        "field": "AspnetApplication",
+        "field": "Application",
         "type": "virtual"
       },
       {
@@ -1362,14 +1132,13 @@
         "type": "virtual"
       },
       {
-        "field": "AspnetUser",
+        "field": "Users",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetSchemaVersion",
-    "th_name": "เวอร์ชั่นของSchemaในASP.NET ",
     "data": [
       {
         "field": "Feature",
@@ -1387,7 +1156,6 @@
   },
   {
     "table": "AspnetUser",
-    "th_name": "ผู้ใช้งานASP.NET ",
     "data": [
       {
         "field": "ApplicationId",
@@ -1403,7 +1171,6 @@
       },
       {
         "field": "LoweredUserName",
-        "th_name": "ชื่อผู้ใช้งานLowere",
         "type": "string"
       },
       {
@@ -1419,7 +1186,7 @@
         "type": "DateTime"
       },
       {
-        "field": "AspnetApplication",
+        "field": "Application",
         "type": "virtual"
       },
       {
@@ -1437,24 +1204,11 @@
       {
         "field": "EfilingDepartmentPermissions",
         "type": "virtual"
-      },
-      {
-        "field": "ProcureDepartmentPermission",
-        "type": "virtual"
-      },
-      {
-        "field": "StaffSecurity",
-        "type": "virtual"
-      },
-      {
-        "field": "AspnetRole",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "AspnetWebEventEvent",
-    "th_name": "งานกิจกรรมบนเว็ป ASP.NET",
     "data": [
       {
         "field": "EventId",
@@ -1512,7 +1266,6 @@
   },
   {
     "table": "AuFormActionLog",
-    "th_name": "บันทึกการดำเนินการในแบบฟอร์มการมอบอำนาจ",
     "data": [
       {
         "field": "Id",
@@ -1566,7 +1319,6 @@
   },
   {
     "table": "AuthorizeForm",
-    "th_name": "ฟอร์มการมอบอำนาจ",
     "data": [
       {
         "field": "Id",
@@ -1615,20 +1367,11 @@
       {
         "field": "SuppliesOfficer",
         "type": "string"
-      },
-      {
-        "field": "RequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "AuFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "BillingFile",
-    "th_name": "ไฟล์การเรียกเก็บเงิน",
     "data": [
       {
         "field": "Id",
@@ -1681,32 +1424,11 @@
       {
         "field": "WaterBillId",
         "type": "int?"
-      },
-      {
-        "field": "DrinkingWaterBill",
-        "type": "virtual"
-      },
-      {
-        "field": "ElectricityBill",
-        "type": "virtual"
-      },
-      {
-        "field": "GarbageBill",
-        "type": "virtual"
-      },
-      {
-        "field": "TelephoneBill",
-        "type": "virtual"
-      },
-      {
-        "field": "WaterBill",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "BillingLocation",
-    "th_name": "สถานที่วางบิล",
     "data": [
       {
         "field": "Id",
@@ -1755,40 +1477,11 @@
       {
         "field": "UserType",
         "type": "string"
-      },
-      {
-        "field": "BillingLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "DrinkingWaterBill",
-        "type": "virtual"
-      },
-      {
-        "field": "ElectricityBill",
-        "type": "virtual"
-      },
-      {
-        "field": "GarbageBill",
-        "type": "virtual"
-      },
-      {
-        "field": "BillingLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "TelephoneBill",
-        "type": "virtual"
-      },
-      {
-        "field": "WaterBill",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "BtFormActionLog",
-    "th_name": "บันทึกการดำเนินการในแบบฟอร์มงบประมาณ",
     "data": [
       {
         "field": "Id",
@@ -1842,7 +1535,6 @@
   },
   {
     "table": "BudgetTransfer",
-    "th_name": "การโอนงบประมาณ",
     "data": [
       {
         "field": "Id",
@@ -1895,20 +1587,11 @@
       {
         "field": "OutwardDepartmentId",
         "type": "int?"
-      },
-      {
-        "field": "BudgetTransferForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "BudgetTransferForm",
-    "th_name": "แบบฟอร์มการโอนงบประมาณ",
     "data": [
       {
         "field": "Id",
@@ -1957,20 +1640,11 @@
       {
         "field": "StatementCalculationDate",
         "type": "DateTime"
-      },
-      {
-        "field": "BtFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "BudgetTransfer",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "BudgetType",
-    "th_name": "ประเภทงบประมาณ",
     "data": [
       {
         "field": "Id",
@@ -2005,18 +1679,21 @@
         "type": "int"
       },
       {
-        "field": "BudgetType",
+        "field": "ParentBudgetType",
         "type": "virtual"
       },
       {
-        "field": "PlanItem",
+        "field": "InverseParentBudgetType",
+        "type": "virtual"
+      },
+      {
+        "field": "PlanItems",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "CertifyOfMedicalRightForm",
-    "th_name": "แบบฟอร์มรับรองสิทธิการรักษาพยาบาล",
     "data": [
       {
         "field": "Id",
@@ -2074,7 +1751,6 @@
   },
   {
     "table": "CheckForm",
-    "th_name": "ตรวจสอบแบบฟอร์ม",
     "data": [
       {
         "field": "Id",
@@ -2123,32 +1799,11 @@
       {
         "field": "CountTime",
         "type": "int"
-      },
-      {
-        "field": "Supplier",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CheckFormActionLog",
-    "th_name": "ตรวจสอบบันทึกการดำเนินการของแบบฟอร์ม",
     "data": [
       {
         "field": "Id",
@@ -2202,7 +1857,6 @@
   },
   {
     "table": "CheckFormPlanView",
-    "th_name": "ตรวจสอบแบบฟอร์มมุมมองแผน",
     "data": [
       {
         "field": "Id",
@@ -2251,28 +1905,11 @@
       {
         "field": "PlanActivityIdOld",
         "type": "int"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestFormPlanView",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CheckItem",
-    "th_name": "ตรวจสอบรายการ",
     "data": [
       {
         "field": "SupplierId",
@@ -2321,36 +1958,11 @@
       {
         "field": "VatMethodEnum",
         "type": "int"
-      },
-      {
-        "field": "CheckForm",
-        "type": "virtual"
-      },
-      {
-        "field": "Supplier",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckRequisitionItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderCheckItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CheckItemPlanReferenceItem",
-    "th_name": "ตรวจสอบรายการอ้างอิงแผนรายการ",
     "data": [
       {
         "field": "Id",
@@ -2403,20 +2015,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "CheckForm",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CheckRequisitionItemTransform",
-    "th_name": "ตรวจสอบการแปลงรายการใบขอเสนอซื้อ",
     "data": [
       {
         "field": "Id",
@@ -2454,7 +2057,6 @@
   },
   {
     "table": "CheckViewUsedPlanItem",
-    "th_name": "ตรวจสอบมุมมองรายการแผนการใช้งาน",
     "data": [
       {
         "field": "Id",
@@ -2507,32 +2109,11 @@
       {
         "field": "PlanItemTypeId",
         "type": "int?"
-      },
-      {
-        "field": "CheckFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItemType",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItemPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestViewUsedPlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ChildTuitionFeeRequestForm",
-    "th_name": "แบบฟอร์มขอค่าเล่าเรียนบุตร",
     "data": [
       {
         "field": "Id",
@@ -2590,7 +2171,6 @@
   },
   {
     "table": "CollaborateReport",
-    "th_name": "รายงานการทำงานร่วมกัน",
     "data": [
       {
         "field": "Id",
@@ -2639,56 +2219,11 @@
       {
         "field": "StaffName",
         "type": "string?"
-      },
-      {
-        "field": "Organization",
-        "type": "virtual"
-      },
-      {
-        "field": "AccommodationVisiting",
-        "type": "virtual"
-      },
-      {
-        "field": "AgreementVisiting",
-        "type": "virtual"
-      },
-      {
-        "field": "Agreement",
-        "type": "virtual"
-      },
-      {
-        "field": "CoReportRefFilingDocument",
-        "type": "virtual"
-      },
-      {
-        "field": "CoReportRefGeMomoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "CollaborateStaff",
-        "type": "virtual"
-      },
-      {
-        "field": "CollaborationNetworkFile",
-        "type": "virtual"
-      },
-      {
-        "field": "ContactPersonVisiting",
-        "type": "virtual"
-      },
-      {
-        "field": "Itinerary",
-        "type": "virtual"
-      },
-      {
-        "field": "OrganizationVisiting",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CollaborateStaff",
-    "th_name": "เจ้าหน้าที่ที่ทำงานร่วมกัน",
     "data": [
       {
         "field": "Id",
@@ -2738,7 +2273,6 @@
   },
   {
     "table": "CollaborationNetworkFile",
-    "th_name": "ไฟล์Networkที่ทำงานร่วมกัน",
     "data": [
       {
         "field": "Id",
@@ -2796,7 +2330,6 @@
   },
   {
     "table": "CompetencyEvaluationForm",
-    "th_name": "แบบประเมินความสามารถ",
     "data": [
       {
         "field": "Id",
@@ -2845,20 +2378,11 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "CompetencyEvaluationItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CompetencyEvaluationItem",
-    "th_name": "รายการประเมินความสามารถ",
     "data": [
       {
         "field": "Id",
@@ -2904,7 +2428,6 @@
   },
   {
     "table": "CompetencyTopicExpectScore",
-    "th_name": "คะแนนความสามารถที่คาดหวัง",
     "data": [
       {
         "field": "Id",
@@ -2950,7 +2473,6 @@
   },
   {
     "table": "CompetencyTopicItem",
-    "th_name": "รายการหัวข้อความสามารถ",
     "data": [
       {
         "field": "Id",
@@ -2999,16 +2521,11 @@
       {
         "field": "CompetencyEvaluationItems",
         "type": "virtual"
-      },
-      {
-        "field": "CompetencyTopicExpectScore",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ContactPerson",
-    "th_name": "ผู้ติดต่อ",
     "data": [
       {
         "field": "Id",
@@ -3057,24 +2574,11 @@
       {
         "field": "Position",
         "type": "string"
-      },
-      {
-        "field": "Organization",
-        "type": "virtual"
-      },
-      {
-        "field": "ContactPersonHistory",
-        "type": "virtual"
-      },
-      {
-        "field": "ContactPersonVisiting",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ContactPersonHistory",
-    "th_name": "ประวัติผู้ติดต่อ",
     "data": [
       {
         "field": "Id",
@@ -3127,16 +2631,11 @@
       {
         "field": "LatestUpdate",
         "type": "DateTime"
-      },
-      {
-        "field": "ContactPerson",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ContactPersonVisiting",
-    "th_name": "การเยี่ยมชมผู้ติดต่อ",
     "data": [
       {
         "field": "Id",
@@ -3174,7 +2673,6 @@
   },
   {
     "table": "ContractEndEvaluationForm",
-    "th_name": "แบบประเมินการสิ้นสุดสัญญา",
     "data": [
       {
         "field": "Id",
@@ -3227,16 +2725,11 @@
       {
         "field": "SecondContractStartDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "EmploymentContract",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "CoReportRefFilingDocument",
-    "th_name": "เอกสารการยื่นรายงานอ้างอิงร่วม",
     "data": [
       {
         "field": "Id",
@@ -3274,7 +2767,6 @@
   },
   {
     "table": "CoReportRefGeMomoForm",
-    "th_name": "แบบฟอร์มรายงานผู้อ้างอิง Ge Momo",
     "data": [
       {
         "field": "Id",
@@ -3320,7 +2812,6 @@
   },
   {
     "table": "CostType",
-    "th_name": "ประเภทค่าใช้จ่าย",
     "data": [
       {
         "field": "Id",
@@ -3347,7 +2838,11 @@
         "type": "int?"
       },
       {
-        "field": "CostType",
+        "field": "ParentCostType",
+        "type": "virtual"
+      },
+      {
+        "field": "InverseParentCostType",
         "type": "virtual"
       },
       {
@@ -3358,7 +2853,6 @@
   },
   {
     "table": "Country",
-    "th_name": "ประเทศ",
     "data": [
       {
         "field": "Id",
@@ -3396,7 +2890,6 @@
   },
   {
     "table": "DailyAttendance",
-    "th_name": "ผู้เข้าร่วมรายวัน",
     "data": [
       {
         "field": "Id",
@@ -3449,20 +2942,11 @@
       {
         "field": "WorkAttendanceTimeRangeEnum",
         "type": "int"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "StaffWorkShift",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DailyAttendanceRequestForm",
-    "th_name": "แบบคำขอเข้าร่วมประจำวัน",
     "data": [
       {
         "field": "Id",
@@ -3520,7 +3004,6 @@
   },
   {
     "table": "DeFormActionLog",
-    "th_name": "บันทึกแบบฟอร์มการกระทำของหน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -3574,7 +3057,6 @@
   },
   {
     "table": "Department",
-    "th_name": "หน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -3601,7 +3083,11 @@
         "type": "int?"
       },
       {
-        "field": "Department",
+        "field": "ParentDepartment",
+        "type": "virtual"
+      },
+      {
+        "field": "InverseParentDepartment",
         "type": "virtual"
       },
       {
@@ -3613,14 +3099,13 @@
         "type": "virtual"
       },
       {
-        "field": "PlanPerson",
+        "field": "PlanPeople",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "DepartmentInternalFilingNumber",
-    "th_name": "หมายเลขการยื่นภายในหน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -3646,7 +3131,6 @@
   },
   {
     "table": "DevelopmentRecord",
-    "th_name": "หมายเลขการยื่นภายในหน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -3695,32 +3179,11 @@
       {
         "field": "Detail",
         "type": "string"
-      },
-      {
-        "field": "DevelopmentRecordGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordFollowUpForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PostDevelopmentRecordEvaluationForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DevelopmentRecordCancellation",
-    "th_name": "การยกเลิกบันทึกการพัฒนา",
     "data": [
       {
         "field": "Id",
@@ -3773,24 +3236,11 @@
       {
         "field": "IsInHouseTraining",
         "type": "bool"
-      },
-      {
-        "field": "DevelopmentRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordGroupCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DevelopmentRecordFollowUpForm",
-    "th_name": "แบบบันทึกการติดตามผลการพัฒนา",
     "data": [
       {
         "field": "Id",
@@ -3843,16 +3293,11 @@
       {
         "field": "CanApplyKnowledgeReason",
         "type": "string"
-      },
-      {
-        "field": "DevelopmentRecord",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DevelopmentRecordGroup",
-    "th_name": "แบบบันทึกการติดตามผลการพัฒนา",
     "data": [
       {
         "field": "Id",
@@ -3901,32 +3346,11 @@
       {
         "field": "Detail",
         "type": "string"
-      },
-      {
-        "field": "HrdevelopmentType",
-        "type": "virtual"
-      },
-      {
-        "field": "Syllabuse",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordGroupCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "Hrfile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DevelopmentRecordGroupCancellation",
-    "th_name": "การยกเลิกกลุ่มบันทึกการพัฒนา",
     "data": [
       {
         "field": "Id",
@@ -3975,15 +3399,6 @@
       {
         "field": "TimeStart",
         "type": "TimeSpan?"
-      },
-      {
-        "field": "DevelopmentRecordGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordCancellation",
-        "th_name": "การยกเลิกบันทึกการพัฒนา",
-        "type": "virtual"
       }
     ]
   },
@@ -4041,20 +3456,11 @@
       {
         "field": "FundTypeName",
         "type": "string"
-      },
-      {
-        "field": "DirectExpenseMemoForm",
-        "type": "virtual?"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DirectExpenseMemoForm",
-    "th_name": "แบบฟอร์ม Momo ค่าใช้จ่ายโดยตรง",
     "data": [
       {
         "field": "Id",
@@ -4103,20 +3509,11 @@
       {
         "field": "PlanTypeId",
         "type": "int"
-      },
-      {
-        "field": "DeFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "DirectExpense",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "DocumentWarehouse",
-    "th_name": "คลังเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -4166,7 +3563,6 @@
   },
   {
     "table": "DrinkingWaterBill",
-    "th_name": "บิลน้ำดื่ม",
     "data": [
       {
         "field": "Id",
@@ -4220,7 +3616,6 @@
   },
   {
     "table": "EducationLevel",
-    "th_name": "ระดับการศึกษา",
     "data": [
       {
         "field": "Id",
@@ -4250,7 +3645,6 @@
   },
   {
     "table": "EducationRecord",
-    "th_name": "บันทึกการศึกษา",
     "data": [
       {
         "field": "Id",
@@ -4308,7 +3702,6 @@
   },
   {
     "table": "EfilingDepartmentPermission",
-    "th_name": "การยื่นคำร้องขอเอกสารอนุญาตทางอิเล็กทรอนิกส์ของหน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -4326,7 +3719,6 @@
   },
   {
     "table": "ElectricityBill",
-    "th_name": "บิลค่าไฟ",
     "data": [
       {
         "field": "Id",
@@ -4375,20 +3767,11 @@
       {
         "field": "OffPeakBill",
         "type": "decimal"
-      },
-      {
-        "field": "BillingLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "BillingFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "EmploymentContract",
-    "th_name": "สัญญาจ้าง",
     "data": [
       {
         "field": "Id",
@@ -4437,20 +3820,11 @@
       {
         "field": "ContractEndEvaluationForms",
         "type": "virtual"
-      },
-      {
-        "field": "Hrfile",
-        "type": "virtual"
-      },
-      {
-        "field": "ProbationEvaluationForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FamilialRelationship",
-    "th_name": "ความสัมพันธ์ในครอบครัว",
     "data": [
       {
         "field": "Id",
@@ -4476,7 +3850,6 @@
   },
   {
     "table": "FilingDocMessageReferrer",
-    "th_name": "จัดเก็บเอกสารผู้อ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -4510,7 +3883,6 @@
   },
   {
     "table": "FilingDocProjectRelation",
-    "th_name": "จัดเก็บเอกสารความสัมพันธ์ของโครงการ",
     "data": [
       {
         "field": "Id",
@@ -4560,7 +3932,6 @@
   },
   {
     "table": "FilingDocTagRelation",
-    "th_name": "การจัดเก็บแท็กเอกสารที่เกี่ยวข้อง",
     "data": [
       {
         "field": "Id",
@@ -4594,7 +3965,6 @@
   },
   {
     "table": "FilingDocument",
-    "th_name": "ยื่นเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -4643,64 +4013,11 @@
       {
         "field": "DueDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "FilingGeneralOrder",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocMessageReferrer",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocProjectRelation",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocTagRelation",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocWarehouseRelation",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocumentAccessLog",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocumentHistory",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocumentReferrer",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingFile",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingPersonalMarkup",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingRegisterNumber",
-        "type": "virtual"
-      },
-      {
-        "field": "Message",
-        "type": "virtual"
-      },
-      {
-        "field": "Receiver",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingDocumentAccessLog",
-    "th_name": "บันทึกการเข้าถึงเอกสารการยื่น",
     "data": [
       {
         "field": "Id",
@@ -4746,7 +4063,6 @@
   },
   {
     "table": "FilingDocumentHistory",
-    "th_name": "ประวัติการขอยื่นเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -4799,16 +4115,11 @@
       {
         "field": "FilingTypeEnum",
         "type": "int"
-      },
-      {
-        "field": "FilingDocument",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingDocumentReferrer",
-    "th_name": "การยื่นเอกสารอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -4846,7 +4157,6 @@
   },
   {
     "table": "FilingDocWarehouseRelation",
-    "th_name": "จัดเก็บเอกสารคลังสินค้า",
     "data": [
       {
         "field": "Id",
@@ -4880,7 +4190,6 @@
   },
   {
     "table": "FilingFile",
-    "th_name": "จัดเก็บไฟล์",
     "data": [
       {
         "field": "Id",
@@ -4929,20 +4238,11 @@
       {
         "field": "FilingDocument",
         "type": "virtual"
-      },
-      {
-        "field": "Message",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingFileAccessLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingFileAccessLog",
-    "th_name": "การเข้าถึงการจัดเก็บไฟล์",
     "data": [
       {
         "field": "Id",
@@ -4992,7 +4292,6 @@
   },
   {
     "table": "FilingGeneralOrder",
-    "th_name": "ยื่นคำสั่งทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -5018,7 +4317,6 @@
   },
   {
     "table": "FilingHrdepartmentPermission",
-    "th_name": "การยื่นขออนุญาตแผนก HR",
     "data": [
       {
         "field": "Id",
@@ -5048,7 +4346,6 @@
   },
   {
     "table": "FilingHrdepartmentStaffPermission",
-    "th_name": "การยื่นขออนุญาตของพนักงานแผนก HR",
     "data": [
       {
         "field": "Id",
@@ -5082,7 +4379,6 @@
   },
   {
     "table": "FilingOpinion",
-    "th_name": "การยื่นความเห็น",
     "data": [
       {
         "field": "Id",
@@ -5100,7 +4396,6 @@
   },
   {
     "table": "FilingPersonalMarkup",
-    "th_name": "จัดเก็บคะแนนส่วนตัว",
     "data": [
       {
         "field": "Id",
@@ -5134,7 +4429,6 @@
   },
   {
     "table": "FilingPostscript",
-    "th_name": "จัดเก็บโพสต์สคริปต์",
     "data": [
       {
         "field": "Id",
@@ -5152,7 +4446,6 @@
   },
   {
     "table": "FilingProject",
-    "th_name": "จัดเก็บโปรเจค",
     "data": [
       {
         "field": "Id",
@@ -5187,18 +4480,21 @@
         "type": "int?"
       },
       {
-        "field": "FilingProject",
+        "field": "ParentFilingProject",
         "type": "virtual"
       },
       {
-        "field": "FilingDocProjectRelation",
+        "field": "FilingDocProjectRelations",
+        "type": "virtual"
+      },
+      {
+        "field": "InverseParentFilingProject",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingRegisterBook",
-    "th_name": "จัดเก็บเล่มทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5245,26 +4541,13 @@
         "type": "int"
       },
       {
-        "field": "FilingRegisterBook",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingHrdepartmentPermission",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingRegisterNumber",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingRegisterBook",
+        "field": "ParentFilingRegisterBook",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingRegisterNumber",
-    "th_name": "จัดเก็บเลขที่ใบลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5317,20 +4600,11 @@
       {
         "field": "RegisterNumberIndex",
         "type": "double"
-      },
-      {
-        "field": "FilingDocument",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingRegisterBook",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FilingRegisterNumberLog",
-    "th_name": "ยื่นบันทึกหมายเลขทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5364,7 +4638,6 @@
   },
   {
     "table": "FilingSecretary",
-    "th_name": "ยื่นขอเลขานุการ",
     "data": [
       {
         "field": "Id",
@@ -5402,7 +4675,6 @@
   },
   {
     "table": "FilingSendForm",
-    "th_name": "ยื่นส่งแบบฟอร์ม",
     "data": [
       {
         "field": "Id",
@@ -5420,7 +4692,6 @@
   },
   {
     "table": "FilingTag",
-    "th_name": "แท็กการยื่น",
     "data": [
       {
         "field": "Id",
@@ -5455,18 +4726,21 @@
         "type": "int?"
       },
       {
-        "field": "FilingTag",
+        "field": "ParentFilingTag",
         "type": "virtual"
       },
       {
-        "field": "FilingDocTagRelation",
+        "field": "FilingDocTagRelations",
+        "type": "virtual"
+      },
+      {
+        "field": "InverseParentFilingTag",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "FinancialReimbursementForm",
-    "th_name": "แบบฟอร์มการชำระเงินคืนทางการเงิน",
     "data": [
       {
         "field": "Id",
@@ -5515,24 +4789,11 @@
       {
         "field": "StaffPosition",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "FinancialReimbursementItem",
-        "type": "virtual"
-      },
-      {
-        "field": "FrFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FinancialReimbursementItem",
-    "th_name": "รายการการชำระเงินคืนทางการเงิน",
     "data": [
       {
         "field": "Id",
@@ -5585,16 +4846,11 @@
       {
         "field": "PlanActivityName",
         "type": "string"
-      },
-      {
-        "field": "FinancialReimbursementForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "FingerPrintDbconnector",
-    "th_name": "ตัวเชื่อมต่อ DB ลายนิ้วมือ",
     "data": [
       {
         "field": "Id",
@@ -5640,8 +4896,6 @@
   },
   {
     "table": "FingerPrintDbrawData",
-    "th_name": "ข้อมูลลายนิ้วมือ",
-
     "data": [
       {
         "field": "Id",
@@ -5699,7 +4953,6 @@
   },
   {
     "table": "FingerPrintReaderSensor",
-    "th_name": "เซ็นเซอร์อ่านลายนิ้วมือ",
     "data": [
       {
         "field": "Id",
@@ -5733,8 +4986,6 @@
   },
   {
     "table": "FrFormActionLog",
-    "th_name": "แบบฟอร์มบันทึกการดำเนินการการชำระเงินคืนทางการเงิน",
-
     "data": [
       {
         "field": "Id",
@@ -5787,16 +5038,11 @@
       {
         "field": "ReturnDeadline",
         "type": "DateTime?"
-      },
-      {
-        "field": "FinancialReimbursementForm",
-        "type": "DateTime"
       }
     ]
   },
   {
     "table": "FundType",
-    "th_name": "ประเภทกองทุน",
     "data": [
       {
         "field": "Id",
@@ -5838,7 +5084,6 @@
   },
   {
     "table": "GarbageBill",
-    "th_name": "บิลขยะ",
     "data": [
       {
         "field": "Id",
@@ -5892,7 +5137,6 @@
   },
   {
     "table": "GeBorrowFormActionLog",
-    "th_name": "บันทึกการดำเนินการแบบฟอร์มยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -5945,16 +5189,11 @@
       {
         "field": "SignedHashValue",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GedataGroup",
-    "th_name": "ข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6003,16 +5242,11 @@
       {
         "field": "PlanActivityName",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeExtendFormActionLog",
-    "th_name": "ขยายบันทึกการดำเนินการของแบบฟอร์มข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6066,7 +5300,6 @@
   },
   {
     "table": "GeFormActionLog",
-    "th_name": "บันทึกการดำเนินการของแบบฟอร์มข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6115,20 +5348,11 @@
       {
         "field": "SignedHashText",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GememoFormSchedule",
-    "th_name": "แบบฟอร์มบันทึกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6178,7 +5402,6 @@
   },
   {
     "table": "GeneralExpense",
-    "th_name": "ค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6227,64 +5450,11 @@
       {
         "field": "DepartmentId",
         "type": "int"
-      },
-      {
-        "field": "GedataGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseCancelForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseReturnForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "AdditionalSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseCancelItem",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowItem",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseReturnItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleDirectPaymentItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SettlementItem",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpenseCancelForm",
-    "th_name": "ฟอร์มยกเลิกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6333,16 +5503,11 @@
       {
         "field": "GeneralExpenseCancelItems",
         "type": "virtual"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpenseCancelItem",
-    "th_name": "ยกเลิกรายการค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6400,7 +5565,6 @@
   },
   {
     "table": "GeneralExpenseExtendForm",
-    "th_name": "แบบฟอร์มขยายค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6449,24 +5613,11 @@
       {
         "field": "DepartmentId",
         "type": "int"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "int"
-      },
-      {
-        "field": "GeExtendFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpenseMemoForm",
-    "th_name": "แบบฟอร์มบันทึกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6515,76 +5666,11 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "FinancialReimbursementForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "GememoFormSchedule",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseCancelForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseExtendForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseReturnForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseSettleForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanFile",
-        "type": "virtual"
-      },
-      {
-        "field": "ReserveBudgetMonthlyReason",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptForm",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalForm",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalItem",
-        "type": "virtual"
-      },
-      {
-        "field": "FinancialReimbursementForm",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyReportForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpensePersonalBorrowForm",
-    "th_name": "แบบฟอร์มการยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -6633,32 +5719,11 @@
       {
         "field": "StaffContactNumber",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeBorrowFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowItem",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanFile",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseExtendForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpensePersonalBorrowItem",
-    "th_name": "รายการยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -6700,7 +5765,6 @@
   },
   {
     "table": "GeneralExpenseReturnForm",
-    "th_name": "แบบฟอร์มการคืนค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6749,16 +5813,11 @@
       {
         "field": "GeneralExpenseReturnItems",
         "type": "virtual"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GeneralExpenseReturnItem",
-    "th_name": "รายการคืนค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6816,7 +5875,6 @@
   },
   {
     "table": "GeneralExpenseSettleForm",
-    "th_name": "แบบฟอร์มการชำระค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6865,32 +5923,11 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "AdditionalSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SeFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleDirectPaymentItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SettlementItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "GovernmentDisbursementGoal",
-    "th_name": "เป้าหมายการเบิกจ่ายภาครัฐ",
     "data": [
       {
         "field": "Id",
@@ -6932,8 +5969,6 @@
   },
   {
     "table": "GprocurementRss",
-    "th_name": "จัดซื้อจัดจ้าง",
-
     "data": [
       {
         "field": "Id",
@@ -6983,7 +6018,6 @@
   },
   {
     "table": "Holiday",
-    "th_name": "วันหยุด",
     "data": [
       {
         "field": "Id",
@@ -7017,7 +6051,6 @@
   },
   {
     "table": "HrcertifiedDocumentRequestForm",
-    "th_name": "แบบฟอร์มขอรับรองเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -7075,7 +6108,6 @@
   },
   {
     "table": "Hrdepartment",
-    "th_name": "แผนก Hr",
     "data": [
       {
         "field": "Id",
@@ -7125,7 +6157,6 @@
   },
   {
     "table": "HrdepartmentStaffPermissionForHr",
-    "th_name": "แผนก Hr พนักงานอนุญาตสำหรับ Hr",
     "data": [
       {
         "field": "Id",
@@ -7155,7 +6186,6 @@
   },
   {
     "table": "HrdevelopmentType",
-    "th_name": "ประเภทการพัฒนา Hr",
     "data": [
       {
         "field": "Id",
@@ -7181,7 +6211,6 @@
   },
   {
     "table": "Hrfile",
-    "th_name": "ไฟล์ Hr",
     "data": [
       {
         "field": "Id",
@@ -7234,32 +6263,11 @@
       {
         "field": "EmploymentContractId",
         "type": "int?"
-      },
-      {
-        "field": "DevelopmentRecordGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "EmploymentContract",
-        "type": "virtual"
-      },
-      {
-        "field": "Leaf",
-        "type": "virtual"
-      },
-      {
-        "field": "MedicalReimbursement",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyGroup",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Insignia",
-    "th_name": "ตราประจำตำแหน่ง",
     "data": [
       {
         "field": "Id",
@@ -7313,7 +6321,6 @@
   },
   {
     "table": "InsigniaRank",
-    "th_name": "ระดับตราประจำตำแหน่ง",
     "data": [
       {
         "field": "Id",
@@ -7335,7 +6342,6 @@
   },
   {
     "table": "Itinerary",
-    "th_name": "กำหนดการเดินทาง",
     "data": [
       {
         "field": "Id",
@@ -7389,7 +6395,6 @@
   },
   {
     "table": "JobDescription",
-    "th_name": "รายละเอียดงาน",
     "data": [
       {
         "field": "Id",
@@ -7439,7 +6444,6 @@
   },
   {
     "table": "JobFunctionalPosition",
-    "th_name": "ตำแหน่งสายงาน",
     "data": [
       {
         "field": "Id",
@@ -7461,7 +6465,6 @@
   },
   {
     "table": "JobPosition",
-    "th_name": "ตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7510,60 +6513,11 @@
       {
         "field": "ParentJobPositionId",
         "type": "int?"
-      },
-      {
-        "field": "EducationLevel",
-        "type": "virtual"
-      },
-      {
-        "field": "Hrdepartment",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionType",
-        "type": "virtual"
-      },
-      {
-        "field": "CompetencyTopicExpectScore",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPosition",
-        "type": "virtual"
-      },
-      {
-        "field": "JobDescription",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionKeyCompetencyDetail",
-        "type": "virtual"
-      },
-      {
-        "field": "JobQualification",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibility",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobPositionGroup",
-    "th_name": "ตำแหน่งกลุ่มงาน",
     "data": [
       {
         "field": "Id",
@@ -7593,7 +6547,6 @@
   },
   {
     "table": "JobPositionKeyCompetencyDetail",
-    "th_name": "รายละเอียดตำแหน่งงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -7635,7 +6588,6 @@
   },
   {
     "table": "JobPositionLevel",
-    "th_name": "ระดับตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7685,7 +6637,6 @@
   },
   {
     "table": "JobPositionType",
-    "th_name": "ประเภทตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7715,7 +6666,6 @@
   },
   {
     "table": "JobQualification",
-    "th_name": "คุณสมบัติงาน",
     "data": [
       {
         "field": "Id",
@@ -7768,24 +6718,11 @@
       {
         "field": "JobPositionLevelId",
         "type": "int"
-      },
-      {
-        "field": "EducationLevel",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPosition",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionLevel",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobResponsibility",
-    "th_name": "ความรับผิดชอบงาน",
     "data": [
       {
         "field": "Id",
@@ -7834,32 +6771,11 @@
       {
         "field": "SuggestionScore",
         "type": "double"
-      },
-      {
-        "field": "JobPosition",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionLevel",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityExpectScore",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobResponsibilityEvaluationForm",
-    "th_name": "แบบประเมินความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -7908,20 +6824,11 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityEvaluationItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobResponsibilityEvaluationItem",
-    "th_name": "รายการประเมินความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -7974,20 +6881,11 @@
       {
         "field": "JobResponsibilityId",
         "type": "int?"
-      },
-      {
-        "field": "JobResponsibilityEvaluationForm",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityExpectScore",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobResponsibilityExpectScore",
-    "th_name": " คะแนนความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -8036,28 +6934,11 @@
       {
         "field": "ScoreLevel3",
         "type": "double"
-      },
-      {
-        "field": "JobPositionLevel",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibility",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityEvaluationItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "JobResponsibilityGroup",
-    "th_name": "กลุ่มงานรับผิดชอบ",
     "data": [
       {
         "field": "Id",
@@ -8095,7 +6976,6 @@
   },
   {
     "table": "KeyCompetency",
-    "th_name": "ความสามารถที่สำคัญ",
     "data": [
       {
         "field": "Id",
@@ -8121,7 +7001,6 @@
   },
   {
     "table": "Leaf",
-    "th_name": "ใบหนังสือ",
     "data": [
       {
         "field": "Id",
@@ -8170,28 +7049,11 @@
       {
         "field": "Detail",
         "type": "string"
-      },
-      {
-        "field": "LeaveType",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "Hrfile",
-        "type": "virtual"
-      },
-      {
-        "field": "LeaveCancellationForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "LeaveArchievedRecord",
-    "th_name": "บันทึกเอกสารการลา",
     "data": [
       {
         "field": "Id",
@@ -8241,7 +7103,6 @@
   },
   {
     "table": "LeaveCancellationForm",
-    "th_name": "แบบฟอร์มยกเลิกการลา",
     "data": [
       {
         "field": "Id",
@@ -8294,20 +7155,11 @@
       {
         "field": "UnitChiefName",
         "type": "string"
-      },
-      {
-        "field": "Leaf",
-        "type": "virtual"
-      },
-      {
-        "field": "LeaveType",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "LeaveType",
-    "th_name": "ประเภทการลา",
     "data": [
       {
         "field": "Id",
@@ -8341,7 +7193,6 @@
   },
   {
     "table": "LeaveTypeLimit",
-    "th_name": "ขีดจำกัดประเภทการลา",
     "data": [
       {
         "field": "Id",
@@ -8395,7 +7246,6 @@
   },
   {
     "table": "MedicalReimbursement",
-    "th_name": "เบิกค่ารักษาพยาบาล",
     "data": [
       {
         "field": "Id",
@@ -8444,24 +7294,11 @@
       {
         "field": "ToDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "RelativePerson",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "Hrfile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "MedicalRightRequestForm",
-    "th_name": "แบบคำร้องขอสิทธิการรักษาพยาบาล",
     "data": [
       {
         "field": "Id",
@@ -8519,7 +7356,6 @@
   },
   {
     "table": "Message",
-    "th_name": "ข้อความ",
     "data": [
       {
         "field": "Id",
@@ -8568,44 +7404,11 @@
       {
         "field": "FilingRoleInRouteEnum",
         "type": "int"
-      },
-      {
-        "field": "ObjectiveTypeEnum",
-        "type": "int"
-      },
-      {
-        "field": "FilingDocument",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingGeneralOrder",
-        "type": "virtual"
-      },
-      {
-        "field": "Message",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingDocMessageReferrer",
-        "type": "virtual"
-      },
-      {
-        "field": "FilingFile",
-        "type": "virtual"
-      },
-      {
-        "field": "MessageHistory",
-        "type": "virtual"
-      },
-      {
-        "field": "Receiver",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "MessageHistory",
-    "th_name": "ประวัติข้อความ",
     "data": [
       {
         "field": "Id",
@@ -8658,16 +7461,11 @@
       {
         "field": "FilingRoutePassMethodEnum",
         "type": "int"
-      },
-      {
-        "field": "Message",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "MonthlyForecast",
-    "th_name": "พยากรณ์ประจำเดือน",
     "data": [
       {
         "field": "Id",
@@ -8709,7 +7507,6 @@
   },
   {
     "table": "MonthlyForecastAdjustment",
-    "th_name": "การปรับพยากรณ์รายเดือน",
     "data": [
       {
         "field": "Id",
@@ -8762,16 +7559,11 @@
       {
         "field": "PlanItemId",
         "type": "int"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "NameTitle",
-    "th_name": "ชื่อเรื่อง",
     "data": [
       {
         "field": "Id",
@@ -8854,7 +7646,6 @@
   },
   {
     "table": "Nationality",
-    "th_name": "สัญชาติ",
     "data": [
       {
         "field": "Id",
@@ -8880,7 +7671,6 @@
   },
   {
     "table": "OperationFile",
-    "th_name": "ไฟล์ปฏิบัติการ",
     "data": [
       {
         "field": "Id",
@@ -8926,7 +7716,6 @@
   },
   {
     "table": "OrderCheckItemTransform",
-    "th_name": "คำสั่งตรวจสอบรายการเปลียนแปลง",
     "data": [
       {
         "field": "Id",
@@ -8964,7 +7753,6 @@
   },
   {
     "table": "OrderContract",
-    "th_name": "สั่งซื้อสัญญา",
     "data": [
       {
         "field": "Id",
@@ -9018,7 +7806,6 @@
   },
   {
     "table": "OrderForm",
-    "th_name": "แบบฟอร์มสั่งซื้อ",
     "data": [
       {
         "field": "Id",
@@ -9067,44 +7854,11 @@
       {
         "field": "SupplierId",
         "type": "int?"
-      },
-      {
-        "field": "Supplier",
-        "type": "virtual"
-      },
-      {
-        "field": "OrFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderContract",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureContract",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
-      },
-      {
-        "field": "Quotation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OrderItem",
-    "th_name": "รายการสั่งซื้อ",
     "data": [
       {
         "field": "SupplierId",
@@ -9153,32 +7907,11 @@
       {
         "field": "Date",
         "type": "DateTime?"
-      },
-      {
-        "field": "OrderForm",
-        "type": "virtual"
-      },
-      {
-        "field": "Supplier",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveOrderItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderCheckItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderItemPlanReferenceItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OrderItemPlanReferenceItem",
-    "th_name": "รายการสั่งซื้อรายการอ้างอิงแผน",
     "data": [
       {
         "field": "Id",
@@ -9231,20 +7964,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "OrderForm",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OrFormActionLog",
-    "th_name": "ประวัติแบบฟอร์มสั่งซื้อ",
     "data": [
       {
         "field": "Id",
@@ -9298,7 +8022,6 @@
   },
   {
     "table": "Organization",
-    "th_name": "องค์กร",
     "data": [
       {
         "field": "Id",
@@ -9347,40 +8070,11 @@
       {
         "field": "Website",
         "type": "string"
-      },
-      {
-        "field": "Country",
-        "type": "virtual"
-      },
-      {
-        "field": "Accommodation",
-        "type": "virtual"
-      },
-      {
-        "field": "Agreement",
-        "type": "virtual"
-      },
-      {
-        "field": "CollaborateReport",
-        "type": "virtual"
-      },
-      {
-        "field": "CollaborationNetworkFile",
-        "type": "virtual"
-      },
-      {
-        "field": "ContactPerson",
-        "type": "virtual"
-      },
-      {
-        "field": "OrganizationVisiting",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OrganizationVisiting",
-    "th_name": "การเยี่ยมชมองค์กร",
     "data": [
       {
         "field": "Id",
@@ -9430,7 +8124,6 @@
   },
   {
     "table": "OutsideDuty",
-    "th_name": "นอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9479,24 +8172,11 @@
       {
         "field": "HrdepartmentId",
         "type": "int?"
-      },
-      {
-        "field": "OutsideDutyGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyCancellation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OutsideDutyCancellation",
-    "th_name": "การยกเลิกนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9549,24 +8229,11 @@
       {
         "field": "TimeEnd",
         "type": "TimeSpan?"
-      },
-      {
-        "field": "OutsideDuty",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyGroupCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OutsideDutyGroup",
-    "th_name": "กลุ่มนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9615,24 +8282,11 @@
       {
         "field": "WriteAt",
         "type": "string"
-      },
-      {
-        "field": "Hrfile",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDuty",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyGroupCancellation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OutsideDutyGroupCancellation",
-    "th_name": "ยกเลิกกลุ่มนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9681,20 +8335,11 @@
       {
         "field": "UnitChiefSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "OutsideDutyGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyCancellation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OutsideDutyReportActionLog",
-    "th_name": "รายงานการปฏิบัติงานนอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9748,7 +8393,6 @@
   },
   {
     "table": "OutsideDutyReportForm",
-    "th_name": "แบบรายงานการปฏิบัติหน้าที่นอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9797,28 +8441,11 @@
       {
         "field": "RefDocumentNumber",
         "type": "string"
-      },
-      {
-        "field": "OutsideDutyReportActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyReportReceipt",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyReportStaff",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OutsideDutyReportReceipt",
-    "th_name": "ใบรับแจ้งเหตุนอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9864,7 +8491,6 @@
   },
   {
     "table": "OutsideDutyReportStaff",
-    "th_name": "รายงานพนักงานนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9922,7 +8548,6 @@
   },
   {
     "table": "OverTimeMultiplyRate",
-    "th_name": "อัตตราค่าล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -9972,7 +8597,6 @@
   },
   {
     "table": "OverTimeRatePerHour",
-    "th_name": "อัตตราค่าล่วงเวลาต่อชั่วโมง",
     "data": [
       {
         "field": "Id",
@@ -10010,7 +8634,6 @@
   },
   {
     "table": "OverTimeRequestForm",
-    "th_name": "คำร้องทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10063,24 +8686,11 @@
       {
         "field": "ApprovalStatusEnum",
         "type": "int"
-      },
-      {
-        "field": "OverTimeRequestFormGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "OverTimeRequestResultFormGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OverTimeRequestFormGroup",
-    "th_name": "คำร้องกลุ่มทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10129,20 +8739,11 @@
       {
         "field": "UnitChiefName",
         "type": "string"
-      },
-      {
-        "field": "OverTimeRequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "OverTimeRequestResultFormGroup",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "OverTimeRequestResultFormGroup",
-    "th_name": "ผลลัพธ์การทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10191,20 +8792,11 @@
       {
         "field": "ApproverPosition",
         "type": "string"
-      },
-      {
-        "field": "OverTimeRequestFormGroup ",
-        "type": "virtual"
-      },
-      {
-        "field": "OverTimeRequestForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PastDevelopmentRecord",
-    "th_name": "บันทึกการพัฒนาที่ผ่านมา",
     "data": [
       {
         "field": "Id",
@@ -10262,7 +8854,6 @@
   },
   {
     "table": "PerformanceIndicator",
-    "th_name": "ตัวบ่งชี้ประสิทธิภาพ",
     "data": [
       {
         "field": "Id",
@@ -10311,37 +8902,11 @@
       {
         "field": "PlanCoreId",
         "type": "int?"
-      },
-      {
-        "field": "PerformanceIndicator",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanActivity",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanCore",
-        "type": "virtual"
-      },
-      {
-        "field": "StrategicIndicator",
-        "type": "virtual"
-      },
-      {
-        "field": "PerformanceIndicator",
-        "type": "virtual"
-      },
-      {
-        "field": "PerformanceIndicatorFile",
-        "type": "virtual"
       }
-
     ]
   },
   {
     "table": "PerformanceIndicatorFile",
-    "th_name": "ไฟล์ ตัวบ่งชี้ประสิทธิภาพ",
     "data": [
       {
         "field": "Id",
@@ -10391,7 +8956,6 @@
   },
   {
     "table": "PerformanceYearlyEvaluationForm",
-    "th_name": "แบบประเมินผลการปฏิบัติงานประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10440,21 +9004,11 @@
       {
         "field": "Section21ResponsibilityScore",
         "type": "double"
-      },
-      {
-        "field": "Staff ",
-        "type": "virtual"
-      },
-      {
-        "field": "PerfYearlyEvalFormActionLog",
-        "type": "virtual"
       }
-
     ]
   },
   {
     "table": "PerformanceYearlyEvaluationWeight",
-    "th_name": "น้ำหนักการปฏิบัติงานการประเมินประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10507,20 +9061,11 @@
       {
         "field": "Section28DisciplineWeight",
         "type": "int"
-      },
-      {
-        "field": "JobPositionGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "JobPositionLevel",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PerfYearlyEvalFormActionLog",
-    "th_name": "ประวัติการปฏิบัติงานการประเมินประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10573,16 +9118,11 @@
       {
         "field": "VerifyData",
         "type": "string"
-      },
-      {
-        "field": "PerformanceYearlyEvaluationForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PersonalAbility",
-    "th_name": "ความสามารถส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -10616,7 +9156,6 @@
   },
   {
     "table": "PlanActivity",
-    "th_name": "แผนกิจกรรม",
     "data": [
       {
         "field": "Id",
@@ -10698,7 +9237,6 @@
   },
   {
     "table": "PlanActivityActionLog",
-    "th_name": "ประวัติแผนกิจกรรม",
     "data": [
       {
         "field": "Id",
@@ -10752,7 +9290,6 @@
   },
   {
     "table": "PlanCore",
-    "th_name": "แผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -10843,7 +9380,6 @@
   },
   {
     "table": "PlanCoreActionLog",
-    "th_name": "ประวัติแผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -10897,7 +9433,6 @@
   },
   {
     "table": "PlanCoreStaffPermission",
-    "th_name": "บุลคลากรในแผน",
     "data": [
       {
         "field": "Id",
@@ -10931,7 +9466,6 @@
   },
   {
     "table": "PlanCrudpolicy",
-    "th_name": "นโยบายแผนงาน ระบบ",
     "data": [
       {
         "field": "Id",
@@ -10989,7 +9523,6 @@
   },
   {
     "table": "PlanDepartmentStaffPermission",
-    "th_name": "บุคลากรในแผนงานแผนก",
     "data": [
       {
         "field": "Id",
@@ -11019,7 +9552,6 @@
   },
   {
     "table": "PlanFile",
-    "th_name": "ไฟล์ แผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11072,33 +9604,11 @@
       {
         "field": "SpecificPlanFileTypeEnum",
         "type": "int"
-      },
-      {
-        "field": "GeFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpensePersonalBorrowForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanMonthlyOperation?",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptForm",
-        "type": "virtual"
       }
-
     ]
   },
   {
     "table": "PlanItem",
-    "th_name": "รายการในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11293,7 +9803,6 @@
   },
   {
     "table": "PlanItemActionLog",
-    "th_name": "ประวัติรายการในแผน",
     "data": [
       {
         "field": "Id",
@@ -11347,7 +9856,6 @@
   },
   {
     "table": "PlanItemType",
-    "th_name": "ประเภทรายการในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11401,7 +9909,6 @@
   },
   {
     "table": "PlanMonthlyOperation",
-    "th_name": "แผนการดำเนินงานรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11450,32 +9957,11 @@
       {
         "field": "August",
         "type": "decimal"
-      },
-      {
-        "field": "PlanMonthlyOperation",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanActivity",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanMonthlyOperation",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanFile",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanMonthlyOperationChangeLog>",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PlanMonthlyOperationChangeLog",
-    "th_name": "บันทึกการเปลี่ยนแปลงการดำเนินงานแผนรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11528,16 +10014,11 @@
       {
         "field": "DetailSeptember",
         "type": "string"
-      },
-      {
-        "field": "PlanMonthlyOperation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PlanPerson",
-    "th_name": "แผนงานบุคคล",
     "data": [
       {
         "field": "Id",
@@ -11583,7 +10064,6 @@
   },
   {
     "table": "PlanType",
-    "th_name": "ประเภทแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11629,7 +10109,6 @@
   },
   {
     "table": "PostDevelopmentRecordEvaluationForm",
-    "th_name": "แบบฟอร์มหลังการพัฒนาบันทึกการประเมิน",
     "data": [
       {
         "field": "Id",
@@ -11682,16 +10161,11 @@
       {
         "field": "SecondInstructorName",
         "type": "string"
-      },
-      {
-        "field": "DevelopmentRecord",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "PrinciplePlanTag",
-    "th_name": "แผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -11729,7 +10203,6 @@
   },
   {
     "table": "ProbationEvaluationForm",
-    "th_name": "แบบประเมินภาคทัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -11782,16 +10255,11 @@
       {
         "field": "Issue12Opinion",
         "type": "string"
-      },
-      {
-        "field": "EmploymentContract",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureComitteeGroup",
-    "th_name": "กลุ่มคณะกรรมการจัดหา",
     "data": [
       {
         "field": "Id",
@@ -11818,7 +10286,7 @@
         "type": "int"
       },
       {
-        "field": "ProcureComitteePerson",
+        "field": "ProcureComitteePeople",
         "type": "virtual"
       },
       {
@@ -11829,7 +10297,6 @@
   },
   {
     "table": "ProcureComitteePerson",
-    "th_name": "คณะกรรมการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11883,7 +10350,6 @@
   },
   {
     "table": "ProcureContract",
-    "th_name": "สัญญาจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11932,24 +10398,11 @@
       {
         "field": "ReminderDay",
         "type": "int?"
-      },
-      {
-        "field": "OrderForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureContractInstallment",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureContractInstallment",
-    "th_name": "จัดซื้อจัดจ้างผ่อนชำระ",
     "data": [
       {
         "field": "Id",
@@ -12007,7 +10460,6 @@
   },
   {
     "table": "ProcureDepartmentPermission",
-    "th_name": "แผนกสามารถจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -12025,7 +10477,6 @@
   },
   {
     "table": "ProcureFile",
-    "th_name": "ไฟล์ จัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12078,48 +10529,11 @@
       {
         "field": "RequestFormId",
         "type": "int?"
-      },
-      {
-        "field": "AgreementForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveForm",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckForm",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureContract",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterDurableItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemCheckRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "RqFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningCancelForm",
-    "th_name": "ฟอร์มยกเลิกการยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12173,7 +10587,6 @@
   },
   {
     "table": "ProcureLoaningFormActionLog",
-    "th_name": "ประวัติฟอร์มยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12226,16 +10639,11 @@
       {
         "field": "VerifyData",
         "type": "string"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningItem",
-    "th_name": "รายการเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12284,48 +10692,11 @@
       {
         "field": "ApprovedDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "ApproveItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningCancelForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningReturnForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningItemPlanReferenceItem",
-    "th_name": "รายการยืมอ้างอิงตามแผนงานอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -12378,20 +10749,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningMemoForm",
-    "th_name": "แบบฟอร์มขอยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12440,48 +10802,11 @@
       {
         "field": "SuppliesUnitChiefSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "ProcureLoaningCancelForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningReturnForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningReturnForm",
-    "th_name": "แบบฟอร์มขอคืนเงินกู้",
     "data": [
       {
         "field": "Id",
@@ -12535,7 +10860,6 @@
   },
   {
     "table": "ProcureLoaningSettleItem",
-    "th_name": "รายการชำระเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12584,32 +10908,11 @@
       {
         "field": "ProcureSettleReceiptItemId",
         "type": "int?"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningWithdrawalForm",
-    "th_name": "ฟอร์มเบิกเงินบืม",
     "data": [
       {
         "field": "Id",
@@ -12658,20 +10961,11 @@
       {
         "field": "Payee",
         "type": "string"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningWithdrawalFormPlanView",
-    "th_name": "รายการยืมเงินจากแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -12720,24 +11014,11 @@
       {
         "field": "RequestFormPlanViewId",
         "type": "int"
-      },
-      {
-        "field": "RequestFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptFormPlanView",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureLoaningWithdrawalItem",
-    "th_name": "รายการยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12790,32 +11071,11 @@
       {
         "field": "WithdrawableAmountAtDate",
         "type": "decimal?"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureRepairForm",
-    "th_name": "ฟอร์มจัดซื้อซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12864,20 +11124,11 @@
       {
         "field": "PlanItemId",
         "type": "int?"
-      },
-      {
-        "field": "RegisterDurableItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureRepairFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureRepairFormActionLog",
-    "th_name": "ประวัติจัดซื้อซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12931,7 +11182,6 @@
   },
   {
     "table": "ProcureSeFormActionLog",
-    "th_name": "ประวัติการจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12984,16 +11234,11 @@
       {
         "field": "VerifyData",
         "type": "string"
-      },
-      {
-        "field": "ProcureSettleMemoForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureSettleMemoForm",
-    "th_name": "ฟอร์มบันทึกข้อตกลงจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -13042,24 +11287,11 @@
       {
         "field": "BudgetCheckerSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSeFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureSettleReceiptForm",
-    "th_name": "ฟอร์มใบเสร็จรับเงินจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -13108,20 +11340,11 @@
       {
         "field": "BudgetCheckerSignDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "ProcureLoaningMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureSettleReceiptFormPlanView",
-    "th_name": "ใบเสร็จรับเงินจัดซื้อจากแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -13170,20 +11393,11 @@
       {
         "field": "PaymentDocumentNumber",
         "type": "string"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItemPlanView",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureSettleReceiptItem",
-    "th_name": "จัดการใบเสร็จชำระเงิน",
     "data": [
       {
         "field": "Id",
@@ -13232,28 +11446,11 @@
       {
         "field": "WithdrawnAmountAtDate",
         "type": "decimal"
-      },
-      {
-        "field": "ProcureLoaningItem ",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureSettleReceiptItemPlanView",
-    "th_name": "มุมมองแผนรายการรับชำระการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13302,24 +11499,11 @@
       {
         "field": "PlanItemId",
         "type": "int"
-      },
-      {
-        "field": "ProcureSettleReceiptFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckViewUsedPlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureStoreLocation",
-    "th_name": "จัดหาที่ตั้งสโตร์",
     "data": [
       {
         "field": "Id",
@@ -13366,22 +11550,13 @@
         "type": "string"
       },
       {
-        "field": "ProcureStoreLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterDurableItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemTransferRecord",
+        "field": "ParentProcureStoreLocation",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureTrackingAction",
-    "th_name": "การดำเนินการติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13430,24 +11605,11 @@
       {
         "field": "ProcureTrackingPersonInChargeEnum",
         "type": "int"
-      },
-      {
-        "field": "ProcureTrackingGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "OperationFile",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingRefForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureTrackingBaseItem",
-    "th_name": "การดำเนินการติดตามฐานรายการ",
     "data": [
       {
         "field": "Id",
@@ -13496,20 +11658,11 @@
       {
         "field": "DepartmentName",
         "type": "string"
-      },
-      {
-        "field": "ProcureTrackingGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureTrackingGroup",
-    "th_name": "กลุ่มงานติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13551,7 +11704,6 @@
   },
   {
     "table": "ProcureTrackingItem",
-    "th_name": "จัดหาการติดตามรายการ",
     "data": [
       {
         "field": "Id",
@@ -13600,20 +11752,11 @@
       {
         "field": "ProcureTrackingGroup",
         "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingRefItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingBaseItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureTrackingRefForm",
-    "th_name": "แบบฟอร์มอ้างอิงการติดตามการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -13662,20 +11805,11 @@
       {
         "field": "ProcureTrackingAction",
         "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingGroup",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingRefItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ProcureTrackingRefItem",
-    "th_name": "จัดหารายการอ้างอิงการติดตาม",
     "data": [
       {
         "field": "Id",
@@ -13728,16 +11862,11 @@
       {
         "field": "ProcureTrackingItem",
         "type": "virtual"
-      },
-      {
-        "field": "ProcureTrackingRefForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Quotation",
-    "th_name": "คำอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -13795,7 +11924,6 @@
   },
   {
     "table": "Race",
-    "th_name": "ประเภท",
     "data": [
       {
         "field": "Id",
@@ -13821,7 +11949,6 @@
   },
   {
     "table": "Receiver",
-    "th_name": "ผู้รับ",
     "data": [
       {
         "field": "Id",
@@ -13874,20 +12001,11 @@
       {
         "field": "RoleActionShowDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "FilingDocument",
-        "type": "virtual"
-      },
-      {
-        "field": "Message",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RegDurableItemActionLog",
-    "th_name": "ลงทะเบียนบันทึกการดำเนินการรายการคครุภัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -13941,7 +12059,6 @@
   },
   {
     "table": "RegisterDurableItem",
-    "th_name": "ขึ้นทะเบียนครุภัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -13990,48 +12107,11 @@
       {
         "field": "Date",
         "type": "DateTime?"
-      },
-      {
-        "field": "ProcureStoreLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemDisposedForm",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItemType",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureRepairForm",
-        "type": "virtual"
-      },
-      {
-        "field": "RegDurableItemActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemCheckRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemTransferRecord",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RegisterItemCheckForm",
-    "th_name": "แบบฟอร์มตรวจสอบรายการลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -14073,7 +12153,6 @@
   },
   {
     "table": "RegisterItemCheckRecord",
-    "th_name": "ลงทะเบียนบันทึกการตรวจสอบรายการ",
     "data": [
       {
         "field": "Id",
@@ -14127,7 +12206,6 @@
   },
   {
     "table": "RegisterItemDisposedForm",
-    "th_name": "แบบฟอร์มลงทะเบียนรายการกำจัด",
     "data": [
       {
         "field": "Id",
@@ -14165,7 +12243,6 @@
   },
   {
     "table": "RegisterItemTransferForm",
-    "th_name": "แบบฟอร์มแจ้งโอนรายการลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -14214,20 +12291,11 @@
       {
         "field": "FromDepartmentChiefName",
         "type": "string"
-      },
-      {
-        "field": "RegItemTransferFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemTransferRecord",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RegisterItemTransferRecord",
-    "th_name": "ลงทะเบียนบันทึกการโอนรายการ",
     "data": [
       {
         "field": "Id",
@@ -14280,28 +12348,11 @@
       {
         "field": "ResponsiblePersonName",
         "type": "string"
-      },
-      {
-        "field": "ProcureStoreLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterDurableItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterItemTransferForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureStoreLocation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RegisterProcureItem",
-    "th_name": "ลงทะเบียนจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -14350,32 +12401,11 @@
       {
         "field": "VatMethodEnum",
         "type": "int"
-      },
-      {
-        "field": "CheckItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningSettleItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterProcureItemType",
-        "type": "virtual"
-      },
-      {
-        "field": "RegisterDurableItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RegisterProcureItemType",
-    "th_name": "ลงทะเบียนประเภทรายการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -14406,22 +12436,25 @@
         "type": "int?"
       },
       {
-        "field": "RegisterProcureItemType",
+        "field": "ParentRegisterProcureItemType",
         "type": "virtual"
       },
       {
-        "field": "RegisterDurableItem",
+        "field": "InverseParentRegisterProcureItemType",
         "type": "virtual"
       },
       {
-        "field": "RegisterProcureItem",
+        "field": "RegisterDurableItems",
+        "type": "virtual"
+      },
+      {
+        "field": "RegisterProcureItems",
         "type": "virtual"
       }
     ]
   },
   {
     "table": "RegItemTransferFormActionLog",
-    "th_name": "การลงทะเบียนบันทึกการดำเนินการแบบฟอร์มการโอน",
     "data": [
       {
         "field": "Id",
@@ -14475,7 +12508,6 @@
   },
   {
     "table": "RelativePerson",
-    "th_name": "บุคคลเกี่ยวข้อง",
     "data": [
       {
         "field": "Id",
@@ -14524,44 +12556,11 @@
       {
         "field": "Workplace",
         "type": "string"
-      },
-      {
-        "field": "FamilialRelationship",
-        "type": "virtual"
-      },
-      {
-        "field": "NameTitle",
-        "type": "virtual"
-      },
-      {
-        "field": "Nationality",
-        "type": "virtual"
-      },
-      {
-        "field": "Race",
-        "type": "virtual"
-      },
-      {
-        "field": "Religion",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "Address",
-        "type": "virtual"
-      },
-      {
-        "field": "MedicalReimbursement",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Religion",
-    "th_name": "ศาสนา",
     "data": [
       {
         "field": "Id",
@@ -14587,7 +12586,6 @@
   },
   {
     "table": "RequestAgreementItemTransform",
-    "th_name": "การแปลงรายการข้อตกลง",
     "data": [
       {
         "field": "Id",
@@ -14625,7 +12623,6 @@
   },
   {
     "table": "RequestApproveItemTransform",
-    "th_name": "ขออนุมัติการแปลงรายการ",
     "data": [
       {
         "field": "Id",
@@ -14663,7 +12660,6 @@
   },
   {
     "table": "RequestForm",
-    "th_name": "แบบฟอร์มคำร้อง",
     "data": [
       {
         "field": "Id",
@@ -14712,32 +12708,11 @@
       {
         "field": "DepartmentName",
         "type": "string"
-      },
-      {
-        "field": "AuthorizeForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestItemPlanReferenceItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RqFormActionLog",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequestFormPlanView",
-    "th_name": "แบบฟอร์มคำร้องมุมมองแผน",
     "data": [
       {
         "field": "Id",
@@ -14786,32 +12761,11 @@
       {
         "field": "PlanActivityIdOld",
         "type": "int"
-      },
-      {
-        "field": "CheckFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureLoaningWithdrawalFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ReserveBudgetMonthlyReason",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckFormPlanView",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequestItem",
-    "th_name": "รายการคำร้อง",
     "data": [
       {
         "field": "RequestFormId",
@@ -14860,28 +12814,11 @@
       {
         "field": "Amount",
         "type": "decimal?"
-      },
-      {
-        "field": "RequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestAgreementItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestApproveItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestItemPlanReferenceItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequestItemPlanReferenceItem",
-    "th_name": "คำร้องขอรายการอ้างอิงแผนรายการ",
     "data": [
       {
         "field": "Id",
@@ -14934,20 +12871,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "RequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequestViewUsedPlanItem",
-    "th_name": "คำร้องขอดูรายการแผนการใช้",
     "data": [
       {
         "field": "Id",
@@ -14996,40 +12924,11 @@
       {
         "field": "PlanItemId",
         "type": "int"
-      },
-      {
-        "field": "RequestViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanItemType",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestFormPlanView",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "RequestViewUsedPlanItem",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureSettleReceiptItemPlanView",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequisitionForm",
-    "th_name": "แบบฟอร์มคำร้อง",
     "data": [
       {
         "field": "Id",
@@ -15078,16 +12977,11 @@
       {
         "field": "RequisitionItemPlanReferenceItems",
         "type": "virtual"
-      },
-      {
-        "field": "RequisitionItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequisitionItem",
-    "th_name": "รายการขอรับ",
     "data": [
       {
         "field": "RequisitionFormId",
@@ -15136,24 +13030,11 @@
       {
         "field": "ProcureTypeEnum",
         "type": "int"
-      },
-      {
-        "field": "RequisitionForm",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckRequisitionItemTransform",
-        "type": "virtual"
-      },
-      {
-        "field": "RequisitionItemPlanReferenceItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "RequisitionItemPlanReferenceItem",
-    "th_name": "รายการอ้างอิงแผนรายการใบขอเสนอซื้อ",
     "data": [
       {
         "field": "Id",
@@ -15206,20 +13087,11 @@
       {
         "field": "RequestItemRefId",
         "type": "int"
-      },
-      {
-        "field": "RequisitionForm ",
-        "type": "virtual"
-      },
-      {
-        "field": "RequisitionItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "ReserveBudgetMonthlyReason",
-    "th_name": "งบประมาณสำรองเหตุผลรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -15257,7 +13129,6 @@
   },
   {
     "table": "ResponsiblePerson",
-    "th_name": "ผู้รับผิดชอบ",
     "data": [
       {
         "field": "Id",
@@ -15311,7 +13182,6 @@
   },
   {
     "table": "RolesGroup",
-    "th_name": "กลุ่มงาน",
     "data": [
       {
         "field": "Id",
@@ -15337,7 +13207,6 @@
   },
   {
     "table": "RqFormActionLog",
-    "th_name": "แบบฟอร์มคำร้องบันทึกการดำเนินการ",
     "data": [
       {
         "field": "Id",
@@ -15386,20 +13255,11 @@
       {
         "field": "SignedHashValue",
         "type": "string"
-      },
-      {
-        "field": "RequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "ProcureFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Secondment",
-    "th_name": "การยืมตัวบุคคล",
     "data": [
       {
         "field": "Id",
@@ -15452,16 +13312,11 @@
       {
         "field": "WriteDate",
         "type": "DateTime?"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SeFormActionLog",
-    "th_name": "บันทึกการดำเนินการในแบบฟอร์มยืมตัวบุคคล",
     "data": [
       {
         "field": "Id",
@@ -15514,16 +13369,11 @@
       {
         "field": "ReturnReasonValue",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseSettleForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SeReceiptFormActionLog",
-    "th_name": "บันทึกการดำเนินการแบบฟอร์มใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15576,16 +13426,11 @@
       {
         "field": "SignedHashValue",
         "type": "string"
-      },
-      {
-        "field": "SettleReceiptForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SettleDirectPaymentItem",
-    "th_name": "รายการชําระเงินโดยตรง",
     "data": [
       {
         "field": "Id",
@@ -15627,7 +13472,6 @@
   },
   {
     "table": "SettlementItem",
-    "th_name": "รายการการชำระบัญชี",
     "data": [
       {
         "field": "Id",
@@ -15676,28 +13520,11 @@
       {
         "field": "UsedBudget",
         "type": "decimal"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseSettleForm",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptItem",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SettleReceiptForm",
-    "th_name": "แบบฟอร์มใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15746,28 +13573,11 @@
       {
         "field": "BudgetCheckerName",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PlanFile",
-        "type": "virtual"
-      },
-      {
-        "field": "SeReceiptFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SettleReceiptItem",
-    "th_name": "ชำระรายการใบเสร็จรับเงิน",
     "data": [
       {
         "field": "Id",
@@ -15816,28 +13626,11 @@
       {
         "field": "GeneralExpense",
         "type": "virtual"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptForm",
-        "type": "virtual"
-      },
-      {
-        "field": "SettlementItem",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Staff",
-    "th_name": "พนักงาน",
     "data": [
       {
         "field": "Id",
@@ -15886,128 +13679,11 @@
       {
         "field": "TaxNumber",
         "type": "string"
-      },
-      {
-        "field": "Address",
-        "type": "virtual"
-      },
-      {
-        "field": "CompetencyEvaluationForm",
-        "type": "virtual"
-      },
-      {
-        "field": "DailyAttendanceRequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "DailyAttendance",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecordCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "DevelopmentRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "EducationRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "EmploymentContract",
-        "type": "virtual"
-      },
-      {
-        "field": "Insignia",
-        "type": "virtual"
-      },
-      {
-        "field": "JobDescription",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibility",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityEvaluationForm",
-        "type": "virtual"
-      },
-      {
-        "field": "JobResponsibilityExpectScore",
-        "type": "virtual"
-      },
-      {
-        "field": "LeaveArchievedRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "Leaf",
-        "type": "virtual"
-      },
-      {
-        "field": "MedicalReimbursement",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDuty",
-        "type": "virtual"
-      },
-      {
-        "field": "OutsideDutyCancellation",
-        "type": "virtual"
-      },
-      {
-        "field": "OverTimeRatePerHour",
-        "type": "virtual"
-      },
-      {
-        "field": "OverTimeRequestForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PastDevelopmentRecord",
-        "type": "virtual"
-      },
-      {
-        "field": "PerformanceYearlyEvaluationForm",
-        "type": "virtual"
-      },
-      {
-        "field": "PersonalAbility",
-        "type": "virtual"
-      },
-      {
-        "field": "RelativePerson",
-        "type": "virtual"
-      },
-      {
-        "field": "Secondment",
-        "type": "virtual"
-      },
-      {
-        "field": "StaffWorkShift",
-        "type": "virtual"
-      },
-      {
-        "field": "TempYearlyEvaluation5859Score",
-        "type": "virtual"
-      },
-      {
-        "field": "WorkHistory",
-        "type": "virtual"
-      },
-      {
-        "field": "WorkShiftSwitchForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "StaffCipherKeyPair",
-    "th_name": "คีย์รหัสคู่พนักงาน",
     "data": [
       {
         "field": "Id",
@@ -16053,7 +13729,6 @@
   },
   {
     "table": "StaffPositionInHrdepartment",
-    "th_name": "ตำแหน่งพนักงานในแผนกบุคคล",
     "data": [
       {
         "field": "Id",
@@ -16083,7 +13758,6 @@
   },
   {
     "table": "StaffSecurity",
-    "th_name": "พนักงานรักษาความปลอดภัย",
     "data": [
       {
         "field": "Id",
@@ -16137,7 +13811,6 @@
   },
   {
     "table": "StaffSignature",
-    "th_name": "ลายมือชื่อพนักงาน",
     "data": [
       {
         "field": "Id",
@@ -16171,7 +13844,6 @@
   },
   {
     "table": "StaffSignature1",
-    "th_name": "ลายมือชื่อพนักงาน1",
     "data": [
       {
         "field": "Id",
@@ -16205,7 +13877,6 @@
   },
   {
     "table": "StaffWorkShift",
-    "th_name": "เวลาการทำงานของพนักงาน",
     "data": [
       {
         "field": "Id",
@@ -16254,36 +13925,11 @@
       {
         "field": "TimeStart",
         "type": "TimeSpan"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
-      },
-      {
-        "field": "WorkShiftData",
-        "type": "virtual"
-      },
-      {
-        "field": "DailyAttendance",
-        "type": "virtual"
-      },
-      {
-        "field": "StaffWorkShiftSpecificDayOff",
-        "type": "virtual"
-      },
-      {
-        "field": "StaffWorkShiftSpecificHoliday",
-        "type": "virtual"
-      },
-      {
-        "field": "WorkShiftSwitchForm",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "StaffWorkShiftSpecificDayOff",
-    "th_name": "เวลาทำงานของพนักงานวันลาหยุด",
     "data": [
       {
         "field": "Id",
@@ -16337,7 +13983,6 @@
   },
   {
     "table": "StaffWorkShiftSpecificHoliday",
-    "th_name": "เวลาทำงานของพนักงานวันหยุดราชการ",
     "data": [
       {
         "field": "Id",
@@ -16371,7 +14016,6 @@
   },
   {
     "table": "StrategicIndicator",
-    "th_name": "ตัวชี้วัดยุทธศาสตร์",
     "data": [
       {
         "field": "Id",
@@ -16421,7 +14065,6 @@
   },
   {
     "table": "Strategy",
-    "th_name": "ยุทธศาสตร์",
     "data": [
       {
         "field": "Id",
@@ -16467,7 +14110,6 @@
   },
   {
     "table": "SummaryStatementCache",
-    "th_name": "แคชงบสรุป",
     "data": [
       {
         "field": "Id",
@@ -16520,16 +14162,11 @@
       {
         "field": "CalDate",
         "type": "DateTime"
-      },
-      {
-        "field": "PlanItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "Supplier",
-    "th_name": "ผู้ผลิต",
     "data": [
       {
         "field": "Id",
@@ -16578,44 +14215,11 @@
       {
         "field": "CommercialRegistrationId",
         "type": "string?"
-      },
-      {
-        "field": "SupplierType",
-        "type": "virtual"
-      },
-      {
-        "field": "ApproveItem",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckForm",
-        "type": "virtual"
-      },
-      {
-        "field": "CheckItem",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderContract",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderForm",
-        "type": "virtual"
-      },
-      {
-        "field": "OrderItem",
-        "type": "virtual"
-      },
-      {
-        "field": "Quotation",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "SupplierType",
-    "th_name": "ประเภทผู้ผลิต",
     "data": [
       {
         "field": "Id",
@@ -16637,7 +14241,6 @@
   },
   {
     "table": "Syllabuse",
-    "th_name": "หลักสูตร",
     "data": [
       {
         "field": "Id",
@@ -16686,16 +14289,11 @@
       {
         "field": "Remark",
         "type": "string"
-      },
-      {
-        "field": "DevelopmentRecordGroup",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "TelephoneBill",
-    "th_name": "บิลค่าโทรศัพท์",
     "data": [
       {
         "field": "Id",
@@ -16744,20 +14342,11 @@
       {
         "field": "BillingLocationId",
         "type": "int"
-      },
-      {
-        "field": "BillingLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "BillingFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "TemporaryEmployeeRequestForm",
-    "th_name": "แบบคำร้องลูกจ้างชั่วคราว",
     "data": [
       {
         "field": "Id",
@@ -16815,7 +14404,6 @@
   },
   {
     "table": "TempYearlyEvaluation5859Score",
-    "th_name": "การประเมินชั่วคราวประจำปี5859Sหลัก",
     "data": [
       {
         "field": "Id",
@@ -16853,7 +14441,6 @@
   },
   {
     "table": "VwAspnetApplication",
-    "th_name": "มุมมองแอพพิลเคชั่นAspnet",
     "data": [
       {
         "field": "ApplicationName",
@@ -16875,7 +14462,6 @@
   },
   {
     "table": "VwAspnetMembershipUser",
-    "th_name": "สมาชิกAspnet",
     "data": [
       {
         "field": "UserId",
@@ -16933,7 +14519,6 @@
   },
   {
     "table": "VwAspnetProfile",
-    "th_name": "โปรไฟล์Aspnet",
     "data": [
       {
         "field": "UserId",
@@ -16951,7 +14536,6 @@
   },
   {
     "table": "VwAspnetRole",
-    "th_name": "บทบาทAspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -16977,7 +14561,6 @@
   },
   {
     "table": "VwAspnetUser",
-    "th_name": "ผู้ใช้Aspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -17011,7 +14594,6 @@
   },
   {
     "table": "VwAspnetUsersInRole",
-    "th_name": "บทบาทผู้ใช้Aspnet",
     "data": [
       {
         "field": "UserId",
@@ -17025,7 +14607,6 @@
   },
   {
     "table": "VwAspnetWebPartStatePath",
-    "th_name": "เว็บสเตทพาทAspnet",
     "data": [
       {
         "field": "ApplicationId",
@@ -17047,7 +14628,6 @@
   },
   {
     "table": "VwAspnetWebPartStateShared",
-    "th_name": "เว็บสเตทพาทแชร์Aspnet",
     "data": [
       {
         "field": "PathId",
@@ -17065,7 +14645,6 @@
   },
   {
     "table": "VwAspnetWebPartStateUser",
-    "th_name": "เว็บสเตทผู้่ใช้Aspnet",
     "data": [
       {
         "field": "PathId",
@@ -17087,7 +14666,6 @@
   },
   {
     "table": "WaterBill",
-    "th_name": "บิลค่านำ้",
     "data": [
       {
         "field": "Id",
@@ -17136,20 +14714,11 @@
       {
         "field": "BilingNumber",
         "type": "string"
-      },
-      {
-        "field": "BillingLocation",
-        "type": "virtual"
-      },
-      {
-        "field": "BillingFile",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "WdFormActionLog",
-    "th_name": "บันทึกการดำเนินการแบบฟอร์ม Wd",
     "data": [
       {
         "field": "Id",
@@ -17203,7 +14772,6 @@
   },
   {
     "table": "WithdrawalForm",
-    "th_name": "แบบฟอร์มการถอนเงิน",
     "data": [
       {
         "field": "Id",
@@ -17252,24 +14820,11 @@
       {
         "field": "Payee",
         "type": "string"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "WdFormActionLog",
-        "type": "virtual"
-      },
-      {
-        "field": "WithdrawalItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "WithdrawalItem",
-    "th_name": "รายการถอนเงิน",
     "data": [
       {
         "field": "Id",
@@ -17318,28 +14873,11 @@
       {
         "field": "IsExtraAdded",
         "type": "bool"
-      },
-      {
-        "field": "GeneralExpense",
-        "type": "virtual"
-      },
-      {
-        "field": "GeneralExpenseMemoForm",
-        "type": "virtual"
-      },
-      {
-        "field": "SettleReceiptItem",
-        "type": "virtual"
-      },
-      {
-        "field": "SettlementItem",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "WorkHistory",
-    "th_name": "ประวัติการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17392,16 +14930,11 @@
       {
         "field": "JobPositionGroupId",
         "type": "int?"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "WorkShiftData",
-    "th_name": "ข้อมูลเวลาการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17450,20 +14983,11 @@
       {
         "field": "UsedGenericHoliday",
         "type": "bool"
-      },
-      {
-        "field": "StaffWorkShift",
-        "type": "virtual"
-      },
-      {
-        "field": "WorkShiftExtraAllowance",
-        "type": "virtual"
       }
     ]
   },
   {
     "table": "WorkShiftExtraAllowance",
-    "th_name": "เบี้ยเลี้ยงพิเศษการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17501,7 +15025,6 @@
   },
   {
     "table": "WorkShiftSwitchForm",
-    "th_name": "แบบฟอร์มการเปลี่ยนเวลาการทำงาน",
     "data": [
       {
         "field": "Id",
@@ -17554,14 +15077,6 @@
       {
         "field": "UnitChiefName",
         "type": "string"
-      },
-      {
-        "field": "StaffWorkShift",
-        "type": "virtual"
-      },
-      {
-        "field": "Staff",
-        "type": "virtual"
       }
     ]
   }

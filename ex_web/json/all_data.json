@@ -8667,6 +8667,7 @@
   },
   {
     "table": "MonthlyForecast",
+    "th_name": "พยากรณ์ประจำเดือน",
     "data": [
       {
         "field": "Id",
@@ -8708,6 +8709,7 @@
   },
   {
     "table": "MonthlyForecastAdjustment",
+    "th_name": "การปรับพยากรณ์รายเดือน",
     "data": [
       {
         "field": "Id",
@@ -8769,6 +8771,7 @@
   },
   {
     "table": "NameTitle",
+    "th_name": "ชื่อเรื่อง",
     "data": [
       {
         "field": "Id",
@@ -8851,6 +8854,7 @@
   },
   {
     "table": "Nationality",
+    "th_name": "สัญชาติ",
     "data": [
       {
         "field": "Id",
@@ -8876,6 +8880,7 @@
   },
   {
     "table": "OperationFile",
+    "th_name": "ไฟล์ปฏิบัติการ",
     "data": [
       {
         "field": "Id",
@@ -8921,6 +8926,7 @@
   },
   {
     "table": "OrderCheckItemTransform",
+    "th_name": "คำสั่งตรวจสอบรายการเปลียนแปลง",
     "data": [
       {
         "field": "Id",
@@ -8958,6 +8964,7 @@
   },
   {
     "table": "OrderContract",
+    "th_name": "สั่งซื้อสัญญา",
     "data": [
       {
         "field": "Id",
@@ -9011,6 +9018,7 @@
   },
   {
     "table": "OrderForm",
+    "th_name": "แบบฟอร์มสั่งซื้อ",
     "data": [
       {
         "field": "Id",
@@ -9096,6 +9104,7 @@
   },
   {
     "table": "OrderItem",
+    "th_name": "รายการสั่งซื้อ",
     "data": [
       {
         "field": "SupplierId",
@@ -9169,6 +9178,7 @@
   },
   {
     "table": "OrderItemPlanReferenceItem",
+    "th_name": "รายการสั่งซื้อรายการอ้างอิงแผน",
     "data": [
       {
         "field": "Id",
@@ -9234,6 +9244,7 @@
   },
   {
     "table": "OrFormActionLog",
+    "th_name": "ประวัติแบบฟอร์มสั่งซื้อ",
     "data": [
       {
         "field": "Id",
@@ -9287,6 +9298,7 @@
   },
   {
     "table": "Organization",
+    "th_name": "องค์กร",
     "data": [
       {
         "field": "Id",
@@ -9368,6 +9380,7 @@
   },
   {
     "table": "OrganizationVisiting",
+    "th_name": "การเยี่ยมชมองค์กร",
     "data": [
       {
         "field": "Id",
@@ -9417,6 +9430,7 @@
   },
   {
     "table": "OutsideDuty",
+    "th_name": "นอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9482,6 +9496,7 @@
   },
   {
     "table": "OutsideDutyCancellation",
+    "th_name": "การยกเลิกนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9551,6 +9566,7 @@
   },
   {
     "table": "OutsideDutyGroup",
+    "th_name": "กลุ่มนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9616,6 +9632,7 @@
   },
   {
     "table": "OutsideDutyGroupCancellation",
+    "th_name": "ยกเลิกกลุ่มนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9677,6 +9694,7 @@
   },
   {
     "table": "OutsideDutyReportActionLog",
+    "th_name": "รายงานการปฏิบัติงานนอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9730,6 +9748,7 @@
   },
   {
     "table": "OutsideDutyReportForm",
+    "th_name": "แบบรายงานการปฏิบัติหน้าที่นอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9799,6 +9818,7 @@
   },
   {
     "table": "OutsideDutyReportReceipt",
+    "th_name": "ใบรับแจ้งเหตุนอกสถานที่",
     "data": [
       {
         "field": "Id",
@@ -9844,6 +9864,7 @@
   },
   {
     "table": "OutsideDutyReportStaff",
+    "th_name": "รายงานพนักงานนอกหน้าที่",
     "data": [
       {
         "field": "Id",
@@ -9901,6 +9922,7 @@
   },
   {
     "table": "OverTimeMultiplyRate",
+    "th_name": "อัตตราค่าล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -9950,6 +9972,7 @@
   },
   {
     "table": "OverTimeRatePerHour",
+    "th_name": "อัตตราค่าล่วงเวลาต่อชั่วโมง",
     "data": [
       {
         "field": "Id",
@@ -9987,6 +10010,7 @@
   },
   {
     "table": "OverTimeRequestForm",
+    "th_name": "คำร้องทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10056,6 +10080,7 @@
   },
   {
     "table": "OverTimeRequestFormGroup",
+    "th_name": "คำร้องกลุ่มทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10117,6 +10142,7 @@
   },
   {
     "table": "OverTimeRequestResultFormGroup",
+    "th_name": "ผลลัพธ์การทำงานล่วงเวลา",
     "data": [
       {
         "field": "Id",
@@ -10178,6 +10204,7 @@
   },
   {
     "table": "PastDevelopmentRecord",
+    "th_name": "บันทึกการพัฒนาที่ผ่านมา",
     "data": [
       {
         "field": "Id",
@@ -10235,6 +10262,7 @@
   },
   {
     "table": "PerformanceIndicator",
+    "th_name": "ตัวบ่งชี้ประสิทธิภาพ",
     "data": [
       {
         "field": "Id",
@@ -10313,6 +10341,7 @@
   },
   {
     "table": "PerformanceIndicatorFile",
+    "th_name": "ไฟล์ ตัวบ่งชี้ประสิทธิภาพ",
     "data": [
       {
         "field": "Id",
@@ -10362,6 +10391,7 @@
   },
   {
     "table": "PerformanceYearlyEvaluationForm",
+    "th_name": "แบบประเมินผลการปฏิบัติงานประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10424,6 +10454,7 @@
   },
   {
     "table": "PerformanceYearlyEvaluationWeight",
+    "th_name": "น้ำหนักการปฏิบัติงานการประเมินประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10489,6 +10520,7 @@
   },
   {
     "table": "PerfYearlyEvalFormActionLog",
+    "th_name": "ประวัติการปฏิบัติงานการประเมินประจำปี",
     "data": [
       {
         "field": "Id",
@@ -10550,6 +10582,7 @@
   },
   {
     "table": "PersonalAbility",
+    "th_name": "ความสามารถส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -10583,6 +10616,7 @@
   },
   {
     "table": "PlanActivity",
+    "th_name": "แผนกิจกรรม",
     "data": [
       {
         "field": "Id",
@@ -10664,6 +10698,7 @@
   },
   {
     "table": "PlanActivityActionLog",
+    "th_name": "ประวัติแผนกิจกรรม",
     "data": [
       {
         "field": "Id",
@@ -10717,6 +10752,7 @@
   },
   {
     "table": "PlanCore",
+    "th_name": "แผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -10807,6 +10843,7 @@
   },
   {
     "table": "PlanCoreActionLog",
+    "th_name": "ประวัติแผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -10860,6 +10897,7 @@
   },
   {
     "table": "PlanCoreStaffPermission",
+    "th_name": "บุลคลากรในแผน",
     "data": [
       {
         "field": "Id",
@@ -10893,6 +10931,7 @@
   },
   {
     "table": "PlanCrudpolicy",
+    "th_name": "นโยบายแผนงาน ระบบ",
     "data": [
       {
         "field": "Id",
@@ -10950,6 +10989,7 @@
   },
   {
     "table": "PlanDepartmentStaffPermission",
+    "th_name": "บุคลากรในแผนงานแผนก",
     "data": [
       {
         "field": "Id",
@@ -10979,6 +11019,7 @@
   },
   {
     "table": "PlanFile",
+    "th_name": "ไฟล์ แผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11057,6 +11098,7 @@
   },
   {
     "table": "PlanItem",
+    "th_name": "รายการในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11251,6 +11293,7 @@
   },
   {
     "table": "PlanItemActionLog",
+    "th_name": "ประวัติรายการในแผน",
     "data": [
       {
         "field": "Id",
@@ -11304,6 +11347,7 @@
   },
   {
     "table": "PlanItemType",
+    "th_name": "ประเภทรายการในแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11357,6 +11401,7 @@
   },
   {
     "table": "PlanMonthlyOperation",
+    "th_name": "แผนการดำเนินงานรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11430,6 +11475,7 @@
   },
   {
     "table": "PlanMonthlyOperationChangeLog",
+    "th_name": "บันทึกการเปลี่ยนแปลงการดำเนินงานแผนรายเดือน",
     "data": [
       {
         "field": "Id",
@@ -11491,6 +11537,7 @@
   },
   {
     "table": "PlanPerson",
+    "th_name": "แผนงานบุคคล",
     "data": [
       {
         "field": "Id",
@@ -11536,6 +11583,7 @@
   },
   {
     "table": "PlanType",
+    "th_name": "ประเภทแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -11581,6 +11629,7 @@
   },
   {
     "table": "PostDevelopmentRecordEvaluationForm",
+    "th_name": "แบบฟอร์มหลังการพัฒนาบันทึกการประเมิน",
     "data": [
       {
         "field": "Id",
@@ -11642,6 +11691,7 @@
   },
   {
     "table": "PrinciplePlanTag",
+    "th_name": "แผนงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -11679,6 +11729,7 @@
   },
   {
     "table": "ProbationEvaluationForm",
+    "th_name": "แบบประเมินภาคทัณฑ์",
     "data": [
       {
         "field": "Id",
@@ -11740,6 +11791,7 @@
   },
   {
     "table": "ProcureComitteeGroup",
+    "th_name": "กลุ่มคณะกรรมการจัดหา",
     "data": [
       {
         "field": "Id",
@@ -11777,6 +11829,7 @@
   },
   {
     "table": "ProcureComitteePerson",
+    "th_name": "คณะกรรมการจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11830,6 +11883,7 @@
   },
   {
     "table": "ProcureContract",
+    "th_name": "สัญญาจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11895,6 +11949,7 @@
   },
   {
     "table": "ProcureContractInstallment",
+    "th_name": "จัดซื้อจัดจ้างผ่อนชำระ",
     "data": [
       {
         "field": "Id",
@@ -11952,6 +12007,7 @@
   },
   {
     "table": "ProcureDepartmentPermission",
+    "th_name": "แผนกสามารถจัดซื้อจัดจ้าง",
     "data": [
       {
         "field": "Id",
@@ -11969,6 +12025,7 @@
   },
   {
     "table": "ProcureFile",
+    "th_name": "ไฟล์ จัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12062,6 +12119,7 @@
   },
   {
     "table": "ProcureLoaningCancelForm",
+    "th_name": "ฟอร์มยกเลิกการยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12115,6 +12173,7 @@
   },
   {
     "table": "ProcureLoaningFormActionLog",
+    "th_name": "ประวัติฟอร์มยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12176,6 +12235,7 @@
   },
   {
     "table": "ProcureLoaningItem",
+    "th_name": "รายการเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12265,6 +12325,7 @@
   },
   {
     "table": "ProcureLoaningItemPlanReferenceItem",
+    "th_name": "รายการยืมอ้างอิงตามแผนงานอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -12330,6 +12391,7 @@
   },
   {
     "table": "ProcureLoaningMemoForm",
+    "th_name": "แบบฟอร์มขอยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12419,6 +12481,7 @@
   },
   {
     "table": "ProcureLoaningReturnForm",
+    "th_name": "แบบฟอร์มขอคืนเงินกู้",
     "data": [
       {
         "field": "Id",
@@ -12472,6 +12535,7 @@
   },
   {
     "table": "ProcureLoaningSettleItem",
+    "th_name": "รายการชำระเงินยืม",
     "data": [
       {
         "field": "Id",
@@ -12545,6 +12609,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalForm",
+    "th_name": "ฟอร์มเบิกเงินบืม",
     "data": [
       {
         "field": "Id",
@@ -12606,6 +12671,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalFormPlanView",
+    "th_name": "รายการยืมเงินจากแผนงาน",
     "data": [
       {
         "field": "Id",
@@ -12671,6 +12737,7 @@
   },
   {
     "table": "ProcureLoaningWithdrawalItem",
+    "th_name": "รายการยืมเงิน",
     "data": [
       {
         "field": "Id",
@@ -12748,6 +12815,7 @@
   },
   {
     "table": "ProcureRepairForm",
+    "th_name": "ฟอร์มจัดซื้อซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12809,7 +12877,7 @@
   },
   {
     "table": "ProcureRepairFormActionLog",
-
+    "th_name": "ประวัติจัดซื้อซ้อมบำรุง",
     "data": [
       {
         "field": "Id",
@@ -12863,6 +12931,7 @@
   },
   {
     "table": "ProcureSeFormActionLog",
+    "th_name": "ประวัติการจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12924,6 +12993,7 @@
   },
   {
     "table": "ProcureSettleMemoForm",
+    "th_name": "ฟอร์มบันทึกข้อตกลงจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -12989,6 +13059,7 @@
   },
   {
     "table": "ProcureSettleReceiptForm",
+    "th_name": "ฟอร์มใบเสร็จรับเงินจัดซื้อ",
     "data": [
       {
         "field": "Id",
@@ -13050,6 +13121,7 @@
   },
   {
     "table": "ProcureSettleReceiptFormPlanView",
+    "th_name": "ใบเสร็จรับเงินจัดซื้อจากแผนงาน",
     "data": [
       {
         "field": "Id",
