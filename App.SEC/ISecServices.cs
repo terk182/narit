@@ -77,6 +77,7 @@ namespace App.SEC
         List<PlanTypeDto> SearchPlanItemPlanTypeGetByFiscalYear(int FiscalYear);
 
         ViewPlanActivityListDataDto SearchPlanItemById(int PlanActivityId);
+        List<ViewPlanItemNameDto> SearchPlanItemNameByPlanActivityId(int PlanActivityId);
         List<ViewPlanForActivityByDepartmentTable> ReceivedReservedBudgetByPlanCreateTableData(int planTypeId, int fiscalYear, int depId = 0);
         List<ViewPlanForActivityByPlanTypeBudgetTypeTable> ViewPlanForActivityByPlanTypeBudgetTypeCreateTableData(int planTypeId, int fiscalYear, int depId = 0);
         ViewReceivedReservedBudgetByPlanActivityDto ViewReceivedReservedBudgetByPlanActivity(int PlanActivityId);

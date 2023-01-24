@@ -893,7 +893,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-
+        [HttpGet]
+        [Route("/Plan/Operate/ViewPlanItemNamebyPlanActivity/{PlanActivityId}")]
+        public IActionResult SearchPlanItemNameByPlanActivityId(int PlanActivityId)
+        {
+            var data = _SecServices.SearchPlanItemNameByPlanActivityId(PlanActivityId);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore/{PlanCoreId}")]

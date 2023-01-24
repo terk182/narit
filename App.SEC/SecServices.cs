@@ -1407,7 +1407,20 @@ namespace App.SEC
 
             return _list1;
         }
-
+        public List<ViewPlanItemNameDto> SearchPlanItemNameByPlanActivityId(int PlanActivityId)
+        {
+            var _result = new List<ViewPlanItemNameDto>();
+            var data = _database.PlanItems.Where(x => x.PlanActivityId == PlanActivityId && x.Active == true).ToList();
+            foreach (var item in data)
+            {
+                _result.Add(new ViewPlanItemNameDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                });
+            }
+            return _result;
+        }
         public ViewPlanActivityListDataDto SearchPlanItemById(int PlanActivityId)
         {
             var result = new ViewPlanActivityListDataDto();
