@@ -148,7 +148,80 @@ namespace ex_web.Controllers
         }
 
 
+<<<<<<< Updated upstream
         
+=======
+        public Child  check_tree(string table)
+        {
+            var result = new Child();
+            var list = new List<Child>();
+            string gg = backlist(table);
+            var data = _db_class.Where(x => x.table == gg).FirstOrDefault();
+            if(data != null)
+            {
+                foreach (var item in data.data)
+                {
+                    if (item.type == "virtual")
+                    {  
+                        if (item.field != gg)
+                        {
+                            if (table_c != gg)
+                            {
+                                table_c = table;
+                                list.Add(new Child
+                                {
+                                    name = item.field,
+                                    type = item.type,
+                                    children = check_tree(item.field).children
+                                });
+                            }
+                        }
+                        
+                    }
+
+                }
+                if(list.Count == 0)
+                {
+                    list.Add(new Child
+                    {
+                        name = table,
+                        type = "end",
+                    });
+                }
+            }
+            else
+            {
+                list.Add(new Child
+                {
+                    name = table,
+                    type = "end",
+
+                });
+            }
+            result.name= table;
+            result.children = list;
+            return result;
+        }
+         public string backlist(string table)
+        {
+            var get_backlist = _backlist;
+            var data = _db_class;
+          
+            string nane = table;
+            foreach (var backlist in get_backlist)
+            {
+                if (table == backlist.name)
+                {
+                    nane = backlist.target;
+                    break;
+
+                }
+            }
+            return nane;
+
+        }
+
+>>>>>>> Stashed changes
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
