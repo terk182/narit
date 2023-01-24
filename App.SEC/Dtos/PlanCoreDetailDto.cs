@@ -41,5 +41,6 @@ namespace App.SEC.Dtos
         public int? FundSourceId { get; set; }
         public int? ParentPlanCoreId { get; set; }
         public int? MissionId { get; set; }
+        public int? StrategyId { get; set; }
     }
 }

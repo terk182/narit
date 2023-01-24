@@ -2442,7 +2442,8 @@ namespace App.SEC
                     FundCategoryEnum = item.FundCategoryEnum,
                     FundSourceId = item.FundSourceId,
                     ParentPlanCoreId = item.ParentPlanCoreId,
-                    MissionId = item.MissionId
+                    MissionId = item.MissionId,
+                    StrategyId = item.StrategyId
                 });
 
 
@@ -4242,6 +4243,7 @@ namespace App.SEC
                 _Plancore.FundCategoryEnum = request.FundCategoryEnum;
                 _Plancore.ParentPlanCoreId = request.ParentPlanCoreId;
                 _Plancore.MissionId = request.MissionId;
+                _Plancore.StrategyId = request.StrategyId;
                 //if (request.ParentDepartmentId != 0)
                 //{
                 //    _Department.ParentDepartmentId = request.ParentDepartmentId;
