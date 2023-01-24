@@ -126,6 +126,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<FingerPrintDbconnector> FingerPrintDbconnectors { get; set; } = null!;
         public virtual DbSet<FingerPrintDbrawData> FingerPrintDbrawDatas { get; set; } = null!;
         public virtual DbSet<FingerPrintReaderSensor> FingerPrintReaderSensors { get; set; } = null!;
+        public virtual DbSet<FormRequest> FormRequests { get; set; } = null!;
         public virtual DbSet<FrFormActionLog> FrFormActionLogs { get; set; } = null!;
         public virtual DbSet<FundSource> FundSources { get; set; } = null!;
         public virtual DbSet<FundType> FundTypes { get; set; } = null!;
@@ -319,6 +320,8 @@ namespace narit_mis_api.Models
         public virtual DbSet<TelephoneBill> TelephoneBills { get; set; } = null!;
         public virtual DbSet<TempYearlyEvaluation5859Score> TempYearlyEvaluation5859Scores { get; set; } = null!;
         public virtual DbSet<TemporaryEmployeeRequestForm> TemporaryEmployeeRequestForms { get; set; } = null!;
+        public virtual DbSet<ViewFormRequestAndPlanCoresDetail> ViewFormRequestAndPlanCoresDetails { get; set; } = null!;
+        public virtual DbSet<ViewRequestFormDetail> ViewRequestFormDetails { get; set; } = null!;
         public virtual DbSet<VwAspnetApplication> VwAspnetApplications { get; set; } = null!;
         public virtual DbSet<VwAspnetMembershipUser> VwAspnetMembershipUsers { get; set; } = null!;
         public virtual DbSet<VwAspnetProfile> VwAspnetProfiles { get; set; } = null!;
@@ -3217,6 +3220,17 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.LastSourceCheckTimeRead)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<FormRequest>(entity =>
+            {
+                entity.ToTable("FormRequest", "Procure");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Datetime).HasColumnType("datetime");
+
+                entity.Property(e => e.WriteDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<FrFormActionLog>(entity =>
@@ -8785,6 +8799,20 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.Salary).HasColumnType("decimal(12, 2)");
 
                 entity.Property(e => e.WriteDate).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<ViewFormRequestAndPlanCoresDetail>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("ViewFormRequestAndPlanCoresDetail");
+            });
+
+            modelBuilder.Entity<ViewRequestFormDetail>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("View_RequestFormDetail");
             });
 
             modelBuilder.Entity<VwAspnetApplication>(entity =>

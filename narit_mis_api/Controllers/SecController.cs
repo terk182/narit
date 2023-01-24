@@ -468,10 +468,10 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("/Plan/Operate/EditPlan/GetAllPlanCorebyStaffId/{year}/{staffid}")]
-        public IActionResult GetAllPlanCorebyStaffId(int year, int staffid)
+        [Route("/Plan/Operate/EditPlan/getAllPlanCorebyStaffId/{year}/{staffId}")]
+        public IActionResult GetAllPlanCorebyStaffId(int year, int staffId)
         {
-            var data = _SecServices.GetAllPlanCorebyStaffId(year,staffid);
+            var data = _SecServices.GetAllPlanCorebyStaffId(year, staffId);
             return Json(data);
         }
         [HttpGet]
@@ -493,6 +493,13 @@ namespace narit_mis_api.Controllers
         public IActionResult ResponsiblePersonSetUp(ResponsiblePersonRequest request)
         {
             var data = _SecServices.ResponsiblePersonSetUp(request);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Operate/EditPlan/PerformanceIndicatorSetUp")]
+        public IActionResult PerformanceIndicatorSetUp(PerformanceIndicatorRequest request)
+        {
+            var data = _SecServices.PerformanceIndicatorSetUp(request);
             return Json(data);
         }
         [HttpGet]
@@ -575,7 +582,7 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("/Plan/Operate/EditPlanItem")]
-        public IActionResult EditPlanItem(PlanItem request)
+        public IActionResult EditPlanItem(PlanItemRequest request)
         {
             var data = _SecServices.EditPlanItem(request);
             return Json(data);
@@ -886,7 +893,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
-
+        [HttpGet]
+        [Route("/Plan/Operate/ViewPlanItemNamebyPlanActivity/{PlanActivityId}")]
+        public IActionResult SearchPlanItemNameByPlanActivityId(int PlanActivityId)
+        {
+            var data = _SecServices.SearchPlanItemNameByPlanActivityId(PlanActivityId);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("/Plan/Operate/ViewPlanActivityOperationPeriodByPlanCore/{PlanCoreId}")]

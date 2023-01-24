@@ -16,7 +16,6 @@ namespace App.Common
         List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
         CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto GeFormActionLog);
         List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
-
         CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog);
         List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
 
