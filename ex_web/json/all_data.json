@@ -4308,6 +4308,7 @@
   },
   {
     "table": "EfilingDepartmentPermission",
+    "th_name": "การยื่นคำร้องขอเอกสารอนุญาตทางอิเล็กทรอนิกส์ของหน่วยงาน",
     "data": [
       {
         "field": "Id",
@@ -4325,6 +4326,7 @@
   },
   {
     "table": "ElectricityBill",
+    "th_name": "บิลค่าไฟ",
     "data": [
       {
         "field": "Id",
@@ -4386,6 +4388,7 @@
   },
   {
     "table": "EmploymentContract",
+    "th_name": "สัญญาจ้าง",
     "data": [
       {
         "field": "Id",
@@ -4447,6 +4450,7 @@
   },
   {
     "table": "FamilialRelationship",
+    "th_name": "ความสัมพันธ์ในครอบครัว",
     "data": [
       {
         "field": "Id",
@@ -4472,6 +4476,7 @@
   },
   {
     "table": "FilingDocMessageReferrer",
+    "th_name": "จัดเก็บเอกสารผู้อ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -4505,6 +4510,7 @@
   },
   {
     "table": "FilingDocProjectRelation",
+    "th_name": "จัดเก็บเอกสารความสัมพันธ์ของโครงการ",
     "data": [
       {
         "field": "Id",
@@ -4554,6 +4560,7 @@
   },
   {
     "table": "FilingDocTagRelation",
+    "th_name": "การจัดเก็บแท็กเอกสารที่เกี่ยวข้อง",
     "data": [
       {
         "field": "Id",
@@ -4587,6 +4594,7 @@
   },
   {
     "table": "FilingDocument",
+    "th_name": "ยื่นเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -4692,6 +4700,7 @@
   },
   {
     "table": "FilingDocumentAccessLog",
+    "th_name": "บันทึกการเข้าถึงเอกสารการยื่น",
     "data": [
       {
         "field": "Id",
@@ -4737,6 +4746,7 @@
   },
   {
     "table": "FilingDocumentHistory",
+    "th_name": "ประวัติการขอยื่นเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -4798,6 +4808,7 @@
   },
   {
     "table": "FilingDocumentReferrer",
+    "th_name": "การยื่นเอกสารอ้างอิง",
     "data": [
       {
         "field": "Id",
@@ -4835,6 +4846,7 @@
   },
   {
     "table": "FilingDocWarehouseRelation",
+    "th_name": "จัดเก็บเอกสารคลังสินค้า",
     "data": [
       {
         "field": "Id",
@@ -4868,6 +4880,7 @@
   },
   {
     "table": "FilingFile",
+    "th_name": "จัดเก็บไฟล์",
     "data": [
       {
         "field": "Id",
@@ -4929,6 +4942,7 @@
   },
   {
     "table": "FilingFileAccessLog",
+    "th_name": "การเข้าถึงการจัดเก็บไฟล์",
     "data": [
       {
         "field": "Id",
@@ -4978,6 +4992,7 @@
   },
   {
     "table": "FilingGeneralOrder",
+    "th_name": "ยื่นคำสั่งทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -5003,6 +5018,7 @@
   },
   {
     "table": "FilingHrdepartmentPermission",
+    "th_name": "การยื่นขออนุญาตแผนก HR",
     "data": [
       {
         "field": "Id",
@@ -5032,6 +5048,7 @@
   },
   {
     "table": "FilingHrdepartmentStaffPermission",
+    "th_name": "การยื่นขออนุญาตของพนักงานแผนก HR",
     "data": [
       {
         "field": "Id",
@@ -5065,6 +5082,7 @@
   },
   {
     "table": "FilingOpinion",
+    "th_name": "การยื่นความเห็น",
     "data": [
       {
         "field": "Id",
@@ -5082,6 +5100,7 @@
   },
   {
     "table": "FilingPersonalMarkup",
+    "th_name": "จัดเก็บคะแนนส่วนตัว",
     "data": [
       {
         "field": "Id",
@@ -5115,6 +5134,7 @@
   },
   {
     "table": "FilingPostscript",
+    "th_name": "จัดเก็บโพสต์สคริปต์",
     "data": [
       {
         "field": "Id",
@@ -5132,6 +5152,7 @@
   },
   {
     "table": "FilingProject",
+    "th_name": "จัดเก็บโปรเจค",
     "data": [
       {
         "field": "Id",
@@ -5177,6 +5198,7 @@
   },
   {
     "table": "FilingRegisterBook",
+    "th_name": "จัดเก็บเล่มทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5242,6 +5264,7 @@
   },
   {
     "table": "FilingRegisterNumber",
+    "th_name": "จัดเก็บเลขที่ใบลงทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5307,6 +5330,7 @@
   },
   {
     "table": "FilingRegisterNumberLog",
+    "th_name": "ยื่นบันทึกหมายเลขทะเบียน",
     "data": [
       {
         "field": "Id",
@@ -5340,6 +5364,7 @@
   },
   {
     "table": "FilingSecretary",
+    "th_name": "ยื่นขอเลขานุการ",
     "data": [
       {
         "field": "Id",
@@ -5377,6 +5402,7 @@
   },
   {
     "table": "FilingSendForm",
+    "th_name": "ยื่นส่งแบบฟอร์ม",
     "data": [
       {
         "field": "Id",
@@ -5394,6 +5420,7 @@
   },
   {
     "table": "FilingTag",
+    "th_name": "แท็กการยื่น",
     "data": [
       {
         "field": "Id",
@@ -5439,6 +5466,7 @@
   },
   {
     "table": "FinancialReimbursementForm",
+    "th_name": "แบบฟอร์มการชำระเงินคืนทางการเงิน",
     "data": [
       {
         "field": "Id",
@@ -5504,6 +5532,7 @@
   },
   {
     "table": "FinancialReimbursementItem",
+    "th_name": "รายการการชำระเงินคืนทางการเงิน",
     "data": [
       {
         "field": "Id",
@@ -5565,6 +5594,7 @@
   },
   {
     "table": "FingerPrintDbconnector",
+    "th_name": "ตัวเชื่อมต่อ DB ลายนิ้วมือ",
     "data": [
       {
         "field": "Id",
@@ -5610,6 +5640,8 @@
   },
   {
     "table": "FingerPrintDbrawData",
+    "th_name": "ข้อมูลลายนิ้วมือ",
+
     "data": [
       {
         "field": "Id",
@@ -5667,6 +5699,7 @@
   },
   {
     "table": "FingerPrintReaderSensor",
+    "th_name": "เซ็นเซอร์อ่านลายนิ้วมือ",
     "data": [
       {
         "field": "Id",
@@ -5700,6 +5733,8 @@
   },
   {
     "table": "FrFormActionLog",
+    "th_name": "แบบฟอร์มบันทึกการดำเนินการการชำระเงินคืนทางการเงิน",
+
     "data": [
       {
         "field": "Id",
@@ -5761,6 +5796,7 @@
   },
   {
     "table": "FundType",
+    "th_name": "ประเภทกองทุน",
     "data": [
       {
         "field": "Id",
@@ -5802,6 +5838,7 @@
   },
   {
     "table": "GarbageBill",
+    "th_name": "บิลขยะ",
     "data": [
       {
         "field": "Id",
@@ -5855,6 +5892,7 @@
   },
   {
     "table": "GeBorrowFormActionLog",
+    "th_name": "บันทึกการดำเนินการแบบฟอร์มยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -5916,6 +5954,7 @@
   },
   {
     "table": "GedataGroup",
+    "th_name": "ข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -5973,6 +6012,7 @@
   },
   {
     "table": "GeExtendFormActionLog",
+    "th_name": "ขยายบันทึกการดำเนินการของแบบฟอร์มข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6026,6 +6066,7 @@
   },
   {
     "table": "GeFormActionLog",
+    "th_name": "บันทึกการดำเนินการของแบบฟอร์มข้อมูลค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6087,6 +6128,7 @@
   },
   {
     "table": "GememoFormSchedule",
+    "th_name": "แบบฟอร์มบันทึกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6136,6 +6178,7 @@
   },
   {
     "table": "GeneralExpense",
+    "th_name": "ค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6241,6 +6284,7 @@
   },
   {
     "table": "GeneralExpenseCancelForm",
+    "th_name": "ฟอร์มยกเลิกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6298,6 +6342,7 @@
   },
   {
     "table": "GeneralExpenseCancelItem",
+    "th_name": "ยกเลิกรายการค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6355,6 +6400,7 @@
   },
   {
     "table": "GeneralExpenseExtendForm",
+    "th_name": "แบบฟอร์มขยายค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6420,6 +6466,7 @@
   },
   {
     "table": "GeneralExpenseMemoForm",
+    "th_name": "แบบฟอร์มบันทึกค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6537,6 +6584,7 @@
   },
   {
     "table": "GeneralExpensePersonalBorrowForm",
+    "th_name": "แบบฟอร์มการยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -6610,6 +6658,7 @@
   },
   {
     "table": "GeneralExpensePersonalBorrowItem",
+    "th_name": "รายการยืมค่าใช้จ่ายทั่วไปส่วนบุคคล",
     "data": [
       {
         "field": "Id",
@@ -6651,6 +6700,7 @@
   },
   {
     "table": "GeneralExpenseReturnForm",
+    "th_name": "แบบฟอร์มการคืนค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6708,6 +6758,7 @@
   },
   {
     "table": "GeneralExpenseReturnItem",
+    "th_name": "รายการคืนค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6765,6 +6816,7 @@
   },
   {
     "table": "GeneralExpenseSettleForm",
+    "th_name": "แบบฟอร์มการชำระค่าใช้จ่ายทั่วไป",
     "data": [
       {
         "field": "Id",
@@ -6838,6 +6890,7 @@
   },
   {
     "table": "GovernmentDisbursementGoal",
+    "th_name": "เป้าหมายการเบิกจ่ายภาครัฐ",
     "data": [
       {
         "field": "Id",
@@ -6879,6 +6932,8 @@
   },
   {
     "table": "GprocurementRss",
+    "th_name": "จัดซื้อจัดจ้าง",
+
     "data": [
       {
         "field": "Id",
@@ -6928,6 +6983,7 @@
   },
   {
     "table": "Holiday",
+    "th_name": "วันหยุด",
     "data": [
       {
         "field": "Id",
@@ -6961,6 +7017,7 @@
   },
   {
     "table": "HrcertifiedDocumentRequestForm",
+    "th_name": "แบบฟอร์มขอรับรองเอกสาร",
     "data": [
       {
         "field": "Id",
@@ -7018,6 +7075,7 @@
   },
   {
     "table": "Hrdepartment",
+    "th_name": "แผนก Hr",
     "data": [
       {
         "field": "Id",
@@ -7067,6 +7125,7 @@
   },
   {
     "table": "HrdepartmentStaffPermissionForHr",
+    "th_name": "แผนก Hr พนักงานอนุญาตสำหรับ Hr",
     "data": [
       {
         "field": "Id",
@@ -7096,6 +7155,7 @@
   },
   {
     "table": "HrdevelopmentType",
+    "th_name": "ประเภทการพัฒนา Hr",
     "data": [
       {
         "field": "Id",
@@ -7121,6 +7181,7 @@
   },
   {
     "table": "Hrfile",
+    "th_name": "ไฟล์ Hr",
     "data": [
       {
         "field": "Id",
@@ -7198,6 +7259,7 @@
   },
   {
     "table": "Insignia",
+    "th_name": "ตราประจำตำแหน่ง",
     "data": [
       {
         "field": "Id",
@@ -7251,6 +7313,7 @@
   },
   {
     "table": "InsigniaRank",
+    "th_name": "ระดับตราประจำตำแหน่ง",
     "data": [
       {
         "field": "Id",
@@ -7272,6 +7335,7 @@
   },
   {
     "table": "Itinerary",
+    "th_name": "กำหนดการเดินทาง",
     "data": [
       {
         "field": "Id",
@@ -7325,6 +7389,7 @@
   },
   {
     "table": "JobDescription",
+    "th_name": "รายละเอียดงาน",
     "data": [
       {
         "field": "Id",
@@ -7374,6 +7439,7 @@
   },
   {
     "table": "JobFunctionalPosition",
+    "th_name": "ตำแหน่งสายงาน",
     "data": [
       {
         "field": "Id",
@@ -7395,6 +7461,7 @@
   },
   {
     "table": "JobPosition",
+    "th_name": "ตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7496,6 +7563,7 @@
   },
   {
     "table": "JobPositionGroup",
+    "th_name": "ตำแหน่งกลุ่มงาน",
     "data": [
       {
         "field": "Id",
@@ -7525,6 +7593,7 @@
   },
   {
     "table": "JobPositionKeyCompetencyDetail",
+    "th_name": "รายละเอียดตำแหน่งงานหลัก",
     "data": [
       {
         "field": "Id",
@@ -7566,6 +7635,7 @@
   },
   {
     "table": "JobPositionLevel",
+    "th_name": "ระดับตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7615,6 +7685,7 @@
   },
   {
     "table": "JobPositionType",
+    "th_name": "ประเภทตำแหน่งงาน",
     "data": [
       {
         "field": "Id",
@@ -7644,6 +7715,7 @@
   },
   {
     "table": "JobQualification",
+    "th_name": "คุณสมบัติงาน",
     "data": [
       {
         "field": "Id",
@@ -7713,6 +7785,7 @@
   },
   {
     "table": "JobResponsibility",
+    "th_name": "ความรับผิดชอบงาน",
     "data": [
       {
         "field": "Id",
@@ -7786,6 +7859,7 @@
   },
   {
     "table": "JobResponsibilityEvaluationForm",
+    "th_name": "แบบประเมินความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -7847,6 +7921,7 @@
   },
   {
     "table": "JobResponsibilityEvaluationItem",
+    "th_name": "รายการประเมินความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -7912,6 +7987,7 @@
   },
   {
     "table": "JobResponsibilityExpectScore",
+    "th_name": " คะแนนความรับผิดชอบต่องาน",
     "data": [
       {
         "field": "Id",
@@ -7981,6 +8057,7 @@
   },
   {
     "table": "JobResponsibilityGroup",
+    "th_name": "กลุ่มงานรับผิดชอบ",
     "data": [
       {
         "field": "Id",
@@ -8018,6 +8095,7 @@
   },
   {
     "table": "KeyCompetency",
+    "th_name": "ความสามารถที่สำคัญ",
     "data": [
       {
         "field": "Id",
@@ -8043,6 +8121,7 @@
   },
   {
     "table": "Leaf",
+    "th_name": "ใบหนังสือ",
     "data": [
       {
         "field": "Id",
@@ -8112,6 +8191,7 @@
   },
   {
     "table": "LeaveArchievedRecord",
+    "th_name":  "บันทึกเอกสารการลา",
     "data": [
       {
         "field": "Id",
@@ -8161,6 +8241,7 @@
   },
   {
     "table": "LeaveCancellationForm",
+    "th_name": "แบบฟอร์มยกเลิกการลา",
     "data": [
       {
         "field": "Id",
@@ -8226,6 +8307,7 @@
   },
   {
     "table": "LeaveType",
+    "th_name": "ประเภทการลา",
     "data": [
       {
         "field": "Id",
@@ -8259,6 +8341,7 @@
   },
   {
     "table": "LeaveTypeLimit",
+    "th_name": "ขีดจำกัดประเภทการลา",
     "data": [
       {
         "field": "Id",
@@ -8312,6 +8395,7 @@
   },
   {
     "table": "MedicalReimbursement",
+    "th_name": "เบิกค่ารักษาพยาบาล",
     "data": [
       {
         "field": "Id",
@@ -8377,6 +8461,7 @@
   },
   {
     "table": "MedicalRightRequestForm",
+    "th_name": "แบบคำร้องขอสิทธิการรักษาพยาบาล",
     "data": [
       {
         "field": "Id",
@@ -8434,6 +8519,7 @@
   },
   {
     "table": "Message",
+    "th_name": "ข้อความ",
     "data": [
       {
         "field": "Id",
@@ -8519,6 +8605,7 @@
   },
   {
     "table": "MessageHistory",
+    "th_name": "ประวัติข้อความ",
     "data": [
       {
         "field": "Id",
