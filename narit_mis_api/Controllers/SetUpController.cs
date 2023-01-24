@@ -1,7 +1,10 @@
 ﻿using App.PathDetail;
 using App.Plan;
+using App.Procure.Dtos;
 using App.SEC;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using narit_mis_api.Models;
 
 namespace narit_mis_api.Controllers
 {
@@ -18,6 +21,24 @@ namespace narit_mis_api.Controllers
 
             //_configuration = Configuration;
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
+        }
+        [HttpPost]
+        [Route("SetMisSsoMatching")]
+        public IActionResult SetMisSsoMatching(List<MisSsoMatching> req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.SetMisSsoMatching(req);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("GetMisSsoMatching")]
+        public IActionResult SetMisSsoMatching(MisSsoMatching req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.GetMisSsoMatching(req);
+
+            return Json(data);
         }
     }
 }
