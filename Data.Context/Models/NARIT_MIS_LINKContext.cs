@@ -4650,11 +4650,7 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<MisSsoMatching>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("MisSsoMatching");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Type).HasColumnName("type");
 

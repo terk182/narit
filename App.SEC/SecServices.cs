@@ -2402,6 +2402,53 @@ namespace App.SEC
             }
             return result;
         }
+        public List<PlanCoreDetailDto> GetPlanCoreDetail(int plancoreId)
+        {
+            var data = _database.PlanCores.Where(x => x.Id == plancoreId && x.Active == true);
+            var result = new List<PlanCoreDetailDto>();
+            foreach (var item in data)
+            {
+                result.Add(new PlanCoreDetailDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Code = item.Code,
+                    Active = item.Active,
+                    DepartmentId = item.DepartmentId,
+                    PlanTypeId = item.PlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Detail = item.Detail,
+                    Objective = item.Objective,
+                    Benefit = item.Benefit,
+                    PlanCategoryEnum = item.PlanCategoryEnum,
+                    ContinuousStatusEnum = item.ContinuousStatusEnum,
+                    //FundTypeId = item.FundTypeId,
+                    CreateDate = item.CreateDate,
+                    CreateByStaffId = item.CreateByStaffId,
+                    PrinciplePlanTagId = item.PrinciplePlanTagId,
+                    Weight = item.Weight,
+                    IsApproved = item.IsApproved,
+                    CodeNumber = item.CodeNumber,
+                    ProjectDuration = item.ProjectDuration,
+                    MonthStart = item.MonthStart,
+                    MonthEnd = item.MonthEnd,
+                    TargetIdListValue = item.TargetIdListValue,
+                    OtherTarget = item.OtherTarget,
+                    ExpenseTypeEnum = item.ExpenseTypeEnum,
+                    Output = item.Output,
+                    Outcome = item.Outcome,
+                    FundSourceEnum = item.FundSourceEnum,
+                    FundCategoryEnum = item.FundCategoryEnum,
+                    FundSourceId = item.FundSourceId,
+                    ParentPlanCoreId = item.ParentPlanCoreId,
+                    MissionId = item.MissionId
+                });
+
+
+            }
+            return result;
+        }
         public List<PlanActivityGetAllDto> GetPlanActivityfromPlanCoreId(int plancoreId)
         {
             var data = _database.PlanActivities.Where(x => x.PlanCoreId == plancoreId && x.Active == true);
@@ -4176,7 +4223,7 @@ namespace App.SEC
                 _Plancore.Benefit = request.Benefit;
                 _Plancore.PlanCategoryEnum = request.PlanCategoryEnum;
                 _Plancore.ContinuousStatusEnum = request.ContinuousStatusEnum;
-                _Plancore.FundTypeId = request.FundTypeId;
+                //_Plancore.FundTypeId = request.FundTypeId;
                 _Plancore.CreateDate = request.CreateDate;
                 _Plancore.CreateByStaffId = request.CreateByStaffId;
                 _Plancore.PrinciplePlanTagId = request.PrinciplePlanTagId;
@@ -4193,7 +4240,8 @@ namespace App.SEC
                 _Plancore.Outcome = request.Outcome;
                 _Plancore.FundSourceEnum = request.FundSourceEnum;
                 _Plancore.FundCategoryEnum = request.FundCategoryEnum;
-
+                _Plancore.ParentPlanCoreId = request.ParentPlanCoreId;
+                _Plancore.MissionId = request.MissionId;
                 //if (request.ParentDepartmentId != 0)
                 //{
                 //    _Department.ParentDepartmentId = request.ParentDepartmentId;

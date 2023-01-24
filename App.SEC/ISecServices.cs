@@ -100,6 +100,7 @@ namespace App.SEC
         List<PlanCoreGetAllDto> GetAllPlanCore(int fisicalYear);
         List<PlanCoreGetAllbyStaffIdDto> GetAllPlanCorebyStaffId(int fisicalYear, int staffId);
         List<PlanCoreGetAllDto> GetPlanCorefromParentPlanCore(int plancoreId);
+        List<PlanCoreDetailDto> GetPlanCoreDetail(int plancoreId);
         List<PlanActivityGetAllDto> GetPlanActivityfromPlanCoreId(int plancoreId);
         List<StaffGetAllDto> GetAllStaff();
         List<PrinciplePlanTagDto> EditPlanPrinciplePlanTags();

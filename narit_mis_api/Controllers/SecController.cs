@@ -475,6 +475,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Plan/Operate/EditPlan/GetPlanCoreDetail/{plancoreId}")]
+        public IActionResult GetPlanCoreDetail(int plancoreId)
+        {
+            var data = _SecServices.GetPlanCoreDetail(plancoreId);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Plan/Operate/EditPlan/GetPlanActivityfromPlanCoreId/{plancoreId}")]
         public IActionResult GetPlanActivityfromPlanCoreId(int plancoreId)
         {

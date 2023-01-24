@@ -1,13 +1,12 @@
-﻿using narit_mis_api.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.SEC.Models.Requests
+namespace App.SEC.Dtos
 {
-    public class PlanCoreRequest
+    public class PlanCoreDetailDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
@@ -42,7 +41,5 @@ namespace App.SEC.Models.Requests
         public int? FundSourceId { get; set; }
         public int? ParentPlanCoreId { get; set; }
         public int? MissionId { get; set; }
-        //public List<ResponsiblePerson>? ResponsiblePeople { get; set; }
-        //public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
     }
 }
