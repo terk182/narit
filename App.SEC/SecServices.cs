@@ -56,7 +56,12 @@ namespace App.SEC
         public List<ScheduleFisicalYear> GetScheduleFisicalYear()
         {
 
-            return _database.ScheduleFisicalYears.Where(x => x.Active).ToList();
+            return _database.ScheduleFisicalYears.ToList();
+        }
+        public List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year)
+        {
+            var stringyear = year.ToString();
+            return _database.ScheduleFisicalYears.Where(x => x.Name == stringyear).ToList();
         }
         public SecBaseResponse ScheduleFisicalYearSetUp(ScheduleFisicalYear Request)
         {
