@@ -451,7 +451,21 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/EditScheduleFisicalYear")]
+        public IActionResult GetScheduleFisicalYear()
+        {
+            var data = _SecServices.GetScheduleFisicalYear();
+            return Json(data);
+        }
 
+        [HttpPost]
+        [Route("/Plan/Operate/ScheduleFisicalYearSetUp")]
+        public IActionResult ScheduleFisicalYearSetUp(ScheduleFisicalYear request)
+        {
+            var data = _SecServices.ScheduleFisicalYearSetUp(request);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("/Plan/Operate/EditPlan/{PlanCoreId}")]

@@ -53,6 +53,23 @@ namespace App.SEC
             throw new NotImplementedException();
         }
 
+        public List<ScheduleFisicalYear> GetScheduleFisicalYear()
+        {
+
+            return _database.ScheduleFisicalYears.Where(x => x.Active).ToList();
+        }
+        public SecBaseResponse ScheduleFisicalYearSetUp(ScheduleFisicalYear Request)
+        {
+            _database.Entry(Request).State = Request.Id == 0 ?
+                                       EntityState.Added :
+                                       EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            return response;
+        }
         public List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear)
         {
             var response = new List<DepartmentDto>();
