@@ -295,6 +295,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<ResponsiblePerson> ResponsiblePersons { get; set; } = null!;
         public virtual DbSet<RolesGroup> RolesGroups { get; set; } = null!;
         public virtual DbSet<RqFormActionLog> RqFormActionLogs { get; set; } = null!;
+        public virtual DbSet<ScheduleFisicalYear> ScheduleFisicalYears { get; set; } = null!;
         public virtual DbSet<SeFormActionLog> SeFormActionLogs { get; set; } = null!;
         public virtual DbSet<SeReceiptFormActionLog> SeReceiptFormActionLogs { get; set; } = null!;
         public virtual DbSet<Secondment> Secondments { get; set; } = null!;
@@ -8077,6 +8078,29 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.RequestFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestFormRqFormActionLog");
+            });
+
+            modelBuilder.Entity<ScheduleFisicalYear>(entity =>
+            {
+                entity.ToTable("ScheduleFisicalYear", "Plan");
+
+                entity.Property(e => e.AddPlanCoreStatusEndDate).IsUnicode(false);
+
+                entity.Property(e => e.AddPlanCoreStatusStartDate).IsUnicode(false);
+
+                entity.Property(e => e.ApprovePlanCoreStatusEndDate).IsUnicode(false);
+
+                entity.Property(e => e.ApprovePlanCoreStatusStartDate).IsUnicode(false);
+
+                entity.Property(e => e.DisplayPlanCoreStatusEndDate).IsUnicode(false);
+
+                entity.Property(e => e.DisplayPlanCoreStatusStartDate).IsUnicode(false);
+
+                entity.Property(e => e.EditPlanCoreStatusEndDate).IsUnicode(false);
+
+                entity.Property(e => e.EditPlanCoreStatusStartDate).IsUnicode(false);
+
+                entity.Property(e => e.Name).IsUnicode(false);
             });
 
             modelBuilder.Entity<SeFormActionLog>(entity =>

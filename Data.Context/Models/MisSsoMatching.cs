@@ -13,5 +13,7 @@ namespace narit_mis_api.Models
         public string? SsoName { get; set; }
         public int Year { get; set; }
         public string? Type { get; set; }
+        public string? MisUid { get; set; }
+        public string? SsoUid { get; set; }
     }
 }
