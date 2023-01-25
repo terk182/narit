@@ -16,6 +16,7 @@ namespace App.SEC
     public interface ISecServices
     {
         List<ScheduleFisicalYear> GetScheduleFisicalYear();
+        List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year);
         SecBaseResponse ScheduleFisicalYearSetUp(ScheduleFisicalYear Request);
         List<BudgetType> GetByFiscalYear(int FiscalYear);
         PlanCrudpolicy GetPolicy(int year);
