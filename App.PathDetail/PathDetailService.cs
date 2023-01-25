@@ -1,6 +1,7 @@
 ﻿using App.Common.Models.Responses;
 using App.PathDetail.helper;
 using App.PathDetail.Models;
+using App.PathDetail.Requests;
 using Microsoft.EntityFrameworkCore;
 using narit_mis_api.Models;
 using System;
@@ -38,6 +39,14 @@ namespace App.PathDetail
             var json = new readjson<db_list>(path);
 
             return json.JsonNetResult()!;
+        }
+
+        public List<MisSsoMatching> search(MisUsers request)
+        {
+            var _MisSsoMatching = from c in _database.MisSsoMatchings
+                                  where request.name.Length > 0 ?  c.MisName.Contains(request.name) :true && request.uid.Length > 0 ? c.SsoUid.Contains(request.uid) : true
+                            select c;
+            return _MisSsoMatching.ToList();
         }
 
         public CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request)

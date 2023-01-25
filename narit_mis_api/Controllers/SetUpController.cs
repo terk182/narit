@@ -1,4 +1,5 @@
 ﻿using App.PathDetail;
+using App.PathDetail.Requests;
 using App.Plan;
 using App.Procure.Dtos;
 using App.SEC;
@@ -40,5 +41,17 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpPost]
+        [Route("searchMisSsoMatching")]
+        public IActionResult searchMisSsoMatching(MisUsers req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.search(req);
+
+            return Json(data);
+        }
+
+
+        
     }
 }

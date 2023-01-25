@@ -1,5 +1,6 @@
 ﻿using App.Common.Models.Responses;
 using App.PathDetail.Models;
+using App.PathDetail.Requests;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
@@ -16,5 +17,7 @@ namespace App.PathDetail
         List<backlist> get_backlist(string path);
         CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request);
         List<MisSsoMatching> GetMisSsoMatching(MisSsoMatching request);
+        List<MisSsoMatching> search(MisUsers request);
     }
+    
 }
