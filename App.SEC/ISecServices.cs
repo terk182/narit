@@ -90,7 +90,7 @@ namespace App.SEC
 
         PerformanceIndicatorData ViewPerformanceIndicatorByPlanActivityList(int PlanCoreId);
         calBudgetDetail calbudget(ICollection<PlanActivity> planActivity);
-
+        calBudgetDetail calbudget_by_Month(ICollection<PlanActivity> planActivity,int Month);
 
         List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson);
         List<PlanCoreApproveStatusReportResponse> PlanCoreApproveStatusReport(PlanCoreApproveStatusReportRequest request);

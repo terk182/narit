@@ -2311,7 +2311,101 @@ namespace App.SEC
             return calBudgetDetail;
         }
 
+        public calBudgetDetail calbudget_by_Month(ICollection<PlanActivity> planActivity, int Month)
+        {
+            var calBudgetDetail = new calBudgetDetail();
+            var _list_result = new ViewPlanForActivityByPlanTypeBudgetTypeTable();
+            var _list_main = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+            var b_num = new List<int>();
+            var b_list = new List<butgetW>();
+            foreach (var s1 in planActivity)
+            {
 
+
+                decimal _TotalBudgetCache = 0;
+                decimal _TotalAmount = 0;
+                decimal _NetAmount = 0;
+                decimal _NetBudgetCache = 0;
+                decimal _UsedBudgetCache = 0;
+                decimal _RemainBudgetPlanView = 0;
+                decimal _TotalBudget = 0;
+                var PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == s1.Id && x.Active).Include(x => x.SummaryStatementCaches).ToList();
+                var _list = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
+                foreach (var item in PlanItems)
+                {
+
+                    //_NetBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView;
+                    //_UsedBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView;
+                    //_RemainBudgetPlanView = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView;
+                    //_TotalBudgetCache = _MonthlyForecasts.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView;
+                    _list.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        FiscalYear = item.FiscalYear,
+                        Unit = item.Unit,
+                        BudgetTypeId = item.BudgetTypeId,
+                        TotalBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == Month).SingleOrDefault().TotalBudgetPlanView : 0,
+                        NetBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == Month).SingleOrDefault().NetBudgetPlanView : 0,
+                        UsedBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == Month).SingleOrDefault().UsedBudgetPlanView : 0,
+                        RemainBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == Month).SingleOrDefault().RemainBudgetPlanView : 0,
+                    });
+                    b_num.Add((int)item.BudgetTypeId);
+                    b_list.Add(new butgetW
+                    {
+                        BudgetTypeId = (int)item.BudgetTypeId,
+                        TotalBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView : 0
+
+                    });
+
+                }
+                _list_main.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
+                {
+                    Id = s1.Id,
+                    Name = s1.Name,
+                    FiscalYear = s1.FiscalYear,
+                    TotalBudget = _list.Sum(x => x.TotalBudget),
+                    TotalBudgetCache = _list.Sum(x => x.TotalBudgetCache),
+                    NetBudgetCache = _list.Sum(x => x.NetBudgetCache),
+                    UsedBudgetCache = _list.Sum(x => x.UsedBudgetCache),
+                    RemainBudgetCache = _list.Sum(x => x.RemainBudgetCache),
+
+                });
+
+
+
+
+            }
+
+            var Budgetmode = new List<Budgetmode>();
+
+
+            var bb = b_num.Distinct().ToArray();
+            foreach (var num in bb)
+            {
+
+                var hh = b_list.Where(x => x.BudgetTypeId == num).ToList();
+                Budgetmode.Add(new Budgetmode
+                {
+                    BudgetTypeId = num,
+                    list = _database.BudgetTypes.Where(x => x.Id == num).FirstOrDefault().Name,
+                    Budget = hh.Select(x => x.TotalBudgetCache).Sum()
+                });
+            }
+
+
+
+            _list_result.TotalBudget = _list_main.Sum(x => x.TotalBudget);
+            _list_result.TotalBudgetCache = _list_main.Sum(x => x.TotalBudgetCache);
+            _list_result.NetBudgetCache = _list_main.Sum(x => x.NetBudgetCache);
+            _list_result.UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache);
+            _list_result.RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache);
+
+            calBudgetDetail.Budget = _list_result;
+            calBudgetDetail.budgetmodes = Budgetmode;
+
+            return calBudgetDetail;
+        }
         public List<Team> ResponsiblePeopleData(ICollection<ResponsiblePerson> ResponsiblePerson)
         {
             var _Team = new List<Team>();
@@ -5308,6 +5402,8 @@ namespace App.SEC
                 }
                 return _OutsideDutyGroupRequest;
             }
-        }
+
+
+    }
     }
 

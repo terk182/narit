@@ -15,7 +15,7 @@ namespace App.PathDetail
     public class PathDetailService : IPathDetailService
     {
         private readonly NARIT_MIS_LINKContext _database;
-
+       
         public PathDetailService(NARIT_MIS_LINKContext context)
         {
             _database = context;

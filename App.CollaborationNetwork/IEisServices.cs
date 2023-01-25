@@ -1,6 +1,7 @@
 ﻿using App.EIS.Dtos;
 using App.EIS.Models.Requests;
 using App.EIS.Models.Responses;
+using App.SEC.Dtos;
 using narit_mis_api.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace App.EIS
         List<ProcureStoreLocationDto> getAllBuildingPlan();
 
         EisBaseResponse BillingLocationSetup(BillingLocationRequest request);
-        EisBaseResponse CalculatePlanTypeData(int fYear, int month);
+        List<calBudgetDetail> CalculatePlanTypeData(int fYear, int month);
         void CreateAreaChart();
         void CreateMOPAreaChart();
         void CreatePieChart();
