@@ -63,6 +63,8 @@ namespace App.PathDetail
                   db.SsoName = item.SsoName;
                   db.Year = item.Year;
                   db.Type = item.Type;
+                  db.MisUid = item.MisUid;
+                  db.SsoUid = item.SsoUid;
         _database.Entry(db).State = item.Id == 0 ?
                   EntityState.Added :
                   EntityState.Modified;
@@ -72,7 +74,7 @@ namespace App.PathDetail
             response.Success = result > 0 ? true : false;
 
             return response;
-            throw new NotImplementedException();
+    
         }
 
         public List<sitePage> Sitemap(string path)
