@@ -41,7 +41,14 @@ namespace App.SEC.Dtos
         public int FundSourceEnum { get; set; }
         public int FundCategoryEnum { get; set; }
         public int? FundSourceId { get; set; }
+        public decimal TotalBudget { get; set; }
+        public decimal TotalBudgetCache { get; set; }
+        public decimal NetBudgetCache { get; set; }
+        public decimal UsedBudgetCache { get; set; }
+        public decimal RemainBudgetCache { get; set; }
         public  List<ResponsiblePerson>? ResponsiblePeople { get; set; }
         public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
+        public List<StrategyDto>? strategy { get; set; }
+
     }
 }
