@@ -23,7 +23,7 @@ namespace App.PathDetail
 
         public List<MisSsoMatching> GetMisSsoMatching(MisSsoMatching request)
         {
-            var data = _database.MisSsoMatchings.Where(x => (request.Year > 0 ? x.Year == request.Year : true) &&  (request.MisId >0? x.MisId == request.MisId:true) && (request.SsoId > 0 ? x.SsoId == x.SsoId :true) && (request.SsoName.Length > 1? x.SsoName == request.SsoName :true) && (request.MisName.Length > 1 ? x.MisName == request.MisName :true) ).ToList();
+            var data = _database.MisSsoMatchings.Where(x => (request.Year > 0 ? x.Year == request.Year : true) &&  (request.MisId >0? x.MisId == request.MisId:true) && (request.SsoId > 0 ? x.SsoId == request.SsoId:true) && (request.SsoName.Length > 1? x.SsoName == request.SsoName :true) && (request.MisName.Length > 1 ? x.MisName == request.MisName :true) ).ToList();
             return data;
         }
 
