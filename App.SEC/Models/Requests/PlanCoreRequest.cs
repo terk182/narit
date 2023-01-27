@@ -43,6 +43,8 @@ namespace App.SEC.Models.Requests
         public int? ParentPlanCoreId { get; set; }
         public int? MissionId { get; set; }
         public int? StrategyId { get; set; }
+        public string? DurationDateStart { get; set; }
+        public string? DurationDateEnd { get; set; }
         //public List<ResponsiblePerson>? ResponsiblePeople { get; set; }
         //public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
     }

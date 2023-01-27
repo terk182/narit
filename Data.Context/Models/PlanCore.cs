@@ -48,6 +48,8 @@ namespace narit_mis_api.Models
         public int? ParentPlanCoreId { get; set; }
         public int? MissionId { get; set; }
         public int? StrategyId { get; set; }
+        public string? DurationDateStart { get; set; }
+        public string? DurationDateEnd { get; set; }
 
         public virtual Department Department { get; set; } = null!;
         public virtual FundType? FundType { get; set; }
