@@ -26,9 +26,9 @@ namespace narit_acc_api.Models
         public virtual DbSet<ChartHeader> ChartHeaders { get; set; } = null!;
         public virtual DbSet<ChartMajor> ChartMajors { get; set; } = null!;
         public virtual DbSet<ChartMinor> ChartMinors { get; set; } = null!;
+        public virtual DbSet<ChartMinorOld> ChartMinorOlds { get; set; } = null!;
         public virtual DbSet<ChartSubHeader> ChartSubHeaders { get; set; } = null!;
         public virtual DbSet<ChartSubMajor> ChartSubMajors { get; set; } = null!;
-        public virtual DbSet<ChartSubMinor> ChartSubMinors { get; set; } = null!;
         public virtual DbSet<Creditor> Creditors { get; set; } = null!;
         public virtual DbSet<CreditorType> CreditorTypes { get; set; } = null!;
         public virtual DbSet<Debtor> Debtors { get; set; } = null!;
@@ -366,10 +366,52 @@ namespace narit_acc_api.Models
                 entity.HasOne(d => d.AccType)
                     .WithMany(p => p.ChartMinors)
                     .HasForeignKey(d => d.AccTypeId)
-                    .HasConstraintName("FK_AccTypeID_ChartMinor_AccountType");
+                    .HasConstraintName("FK_AccTypeID_ChartSubMinor_ChartSubMinor");
 
                 entity.HasOne(d => d.ChartSubMajor)
                     .WithMany(p => p.ChartMinors)
+                    .HasForeignKey(d => d.ChartSubMajorId)
+                    .HasConstraintName("FK_ChartSubMinor_ChartMinor");
+            });
+
+            modelBuilder.Entity<ChartMinorOld>(entity =>
+            {
+                entity.ToTable("ChartMinorOld");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AccTypeId).HasColumnName("AccTypeID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.ChartMinorCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("ChartMinorCODE");
+
+                entity.Property(e => e.ChartSubMajorId).HasColumnName("ChartSubMajorID");
+
+                entity.Property(e => e.CreateDate)
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.Property(e => e.Detail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Index).HasDefaultValueSql("((5))");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AccType)
+                    .WithMany(p => p.ChartMinorOlds)
+                    .HasForeignKey(d => d.AccTypeId)
+                    .HasConstraintName("FK_AccTypeID_ChartMinor_AccountType");
+
+                entity.HasOne(d => d.ChartSubMajor)
+                    .WithMany(p => p.ChartMinorOlds)
                     .HasForeignKey(d => d.ChartSubMajorId)
                     .HasConstraintName("FK_ChartMinor_ChartSubMajor");
             });
@@ -458,48 +500,6 @@ namespace narit_acc_api.Models
                     .HasConstraintName("FK_ChartSubMajor_ChartMajor");
             });
 
-            modelBuilder.Entity<ChartSubMinor>(entity =>
-            {
-                entity.ToTable("ChartSubMinor");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AccTypeId).HasColumnName("AccTypeID");
-
-                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.ChartMinorId).HasColumnName("ChartMinorID");
-
-                entity.Property(e => e.ChartSubMinorCode)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("ChartSubMinorCODE");
-
-                entity.Property(e => e.CreateDate)
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
-
-                entity.Property(e => e.Detail)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Index).HasDefaultValueSql("((6))");
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.AccType)
-                    .WithMany(p => p.ChartSubMinors)
-                    .HasForeignKey(d => d.AccTypeId)
-                    .HasConstraintName("FK_AccTypeID_ChartSubMinor_ChartSubMinor");
-
-                entity.HasOne(d => d.ChartMinor)
-                    .WithMany(p => p.ChartSubMinors)
-                    .HasForeignKey(d => d.ChartMinorId)
-                    .HasConstraintName("FK_ChartSubMinor_ChartMinor");
-            });
-
             modelBuilder.Entity<Creditor>(entity =>
             {
                 entity.ToTable("Creditor");
@@ -583,6 +583,8 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.Address)
                     .HasMaxLength(250)
                     .IsUnicode(false);
@@ -634,7 +636,7 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.ChartSubMinorId).HasColumnName("ChartSubMinorID");
+                entity.Property(e => e.ChartMinorId).HasColumnName("ChartMinorID");
 
                 entity.Property(e => e.CreateDate)
                     .IsRowVersion()
@@ -653,9 +655,9 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.ChartSubMinor)
+                entity.HasOne(d => d.ChartMinor)
                     .WithMany(p => p.DebtorTypes)
-                    .HasForeignKey(d => d.ChartSubMinorId)
+                    .HasForeignKey(d => d.ChartMinorId)
                     .HasConstraintName("FK_AccountReceivableType_AccountType");
             });
 
@@ -739,13 +741,33 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
+                entity.Property(e => e.DetailDate).HasColumnType("date");
+
+                entity.Property(e => e.DetailName)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.PaymentTypeId).HasColumnName("PaymentTypeID");
 
                 entity.Property(e => e.RefNo)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Status)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.TransectionTypeId).HasColumnName("TransectionTypeID");
+
+                entity.HasOne(d => d.CreditNavigation)
+                    .WithMany(p => p.TransectionCreditNavigations)
+                    .HasForeignKey(d => d.Credit)
+                    .HasConstraintName("FK_Transection_ChartSubMinor");
+
+                entity.HasOne(d => d.DebitNavigation)
+                    .WithMany(p => p.TransectionDebitNavigations)
+                    .HasForeignKey(d => d.Debit)
+                    .HasConstraintName("FK_Transection_ChartSubMinor1");
             });
 
             modelBuilder.Entity<TransectionType>(entity =>
@@ -753,6 +775,8 @@ namespace narit_acc_api.Models
                 entity.ToTable("TransectionType");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ChartMinorId).HasColumnName("ChartMinorID");
 
                 entity.Property(e => e.CreateDate)
                     .IsRowVersion()
@@ -762,11 +786,6 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.Property(e => e.LinkCoa)
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("LinkCOA");
-
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
                     .IsUnicode(false);
@@ -774,6 +793,11 @@ namespace narit_acc_api.Models
                 entity.Property(e => e.TransectionGroup)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.ChartMinor)
+                    .WithMany(p => p.TransectionTypes)
+                    .HasForeignKey(d => d.ChartMinorId)
+                    .HasConstraintName("FK_TransectionType_ChartSubMinor");
             });
 
             OnModelCreatingPartial(modelBuilder);

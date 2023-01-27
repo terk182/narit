@@ -7,6 +7,7 @@ namespace narit_acc_api.Models
     {
         public ChartSubMajor()
         {
+            ChartMinorOlds = new HashSet<ChartMinorOld>();
             ChartMinors = new HashSet<ChartMinor>();
         }
 
@@ -22,6 +23,7 @@ namespace narit_acc_api.Models
 
         public virtual AccountType? AccType { get; set; }
         public virtual ChartMajor? ChartMajor { get; set; }
+        public virtual ICollection<ChartMinorOld> ChartMinorOlds { get; set; }
         public virtual ICollection<ChartMinor> ChartMinors { get; set; }
     }
 }

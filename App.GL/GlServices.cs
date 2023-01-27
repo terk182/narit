@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using narit_acc_api.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace App.GL
                     var result3 = new List<ChartMajor>();
                     var Chart3 = _databaseACC.ChartMajors.Where(x => x.ChartSubHeaderId == item2.Id).ToList();
                     foreach (var item3 in Chart3)
-                     {
+                    {
                         var result4 = new List<ChartSubMajor>();
                         var Chart4 = _databaseACC.ChartSubMajors.Where(x => x.ChartMajorId == item3.Id).ToList();
                         foreach (var item4 in Chart4)
@@ -45,20 +46,6 @@ namespace App.GL
                             foreach (var item5 in Chart5)
                             {
 
-                                var result6 = new List<ChartSubMinor>();
-                                var Chart6 = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == item5.Id).ToList();
-                                foreach (var item6 in Chart6)
-                                {
-                                    result6.Add(new ChartSubMinor
-                                    {
-                                        Id = item6.Id,
-                                        ChartMinorId = item6.ChartMinorId,
-                                        ChartSubMinorCode = item6.ChartSubMinorCode,
-                                        Name = item6.Name,
-                                        Index = item6.Index,
-                                        AccTypeId= item6.AccTypeId
-                                    });
-                                }
                                 result5.Add(new ChartMinor
                                 {
                                     Id = item5.Id,
@@ -67,7 +54,6 @@ namespace App.GL
                                     Name = item5.Name,
                                     Index = item5.Index,
                                     AccTypeId = item5.AccTypeId,
-                                    ChartSubMinors = result6
                                 });
                             }
                             result4.Add(new ChartSubMajor
@@ -94,7 +80,7 @@ namespace App.GL
                     }
                     result2.Add(new ChartSubHeader
                     {
-                        Id= item2.Id,
+                        Id = item2.Id,
                         ChartHeaderId = item2.ChartHeaderId,
                         ChartSubHeaderCode = item2.ChartSubHeaderCode,
                         Name = item2.Name,
@@ -113,7 +99,7 @@ namespace App.GL
                     ChartSubHeaders = result2
                 });
             }
-                return result1;
+            return result1;
         }
 
         // Header 
@@ -138,6 +124,8 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
+
 
                 });
             return result;
@@ -146,7 +134,7 @@ namespace App.GL
 
         public List<ChartResponse> GetChartHeaderId(int id)
         {
-          //  var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
+            //  var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
             var result = new List<ChartResponse>();
             var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
@@ -166,6 +154,7 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -192,6 +181,7 @@ namespace App.GL
                     Active = item.chart.Active,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -217,6 +207,7 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -312,6 +303,7 @@ namespace App.GL
                     Active = item.chart.Active,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
 
                 });
             return result;
@@ -339,6 +331,7 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -432,6 +425,7 @@ namespace App.GL
                     Active = item.chart.Active,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
 
                 });
             return result;
@@ -457,6 +451,7 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -530,6 +525,11 @@ namespace App.GL
         }
 
         //Minor
+        public List<ChartMinor> GetAllChartMinor()
+        {
+            List<ChartMinor> ChartMinors = _databaseACC.ChartMinors.ToList();
+            return ChartMinors;
+        }
         public List<ChartResponse> GetChartMinor(int ChartMajorId)
         {
             var result = new List<ChartResponse>();
@@ -550,6 +550,7 @@ namespace App.GL
                     Active = item.chart.Active,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
 
                 });
             return result;
@@ -576,6 +577,7 @@ namespace App.GL
                     AccTypeId = item.chart.AccTypeId,
                     AccTypeName = item.nacctype.Name,
                     Detail = item.chart.Detail,
+                    Index = item.chart.Index
                 });
             return result;
         }
@@ -650,128 +652,136 @@ namespace App.GL
 
         //SubMinor
 
-        public List<ChartResponse> GetChartSubMinor(int ChartMinorId)
-        {
-            var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == ChartMinorId).ToList();
-            var accounttypes = _databaseACC.AccountTypes.ToList();
-            var QSOuterJoin = from chart in data
-                              join acctype in accounttypes
-                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
-                              into accchartGroup
-                              from nacctype in accchartGroup.DefaultIfEmpty()
-                              select new { chart, nacctype };
-            foreach (var item in QSOuterJoin)
-                result.Add(new ChartResponse
-                {
-                    Id = item.chart.Id,
-                    Code = item.chart.ChartSubMinorCode,
-                    Name = item.chart?.Name,
-                    Active = item.chart.Active,
-                    AccTypeId = item.chart.AccTypeId,
-                    AccTypeName = item.nacctype.Name,
-                    Detail = item.chart.Detail,
+        //public List<ChartSubMinor> GetAllChartSubMinor()
+        //{
+        //    List<ChartSubMinor> ChartSubMinors = _databaseACC.ChartSubMinors.ToList();
+        //    return ChartSubMinors;
+        //}
 
-                });
-            return result;
-        }
- 
- 
+        //public List<ChartResponse> GetChartSubMinor(int ChartMinorId)
+        //{
+        //    var result = new List<ChartResponse>();
+        //    var data = _databaseACC.ChartSubMinors.Where(x => x.ChartMinorId == ChartMinorId).ToList();
+        //    var accounttypes = _databaseACC.AccountTypes.ToList();
+        //    var QSOuterJoin = from chart in data
+        //                      join acctype in accounttypes
+        //                      on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+        //                      into accchartGroup
+        //                      from nacctype in accchartGroup.DefaultIfEmpty()
+        //                      select new { chart, nacctype };
+        //    foreach (var item in QSOuterJoin)
+        //        result.Add(new ChartResponse
+        //        {
+        //            Id = item.chart.Id,
+        //            Code = item.chart.ChartSubMinorCode,
+        //            Name = item.chart?.Name,
+        //            Active = item.chart.Active,
+        //            AccTypeId = item.chart.AccTypeId,
+        //            AccTypeName = item.nacctype.Name,
+        //            Detail = item.chart.Detail,
+        //            Index = item.chart.Index
 
-        public List<ChartResponse> GetChartSubMinorId(int id)
-        {
-            var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartSubMinors.Where(x => x.Id == id).ToList();
-            var accounttypes = _databaseACC.AccountTypes.ToList();
-            var QSOuterJoin = from chart in data
-                              join acctype in accounttypes
-                              on chart.AccTypeId.ToString() equals acctype.Id.ToString()
-                              into accchartGroup
-                              from nacctype in accchartGroup.DefaultIfEmpty()
-                              select new { chart, nacctype };
-            foreach (var item in QSOuterJoin)
-                result.Add(new ChartResponse
-                {
-                    Id = item.chart.Id,
-                    Code = item.chart.ChartSubMinorCode,
-                    Name = item.chart?.Name,
-                    Active = item.chart.Active,
-                    AccTypeId = item.chart.AccTypeId,
-                    AccTypeName = item.nacctype.Name,
-                    Detail = item.chart.Detail,
-                });
-            return result;
-        }
- 
-        public CommonBaseResponse AddSubMinor(SubMinorRequest request)
-        {
-            var response = new CommonBaseResponse();
-            var checkcode = _databaseACC.ChartSubMinors.Where(x => x.ChartSubMinorCode == request.Code).FirstOrDefault();
-            if (checkcode == null)
-            {
-                var _SubMinor = new ChartSubMinor();
-                _SubMinor.ChartMinorId = request.BeforeCodeId;
-                _SubMinor.ChartSubMinorCode = request.Code;
-                _SubMinor.Name = request.Name;
-                _SubMinor.AccTypeId = request.AccTypeId;
-                _SubMinor.Detail = request.Detail;
-                _SubMinor.Balance = request.Balance;
+        //        });
+        //    return result;
+        //}
 
-                _databaseACC.Entry(_SubMinor).State = EntityState.Added;
-                var result = _databaseACC.SaveChanges();
-                response.Success = true;
-                response.Messsage = "Add complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "Duplicates";
-            }
-            return response;
-        }
-        public CommonBaseResponse EditSubMinor(EditSubMinorRequest request)
-        {
-            var response = new CommonBaseResponse();
-            var checkcode = _databaseACC.ChartSubMinors.Where(x => x.Id == request.Id).FirstOrDefault();
-            if (checkcode == null)
-            {
-                response.Success = false;
-                response.Messsage = " No Data ";
-            }
-            if (checkcode != null)
-            {
-                checkcode.ChartMinorId = request.BeforeCodeId;
-                checkcode.ChartSubMinorCode = request.Code;
-                checkcode.Name = request.Name;
-                checkcode.AccTypeId = request.AccTypeId;
-                checkcode.Detail = request.Detail;
-                checkcode.Balance = request.Balance;
 
-                _databaseACC.Entry(checkcode).State = EntityState.Modified;
-                var result = _databaseACC.SaveChanges();
-                response.Success = true;
-                response.Messsage = "Edit complete";
-            }
-            return response;
-        }
-        public CommonBaseResponse DelSubMinor(int Id)
-        {
-            var response = new CommonBaseResponse();
-            var data = _databaseACC.ChartSubMinors.Where(x => x.Id == Id).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = 0;
-                _databaseACC.Entry(data).State = EntityState.Modified;
-                int returnValue = _databaseACC.SaveChanges();
-                response.Success = returnValue > 0 ? true : false;
-                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
-            }
-            else
-            {
 
-            }
-            return response;
-        }
+        //public List<ChartResponse> GetChartSubMinorId(int id)
+        //{
+        //    var result = new List<ChartResponse>();
+        //    var data = _databaseACC.ChartSubMinors.Where(x => x.Id == id).ToList();
+        //    var accounttypes = _databaseACC.AccountTypes.ToList();
+        //    var QSOuterJoin = from chart in data
+        //                      join acctype in accounttypes
+        //                      on chart.AccTypeId.ToString() equals acctype.Id.ToString()
+        //                      into accchartGroup
+        //                      from nacctype in accchartGroup.DefaultIfEmpty()
+        //                      select new { chart, nacctype };
+        //    foreach (var item in QSOuterJoin)
+        //        result.Add(new ChartResponse
+        //        {
+        //            Id = item.chart.Id,
+        //            Code = item.chart.ChartSubMinorCode,
+        //            Name = item.chart?.Name,
+        //            Active = item.chart.Active,
+        //            AccTypeId = item.chart.AccTypeId,
+        //            AccTypeName = item.nacctype.Name,
+        //            Detail = item.chart.Detail,
+        //            Index = item.chart.Index
+        //        });
+        //    return result;
+        //}
+
+        //public CommonBaseResponse AddSubMinor(SubMinorRequest request)
+        //{
+        //    var response = new CommonBaseResponse();
+        //    var checkcode = _databaseACC.ChartSubMinors.Where(x => x.ChartSubMinorCode == request.Code).FirstOrDefault();
+        //    if (checkcode == null)
+        //    {
+        //        var _SubMinor = new ChartSubMinor();
+        //        _SubMinor.ChartMinorId = request.BeforeCodeId;
+        //        _SubMinor.ChartSubMinorCode = request.Code;
+        //        _SubMinor.Name = request.Name;
+        //        _SubMinor.AccTypeId = request.AccTypeId;
+        //        _SubMinor.Detail = request.Detail;
+        //        _SubMinor.Balance = request.Balance;
+
+        //        _databaseACC.Entry(_SubMinor).State = EntityState.Added;
+        //        var result = _databaseACC.SaveChanges();
+        //        response.Success = true;
+        //        response.Messsage = "Add complete";
+        //    }
+        //    else
+        //    {
+        //        response.Success = false;
+        //        response.Messsage = "Duplicates";
+        //    }
+        //    return response;
+        //}
+        //public CommonBaseResponse EditSubMinor(EditSubMinorRequest request)
+        //{
+        //    var response = new CommonBaseResponse();
+        //    var checkcode = _databaseACC.ChartSubMinors.Where(x => x.Id == request.Id).FirstOrDefault();
+        //    if (checkcode == null)
+        //    {
+        //        response.Success = false;
+        //        response.Messsage = " No Data ";
+        //    }
+        //    if (checkcode != null)
+        //    {
+        //        checkcode.ChartMinorId = request.BeforeCodeId;
+        //        checkcode.ChartSubMinorCode = request.Code;
+        //        checkcode.Name = request.Name;
+        //        checkcode.AccTypeId = request.AccTypeId;
+        //        checkcode.Detail = request.Detail;
+        //        checkcode.Balance = request.Balance;
+
+        //        _databaseACC.Entry(checkcode).State = EntityState.Modified;
+        //        var result = _databaseACC.SaveChanges();
+        //        response.Success = true;
+        //        response.Messsage = "Edit complete";
+        //    }
+        //    return response;
+        //}
+        //public CommonBaseResponse DelSubMinor(int Id)
+        //{
+        //    var response = new CommonBaseResponse();
+        //    var data = _databaseACC.ChartSubMinors.Where(x => x.Id == Id).FirstOrDefault();
+        //    if (data != null)
+        //    {
+        //        data.Active = 0;
+        //        _databaseACC.Entry(data).State = EntityState.Modified;
+        //        int returnValue = _databaseACC.SaveChanges();
+        //        response.Success = returnValue > 0 ? true : false;
+        //        response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //    return response;
+        //}
 
         //AccountType
         public CommonBaseResponse AddAccountType(CreateAccountTypeRequest request)
@@ -918,6 +928,37 @@ namespace App.GL
             return response;
         }
 
+
+
+        //Debtor
+
+        public List<DebtorCreditorResponse> GetAllDebtor()
+        {
+            var Debtor = _databaseACC.Debtors.ToList();
+
+            var result = new List<DebtorCreditorResponse>();
+            var data = _databaseACC.Debtors.ToList();
+            var debtor = _databaseACC.DebtorTypes.ToList();
+            var QSOuterJoin = from datas in data
+                              join debtorname in debtor
+                              on datas.DebtorTypeId.ToString() equals debtorname.Id.ToString()
+                              into datadebtor
+                              from nacctype in datadebtor.DefaultIfEmpty()
+                              select new { datas, nacctype };
+            foreach (var item in QSOuterJoin)
+                result.Add(new DebtorCreditorResponse
+                {
+                    Id = item.datas.Id,
+                    Code = item.datas.DebtorCode,
+                    Name = item.datas.Name,
+                    TypeId = item.datas.DebtorTypeId,
+                    Type = item.nacctype.Name,
+                    Active = item.datas.Active
+                });
+            return result;
+        }
+
+
         //CreditorType
         public List<CreditorType> GetCreditorType()
         {
@@ -987,24 +1028,24 @@ namespace App.GL
 
         public List<Creditor> GetCreditor()
         {
-           List<Creditor> creditor = _databaseACC.Creditors.ToList();
-            if(creditor.Count > 0)
+            List<Creditor> creditor = _databaseACC.Creditors.ToList();
+            if (creditor.Count > 0)
             {
                 return creditor;
             }
             return creditor;
         }
 
-        public Creditor GetCreditorId(int id) 
+        public Creditor GetCreditorId(int id)
         {
-            Creditor creditor = _databaseACC.Creditors.Where(x=>x.Id == id).FirstOrDefault();
+            Creditor creditor = _databaseACC.Creditors.Where(x => x.Id == id).FirstOrDefault();
             if (creditor != null)
             {
                 return creditor;
             }
             return creditor;
         }
-     
+
         public CommonBaseResponse AddCreditor(CreditorRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
@@ -1089,6 +1130,122 @@ namespace App.GL
             {
                 response.Success = false;
                 response.Messsage = "not have data";
+            }
+            return response;
+        }
+
+        //Transection
+        public List<TransectionResponse> GetTransection()
+        {
+
+            {
+                var result = new List<TransectionResponse>();
+                var data = _databaseACC.Transections.ToList();
+                var Transections = _databaseACC.TransectionTypes.ToList();
+                var subminors = _databaseACC.ChartMinors.ToList();
+                var QSOuterJoin = from Tran in data
+                                  join Transectiontype in Transections
+                                  on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
+                                  into TransectionGroup
+                                  from Trantype in TransectionGroup.DefaultIfEmpty()
+
+                                  join submicredit in subminors
+                                  on Tran.Credit.ToString() equals submicredit.Id.ToString()
+                                  into CreditGroup
+                                  from ncredit in CreditGroup.DefaultIfEmpty()
+
+                                  join submicredit in subminors
+                                  on Tran.Debit.ToString() equals submicredit.Id.ToString()
+                                  into DebittGroup
+                                  from ncdebitt in DebittGroup.DefaultIfEmpty()
+
+                                  select new { Tran, Trantype, ncredit, ncdebitt };
+                foreach (var item in QSOuterJoin)
+                    result.Add(new TransectionResponse
+                    {
+                        Id = item.Tran.Id,
+                        CreateDate = item.Tran.CreateDate,
+                        Detail = item.Tran.Detail,
+                        Quantity = item.Tran.Quantity,
+                        PaymentTypeId = item.Tran.PaymentTypeId,
+                        DebtorTypeId = item.Tran.DebtorTypeId,
+                        TransectionTypeId = item.Tran.TransectionTypeId,
+                        RefNo = item.Tran.RefNo,
+                        DebtorCode = item.Tran.DebtorCode,
+                        DetailName = item.Tran.DetailName,
+                        TransectionTypeName = item.Trantype.Name,
+                        DetailDate = item.Tran.DetailDate,
+                        Credit = item.Tran.Credit,
+                        CreditName = item.ncredit.Name,
+                        Debit = item.Tran.Debit,
+                        DebitName = item.ncdebitt.Name,
+                        Status = item.Tran.Status
+
+                    });
+                return result;
+            }
+        }
+
+        public List<TransectionResponse> GetTransectionId(int id)
+        {
+                var result = new List<TransectionResponse>();
+                var data = _databaseACC.Transections.Where(x => x.Id == id).ToList();
+            var Transections = _databaseACC.TransectionTypes.ToList();
+            var subminors = _databaseACC.ChartMinors.ToList();
+            var QSOuterJoin = from Tran in data
+                              join Transectiontype in Transections
+                              on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
+                              into TransectionGroup
+                              from Trantype in TransectionGroup.DefaultIfEmpty()
+
+                              join submicredit in subminors
+                              on Tran.Credit.ToString() equals submicredit.Id.ToString()
+                              into CreditGroup
+                              from ncredit in CreditGroup.DefaultIfEmpty()
+
+                              join submicredit in subminors
+                              on Tran.Debit.ToString() equals submicredit.Id.ToString()
+                              into DebittGroup
+                              from ncdebitt in DebittGroup.DefaultIfEmpty()
+
+                              select new { Tran, Trantype, ncredit, ncdebitt };
+            foreach (var item in QSOuterJoin)
+                result.Add(new TransectionResponse
+                {
+                    Id = item.Tran.Id,
+                    CreateDate = item.Tran.CreateDate,
+                    Detail = item.Tran.Detail,
+                    Quantity = item.Tran.Quantity,
+                    PaymentTypeId = item.Tran.PaymentTypeId,
+                    DebtorTypeId = item.Tran.DebtorTypeId,
+                    TransectionTypeId = item.Tran.TransectionTypeId,
+                    RefNo = item.Tran.RefNo,
+                    DebtorCode = item.Tran.DebtorCode,
+                    DetailName = item.Tran.DetailName,
+                    TransectionTypeName = item.Trantype.Name,
+                    DetailDate = item.Tran.DetailDate,
+                    Credit = item.Tran.Credit,
+                    CreditName = item.ncredit.Name,
+                    Debit = item.Tran.Debit,
+                    DebitName = item.ncdebitt.Name,
+                    Status = item.Tran.Status
+
+                });
+            return result;
+        }
+
+        public CommonBaseResponse EditTransection(TransectionResponse request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            Transection result = _databaseACC.Transections.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (result != null)
+            {
+                result.Debit = request.Debit;
+                result.Credit = request.Credit;
+                _databaseACC.Entry(result).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
             }
             return response;
         }

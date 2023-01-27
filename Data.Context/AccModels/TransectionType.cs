@@ -9,7 +9,9 @@ namespace narit_acc_api.Models
         public string? Name { get; set; }
         public byte[] CreateDate { get; set; } = null!;
         public string? TransectionGroup { get; set; }
-        public string? LinkCoa { get; set; }
+        public int? ChartMinorId { get; set; }
         public string? Detail { get; set; }
+
+        public virtual ChartMinor? ChartMinor { get; set; }
     }
 }

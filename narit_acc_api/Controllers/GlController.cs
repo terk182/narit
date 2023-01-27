@@ -1,6 +1,8 @@
 ﻿using App.GL;
 using App.GL.Requests;
+using App.GL.Responses;
 using Microsoft.AspNetCore.Mvc;
+using narit_acc_api.Models;
 
 namespace narit_acc_api.Controllers
 {
@@ -168,6 +170,15 @@ namespace narit_acc_api.Controllers
         }
 
         //Minor
+
+        [HttpGet]
+        [Route("Chart/GetAllMinor")]
+        public IActionResult GetAllChartMinor()
+        {
+            var data = _AccGlServices.GetAllChartMinor();
+            return Json(data);
+        }
+
         [HttpGet]
         [Route("Chart/GetMinor")]
         public IActionResult GetChartMinor(int ChartSubMajorId)
@@ -210,46 +221,54 @@ namespace narit_acc_api.Controllers
         }
 
         //SubMinor
-        [HttpGet]
-        [Route("Chart/GetSubMinor")]
-        public IActionResult GetChartSubMinor(int ChartMinorId)
-        {
-            var data = _AccGlServices.GetChartSubMinor(ChartMinorId);
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("Chart/GetAllSubMinor")]
+        //public IActionResult GetAllChartSubMinor()
+        //{
+        //    var data = _AccGlServices.GetAllChartSubMinor();
+        //    return Json(data);
+        //}
 
-        [HttpGet]
-        [Route("Chart/GetSubMinorId")]
-        public IActionResult GetChartSubMinorId(int id)
-        {
-            var data = _AccGlServices.GetChartSubMinorId(id);
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("Chart/GetSubMinor")]
+        //public IActionResult GetChartSubMinor(int ChartMinorId)
+        //{
+        //    var data = _AccGlServices.GetChartSubMinor(ChartMinorId);
+        //    return Json(data);
+        //}
 
-        [HttpPost]
-        [Route("Chart/AddSubMinor")]
-        public IActionResult AddSubMinor(SubMinorRequest Request)
-        {
-            var data = _AccGlServices.AddSubMinor(Request);
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("Chart/GetSubMinorId")]
+        //public IActionResult GetChartSubMinorId(int id)
+        //{
+        //    var data = _AccGlServices.GetChartSubMinorId(id);
+        //    return Json(data);
+        //}
 
-        [HttpPost]
-        [Route("Chart/EditSubMinor")]
-        public IActionResult EditSubMinor(EditSubMinorRequest request)
-        {
-            var data = _AccGlServices.EditSubMinor(request);
+        //[HttpPost]
+        //[Route("Chart/AddSubMinor")]
+        //public IActionResult AddSubMinor(SubMinorRequest Request)
+        //{
+        //    var data = _AccGlServices.AddSubMinor(Request);
+        //    return Json(data);
+        //}
 
-            return Json(data);
-        }
+        //[HttpPost]
+        //[Route("Chart/EditSubMinor")]
+        //public IActionResult EditSubMinor(EditSubMinorRequest request)
+        //{
+        //    var data = _AccGlServices.EditSubMinor(request);
 
-        [HttpDelete]
-        [Route("Chart/DeleteSubMinor")]
-        public IActionResult DelSubMinorr(int Id)
-        {
-            var data = _AccGlServices.DelSubMinor(Id);
-            return Json(data);
-        }
+        //    return Json(data);
+        //}
+
+        //[HttpDelete]
+        //[Route("Chart/DeleteSubMinor")]
+        //public IActionResult DelSubMinorr(int Id)
+        //{
+        //    var data = _AccGlServices.DelSubMinor(Id);
+        //    return Json(data);
+        //}
 
         [HttpGet]
         [Route("AccType/GetAccountType")]
@@ -300,7 +319,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpGet]
-        [Route("ARType/GetDebtorType")]
+        [Route("Debtor/GetDebtorType")]
         public IActionResult GetDebtorType()
         {
             var data = _AccGlServices.GetDebtorType();
@@ -308,7 +327,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpGet]
-        [Route("ARType/GetDebtorTypeId")]
+        [Route("Debtor/GetDebtorTypeId")]
         public IActionResult GetDebtorTypeId(int id)
         {
             var data = _AccGlServices.GetDebtorTypeId(id);
@@ -316,7 +335,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpPost]
-        [Route("ARType/AddDebtorType")]
+        [Route("Debtor/AddDebtorType")]
         public IActionResult AddDebtorType(DebtorTypeRequest Request)
         {
             var data = _AccGlServices.AddDebtorType(Request);
@@ -324,7 +343,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpPost]
-        [Route("ARType/EditDebtorType")]
+        [Route("Debtor/EditDebtorType")]
         public IActionResult EditDebtorType(DebtorTypeRequest Request)
         {
             var data = _AccGlServices.EditDebtorType(Request);
@@ -332,7 +351,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpDelete]
-        [Route("ARType/DeleteDebtorTypeId")]
+        [Route("Debtor/DeleteDebtorTypeId")]
         public IActionResult DeleteDebtorTypeId(int Id)
         {
             var data = _AccGlServices.DeleteDebtorTypeId(Id);
@@ -340,7 +359,15 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpGet]
-        [Route("APType/GetCreditorType")]
+        [Route("Debtor/GetAllDeletor")]
+        public IActionResult GetAllDebtor()
+        {
+            var data = _AccGlServices.GetAllDebtor();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Creditor/GetCreditorType")]
         public IActionResult GetCreditorType()
         {
             var data = _AccGlServices.GetCreditorType();
@@ -348,7 +375,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpGet]
-        [Route("APType/GetCreditorTypeId")]
+        [Route("Creditor/GetCreditorTypeId")]
         public IActionResult GetCreditorTypeId(int id)
         {
             var data = _AccGlServices.GetCreditorTypeId(id);
@@ -356,7 +383,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpPost]
-        [Route("APType/AddCreditorType")]
+        [Route("Creditor/AddCreditorType")]
         public IActionResult AddCreditorType(CreditorTypeRequest Request)
         {
             var data = _AccGlServices.AddCreditorType(Request);
@@ -364,7 +391,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpPost]
-        [Route("APType/EditCreditorType")]
+        [Route("Creditor/EditCreditorType")]
         public IActionResult EditCreditorType(CreditorTypeRequest Request)
         {
             var data = _AccGlServices.EditCreditorType(Request);
@@ -372,7 +399,7 @@ namespace narit_acc_api.Controllers
         }
 
         [HttpDelete]
-        [Route("APType/DeletetCreditorTypeId")]
+        [Route("Creditor/DeletetCreditorTypeId")]
         public IActionResult DeletetCreditorTypeId(int Id)
         {
             var data = _AccGlServices.DeletetCreditorTypeId(Id);
@@ -416,6 +443,30 @@ namespace narit_acc_api.Controllers
         public IActionResult DeleteCreditorId(int Id)
         {
             var data = _AccGlServices.DeleteCreditorId(Id);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Transection/GetTransection")]
+        public IActionResult GetTransection()
+        {
+            var data = _AccGlServices.GetTransection();
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Transection/GetTransectionId")]
+        public IActionResult GetTransectionId(int Id)
+        {
+            var data = _AccGlServices.GetTransectionId(Id);
+            return Json(data);
+        }
+
+        [HttpPost]
+        [Route("Creditor/EditTransection")]
+        public IActionResult EditTransection(TransectionResponse Request)
+        {
+            var data = _AccGlServices.EditTransection(Request);
             return Json(data);
         }
     }

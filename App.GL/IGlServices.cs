@@ -37,17 +37,19 @@ namespace App.GL
         CommonBaseResponse EditSubMajor(EditChartRequest request);
         CommonBaseResponse DelSubMajor(int Id);
         //Minor
+        List<ChartMinor> GetAllChartMinor();
         List<ChartResponse> GetChartMinor(int ChartMajorId);
         List<ChartResponse> GetChartMinorId(int id);
         CommonBaseResponse AddMinor(ChartRequest request);
         CommonBaseResponse EditMinor(EditChartRequest request);
         CommonBaseResponse DelMinor(int Id);
         //SubMinor
-        List<ChartResponse> GetChartSubMinor(int ChartMajorId);
-        List<ChartResponse> GetChartSubMinorId(int id);
-        CommonBaseResponse AddSubMinor(SubMinorRequest request);
-        CommonBaseResponse EditSubMinor(EditSubMinorRequest request);
-        CommonBaseResponse DelSubMinor(int Id);
+        //List<ChartSubMinor> GetAllChartSubMinor();
+        //List<ChartResponse> GetChartSubMinor(int ChartMajorId);
+        //List<ChartResponse> GetChartSubMinorId(int id);
+        //CommonBaseResponse AddSubMinor(SubMinorRequest request);
+        //CommonBaseResponse EditSubMinor(EditSubMinorRequest request);
+        //CommonBaseResponse DelSubMinor(int Id);
 
         //AccountType
         CommonBaseResponse AddAccountType(CreateAccountTypeRequest request);
@@ -63,6 +65,8 @@ namespace App.GL
         CommonBaseResponse EditDebtorType(DebtorTypeRequest request);
         CommonBaseResponse DeleteDebtorTypeId(int Id);
 
+        List<DebtorCreditorResponse> GetAllDebtor();
+
         //CreditorType
         List<CreditorType> GetCreditorType();
         CreditorType GetCreditorTypeId(int id);
@@ -77,6 +81,11 @@ namespace App.GL
         CommonBaseResponse EditCreditor(CreditorRequest request);
         CommonBaseResponse DeleteCreditorId(int Id);
 
+        //Transection
+        List<TransectionResponse> GetTransection();
+        List<TransectionResponse> GetTransectionId(int id);
+
+        CommonBaseResponse EditTransection(TransectionResponse request);
 
     }
 }

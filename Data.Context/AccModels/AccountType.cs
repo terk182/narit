@@ -9,10 +9,10 @@ namespace narit_acc_api.Models
         {
             ChartHeaders = new HashSet<ChartHeader>();
             ChartMajors = new HashSet<ChartMajor>();
+            ChartMinorOlds = new HashSet<ChartMinorOld>();
             ChartMinors = new HashSet<ChartMinor>();
             ChartSubHeaders = new HashSet<ChartSubHeader>();
             ChartSubMajors = new HashSet<ChartSubMajor>();
-            ChartSubMinors = new HashSet<ChartSubMinor>();
         }
 
         public int Id { get; set; }
@@ -24,9 +24,9 @@ namespace narit_acc_api.Models
 
         public virtual ICollection<ChartHeader> ChartHeaders { get; set; }
         public virtual ICollection<ChartMajor> ChartMajors { get; set; }
+        public virtual ICollection<ChartMinorOld> ChartMinorOlds { get; set; }
         public virtual ICollection<ChartMinor> ChartMinors { get; set; }
         public virtual ICollection<ChartSubHeader> ChartSubHeaders { get; set; }
         public virtual ICollection<ChartSubMajor> ChartSubMajors { get; set; }
-        public virtual ICollection<ChartSubMinor> ChartSubMinors { get; set; }
     }
 }

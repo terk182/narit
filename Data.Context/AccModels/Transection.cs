@@ -14,5 +14,13 @@ namespace narit_acc_api.Models
         public int? TransectionTypeId { get; set; }
         public string RefNo { get; set; } = null!;
         public string? DebtorCode { get; set; }
+        public string? DetailName { get; set; }
+        public DateTime? DetailDate { get; set; }
+        public int? Credit { get; set; }
+        public int? Debit { get; set; }
+        public string? Status { get; set; }
+
+        public virtual ChartMinor? CreditNavigation { get; set; }
+        public virtual ChartMinor? DebitNavigation { get; set; }
     }
 }

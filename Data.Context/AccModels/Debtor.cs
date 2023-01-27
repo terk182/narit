@@ -21,5 +21,6 @@ namespace narit_acc_api.Models
         public int BusinessTypeId { get; set; }
         public int? BankAccountNo { get; set; }
         public int? BankId { get; set; }
+        public int Active { get; set; }
     }
 }
