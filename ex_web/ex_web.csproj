@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="json\Palm.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\App.PathDetail\App.PathDetail.csproj" />
   </ItemGroup>
 

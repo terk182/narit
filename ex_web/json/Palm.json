@@ -1,0 +1,760 @@
+[
+  {
+    "project": "REG",
+    "figma_page": "4101,4104,4105",
+    "parameter": {
+      "course": "",
+      "department": "",
+      "open_academic_year": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4102,4103,4106,4107,4110",
+    "parameter": {
+      "course_name": "",
+      "course_approval_date": "",
+      "degree_name": "",
+      "course_approval_date.2": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4108",
+    "parameter": {
+      "course_code": "",
+      "co-requisite": "",
+      "course_name": "",
+      "course_description": "",
+      "pre-requisite": "",
+      "credit": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4117,4119,4121,4122",
+    "parameter": {
+      "course": "",
+      "department": "",
+      "open_academic_year": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4118",
+    "parameter": {
+      "open_academic_year": "",
+      "semester": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4120,4123,4124,4125,4126,4127",
+    "parameter": {
+      "course_code": "",
+      "academic_year": "",
+      "course_name": "",
+      "course_description": "",
+      "pre-requisite": "",
+      "co-requisite": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4128,4134",
+    "parameter": {
+      "course": "",
+      "department": "",
+      "open_academic_year": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4129",
+    "parameter": {
+      "open_academic_year": "",
+      "semester": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4130,4131,4132,4133",
+    "parameter": {
+      "course_code": "",
+      "academic_year": "",
+      "course_name": "",
+      "course_description": "",
+      "pre-requisite": "",
+      "co-requisite": "",
+      "problem": "",
+      "course_assessment": "",
+      "improvement_plan": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4135,4138,4139",
+    "parameter": {
+      "course": "",
+      "department": "",
+      "open_academic_year": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4136",
+    "parameter": {
+      "open_academic_year": "",
+      "semester": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4137,4139",
+    "parameter": {
+      "course_name": "",
+      "credit": "",
+      "degree_name": "",
+      "course_approval_date": "",
+      "major": "",
+      "acknowledged_date": "",
+      "responsible_teacher": "",
+      "report_date": "",
+      "first_year_students_admitted_list": "",
+      "students_graduate_list": "",
+      "details_on_graduation_rates": "",
+      "number_and_percentage_of_students_who_pass_the_exam": "",
+      "student_change_rate": "",
+      "factors_affecting_the_number_of_students": "",
+      "employment_status_of_graduates": "",
+      "changes_affecting_the_curriculum": "",
+      "course_summary": "",
+      "analysis_of_subjects_that_affect_irregular_learning": "",
+      "course_not_opened_and_reason": "",
+      "course_administration": "",
+      "summary_of_course_assessment_results": "",
+      "summarize_the_effectiveness_of_the_strategy": "",
+      "course_commentary_summary": "",
+      "action_plan_for_curriculum_development": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4201-2",
+    "parameter": {
+      "academic_year": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4205",
+    "parameter": {
+      "course_name": "",
+      "course_approval_date": "",
+      "degree_name": "",
+      "course_approval_date.2": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4208,4209,4210,4211,4212,4213,4214",
+    "parameter": {
+      "prefix": "",
+      "school": "",
+      "nationality": "",
+      "province": "",
+      "religion": "",
+      "how_to_get_in": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4603",
+    "parameter": {
+      "personal_id": "",
+      "name_surname": "",
+      "faculty": "",
+      "course": "",
+      "education_level": "",
+      "tel": "",
+      "address": "",
+      "current_address": "",
+      "parent": "",
+      "tel.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4217,4218",
+    "parameter": {
+      "application_date": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4219,4220,4227,4228,4228,4230",
+    "parameter": {
+      "personal_id": "",
+      "name_surname": "",
+      "faculty": "",
+      "course": "",
+      "education_level": "",
+      "tel": "",
+      "address": "",
+      "current_address": "",
+      "parent": "",
+      "tel.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4221",
+    "parameter": {
+      "academic_year": "",
+      "semester": "",
+      "table": [
+        {
+          "course_id": "",
+          "course_name": "",
+          "credit": "",
+          "status": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4222",
+    "parameter": {
+      "thesis_title_in_thai": "",
+      "thesis_title_in_english": "",
+      "student_name": "",
+      "degree_name": "",
+      "student_id": "",
+      "major": "",
+      "thesis_advisor": "",
+      "academic_year": "",
+      "table": [
+        {
+          "no.": "",
+          "course_name": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4222-1",
+    "parameter": {
+      "exam_date": "",
+      "time": "",
+      "table": [
+        {
+          "no.": "",
+          "position": "",
+          "teacher_name": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4223,4224,4225",
+    "parameter": {
+      "academic_year": "",
+      "semester": "",
+      "table": [
+        {
+          "academic_year": "",
+          "semester": "",
+          "advisor_teacher": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4226",
+    "parameter": {
+      "academic_year_the_request_is_submitted": "",
+      "semester_the_request_is_submitted": "",
+      "date_the_request_is_submitted": "",
+      "request_number": "",
+      "students_registration_number": "",
+      "request_status": "",
+
+      "table": [
+        {
+          "request_number": "",
+          "date_the_request_is_submitted": "",
+          "students_registration_number": "",
+          "old_course_name": "",
+          "new_course_name": "",
+          "status": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4226-1",
+    "parameter": {
+      "academic_year_the_request_is_submitted": "",
+      "semester_the_request_is_submitted": "",
+      "date_the_request_is_submitted": "",
+      "request_number": "",
+      "students_registration_number": "",
+      "request_status": "",
+      "request_number.2": "",
+      "fee waived": "",
+      "note": "",
+      "old_course_name": "",
+      "old_course_id": "",
+      "new_course_name": "",
+      "new_course_id": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4243,4244",
+    "parameter": {
+      "application_date": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4245,4246,4247",
+    "parameter": {
+      "changed_student_id": "",
+      "name-surname": "",
+      "improve_student_status": "",
+      "academic_year": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4231,4232",
+    "parameter": {
+      "application_date": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4233,4234,4235,4236,4237",
+    "parameter": {
+      "personal_id": "",
+      "name_surname": "",
+      "faculty": "",
+      "course": "",
+      "exam_status": "",
+      "tel": "",
+      "password": "",
+      "personnel_type": "",
+      "address": "",
+      "current_address": "",
+      "email": "",
+      "tel.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4248",
+    "parameter": {
+      "course_id": "",
+      "course_type": "",
+      "academic_year": "",
+      "semester": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4249",
+    "parameter": {
+      "course_id": "",
+      "academic_year": "",
+      "course_name": "",
+      "course_description": "",
+      "pre-requisite": "",
+      "co-requisite": "",
+      "course_description.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4250",
+    "parameter": {
+      "personal_id": "",
+      "name_surname": "",
+      "faculty": "",
+      "course": "",
+      "exam_status": "",
+      "tel": "",
+      "password": "",
+      "personnel_type": "",
+      "address": "",
+      "current_address": "",
+      "email": "",
+      "tel.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4251",
+    "parameter": {
+      "application_date": "",
+      "major": "",
+      "student_1": "",
+      "student_2": "",
+      "student_3": "",
+      "student_4": "",
+      "student_5": "",
+      "student_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4252",
+    "parameter": {
+      "course": "",
+      "subject": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4253,4254,4259,4260,4261",
+    "parameter": {
+      "class_name": "",
+      "academic_year": "",
+      "subject": "",
+      "date_time": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4255,4256,4258",
+    "parameter": {
+      "exam_room_name": "",
+      "academic_year": "",
+      "subject": "",
+      "date_time": "",
+      "exam_type": "",
+      "examiner": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4257,4264",
+    "parameter": {
+      "application_date": "",
+      "major": "",
+      "student_id": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4262",
+    "parameter": {
+      "academic_year": "",
+      "semester": "",
+      "course": "",
+      "education_generation": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4563",
+    "parameter": {
+      "building": "",
+      "room": "",
+      "seat_number": "",
+      "room_type": "",
+      "exam_seat_number": "",
+      "status": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4266,4272",
+    "parameter": {
+      "students_group": "",
+      "student_id": "",
+      "student_id_range": "",
+      "course": "",
+      "year_of_entry": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4267,4268,4274,4275,4276,4277,4278",
+    "parameter": {
+      "ID_card_number": "",
+      "name-surname": "",
+      "faculty": "",
+      "course": "",
+      "registration_fee": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4269,4279",
+    "parameter": {
+      "subject_name": "",
+      "subject_type": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4270",
+    "parameter": {
+      "condition_no.1": "",
+      "condition_no.2": "",
+      "condition_no.3": "",
+      "condition_no.4": "",
+      "condition_no.5": "",
+      "condition_no.6": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4271",
+    "parameter": {
+      "expenses_no.1": "",
+      "expenses_no.2": "",
+      "expenses_no.3": "",
+      "expenses_no.4": "",
+      "expenses_no.5": "",
+      "expenses_no.6": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4272",
+    "parameter": {
+      "students_group": "",
+      "student_id": "",
+      "student_id_range": "",
+      "course": "",
+      "year_of_entry": "",
+      "data_upload": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4273",
+    "parameter": {
+      "old_subject": "",
+      "changed_subject": ""
+     
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4281",
+    "parameter": {
+      "academic_year": "",
+      "semester": "",
+      "activity_1": "",
+      "activity_2": "",
+      "activity_3": "",
+      "activity_4": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4282,4283,4284,4285,4284,4284",
+    "parameter": {
+      "application_date": "",
+      "major": "",
+      "academic_year": "",
+      "semester": "",
+      "student_1": "",
+      "student_2": "",
+      "student_3": "",
+      "student_4": "",
+      "student_5": "",
+      "student_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4283-2",
+    "parameter": {
+      "student_id": "",
+      "name_surname": "",
+      "major": "",
+      "course": "",
+      "period_of_study": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4238,4240,4241",
+    "parameter": {
+      "application_date": "",
+      "major": "",
+      "student_1": "",
+      "student_2": "",
+      "student_3": "",
+      "student_4": "",
+      "student_5": "",
+      "student_6": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4239,4242",
+    "parameter": {
+      "ID_card_number": "",
+      "name-surname": "",
+      "faculty": "",
+      "major": "",
+      "course": "",
+      "tel": "",
+      "address": "",
+      "current_address": "",
+      "parent": "",
+      "tel.2": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4288,4289",
+    "parameter": {
+      "application_date": "",
+      "major": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4290,4291,4292,4293,4294,4295,4296,4297,4298,4299,42100,42101,42102,42103",
+    "parameter": {
+      "personal_id": "",
+      "name_surname": "",
+      "faculty": "",
+      "course": "",
+      "education_level": "",
+      "tel": "",
+      "graduation_day": ""
+
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4290 ",
+    "parameter": {
+      "public_mind_date": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4291",
+    "parameter": {
+      "thesis_proposal_examination_date": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4292",
+    "parameter": {
+      "thesis_defense_examination_date": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4293",
+    "parameter": {
+      "submit_the_complete_thesis_book_date": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4295",
+    "parameter": {
+      "english_test_result": "",
+      "result_1": "",
+      "result_2": "",
+      "result_3": "",
+      "result_4": "",
+      "result_5": "",
+      "result_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4296",
+    "parameter": {
+      "thesis_proposal_examination_result": "",
+      "result_1": "",
+      "result_2": "",
+      "result_3": "",
+      "result_4": "",
+      "result_5": "",
+      "result_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4297",
+    "parameter": {
+      "thesis_defense_examination_result": "",
+      "result_1": "",
+      "result_2": "",
+      "result_3": "",
+      "result_4": "",
+      "result_5": "",
+      "result_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4298",
+    "parameter": {
+      "thesis_assessment_result": "",
+      "result_1": "",
+      "result_2": "",
+      "result_3": "",
+      "result_4": "",
+      "result_5": "",
+      "result_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4299",
+    "parameter": {
+      "ph.d._qualification_examination_result": "",
+      "result_1": "",
+      "result_2": "",
+      "result_3": "",
+      "result_4": "",
+      "result_5": "",
+      "result_6": ""
+    }
+  },
+  {
+    "project": "REG",
+    "figma_page": "4252",
+    "parameter": {
+      "course": "",
+      "subject": ""
+    }
+  }
+
+
+
+
+
+]
