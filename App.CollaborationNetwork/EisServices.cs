@@ -147,7 +147,7 @@ namespace App.EIS
             List<Tuple<decimal, decimal, decimal, decimal, decimal, decimal>> list = new List<Tuple<decimal, decimal, decimal, decimal, decimal, decimal>>();
             foreach (PlanItem item in _database.PlanItems.Where((PlanItem c) => c.Active && (!budgetTypeId.HasValue || (c.BudgetTypeId.HasValue && c.BudgetTypeId.Value == budgetTypeId.Value))).ToList())
             {
-                list.Add(item.GetSummaryStatementCacheByMonth(month));
+                //list.Add(item.GetSummaryStatementCacheByMonth(month));
             }
 
             list.RemoveAll((Tuple<decimal, decimal, decimal, decimal, decimal, decimal> c) => c == null);
