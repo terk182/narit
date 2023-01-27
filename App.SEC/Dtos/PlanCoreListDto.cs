@@ -49,6 +49,7 @@ namespace App.SEC.Dtos
         public  List<ResponsiblePerson>? ResponsiblePeople { get; set; }
         public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
         public List<StrategyDto>? strategy { get; set; }
-
+        public List<FundSource>? fundSource { get; set; }
+        public List<Mission>? mission { get; set; }
     }
 }

@@ -2808,9 +2808,17 @@ namespace App.SEC
                         ReferenceOldId = _strategy.ReferenceOldId,
                     });
                 }
-
-
                 result.strategy = strategy;
+                //-----fundSource------------------
+
+                result.fundSource = _database.FundSources.Where(x => x.Active == true && x.Id == 1).ToList();
+
+
+                //------mission--------------------
+                result.mission = _database.Missions.Where(x => x.Active == true && x.Id == 1).ToList();
+
+
+               
 
 
 
