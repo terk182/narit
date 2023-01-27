@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{B2BE3EFC-6435-4EBB-8A9A-194E67CFB182}|Default" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ex_web/json/database_class_list.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ex_web/json/all_data.json">
     <Files>
       <File FileName="App.SEC/SecServices.cs" Line="2127" Column="18" />
       <File FileName="App.CollaborationNetwork/IEisServices.cs" />
@@ -7,22 +7,17 @@
       <File FileName="narit_mis_api/Controllers/FinController.cs" />
       <File FileName="narit_mis_api/Controllers/SecController.cs" />
       <File FileName="ex_web/json/database_class_list.json" Line="1009" Column="9" />
+      <File FileName="ex_web/json/all_data.json" Line="16787" Column="8" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="narit_mis_api" expanded="True">
-            <Node name="Libraries" expanded="True">
-              <Node name="App.EIS" expanded="True" />
-              <Node name="App.SEC" expanded="True" />
-            </Node>
             <Node name="Presentation" expanded="True">
               <Node name="ex_web" expanded="True">
-                <Node name="json" expanded="True" />
-                <Node name="Models" expanded="True" />
-              </Node>
-              <Node name="narit_mis_api" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="json" expanded="True">
+                  <Node name="all_data.json" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
