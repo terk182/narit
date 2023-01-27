@@ -50,8 +50,17 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        [HttpPost]
+        [Route("searchMisStaff")]
+        public IActionResult searchStaff(MisUsers req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.searchStaff(req);
 
-
+            return Json(data);
+        }
         
+
+
     }
 }

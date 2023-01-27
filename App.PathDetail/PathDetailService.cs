@@ -49,6 +49,24 @@ namespace App.PathDetail
             return _MisSsoMatching.ToList();
         }
 
+        public List<StaffSecurityDto> searchStaff(MisUsers request)
+        {
+            var result = new List<StaffSecurityDto>();
+            var _StaffSecurity = from c in _database.StaffSecurities
+                                  where request.name.Length > 0 ? c.Name.Contains(request.name) : true && request.uid.Length > 0 ? c.Id == int.Parse( request.uid) : true
+                                  select c;
+
+            foreach (var item in _StaffSecurity)
+            {
+                result.Add(new StaffSecurityDto
+                {
+                    name = item.Name,
+                    MisId = item.Id,
+             });
+            }
+            return result;
+        }
+
         public CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request)
         {
             int result = 0;

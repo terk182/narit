@@ -18,6 +18,7 @@ namespace App.PathDetail
         CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request);
         List<MisSsoMatching> GetMisSsoMatching(MisSsoMatching request);
         List<MisSsoMatching> search(MisUsers request);
+        List<StaffSecurityDto> searchStaff(MisUsers request);
     }
     
 }
