@@ -41,6 +41,8 @@ namespace App.SEC.Dtos
         public int FundSourceEnum { get; set; }
         public int FundCategoryEnum { get; set; }
         public int? FundSourceId { get; set; }
+        public string? DurationDateStart { get; set; }
+        public string? DurationDateEnd { get; set; }
         public decimal TotalBudget { get; set; }
         public decimal TotalBudgetCache { get; set; }
         public decimal NetBudgetCache { get; set; }

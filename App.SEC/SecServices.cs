@@ -2781,8 +2781,10 @@ namespace App.SEC
                     result.FundSourceEnum = item.FundCategoryEnum;
                     result.FundCategoryEnum = item.FundCategoryEnum;
                     result.FundSourceId = item.FundSourceId;
-                //---------เพิ่ม การแสดงผล --------------------------------------
-                    var cal = calbudget_v1(item.PlanActivities);
+                    result.DurationDateStart = item.DurationDateStart;
+                    result.DurationDateEnd = item.DurationDateEnd;
+        //---------เพิ่ม การแสดงผล --------------------------------------
+        var cal = calbudget_v1(item.PlanActivities);
                     result.TotalBudget = cal.Budget.TotalBudget;
                     result.TotalBudgetCache = cal.Budget.TotalBudgetCache;
                     result.NetBudgetCache = cal.Budget.NetBudgetCache;
@@ -4498,11 +4500,14 @@ namespace App.SEC
                 _Plancore.ParentPlanCoreId = request.ParentPlanCoreId;
                 _Plancore.MissionId = request.MissionId;
                 _Plancore.StrategyId = request.StrategyId;
-                //if (request.ParentDepartmentId != 0)
-                //{
-                //    _Department.ParentDepartmentId = request.ParentDepartmentId;
-                //}
-                _database.Entry(_Plancore).State = _Plancore.Id == 0 ?
+                _Plancore.DurationDateStart = request.DurationDateStart;
+                _Plancore.DurationDateEnd = request.DurationDateEnd;
+   
+        //if (request.ParentDepartmentId != 0)
+        //{
+        //    _Department.ParentDepartmentId = request.ParentDepartmentId;
+        //}
+        _database.Entry(_Plancore).State = _Plancore.Id == 0 ?
                                               EntityState.Added :
                                               EntityState.Modified;
 
