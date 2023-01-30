@@ -25,10 +25,12 @@ namespace App.SEC
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
 
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
+        List<DepartmentDto> DepartmentNameGetByDepartmentid(int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id);
+        List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id);
 
 
         SecBaseResponse StrategySetup(StrategySetupModel request);

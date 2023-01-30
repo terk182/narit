@@ -839,11 +839,52 @@ namespace App.SEC
             }
             return result;
         }
+        public List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id)
+        {
+
+            var result = new List<PlanTypeDto>();
+            var data = _database.PlanTypes.Where(x => x.Id == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight
+                });
+
+            }
+            return result;
+        }
         public List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id)
         {
 
             var result = new List<DepartmentDto>();
             var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear & x.ParentDepartmentId == id).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new DepartmentDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ParentDepartmentId = item.ParentDepartmentId
+                });
+
+            }
+            return result;
+        }
+        public List<DepartmentDto> DepartmentNameGetByDepartmentid(int id)
+        {
+
+            var result = new List<DepartmentDto>();
+            var data = _database.Departments.Where(x => x.Id == id).ToList();
             foreach (var item in data)
             {
                 result.Add(new DepartmentDto

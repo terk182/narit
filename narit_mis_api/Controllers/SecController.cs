@@ -753,7 +753,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentGetByFiscalYearandDepartmentid(year, id);
             return Json(data);
         }
-
+        [HttpGet]
+        [Route("/Plan/Operate/DepartmentNameGetByDepartmentid/{id}")]
+        public IActionResult DepartmentNameGetByDepartmentid(int id)
+        {
+            var data = _SecServices.DepartmentNameGetByDepartmentid(id);
+            return Json(data);
+        }
         [HttpGet]
         [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYear/{year}")]
         public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYear(int year)
@@ -770,6 +776,13 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
 
+        [HttpGet]
+        [Route("/Plan/Operate/PlanTypeNameGetByPlanTypeid/GetByPlanTypeid/{id}")]
+        public IActionResult PlanTypeNameGetByPlanTypeid(int id)
+        {
+            var data = _SecServices.PlanTypeNameGetByPlanTypeid(id);
+            return Json(data);
+        }
 
         [HttpPost]
         [Route("/Plan/Operate/ViewChangedPlanItemRecordList")]
