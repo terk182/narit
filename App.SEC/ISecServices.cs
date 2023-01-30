@@ -15,6 +15,7 @@ namespace App.SEC
 {
     public interface ISecServices
     {
+        SecBaseResponse EditScheduleFisicalYear(string name, bool active);
         List<ScheduleFisicalYear> GetScheduleFisicalYear();
         List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year);
         SecBaseResponse ScheduleFisicalYearSetUp(ScheduleFisicalYear Request);

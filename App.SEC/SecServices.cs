@@ -5546,6 +5546,52 @@ namespace App.SEC
                 return _OutsideDutyGroupRequest;
             }
 
+        public SecBaseResponse EditScheduleFisicalYear(string name, bool active)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            List<ScheduleFisicalYear> scheduleFisicalYear = _database.ScheduleFisicalYears.OrderByDescending(x => x.Name).ToList();
+            if (name == null)
+            {
+                scheduleFisicalYear.ForEach(item =>
+                {
+                    item.Active = false;
+                    item.AddPlanCoreStatus = false;
+                    item.EditPlanCoreStatus = false;
+                    item.ApprovePlanCoreStatus = false;
+                    item.DisplayPlanCoreStatus = false;
+                });
+            }
+            else
+            {
+                scheduleFisicalYear.ForEach(item =>
+                {
+                    if (item.Name == name)
+                    {
+                        item.Active = active;
+                        item.AddPlanCoreStatus = active;
+                        item.EditPlanCoreStatus = active;
+                        item.ApprovePlanCoreStatus = active;
+                        item.DisplayPlanCoreStatus = active;
+                    }
+                    else
+                    {
+                        item.Active = false;
+                        item.AddPlanCoreStatus = false;
+                        item.EditPlanCoreStatus = false;
+                        item.ApprovePlanCoreStatus = false;
+                        item.DisplayPlanCoreStatus = false;
+                    }
+                });
+                scheduleFisicalYear.ForEach(items =>
+                {
+                    _database.Entry(items).State = EntityState.Modified;
+                    var returnValue = _database.SaveChanges();
+                    response.Success = returnValue > 0 ? true : false;
+                    response.Messsage = "Success";
+                });
+            }
+            return response;
+        }
 
     }
     }
