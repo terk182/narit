@@ -6,6 +6,7 @@ using App.SEC;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
+using System.Net;
 
 namespace narit_mis_api.Controllers
 {
@@ -32,6 +33,8 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+
+      
         [HttpPost]
         [Route("GetMisSsoMatching")]
         public IActionResult SetMisSsoMatching(MisSsoMatching req)
@@ -50,6 +53,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+
+        /// <summary>
+        /// ทดสอบ
+        /// </summary>
+        /// <remarks>
+        /// ทดสอบ
+        /// </remarks>
+    
+        [ProducesResponseType(typeof(MisUsers), (int)HttpStatusCode.OK)]
         [HttpPost]
         [Route("searchMisStaff")]
         public IActionResult searchStaff(MisUsers req)

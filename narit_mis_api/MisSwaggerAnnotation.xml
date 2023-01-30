@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>narit_mis_api</name>
+    </assembly>
+    <members>
+        <member name="M:narit_mis_api.Controllers.SetUpController.searchStaff(App.PathDetail.Requests.MisUsers)">
+            <summary>
+            ทดสอบ
+            </summary>
+            <remarks>
+            ทดสอบ
+            </remarks>
+        </member>
+    </members>
+</doc>

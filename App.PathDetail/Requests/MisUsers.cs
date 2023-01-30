@@ -13,3 +13,6 @@ namespace App.PathDetail.Requests
         public string? type { get; set; }
     }
 }
+
+
+

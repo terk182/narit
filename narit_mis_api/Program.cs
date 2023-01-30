@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using narit_acc_api.Models;
 using narit_mis_api.Models;
+using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -54,6 +55,9 @@ builder.Services.AddSwaggerGen(c =>
         Title = "My API",
         Version = "v1"
     });
+    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, "MisSwaggerAnnotation.xml");
+    c.IncludeXmlComments(xmlPath);
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
