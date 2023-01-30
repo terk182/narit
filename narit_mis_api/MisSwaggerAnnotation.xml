@@ -5,19 +5,9 @@
     </assembly>
     <members>
         <member name="M:narit_mis_api.Controllers.SetUpController.SetMisSsoMatching(System.Collections.Generic.List{narit_mis_api.Models.MisSsoMatching})">
-            <summary>
-             ทดสอบ1
-            </summary>
             <remarks>
-            ทดสอบ2
-            </remarks>
-        </member>
-        <member name="M:narit_mis_api.Controllers.SetUpController.searchStaff(App.PathDetail.Requests.MisUsers)">
-            <summary>
-            ทดสอบ
-            </summary>
-            <remarks>
-            ทดสอบ
+            หากต้องการลบการพูก Mis=>Sso 
+            ให้ส่งข้อมูลเดิม และใส่ "type":"reject"
             </remarks>
         </member>
     </members>

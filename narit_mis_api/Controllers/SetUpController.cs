@@ -24,11 +24,10 @@ namespace narit_mis_api.Controllers
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
 
-        /// <summary>
-        ///  ทดสอบ1
-        /// </summary>
+    
         /// <remarks>
-        /// ทดสอบ2
+        /// หากต้องการลบการพูก Mis=>Sso 
+        /// ให้ส่งข้อมูลเดิม และใส่ "type":"reject"
         /// </remarks>
         [HttpPost]
         [Route("SetMisSsoMatching")]
