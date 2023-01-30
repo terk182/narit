@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>narit_mis_api</name>
+    </assembly>
+    <members>
+        <member name="M:narit_mis_api.Controllers.SetUpController.SetMisSsoMatching(System.Collections.Generic.List{narit_mis_api.Models.MisSsoMatching})">
+            <summary>
+             ทดสอบ1
+            </summary>
+            <remarks>
+            ทดสอบ2
+            </remarks>
+        </member>
+        <member name="M:narit_mis_api.Controllers.SetUpController.searchStaff(App.PathDetail.Requests.MisUsers)">
+            <summary>
+            ทดสอบ
+            </summary>
+            <remarks>
+            ทดสอบ
+            </remarks>
+        </member>
+    </members>
+</doc>

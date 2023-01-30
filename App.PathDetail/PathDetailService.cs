@@ -67,6 +67,8 @@ namespace App.PathDetail
             return result;
         }
 
+
+
         public CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request)
         {
             int result = 0;
@@ -74,7 +76,12 @@ namespace App.PathDetail
             foreach (var item in request)
             {
                   db.Id = item.Id;
-                  db.Active = item.Active;
+                db.Active = item.Active;
+                    if (item.Type.ToLower() == "reject")
+                    {
+                        db.Active = false;
+                    }
+
                   db.MisId = item.MisId;
                   db.MisName = item.MisName;
                   db.SsoId = item.SsoId;

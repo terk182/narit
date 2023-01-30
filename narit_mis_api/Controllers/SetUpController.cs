@@ -23,6 +23,13 @@ namespace narit_mis_api.Controllers
             //_configuration = Configuration;
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
+
+        /// <summary>
+        ///  ทดสอบ1
+        /// </summary>
+        /// <remarks>
+        /// ทดสอบ2
+        /// </remarks>
         [HttpPost]
         [Route("SetMisSsoMatching")]
         public IActionResult SetMisSsoMatching(List<MisSsoMatching> req)
