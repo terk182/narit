@@ -10,6 +10,7 @@ using App.SEC.Responses;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Storage;
 using narit_mis_api.Models;
 using System;
 using System.Collections;
@@ -391,6 +392,7 @@ namespace App.SEC
                     Id = item.Id,
                     Name = item.Name,
                     Active = item.Active,
+                    FiscalYear= item.FiscalYear,
                     ReferenceOldId = item.ReferenceOldId,
                     ParentFundSourceId = item.ParentFundSourceId
 
@@ -2796,8 +2798,9 @@ namespace App.SEC
 
                 //---------เพิ่ม Strategy --------------------------------------
                 var strategy = new List<StrategyDto>();
-
-                foreach (var _strategy in item.Strategies)
+                var strategydatabase = _database.Strategies.Where(x => x.Active == true && x.Id == item.StrategyId).ToList();
+                //foreach (var _strategy in item.Strategies)
+                foreach (var _strategy in strategydatabase)
                 {
                     strategy.Add(new StrategyDto
                     {
@@ -2813,11 +2816,11 @@ namespace App.SEC
                 result.strategy = strategy;
                 //-----fundSource------------------
 
-                result.fundSource = _database.FundSources.Where(x => x.Active == true && x.Id == 1).ToList();
+                result.fundSource = _database.FundSources.Where(x => x.Active == true && x.Id == item.FundSourceId).ToList();
 
 
                 //------mission--------------------
-                result.mission = _database.Missions.Where(x => x.Active == true && x.Id == 1).ToList();
+                result.mission = _database.Missions.Where(x => x.Active == true && x.Id == item.MissionId).ToList();
 
 
                
