@@ -40,7 +40,7 @@ namespace narit_mis_api.Controllers
         }
         [HttpPost]
         [Route("GetMisSsoMatching")]
-        public IActionResult SetMisSsoMatching(MisSsoMatching req)
+        public IActionResult getMisSsoMatching(MisSsoMatching req)
         {
             _Logger.LogInformation("sql");
             var data = _Service.GetMisSsoMatching(req);
