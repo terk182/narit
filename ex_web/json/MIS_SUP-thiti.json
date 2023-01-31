@@ -140,8 +140,8 @@
       "summarize": "",
       "regulation": "",
       "Approveother": "",
-      "Approvalญrocurement": "",
-      "procurement?aker": "",
+      "ApprovalProcurement": "",
+      "procurementMaker": "",
       "auditor": "",
       "borrowMoney": "",
       "borrower": "",
@@ -245,7 +245,163 @@
         }
       ]
     }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2205-2",
+    "parameter": {
+      "PaymentMethod": "",
+      "PaymentDate": "",
+      "ImportantDocPayment": "",
+      "Note": "",
+      "List": "",
+
+      "AmountUsed": "",
+      "TotalPrice": "",
+      "table": [
+        {
+          "No": "",
+          "AmountRequests": "",
+          "Price/Unit": "",
+          "PriceTotal": "",
+          "TotalAcceptanceCheck": "",
+          "Balance": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2206",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "Checkbox": "",
+          "No": "",
+          "Date": "",
+          "NumID": "",
+          "List": "",
+          "project": "",
+          "Balance": "",
+          "Print": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2206-2",
+    "parameter": {
+      "Date": "",
+      "DateCalCard": "",
+      "Subject": "",
+      "DearTo": "",
+      "BudgetName": "",
+      "ExpectedExpenses": "",
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "BorrowMoney": "",
+          "Balance": "",
+          "Borrower": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2207,2208,2209,2210",
+    "parameter": {
+      "ReportCheckbox": ""
+
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2207",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Counts": "",
+          "Unit": "",
+          "Department": "",
+          "BudgetAfterChange": "",
+          "1/Oct/2021-31/Aug/2022": "",
+          "1-30/Sep/2022": "",
+          "GetmoneyAlready": "",
+          "Bonded": "",
+          "Total": "",
+          "Balance": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2208",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Allocated": "",
+          "BudgetBefore": "",
+          "1/Oct/2022-30/Sep/2023": "",
+          "1-31/Oct/2023": "",
+          "Total": "",
+          "%": "",
+          "GetmoneyAlready": ""
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2209",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Allocated": "",
+          "1/Oct/2022-31/Aug/2023": "",
+          "1-31/Sep/2023": "",
+          "GetmoneyAlready": "",
+          "Bonded": "",
+          "Total": "",
+          "Balance": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2210",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "BudgetAllocatedAnnual": "",
+          "BudgetBeforeTransfer": "",
+          "BudgetUsed": "",
+          "BudgetBalance": ""
+        }
+      ]
+    }
   }
+
 
 
 

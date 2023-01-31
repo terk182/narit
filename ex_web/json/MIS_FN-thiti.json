@@ -1,0 +1,462 @@
+﻿[
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "ProjectList": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-2",
+    "parameter": {
+      "Sreach": "",
+      "table": [
+        {
+          "ActivityList": "",
+          "Count": "",
+          "Price/Unit": "",
+          "AllocatedAnnual": "",
+          "AfterTransfer/pp": "",
+          "Used": "",
+          "Balance": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-3",
+    "parameter": {
+      "NumID": "",
+      "Date": "",
+      "RequestApprove": "",
+      "Attachment": "",
+      "Associated": "",
+      "TopicProcurement": "",
+      "BudgetName": "",
+      "Department": "",
+      "Purchased_Radio": "",
+      "Equipment_Radio": "",
+      "Foreign_Radio": "",
+      "Urgency_Radio": "",
+      "OngoingProjects_Checkbox": "",
+
+      "SpecifiedTime": "",
+      "MiddlePriceProvision": "",
+
+      "ChiefBoard": "",
+      "Board": "",
+      "Secretarial": "",
+
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "Count": "",
+          "Unit": "",
+          "Price/Unit": "",
+          "MiddlePrice": "",
+          "TotalPrice": "",
+          "SubListFollowPlan": "",
+          "Note": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-4",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Status": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-5",
+    "parameter": {
+      "NumID": "",
+      "Date": "",
+      "RequestApprove": "",
+      "Attachment": "",
+      "Associated": "",
+      "TopicProcurement": "",
+      "BudgetName": "",
+      "Department": "",
+      "Purchased_Radio": "",
+      "Equipment_Radio": "",
+      "Foreign_Radio": "",
+      "Urgency_Radio": "",
+      "OngoingProjects": "",
+
+      "SpecifiedTime": "",
+      "MiddlePriceProvision": "",
+
+      "ChiefBoard": "",
+      "Board": "",
+      "Secretarial": "",
+
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "Count": "",
+          "Unit": "",
+          "Price/Unit": "",
+          "MiddlePrice": "",
+          "TotalPrice": "",
+          "SubListFollowPlan": "",
+          "Note": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-6",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-7",
+    "parameter": {
+      "Contact": "",
+      "Supplier": "",
+      "Adress": "",
+      "Tel": "",
+      "Fax": "",
+      "TaxID": "",
+      "ShipmentLocation": "",
+      "ReferQuoteNumber": "",
+      "DateStamp": "",
+      "Date": "",
+      "NumID": "",
+      "RequestApprovePaymentID": "",
+      "DateStamp1": "",
+      "PaymentCondition": "",
+      "DeathLineDate": "",
+      "whithin": "",
+      "AfterReceivePurchaseOrder_Radio": "",
+      "SinceReceivePurchaseOrder_Radio": "",
+      "DaysAfterPurchaseOrder": "",
+
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "Count": "",
+          "Unit": "",
+          "PricePerUnit": "",
+          "TotalPrice": ""
+
+        }
+      ],
+
+      "GuaranteePeriod": "",
+      "Percentage0.10_Radio": "",
+      "percentage0.20_Radio": "",
+
+      "Employers": "",
+      "Procurement": "",
+      "MiddlePrice": "",
+
+      "table1": [
+        {
+          "Name": "",
+          "Adress": "",
+          "DocNumID": "",
+          "Date": "",
+          "Balance": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-8",
+    "parameter": {
+      "FiscalYear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2301-9",
+    "parameter": {
+      "BudgetName": "",
+      "WorkFrom": "",
+      "PurchaseRequisitionNumID": "",
+      "DateStamp": "",
+      "ShowDetailPrint": "",
+      "NumID": "",
+      "Date": "",
+      "AmountOfTime": "",
+      "FromBeliveredBooks": "",
+      "DateStamp1": "",
+      "Invoice": "",
+      "DateStamp2": "",
+
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "Unit": "",
+          "Price/Unit": "",
+          "Orders": "",
+          "Invoice": "",
+          "ActuallyReceived": "",
+          "TotalAmount": ""
+
+        }
+      ],
+      "Charges": "",
+      "Delaying": "",
+      "NumDay": "",
+
+      "NameCheifBoard": "",
+      "NameBoard": "",
+      "Secretary": "",
+      "Date1": "",
+
+      "table1": [
+        {
+          "NO": "",
+          "ReceivingNumID": "",
+          "DateReceiving": "",
+          "AmountFromInvoice": "",
+          "Charges": "",
+          "NetAmount": ""
+
+        }
+      ],
+
+      "CompleteOrNot_radio": "",
+      "NameStaffShipment": "",
+      "DateStaffShipment": "",
+      "NameSupervisorShipment": "",
+      "DateSupervisorShipment": "",
+      "NameFormPassedBudget": "",
+      "DateFormPassedBudget": "",
+
+      "AgreementDetail": "",
+      "ProcurementDetail": "",
+      "PurchaseWhit__": "",
+      "ForProject": "",
+      "MethodPurchase": "",
+      "Amount": "",
+      "CheckComplete_Radio": "",
+      "Charges_Radio": "",
+      "ChargeAmount": ""
+
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2302",
+    "parameter": {
+      "Document": "",
+      "Sreach": "",
+      "table": [
+        {
+          "No": "",
+          "Date": "",
+          "DocNumID": "",
+          "Department": "",
+          "Balance": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2302-2",
+    "parameter": {
+      "Checkbox": "",
+      "table": [
+        {
+          "Date": "",
+          "DocNumID": "",
+          "BudgetName": "",
+          "Department": "",
+          "Status": "",
+          "Balance": "",
+          "Print": "",
+          "Method": "",
+          "StaffShipment": "",
+          "Project": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2303",
+    "parameter": {
+      "Fiscalyear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Status": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-SUP",
+    "figma_page_number": "2303-2",
+    "parameter": {
+      "Date": "",
+      "DateCalCard": "",
+      "RequestDepartment": "",
+      "NumID": "",
+      "Subject": "",
+      "DearTo": "",
+      "PleaceSelectDear": "",
+      "PleaceSelectDepartment": "",
+      "FileAttachment": "",
+      "BudgetName": "",
+      "summarize": "",
+      "regulation": "",
+      "Approveother": "",
+      "ApprovalProcurement": "",
+      "procurementMaker": "",
+      "auditor": "",
+      "borrowMoney_checkbox": "",
+      "borrower": "",
+      "amount": "",
+      "schedule": ""
+
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2304",
+    "parameter": {
+      "Fiscalyear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "List": "",
+          "Status": "",
+          "Setting": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2304-2",
+    "parameter": {
+      "NumID": "",
+      "Date": "",
+      "RequestApprove": "",
+      "Attachment": "",
+      "Associated": "",
+      "TopicProcurement": "",
+      "BudgetName": "",
+      "Department": "",
+      "Purchased_Radio": "",
+      "Equipment_Radio": "",
+      "Foreign_Radio": "",
+      "Urgency_Radio": "",
+      "OngoingProjects_Checkbox": "",
+
+      "SpecifiedTime": "",
+      "MiddlePriceProvision": "",
+
+      "ChiefBoard": "",
+      "Board": "",
+      "Secretarial": "",
+
+      "table": [
+        {
+          "No": "",
+          "List": "",
+          "Count": "",
+          "Unit": "",
+          "Price/Unit": "",
+          "MiddlePrice": "",
+          "TotalPrice": "",
+          "SubListFollowPlan": "",
+          "Note": ""
+
+        }
+      ]
+    }
+  },
+  {
+    "project": "MIS-FN",
+    "figma_page_number": "2304",
+    "parameter": {
+      "Fiscalyear": "",
+      "Sreach": "",
+      "table": [
+        {
+          "No": "",
+          "ProcurementList": "",
+          "ProcurementCreditLine": "",
+          "MiddlePrice": "",
+          "MethodPurchase": "",
+          "Bidding&PriceQuoted": "",
+          "Selected&Price": "",
+          "Price": "",
+          "ReasonToChoose": "",
+          "NumID&DateTradeDeals": ""
+
+
+        }
+      ]
+    }
+  }
+
+
+
+
+
+
+]
+
