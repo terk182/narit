@@ -24,8 +24,12 @@ namespace App.GL.Responses
         public string? CreditName { get; set; }
         public int? Debit { get; set; }
         public string? DebitName { get; set; }
-
         public string? Status { get; set; }
+        public int? JournalId { get; set; }
+        public int? SubJournalId { get; set; }
+        public string? SubJournalName { get; set; }
+
+
 
     }
 }

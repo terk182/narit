@@ -1,4 +1,5 @@
 ﻿using App.GL;
+using App.GL.DTO;
 using App.GL.Requests;
 using App.GL.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,9 @@ namespace narit_acc_api.Controllers
             _Logger = logger;
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีทั้งหมด
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetChartAll")]
         public IActionResult GetChartAll()
@@ -26,6 +30,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
         //Header
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 1
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetHeader")]
         public IActionResult GetChartHeader()
@@ -34,6 +41,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 1 โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetHeaderId")]
         public IActionResult GetChartHeaderId(int id)
@@ -43,6 +53,9 @@ namespace narit_acc_api.Controllers
         }
 
         //SubHeader
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 2
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetSubHeader")]
         public IActionResult GetChartSubHeader(int ChartHeaderId)
@@ -51,6 +64,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 2 ใน ชั้น 1
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetSubHeaderId")]
         public IActionResult GetChartSubHeaderId(int id)
@@ -59,6 +75,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มผังบัญชีชั้น 2
+        /// </summary>
         [HttpPost]
         [Route("Chart/AddSubHeader")]
         public IActionResult AddSubHeader(ChartRequest Request)
@@ -67,6 +86,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขผังบัญชีชั้น 2
+        /// </summary>
         [HttpPost]
         [Route("Chart/EditSubHeader")]
         public IActionResult EditSubHeader(EditChartRequest request)
@@ -76,6 +98,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบผังบัญชีชั้น 2
+        /// </summary>
         [HttpDelete]
         [Route("Chart/DeleteSubHeader")]
         public IActionResult DelSubHeader(int Id)
@@ -85,6 +110,9 @@ namespace narit_acc_api.Controllers
         }
 
         //Major
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 3
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetMajor")]
         public IActionResult GetChartMajor(int ChartSubHeaderId)
@@ -93,6 +121,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 3 ใน ชั้น 2
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetMajorId")]
         public IActionResult GetChartMajorId(int id)
@@ -101,6 +132,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มผังบัญชีชั้น 3
+        /// </summary>
         [HttpPost]
         [Route("Chart/AddMajor")]
         public IActionResult AddMajor(ChartRequest Request)
@@ -109,6 +143,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขผังบัญชีชั้น 3
+        /// </summary>
         [HttpPost]
         [Route("Chart/EditMajor")]
         public IActionResult EditMajor(EditChartRequest request)
@@ -118,6 +155,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบผังบัญชีชั้น 3
+        /// </summary>
         [HttpDelete]
         [Route("Chart/DeleteMajor")]
         public IActionResult DelMajor(int Id)
@@ -127,6 +167,9 @@ namespace narit_acc_api.Controllers
         }
 
         //Submajor
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 4
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetSubMajor")]
         public IActionResult GetChartSubMajor(int ChartMajorId)
@@ -135,6 +178,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 4 ใน ชั้น 3
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetSubMajorId")]
         public IActionResult GetChartSubMajorId(int id)
@@ -143,7 +189,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
-
+        /// <summary>
+        /// เพิ่มผังบัญชีชั้น 4
+        /// </summary>
         [HttpPost]
         [Route("Chart/AddSubMajor")]
         public IActionResult AddSubMajor(ChartRequest Request)
@@ -152,6 +200,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขผังบัญชีชั้น 4
+        /// </summary>
         [HttpPost]
         [Route("Chart/EditSubMajor")]
         public IActionResult EditSubMajor(EditChartRequest request)
@@ -161,6 +212,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบผังบัญชีชั้น 4
+        /// </summary>
         [HttpDelete]
         [Route("Chart/DeleteSubMajor")]
         public IActionResult DelSubMajor(int Id)
@@ -170,7 +224,9 @@ namespace narit_acc_api.Controllers
         }
 
         //Minor
-
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 5
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetAllMinor")]
         public IActionResult GetAllChartMinor()
@@ -179,6 +235,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 5 ใน ชั้น 4
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetMinor")]
         public IActionResult GetChartMinor(int ChartSubMajorId)
@@ -187,6 +246,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาผังบัญชีชั้น 5 โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Chart/GetMinorId")]
         public IActionResult GetChartMinorId(int id)
@@ -195,6 +257,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มผังบัญชีชั้น 5
+        /// </summary>
         [HttpPost]
         [Route("Chart/AddMinor")]
         public IActionResult AddMinor(ChartRequest Request)
@@ -203,6 +268,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขผังบัญชีชั้น 5
+        /// </summary>
         [HttpPost]
         [Route("Chart/EditMinor")]
         public IActionResult EditMinor(EditChartRequest request)
@@ -212,6 +280,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบผังบัญชีชั้น 5
+        /// </summary>
         [HttpDelete]
         [Route("Chart/DeleteMinor")]
         public IActionResult DelMinorr(int Id)
@@ -220,6 +291,8 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+
+        // ชั้น 6
         //SubMinor
         //[HttpGet]
         //[Route("Chart/GetAllSubMinor")]
@@ -270,6 +343,9 @@ namespace narit_acc_api.Controllers
         //    return Json(data);
         //}
 
+        /// <summary>
+        /// ค้นหาประเภทบัญชี
+        /// </summary>
         [HttpGet]
         [Route("AccType/GetAccountType")]
         public IActionResult GetAccountType()
@@ -282,6 +358,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาประเภทบัญชี โดย ID
+        /// </summary>
         [HttpGet]
         [Route("AccType/GetAccountTypeId")]
         public IActionResult GetAccountTypeId(int id)
@@ -294,6 +373,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มประเภทบัญชี
+        /// </summary>
         [HttpPost]
         [Route("AccType/AddAccountType")]
         public IActionResult AddAccountType(CreateAccountTypeRequest Request)
@@ -302,6 +384,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขประเภทบัญชี
+        /// </summary>
         [HttpPost]
         [Route("AccType/EditAccountType")]
         public IActionResult EditAccountType(CreateAccountTypeRequest Request)
@@ -310,6 +395,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบประเภทบัญชี
+        /// </summary>
         [HttpDelete]
         [Route("AccType/DeleteAccountTypeId")]
         public IActionResult DeleteAccountTypeId(int Id)
@@ -318,6 +406,10 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+
+        /// <summary>
+        /// ค้นหาประเภทลูกหนี้
+        /// </summary>
         [HttpGet]
         [Route("Debtor/GetDebtorType")]
         public IActionResult GetDebtorType()
@@ -326,6 +418,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาประเภทลูกหนี้ โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Debtor/GetDebtorTypeId")]
         public IActionResult GetDebtorTypeId(int id)
@@ -334,6 +429,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มประเภทลูกหนี้
+        /// </summary>
         [HttpPost]
         [Route("Debtor/AddDebtorType")]
         public IActionResult AddDebtorType(DebtorTypeRequest Request)
@@ -342,6 +440,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขประเภทลูกหนี้
+        /// </summary>
         [HttpPost]
         [Route("Debtor/EditDebtorType")]
         public IActionResult EditDebtorType(DebtorTypeRequest Request)
@@ -350,6 +451,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาประเภทลูกหนี้
+        /// </summary>
         [HttpDelete]
         [Route("Debtor/DeleteDebtorTypeId")]
         public IActionResult DeleteDebtorTypeId(int Id)
@@ -358,6 +462,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาลูกหนี้
+        /// </summary>
         [HttpGet]
         [Route("Debtor/GetAllDeletor")]
         public IActionResult GetAllDebtor()
@@ -366,6 +473,10 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+
+        /// <summary>
+        /// ค้นหาประเภทเจ้าหนี้
+        /// </summary>
         [HttpGet]
         [Route("Creditor/GetCreditorType")]
         public IActionResult GetCreditorType()
@@ -374,6 +485,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาประเภทเจ้าหนี้ โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Creditor/GetCreditorTypeId")]
         public IActionResult GetCreditorTypeId(int id)
@@ -382,6 +496,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มประเภทเจ้าหนี้
+        /// </summary>
         [HttpPost]
         [Route("Creditor/AddCreditorType")]
         public IActionResult AddCreditorType(CreditorTypeRequest Request)
@@ -390,6 +507,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขประเภทเจ้าหนี้
+        /// </summary>
         [HttpPost]
         [Route("Creditor/EditCreditorType")]
         public IActionResult EditCreditorType(CreditorTypeRequest Request)
@@ -398,6 +518,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบประเภทเจ้าหนี้
+        /// </summary>
         [HttpDelete]
         [Route("Creditor/DeletetCreditorTypeId")]
         public IActionResult DeletetCreditorTypeId(int Id)
@@ -406,6 +529,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาเจ้าหนี้
+        /// </summary>
         [HttpGet]
         [Route("Creditor/GetCreditor")]
         public IActionResult GetCreditor()
@@ -414,6 +540,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาเจ้าหนี้ โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Creditor/GetCreditorId")]
         public IActionResult GetCreditorId(int Id)
@@ -422,6 +551,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// เพิ่มเจ้าหนี้
+        /// </summary>
         [HttpPost]
         [Route("Creditor/AddCreditor")]
         public IActionResult AddCreditor(CreditorRequest Request)
@@ -430,6 +562,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไขเจ้าหนี้
+        /// </summary>
         [HttpPost]
         [Route("Creditor/EditCreditor")]
         public IActionResult EditCreditor(CreditorRequest Request)
@@ -438,6 +573,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ลบเจ้าหนี้
+        /// </summary>
         [HttpDelete]
         [Route("Creditor/DeleteCreditor")]
         public IActionResult DeleteCreditorId(int Id)
@@ -446,6 +584,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหา Transection
+        /// </summary>
         [HttpGet]
         [Route("Transection/GetTransection")]
         public IActionResult GetTransection()
@@ -454,6 +595,9 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหา Transection โดย ID
+        /// </summary>
         [HttpGet]
         [Route("Transection/GetTransectionId")]
         public IActionResult GetTransectionId(int Id)
@@ -462,11 +606,72 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// แก้ไข Transection
+        /// </summary>
         [HttpPost]
-        [Route("Creditor/EditTransection")]
-        public IActionResult EditTransection(TransectionResponse Request)
+        [Route("Transection/EditTransection")]
+        public IActionResult EditTransection(EditTransectionRequest Request)
         {
             var data = _AccGlServices.EditTransection(Request);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// ค้นหาสมุดรายวัน
+        /// </summary>
+        [HttpGet]
+        [Route("Journal/GetJournal")]
+        public IActionResult GetJournal()
+        {
+            var data = _AccGlServices.GetJournal();
+            return Json(data);
+        }
+
+
+        /// <summary>
+        /// ค้นหาสมุดย่อย
+        /// </summary>
+        [HttpGet]
+        [Route("Journal/GetSubJournal")]
+        public IActionResult GetSubJournal(int JournalID)
+        {
+            var data = _AccGlServices.GetSubJournal(JournalID);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// เพิ่มสมุดย่อย โดย ID
+        /// </summary>
+        [HttpGet]
+        [Route("Journal/GetSubJournalID")]
+        public IActionResult GetSubJournalID(int Id)
+        {
+            var data = _AccGlServices.GetSubJournalID(Id);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// เพิ่มสมุดย่อย
+        /// </summary>
+        [HttpPost]
+        [Route("Journal/AddSubJournal")]
+        public IActionResult AddSubJournal(SubJournalResponse Request)
+        {
+            var data = _AccGlServices.AddSubJournal(Request);
+            return Json(data);
+        }
+        /// <remarks>
+         /// แก้ไข
+        /// </remarks>
+        /// <summary>
+        /// แก้ไขสมุดย่อย
+        /// </summary>
+        [HttpPost]
+        [Route("Journal/EditSubJournal")]
+        public IActionResult EditSubJournal(SubJournalDto Request)
+        {
+            var data = _AccGlServices.EditSubJournal(Request);
             return Json(data);
         }
     }

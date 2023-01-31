@@ -1,4 +1,5 @@
 ﻿using App.Common.Models.Responses;
+using App.GL.DTO;
 using App.GL.Requests;
 using App.GL.Responses;
 using Microsoft.EntityFrameworkCore;
@@ -1143,6 +1144,7 @@ namespace App.GL
                 var data = _databaseACC.Transections.ToList();
                 var Transections = _databaseACC.TransectionTypes.ToList();
                 var subminors = _databaseACC.ChartMinors.ToList();
+                var subjournal = _databaseACC.SubJournals.ToList();
                 var QSOuterJoin = from Tran in data
                                   join Transectiontype in Transections
                                   on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
@@ -1159,7 +1161,12 @@ namespace App.GL
                                   into DebittGroup
                                   from ncdebitt in DebittGroup.DefaultIfEmpty()
 
-                                  select new { Tran, Trantype, ncredit, ncdebitt };
+                                  join submijournal in subjournal
+                                  on Tran.SubJournalId.ToString() equals submijournal.Id.ToString()
+                                  into SubJournalGroup
+                                  from nsubjournal in SubJournalGroup.DefaultIfEmpty()
+
+                                  select new { Tran, Trantype, ncredit, ncdebitt, nsubjournal };
                 foreach (var item in QSOuterJoin)
                     result.Add(new TransectionResponse
                     {
@@ -1179,6 +1186,8 @@ namespace App.GL
                         CreditName = item.ncredit.Name,
                         Debit = item.Tran.Debit,
                         DebitName = item.ncdebitt.Name,
+                        SubJournalId = item.Tran.SubJournalId,
+                        SubJournalName = item.nsubjournal.Name,
                         Status = item.Tran.Status
 
                     });
@@ -1188,10 +1197,11 @@ namespace App.GL
 
         public List<TransectionResponse> GetTransectionId(int id)
         {
-                var result = new List<TransectionResponse>();
-                var data = _databaseACC.Transections.Where(x => x.Id == id).ToList();
+            var result = new List<TransectionResponse>();
+            var data = _databaseACC.Transections.Where(x => x.Id == id).ToList();
             var Transections = _databaseACC.TransectionTypes.ToList();
             var subminors = _databaseACC.ChartMinors.ToList();
+            var subjournal = _databaseACC.SubJournals.ToList();
             var QSOuterJoin = from Tran in data
                               join Transectiontype in Transections
                               on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
@@ -1206,9 +1216,16 @@ namespace App.GL
                               join submicredit in subminors
                               on Tran.Debit.ToString() equals submicredit.Id.ToString()
                               into DebittGroup
-                              from ncdebitt in DebittGroup.DefaultIfEmpty()
+                              from ndebit in DebittGroup.DefaultIfEmpty()
 
-                              select new { Tran, Trantype, ncredit, ncdebitt };
+                              join submijournal in subjournal
+                              on Tran.SubJournalId.ToString() equals submijournal.Id.ToString()
+                              into SubJournalGroup
+                              from nsubjournal in SubJournalGroup.DefaultIfEmpty()
+
+
+
+                              select new { Tran, Trantype, ncredit, ndebit, nsubjournal };
             foreach (var item in QSOuterJoin)
                 result.Add(new TransectionResponse
                 {
@@ -1227,21 +1244,33 @@ namespace App.GL
                     Credit = item.Tran.Credit,
                     CreditName = item.ncredit.Name,
                     Debit = item.Tran.Debit,
-                    DebitName = item.ncdebitt.Name,
+                    DebitName = item.ndebit.Name,
+                    JournalId = item.nsubjournal.JournalId,
+                    SubJournalId = item.Tran.SubJournalId,
+                    SubJournalName = item.nsubjournal.Name,
                     Status = item.Tran.Status
-
                 });
             return result;
         }
 
-        public CommonBaseResponse EditTransection(TransectionResponse request)
+        public CommonBaseResponse EditTransection(EditTransectionRequest request)
         {
             CommonBaseResponse response = new CommonBaseResponse();
             Transection result = _databaseACC.Transections.Where(x => x.Id == request.Id).FirstOrDefault();
             if (result != null)
             {
+                result.Detail = result.Detail;
+                result.Quantity = result.Quantity;
+                result.PaymentTypeId = result.PaymentTypeId;
+                result.DebtorTypeId = result.DebtorTypeId;
+                result.TransectionTypeId = result.TransectionTypeId;
+                result.DetailDate = result.DetailDate;
+                result.RefNo = result.RefNo;
+
                 result.Debit = request.Debit;
                 result.Credit = request.Credit;
+                result.Status = request.Status;
+                result.SubJournalId = request.SubJournalId;
                 _databaseACC.Entry(result).State = EntityState.Modified;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;
@@ -1249,5 +1278,109 @@ namespace App.GL
             }
             return response;
         }
+
+        public List<Journal> GetJournal()
+        {
+            List<Journal> Journal = _databaseACC.Journals.ToList();
+            return Journal;
+        }
+
+        public List<SubJournal> GetSubJournal(int JournalID)
+        {
+            var result = new List<SubJournal>();
+            var data = _databaseACC.SubJournals.Where(x => x.JournalId == JournalID).ToList();
+            var Journals = _databaseACC.Journals.ToList();
+            var QSOuterJoin = from datas in data
+                              join Journalname in Journals
+                              on datas.JournalId.ToString() equals Journalname.Id.ToString()
+                              into datasubjournals
+                              from nsubjournal in datasubjournals.DefaultIfEmpty()
+                              select new {datas, nsubjournal};
+            foreach (var item in QSOuterJoin)
+                result.Add(new SubJournal
+                {
+                    Id = item.datas.Id,
+                    Code = item.nsubjournal.Code+item.datas.Code,
+                    Name = item.datas.Name,
+                    Active = item.datas.Active
+                });
+            return result;
+        }
+
+        public List<SubJournalDto> GetSubJournalID(int id)
+        {
+            var SubJournal = _databaseACC.SubJournals.ToList();
+            var result = new List<SubJournalDto>();
+            var data = _databaseACC.SubJournals.Where(x => x.Id == id).ToList();
+            var Journals = _databaseACC.Journals.ToList();
+            var QSOuterJoin = from datas in data
+                              join Journalname in Journals
+                              on datas.JournalId.ToString() equals Journalname.Id.ToString()
+                              into datasubjournals
+                              from nsubjournal in datasubjournals.DefaultIfEmpty()
+                              select new { datas, nsubjournal };
+            foreach (var item in QSOuterJoin)
+                result.Add(new SubJournalDto
+                {
+                    Id = item.datas.Id,
+                    JournalCode = item.nsubjournal.Code,
+                    JournalName = item.nsubjournal.Name,
+                    SubJournalCode = item.datas.Code,
+                    SubJournalName = item.datas.Name,
+                    Year= item.datas.Year,
+                    Month= item.datas.Month,
+                    Number= item.datas.Number
+
+                });
+            return result;
+        }
+
+        public CommonBaseResponse AddSubJournal(SubJournalResponse request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            SubJournal SubJournal = new SubJournal();
+
+            SubJournal result = _databaseACC.SubJournals.Where(x => x.Code == request.Code & x.JournalId == request.JournalId).FirstOrDefault();
+            if (result == null)
+            {
+                SubJournal.Code = request.Code;
+                SubJournal.Name = request.Name;
+                SubJournal.JournalId = request.JournalId;
+                SubJournal.Year = DateTime.Now.Year.ToString();
+                SubJournal.Month = DateTime.Now.Month.ToString();
+                SubJournal.Number = request.Number;
+
+                _databaseACC.Entry(SubJournal).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Add Complete" : "Add Fail";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "Error SubJournal";
+            }
+            return response;
+        }
+
+        public CommonBaseResponse EditSubJournal(SubJournalDto request)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            SubJournal result = _databaseACC.SubJournals.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (result != null)
+            {
+                result.Code = request.SubJournalCode;
+                result.Name = request.SubJournalName;
+                result.Year = result.Year;
+                result.Month = result.Month;
+                result.Number = result.Number;
+                _databaseACC.Entry(result).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
+            }
+            return response;
+        }
+
     }
 }

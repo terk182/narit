@@ -21,13 +21,5 @@ namespace narit_acc_api.Models
         public string? ChartSubMajorName { get; set; }
         public int? ChartSubMajorAccTypeId { get; set; }
         public int ChartSubMajorIndex { get; set; }
-        public int ChartMinorId { get; set; }
-        public string? ChartMinorName { get; set; }
-        public int? ChartMinorAccTypeId { get; set; }
-        public int ChartMinorIndex { get; set; }
-        public int ChartSubMinorId { get; set; }
-        public string? ChartSubMinorName { get; set; }
-        public int? ChartSubMinorAccTypeId { get; set; }
-        public int ChartSubMinorIndex { get; set; }
     }
 }

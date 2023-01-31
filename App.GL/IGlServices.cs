@@ -1,4 +1,5 @@
 ﻿using App.Common.Models.Responses;
+using App.GL.DTO;
 using App.GL.Requests;
 using App.GL.Responses;
 using narit_acc_api.Models;
@@ -85,7 +86,13 @@ namespace App.GL
         List<TransectionResponse> GetTransection();
         List<TransectionResponse> GetTransectionId(int id);
 
-        CommonBaseResponse EditTransection(TransectionResponse request);
+        CommonBaseResponse EditTransection(EditTransectionRequest request);
 
+        //Journal
+        List<Journal> GetJournal();
+        List<SubJournal> GetSubJournal(int JournalID);
+        List<SubJournalDto> GetSubJournalID(int id);
+        CommonBaseResponse AddSubJournal(SubJournalResponse request);
+        CommonBaseResponse EditSubJournal(SubJournalDto request);
     }
 }

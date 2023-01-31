@@ -12,6 +12,8 @@ namespace narit_acc_api.Models
         public byte[] CreateDate { get; set; } = null!;
         public string? Detail { get; set; }
         public int? ChartMinorId { get; set; }
+        public int? Credit { get; set; }
+        public int? Debit { get; set; }
 
         public virtual ChartMinor? ChartMinor { get; set; }
     }

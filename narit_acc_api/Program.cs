@@ -3,6 +3,7 @@ using App.Resolver;
 using Microsoft.EntityFrameworkCore;
 using narit_acc_api.Models;
 using narit_mis_api.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,14 @@ builder.Services.AddMvc();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+
+{
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+
+});
 builder.Services.AddDbContext<NARIT_MIS_LINKContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton")));
 
@@ -37,6 +45,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
         c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "Web API");
     });
 }
+
 app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader()
