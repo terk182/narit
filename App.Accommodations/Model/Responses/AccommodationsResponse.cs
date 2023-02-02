@@ -10,6 +10,6 @@ namespace App.Accommodations.Model.Responses
 {
     public class AccommodationsResponse : BaseResponse
     {
-        public Accommodation? data { get; set; }
+        //public Accommodation? data { get; set; }
     }
 }

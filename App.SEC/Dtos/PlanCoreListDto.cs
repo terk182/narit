@@ -48,8 +48,8 @@ namespace App.SEC.Dtos
         public decimal NetBudgetCache { get; set; }
         public decimal UsedBudgetCache { get; set; }
         public decimal RemainBudgetCache { get; set; }
-        public  List<ResponsiblePerson>? ResponsiblePeople { get; set; }
-        public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
+        //public  List<ResponsiblePerson>? ResponsiblePeople { get; set; }
+        //public List<PerformanceIndicator>? PerformanceIndicators { get; set; }
         public List<StrategyDto>? strategy { get; set; }
         public List<FundSource>? fundSource { get; set; }
         public List<Mission>? mission { get; set; }

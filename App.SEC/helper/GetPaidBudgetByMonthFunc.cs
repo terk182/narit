@@ -9,9 +9,9 @@ namespace App.SEC.helper
 {
     public class GetPaidBudgetByMonthFunc
     {
-        private readonly NARIT_MIS_LINKContext _database;
+        private readonly CGI_MISContext _database;
 
-        public GetPaidBudgetByMonthFunc(NARIT_MIS_LINKContext context)
+        public GetPaidBudgetByMonthFunc(CGI_MISContext context)
         {
             _database = context;
         }

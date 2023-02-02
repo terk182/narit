@@ -8,7 +8,6 @@ namespace narit_mis_api.Models
         public FundType()
         {
             InverseParentFundType = new HashSet<FundType>();
-            PlanCores = new HashSet<PlanCore>();
         }
 
         public int Id { get; set; }
@@ -20,6 +19,5 @@ namespace narit_mis_api.Models
 
         public virtual FundType? ParentFundType { get; set; }
         public virtual ICollection<FundType> InverseParentFundType { get; set; }
-        public virtual ICollection<PlanCore> PlanCores { get; set; }
     }
 }

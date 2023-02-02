@@ -4,11 +4,5 @@
         <name>narit_mis_api</name>
     </assembly>
     <members>
-        <member name="M:narit_mis_api.Controllers.SetUpController.SetMisSsoMatching(System.Collections.Generic.List{narit_mis_api.Models.MisSsoMatching})">
-            <remarks>
-            หากต้องการลบการพูก Mis=>Sso 
-            ให้ส่งข้อมูลเดิม และใส่ "type":"reject"
-            </remarks>
-        </member>
     </members>
 </doc>

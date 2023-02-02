@@ -14,14 +14,14 @@ namespace App.Authenticator
 {
     public interface IAuthenticatorServices
     {
-        AuthenticatorBaseResponse LogIn(AuthenticatorRequest request);
-        LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request);
-        AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request);
-        List<StaffDto> getAllUser();
-        List<StaffDto> getUserId(int id);
-        UserResponse deleteUser(int id);
-        AuthenticatorBaseResponse PDPASetup(PDPADto request);
-        List<Application> getApp();
+        //AuthenticatorBaseResponse LogIn(AuthenticatorRequest request);
+        //LdapAuthenticatorBaseResponse LdapLogIn(AuthenticatorRequest request);
+        //AuthenticatorBaseResponse LogInCheck(AuthenticatorRequest request);
+        //List<StaffDto> getAllUser();
+        //List<StaffDto> getUserId(int id);
+        //UserResponse deleteUser(int id);
+        //AuthenticatorBaseResponse PDPASetup(PDPADto request);
+        //List<Application> getApp();
 
     }
 

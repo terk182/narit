@@ -12,13 +12,7 @@ namespace App.PathDetail
 {
     public interface IPathDetailService
     {
-        List<sitePage> Sitemap(string path);
-        List<db_list> get_db_class(string path);
-        List<backlist> get_backlist(string path);
-        CommonBaseResponse SetMisSsoMatching(List<MisSsoMatching> request);
-        List<MisSsoMatching> GetMisSsoMatching(MisSsoMatching request);
-        List<MisSsoMatching> search(MisUsers request);
-        List<StaffSecurityDto> searchStaff(MisUsers request);
+   
     }
     
 }

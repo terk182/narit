@@ -12,12 +12,12 @@ namespace App.Common
 {
     public interface ICommonServices
     {
-        List<BudgetTypeCommonDto>  GetBudgetTypes(int fiscalYear);
-        List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
-        CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto GeFormActionLog);
-        List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
-        CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog);
-        List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
+        //List<BudgetTypeCommonDto>  GetBudgetTypes(int fiscalYear);
+        //List<PlanTypeCommonDto> GetPlanType(int fiscalYear);
+        //CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto GeFormActionLog);
+        //List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
+        //CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog);
+        //List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
 
     }
 }

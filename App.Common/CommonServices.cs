@@ -14,76 +14,76 @@ namespace App.Common
 {
     public class CommonServices : ICommonServices
     {
-        private readonly NARIT_MIS_LINKContext _database;
+        private readonly CGI_MISContext _database;
 
-        public CommonServices(NARIT_MIS_LINKContext context)
+        public CommonServices(CGI_MISContext context)
         {
             _database = context;
         }
 
-        public CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
-        {
+        //public CommonBaseResponse EditMisGeneralExpenseMemoFormsSignList(MisGeneralExpenseMemoFormsSignListDto request)
+        //{
 
-            //_database.Entry(request).State = request.action == 0 ?
-            //                           EntityState.Added :
-            //                           EntityState.Modified;
+        //    //_database.Entry(request).State = request.action == 0 ?
+        //    //                           EntityState.Added :
+        //    //                           EntityState.Modified;
 
-            int  result = 0;
-            foreach (var item in request.GeneralExpenseMemoFormsSignList)
-            {
-                _database.Entry(item).State = request.action == 0 ?
-                                         EntityState.Added :
-                                         EntityState.Modified;
+        //    int  result = 0;
+        //    foreach (var item in request.GeneralExpenseMemoFormsSignList)
+        //    {
+        //        _database.Entry(item).State = request.action == 0 ?
+        //                                 EntityState.Added :
+        //                                 EntityState.Modified;
 
 
-                 result = _database.SaveChanges();
-            }
+        //         result = _database.SaveChanges();
+        //    }
           
-            var response = new CommonBaseResponse();
-            response.Success = result > 0 ? true : false;
-            return response;
-        }
+        //    var response = new CommonBaseResponse();
+        //    response.Success = result > 0 ? true : false;
+        //    return response;
+        //}
 
-        public CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog)
-        {
-            var db = new GeFormActionLog();
-            db.Id = GeFormActionLog.Id;
-            db.Name = GeFormActionLog.Name;
-            db.Active = GeFormActionLog.Active;
-            db.StaffId = GeFormActionLog.StaffId;
-            db.ActionDate = GeFormActionLog.ActionDate;
-            db.Ip = GeFormActionLog.Ip;
-            db.HostName = GeFormActionLog.HostName;
-            db.ActionTypeEnum = GeFormActionLog.ActionTypeEnum;
-            db.StaffName = GeFormActionLog.StaffName;
-            db.ClientName = GeFormActionLog.ClientName;
-            db.GeneralExpenseMemoFormId = GeFormActionLog.GeneralExpenseMemoFormId;
-            db.SignedHashText = GeFormActionLog.SignedHashText;
-            db.VerifyData = GeFormActionLog.VerifyData;
-            db.SignedHashValue = GeFormActionLog.SignedHashValue;
-            db.CipherKeyPairId = GeFormActionLog.CipherKeyPairId;
-            db.Jwtpayload = GeFormActionLog.Jwtpayload;
-            db.Detail = GeFormActionLog.Detail;
-            int result = 0;
+        //public CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog)
+        //{
+        //    var db = new GeFormActionLog();
+        //    db.Id = GeFormActionLog.Id;
+        //    db.Name = GeFormActionLog.Name;
+        //    db.Active = GeFormActionLog.Active;
+        //    db.StaffId = GeFormActionLog.StaffId;
+        //    db.ActionDate = GeFormActionLog.ActionDate;
+        //    db.Ip = GeFormActionLog.Ip;
+        //    db.HostName = GeFormActionLog.HostName;
+        //    db.ActionTypeEnum = GeFormActionLog.ActionTypeEnum;
+        //    db.StaffName = GeFormActionLog.StaffName;
+        //    db.ClientName = GeFormActionLog.ClientName;
+        //    db.GeneralExpenseMemoFormId = GeFormActionLog.GeneralExpenseMemoFormId;
+        //    db.SignedHashText = GeFormActionLog.SignedHashText;
+        //    db.VerifyData = GeFormActionLog.VerifyData;
+        //    db.SignedHashValue = GeFormActionLog.SignedHashValue;
+        //    db.CipherKeyPairId = GeFormActionLog.CipherKeyPairId;
+        //    db.Jwtpayload = GeFormActionLog.Jwtpayload;
+        //    db.Detail = GeFormActionLog.Detail;
+        //    int result = 0;
 
-            _database.Entry(db).State = EntityState.Added;
-            result = _database.SaveChanges();
-            var response = new CommonBaseResponse();
-            response.Success = result > 0 ? true : false;
-            return response;
-        }
+        //    _database.Entry(db).State = EntityState.Added;
+        //    result = _database.SaveChanges();
+        //    var response = new CommonBaseResponse();
+        //    response.Success = result > 0 ? true : false;
+        //    return response;
+        //}
 
-        public List<GeFormActionLog> GeFormActionLog(int GeneralExpenseMemoFormId)
-        {
-            var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
-            return data;
-        }
-        public List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId)
-        {
+        //public List<GeFormActionLog> GeFormActionLog(int GeneralExpenseMemoFormId)
+        //{
+        //    var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
+        //    return data;
+        //}
+        //public List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId)
+        //{
 
-            var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
-            return data;
-        }
+        //    var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
+        //    return data;
+        //}
         public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
         {
             var list1 = new List<BudgetTypeCommonDto>();
@@ -171,74 +171,74 @@ namespace App.Common
 
 
 
-        public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
-        {
-            var data = _database.MisGeneralExpenseMemoFormsSignLists.Where(x => x.GeneralExpenseMemoFormsId == GeneralExpenseMemoFormsId).ToList();
-            return data;
-        }
+        //public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
+        //{
+        //    var data = _database.MisGeneralExpenseMemoFormsSignLists.Where(x => x.GeneralExpenseMemoFormsId == GeneralExpenseMemoFormsId).ToList();
+        //    return data;
+        //}
 
-        public List<PlanTypeCommonDto> GetPlanType(int fiscalYear)
-        {
-            var list1 = new List<PlanTypeCommonDto>();
-            var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
-            var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
-            foreach (var item in data)
-            {
-                var list2 = new List<PlanTypeCommonDto>();
-                foreach (var s in PlanTypes)
-                {
-                    if (s.ParentPlanTypeId == item.Id)
-                    {
-                        var list3 = new List<PlanTypeCommonDto>();
-                        foreach (var s1 in PlanTypes)
-                        {
-                            if (s1.ParentPlanTypeId == s.Id)
-                            {
-                                list3.Add(new PlanTypeCommonDto
-                                {
-                                    Id = s1.Id,
-                                    Name = s1.Name,
-                                    FiscalYear = s1.FiscalYear,
-                                    Active = s1.Active,
-                                    ParentPlanTypeId = s1.ParentPlanTypeId,
-                                    ReferenceOldId = s1.ReferenceOldId,
-                                    Weight = s1.Weight,
-                                    // PrinciplePlanTag { get; set; }
-                                });
-                            }
+        //public List<PlanTypeCommonDto> GetPlanType(int fiscalYear)
+        //{
+        //    var list1 = new List<PlanTypeCommonDto>();
+        //    var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+        //    var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        var list2 = new List<PlanTypeCommonDto>();
+        //        foreach (var s in PlanTypes)
+        //        {
+        //            if (s.ParentPlanTypeId == item.Id)
+        //            {
+        //                var list3 = new List<PlanTypeCommonDto>();
+        //                foreach (var s1 in PlanTypes)
+        //                {
+        //                    if (s1.ParentPlanTypeId == s.Id)
+        //                    {
+        //                        list3.Add(new PlanTypeCommonDto
+        //                        {
+        //                            Id = s1.Id,
+        //                            Name = s1.Name,
+        //                            FiscalYear = s1.FiscalYear,
+        //                            Active = s1.Active,
+        //                            ParentPlanTypeId = s1.ParentPlanTypeId,
+        //                            ReferenceOldId = s1.ReferenceOldId,
+        //                            Weight = s1.Weight,
+        //                            // PrinciplePlanTag { get; set; }
+        //                        });
+        //                    }
 
-                        }
-                        list2.Add(new PlanTypeCommonDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            FiscalYear = s.FiscalYear,
-                            Active = s.Active,
-                            ParentPlanTypeId = s.ParentPlanTypeId,
-                            ReferenceOldId = s.ReferenceOldId,
-                            Weight = s.Weight,
-                            ParentPlanType = list3
-                        });
-                    }
-                }
-                list1.Add(new PlanTypeCommonDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentPlanTypeId = item.ParentPlanTypeId,
-                    ReferenceOldId = item.ReferenceOldId,
-                    Weight = item.Weight,
-                    ParentPlanType = list2
-                });
+        //                }
+        //                list2.Add(new PlanTypeCommonDto
+        //                {
+        //                    Id = s.Id,
+        //                    Name = s.Name,
+        //                    FiscalYear = s.FiscalYear,
+        //                    Active = s.Active,
+        //                    ParentPlanTypeId = s.ParentPlanTypeId,
+        //                    ReferenceOldId = s.ReferenceOldId,
+        //                    Weight = s.Weight,
+        //                    ParentPlanType = list3
+        //                });
+        //            }
+        //        }
+        //        list1.Add(new PlanTypeCommonDto
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            FiscalYear = item.FiscalYear,
+        //            Active = item.Active,
+        //            ParentPlanTypeId = item.ParentPlanTypeId,
+        //            ReferenceOldId = item.ReferenceOldId,
+        //            Weight = item.Weight,
+        //            ParentPlanType = list2
+        //        });
 
 
 
-            }
+        //    }
 
-            return list1;
-        }
+        //    return list1;
+        //}
 
        
     }

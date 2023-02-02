@@ -8,7 +8,6 @@ namespace narit_mis_api.Models
         public StrategicIndicator()
         {
             InverseParentStrategicIndicator = new HashSet<StrategicIndicator>();
-            PerformanceIndicators = new HashSet<PerformanceIndicator>();
         }
 
         public int Id { get; set; }
@@ -24,6 +23,5 @@ namespace narit_mis_api.Models
 
         public virtual StrategicIndicator? ParentStrategicIndicator { get; set; }
         public virtual ICollection<StrategicIndicator> InverseParentStrategicIndicator { get; set; }
-        public virtual ICollection<PerformanceIndicator> PerformanceIndicators { get; set; }
     }
 }

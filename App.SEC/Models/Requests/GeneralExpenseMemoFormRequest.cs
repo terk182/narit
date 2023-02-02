@@ -49,6 +49,6 @@ namespace App.SEC.Models.Requests
         public string FundTypeName { get; set; } = null!;
         public int FundTypeId { get; set; }
         public string StatementName { get; set; } = null!;
-        public List<MisGeneralExpenseMemoFormsSignList> SignList { get; set; }
+        //public List<MisGeneralExpenseMemoFormsSignList> SignList { get; set; }
     }
 }

@@ -13,23 +13,7 @@ namespace App.EIS
 {
     public interface IEisServices
     {
-        List<PlanCore> getPlanCore();
-        List<GovernmentDisbursementGoal> getGovernmentDisbursementGoal();
-        List<PlanCore> planCoreList(int year);
-        List<BillingLocationDto> getAllBillingLocation();
-
-        List<ProcureStoreLocationDto> getAllBuildingPlan();
-
-        EisBaseResponse BillingLocationSetup(BillingLocationRequest request);
-        List<calBudgetDetail> CalculatePlanTypeData(int fYear, int month);
-        void CreateAreaChart();
-        void CreateMOPAreaChart();
-        void CreatePieChart();
-        void CreateMOPPieChart(int month);
-        //CreateStackColumnChart();
-        void CreateGroupColumnChart();
-        void CreateMOPGroupColumnChart(int fYear, int month);
-        void CreateTableData(int fYear, int month);
+      
 
     }
 }

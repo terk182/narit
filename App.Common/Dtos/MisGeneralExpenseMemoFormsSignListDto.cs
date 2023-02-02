@@ -10,7 +10,7 @@ namespace App.Common.Dtos
     public class MisGeneralExpenseMemoFormsSignListDto
     {
         public int action { get; set; }
-        public List<MisGeneralExpenseMemoFormsSignList>? GeneralExpenseMemoFormsSignList { get; set; }
+        //public List<MisGeneralExpenseMemoFormsSignList>? GeneralExpenseMemoFormsSignList { get; set; }
 
     }
 }

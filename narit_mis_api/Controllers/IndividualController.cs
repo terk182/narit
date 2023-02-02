@@ -7,15 +7,12 @@ namespace narit_mis_api.Controllers
     public class IndividualController : Controller
     {
 
-        [HttpGet]
-        [Route("EditPersonalInfo")]
-        public IActionResult EditPersonalInfo()
-        {
-            return Json("EditPersonalInfo");
-        }
-
-
-
+        //[HttpGet]
+        //[Route("EditPersonalInfo")]
+        //public IActionResult EditPersonalInfo()
+        //{
+        //    return Json("EditPersonalInfo");
+        //}
 
     }
 }

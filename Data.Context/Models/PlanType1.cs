@@ -3,14 +3,22 @@ using System.Collections.Generic;
 
 namespace narit_mis_api.Models
 {
-    public partial class PlanType
+    public partial class PlanType1
     {
+        public PlanType1()
+        {
+            InverseParentPlanType = new HashSet<PlanType1>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int FiscalYear { get; set; }
         public bool Active { get; set; }
         public int? ParentPlanTypeId { get; set; }
         public int? ReferenceOldId { get; set; }
-        public decimal? Weight { get; set; }
+        public decimal Weight { get; set; }
+
+        public virtual PlanType1? ParentPlanType { get; set; }
+        public virtual ICollection<PlanType1> InverseParentPlanType { get; set; }
     }
 }

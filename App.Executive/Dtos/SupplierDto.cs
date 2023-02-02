@@ -29,6 +29,6 @@ namespace App.FIN.Dtos
         public int? SupplierTypeId { get; set; }
         public bool IsJuristicPerson { get; set; }
 
-        public virtual SupplierType? SupplierType { get; set; }
+        //public virtual SupplierType? SupplierType { get; set; }
     }
 }

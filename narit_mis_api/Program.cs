@@ -82,7 +82,7 @@ builder.Services.AddSwaggerGen(c =>
   });
 });
 ////////////////////////////////////
-builder.Services.AddDbContext<NARIT_MIS_LINKContext>(Options =>
+builder.Services.AddDbContext<CGI_MISContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton")));
 
 builder.Services.AddDbContext<CGI_ACCContext>(Options =>

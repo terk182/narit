@@ -11,11 +11,11 @@ namespace App.Accommodations
 {
     public interface IAccommodationsService
     {
-        List<Accommodation> getAll();
-        Accommodation getById(int id);
-        List<Accommodation> PostReadByName(AccommodationsRequest Request);
-        BaseResponse Add(Accommodation Request);
-        AccommodationsResponse update(Accommodation Request);
-        BaseResponse delete(int id);
+        //List<Accommodation> getAll();
+        //Accommodation getById(int id);
+        //List<Accommodation> PostReadByName(AccommodationsRequest Request);
+        //BaseResponse Add(Accommodation Request);
+        //AccommodationsResponse update(Accommodation Request);
+        //BaseResponse delete(int id);
     }
 }
