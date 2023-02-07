@@ -14,7 +14,7 @@ namespace narit_mis_api.Models
         public int? PlanCoreId { get; set; }
         public int? PlanActivityId { get; set; }
         public int? HrdepartmentId { get; set; }
-        public string HrdepartmentName { get; set; } = null!;
+        public string? HrdepartmentName { get; set; }
 
         public virtual PlanActivity? PlanActivity { get; set; }
         public virtual PlanCore? PlanCore { get; set; }

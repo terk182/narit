@@ -4566,7 +4566,7 @@ namespace App.SEC
             public SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request)
             {
                 var _ResponsiblePerson = new ResponsiblePerson();
-                _ResponsiblePerson.Id = request.Id;
+                //_ResponsiblePerson.Id = request.Id;
                 _ResponsiblePerson.Name = request.Name;
                 _ResponsiblePerson.Active = request.Active;
                 _ResponsiblePerson.FiscalYear = request.FiscalYear;
@@ -4577,11 +4577,11 @@ namespace App.SEC
                 _ResponsiblePerson.HrdepartmentId = request.HrdepartmentId;
                 _ResponsiblePerson.HrdepartmentName = request.HrdepartmentName;
 
-                //if (request.ParentDepartmentId != 0)
-                //{
-                //    _Department.ParentDepartmentId = request.ParentDepartmentId;
-                //}
-                _database.Entry(_ResponsiblePerson).State = _ResponsiblePerson.Id == 0 ?
+            if (request.Id != 0)
+            {
+                _ResponsiblePerson.Id = request.Id;
+            }
+            _database.Entry(_ResponsiblePerson).State = _ResponsiblePerson.Id == 0 ?
                                                   EntityState.Added :
                                                   EntityState.Modified;
 
