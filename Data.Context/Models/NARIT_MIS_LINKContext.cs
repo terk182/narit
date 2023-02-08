@@ -640,11 +640,7 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<AnnualBudget>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("AnnualBudget", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<AppFormActionLog>(entity =>
@@ -1481,11 +1477,7 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<CapticalType>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("CapticalType", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<CertifyOfMedicalRightForm>(entity =>
@@ -3994,22 +3986,14 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<GovtPlan>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("GovtPlans", "Plan");
 
                 entity.Property(e => e.GovtStrategicId).HasColumnName("GovtStrategic_id");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<GovtStrategic>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("GovtStrategic", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.MaingovtId).HasColumnName("Maingovt_Id");
             });
@@ -4121,11 +4105,7 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<IndicatorsStrategyForProject>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("IndicatorsStrategyForProject", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.MeasureId).HasColumnName("Measure_Id");
 
@@ -4569,42 +4549,26 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<MainActivity>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("MainActivities", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.MainProjectId).HasColumnName("MainProject_id");
             });
 
             modelBuilder.Entity<MainGovtStatement>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("MainGovtStatement", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<MainProject>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("MainProjects ", "Plan");
 
                 entity.Property(e => e.GovtplansId).HasColumnName("Govtplans_Id");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<Measure>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Measure", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.StategyId).HasColumnName("Stategy_Id");
             });
@@ -7380,8 +7344,6 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<Project>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Project", "Plan");
 
                 entity.Property(e => e.Captical).HasColumnType("text");
@@ -7389,8 +7351,6 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
                 entity.Property(e => e.DepartmentId).HasColumnName("Department_Id");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.MainProjectId).HasColumnName("MainProject_id");
 
@@ -7411,24 +7371,16 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<ProjectCaptical>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("ProjectCaptical", "Plan");
 
                 entity.Property(e => e.CapticalTypeId).HasColumnName("CapticalType_Id");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
             });
 
             modelBuilder.Entity<ProjectResponsiblePerson>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("ProjectResponsiblePersons", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
             });
@@ -8851,13 +8803,9 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<StrategicIssue>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("StrategicIssues", "Plan");
 
                 entity.Property(e => e.Endyear).HasColumnName("endyear");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Startyear).HasColumnName("startyear");
             });
@@ -8885,24 +8833,16 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<Strategy1>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Strategy", "Plan");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.StrategicId).HasColumnName("Strategic_Id");
             });
 
             modelBuilder.Entity<SubAnnualBudget>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("subAnnualBudget", "Plan");
 
                 entity.Property(e => e.AnnualBudgetId).HasColumnName("AnnualBudget_ID");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<SummaryStatementCache>(entity =>
