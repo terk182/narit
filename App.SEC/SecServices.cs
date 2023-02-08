@@ -5641,11 +5641,11 @@ namespace App.SEC
         //MainGovtStatement
         public List<MainGovtStatement> GetAllMainGovtStatement()
         {
-            return _database.MainGovtStatements.ToList();
+            return _database.MainGovtStatements.Where(x => x.Active).ToList();
         }
         public List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId)
         {
-            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId).ToList();
+            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse MainGovtStatementSetup(MainGovtStatement request)
@@ -5684,11 +5684,11 @@ namespace App.SEC
         //GovtStrategic
         public List<GovtStrategic> GetAllGovtStrategic()
         {
-            return _database.GovtStrategics.ToList();
+            return _database.GovtStrategics.Where(x => x.Active).ToList();
         }
         public List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId)
         {
-            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId).ToList();
+            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse GovtStrategicSetup(GovtStrategic request)
@@ -5727,11 +5727,11 @@ namespace App.SEC
         //GovtPlan
         public List<GovtPlan> GetAllGovtPlan()
         {
-            return _database.GovtPlans.ToList();
+            return _database.GovtPlans.Where(x => x.Active).ToList();
         }
         public List<GovtPlan> GetGovtPlanbyId(int GovtPlanId)
         {
-            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId).ToList();
+            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse GovtPlanSetup(GovtPlan request)
@@ -5770,11 +5770,11 @@ namespace App.SEC
         //MainProject
         public List<MainProject> GetAllMainProject()
         {
-            return _database.MainProjects.ToList();
+            return _database.MainProjects.Where(x => x.Active).ToList();
         }
         public List<MainProject> GetMainProjectbyId(int MainProjectId)
         {
-            var data = _database.MainProjects.Where(x => x.Id == MainProjectId).ToList();
+            var data = _database.MainProjects.Where(x => x.Id == MainProjectId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse MainProjectSetup(MainProject request)
@@ -5813,11 +5813,11 @@ namespace App.SEC
         //MainActivity
         public List<MainActivity> GetAllMainActivity()
         {
-            return _database.MainActivities.ToList();
+            return _database.MainActivities.Where(x => x.Active).ToList();
         }
         public List<MainActivity> GetMainActivitybyId(int MainActivityId)
         {
-            var data = _database.MainActivities.Where(x => x.Id == MainActivityId).ToList();
+            var data = _database.MainActivities.Where(x => x.Id == MainActivityId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse MainActivitySetup(MainActivity request)
@@ -5856,11 +5856,11 @@ namespace App.SEC
         //StrategicIssue
         public List<StrategicIssue> GetAllStrategicIssue()
         {
-            return _database.StrategicIssues.ToList();
+            return _database.StrategicIssues.Where(x => x.Active).ToList();
         }
         public List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId)
         {
-            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId).ToList();
+            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse StrategicIssueSetup(StrategicIssue request)
@@ -5899,11 +5899,11 @@ namespace App.SEC
         //Strategy1
         public List<Strategy1> GetAllStrategy1()
         {
-            return _database.Strategies1.ToList();
+            return _database.Strategies1.Where(x => x.Active).ToList();
         }
         public List<Strategy1> GetStrategy1byId(int Strategy1Id)
         {
-            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id).ToList();
+            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id && x.Active).ToList();
             return data;
         }
         public SecBaseResponse Strategy1Setup(Strategy1 request)
@@ -5942,11 +5942,11 @@ namespace App.SEC
         //Measure
         public List<Measure> GetAllMeasure()
         {
-            return _database.Measures.ToList();
+            return _database.Measures.Where(x => x.Active).ToList();
         }
         public List<Measure> GetMeasurebyId(int MeasureId)
         {
-            var data = _database.Measures.Where(x => x.Id == MeasureId).ToList();
+            var data = _database.Measures.Where(x => x.Id == MeasureId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse MeasureSetup(Measure request)
@@ -5985,11 +5985,11 @@ namespace App.SEC
         //AnnualBudget
         public List<AnnualBudget> GetAllAnnualBudget()
         {
-            return _database.AnnualBudgets.ToList();
+            return _database.AnnualBudgets.Where(x => x.Active).ToList();
         }
         public List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId)
         {
-            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId).ToList();
+            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse AnnualBudgetSetup(AnnualBudget request)
@@ -6028,11 +6028,11 @@ namespace App.SEC
         //SubAnnualBudget
         public List<SubAnnualBudget> GetAllSubAnnualBudget()
         {
-            return _database.SubAnnualBudgets.ToList();
+            return _database.SubAnnualBudgets.Where(x => x.Active).ToList();
         }
         public List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
         {
-            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId).ToList();
+            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse SubAnnualBudgetSetup(SubAnnualBudget request)
@@ -6071,11 +6071,11 @@ namespace App.SEC
         //CapticalType
         public List<CapticalType> GetAllCapticalType()
         {
-            return _database.CapticalTypes.ToList();
+            return _database.CapticalTypes.Where(x => x.Active).ToList();
         }
         public List<CapticalType> GetCapticalTypebyId(int CapticalTypeId)
         {
-            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId).ToList();
+            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse CapticalTypeSetup(CapticalType request)
@@ -6114,11 +6114,11 @@ namespace App.SEC
         //Project
         public List<Project> GetAllProject()
         {
-            return _database.Projects.ToList();
+            return _database.Projects.Where(x => x.Active).ToList();
         }
         public List<Project> GetProjectbyId(int ProjectId)
         {
-            var data = _database.Projects.Where(x => x.Id == ProjectId).ToList();
+            var data = _database.Projects.Where(x => x.Id == ProjectId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse ProjectSetup(Project request)
@@ -6157,11 +6157,11 @@ namespace App.SEC
         //ProjectCaptical
         public List<ProjectCaptical> GetAllProjectCaptical()
         {
-            return _database.ProjectCapticals.ToList();
+            return _database.ProjectCapticals.Where(x => x.Active).ToList();
         }
         public List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId)
         {
-            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId).ToList();
+            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse ProjectCapticalSetup(ProjectCaptical request)
@@ -6200,11 +6200,11 @@ namespace App.SEC
         //ProjectResponsiblePerson
         public List<ProjectResponsiblePerson> GetAllProjectResponsiblePersons()
         {
-            return _database.ProjectResponsiblePersons.ToList();
+            return _database.ProjectResponsiblePersons.Where(x => x.Active).ToList();
         }
         public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
         {
-            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId).ToList();
+            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
@@ -6244,11 +6244,11 @@ namespace App.SEC
         //IndicatorsStrategyForProject
         public List<IndicatorsStrategyForProject> GetAllIndicatorsStrategyForProject()
         {
-            return _database.IndicatorsStrategyForProjects.ToList();
+            return _database.IndicatorsStrategyForProjects.Where(x => x.Active).ToList();
         }
         public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
         {
-            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId).ToList();
+            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
