@@ -18,8 +18,6 @@ namespace narit_mis_api.Models
         public string Objective { get; set; } = null!;
         public string TargetIdListValue { get; set; } = null!;
         public string OtherTarget { get; set; } = null!;
-        public int MonthStart { get; set; }
-        public int MonthEnd { get; set; }
         public int MonthSum { get; set; }
         public string Output { get; set; } = null!;
         public string Outcome { get; set; } = null!;
@@ -30,5 +28,7 @@ namespace narit_mis_api.Models
         public int StatusEnum { get; set; }
         public bool Active { get; set; }
         public string Captical { get; set; } = null!;
+        public string MonthStart { get; set; } = null!;
+        public string MonthEnd { get; set; } = null!;
     }
 }

@@ -56,7 +56,6 @@ namespace App.SEC
 
         public List<ScheduleFisicalYear> GetScheduleFisicalYear()
         {
-
             return _database.ScheduleFisicalYears.ToList();
         }
         public List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year)
@@ -5640,6 +5639,10 @@ namespace App.SEC
 
         ///////////////////////new new new by ardin/////////////////////////////
         //MainGovtStatement
+        public List<MainGovtStatement> GetAllMainGovtStatement()
+        {
+            return _database.MainGovtStatements.ToList();
+        }
         public List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId)
         {
             var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId).ToList();
@@ -5679,6 +5682,10 @@ namespace App.SEC
             return response;
         }
         //GovtStrategic
+        public List<GovtStrategic> GetAllGovtStrategic()
+        {
+            return _database.GovtStrategics.ToList();
+        }
         public List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId)
         {
             var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId).ToList();
@@ -5718,6 +5725,10 @@ namespace App.SEC
             return response;
         }
         //GovtPlan
+        public List<GovtPlan> GetAllGovtPlan()
+        {
+            return _database.GovtPlans.ToList();
+        }
         public List<GovtPlan> GetGovtPlanbyId(int GovtPlanId)
         {
             var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId).ToList();
@@ -5757,6 +5768,10 @@ namespace App.SEC
             return response;
         }
         //MainProject
+        public List<MainProject> GetAllMainProject()
+        {
+            return _database.MainProjects.ToList();
+        }
         public List<MainProject> GetMainProjectbyId(int MainProjectId)
         {
             var data = _database.MainProjects.Where(x => x.Id == MainProjectId).ToList();
@@ -5796,6 +5811,10 @@ namespace App.SEC
             return response;
         }
         //MainActivity
+        public List<MainActivity> GetAllMainActivity()
+        {
+            return _database.MainActivities.ToList();
+        }
         public List<MainActivity> GetMainActivitybyId(int MainActivityId)
         {
             var data = _database.MainActivities.Where(x => x.Id == MainActivityId).ToList();
@@ -5835,6 +5854,10 @@ namespace App.SEC
             return response;
         }
         //StrategicIssue
+        public List<StrategicIssue> GetAllStrategicIssue()
+        {
+            return _database.StrategicIssues.ToList();
+        }
         public List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId)
         {
             var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId).ToList();
@@ -5874,6 +5897,10 @@ namespace App.SEC
             return response;
         }
         //Strategy1
+        public List<Strategy1> GetAllStrategy1()
+        {
+            return _database.Strategies1.ToList();
+        }
         public List<Strategy1> GetStrategy1byId(int Strategy1Id)
         {
             var data = _database.Strategies1.Where(x => x.Id == Strategy1Id).ToList();
@@ -5913,6 +5940,10 @@ namespace App.SEC
             return response;
         }
         //Measure
+        public List<Measure> GetAllMeasure()
+        {
+            return _database.Measures.ToList();
+        }
         public List<Measure> GetMeasurebyId(int MeasureId)
         {
             var data = _database.Measures.Where(x => x.Id == MeasureId).ToList();
@@ -5952,6 +5983,10 @@ namespace App.SEC
             return response;
         }
         //AnnualBudget
+        public List<AnnualBudget> GetAllAnnualBudget()
+        {
+            return _database.AnnualBudgets.ToList();
+        }
         public List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId)
         {
             var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId).ToList();
@@ -5991,6 +6026,10 @@ namespace App.SEC
             return response;
         }
         //SubAnnualBudget
+        public List<SubAnnualBudget> GetAllSubAnnualBudget()
+        {
+            return _database.SubAnnualBudgets.ToList();
+        }
         public List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
         {
             var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId).ToList();
@@ -6030,6 +6069,10 @@ namespace App.SEC
             return response;
         }
         //CapticalType
+        public List<CapticalType> GetAllCapticalType()
+        {
+            return _database.CapticalTypes.ToList();
+        }
         public List<CapticalType> GetCapticalTypebyId(int CapticalTypeId)
         {
             var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId).ToList();
@@ -6069,6 +6112,10 @@ namespace App.SEC
             return response;
         }
         //Project
+        public List<Project> GetAllProject()
+        {
+            return _database.Projects.ToList();
+        }
         public List<Project> GetProjectbyId(int ProjectId)
         {
             var data = _database.Projects.Where(x => x.Id == ProjectId).ToList();
@@ -6108,6 +6155,10 @@ namespace App.SEC
             return response;
         }
         //ProjectCaptical
+        public List<ProjectCaptical> GetAllProjectCaptical()
+        {
+            return _database.ProjectCapticals.ToList();
+        }
         public List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId)
         {
             var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId).ToList();
@@ -6147,6 +6198,10 @@ namespace App.SEC
             return response;
         }
         //ProjectResponsiblePerson
+        public List<ProjectResponsiblePerson> GetAllProjectResponsiblePersons()
+        {
+            return _database.ProjectResponsiblePersons.ToList();
+        }
         public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
         {
             var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId).ToList();
@@ -6187,6 +6242,10 @@ namespace App.SEC
         }
 
         //IndicatorsStrategyForProject
+        public List<IndicatorsStrategyForProject> GetAllIndicatorsStrategyForProject()
+        {
+            return _database.IndicatorsStrategyForProjects.ToList();
+        }
         public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
         {
             var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId).ToList();

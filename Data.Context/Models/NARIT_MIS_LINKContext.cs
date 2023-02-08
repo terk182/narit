@@ -7398,6 +7398,10 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.MissionId).HasColumnName("Mission_Id");
 
+                entity.Property(e => e.MonthEnd).HasColumnType("text");
+
+                entity.Property(e => e.MonthStart).HasColumnType("text");
+
                 entity.Property(e => e.PlanTypeId).HasColumnName("PlanType_Id");
 
                 entity.Property(e => e.StrategicId).HasColumnName("Strategic_Id");
