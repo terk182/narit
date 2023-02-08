@@ -2076,6 +2076,366 @@ namespace narit_mis_api.Controllers
         //    return Json(_BudgetType);
         //}
 
+        /////////////////////////////////new new new /////////////////////////////////
+        //MainGovtStatement
+        [HttpGet]
+        [Route("/MainGovtStatement/GetMainGovtStatementbyId/{MainGovtStatementId}")]
+        public IActionResult GetMainGovtStatementbyId(int MainGovtStatementId)
+        {
+            var data = _SecServices.GetMainGovtStatementbyId(MainGovtStatementId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/MainGovtStatement/MainGovtStatementSetup")]
+        public IActionResult MainGovtStatementSetup(MainGovtStatement request)
+        {
+            var data = _SecServices.MainGovtStatementSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/MainGovtStatement/DeleteMainGovtStatement/{MainGovtStatementId}")]
+        public IActionResult DeleteMainGovtStatement(int MainGovtStatementId)
+        {
 
+            var data = _SecServices.DeleteMainGovtStatement(MainGovtStatementId);
+
+            return Json(data);
+        }
+        //GovtStrategic
+        [HttpGet]
+        [Route("/GovtStrategic/GetGovtStrategicbyId/{GovtStrategicId}")]
+        public IActionResult GetGovtStrategicbyId(int GovtStrategicId)
+        {
+            var data = _SecServices.GetGovtStrategicbyId(GovtStrategicId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/GovtStrategic/GovtStrategicSetup")]
+        public IActionResult GovtStrategicSetup(GovtStrategic request)
+        {
+            var data = _SecServices.GovtStrategicSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/GovtStrategic/DeleteGovtStrategic/{GovtStrategicId}")]
+        public IActionResult DeleteGovtStrategic(int GovtStrategicId)
+        {
+
+            var data = _SecServices.DeleteGovtStrategic(GovtStrategicId);
+
+            return Json(data);
+        }
+        //GovtPlan
+        [HttpGet]
+        [Route("/GovtPlan/GetGovtPlanbyId/{GovtPlanId}")]
+        public IActionResult GetGovtPlanbyId(int GovtPlanId)
+        {
+            var data = _SecServices.GetGovtPlanbyId(GovtPlanId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/GovtPlan/GovtPlanSetup")]
+        public IActionResult GovtPlanSetup(GovtPlan request)
+        {
+            var data = _SecServices.GovtPlanSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/GovtPlan/DeleteGovtPlan/{GovtPlanId}")]
+        public IActionResult DeleteGovtPlan(int GovtPlanId)
+        {
+
+            var data = _SecServices.DeleteGovtPlan(GovtPlanId);
+
+            return Json(data);
+        }
+        //MainProject
+        [HttpGet]
+        [Route("/MainProject/GetMainProjectbyId/{MainProjectId}")]
+        public IActionResult GetMainProjectbyId(int MainProjectId)
+        {
+            var data = _SecServices.GetMainProjectbyId(MainProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/MainProject/MainProjectSetup")]
+        public IActionResult MainProjectSetup(MainProject request)
+        {
+            var data = _SecServices.MainProjectSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/MainProject/DeleteMainProject/{MainProjectId}")]
+        public IActionResult DeleteMainProject(int MainProjectId)
+        {
+
+            var data = _SecServices.DeleteMainProject(MainProjectId);
+
+            return Json(data);
+        }
+        //MainActivity
+        [HttpGet]
+        [Route("/MainActivity/GetMainActivitybyId/{MainActivityId}")]
+        public IActionResult GetMainActivitybyId(int MainActivityId)
+        {
+            var data = _SecServices.GetMainActivitybyId(MainActivityId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/MainActivity/MainActivitySetup")]
+        public IActionResult MainActivitySetup(MainActivity request)
+        {
+            var data = _SecServices.MainActivitySetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/MainActivity/DeleteMainActivity/{MainActivityId}")]
+        public IActionResult DeleteMainActivity(int MainActivityId)
+        {
+
+            var data = _SecServices.DeleteMainActivity(MainActivityId);
+
+            return Json(data);
+        }
+        //StrategicIssue
+        [HttpGet]
+        [Route("/StrategicIssue/GetStrategicIssuebyId/{StrategicIssueId}")]
+        public IActionResult GetStrategicIssuebyId(int StrategicIssueId)
+        {
+            var data = _SecServices.GetStrategicIssuebyId(StrategicIssueId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/StrategicIssue/StrategicIssueSetup")]
+        public IActionResult StrategicIssueSetup(StrategicIssue request)
+        {
+            var data = _SecServices.StrategicIssueSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/StrategicIssue/DeleteStrategicIssue/{StrategicIssueId}")]
+        public IActionResult DeleteStrategicIssue(int StrategicIssueId)
+        {
+
+            var data = _SecServices.DeleteStrategicIssue(StrategicIssueId);
+
+            return Json(data);
+        }
+        //Strategy1
+        [HttpGet]
+        [Route("/Strategy1/GetStrategy1byId/{Strategy1Id}")]
+        public IActionResult GetStrategy1byId(int Strategy1Id)
+        {
+            var data = _SecServices.GetStrategy1byId(Strategy1Id);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Strategy1/Strategy1Setup")]
+        public IActionResult Strategy1Setup(Strategy1 request)
+        {
+            var data = _SecServices.Strategy1Setup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Strategy1/DeleteStrategy1/{Strategy1Id}")]
+        public IActionResult DeleteStrategy1(int Strategy1Id)
+        {
+
+            var data = _SecServices.DeleteStrategy1(Strategy1Id);
+
+            return Json(data);
+        }
+        //Measure
+        [HttpGet]
+        [Route("/Measure/GetMeasurebyId/{MeasureId}")]
+        public IActionResult GetMeasurebyId(int MeasureId)
+        {
+            var data = _SecServices.GetMeasurebyId(MeasureId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Measure/MeasureSetup")]
+        public IActionResult MeasureSetup(Measure request)
+        {
+            var data = _SecServices.MeasureSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Measure/DeleteMeasure/{MeasureId}")]
+        public IActionResult DeleteMeasure(int MeasureId)
+        {
+
+            var data = _SecServices.DeleteMeasure(MeasureId);
+
+            return Json(data);
+        }
+        //AnnualBudget
+        [HttpGet]
+        [Route("/AnnualBudget/GetAnnualBudgetbyId/{AnnualBudgetId}")]
+        public IActionResult GetAnnualBudgetbyId(int AnnualBudgetId)
+        {
+            var data = _SecServices.GetAnnualBudgetbyId(AnnualBudgetId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/AnnualBudget/AnnualBudgetSetup")]
+        public IActionResult AnnualBudgetSetup(AnnualBudget request)
+        {
+            var data = _SecServices.AnnualBudgetSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/AnnualBudget/DeleteAnnualBudget/{AnnualBudgetId}")]
+        public IActionResult DeleteAnnualBudget(int AnnualBudgetId)
+        {
+
+            var data = _SecServices.DeleteAnnualBudget(AnnualBudgetId);
+
+            return Json(data);
+        }
+        //SubAnnualBudget
+        [HttpGet]
+        [Route("/SubAnnualBudget/GetSubAnnualBudgetbyId/{SubAnnualBudgetId}")]
+        public IActionResult GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
+        {
+            var data = _SecServices.GetSubAnnualBudgetbyId(SubAnnualBudgetId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/SubAnnualBudget/SubAnnualBudgetSetup")]
+        public IActionResult SubAnnualBudgetSetup(SubAnnualBudget request)
+        {
+            var data = _SecServices.SubAnnualBudgetSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/SubAnnualBudget/DeleteSubAnnualBudget/{SubAnnualBudgetId}")]
+        public IActionResult DeleteSubAnnualBudget(int SubAnnualBudgetId)
+        {
+
+            var data = _SecServices.DeleteSubAnnualBudget(SubAnnualBudgetId);
+
+            return Json(data);
+        }
+        //CapticalType
+        [HttpGet]
+        [Route("/CapticalType/GetCapticalTypebyId/{CapticalTypeId}")]
+        public IActionResult GetCapticalTypebyId(int CapticalTypeId)
+        {
+            var data = _SecServices.GetCapticalTypebyId(CapticalTypeId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/CapticalType/CapticalTypeSetup")]
+        public IActionResult CapticalTypeSetup(CapticalType request)
+        {
+            var data = _SecServices.CapticalTypeSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/CapticalType/DeleteCapticalType/{CapticalTypeId}")]
+        public IActionResult DeleteCapticalType(int CapticalTypeId)
+        {
+
+            var data = _SecServices.DeleteCapticalType(CapticalTypeId);
+
+            return Json(data);
+        }
+        //Project
+        [HttpGet]
+        [Route("/Project/GetProjectbyId/{ProjectId}")]
+        public IActionResult GetProjectbyId(int ProjectId)
+        {
+            var data = _SecServices.GetProjectbyId(ProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Project/ProjectSetup")]
+        public IActionResult ProjectSetup(Project request)
+        {
+            var data = _SecServices.ProjectSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/Project/DeleteProject/{ProjectId}")]
+        public IActionResult DeleteProject(int ProjectId)
+        {
+
+            var data = _SecServices.DeleteProject(ProjectId);
+
+            return Json(data);
+        }
+        //ProjectCaptical
+        [HttpGet]
+        [Route("/ProjectCaptical/GetProjectCapticalbyId/{ProjectCapticalId}")]
+        public IActionResult GetProjectCapticalbyId(int ProjectCapticalId)
+        {
+            var data = _SecServices.GetProjectCapticalbyId(ProjectCapticalId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/ProjectCaptical/ProjectCapticalSetup")]
+        public IActionResult ProjectCapticalSetup(ProjectCaptical request)
+        {
+            var data = _SecServices.ProjectCapticalSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/ProjectCaptical/DeleteProjectCaptical/{ProjectCapticalId}")]
+        public IActionResult DeleteProjectCaptical(int ProjectCapticalId)
+        {
+
+            var data = _SecServices.DeleteProjectCaptical(ProjectCapticalId);
+
+            return Json(data);
+        }
+        //ProjectResponsiblePerson
+        [HttpGet]
+        [Route("/ProjectResponsiblePerson/GetProjectResponsiblePersonsbyId/{ProjectResponsiblePersonsId}")]
+        public IActionResult GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
+        {
+            var data = _SecServices.GetProjectResponsiblePersonsbyId(ProjectResponsiblePersonsId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/ProjectResponsiblePerson/ProjectResponsiblePersonsSetup")]
+        public IActionResult ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
+        {
+            var data = _SecServices.ProjectResponsiblePersonsSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/ProjectResponsiblePerson/DeleteProjectResponsiblePersons/{ProjectResponsiblePersonsId}")]
+        public IActionResult DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId)
+        {
+
+            var data = _SecServices.DeleteProjectResponsiblePersons(ProjectResponsiblePersonsId);
+
+            return Json(data);
+        }
+        //IndicatorsStrategyForProject
+        [HttpGet]
+        [Route("/IndicatorsStrategyForProject/GetIndicatorsStrategyForProjectbyId/{IndicatorsStrategyForProjectId}")]
+        public IActionResult GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForProjectbyId(IndicatorsStrategyForProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/IndicatorsStrategyForProject/IndicatorsStrategyForProjectSetup")]
+        public IActionResult IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
+        {
+            var data = _SecServices.IndicatorsStrategyForProjectSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/IndicatorsStrategyForProject/DeleteIndicatorsStrategyForProject/{IndicatorsStrategyForProjectId}")]
+        public IActionResult DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId)
+        {
+
+            var data = _SecServices.DeleteIndicatorsStrategyForProject(IndicatorsStrategyForProjectId);
+
+            return Json(data);
+        }
     }
 }

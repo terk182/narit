@@ -29,6 +29,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<AgreementItemPlanReferenceItem> AgreementItemPlanReferenceItems { get; set; } = null!;
         public virtual DbSet<AgreementMemorandum> AgreementMemorandums { get; set; } = null!;
         public virtual DbSet<AgreementVisiting> AgreementVisitings { get; set; } = null!;
+        public virtual DbSet<AnnualBudget> AnnualBudgets { get; set; } = null!;
         public virtual DbSet<AppFormActionLog> AppFormActionLogs { get; set; } = null!;
         public virtual DbSet<Application> Applications { get; set; } = null!;
         public virtual DbSet<ApproveForm> ApproveForms { get; set; } = null!;
@@ -54,6 +55,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<BudgetTransfer> BudgetTransfers { get; set; } = null!;
         public virtual DbSet<BudgetTransferForm> BudgetTransferForms { get; set; } = null!;
         public virtual DbSet<BudgetType> BudgetTypes { get; set; } = null!;
+        public virtual DbSet<CapticalType> CapticalTypes { get; set; } = null!;
         public virtual DbSet<CertifyOfMedicalRightForm> CertifyOfMedicalRightForms { get; set; } = null!;
         public virtual DbSet<CheckForm> CheckForms { get; set; } = null!;
         public virtual DbSet<CheckFormActionLog> CheckFormActionLogs { get; set; } = null!;
@@ -147,6 +149,8 @@ namespace narit_mis_api.Models
         public virtual DbSet<GeneralExpenseReturnItem> GeneralExpenseReturnItems { get; set; } = null!;
         public virtual DbSet<GeneralExpenseSettleForm> GeneralExpenseSettleForms { get; set; } = null!;
         public virtual DbSet<GovernmentDisbursementGoal> GovernmentDisbursementGoals { get; set; } = null!;
+        public virtual DbSet<GovtPlan> GovtPlans { get; set; } = null!;
+        public virtual DbSet<GovtStrategic> GovtStrategics { get; set; } = null!;
         public virtual DbSet<GprocurementRss> GprocurementRsses { get; set; } = null!;
         public virtual DbSet<Holiday> Holidays { get; set; } = null!;
         public virtual DbSet<HrcertifiedDocumentRequestForm> HrcertifiedDocumentRequestForms { get; set; } = null!;
@@ -154,6 +158,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<HrdepartmentStaffPermissionForHr> HrdepartmentStaffPermissionForHrs { get; set; } = null!;
         public virtual DbSet<HrdevelopmentType> HrdevelopmentTypes { get; set; } = null!;
         public virtual DbSet<Hrfile> Hrfiles { get; set; } = null!;
+        public virtual DbSet<IndicatorsStrategyForProject> IndicatorsStrategyForProjects { get; set; } = null!;
         public virtual DbSet<Insignia> Insignias { get; set; } = null!;
         public virtual DbSet<InsigniaRank> InsigniaRanks { get; set; } = null!;
         public virtual DbSet<Itinerary> Itineraries { get; set; } = null!;
@@ -176,6 +181,10 @@ namespace narit_mis_api.Models
         public virtual DbSet<LeaveCancellationForm> LeaveCancellationForms { get; set; } = null!;
         public virtual DbSet<LeaveType> LeaveTypes { get; set; } = null!;
         public virtual DbSet<LeaveTypeLimit> LeaveTypeLimits { get; set; } = null!;
+        public virtual DbSet<MainActivity> MainActivities { get; set; } = null!;
+        public virtual DbSet<MainGovtStatement> MainGovtStatements { get; set; } = null!;
+        public virtual DbSet<MainProject> MainProjects { get; set; } = null!;
+        public virtual DbSet<Measure> Measures { get; set; } = null!;
         public virtual DbSet<MedicalReimbursement> MedicalReimbursements { get; set; } = null!;
         public virtual DbSet<MedicalRightRequestForm> MedicalRightRequestForms { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
@@ -266,6 +275,9 @@ namespace narit_mis_api.Models
         public virtual DbSet<ProcureTrackingItem> ProcureTrackingItems { get; set; } = null!;
         public virtual DbSet<ProcureTrackingRefForm> ProcureTrackingRefForms { get; set; } = null!;
         public virtual DbSet<ProcureTrackingRefItem> ProcureTrackingRefItems { get; set; } = null!;
+        public virtual DbSet<Project> Projects { get; set; } = null!;
+        public virtual DbSet<ProjectCaptical> ProjectCapticals { get; set; } = null!;
+        public virtual DbSet<ProjectResponsiblePerson> ProjectResponsiblePersons { get; set; } = null!;
         public virtual DbSet<Quotation> Quotations { get; set; } = null!;
         public virtual DbSet<Race> Races { get; set; } = null!;
         public virtual DbSet<Receiver> Receivers { get; set; } = null!;
@@ -313,8 +325,11 @@ namespace narit_mis_api.Models
         public virtual DbSet<StaffWorkShiftSpecificDayOff> StaffWorkShiftSpecificDayOffs { get; set; } = null!;
         public virtual DbSet<StaffWorkShiftSpecificHoliday> StaffWorkShiftSpecificHolidays { get; set; } = null!;
         public virtual DbSet<StrategicIndicator> StrategicIndicators { get; set; } = null!;
-        public virtual DbSet<StrategiesBudget> StrategiesBudgets { get; set; } = null!;
+        public virtual DbSet<StrategicIssue> StrategicIssues { get; set; } = null!;
+        public virtual DbSet<StrategiesFisicalYear> StrategiesFisicalYears { get; set; } = null!;
         public virtual DbSet<Strategy> Strategies { get; set; } = null!;
+        public virtual DbSet<Strategy1> Strategies1 { get; set; } = null!;
+        public virtual DbSet<SubAnnualBudget> SubAnnualBudgets { get; set; } = null!;
         public virtual DbSet<SummaryStatementCache> SummaryStatementCaches { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
         public virtual DbSet<SupplierType> SupplierTypes { get; set; } = null!;
@@ -621,6 +636,15 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.AgreementVisitings)
                     .HasForeignKey(d => d.CollaborateReportId)
                     .HasConstraintName("FK_CollaborateReportAgreementVisiting");
+            });
+
+            modelBuilder.Entity<AnnualBudget>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("AnnualBudget", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<AppFormActionLog>(entity =>
@@ -1453,6 +1477,15 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.InverseParentBudgetType)
                     .HasForeignKey(d => d.ParentBudgetTypeId)
                     .HasConstraintName("FK_BudgetTypeSubBudgetTypes");
+            });
+
+            modelBuilder.Entity<CapticalType>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("CapticalType", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<CertifyOfMedicalRightForm>(entity =>
@@ -3959,6 +3992,28 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.TargetValueAccQ4).HasColumnType("decimal(12, 2)");
             });
 
+            modelBuilder.Entity<GovtPlan>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("GovtPlans", "Plan");
+
+                entity.Property(e => e.GovtStrategicId).HasColumnName("GovtStrategic_id");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+
+            modelBuilder.Entity<GovtStrategic>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("GovtStrategic", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.MaingovtId).HasColumnName("Maingovt_Id");
+            });
+
             modelBuilder.Entity<GprocurementRss>(entity =>
             {
                 entity.ToTable("GProcurementRSSes", "Procure");
@@ -4062,6 +4117,19 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.Hrfiles)
                     .HasForeignKey(d => d.OutsideDutyGroupId)
                     .HasConstraintName("FK_OutsideDutyGroupHRFile");
+            });
+
+            modelBuilder.Entity<IndicatorsStrategyForProject>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("IndicatorsStrategyForProject", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.MeasureId).HasColumnName("Measure_Id");
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
             });
 
             modelBuilder.Entity<Insignia>(entity =>
@@ -4497,6 +4565,48 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.LeaveTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LeaveTypeLeaveTypeLimit");
+            });
+
+            modelBuilder.Entity<MainActivity>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("MainActivities", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.MainProjectId).HasColumnName("MainProject_id");
+            });
+
+            modelBuilder.Entity<MainGovtStatement>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("MainGovtStatement", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+
+            modelBuilder.Entity<MainProject>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("MainProjects ", "Plan");
+
+                entity.Property(e => e.GovtplansId).HasColumnName("Govtplans_Id");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+
+            modelBuilder.Entity<Measure>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Measure", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.StategyId).HasColumnName("Stategy_Id");
             });
 
             modelBuilder.Entity<MedicalReimbursement>(entity =>
@@ -6160,6 +6270,8 @@ namespace narit_mis_api.Models
 
                 entity.HasIndex(e => e.ParentPlanTypeId, "IX_FK_PlanTypeSubPlanTypes");
 
+                entity.Property(e => e.CodeNamePlanType).HasColumnName("CodeName_PlanType");
+
                 entity.Property(e => e.Weight).HasColumnType("decimal(7, 4)");
 
                 entity.HasOne(d => d.ParentPlanType)
@@ -7264,6 +7376,57 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.ProcureTrackingRefFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProcureTrackingRefFormProcureTrackingRefItem");
+            });
+
+            modelBuilder.Entity<Project>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Project", "Plan");
+
+                entity.Property(e => e.Captical).HasColumnType("text");
+
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.DepartmentId).HasColumnName("Department_Id");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.MainProjectId).HasColumnName("MainProject_id");
+
+                entity.Property(e => e.MaingovtId).HasColumnName("Maingovt_Id");
+
+                entity.Property(e => e.MissionId).HasColumnName("Mission_Id");
+
+                entity.Property(e => e.PlanTypeId).HasColumnName("PlanType_Id");
+
+                entity.Property(e => e.StrategicId).HasColumnName("Strategic_Id");
+
+                entity.Property(e => e.TargetIdListValue).HasColumnType("text");
+            });
+
+            modelBuilder.Entity<ProjectCaptical>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("ProjectCaptical", "Plan");
+
+                entity.Property(e => e.CapticalTypeId).HasColumnName("CapticalType_Id");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
+            });
+
+            modelBuilder.Entity<ProjectResponsiblePerson>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("ProjectResponsiblePersons", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
             });
 
             modelBuilder.Entity<Quotation>(entity =>
@@ -8682,9 +8845,22 @@ namespace narit_mis_api.Models
                     .HasConstraintName("FK_ParentStrategicIndicatorSubStrategicIndicator");
             });
 
-            modelBuilder.Entity<StrategiesBudget>(entity =>
+            modelBuilder.Entity<StrategicIssue>(entity =>
             {
-                entity.ToTable("StrategiesBudgets", "Plan");
+                entity.HasNoKey();
+
+                entity.ToTable("StrategicIssues", "Plan");
+
+                entity.Property(e => e.Endyear).HasColumnName("endyear");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Startyear).HasColumnName("startyear");
+            });
+
+            modelBuilder.Entity<StrategiesFisicalYear>(entity =>
+            {
+                entity.ToTable("StrategiesFisicalYear", "Plan");
 
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
@@ -8701,6 +8877,28 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.InverseParentStrategy)
                     .HasForeignKey(d => d.ParentStrategyId)
                     .HasConstraintName("FK_StrategySubStrategies");
+            });
+
+            modelBuilder.Entity<Strategy1>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Strategy", "Plan");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.StrategicId).HasColumnName("Strategic_Id");
+            });
+
+            modelBuilder.Entity<SubAnnualBudget>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("subAnnualBudget", "Plan");
+
+                entity.Property(e => e.AnnualBudgetId).HasColumnName("AnnualBudget_ID");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<SummaryStatementCache>(entity =>

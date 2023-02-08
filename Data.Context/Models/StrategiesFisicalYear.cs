@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace narit_mis_api.Models
 {
-    public partial class StrategiesBudget
+    public partial class StrategiesFisicalYear
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

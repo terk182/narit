@@ -721,7 +721,7 @@ namespace App.SEC
         public SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request)
         {
 
-            var _Strategy = new StrategiesBudget();
+            var _Strategy = new StrategiesFisicalYear();
             _Strategy.Id = (int)request.Id;
             _Strategy.Name = request.Name;
             _Strategy.Active = request.Active;
@@ -766,7 +766,7 @@ namespace App.SEC
         {
 
             var result = new List<StrategyBudgetDto>();
-            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
+            var data = _database.StrategiesFisicalYears.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategyBudgetDto
@@ -803,7 +803,7 @@ namespace App.SEC
         {
 
             var result = new List<StrategyBudgetDto>();
-            var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
+            var data = _database.StrategiesFisicalYears.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
             foreach (var item in data)
             {
                 result.Add(new StrategyBudgetDto
@@ -4301,7 +4301,7 @@ namespace App.SEC
             public SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId)
             {
                 var response = new SecBaseResponse();
-                var data = _database.StrategiesBudgets.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
+                var data = _database.StrategiesFisicalYears.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
                 if (data != null)
                 {
                     //_database.Remove(data);
@@ -5637,6 +5637,594 @@ namespace App.SEC
             return response;
         }
 
+
+        ///////////////////////new new new by ardin/////////////////////////////
+        //MainGovtStatement
+        public List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId)
+        {
+            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId).ToList();
+            return data;
+        }
+        public SecBaseResponse MainGovtStatementSetup(MainGovtStatement request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteMainGovtStatement(int MainGovtStatementId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //GovtStrategic
+        public List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId)
+        {
+            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId).ToList();
+            return data;
+        }
+        public SecBaseResponse GovtStrategicSetup(GovtStrategic request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteGovtStrategic(int GovtStrategicId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //GovtPlan
+        public List<GovtPlan> GetGovtPlanbyId(int GovtPlanId)
+        {
+            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId).ToList();
+            return data;
+        }
+        public SecBaseResponse GovtPlanSetup(GovtPlan request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteGovtPlan(int GovtPlanId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //MainProject
+        public List<MainProject> GetMainProjectbyId(int MainProjectId)
+        {
+            var data = _database.MainProjects.Where(x => x.Id == MainProjectId).ToList();
+            return data;
+        }
+        public SecBaseResponse MainProjectSetup(MainProject request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteMainProject(int MainProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.MainProjects.Where(x => x.Id == MainProjectId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //MainActivity
+        public List<MainActivity> GetMainActivitybyId(int MainActivityId)
+        {
+            var data = _database.MainActivities.Where(x => x.Id == MainActivityId).ToList();
+            return data;
+        }
+        public SecBaseResponse MainActivitySetup(MainActivity request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteMainActivity(int MainActivityId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.MainActivities.Where(x => x.Id == MainActivityId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //StrategicIssue
+        public List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId)
+        {
+            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId).ToList();
+            return data;
+        }
+        public SecBaseResponse StrategicIssueSetup(StrategicIssue request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteStrategicIssue(int StrategicIssueId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //Strategy1
+        public List<Strategy1> GetStrategy1byId(int Strategy1Id)
+        {
+            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id).ToList();
+            return data;
+        }
+        public SecBaseResponse Strategy1Setup(Strategy1 request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteStrategy1(int Strategy1Id)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //Measure
+        public List<Measure> GetMeasurebyId(int MeasureId)
+        {
+            var data = _database.Measures.Where(x => x.Id == MeasureId).ToList();
+            return data;
+        }
+        public SecBaseResponse MeasureSetup(Measure request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteMeasure(int MeasureId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Measures.Where(x => x.Id == MeasureId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //AnnualBudget
+        public List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId)
+        {
+            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId).ToList();
+            return data;
+        }
+        public SecBaseResponse AnnualBudgetSetup(AnnualBudget request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteAnnualBudget(int AnnualBudgetId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //SubAnnualBudget
+        public List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
+        {
+            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId).ToList();
+            return data;
+        }
+        public SecBaseResponse SubAnnualBudgetSetup(SubAnnualBudget request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteSubAnnualBudget(int SubAnnualBudgetId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //CapticalType
+        public List<CapticalType> GetCapticalTypebyId(int CapticalTypeId)
+        {
+            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId).ToList();
+            return data;
+        }
+        public SecBaseResponse CapticalTypeSetup(CapticalType request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteCapticalType(int CapticalTypeId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //Project
+        public List<Project> GetProjectbyId(int ProjectId)
+        {
+            var data = _database.Projects.Where(x => x.Id == ProjectId).ToList();
+            return data;
+        }
+        public SecBaseResponse ProjectSetup(Project request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteProject(int ProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.Projects.Where(x => x.Id == ProjectId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //ProjectCaptical
+        public List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId)
+        {
+            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId).ToList();
+            return data;
+        }
+        public SecBaseResponse ProjectCapticalSetup(ProjectCaptical request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteProjectCaptical(int ProjectCapticalId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //ProjectResponsiblePerson
+        public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
+        {
+            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId).ToList();
+            return data;
+        }
+        public SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+
+        //IndicatorsStrategyForProject
+        public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
+        {
+            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId).ToList();
+            return data;
+        }
+        public SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
     }
-    }
+}
 

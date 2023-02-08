@@ -176,6 +176,66 @@ namespace App.SEC
         SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request);
         List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId);
 
-
+        ////////////////////////////NEW NEW NEW by ardin///////////////////////////////
+        //MainGovtStatement
+        List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId);
+        SecBaseResponse MainGovtStatementSetup(MainGovtStatement request);
+        SecBaseResponse DeleteMainGovtStatement(int MainGovtStatementId);
+        //GovtStrategic
+        List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId);
+        SecBaseResponse GovtStrategicSetup(GovtStrategic request);
+        SecBaseResponse DeleteGovtStrategic(int GovtStrategicId);
+        //GovtPlan
+        List<GovtPlan> GetGovtPlanbyId(int GovtPlanId);
+        SecBaseResponse GovtPlanSetup(GovtPlan request);
+        SecBaseResponse DeleteGovtPlan(int GovtPlanId);
+        //MainProject
+        List<MainProject> GetMainProjectbyId(int MainProjectId);
+        SecBaseResponse MainProjectSetup(MainProject request);
+        SecBaseResponse DeleteMainProject(int MainProjectId);
+        //MainActivity
+        List<MainActivity> GetMainActivitybyId(int MainActivityId);
+        SecBaseResponse MainActivitySetup(MainActivity request);
+        SecBaseResponse DeleteMainActivity(int MainActivityId);
+        //StrategicIssue
+        List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId);
+        SecBaseResponse StrategicIssueSetup(StrategicIssue request);
+        SecBaseResponse DeleteStrategicIssue(int StrategicIssueId);
+        //Strategy1
+        List<Strategy1> GetStrategy1byId(int Strategy1Id);
+        SecBaseResponse Strategy1Setup(Strategy1 request);
+        SecBaseResponse DeleteStrategy1(int Strategy1Id);
+        //Measure
+        List<Measure> GetMeasurebyId(int MeasureId);
+        SecBaseResponse MeasureSetup(Measure request);
+        SecBaseResponse DeleteMeasure(int MeasureId);
+        //AnnualBudget
+        List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId);
+        SecBaseResponse AnnualBudgetSetup(AnnualBudget request);
+        SecBaseResponse DeleteAnnualBudget(int AnnualBudgetId);
+        //SubAnnualBudget
+        List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId);
+        SecBaseResponse SubAnnualBudgetSetup(SubAnnualBudget request);
+        SecBaseResponse DeleteSubAnnualBudget(int SubAnnualBudgetId);
+        //CapticalType
+        List<CapticalType> GetCapticalTypebyId(int CapticalTypeId);
+        SecBaseResponse CapticalTypeSetup(CapticalType request);
+        SecBaseResponse DeleteCapticalType(int CapticalTypeId);
+        //Project
+        List<Project> GetProjectbyId(int ProjectId);
+        SecBaseResponse ProjectSetup(Project request);
+        SecBaseResponse DeleteProject(int ProjectId);
+        //ProjectCaptical
+        List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId);
+        SecBaseResponse ProjectCapticalSetup(ProjectCaptical request);
+        SecBaseResponse DeleteProjectCaptical(int ProjectCapticalId);
+        //ProjectResponsiblePerson
+        List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId);
+        SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request);
+        SecBaseResponse DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId);
+        //IndicatorsStrategyForProject
+        List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId);
+        SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request);
+        SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId);
     }
 }

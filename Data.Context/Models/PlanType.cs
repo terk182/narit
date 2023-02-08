@@ -18,6 +18,7 @@ namespace narit_mis_api.Models
         public int? ParentPlanTypeId { get; set; }
         public int? ReferenceOldId { get; set; }
         public decimal Weight { get; set; }
+        public string? CodeNamePlanType { get; set; }
 
         public virtual PlanType? ParentPlanType { get; set; }
         public virtual ICollection<PlanType> InverseParentPlanType { get; set; }

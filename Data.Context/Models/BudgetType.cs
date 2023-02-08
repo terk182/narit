@@ -19,6 +19,7 @@ namespace narit_mis_api.Models
         public int? ReferenceOldId { get; set; }
         public int ExpenseTypeEnum { get; set; }
         public int GovExpenseTypeEnum { get; set; }
+        public int? FundSourceId { get; set; }
 
         public virtual BudgetType? ParentBudgetType { get; set; }
         public virtual ICollection<BudgetType> InverseParentBudgetType { get; set; }
