@@ -99,6 +99,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<EfilingDepartmentPermission> EfilingDepartmentPermissions { get; set; } = null!;
         public virtual DbSet<ElectricityBill> ElectricityBills { get; set; } = null!;
         public virtual DbSet<EmploymentContract> EmploymentContracts { get; set; } = null!;
+        public virtual DbSet<ExternalBudgetStrategy> ExternalBudgetStrategies { get; set; } = null!;
         public virtual DbSet<FamilialRelationship> FamilialRelationships { get; set; } = null!;
         public virtual DbSet<FilingDocMessageReferrer> FilingDocMessageReferrers { get; set; } = null!;
         public virtual DbSet<FilingDocProjectRelation> FilingDocProjectRelations { get; set; } = null!;
@@ -161,6 +162,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<IndicatorsStrategyForProject> IndicatorsStrategyForProjects { get; set; } = null!;
         public virtual DbSet<Insignia> Insignias { get; set; } = null!;
         public virtual DbSet<InsigniaRank> InsigniaRanks { get; set; } = null!;
+        public virtual DbSet<InternalStrategy> InternalStrategies { get; set; } = null!;
         public virtual DbSet<Itinerary> Itineraries { get; set; } = null!;
         public virtual DbSet<JobDescription> JobDescriptions { get; set; } = null!;
         public virtual DbSet<JobFunctionalPosition> JobFunctionalPositions { get; set; } = null!;
@@ -2707,6 +2709,13 @@ namespace narit_mis_api.Models
                     .HasConstraintName("FK_StaffEmploymentContract");
             });
 
+            modelBuilder.Entity<ExternalBudgetStrategy>(entity =>
+            {
+                entity.ToTable("ExternalBudgetStrategy", "Plan");
+
+                entity.Property(e => e.ParentExternalBudgetStrategyId).HasColumnName("ParentExternalBudgetStrategy_Id");
+            });
+
             modelBuilder.Entity<FamilialRelationship>(entity =>
             {
                 entity.ToTable("FamilialRelationships", "HR");
@@ -4136,6 +4145,13 @@ namespace narit_mis_api.Models
             modelBuilder.Entity<InsigniaRank>(entity =>
             {
                 entity.ToTable("InsigniaRanks", "HR");
+            });
+
+            modelBuilder.Entity<InternalStrategy>(entity =>
+            {
+                entity.ToTable("InternalStrategy", "Plan");
+
+                entity.Property(e => e.ParentInternalStrategyId).HasColumnName("ParentInternalStrategy_Id");
             });
 
             modelBuilder.Entity<Itinerary>(entity =>
@@ -7346,13 +7362,17 @@ namespace narit_mis_api.Models
             {
                 entity.ToTable("Project", "Plan");
 
+                entity.Property(e => e.AnnualBudgetId).HasColumnName("AnnualBudget_id");
+
                 entity.Property(e => e.Captical).HasColumnType("text");
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
                 entity.Property(e => e.DepartmentId).HasColumnName("Department_Id");
 
-                entity.Property(e => e.MainProjectId).HasColumnName("MainProject_id");
+                entity.Property(e => e.ExternalBudgetStrategyId).HasColumnName("ExternalBudgetStrategy_Id");
+
+                entity.Property(e => e.InternalStrategyId).HasColumnName("InternalStrategy_Id");
 
                 entity.Property(e => e.MaingovtId).HasColumnName("Maingovt_Id");
 
@@ -7363,8 +7383,6 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.MonthStart).HasColumnType("text");
 
                 entity.Property(e => e.PlanTypeId).HasColumnName("PlanType_Id");
-
-                entity.Property(e => e.StrategicId).HasColumnName("Strategic_Id");
 
                 entity.Property(e => e.TargetIdListValue).HasColumnType("text");
             });

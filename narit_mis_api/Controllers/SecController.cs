@@ -2535,5 +2535,67 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        //ExternalBudgetStrategy
+        [HttpGet]
+        [Route("/ExternalBudgetStrategy/GetAllExternalBudgetStrategy")]
+        public IActionResult GetAllExternalBudgetStrategy()
+        {
+            var data = _SecServices.GetAllExternalBudgetStrategy();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ExternalBudgetStrategy/GetExternalBudgetStrategybyId/{ExternalBudgetStrategyId}")]
+        public IActionResult GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId)
+        {
+            var data = _SecServices.GetExternalBudgetStrategybyId(ExternalBudgetStrategyId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/ExternalBudgetStrategy/ExternalBudgetStrategySetup")]
+        public IActionResult ExternalBudgetStrategySetup(ExternalBudgetStrategy request)
+        {
+            var data = _SecServices.ExternalBudgetStrategySetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/ExternalBudgetStrategy/DeleteExternalBudgetStrategy/{ExternalBudgetStrategyId}")]
+        public IActionResult DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId)
+        {
+
+            var data = _SecServices.DeleteExternalBudgetStrategy(ExternalBudgetStrategyId);
+
+            return Json(data);
+        }
+        //InternalStrategy
+        [HttpGet]
+        [Route("/InternalStrategy/GetAllInternalStrategy")]
+        public IActionResult GetAllInternalStrategy()
+        {
+            var data = _SecServices.GetAllInternalStrategy();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/InternalStrategy/GetInternalStrategybyId/{InternalStrategyId}")]
+        public IActionResult GetInternalStrategybyId(int InternalStrategyId)
+        {
+            var data = _SecServices.GetInternalStrategybyId(InternalStrategyId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/InternalStrategy/InternalStrategySetup")]
+        public IActionResult InternalStrategySetup(InternalStrategy request)
+        {
+            var data = _SecServices.InternalStrategySetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/InternalStrategy/DeleteInternalStrategy/{InternalStrategyId}")]
+        public IActionResult DeleteInternalStrategy(int InternalStrategyId)
+        {
+
+            var data = _SecServices.DeleteInternalStrategy(InternalStrategyId);
+
+            return Json(data);
+        }
     }
 }

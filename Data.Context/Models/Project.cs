@@ -8,8 +8,8 @@ namespace narit_mis_api.Models
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int FiscalYear { get; set; }
-        public int? MainProjectId { get; set; }
-        public int? StrategicId { get; set; }
+        public int? ExternalBudgetStrategyId { get; set; }
+        public int? InternalStrategyId { get; set; }
         public int? PlanTypeId { get; set; }
         public int? MissionId { get; set; }
         public int? MaingovtId { get; set; }
@@ -30,5 +30,6 @@ namespace narit_mis_api.Models
         public string Captical { get; set; } = null!;
         public string MonthStart { get; set; } = null!;
         public string MonthEnd { get; set; } = null!;
+        public int? AnnualBudgetId { get; set; }
     }
 }

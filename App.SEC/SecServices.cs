@@ -6284,6 +6284,92 @@ namespace App.SEC
 
             return response;
         }
+        //ExternalBudgetStrategy
+        public List<ExternalBudgetStrategy> GetAllExternalBudgetStrategy()
+        {
+            return _database.ExternalBudgetStrategies.Where(x => x.Active).ToList();
+        }
+        public List<ExternalBudgetStrategy> GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId)
+        {
+            var data = _database.ExternalBudgetStrategies.Where(x => x.Id == ExternalBudgetStrategyId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse ExternalBudgetStrategySetup(ExternalBudgetStrategy request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ExternalBudgetStrategies.Where(x => x.Id == ExternalBudgetStrategyId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //InternalStrategy
+        public List<InternalStrategy> GetAllInternalStrategy()
+        {
+            return _database.InternalStrategies.Where(x => x.Active).ToList();
+        }
+        public List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId)
+        {
+            var data = _database.InternalStrategies.Where(x => x.Id == InternalStrategyId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse InternalStrategySetup(InternalStrategy request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteInternalStrategy(int InternalStrategyId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.InternalStrategies.Where(x => x.Id == InternalStrategyId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
     }
 }
 

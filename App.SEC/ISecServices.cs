@@ -252,5 +252,15 @@ namespace App.SEC
         List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId);
         SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request);
         SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId);
+        //ExternalBudgetStrategy
+        List<ExternalBudgetStrategy> GetAllExternalBudgetStrategy();
+        List<ExternalBudgetStrategy> GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId);
+        SecBaseResponse ExternalBudgetStrategySetup(ExternalBudgetStrategy request);
+        SecBaseResponse DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId);
+        //InternalStrategy
+        List<InternalStrategy> GetAllInternalStrategy();
+        List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId);
+        SecBaseResponse InternalStrategySetup(InternalStrategy request);
+        SecBaseResponse DeleteInternalStrategy(int InternalStrategyId);
     }
 }
