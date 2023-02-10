@@ -6116,11 +6116,55 @@ namespace App.SEC
         {
             return _database.Projects.Where(x => x.Active).ToList();
         }
+        public List<Project> GetProjectbyFisicalYear(int FisicalYear)
+        {
+            var data = _database.Projects.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
+        }
         public List<Project> GetProjectbyId(int ProjectId)
         {
             var data = _database.Projects.Where(x => x.Id == ProjectId && x.Active).ToList();
             return data;
         }
+
+        public SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
+            var data2 = _database.ProjectActivities.Where(x => x.ProjectId == ProjectId && x.ProjectStatus == 0 && x.Active).ToList();
+            if (data.Count != 0)
+            {
+                GetSubProjectforProjectbyId(ProjectId);
+                response.Success = true;
+                response.Messsage = "Have SubProject";
+                response.SubProject = data;
+            }
+            else
+            {
+                GetProjectActivityforProjectbyId(ProjectId);
+                response.Success = true;
+                response.Messsage = "Have ProjectActivity";
+                response.ProjectActivity = data2;
+            }
+            return response;
+        }
+
+        //public SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId)
+        //{
+        //    var response = new SecBaseResponse();
+        //    var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
+        //    if(data.Count != 0)
+        //    {
+        //        GetSubProjectforProjectbyId(ProjectId);
+        //        response.Messsage = "Have SubProject";
+        //    }
+        //    else
+        //    {
+        //        GetProjectActivityforProjectbyId(ProjectId);
+        //        response.Messsage = "Have ProjectActivity";
+        //    }
+        //    return response;
+        //}
         public SecBaseResponse ProjectSetup(Project request)
         {
             _database.Entry(request).State = request.Id == 0 ?
@@ -6205,6 +6249,11 @@ namespace App.SEC
         public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
         {
             var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId && x.Active).ToList();
+            return data;
+        }
+        public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyProjectId(int ProjectId)
+        {
+            var data = _database.ProjectResponsiblePersons.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
             return data;
         }
         public SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
@@ -6354,6 +6403,205 @@ namespace App.SEC
         {
             var response = new SecBaseResponse();
             var data = _database.InternalStrategies.Where(x => x.Id == InternalStrategyId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //ProjectActivity
+        public List<ProjectActivity> GetAllProjectActivity()
+        {
+            return _database.ProjectActivities.Where(x => x.Active).ToList();
+        }
+       
+        public List<ProjectActivity> GetProjectActivitybyId(int ProjectActivityId)
+        {
+            var data = _database.ProjectActivities.Where(x => x.Id == ProjectActivityId && x.Active).ToList();
+            return data;
+        }
+        public List<ProjectActivity> GetProjectActivityforProjectbyId(int ProjectId)
+        {
+            var data = _database.ProjectActivities.Where(x => x.ProjectId == ProjectId && x.ProjectStatus == 0 && x.Active).ToList();
+            return data;
+        }
+        public List<ProjectActivity> GetProjectActivityfromSubProjectId(int SubProjectId)
+        {
+            var data = _database.ProjectActivities.Where(x => x.ProjectId == SubProjectId && x.ProjectStatus == 1 && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse ProjectActivitySetup(ProjectActivity request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteProjectActivity(int ProjectActivityId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ProjectActivities.Where(x => x.Id == ProjectActivityId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //SubProject
+        public List<SubProject> GetAllSubProject()
+        {
+            return _database.SubProjects.Where(x => x.Active).ToList();
+        }
+      
+        public List<SubProject> GetSubProjectbyId(int SubProjectId)
+        {
+            var data = _database.SubProjects.Where(x => x.Id == SubProjectId && x.Active).ToList();
+            return data;
+        }
+        public List<SubProject> GetSubProjectforProjectbyId(int ProjectId)
+        {
+            var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId  && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse SubProjectSetup(SubProject request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteSubProject(int ProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.SubProjects.Where(x => x.Id == ProjectId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //ProjectActivityResponsiblePerson
+        public List<ProjectActivityResponsiblePerson> GetAllProjectActivityResponsiblePerson()
+        {
+            return _database.ProjectActivityResponsiblePersons.Where(x => x.Active).ToList();
+        }
+        public List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId)
+        {
+            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.Id == ProjectActivityResponsiblePersonId && x.Active).ToList();
+            return data;
+        }
+        public List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId)
+        {
+            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.ProjectActivityId == ProjectActivityId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.Id == ProjectActivityResponsiblePersonId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //SubProjectResponsiblePerson
+        public List<SubProjectResponsiblePerson> GetAllSubProjectResponsiblePerson()
+        {
+            return _database.SubProjectResponsiblePersons.Where(x => x.Active).ToList();
+        }
+        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId)
+        {
+            var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId && x.Active).ToList();
+            return data;
+        }
+        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId)
+        {
+            var data = _database.SubProjectResponsiblePersons.Where(x => x.SubProjectId == SubProjectId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId).FirstOrDefault();
             if (data != null)
             {
                 data.Active = false;

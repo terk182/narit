@@ -234,7 +234,9 @@ namespace App.SEC
         SecBaseResponse DeleteCapticalType(int CapticalTypeId);
         //Project
         List<Project> GetAllProject();
+        List<Project> GetProjectbyFisicalYear(int FisicalYear);
         List<Project> GetProjectbyId(int ProjectId);
+        SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId);
         SecBaseResponse ProjectSetup(Project request);
         SecBaseResponse DeleteProject(int ProjectId);
         //ProjectCaptical
@@ -245,6 +247,7 @@ namespace App.SEC
         //ProjectResponsiblePerson
         List<ProjectResponsiblePerson> GetAllProjectResponsiblePersons();
         List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId);
+        List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyProjectId(int ProjectId);
         SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request);
         SecBaseResponse DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId);
         //IndicatorsStrategyForProject
@@ -262,5 +265,30 @@ namespace App.SEC
         List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId);
         SecBaseResponse InternalStrategySetup(InternalStrategy request);
         SecBaseResponse DeleteInternalStrategy(int InternalStrategyId);
+        //ProjectActivity
+        List<ProjectActivity> GetAllProjectActivity();
+        List<ProjectActivity> GetProjectActivitybyId(int ProjectActivityId);
+        List<ProjectActivity> GetProjectActivityforProjectbyId(int ProjectId);
+        List<ProjectActivity> GetProjectActivityfromSubProjectId(int SubProjectId);
+        SecBaseResponse ProjectActivitySetup(ProjectActivity request);
+        SecBaseResponse DeleteProjectActivity(int ProjectActivityId);
+        //SubProject
+        List<SubProject> GetAllSubProject();
+        List<SubProject> GetSubProjectbyId(int SubProjectId);
+        List<SubProject> GetSubProjectforProjectbyId(int ProjectId);
+        SecBaseResponse SubProjectSetup(SubProject request);
+        SecBaseResponse DeleteSubProject(int SubProjectId);
+        //ProjectActivityResponsiblePerson
+        List<ProjectActivityResponsiblePerson> GetAllProjectActivityResponsiblePerson();
+        List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId);
+        List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId);
+        SecBaseResponse ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request);
+        SecBaseResponse DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId);
+        //SubProjectResponsiblePerson
+        List<SubProjectResponsiblePerson> GetAllSubProjectResponsiblePerson();
+        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId);
+        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId);
+        SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request);
+        SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId);
     }
 }

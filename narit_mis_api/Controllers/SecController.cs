@@ -2420,10 +2420,24 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
+        [Route("/Project/GetProjectbyFisicalYear/{FisicalYear}")]
+        public IActionResult GetProjectbyFisicalYear(int FisicalYear)
+        {
+            var data = _SecServices.GetProjectbyFisicalYear(FisicalYear);
+            return Json(data);
+        }
+        [HttpGet]
         [Route("/Project/GetProjectbyId/{ProjectId}")]
         public IActionResult GetProjectbyId(int ProjectId)
         {
             var data = _SecServices.GetProjectbyId(ProjectId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Project/GetsubProjectorProjectActivitybyProjectId/{ProjectId}")]
+        public IActionResult GetsubProjectorProjectActivitybyProjectId(int ProjectId)
+        {
+            var data = _SecServices.GetsubProjectorProjectActivitybyProjectId(ProjectId);
             return Json(data);
         }
         [HttpPost]
@@ -2486,6 +2500,13 @@ namespace narit_mis_api.Controllers
         public IActionResult GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
         {
             var data = _SecServices.GetProjectResponsiblePersonsbyId(ProjectResponsiblePersonsId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectResponsiblePerson/GetProjectResponsiblePersonsbyProjectId/{ProjectId}")]
+        public IActionResult GetProjectResponsiblePersonsbyProjectId(int ProjectId)
+        {
+            var data = _SecServices.GetProjectResponsiblePersonsbyProjectId(ProjectId);
             return Json(data);
         }
         [HttpPost]
@@ -2594,6 +2615,165 @@ namespace narit_mis_api.Controllers
         {
 
             var data = _SecServices.DeleteInternalStrategy(InternalStrategyId);
+
+            return Json(data);
+        }
+        //ProjectActivity
+        [HttpGet]
+        [Route("/ProjectActivity/GetAllProjectActivity")]
+        public IActionResult GetAllProjectActivity()
+        {
+            var data = _SecServices.GetAllProjectActivity();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectActivity/GetProjectActivitybyId/{ProjectActivityId}")]
+        public IActionResult GetProjectActivitybyId(int ProjectActivityId)
+        {
+            var data = _SecServices.GetProjectActivitybyId(ProjectActivityId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectActivity/GetProjectActivityforProjectbyId/{ProjectId}")]
+        public IActionResult GetProjectActivityforProjectbyId(int ProjectId)
+        {
+            var data = _SecServices.GetProjectActivityforProjectbyId(ProjectId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectActivity/GetProjectActivityfromSubProjectId/{SubProjectId}")]
+        public IActionResult GetProjectActivityfromSubProjectId(int SubProjectId)
+        {
+            var data = _SecServices.GetProjectActivityfromSubProjectId(SubProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/ProjectActivity/ProjectActivitySetup")]
+        public IActionResult ProjectActivitySetup(ProjectActivity request)
+        {
+            var data = _SecServices.ProjectActivitySetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/ProjectActivity/DeleteProjectActivity/{ProjectActivityId}")]
+        public IActionResult DeleteProjectActivity(int ProjectActivityId)
+        {
+
+            var data = _SecServices.DeleteProjectActivity(ProjectActivityId);
+
+            return Json(data);
+        }
+        //SubProject
+        [HttpGet]
+        [Route("/SubProject/GetAllSubProject")]
+        public IActionResult GetAllSubProject()
+        {
+            var data = _SecServices.GetAllSubProject();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/SubProject/GetSubProjectbyId/{SubProjectId}")]
+        public IActionResult GetSubProjectbyId(int SubProjectId)
+        {
+            var data = _SecServices.GetSubProjectbyId(SubProjectId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/SubProject/GetSubProjectforProjectbyId/{ProjectId}")]
+        public IActionResult GetSubProjectforProjectbyId(int ProjectId)
+        {
+            var data = _SecServices.GetSubProjectforProjectbyId(ProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/SubProject/SubProjectSetup")]
+        public IActionResult SubProjectSetup(SubProject request)
+        {
+            var data = _SecServices.SubProjectSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/SubProject/DeleteSubProject/{SubProjectId}")]
+        public IActionResult DeleteSubProject(int SubProjectId)
+        {
+
+            var data = _SecServices.DeleteSubProject(SubProjectId);
+
+            return Json(data);
+        }
+        //ProjectActivityResponsiblePerson
+        [HttpGet]
+        [Route("/ProjectActivityResponsiblePerson/GetAllProjectActivityResponsiblePerson")]
+        public IActionResult GetAllProjectActivityResponsiblePerson()
+        {
+            var data = _SecServices.GetAllProjectActivityResponsiblePerson();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectActivityResponsiblePerson/GetProjectActivityResponsiblePersonbyId/{ProjectActivityResponsiblePersonId}")]
+        public IActionResult GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId)
+        {
+            var data = _SecServices.GetProjectActivityResponsiblePersonbyId(ProjectActivityResponsiblePersonId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/ProjectActivityResponsiblePerson/GetProjectActivityResponsiblePersonsbyProjectId/{ProjectActivityId}")]
+        public IActionResult GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId)
+        {
+            var data = _SecServices.GetProjectActivityResponsiblePersonsbyProjectId(ProjectActivityId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/ProjectActivityResponsiblePerson/ProjectActivityResponsiblePersonSetup")]
+        public IActionResult ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request)
+        {
+            var data = _SecServices.ProjectActivityResponsiblePersonSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/ProjectActivityResponsiblePerson/DeleteProjectActivityResponsiblePerson/{ProjectActivityResponsiblePersonId}")]
+        public IActionResult DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId)
+        {
+
+            var data = _SecServices.DeleteProjectActivityResponsiblePerson(ProjectActivityResponsiblePersonId);
+
+            return Json(data);
+        }
+        //SubProjectResponsiblePerson
+        [HttpGet]
+        [Route("/SubProjectResponsiblePerson/GetAllSubProjectResponsiblePerson")]
+        public IActionResult GetAllSubProjectResponsiblePerson()
+        {
+            var data = _SecServices.GetAllSubProjectResponsiblePerson();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/SubProjectResponsiblePerson/GetSubProjectResponsiblePersonbyId/{SubProjectResponsiblePersonId}")]
+        public IActionResult GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId)
+        {
+            var data = _SecServices.GetSubProjectResponsiblePersonbyId(SubProjectResponsiblePersonId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/SubProjectResponsiblePerson/GetSubProjectResponsiblePersonsbyProjectId/{SubProjectId}")]
+        public IActionResult GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId)
+        {
+            var data = _SecServices.GetSubProjectResponsiblePersonsbyProjectId(SubProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/SubProjectResponsiblePerson/SubProjectResponsiblePersonSetup")]
+        public IActionResult SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request)
+        {
+            var data = _SecServices.SubProjectResponsiblePersonSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/SubProjectResponsiblePerson/DeleteSubProjectResponsiblePerson/{SubProjectResponsiblePersonId}")]
+        public IActionResult DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId)
+        {
+
+            var data = _SecServices.DeleteSubProjectResponsiblePerson(SubProjectResponsiblePersonId);
 
             return Json(data);
         }

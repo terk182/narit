@@ -278,6 +278,8 @@ namespace narit_mis_api.Models
         public virtual DbSet<ProcureTrackingRefForm> ProcureTrackingRefForms { get; set; } = null!;
         public virtual DbSet<ProcureTrackingRefItem> ProcureTrackingRefItems { get; set; } = null!;
         public virtual DbSet<Project> Projects { get; set; } = null!;
+        public virtual DbSet<ProjectActivity> ProjectActivities { get; set; } = null!;
+        public virtual DbSet<ProjectActivityResponsiblePerson> ProjectActivityResponsiblePersons { get; set; } = null!;
         public virtual DbSet<ProjectCaptical> ProjectCapticals { get; set; } = null!;
         public virtual DbSet<ProjectResponsiblePerson> ProjectResponsiblePersons { get; set; } = null!;
         public virtual DbSet<Quotation> Quotations { get; set; } = null!;
@@ -332,6 +334,8 @@ namespace narit_mis_api.Models
         public virtual DbSet<Strategy> Strategies { get; set; } = null!;
         public virtual DbSet<Strategy1> Strategies1 { get; set; } = null!;
         public virtual DbSet<SubAnnualBudget> SubAnnualBudgets { get; set; } = null!;
+        public virtual DbSet<SubProject> SubProjects { get; set; } = null!;
+        public virtual DbSet<SubProjectResponsiblePerson> SubProjectResponsiblePersons { get; set; } = null!;
         public virtual DbSet<SummaryStatementCache> SummaryStatementCaches { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
         public virtual DbSet<SupplierType> SupplierTypes { get; set; } = null!;
@@ -7387,6 +7391,22 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.TargetIdListValue).HasColumnType("text");
             });
 
+            modelBuilder.Entity<ProjectActivity>(entity =>
+            {
+                entity.ToTable("ProjectActivity", "Plan");
+
+                entity.Property(e => e.DepartmentId).HasColumnName("Department_Id");
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
+            });
+
+            modelBuilder.Entity<ProjectActivityResponsiblePerson>(entity =>
+            {
+                entity.ToTable("ProjectActivityResponsiblePersons", "Plan");
+
+                entity.Property(e => e.ProjectActivityId).HasColumnName("ProjectActivity_Id");
+            });
+
             modelBuilder.Entity<ProjectCaptical>(entity =>
             {
                 entity.ToTable("ProjectCaptical", "Plan");
@@ -8861,6 +8881,30 @@ namespace narit_mis_api.Models
                 entity.ToTable("subAnnualBudget", "Plan");
 
                 entity.Property(e => e.AnnualBudgetId).HasColumnName("AnnualBudget_ID");
+            });
+
+            modelBuilder.Entity<SubProject>(entity =>
+            {
+                entity.ToTable("subProject", "Plan");
+
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.DepartmentId).HasColumnName("Department_Id");
+
+                entity.Property(e => e.MonthEnd).HasColumnType("text");
+
+                entity.Property(e => e.MonthStart).HasColumnType("text");
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
+
+                entity.Property(e => e.TargetIdListValue).HasColumnType("text");
+            });
+
+            modelBuilder.Entity<SubProjectResponsiblePerson>(entity =>
+            {
+                entity.ToTable("subProjectResponsiblePersons", "Plan");
+
+                entity.Property(e => e.SubProjectId).HasColumnName("subProject_Id");
             });
 
             modelBuilder.Entity<SummaryStatementCache>(entity =>
