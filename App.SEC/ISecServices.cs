@@ -26,7 +26,7 @@ namespace App.SEC
 
         List<RequestFormResponse> GetRequestFrom();
         RequestFrom GetRequestFromByDocNo(string docNo);
-        SecBaseResponse CreateRequestFrom(RequestFormRequests request);
+        RequestFormRequests CreateRequestFrom(RequestFormRequests request);
         SecBaseResponse DeleteRequestFromById(int id);
 
         List<RequestFormItem> GetRequestFromItemsByDocNo(string docNo);
@@ -37,7 +37,7 @@ namespace App.SEC
         SecBaseResponse CreateRequestFormApproveByDocNo(RequestFormApproveRequest request);
         SecBaseResponse DeleteRequestFormApproveByDocNo(string docNo);
 
-        SecBaseResponse CreateRequestFormCommentByDocNo(RequestFormCommentRequests request);
+        SecBaseResponse CreateRequestFromCommentByDocNo(RequestFormCommentRequests request);
         List<RequestFormComment> GetRequestCommentByDocNo(string docNo);
 
         List<RequestFormBorrowingMoney> GetRequestFormBorrowingMoneyByDocNo(string docNo);

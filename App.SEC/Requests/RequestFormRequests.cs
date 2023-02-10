@@ -9,9 +9,9 @@ namespace App.SEC.Requests
 {
     public class RequestFormRequests
     {
-        public int? Id { get; set; }
-        public string? DocNo { get; set; }
-        public int? RequestBudgetId { get; set; }
+        public int Id { get; set; }
+        public string DocNo { get; set; } = null!;
+        public int RequestBudgetId { get; set; }
         public int? BudgetTypeId { get; set; }
         public int? ProjectId { get; set; }
         public int? ProjectActivityId { get; set; }
@@ -20,9 +20,9 @@ namespace App.SEC.Requests
         public string? Descriptions { get; set; }
         public string? Objective { get; set; }
         public DateTime? DepartureDate { get; set; }
-        public DateTime? PracticalDay { get; set; }
+        public DateTime? PracticalDate { get; set; }
         public DateTime? DateTime { get; set; }
-        public bool? WorkingIncountry { get; set; }
+        public bool? WorkingInCountry { get; set; }
         public string? Location { get; set; }
         public string? Place { get; set; }
         public string? Country { get; set; }
@@ -30,7 +30,7 @@ namespace App.SEC.Requests
         public string? PersonRemark { get; set; }
         public string? MakeBy { get; set; }
         public string? Lecturer { get; set; }
+        public string? SkillType { get; set; }
         public string? Reward { get; set; }
-
     }
 }

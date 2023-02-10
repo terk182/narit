@@ -11,7 +11,7 @@ namespace App.SEC.Requests
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int? RequestFormId { get; set; }
+        public int RequestFormId { get; set; }
         public string? Name { get; set; }
         public string? Descriptions { get; set; }
         public bool? Active { get; set; }

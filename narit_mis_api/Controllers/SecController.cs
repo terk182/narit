@@ -95,7 +95,7 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("From/GetRequestFromByDocNo{docNo}")]
+        [Route("From/GetRequestFromByDocNo/{docNo}")]
         public IActionResult GetRequestFromByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFromByDocNo(docNo);
@@ -103,7 +103,7 @@ namespace narit_mis_api.Controllers
         }
         [HttpPost]
         [Route("From/CreateRequestFrom")]
-        public IActionResult CreateRequestFrom(RequestFormRequests request)
+        public IActionResult CreateRequestFrom(RequestFormRequests? request)
         {
             var data = _SecServices.CreateRequestFrom(request);
             return Json(data);
@@ -124,7 +124,7 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpDelete]
-        [Route("From/DeleteRequestFromItemsByDocNo{docNo}")]
+        [Route("From/DeleteRequestFromItemsByDocNo/{docNo}")]
         public IActionResult DeleteRequestFromItemsById(string docNo)
         {
             var data = _SecServices.DeleteRequestFromItemsById(docNo);
@@ -133,21 +133,21 @@ namespace narit_mis_api.Controllers
 
 
         [HttpGet]
-        [Route("From/GetRequestFormApproveByDocNo{docNo}")]
+        [Route("From/GetRequestFormApproveByDocNo/{docNo}")]
         public IActionResult GetRequestFormApproveByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormApproveByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFormApproveByDocNo")]
+        [Route("From/CreateRequestFromApproveByDocNo")]
         public IActionResult CreateRequestFormApproveByDocNo(RequestFormApproveRequest request)
         {
             var data = _SecServices.CreateRequestFormApproveByDocNo(request);
             return Json(data);
         }
         [HttpDelete]
-        [Route("From/DeleteRequestFormApproveByDocNo{docNo}")]
+        [Route("From/DeleteRequestFormApproveByDocNo/{docNo}")]
         public IActionResult DeleteRequestFormApproveByDocNo(string docNo)
         {
             var data = _SecServices.DeleteRequestFormApproveByDocNo(docNo);
@@ -155,22 +155,22 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestCommentByDocNo{docNo}")]
+        [Route("From/GetRequestCommentByDocNo/{docNo}")]
         public IActionResult GetRequestCommentByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestCommentByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFormCommentByDocNo")]
-        public IActionResult CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
+        [Route("From/CreateRequestFromCommentByDocNo")]
+        public IActionResult CreateRequestFromCommentByDocNo(RequestFormCommentRequests request)
         {
-            var data = _SecServices.CreateRequestFormCommentByDocNo(request);
+            var data = _SecServices.CreateRequestFromCommentByDocNo(request);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormBorrowingMoneyByDocNo{docNo}")]
+        [Route("From/GetRequestFormBorrowingMoneyByDocNo/{docNo}")]
         public IActionResult GetRequestFormBorrowingMoneyByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormBorrowingMoneyByDocNo(docNo);
@@ -185,7 +185,7 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormScheduleByDocNo{docNo}")]
+        [Route("From/GetRequestFormScheduleByDocNo/{docNo}")]
         public IActionResult GetRequestFormScheduleByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormScheduleByDocNo(docNo);
@@ -200,7 +200,7 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormExaminerForBudgetByDocNo{docNo}")]
+        [Route("From/GetRequestFormExaminerForBudgetByDocNo/{docNo}")]
         public IActionResult GetRequestFormExaminerForBudgetByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormExaminerForBudgetByDocNo(docNo);

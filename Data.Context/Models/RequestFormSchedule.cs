@@ -16,5 +16,7 @@ namespace narit_mis_api.Models
         public DateTime? EndDate { get; set; }
         public DateTime? StartDateTime { get; set; }
         public DateTime? EndDateTime { get; set; }
+
+        public virtual RequestFrom? RequestFrom { get; set; }
     }
 }

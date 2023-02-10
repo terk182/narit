@@ -211,6 +211,9 @@ namespace narit_mis_api.Models
             {
                 entity.ToTable("RequestBudget");
 
+                entity.HasIndex(e => e.DocNo, "IX_RequestBudget")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.CalculationDate).HasColumnType("datetime");
@@ -221,9 +224,20 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
                 entity.Property(e => e.DepartmentId).HasColumnName("DepartmentID");
 
                 entity.Property(e => e.Descriptions).IsUnicode(false);
+
+                entity.Property(e => e.DocNo)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.DocStatus)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.FilePath).IsUnicode(false);
 
@@ -238,16 +252,12 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.TotalBudget).HasColumnType("decimal(10, 2)");
 
                 entity.Property(e => e.WriteDate).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Department)
-                    .WithMany(p => p.RequestBudgets)
-                    .HasForeignKey(d => d.DepartmentId)
-                    .HasConstraintName("FK_RequestBudget_Department");
             });
 
             modelBuilder.Entity<RequestFormApprove>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.DocNo });
+                entity.HasKey(e => new { e.Id, e.DocNo })
+                    .HasName("PK_RequestFormApprove_1");
 
                 entity.ToTable("RequestFormApprove");
 
@@ -265,9 +275,13 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.JobPositionId).HasColumnName("JobPositionID");
 
-                entity.Property(e => e.Name).IsUnicode(false);
-
                 entity.Property(e => e.RequestFormId).HasColumnName("RequestFormID");
+
+                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+
+                entity.Property(e => e.StaffName).IsUnicode(false);
+
+                entity.Property(e => e.StatusApprove).HasDefaultValueSql("((1))");
 
                 entity.HasOne(d => d.RequestFrom)
                     .WithMany(p => p.RequestFormApproves)
@@ -278,7 +292,8 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<RequestFormBorrowingMoney>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.DocNo });
+                entity.HasKey(e => new { e.Id, e.DocNo })
+                    .HasName("PK_RequestFormBorrowingMoney_1");
 
                 entity.ToTable("RequestFormBorrowingMoney");
 
@@ -299,11 +314,6 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.StaffId).HasColumnName("StaffID");
 
                 entity.Property(e => e.StaffName).IsUnicode(false);
-
-                entity.HasOne(d => d.RequestFrom)
-                    .WithMany(p => p.RequestFormBorrowingMoneys)
-                    .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
-                    .HasConstraintName("FK_RequestFormBorrowingMoney_RequestFrom");
             });
 
             modelBuilder.Entity<RequestFormBudgetType>(entity =>
@@ -319,7 +329,8 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<RequestFormComment>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.DocNo });
+                entity.HasKey(e => new { e.Id, e.DocNo })
+                    .HasName("PK_RequestFormComment_1");
 
                 entity.ToTable("RequestFormComment");
 
@@ -348,6 +359,7 @@ namespace narit_mis_api.Models
                 entity.HasOne(d => d.RequestFrom)
                     .WithMany(p => p.RequestFormComments)
                     .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestFormComment_RequestFrom");
             });
 
@@ -393,7 +405,9 @@ namespace narit_mis_api.Models
 
                 entity.ToTable("RequestFormExaminerForBudget");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.DocNo)
                     .HasMaxLength(10)
@@ -418,6 +432,7 @@ namespace narit_mis_api.Models
                 entity.HasOne(d => d.RequestFrom)
                     .WithMany(p => p.RequestFormExaminerForBudgets)
                     .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestFormExaminerForBudget_RequestFrom");
             });
 
@@ -449,23 +464,26 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.RequestFormId).HasColumnName("RequestFormID");
 
-                entity.Property(e => e.TotalPrice).HasColumnType("decimal(10, 2)");
+                entity.Property(e => e.TotalBudget).HasColumnType("decimal(10, 2)");
 
-                entity.Property(e => e.TotalUnit).HasColumnType("decimal(10, 2)");
-
-                entity.Property(e => e.Unit).HasColumnType("decimal(10, 2)");
+                entity.Property(e => e.Unit).IsUnicode(false);
 
                 entity.HasOne(d => d.RequestFrom)
                     .WithMany(p => p.RequestFormItems)
                     .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestFormItem_RequestFrom");
             });
 
             modelBuilder.Entity<RequestFormSchedule>(entity =>
             {
+                entity.HasKey(e => new { e.Id, e.DocNo });
+
                 entity.ToTable("RequestFormSchedule");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.DocNo)
                     .HasMaxLength(10)
@@ -484,6 +502,11 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.StartDate).HasColumnType("datetime");
 
                 entity.Property(e => e.StartDateTime).HasColumnType("datetime");
+
+                entity.HasOne(d => d.RequestFrom)
+                    .WithMany(p => p.RequestFormSchedules)
+                    .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .HasConstraintName("FK_RequestFormSchedule_RequestFrom");
             });
 
             modelBuilder.Entity<RequestFrom>(entity =>
@@ -526,7 +549,7 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Place).IsUnicode(false);
 
-                entity.Property(e => e.PracticalDay).HasColumnType("datetime");
+                entity.Property(e => e.PracticalDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ProjectActivityId).HasColumnName("ProjectActivityID");
 
@@ -538,15 +561,7 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Reward).IsUnicode(false);
 
-                entity.HasOne(d => d.BudgetType)
-                    .WithMany(p => p.RequestFroms)
-                    .HasForeignKey(d => d.BudgetTypeId)
-                    .HasConstraintName("FK_RequestFrom_BudgetType");
-
-                entity.HasOne(d => d.RequestBudget)
-                    .WithMany(p => p.RequestFroms)
-                    .HasForeignKey(d => d.RequestBudgetId)
-                    .HasConstraintName("FK_RequestFrom_RequestBudget");
+                entity.Property(e => e.SkillType).IsUnicode(false);
             });
 
             modelBuilder.Entity<ScheduleFisicalYear>(entity =>

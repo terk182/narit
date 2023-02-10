@@ -10,8 +10,8 @@ namespace App.SEC.Requests
     public class RequestFormCommentRequests
     {
         public int Id { get; set; }
-        public int? RequestFormId { get; set; }
-        public string DocNo { get; set; }
+        public string DocNo { get; set; } = null!;
+        public int RequestFormId { get; set; }
         public DateTime? DateTime { get; set; }
         public string? StaffId { get; set; }
         public string? StaffName { get; set; }
