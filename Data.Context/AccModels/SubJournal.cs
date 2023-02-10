@@ -7,6 +7,8 @@ namespace narit_acc_api.Models
     {
         public SubJournal()
         {
+            Accountings = new HashSet<Accounting>();
+            Documents = new HashSet<Document>();
             Transections = new HashSet<Transection>();
         }
 
@@ -22,6 +24,8 @@ namespace narit_acc_api.Models
         public int? Number { get; set; }
 
         public virtual Journal? Journal { get; set; }
+        public virtual ICollection<Accounting> Accountings { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
         public virtual ICollection<Transection> Transections { get; set; }
     }
 }

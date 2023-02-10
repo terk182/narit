@@ -11,5 +11,7 @@ namespace App.Common.Models.Responses
         public bool Success { get; set; }
         public string? Errors { get; set; }
         public string? Messsage { get; set; }
+
+
     }
 }

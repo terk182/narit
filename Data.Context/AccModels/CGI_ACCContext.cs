@@ -33,6 +33,9 @@ namespace narit_acc_api.Models
         public virtual DbSet<CreditorType> CreditorTypes { get; set; } = null!;
         public virtual DbSet<Debtor> Debtors { get; set; } = null!;
         public virtual DbSet<DebtorType> DebtorTypes { get; set; } = null!;
+        public virtual DbSet<Document> Documents { get; set; } = null!;
+        public virtual DbSet<DocumentType> DocumentTypes { get; set; } = null!;
+        public virtual DbSet<FundsType> FundsTypes { get; set; } = null!;
         public virtual DbSet<Journal> Journals { get; set; } = null!;
         public virtual DbSet<JournalForm> JournalForms { get; set; } = null!;
         public virtual DbSet<SubJournal> SubJournals { get; set; } = null!;
@@ -116,43 +119,65 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.AccountBook)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.BillDate).HasColumnType("datetime");
-
-                entity.Property(e => e.BillId).HasColumnName("BillID");
+                entity.Property(e => e.ContactId).HasColumnName("ContactID");
 
                 entity.Property(e => e.CreateDate)
                     .IsRowVersion()
                     .IsConcurrencyToken();
 
-                entity.Property(e => e.DescId).HasColumnName("DescID");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PaymentId).HasColumnName("PaymentID");
+                entity.Property(e => e.DocCreator)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FundTypeId).HasColumnName("FundTypeID");
+
+                entity.Property(e => e.JournalId).HasColumnName("JournalID");
 
                 entity.Property(e => e.Quantity)
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
+                    .HasColumnType("decimal(10, 2)")
                     .HasDefaultValueSql("((0))");
 
-                entity.Property(e => e.RefNo)
-                    .HasMaxLength(50)
+                entity.Property(e => e.RefDocDate).HasColumnType("date");
+
+                entity.Property(e => e.RefDocNo)
+                    .HasMaxLength(250)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Status).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.VoucherNo)
-                    .HasMaxLength(50)
+                entity.Property(e => e.SubjournalId).HasColumnName("SubjournalID");
+
+                entity.Property(e => e.SubjournalNo)
+                    .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.FundType)
+                    .WithMany(p => p.Accountings)
+                    .HasForeignKey(d => d.FundTypeId)
+                    .HasConstraintName("FK_Accounting_FundsType");
+
+                entity.HasOne(d => d.Journal)
+                    .WithMany(p => p.Accountings)
+                    .HasForeignKey(d => d.JournalId)
+                    .HasConstraintName("FK_Accounting_Journal");
+
+                entity.HasOne(d => d.Subjournal)
+                    .WithMany(p => p.Accountings)
+                    .HasForeignKey(d => d.SubjournalId)
+                    .HasConstraintName("FK_Accounting_SubJournal");
             });
 
             modelBuilder.Entity<Bank>(entity =>
             {
                 entity.ToTable("Bank");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasComment("");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
@@ -646,6 +671,80 @@ namespace narit_acc_api.Models
                     .WithMany(p => p.DebtorTypes)
                     .HasForeignKey(d => d.ChartMinorId)
                     .HasConstraintName("FK_AccountReceivableType_AccountType");
+            });
+
+            modelBuilder.Entity<Document>(entity =>
+            {
+                entity.ToTable("Document");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Characters)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DocumentTypeId).HasColumnName("DocumentTypeID");
+
+                entity.Property(e => e.JournalId).HasColumnName("JournalID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SpecialCharacters)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SubJournalId).HasColumnName("SubJournalID");
+
+                entity.HasOne(d => d.DocumentType)
+                    .WithMany(p => p.Documents)
+                    .HasForeignKey(d => d.DocumentTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Document_DocumentType");
+
+                entity.HasOne(d => d.Journal)
+                    .WithMany(p => p.Documents)
+                    .HasForeignKey(d => d.JournalId)
+                    .HasConstraintName("FK_Document_Journal");
+
+                entity.HasOne(d => d.SubJournal)
+                    .WithMany(p => p.Documents)
+                    .HasForeignKey(d => d.SubJournalId)
+                    .HasConstraintName("FK_Document_SubJournal");
+            });
+
+            modelBuilder.Entity<DocumentType>(entity =>
+            {
+                entity.ToTable("DocumentType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Code)
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("CODE");
+
+                entity.Property(e => e.NameEn)
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("Name_EN");
+
+                entity.Property(e => e.NameTh)
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("Name_TH");
+            });
+
+            modelBuilder.Entity<FundsType>(entity =>
+            {
+                entity.ToTable("FundsType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Journal>(entity =>

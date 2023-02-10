@@ -3,6 +3,8 @@ using App.GL.DTO;
 using App.GL.Requests;
 using App.GL.Responses;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.VisualBasic;
 using narit_acc_api.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace App.GL
 {
@@ -133,11 +136,11 @@ namespace App.GL
         }
 
 
-        public List<ChartResponse> GetChartHeaderId(int id)
+        public List<ChartResponse> GetChartHeaderId(int Id)
         {
             //  var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
             var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartHeaders.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.ChartHeaders.Where(x => x.Id == Id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
             var QSOuterJoin = from chart in data
                               join acctype in accounttypes
@@ -187,10 +190,10 @@ namespace App.GL
             return result;
         }
 
-        public List<ChartResponse> GetChartSubHeaderId(int id)
+        public List<ChartResponse> GetChartSubHeaderId(int Id)
         {
             var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartSubHeaders.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.ChartSubHeaders.Where(x => x.Id == Id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
             var QSOuterJoin = from chart in data
                               join acctype in accounttypes
@@ -311,10 +314,10 @@ namespace App.GL
 
         }
 
-        public List<ChartResponse> GetChartMajorId(int id)
+        public List<ChartResponse> GetChartMajorId(int Id)
         {
             var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartMajors.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.ChartMajors.Where(x => x.Id == Id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
             var QSOuterJoin = from chart in data
                               join acctype in accounttypes
@@ -431,10 +434,10 @@ namespace App.GL
                 });
             return result;
         }
-        public List<ChartResponse> GetChartSubMajorId(int id)
+        public List<ChartResponse> GetChartSubMajorId(int Id)
         {
             var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartSubMajors.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.ChartSubMajors.Where(x => x.Id == Id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
             var QSOuterJoin = from chart in data
                               join acctype in accounttypes
@@ -557,10 +560,10 @@ namespace App.GL
             return result;
         }
 
-        public List<ChartResponse> GetChartMinorId(int id)
+        public List<ChartResponse> GetChartMinorId(int Id)
         {
             var result = new List<ChartResponse>();
-            var data = _databaseACC.ChartMinors.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.ChartMinors.Where(x => x.Id == Id).ToList();
             var accounttypes = _databaseACC.AccountTypes.ToList();
             var QSOuterJoin = from chart in data
                               join acctype in accounttypes
@@ -824,10 +827,10 @@ namespace App.GL
 
             return response;
         }
-        public CommonBaseResponse DeleteAccountTypeId(int id)
+        public CommonBaseResponse DeleteAccountTypeId(int Id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.AccountTypes.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.AccountTypes.Where(x => x.Id == Id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -843,9 +846,9 @@ namespace App.GL
             }
             return response;
         }
-        public AccountType GetAccountTypeId(int id)
+        public AccountType GetAccountTypeId(int Id)
         {
-            AccountType account = _databaseACC.AccountTypes.Where(x => x.Id == id).FirstOrDefault();
+            AccountType account = _databaseACC.AccountTypes.Where(x => x.Id == Id).FirstOrDefault();
             if (account != null)
             {
                 return account;
@@ -864,9 +867,9 @@ namespace App.GL
             List<DebtorType> accounts = _databaseACC.DebtorTypes.ToList();
             return accounts;
         }
-        public DebtorType GetDebtorTypeId(int id)
+        public DebtorType GetDebtorTypeId(int Id)
         {
-            DebtorType account = _databaseACC.DebtorTypes.Where(x => x.Id == id).FirstOrDefault();
+            DebtorType account = _databaseACC.DebtorTypes.Where(x => x.Id == Id).FirstOrDefault();
             if (account != null)
             {
                 return account;
@@ -909,10 +912,10 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse DeleteDebtorTypeId(int id)
+        public CommonBaseResponse DeleteDebtorTypeId(int Id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.DebtorTypes.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.DebtorTypes.Where(x => x.Id == Id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -966,9 +969,9 @@ namespace App.GL
             List<CreditorType> CreditorTypes = _databaseACC.CreditorTypes.ToList();
             return CreditorTypes;
         }
-        public CreditorType GetCreditorTypeId(int id)
+        public CreditorType GetCreditorTypeId(int Id)
         {
-            CreditorType CreditorType = _databaseACC.CreditorTypes.Where(x => x.Id == id).FirstOrDefault();
+            CreditorType CreditorType = _databaseACC.CreditorTypes.Where(x => x.Id == Id).FirstOrDefault();
             return CreditorType;
         }
         public CommonBaseResponse AddCreditorType(CreditorTypeRequest request)
@@ -1007,10 +1010,10 @@ namespace App.GL
             }
             return response;
         }
-        public CommonBaseResponse DeletetCreditorTypeId(int id)
+        public CommonBaseResponse DeletetCreditorTypeId(int Id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.CreditorTypes.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.CreditorTypes.Where(x => x.Id == Id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -1037,9 +1040,9 @@ namespace App.GL
             return creditor;
         }
 
-        public Creditor GetCreditorId(int id)
+        public Creditor GetCreditorId(int Id)
         {
-            Creditor creditor = _databaseACC.Creditors.Where(x => x.Id == id).FirstOrDefault();
+            Creditor creditor = _databaseACC.Creditors.Where(x => x.Id == Id).FirstOrDefault();
             if (creditor != null)
             {
                 return creditor;
@@ -1115,10 +1118,10 @@ namespace App.GL
             return response;
         }
 
-        public CommonBaseResponse DeleteCreditorId(int id)
+        public CommonBaseResponse DeleteCreditorId(int Id)
         {
             CommonBaseResponse response = new CommonBaseResponse();
-            var data = _databaseACC.Creditors.Where(x => x.Id == id).FirstOrDefault();
+            var data = _databaseACC.Creditors.Where(x => x.Id == Id).FirstOrDefault();
             if (data != null)
             {
                 data.Active = 0;
@@ -1195,10 +1198,10 @@ namespace App.GL
             }
         }
 
-        public List<TransectionResponse> GetTransectionId(int id)
+        public List<TransectionResponse> GetTransectionId(int Id)
         {
             var result = new List<TransectionResponse>();
-            var data = _databaseACC.Transections.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.Transections.Where(x => x.Id == Id).ToList();
             var Transections = _databaseACC.TransectionTypes.ToList();
             var subminors = _databaseACC.ChartMinors.ToList();
             var subjournal = _databaseACC.SubJournals.ToList();
@@ -1285,6 +1288,12 @@ namespace App.GL
             return Journal;
         }
 
+        public List<Journal> GetJournalID(int Id)
+        {
+            List<Journal> Journal = _databaseACC.Journals.Where(x => x.Id == Id).ToList();
+            return Journal;
+        }
+
         public List<SubJournal> GetSubJournal(int JournalID)
         {
             var result = new List<SubJournal>();
@@ -1307,11 +1316,11 @@ namespace App.GL
             return result;
         }
 
-        public List<SubJournalDto> GetSubJournalID(int id)
+        public List<SubJournalDto> GetSubJournalID(int Id)
         {
             var SubJournal = _databaseACC.SubJournals.ToList();
             var result = new List<SubJournalDto>();
-            var data = _databaseACC.SubJournals.Where(x => x.Id == id).ToList();
+            var data = _databaseACC.SubJournals.Where(x => x.Id == Id).ToList();
             var Journals = _databaseACC.Journals.ToList();
             var QSOuterJoin = from datas in data
                               join Journalname in Journals
@@ -1373,7 +1382,7 @@ namespace App.GL
                 result.Name = request.SubJournalName;
                 result.Year = result.Year;
                 result.Month = result.Month;
-                result.Number = result.Number;
+                result.Number = request.Number;
                 _databaseACC.Entry(result).State = EntityState.Modified;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;
@@ -1381,6 +1390,444 @@ namespace App.GL
             }
             return response;
         }
+
+        public List<Accounting> ReportGlAll()
+        {
+            List<Accounting> Journal = _databaseACC.Accountings.ToList();
+            return Journal;
+        }
+        ////public List<Accounting> reportchart(DateTime? DetailDate, int? MinorID)
+        ////{
+        ////    //var result = new List<Accounting>();
+
+        ////    var data = _databaseACC.Accountings.Where(c => ( c.Credit == MinorID || c.Debit == MinorID) && c.DetailDate == DetailDate).ToList();
+        ////    return data;
+        ////}
+
+        public ReportChartResponse reportchartdate(ReportChartRequest request)
+        {
+            ReportChartResponse response = new ReportChartResponse();
+
+            List<Accounting> result1 = new List<Accounting>();
+            var ChartMinorId = request.ChartMinorId;
+            foreach (var item in ChartMinorId)
+            {
+
+                var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= request.FromDate && m.RefDocDate <= request.ToDate);
+               // List<Accounting> data2 = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= request.FromDate && m.RefDocDate <= request.ToDate).ToList();
+               // var aaa = data2.Sum(m => m.Quantity);
+
+                foreach (var item1 in data)
+                {
+                    result1.Add(item1); 
+                    //result1.Add(new Accounting
+                    //{
+                    //    Id = item.Id,
+                    //    Quantity = item.Quantity,
+                    //    Debit = item.Debit,
+                    //    Credit = item.Credit,
+                    //    DetailDate = item.DetailDate
+                    //});
+
+                }
+                //var sumQty = result1.Sum(m => m.Quantity);
+                var sumDebit = result1.Where(x =>x.Credit == 0).Sum(x =>x.Quantity);
+                var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                response.SumDebit = sumDebit;
+                response.SumCredit = sumCredit;
+                // response.SumQuantity = sumQty;
+                response.SumQuantity = (-sumDebit)+(sumCredit);
+
+                if (request.OrderBy == "ASC")
+                {
+                    string ccc = request.Column.ToString();
+                    response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                }
+                if (request.OrderBy == "DESC")
+                {
+                    response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                }
+
+            }
+            return response;
+        }
+
+        public ReportChartResponse PostReportGlDate(ReportChartRequest request)
+        {
+            ReportChartResponse response = new ReportChartResponse();
+            var result1 = new List<Accounting>();
+            var today = DateAndTime.Today;
+            var ChartMinorId = request.ChartMinorId;
+
+            if (request.SelectDate == 1)
+            {
+                foreach (var item in ChartMinorId)
+                {
+                    var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= request.FromDate && m.RefDocDate <= request.ToDate);
+
+                    foreach (var item1 in data)
+                    {
+                        result1.Add(item1);
+                    }
+                    var sumQty = result1.Sum(m => m.Quantity);
+                    response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                    var sumDebit = result1.Where(x => x.Credit == 0).Sum(x => x.Quantity);
+                    var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                    response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                    response.SumDebit = sumDebit;
+                    response.SumCredit = sumCredit;
+                    response.SumQuantity = (-sumDebit) + (sumCredit);
+
+                    if (request.OrderBy == "ASC")
+                    {
+                        response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                    }
+                    if (request.OrderBy == "DESC")
+                    {
+                        response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                    }
+                }
+
+
+
+            }
+
+            if (request.SelectDate == 2)
+            {
+                var mmm = today.Month - 1;
+                if (mmm < 0)
+                {
+                    foreach (var item in ChartMinorId)
+                    {
+                        var startmonth = new DateTime(today.Year - 1, 12 + mmm, 1);
+                        int daysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+                        var lastmonth = new DateTime(today.Year, today.Month, daysInMonth);
+                        var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= startmonth && m.RefDocDate <= lastmonth);
+
+                        foreach (var item1 in data)
+                        {
+                            result1.Add(item1);
+                        }
+                        var sumQty = result1.Sum(m => m.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        var sumDebit = result1.Where(x => x.Credit == 0).Sum(x => x.Quantity);
+                        var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        response.SumDebit = sumDebit;
+                        response.SumCredit = sumCredit;
+                        response.SumQuantity = (-sumDebit) + (sumCredit);
+
+                        if (request.OrderBy == "ASC")
+                        {
+                            response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                        }
+                        if (request.OrderBy == "DESC")
+                        {
+                            response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                        }
+                    }
+
+                }
+
+                else
+                {
+                    foreach (var item in ChartMinorId)
+                    {
+                        var startmonth = new DateTime(today.Year, today.Month - 1, 1);
+                        int daysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+                        var lastmonth = new DateTime(today.Year, today.Month, daysInMonth);
+                        var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= startmonth && m.RefDocDate <= lastmonth);
+                        foreach (var item1 in data)
+                        {
+                            result1.Add(item1);
+                        }
+                        var sumQty = result1.Sum(m => m.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        var sumDebit = result1.Where(x => x.Credit == 0).Sum(x => x.Quantity);
+                        var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        response.SumDebit = sumDebit;
+                        response.SumCredit = sumCredit;
+                        response.SumQuantity = (-sumDebit) + (sumCredit);
+
+                        if (request.OrderBy == "ASC")
+                        {
+                            response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                        }
+                        if (request.OrderBy == "DESC")
+                        {
+                            response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                        }
+
+                    }
+                }
+            }
+
+            if (request.SelectDate == 3)
+            {
+                var mmm = today.Month - 3;
+                if (mmm < 0)
+                {
+                    foreach (var item in ChartMinorId)
+                    {
+                        var startmonth = new DateTime(today.Year - 1, 12 + mmm, 1);
+                        int daysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+                        var lastmonth = new DateTime(today.Year, today.Month, daysInMonth);
+                        var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= startmonth && m.RefDocDate <= lastmonth);
+                        foreach (var item1 in data)
+                        {
+                            result1.Add(item1);
+                        }
+                        var sumQty = result1.Sum(m => m.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        var sumDebit = result1.Where(x => x.Credit == 0).Sum(x => x.Quantity);
+                        var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        response.SumDebit = sumDebit;
+                        response.SumCredit = sumCredit;
+                        response.SumQuantity = (-sumDebit) + (sumCredit);
+
+                        if (request.OrderBy == "ASC")
+                        {
+                            response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                        }
+                        if (request.OrderBy == "DESC")
+                        {
+                            response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                        }
+                    }
+
+
+                }
+
+                else
+                {
+                    foreach (var item in ChartMinorId)
+                    {
+                        var startmonth = new DateTime(today.Year, today.Month - 3, 1);
+                        int daysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+                        var lastmonth = new DateTime(today.Year, today.Month, daysInMonth);
+                        var data = _databaseACC.Accountings.Where(m => (m.Credit == item.Id || m.Debit == item.Id) && m.RefDocDate >= startmonth && m.RefDocDate <= lastmonth);
+                        foreach (var item1 in data)
+                        {
+                            result1.Add(item1);
+                        }
+                        var sumQty = result1.Sum(m => m.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        var sumDebit = result1.Where(x => x.Credit == 0).Sum(x => x.Quantity);
+                        var sumCredit = result1.Where(x => x.Debit == 0).Sum(x => x.Quantity);
+                        response.AllDay = (request.FromDate) + (" to ") + (request.ToDate);
+                        response.SumDebit = sumDebit;
+                        response.SumCredit = sumCredit;
+                        response.SumQuantity = (-sumDebit) + (sumCredit);
+
+                        if (request.OrderBy == "ASC")
+                        {
+                            response.data = result1.OrderBy(x => x.RefDocDate).ToList();
+                        }
+                        if (request.OrderBy == "DESC")
+                        {
+                            response.data = result1.OrderByDescending(x => x.RefDocDate).ToList();
+                        }
+
+                    }
+                }
+            }
+
+            return response;
+        }
+
+        /// Document
+        public List<DocumentType> GetDocumentType()
+        {
+            List<DocumentType> DocumentType = _databaseACC.DocumentTypes.ToList();
+            return DocumentType;
+        }
+
+        public List<DocumentResponse> GetDocument(int Active)
+        {
+            //List<Document> Document = _databaseACC.Documents.ToList();
+            //return Document;
+
+            var result = new List<DocumentResponse>();
+            var data = _databaseACC.Documents.Where(x => x.Active == Active).ToList();
+            var DocumentType = _databaseACC.DocumentTypes.ToList();
+            var journal = _databaseACC.Journals.ToList();
+            var subjournal = _databaseACC.SubJournals.ToList();
+            var QSOuterJoin = from datas in data
+                              join DocumentTypelname in DocumentType
+                              on datas.DocumentTypeId.ToString() equals DocumentTypelname.Id.ToString()
+                              into dataDocuments
+                              from ndocumenttypes in dataDocuments.DefaultIfEmpty()
+
+                              join journalname in journal
+                              on datas.JournalId.ToString() equals journalname.Id.ToString()
+                              into journalGroup
+                              from njournal in journalGroup.DefaultIfEmpty()
+
+                              join subjournalname in journal
+                              on datas.SubJournalId.ToString() equals subjournalname.Id.ToString()
+                              into subjournalGroup
+                              from nsubjournal in subjournalGroup.DefaultIfEmpty()
+
+                              select new { datas, ndocumenttypes, njournal, nsubjournal };
+
+            foreach (var item in QSOuterJoin)
+                result.Add(new DocumentResponse
+                {
+                    Id = item.datas.Id,
+                    Name = item.datas.Name,
+                    DocumentTypeId = item.datas.DocumentTypeId,
+                    DocumentTypeName = item.ndocumenttypes.NameTh,
+                    Characters = item.datas.Characters,
+                    SpecialCharacters = item.datas.SpecialCharacters,
+                    Year = item.datas.Year,
+                    Month = item.datas.Month,
+                    Number = item.datas.Number,
+                    JournalId = item.datas.JournalId,
+                    JournalName = item.njournal.Name,
+                    SubjournalId = item.datas.SubJournalId,
+                    SubJournalName = item.nsubjournal.Name,
+                    Copies = item.datas.Copies,
+                    Active = item.datas.Active,
+                });
+            return result;
+        }
+
+
+        public List<DocumentResponse> GetDocumentId(int Id)
+        {
+            var result = new List<DocumentResponse>();
+            var data = _databaseACC.Documents.Where(x => x.Id == Id).ToList();
+            var DocumentType = _databaseACC.DocumentTypes.ToList();
+            var journal = _databaseACC.Journals.ToList();
+            var subjournal = _databaseACC.SubJournals.ToList();
+            var QSOuterJoin = from datas in data
+                              join DocumentTypelname in DocumentType
+                              on datas.DocumentTypeId.ToString() equals DocumentTypelname.Id.ToString()
+                              into dataDocuments
+                              from ndocumenttypes in dataDocuments.DefaultIfEmpty()
+
+                              join journalname in journal
+                              on datas.JournalId.ToString() equals journalname.Id.ToString()
+                              into journalGroup
+                              from njournal in journalGroup.DefaultIfEmpty()
+
+                              join subjournalname in journal
+                              on datas.SubJournalId.ToString() equals subjournalname.Id.ToString()
+                              into subjournalGroup
+                              from nsubjournal in subjournalGroup.DefaultIfEmpty()
+
+                              select new { datas, ndocumenttypes, njournal, nsubjournal };
+
+            foreach (var item in QSOuterJoin)
+                result.Add(new DocumentResponse
+                {
+                    Id = item.datas.Id,
+                    Name = item.datas.Name,
+                    DocumentTypeId = item.datas.DocumentTypeId,
+                    DocumentTypeName = item.ndocumenttypes.NameTh,
+                    Characters = item.datas.Characters,
+                    SpecialCharacters = item.datas.SpecialCharacters,
+                    Year = item.datas.Year,
+                    Month = item.datas.Month,
+                    Number = item.datas.Number,
+                    JournalId = item.datas.JournalId,
+                    JournalName = item.njournal.Name,
+                    SubjournalId = item.datas.SubJournalId,
+                    SubJournalName = item.nsubjournal.Name,
+                    Copies = item.datas.Copies,
+                    Active = item.datas.Active,
+                });
+            return result;
+        }
+
+        public CommonBaseResponse AddDocument(DocumentRequest request)
+        {
+
+            var response = new CommonBaseResponse();
+            var Documents = _databaseACC.Documents.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (Documents == null)
+            {
+                var _Documents = new Document();
+                _Documents.Name = request.Name;
+                _Documents.DocumentTypeId = request.DocumentTypeId;
+                _Documents.Characters = request.Characters;
+                _Documents.SpecialCharacters = request.SpecialCharacters;
+                _Documents.Year = request.Year;
+                _Documents.Month = request.Month;
+                _Documents.Number = request.Number;
+                _Documents.JournalId = request.JournalId;
+                _Documents.SubJournalId = request.SubjournalId;
+                _Documents.Copies = request.Copies;
+                _Documents.Active = request.Active;
+
+
+                _databaseACC.Entry(_Documents).State = EntityState.Added;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Add Complete" : "Add Fail";
+            }
+
+      
+
+
+            else
+            {
+                response.Success = false;
+                response.Messsage = "Error";
+            }
+            return response;
+        }
+    
+           public CommonBaseResponse EditDocument(DocumentRequest request)
+             {
+                CommonBaseResponse response = new CommonBaseResponse();
+                Document result = _databaseACC.Documents.Where(x => x.Id == request.Id).FirstOrDefault();
+                if (result != null)
+                {
+                    result.Name = request.Name;
+                    result.DocumentTypeId = request.DocumentTypeId;
+                    result.Characters = request.Characters;
+                    result.SpecialCharacters = request.SpecialCharacters;
+                    result.Year = request.Year;
+                    result.Month = request.Month;
+                    result.Number = request.Number;
+                    result.JournalId = request.JournalId;
+                    result.SubJournalId = request.SubjournalId;
+                    result.Copies = request.Copies;
+                    result.Active = request.Active;
+
+                    _databaseACC.Entry(result).State = EntityState.Modified;
+                    int returnValue = _databaseACC.SaveChanges();
+                    response.Success = returnValue > 0 ? true : false;
+                    response.Messsage = returnValue > 0 ? "Edit Complete" : "Edit Fail";
+                }
+                return response;
+            }
+
+        public CommonBaseResponse ActiveDocument(int Id , int Active)
+        {
+            CommonBaseResponse response = new CommonBaseResponse();
+            var data = _databaseACC.Documents.Where(x => x.Id == Id).FirstOrDefault();
+    if (data != null)
+            {
+                data.Active = Active;
+                _databaseACC.Entry(data).State = EntityState.Modified;
+                int returnValue = _databaseACC.SaveChanges();
+                response.Success = returnValue > 0 ? true : false;
+                response.Messsage = returnValue > 0 ? "Delete complete" : "Delete fail";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+            return response;
+        }
+
+
 
     }
 }

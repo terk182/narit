@@ -46,15 +46,15 @@ namespace narit_acc_api.Controllers
         /// </summary>
         [HttpGet]
         [Route("Chart/GetHeaderId")]
-        public IActionResult GetChartHeaderId(int id)
+        public IActionResult GetChartHeaderId(int Id)
         {
-            var data = _AccGlServices.GetChartHeaderId(id);
+            var data = _AccGlServices.GetChartHeaderId(Id);
             return Json(data);
         }
 
         //SubHeader
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 2
+        /// ค้นหาผังบัญชีชั้น 2  ใน ชั้น 1
         /// </summary>
         [HttpGet]
         [Route("Chart/GetSubHeader")]
@@ -65,13 +65,13 @@ namespace narit_acc_api.Controllers
         }
 
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 2 ใน ชั้น 1
+        /// ค้นหาผังบัญชีชั้น 2 โดย ID
         /// </summary>
         [HttpGet]
         [Route("Chart/GetSubHeaderId")]
-        public IActionResult GetChartSubHeaderId(int id)
+        public IActionResult GetChartSubHeaderId(int Id)
         {
-            var data = _AccGlServices.GetChartSubHeaderId(id);
+            var data = _AccGlServices.GetChartSubHeaderId(Id);
             return Json(data);
         }
 
@@ -111,7 +111,7 @@ namespace narit_acc_api.Controllers
 
         //Major
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 3
+        /// ค้นหาผังบัญชีชั้น 3  ใน ชั้น 2
         /// </summary>
         [HttpGet]
         [Route("Chart/GetMajor")]
@@ -122,13 +122,13 @@ namespace narit_acc_api.Controllers
         }
 
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 3 ใน ชั้น 2
+        /// ค้นหาผังบัญชีชั้น 3 โดย ID
         /// </summary>
         [HttpGet]
         [Route("Chart/GetMajorId")]
-        public IActionResult GetChartMajorId(int id)
+        public IActionResult GetChartMajorId(int Id)
         {
-            var data = _AccGlServices.GetChartMajorId(id);
+            var data = _AccGlServices.GetChartMajorId(Id);
             return Json(data);
         }
 
@@ -156,7 +156,7 @@ namespace narit_acc_api.Controllers
         }
 
         /// <summary>
-        /// ลบผังบัญชีชั้น 3
+        /// ลบผังบัญชีชั้น 3 
         /// </summary>
         [HttpDelete]
         [Route("Chart/DeleteMajor")]
@@ -168,7 +168,7 @@ namespace narit_acc_api.Controllers
 
         //Submajor
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 4
+        /// ค้นหาผังบัญชีชั้น 4  ใน ชั้น 3
         /// </summary>
         [HttpGet]
         [Route("Chart/GetSubMajor")]
@@ -179,13 +179,13 @@ namespace narit_acc_api.Controllers
         }
 
         /// <summary>
-        /// ค้นหาผังบัญชีชั้น 4 ใน ชั้น 3
+        /// ค้นหาผังบัญชีชั้น 4 โดย ID
         /// </summary>
         [HttpGet]
         [Route("Chart/GetSubMajorId")]
-        public IActionResult GetChartSubMajorId(int id)
+        public IActionResult GetChartSubMajorId(int Id)
         {
-            var data = _AccGlServices.GetChartSubMajorId(id);
+            var data = _AccGlServices.GetChartSubMajorId(Id);
             return Json(data);
         }
 
@@ -251,9 +251,9 @@ namespace narit_acc_api.Controllers
         /// </summary>
         [HttpGet]
         [Route("Chart/GetMinorId")]
-        public IActionResult GetChartMinorId(int id)
+        public IActionResult GetChartMinorId(int Id)
         {
-            var data = _AccGlServices.GetChartMinorId(id);
+            var data = _AccGlServices.GetChartMinorId(Id);
             return Json(data);
         }
 
@@ -363,9 +363,9 @@ namespace narit_acc_api.Controllers
         /// </summary>
         [HttpGet]
         [Route("AccType/GetAccountTypeId")]
-        public IActionResult GetAccountTypeId(int id)
+        public IActionResult GetAccountTypeId(int Id)
         {
-            var data = _AccGlServices.GetAccountTypeId(id);
+            var data = _AccGlServices.GetAccountTypeId(Id);
             if (data != null)
             {
                 return Json(data);
@@ -423,9 +423,9 @@ namespace narit_acc_api.Controllers
         /// </summary>
         [HttpGet]
         [Route("Debtor/GetDebtorTypeId")]
-        public IActionResult GetDebtorTypeId(int id)
+        public IActionResult GetDebtorTypeId(int Id)
         {
-            var data = _AccGlServices.GetDebtorTypeId(id);
+            var data = _AccGlServices.GetDebtorTypeId(Id);
             return Json(data);
         }
 
@@ -490,9 +490,9 @@ namespace narit_acc_api.Controllers
         /// </summary>
         [HttpGet]
         [Route("Creditor/GetCreditorTypeId")]
-        public IActionResult GetCreditorTypeId(int id)
+        public IActionResult GetCreditorTypeId(int Id)
         {
-            var data = _AccGlServices.GetCreditorTypeId(id);
+            var data = _AccGlServices.GetCreditorTypeId(Id);
             return Json(data);
         }
 
@@ -628,9 +628,20 @@ namespace narit_acc_api.Controllers
             return Json(data);
         }
 
+        /// <summary>
+        /// ค้นหาสมุดรายวัน โดย ID
+        /// </summary>
+        [HttpGet]
+        [Route("Journal/GetJournalID")]
+        public IActionResult GetJournalID(int Id)
+        {
+            var data = _AccGlServices.GetJournalID(Id);
+            return Json(data);
+        }
+
 
         /// <summary>
-        /// ค้นหาสมุดย่อย
+        /// ค้นหาสมุดย่อย โดย JournalID
         /// </summary>
         [HttpGet]
         [Route("Journal/GetSubJournal")]
@@ -661,12 +672,13 @@ namespace narit_acc_api.Controllers
             var data = _AccGlServices.AddSubJournal(Request);
             return Json(data);
         }
-        /// <remarks>
-         /// แก้ไข
-        /// </remarks>
+   
         /// <summary>
         /// แก้ไขสมุดย่อย
         /// </summary>
+        /// <remarks>
+         /// แก้ไข
+        /// </remarks>
         [HttpPost]
         [Route("Journal/EditSubJournal")]
         public IActionResult EditSubJournal(SubJournalDto Request)
@@ -674,5 +686,113 @@ namespace narit_acc_api.Controllers
             var data = _AccGlServices.EditSubJournal(Request);
             return Json(data);
         }
+
+        [HttpGet]
+        [Route("Chart/ReportGlAll")]
+        public IActionResult ReportGlAll()
+        {
+            var data = _AccGlServices.ReportGlAll();
+            return Json(data);
+        }
+
+        ////[HttpGet]
+        ////[Route("Chart/reportchart")]
+        ////public IActionResult reportchart(DateTime? DetailDate, int? MinorID)
+        ////{
+        ////    var data = _AccGlServices.reportchart(DetailDate, MinorID);
+        ////    return Json(data);
+        ////}
+
+        [HttpPost]
+        [Route("Chart/reportchartdate")]
+        public IActionResult reportchartdate(ReportChartRequest request)
+        {
+            var data = _AccGlServices.reportchartdate(request);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// รายงานบัญชีแยกประเภท
+        /// </summary>
+        /// <remarks>
+        /// ** SelectDate เป็น int <br/> 
+        /// 1 = เลือกวันที่ <br/> 
+        /// 2 = ย้อนหลัง 1 เดือน <br/> 
+        /// 3 = ย้อนหลัง 3 เดือน 
+        /// </remarks>
+        [HttpPost]
+        [Route("Chart/ReportGlDate")]
+        public IActionResult PostReportGlDate(ReportChartRequest request)
+        {
+            var data = _AccGlServices.PostReportGlDate(request);
+            return Json(data);
+        }
+
+
+        /// <summary>
+        /// ค้นหาประเภทกำหนดใบเสร็จและใบสำคัญ(ทั้งหมด)
+        /// </summary>
+        [HttpGet]
+        [Route("Document/GetDocumentType")]
+        public IActionResult GetDocumentType()
+        {
+            var data = _AccGlServices.GetDocumentType();
+            return Json(data);
+        }
+
+        /// <summary>
+        /// ค้นหากำหนดใบเสร็จและใบสำคัญ(ทั้งหมด)
+        /// </summary>
+        [HttpGet]
+        [Route("Document/GetDocument")]
+        public IActionResult GetDocument(int Active)
+        {
+            var data = _AccGlServices.GetDocument(Active);
+            return Json(data);
+        }
+        /// <summary>
+        /// ค้นหากำหนดใบเสร็จและใบสำคัญ โดย ID
+        /// </summary>
+        [HttpGet]
+        [Route("Document/GetDocumentID")]
+        public IActionResult GetDocumentId(int Id)
+        {
+            var data = _AccGlServices.GetDocumentId(Id);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// เพิ่มใบเสร็จและใบสำคัญ
+        /// </summary>
+        [HttpPost]
+        [Route("Document/AddDocument")]
+        public IActionResult AddDocument(DocumentRequest Request)
+        {
+            var data = _AccGlServices.AddDocument(Request);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// แก้ไขใบเสร็จและใบสำคัญ
+        /// </summary>
+        [HttpPost]
+        [Route("Document/EditDocument")]
+        public IActionResult EditDocument(DocumentRequest Request)
+        {
+            var data = _AccGlServices.EditDocument(Request);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// Activeใบเสร็จและใบสำคัญ
+        /// </summary>
+        [HttpDelete]
+        [Route("Document/ActiveDocument")]
+        public IActionResult ActiveDocument(int Id , int Active)
+        {
+            var data = _AccGlServices.ActiveDocument(Id, Active);
+            return Json(data);
+        }
+
     }
 }

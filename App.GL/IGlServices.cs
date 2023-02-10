@@ -17,30 +17,30 @@ namespace App.GL
 
         // Header 
         List<ChartResponse> GetChartHeader();
-        List<ChartResponse> GetChartHeaderId(int id);
+        List<ChartResponse> GetChartHeaderId(int Id);
 
         // SubHeader
         List<ChartResponse> GetChartSubHeader(int ChartHeaderId);
-        List<ChartResponse> GetChartSubHeaderId(int id);
+        List<ChartResponse> GetChartSubHeaderId(int Id);
         CommonBaseResponse AddSubHeader(ChartRequest request);
         CommonBaseResponse EditSubHeader(EditChartRequest request);
         CommonBaseResponse DelSubHeader(int Id);
         // Major
         List<ChartResponse> GetChartMajor(int ChartSubHeaderId);
-        List<ChartResponse> GetChartMajorId(int id);
+        List<ChartResponse> GetChartMajorId(int Id);
         CommonBaseResponse AddMajor(ChartRequest request);
         CommonBaseResponse EditMajor(EditChartRequest request);
         CommonBaseResponse DelMajor(int Id);
         //SubMajor
         List<ChartResponse> GetChartSubMajor(int ChartMajorId);
-        List<ChartResponse> GetChartSubMajorId(int id);
+        List<ChartResponse> GetChartSubMajorId(int Id);
         CommonBaseResponse AddSubMajor(ChartRequest request);
         CommonBaseResponse EditSubMajor(EditChartRequest request);
         CommonBaseResponse DelSubMajor(int Id);
         //Minor
         List<ChartMinor> GetAllChartMinor();
         List<ChartResponse> GetChartMinor(int ChartMajorId);
-        List<ChartResponse> GetChartMinorId(int id);
+        List<ChartResponse> GetChartMinorId(int Id);
         CommonBaseResponse AddMinor(ChartRequest request);
         CommonBaseResponse EditMinor(EditChartRequest request);
         CommonBaseResponse DelMinor(int Id);
@@ -61,7 +61,7 @@ namespace App.GL
 
         //DebtorType
         List<DebtorType> GetDebtorType();
-        DebtorType GetDebtorTypeId(int id);
+        DebtorType GetDebtorTypeId(int Id);
         CommonBaseResponse AddDebtorType(DebtorTypeRequest request);
         CommonBaseResponse EditDebtorType(DebtorTypeRequest request);
         CommonBaseResponse DeleteDebtorTypeId(int Id);
@@ -70,29 +70,49 @@ namespace App.GL
 
         //CreditorType
         List<CreditorType> GetCreditorType();
-        CreditorType GetCreditorTypeId(int id);
+        CreditorType GetCreditorTypeId(int Id);
         CommonBaseResponse AddCreditorType(CreditorTypeRequest request);
         CommonBaseResponse EditCreditorType(CreditorTypeRequest request);
         CommonBaseResponse DeletetCreditorTypeId(int Id);
 
         //Creditor
         List<Creditor> GetCreditor();
-        Creditor GetCreditorId(int id);
+        Creditor GetCreditorId(int Id);
         CommonBaseResponse AddCreditor(CreditorRequest request);
         CommonBaseResponse EditCreditor(CreditorRequest request);
         CommonBaseResponse DeleteCreditorId(int Id);
 
         //Transection
         List<TransectionResponse> GetTransection();
-        List<TransectionResponse> GetTransectionId(int id);
+        List<TransectionResponse> GetTransectionId(int Id);
 
         CommonBaseResponse EditTransection(EditTransectionRequest request);
 
         //Journal
         List<Journal> GetJournal();
+        List<Journal> GetJournalID(int Id);
+
         List<SubJournal> GetSubJournal(int JournalID);
-        List<SubJournalDto> GetSubJournalID(int id);
+        List<SubJournalDto> GetSubJournalID(int Id);
         CommonBaseResponse AddSubJournal(SubJournalResponse request);
         CommonBaseResponse EditSubJournal(SubJournalDto request);
+
+        // Report
+        List<Accounting> ReportGlAll();
+
+        ////List<Accounting> reportchart(DateTime? DetailDate, int? MinorID);
+        ReportChartResponse reportchartdate(ReportChartRequest request);
+        ReportChartResponse PostReportGlDate(ReportChartRequest request);
+        //Document
+        List<DocumentType> GetDocumentType();
+
+        List<DocumentResponse> GetDocument(int Active);
+        List<DocumentResponse> GetDocumentId(int Id);
+        CommonBaseResponse AddDocument(DocumentRequest request);
+        CommonBaseResponse EditDocument(DocumentRequest request);
+        CommonBaseResponse ActiveDocument(int Id , int Active);
+
+
+
     }
 }
