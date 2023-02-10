@@ -6,7 +6,7 @@ namespace narit_mis_api.Models
     public partial class ScheduleFisicalYear
     {
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        public int Name { get; set; }
         public bool Active { get; set; }
         public bool AddPlanCoreStatus { get; set; }
         public bool EditPlanCoreStatus { get; set; }

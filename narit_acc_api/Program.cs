@@ -18,7 +18,7 @@ builder.Services.AddMvc();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<NARIT_MIS_LINKContext>(Options =>
+builder.Services.AddDbContext<CGI_MISContext>(Options =>
 Options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnectton")));
 
 builder.Services.AddDbContext<CGI_ACCContext>(Options =>

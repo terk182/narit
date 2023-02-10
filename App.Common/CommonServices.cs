@@ -84,90 +84,90 @@ namespace App.Common
         //    var data = _database.GeFormActionLogs.Where(x => x.GeneralExpenseMemoFormId == GeneralExpenseMemoFormId).ToList();
         //    return data;
         //}
-        public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
-        {
-            var list1 = new List<BudgetTypeCommonDto>();
-            var Departments = _database.BudgetTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
-            var data = Departments.Where(x => x.ParentBudgetTypeId == null).ToList();
-            foreach (var item in data)
-            {
-                var list2 = new List<BudgetTypeCommonDto>();
-                foreach (var s in Departments)
-                {
-                    if (s.ParentBudgetTypeId == item.Id)
-                    {
-                        var list3 = new List<BudgetTypeCommonDto>();
-                        foreach (var s1 in Departments)
-                        {
-                            if (s1.ParentBudgetTypeId == s.Id)
-                            {
-                                var list4 = new List<BudgetTypeCommonDto>();
-                                foreach (var s2 in Departments)
-                                {
-                                    if (s2.ParentBudgetTypeId == s1.Id)
-                                    {
-                                        list4.Add(new BudgetTypeCommonDto
-                                        {
-                                            Id = s2.Id,
-                                            Name = s2.Name,
-                                            Active = s2.Active,
-                                            FiscalYear = s2.FiscalYear,
-                                            ParentBudgetTypeId = s2.ParentBudgetTypeId,
-                                            ReferenceOldId = s2.ReferenceOldId,
-                                            ExpenseTypeEnum = s2.ExpenseTypeEnum,
-                                            GovExpenseTypeEnum = s2.GovExpenseTypeEnum,
-                                        });
-                                    }
+        //public List<BudgetTypeCommonDto> GetBudgetTypes(int fiscalYear)
+        //{
+        //    var list1 = new List<BudgetTypeCommonDto>();
+        //    var Departments = _database.BudgetTypes.Where(x => x.year == fiscalYear && x.Active).ToList();
+        //    var data = Departments.Where(x => x.ParentBudgetTypeId == null).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        var list2 = new List<BudgetTypeCommonDto>();
+        //        foreach (var s in Departments)
+        //        {
+        //            if (s.ParentBudgetTypeId == item.Id)
+        //            {
+        //                var list3 = new List<BudgetTypeCommonDto>();
+        //                foreach (var s1 in Departments)
+        //                {
+        //                    if (s1.ParentBudgetTypeId == s.Id)
+        //                    {
+        //                        var list4 = new List<BudgetTypeCommonDto>();
+        //                        foreach (var s2 in Departments)
+        //                        {
+        //                            if (s2.ParentBudgetTypeId == s1.Id)
+        //                            {
+        //                                list4.Add(new BudgetTypeCommonDto
+        //                                {
+        //                                    Id = s2.Id,
+        //                                    Name = s2.Name,
+        //                                    Active = s2.Active,
+        //                                    FiscalYear = s2.FiscalYear,
+        //                                    ParentBudgetTypeId = s2.ParentBudgetTypeId,
+        //                                    ReferenceOldId = s2.ReferenceOldId,
+        //                                    ExpenseTypeEnum = s2.ExpenseTypeEnum,
+        //                                    GovExpenseTypeEnum = s2.GovExpenseTypeEnum,
+        //                                });
+        //                            }
 
-                                }
-                                list3.Add(new BudgetTypeCommonDto
-                                {
-                                    Id = s1.Id,
-                                    Name = s1.Name,
-                                    Active = s1.Active,
-                                    FiscalYear = s1.FiscalYear,
-                                    ParentBudgetTypeId = s1.ParentBudgetTypeId,
-                                    ReferenceOldId = s1.ReferenceOldId,
-                                    ExpenseTypeEnum = s1.ExpenseTypeEnum,
-                                    GovExpenseTypeEnum = s1.GovExpenseTypeEnum,
-                                    ParentBudgetType = list4
-                                });
-                            }
+        //                        }
+        //                        list3.Add(new BudgetTypeCommonDto
+        //                        {
+        //                            Id = s1.Id,
+        //                            Name = s1.Name,
+        //                            Active = s1.Active,
+        //                            FiscalYear = s1.FiscalYear,
+        //                            ParentBudgetTypeId = s1.ParentBudgetTypeId,
+        //                            ReferenceOldId = s1.ReferenceOldId,
+        //                            ExpenseTypeEnum = s1.ExpenseTypeEnum,
+        //                            GovExpenseTypeEnum = s1.GovExpenseTypeEnum,
+        //                            ParentBudgetType = list4
+        //                        });
+        //                    }
 
-                        }
-                        list2.Add(new BudgetTypeCommonDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            Active = s.Active,
-                            FiscalYear = s.FiscalYear,
-                            ParentBudgetTypeId = s.ParentBudgetTypeId,
-                            ReferenceOldId = s.ReferenceOldId,
-                            ExpenseTypeEnum = s.ExpenseTypeEnum,
-                            GovExpenseTypeEnum = s.GovExpenseTypeEnum,
-                            ParentBudgetType = list3
-                        });
-                    }
-                }
-                list1.Add(new BudgetTypeCommonDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    Active = item.Active,
-                    FiscalYear = item.FiscalYear,
-                    ParentBudgetTypeId = item.ParentBudgetTypeId,
-                    ReferenceOldId = item.ReferenceOldId,
-                    ExpenseTypeEnum = item.ExpenseTypeEnum,
-                    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
-                    ParentBudgetType = list2
-                });
+        //                }
+        //                list2.Add(new BudgetTypeCommonDto
+        //                {
+        //                    Id = s.Id,
+        //                    Name = s.Name,
+        //                    Active = s.Active,
+        //                    FiscalYear = s.FiscalYear,
+        //                    ParentBudgetTypeId = s.ParentBudgetTypeId,
+        //                    ReferenceOldId = s.ReferenceOldId,
+        //                    ExpenseTypeEnum = s.ExpenseTypeEnum,
+        //                    GovExpenseTypeEnum = s.GovExpenseTypeEnum,
+        //                    ParentBudgetType = list3
+        //                });
+        //            }
+        //        }
+        //        list1.Add(new BudgetTypeCommonDto
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            Active = item.Active,
+        //            FiscalYear = item.FiscalYear,
+        //            ParentBudgetTypeId = item.ParentBudgetTypeId,
+        //            ReferenceOldId = item.ReferenceOldId,
+        //            ExpenseTypeEnum = item.ExpenseTypeEnum,
+        //            GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+        //            ParentBudgetType = list2
+        //        });
 
                 
 
-            }
+        //    }
 
-            return list1;
-        }
+        //    return list1;
+        //}
 
 
 

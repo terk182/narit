@@ -10,6 +10,7 @@ using App.SEC.helper;
 using App.SEC.Models;
 using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
+using App.SEC.Requests;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
@@ -42,7 +43,6 @@ namespace narit_mis_api.Controllers
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
 
-        //GetScheduleFisicalYear
         [HttpGet]
         [Route("SEC/GetScheduleFisicalYear")]
         public IActionResult GetScheduleFisicalYear()
@@ -50,13 +50,167 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.GetScheduleFisicalYear();
             return Json(data);
         }
-
-        //GetScheduleFisicalYear
         [HttpGet]
         [Route("SEC/GetScheduleFisicalYearByYears")]
-        public IActionResult GetScheduleFisicalYearByYears(string name, bool active)
+        public IActionResult GetScheduleFisicalYearByYears(int name, bool active)
         {
             var data = _SecServices.GetScheduleFisicalYearByYears(name, active);
+            return Json(data);
+        }
+        
+        [HttpGet]
+        [Route("From/GetRequestBudget")]
+        public IActionResult GetRequestBudget()
+        {
+            var data = _SecServices.GetRequestBudget();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("From/GetRequestBudgetById{id}")]
+        public IActionResult GetRequestBudgetById(int id)
+        {
+            var data = _SecServices.GetRequestBudgetById(id);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestBudget")]
+        public IActionResult CreateRequestBudget(RequestBudgetRequests request)
+        {
+            var data = _SecServices.CreateRequestBudget(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("From/DeleteRequestBudgetById{id}")]
+        public IActionResult DeleteRequestBudgetById(int id)
+        {
+            var data = _SecServices.DeleteRequestBudgetById(id);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestFrom")]
+        public IActionResult GetRequestFrom()
+        {
+            var data = _SecServices.GetRequestFrom();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("From/GetRequestFromByDocNo{docNo}")]
+        public IActionResult GetRequestFromByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFromByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFrom")]
+        public IActionResult CreateRequestFrom(RequestFormRequests request)
+        {
+            var data = _SecServices.CreateRequestFrom(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestFromItemsByDocNo")]
+        public IActionResult GetRequestFromItemsByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFromItemsByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFromItemsByDocNo")]
+        public IActionResult CreateRequestFromItemsByDocNo(RequestFormItemsRequests request)
+        {
+            var data = _SecServices.CreateRequestFromItemsByDocNo(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("From/DeleteRequestFromItemsByDocNo{docNo}")]
+        public IActionResult DeleteRequestFromItemsById(string docNo)
+        {
+            var data = _SecServices.DeleteRequestFromItemsById(docNo);
+            return Json(data);
+        }
+
+
+        [HttpGet]
+        [Route("From/GetRequestFormApproveByDocNo{docNo}")]
+        public IActionResult GetRequestFormApproveByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFormApproveByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFormApproveByDocNo")]
+        public IActionResult CreateRequestFormApproveByDocNo(RequestFormApproveRequest request)
+        {
+            var data = _SecServices.CreateRequestFormApproveByDocNo(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("From/DeleteRequestFormApproveByDocNo{docNo}")]
+        public IActionResult DeleteRequestFormApproveByDocNo(string docNo)
+        {
+            var data = _SecServices.DeleteRequestFormApproveByDocNo(docNo);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestCommentByDocNo{docNo}")]
+        public IActionResult GetRequestCommentByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestCommentByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFormCommentByDocNo")]
+        public IActionResult CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
+        {
+            var data = _SecServices.CreateRequestFormCommentByDocNo(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestFormBorrowingMoneyByDocNo{docNo}")]
+        public IActionResult GetRequestFormBorrowingMoneyByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFormBorrowingMoneyByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFormBorrowingMoneyByDocNo")]
+        public IActionResult CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequest request)
+        {
+            var data = _SecServices.CreateRequestFormBorrowingMoneyByDocNo(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestFormScheduleByDocNo{docNo}")]
+        public IActionResult GetRequestFormScheduleByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFormScheduleByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFormScheduleByDocNo")]
+        public IActionResult CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request)
+        {
+            var data = _SecServices.CreateRequestFormScheduleByDocNo(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("From/GetRequestFormExaminerForBudgetByDocNo{docNo}")]
+        public IActionResult GetRequestFormExaminerForBudgetByDocNo(string docNo)
+        {
+            var data = _SecServices.GetRequestFormExaminerForBudgetByDocNo(docNo);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("From/CreateRequestFormExaminerForBudgetByDocNo")]
+        public IActionResult CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)
+        {
+            var data = _SecServices.CreateRequestFormExaminerForBudgetByDocNo(request);
             return Json(data);
         }
     }
