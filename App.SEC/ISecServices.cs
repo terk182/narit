@@ -26,7 +26,9 @@ namespace App.SEC
 
         List<RequestFormResponse> GetRequestFrom();
         RequestFrom GetRequestFromByDocNo(string docNo);
-        RequestFormRequests CreateRequestFrom(RequestFormRequests request);
+        RequestFrom CreateRequestFrom(RequestFormRequests request);
+        SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request);
+
         SecBaseResponse DeleteRequestFromById(int id);
 
         List<RequestFormItem> GetRequestFromItemsByDocNo(string docNo);

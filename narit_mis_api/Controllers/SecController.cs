@@ -79,6 +79,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestBudget(request);
             return Json(data);
         }
+        [HttpPut]
+        [Route("From/EditRequestBudgetById")]
+        public IActionResult EditRequestBudgetById(RequestBudgetRequests request)
+        {
+            var data = _SecServices.EditRequestBudgetById(request);
+            return Json(data);
+        }
         [HttpDelete]
         [Route("From/DeleteRequestBudgetById{id}")]
         public IActionResult DeleteRequestBudgetById(int id)

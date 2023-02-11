@@ -57,7 +57,7 @@ namespace App.SEC
             }
             else
             {
-                if (request.Id == 0)
+                if (request.Id == 0 && request.DocNo != null)
                 {
                     requestBudget.Active = true;
                     requestBudget.DocNo = request.DocNo;
@@ -81,104 +81,16 @@ namespace App.SEC
                     var result = _database.SaveChanges();
                     if (result > 0)
                     {
-                        var getBudget = _database.RequestBudgets.Where(x => x.DocNo == request.DocNo).FirstOrDefault();
-                        if (getBudget.Id != null && getBudget.Id != 0)
+                        //var getBudget = _database.RequestBudgets.Where(x => x.DocNo == request.DocNo).FirstOrDefault();
+                        if (requestBudget.Id != null && requestBudget.Id != 0)
                         {
                             request.requestForms.ForEach(form =>
                             {
-                                if (form.formApprove.Count > 0)
-                                {
-                                    form.formApprove.ForEach(addApp =>
-                                    {
-                                        reqApprove.Add(new RequestFormApproveRequest
-                                        {
-                                            DocNo = request.DocNo,
-                                            RequestFormId = addApp.RequestFormId,
-                                            JobPositionId = addApp.JobPositionId,
-                                            DepartmentId = addApp.DepartmentId,
-                                            StaffId = addApp.StaffId,
-                                            StaffName = addApp.StaffName,
-                                            StatusApprove = addApp.StatusApprove,
-                                            DatetimeApprove = DateTime.Now,
-                                        });
-                                    });
-                                    form.formBorrowingMoney.ForEach(bm =>
-                                    {
-                                        reqBM.Add(new RequestFormBorrowingMoneyRequest
-                                        {
-                                            RequestFormId = bm.RequestFormId,
-                                            DocNo = request.DocNo,
-                                            DateTime = DateTime.Now,
-                                            StaffId = bm.StaffId,
-                                            StaffName = bm.StaffName,
-                                            RequestLoan = bm.RequestLoan
-                                        });
-                                    });
-                                    form.formItems.ForEach(item =>
-                                    {
-                                        reqItems.Add(new RequestFormItemsRequests
-                                        {
-                                            Active = true,
-                                            DocNo = request.DocNo,
-                                            RequestFormId = item.RequestFormId,
-                                            Name = item.Name,
-                                            Descriptions = item.Descriptions,
-                                            Price = item.Price,
-                                            TotalBudget = item.TotalBudget,
-                                            Unit = item.Unit,
-                                            Remark = item.Remark,
-                                            LbActivityId = item.LbActivityId,
-                                        });
-                                    });
-                                    form.formComment.ForEach(comm =>
-                                    {
-                                        reqComment.Add(new RequestFormCommentRequests
-                                        {
-                                            RequestFormId = comm.RequestFormId,
-                                            DocNo = request.DocNo,
-                                            StaffId = comm.StaffId,
-                                            StaffName = comm.StaffName,
-                                            Comment = comm.Comment,
-                                            Descriptions = comm.Descriptions,
-                                        });
-                                    });
-                                    form.formSchedules.ForEach(sch =>
-                                    {
-                                        reqSchedule.Add(new RequestFormScheduleRequests
-                                            {
-                                            RequestFormId = sch.RequestFormId,
-                                            DocNo = request.DocNo,
-                                            Active = true,
-                                            Name = sch.Name,
-                                            RequestLoan = sch.RequestLoan,
-                                            StartDate = sch.StartDate,
-                                            EndDate = sch.EndDate,
-                                            StartDateTime = sch.StartDateTime,
-                                            EndDateTime = sch.EndDateTime,
-                                        });
-                                    });
-                                    form.formExaminerForBudgets.ForEach(exam =>
-                                    {
-                                        reqExam.Add(new RequestFormExaminerForBudgetRequests
-                                        {
-                                           RequestFormId = exam.RequestFormId,
-                                           DocNo = request.DocNo,
-                                           Active = true,
-                                            Name = exam.Name,
-                                            Descriptions = exam.Descriptions,
-                                            ExaminerRole = exam.ExaminerRole,
-                                            JobPositionId = exam.JobPositionId,
-                                            DepartmentId = exam.DepartmentId,
-                                            RebudgetId = exam.RebudgetId,
-                                        });
-                                    });
-                                }
-
                                 reqForms.Add(new RequestFormRequests
                                 {
                                     Active = true,
-                                    DocNo = getBudget.DocNo,
-                                    RequestBudgetId = getBudget.Id,
+                                    DocNo = requestBudget.DocNo,
+                                    RequestBudgetId = requestBudget.Id,
                                     ProjectId = form.ProjectId,
                                     ProjectActivityId = form.ProjectActivityId,
                                     Name = form.Name,
@@ -197,106 +109,297 @@ namespace App.SEC
                                     Reward = form.Reward,
                                 });
 
-
+                                if (form.formApprove.Count > 0)
+                                {
+                                    form.formApprove.ForEach(addApp =>
+                                    {
+                                        reqApprove.Add(new RequestFormApproveRequest
+                                        {
+                                            DocNo = requestBudget.DocNo,
+                                            RequestFormId = addApp.RequestFormId,
+                                            JobPositionId = addApp.JobPositionId,
+                                            DepartmentId = addApp.DepartmentId,
+                                            StaffId = addApp.StaffId,
+                                            StaffName = addApp.StaffName,
+                                            StatusApprove = addApp.StatusApprove,
+                                            DatetimeApprove = DateTime.Now,
+                                        });
+                                    });
+                                }
+                                if (form.formBorrowingMoney.Count > 0)
+                                {
+                                    
+                                        form.formBorrowingMoney.ForEach(bm =>
+                                        {
+                                            reqBM.Add(new RequestFormBorrowingMoneyRequest
+                                            {
+                                                RequestFormId = bm.RequestFormId,
+                                                DocNo = requestBudget.DocNo,
+                                                DateTime = DateTime.Now,
+                                                StaffId = bm.StaffId,
+                                                StaffName = bm.StaffName,
+                                                RequestLoan = bm.RequestLoan
+                                            });
+                                    });
+                                }
+                                if (form.formItems.Count > 0)
+                                {
+                                    form.formItems.ForEach(item =>
+                                    {
+                                        reqItems.Add(new RequestFormItemsRequests
+                                        {
+                                            Active = true,
+                                            DocNo = requestBudget.DocNo,
+                                            RequestFormId = item.RequestFormId,
+                                            Name = item.Name,
+                                            Descriptions = item.Descriptions,
+                                            Price = item.Price,
+                                            TotalBudget = item.TotalBudget,
+                                            Unit = item.Unit,
+                                            Remark = item.Remark,
+                                            LbActivityId = item.LbActivityId,
+                                        });
+                                    });
+                                }
+                                if (form.formComment.Count > 0)
+                                {
+                                    form.formComment.ForEach(comm =>
+                                    {
+                                        reqComment.Add(new RequestFormCommentRequests
+                                        {
+                                            RequestFormId = comm.RequestFormId,
+                                            DocNo = requestBudget.DocNo,
+                                            StaffId = comm.StaffId,
+                                            StaffName = comm.StaffName,
+                                            Comment = comm.Comment,
+                                            Descriptions = comm.Descriptions,
+                                        });
+                                    });
+                                }
+                                if (form.formSchedules.Count > 0)
+                                {
+                                    form.formSchedules.ForEach(sch =>
+                                    {
+                                        reqSchedule.Add(new RequestFormScheduleRequests
+                                        {
+                                            RequestFormId = sch.RequestFormId,
+                                            DocNo = requestBudget.DocNo,
+                                            Active = true,
+                                            Name = sch.Name,
+                                            RequestLoan = sch.RequestLoan,
+                                            StartDate = sch.StartDate,
+                                            EndDate = sch.EndDate,
+                                            StartDateTime = sch.StartDateTime,
+                                            EndDateTime = sch.EndDateTime,
+                                        });
+                                    });
+                                }
+                                if (form.formExaminerForBudgets.Count > 0)
+                                {
+                                    form.formExaminerForBudgets.ForEach(exam =>
+                                    {
+                                        reqExam.Add(new RequestFormExaminerForBudgetRequests
+                                        {
+                                            RequestFormId = exam.RequestFormId,
+                                            DocNo = requestBudget.DocNo,
+                                            Active = true,
+                                            Name = exam.Name,
+                                            Descriptions = exam.Descriptions,
+                                            ExaminerRole = exam.ExaminerRole,
+                                            JobPositionId = exam.JobPositionId,
+                                            DepartmentId = exam.DepartmentId,
+                                            RebudgetId = exam.RebudgetId,
+                                        });
+                                    });
+                                }
                             });
 
                             if (reqForms.Count > 0)
                             {
                                 reqForms.ForEach(addForm =>
                                 {
-                                    var saveForm = CreateRequestFrom(addForm);
+                                    var returnRequestForm = CreateRequestFrom(addForm);
                                     var getForms = _database.RequestFroms.Where(x => x.DocNo == request.DocNo).ToList();
-                                    if (getForms.Count > 0)
+                                    if (returnRequestForm.Id != 0 && returnRequestForm.Id != null)
                                     {
-                                        getForms.ForEach(gf =>
+                                        var formID = returnRequestForm.Id;
+                                        if(reqApprove.Count> 0)
                                         {
-
-                                            var formID = gf.Id;
                                             reqApprove.ForEach(addApprove =>
                                             {
                                                 addApprove.DocNo = request.DocNo;
                                                 addApprove.RequestFormId = formID;
                                                 var saveApprove = CreateRequestFormApproveByDocNo(addApprove);
                                             });
+                                        }
+                                        if (reqBM.Count > 0)
+                                        {
                                             reqBM.ForEach(bm =>
                                             {
                                                 bm.DocNo = request.DocNo;
                                                 bm.RequestFormId = formID;
                                                 var saveBM = CreateRequestFormBorrowingMoneyByDocNo(bm);
                                             });
+                                        }
+                                        if (reqComment.Count > 0)
+                                        {
                                             reqComment.ForEach(comm =>
                                             {
                                                 comm.DocNo = request.DocNo;
                                                 comm.RequestFormId = formID;
                                                 var saveComm = CreateRequestFromCommentByDocNo(comm);
                                             });
+                                        }
+                                        if (reqItems.Count > 0)
+                                        {
                                             reqItems.ForEach(item =>
                                             {
                                                 item.DocNo = request.DocNo;
                                                 item.RequestFormId = formID;
                                                 var saveComm = CreateRequestFromItemsByDocNo(item);
                                             });
+                                        }
+                                        if (reqSchedule.Count > 0)
+                                        {
                                             reqSchedule.ForEach(sc =>
                                             {
                                                 sc.DocNo = request.DocNo;
                                                 sc.RequestFormId = formID;
                                                 var saveSc = CreateRequestFormScheduleByDocNo(sc);
                                             });
+                                        }
+                                        if (reqExam.Count > 0)
+                                        {
                                             reqExam.ForEach(ex =>
                                             {
                                                 ex.DocNo = request.DocNo;
                                                 ex.RequestFormId = formID;
                                                 var saveApprove = CreateRequestFormExaminerForBudgetByDocNo(ex);
                                             });
-                                        });
+                                        }
                                     }
                                 });
 
                             }
                         }
                     }
-                    else
-                    {
-                        response.Success = false;
-                        response.Messsage = "Fail";
-                    }
+                    //else
+                    //{
+                    //    response.Success = false;
+                    //    response.Messsage = "Fail";
+                    //}
                 }
                 else
                 {
-                    RequestBudget findData = _database.RequestBudgets.Where(x => x.Id == request.Id).FirstOrDefault();
-                    if (findData != null)
+                    if (request.Id != 0 && request.DocNo != null)
                     {
-                        findData.DocNo = findData.DocNo;
-                        findData.DocStatus = request.DocStatus;
-                        findData.Name = request.Name;
-                        findData.Inform = request.Inform;
-                        findData.Descriptions = request.Descriptions;
-                        findData.WriteDate = request.WriteDate;
-                        findData.DateTime = request.DateTime;
-                        findData.CreateDate = DateTime.Now;
-                        findData.CalculationDate = request.CalculationDate;
-                        findData.StatmentName = request.StatmentName;
-                        findData.RelatedRegulation = request.RelatedRegulation;
-                        findData.FilePath = request.FilePath;
-                        findData.DepartmentId = findData.DepartmentId;
-                        findData.TotalBudget = request.TotalBudget;
-                        _database.Entry(findData).State = EntityState.Modified;
-                        var result = _database.SaveChanges();
-                        if (result > 0)
-                        {
-                            response.Success = true;
-                            response.Messsage = "Add complete";
-                        }
-                        else
-                        {
-                            response.Success = false;
-                            response.Messsage = "Fail";
-                        }
+                        response.Success = false;
+                        response.Messsage = "Fail";
                     }
 
                 }
             }
             return response;
+        }
+        public SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestBudget editBudget = new RequestBudget();
+            editBudget.Id = request.Id;
+            editBudget.DocNo = request.DocNo;
+            editBudget.DocStatus = request.DocStatus;
+            editBudget.Name = request.Name;
+            editBudget.Inform = request.Inform;
+            editBudget.Descriptions = request.Descriptions;
+            editBudget.WriteDate = request.WriteDate;
+            editBudget.DateTime = request.DateTime;
+            editBudget.CalculationDate = request.CalculationDate;
+            editBudget.StatmentName = request.StatmentName;
+            editBudget.RelatedRegulation = request.RelatedRegulation;
+            editBudget.FilePath = request.FilePath;
+            editBudget.DepartmentId = request.DepartmentId;
+            editBudget.TotalBudget = request.TotalBudget;
+            _database.Entry(editBudget).State = EntityState.Modified;
+            var result = _database.SaveChanges();
+            if (result > 0)
+            {
+                response.Success = true;
+                response.Messsage = "Edit Complete";
+                response.data = editBudget;
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "Edit Fail";
+            }
+            return response;
+            //RequestBudget editBudget = new RequestBudget();
+            //editBudget.Id = request.Id;
+            //editBudget.Active = true;
+            //editBudget.DocNo = request.DocNo;
+            //editBudget.DocStatus = request.DocStatus;
+            //editBudget.Name = request.Name;
+            //editBudget.Inform = request.Inform;
+            //editBudget.Descriptions = request.Descriptions;
+            //editBudget.WriteDate = request.WriteDate;
+            //editBudget.DateTime = request.DateTime;
+            //editBudget.CalculationDate = request.CalculationDate;
+            //editBudget.StatmentName = request.StatmentName;
+            //editBudget.RelatedRegulation = request.RelatedRegulation;
+            //editBudget.FilePath = request.FilePath;
+            //editBudget.DepartmentId = request.DepartmentId;
+            //editBudget.TotalBudget = request.TotalBudget;
+
+            //_database.Entry(editBudget).State = EntityState.Modified;
+            //var result = _database.SaveChanges();
+            //if (result > 0)
+            //{
+            //    response.Success = true;
+            //    response.Messsage = "Edit Complete";
+            //}
+            //else
+            //{
+            //    response.Success = false;
+            //    response.Messsage = "Edit Fail";
+            //}
+
+            //RequestFrom requestFrom = new RequestFrom();
+            //requestFrom.Id = request.Id;
+            //requestFrom.Active = true;
+            //requestFrom.DocNo = request.DocNo;
+            //requestFrom.RequestBudgetId = request.RequestBudgetId;
+            //requestFrom.ProjectId = request.ProjectId;
+            //requestFrom.ProjectActivityId = request.ProjectActivityId;
+            //requestFrom.Name = request.Name;
+            //requestFrom.Descriptions = request.Descriptions;
+            //requestFrom.Objective = request.Objective;
+            //requestFrom.DepartureDate = request.DepartureDate;
+            //requestFrom.PracticalDate = request.PracticalDate;
+            //requestFrom.DateTime = DateTime.Now;
+            //requestFrom.WorkingInCountry = request.WorkingInCountry;
+            //requestFrom.Location = request.Location;
+            //requestFrom.Place = request.Place;
+            //requestFrom.Country = request.Country;
+            //requestFrom.Remark = request.Remark;
+            //requestFrom.PersonRemark = request.PersonRemark;
+            //requestFrom.MakeBy = request.MakeBy;
+            //requestFrom.Lecturer = request.Lecturer;
+            //requestFrom.Reward = request.Reward;
+
+            //_database.Entry(requestFrom).State = EntityState.Modified;
+            //var result = _database.SaveChanges();
+            //if (result > 0)
+            //{
+            //    response.Success = true;
+            //    response.Messsage = "Edit Success";
+            //    return response;
+            //}
+            //else
+            //{
+            //    response.Success = false;
+            //    response.Messsage = "Edit Fail";
+            //    return response;
+            //}
         }
         public SecBaseResponse DeleteRequestBudgetById(int id)
         {
@@ -470,9 +573,8 @@ namespace App.SEC
             RequestFrom response = _database.RequestFroms.Where(x => x.DocNo == docNo).FirstOrDefault();
             return response;
         }
-        public RequestFormRequests CreateRequestFrom(RequestFormRequests request)
+        public RequestFrom CreateRequestFrom(RequestFormRequests request)
         {
-            RequestFormRequests response = new RequestFormRequests();
             RequestFrom requestFrom = new RequestFrom();
             if (request.Id == 0)
             {
@@ -497,16 +599,15 @@ namespace App.SEC
                 requestFrom.Lecturer = request.Lecturer;
                 requestFrom.Reward = request.Reward;
 
-                _database.Entry(requestFrom).State = EntityState.Added;
+               _database.Entry(requestFrom).State = EntityState.Added;
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    RequestFrom data = _database.RequestFroms.Where(x => x.DocNo == request.DocNo && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
-                    return response;
+                    return requestFrom;
                 }
                 else
                 {
-                    return response;
+                    return requestFrom;
                 }
             }
             else
@@ -537,17 +638,19 @@ namespace App.SEC
                     if (result > 0)
                     {
                         RequestFrom data = _database.RequestFroms.Where(x => x.DocNo == request.DocNo && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
-                        return response;
+                        return requestFrom;
                     }
                     else
                     {
-                        return response;
+                        return requestFrom;
                     }
                 }
 
             }
-            return response;
+            return requestFrom;
         }
+
+     
         public SecBaseResponse DeleteRequestFromById(int id)
         {
             SecBaseResponse response = new SecBaseResponse();
