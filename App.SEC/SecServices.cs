@@ -838,6 +838,28 @@ namespace App.SEC
             }
             return result;
         }
+
+        public List<PlanTypeDto> PlanTypeDetailGetByPlanTypeid(int id)
+        {
+
+            var result = new List<PlanTypeDto>();
+            var data = _database.PlanTypes.Where(x => x.Id == id && x.Active).ToList();
+            foreach (var item in data)
+            {
+                result.Add(new PlanTypeDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentPlanTypeId = item.ParentPlanTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    Weight = item.Weight
+                });
+
+            }
+            return result;
+        }
         public List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id)
         {
 
@@ -6300,6 +6322,11 @@ namespace App.SEC
             var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId && x.Active).ToList();
             return data;
         }
+        public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyProjectId(int ProjectId)
+        {
+            var data = _database.IndicatorsStrategyForProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
+            return data;
+        }
         public SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
         {
             _database.Entry(request).State = request.Id == 0 ?
@@ -6602,6 +6629,102 @@ namespace App.SEC
         {
             var response = new SecBaseResponse();
             var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //IndicatorsStrategyForProjectActivity
+        public List<IndicatorsStrategyForProjectActivity> GetAllIndicatorsStrategyForProjectActivity()
+        {
+            return _database.IndicatorsStrategyForProjectActivities.Where(x => x.Active).ToList();
+        }
+        public List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId)
+        {
+            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.Id == IndicatorsStrategyForProjectActivityId && x.Active).ToList();
+            return data;
+        }
+        public List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId)
+        {
+            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.ProjectActivityId == ProjectActivityId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.Id == IndicatorsStrategyForProjectActivityId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+        //IndicatorsStrategyForSubProject
+        public List<IndicatorsStrategyForSubProject> GetAllIndicatorsStrategyForSubProject()
+        {
+            return _database.IndicatorsStrategyForSubProjects.Where(x => x.Active).ToList();
+        }
+        public List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId)
+        {
+            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.Id == IndicatorsStrategyForSubProjectId && x.Active).ToList();
+            return data;
+        }
+        public List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId)
+        {
+            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.SubProjectId == SubProjectId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.Id == IndicatorsStrategyForSubProjectId).FirstOrDefault();
             if (data != null)
             {
                 data.Active = false;

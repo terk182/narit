@@ -30,6 +30,7 @@ namespace App.SEC
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id);
+        List<PlanTypeDto> PlanTypeDetailGetByPlanTypeid(int id);
         List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id);
 
 
@@ -253,6 +254,7 @@ namespace App.SEC
         //IndicatorsStrategyForProject
         List<IndicatorsStrategyForProject> GetAllIndicatorsStrategyForProject();
         List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId);
+        List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyProjectId(int ProjectId);
         SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request);
         SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId);
         //ExternalBudgetStrategy
@@ -290,5 +292,17 @@ namespace App.SEC
         List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId);
         SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request);
         SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId);
+        //IndicatorsStrategyForProjectActivity
+        List<IndicatorsStrategyForProjectActivity> GetAllIndicatorsStrategyForProjectActivity();
+        List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId);
+        List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId);
+        SecBaseResponse IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request);
+        SecBaseResponse DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId);
+        //IndicatorsStrategyForSubProject
+        List<IndicatorsStrategyForSubProject> GetAllIndicatorsStrategyForSubProject();
+        List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId);
+        List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId);
+        SecBaseResponse IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request);
+        SecBaseResponse DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId);
     }
 }

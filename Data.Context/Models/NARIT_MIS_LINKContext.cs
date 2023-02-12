@@ -160,6 +160,8 @@ namespace narit_mis_api.Models
         public virtual DbSet<HrdevelopmentType> HrdevelopmentTypes { get; set; } = null!;
         public virtual DbSet<Hrfile> Hrfiles { get; set; } = null!;
         public virtual DbSet<IndicatorsStrategyForProject> IndicatorsStrategyForProjects { get; set; } = null!;
+        public virtual DbSet<IndicatorsStrategyForProjectActivity> IndicatorsStrategyForProjectActivities { get; set; } = null!;
+        public virtual DbSet<IndicatorsStrategyForSubProject> IndicatorsStrategyForSubProjects { get; set; } = null!;
         public virtual DbSet<Insignia> Insignias { get; set; } = null!;
         public virtual DbSet<InsigniaRank> InsigniaRanks { get; set; } = null!;
         public virtual DbSet<InternalStrategy> InternalStrategies { get; set; } = null!;
@@ -4120,9 +4122,33 @@ namespace narit_mis_api.Models
             {
                 entity.ToTable("IndicatorsStrategyForProject", "Plan");
 
-                entity.Property(e => e.MeasureId).HasColumnName("Measure_Id");
+                entity.Property(e => e.IndicatorStrategyId).HasColumnName("IndicatorStrategy_Id");
 
                 entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
+
+                entity.Property(e => e.StrategyId).HasColumnName("Strategy_Id");
+            });
+
+            modelBuilder.Entity<IndicatorsStrategyForProjectActivity>(entity =>
+            {
+                entity.ToTable("IndicatorsStrategyForProjectActivity", "Plan");
+
+                entity.Property(e => e.IndicatorStrategyId).HasColumnName("IndicatorStrategy_Id");
+
+                entity.Property(e => e.ProjectActivityId).HasColumnName("ProjectActivity_Id");
+
+                entity.Property(e => e.StrategyId).HasColumnName("Strategy_Id");
+            });
+
+            modelBuilder.Entity<IndicatorsStrategyForSubProject>(entity =>
+            {
+                entity.ToTable("IndicatorsStrategyForSubProject", "Plan");
+
+                entity.Property(e => e.IndicatorStrategyId).HasColumnName("IndicatorStrategy_Id");
+
+                entity.Property(e => e.StrategyId).HasColumnName("Strategy_Id");
+
+                entity.Property(e => e.SubProjectId).HasColumnName("SubProject_Id");
             });
 
             modelBuilder.Entity<Insignia>(entity =>

@@ -111,10 +111,18 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("/Common/PlanTypeDetails/{year}/{id}")]
-        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int id)
+        [Route("/Common/PlanTypeChildrenDetails/{year}/{ParentPlantypeId}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int ParentPlantypeId)
         {
-            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
+            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, ParentPlantypeId);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Common/PlanTypeDetail/{PlanTypeId}")]
+        public IActionResult PlanTypeDetailGetByPlanTypeid(int PlanTypeId)
+        {
+            var data = _SecServices.PlanTypeDetailGetByPlanTypeid(PlanTypeId);
             return Json(data);
         }
 

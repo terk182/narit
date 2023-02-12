@@ -775,6 +775,7 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
             return Json(data);
         }
+       
 
         [HttpGet]
         [Route("/Plan/Operate/PlanTypeNameGetByPlanTypeid/GetByPlanTypeid/{id}")]
@@ -2540,6 +2541,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.GetIndicatorsStrategyForProjectbyId(IndicatorsStrategyForProjectId);
             return Json(data);
         }
+        [HttpGet]
+        [Route("/IndicatorsStrategyForProject/GetIndicatorsStrategyForProjectbyProjectId/{ProjectId}")]
+        public IActionResult GetIndicatorsStrategyForProjectbyProjectId(int ProjectId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForProjectbyProjectId(ProjectId);
+            return Json(data);
+        }
         [HttpPost]
         [Route("/IndicatorsStrategyForProject/IndicatorsStrategyForProjectSetup")]
         public IActionResult IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
@@ -2774,6 +2782,82 @@ namespace narit_mis_api.Controllers
         {
 
             var data = _SecServices.DeleteSubProjectResponsiblePerson(SubProjectResponsiblePersonId);
+
+            return Json(data);
+        }
+        //IndicatorsStrategyForProjectActivity
+        [HttpGet]
+        [Route("/IndicatorsStrategyForProjectActivity/GetAllIndicatorsStrategyForProjectActivity")]
+        public IActionResult GetAllIndicatorsStrategyForProjectActivity()
+        {
+            var data = _SecServices.GetAllIndicatorsStrategyForProjectActivity();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/IndicatorsStrategyForProjectActivity/GetIndicatorsStrategyForProjectActivitybyId/{IndicatorsStrategyForProjectActivityId}")]
+        public IActionResult GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForProjectActivitybyId(IndicatorsStrategyForProjectActivityId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/IndicatorsStrategyForProjectActivity/GetIndicatorsStrategyForProjectActivitybyProjectActivityId/{ProjectActivityId}")]
+        public IActionResult GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForProjectActivitybyProjectActivityId(ProjectActivityId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/IndicatorsStrategyForProjectActivity/IndicatorsStrategyForProjectActivitySetup")]
+        public IActionResult IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request)
+        {
+            var data = _SecServices.IndicatorsStrategyForProjectActivitySetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/IndicatorsStrategyForProjectActivity/DeleteIndicatorsStrategyForProjectActivity/{IndicatorsStrategyForProjectActivityId}")]
+        public IActionResult DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId)
+        {
+
+            var data = _SecServices.DeleteIndicatorsStrategyForProjectActivity(IndicatorsStrategyForProjectActivityId);
+
+            return Json(data);
+        }
+        //IndicatorsStrategyForSubProject
+        [HttpGet]
+        [Route("/IndicatorsStrategyForSubProject/GetAllIndicatorsStrategyForSubProject")]
+        public IActionResult GetAllIndicatorsStrategyForSubProject()
+        {
+            var data = _SecServices.GetAllIndicatorsStrategyForSubProject();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/IndicatorsStrategyForSubProject/GetIndicatorsStrategyForSubProjectbyId/{IndicatorsStrategyForSubProjectId}")]
+        public IActionResult GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForSubProjectbyId(IndicatorsStrategyForSubProjectId);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/IndicatorsStrategyForSubProject/GetIndicatorsStrategyForSubProjectbySubProjectId/{SubProjectId}")]
+        public IActionResult GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId)
+        {
+            var data = _SecServices.GetIndicatorsStrategyForSubProjectbySubProjectId(SubProjectId);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/IndicatorsStrategyForSubProject/IndicatorsStrategyForSubProjectSetup")]
+        public IActionResult IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request)
+        {
+            var data = _SecServices.IndicatorsStrategyForSubProjectSetup(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("/IndicatorsStrategyForSubProject/DeleteIndicatorsStrategyForSubProject/{IndicatorsStrategyForSubProjectId}")]
+        public IActionResult DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId)
+        {
+
+            var data = _SecServices.DeleteIndicatorsStrategyForSubProject(IndicatorsStrategyForSubProjectId);
 
             return Json(data);
         }
