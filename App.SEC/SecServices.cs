@@ -30,12 +30,12 @@ namespace App.SEC
         //----- RequestBudget -----
         public List<RequestBudget> GetRequestBudget()
         {
-            List<RequestBudget> response = _database.RequestBudgets.OrderByDescending(x => x.WriteDate).Take(20).ToList();
+            List<RequestBudget> response = _database.RequestBudgets.OrderByDescending(x => x.WriteDate).Take(10).ToList();
             return response;
         }
-        public RequestBudget GetRequestBudgetById(int id)
+        public RequestBudget GetRequestBudgetByDocNo (string docNo)
         {
-            RequestBudget response = _database.RequestBudgets.Where(x => x.Id == id).FirstOrDefault();
+            RequestBudget response = _database.RequestBudgets.Where(x => x.DocNo == docNo).FirstOrDefault();
             return response;
         }
         public RequestBudget CreateRequestBudget(RequestBudgetRequests request)
@@ -240,7 +240,7 @@ namespace App.SEC
         public List<RequestFormResponse> GetRequestForm()
         {
             List<RequestFormResponse> response = new List<RequestFormResponse>();
-
+            //response = _database.RequestForms.OrderByDescending(x => x.DateTime).ToList();
             //List<RequestForm> requestForm = _database.RequestForms.OrderByDescending(x => x.DateTime).ToList();
             //if (requestForm.Count > 0)
             //{
@@ -378,9 +378,9 @@ namespace App.SEC
             //}
             return response;
         }
-        public RequestForm GetRequestFormByDocNo(string docNo)
+        public List<RequestForm> GetRequestFormByDocNo(string docNo)
         {
-            RequestForm response = _database.RequestForms.Where(x => x.DocNo == docNo).FirstOrDefault();
+            List<RequestForm> response = _database.RequestForms.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestForm CreateRequestFormByDocNo(RequestFormRequests request)
@@ -486,7 +486,7 @@ namespace App.SEC
         //----- RequestFormItems -----
         public List<RequestFormItem> GetRequestFormItemsByDocNo(string docNo)
         {
-            List<RequestFormItem> response = _database.RequestFormItems.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormItem> response = _database.RequestFormItems.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormItem CreateRequestFormItemsByDocNo(RequestFormItemsRequests request)
@@ -571,7 +571,7 @@ namespace App.SEC
         //----- RequestFormApprove -----
         public List<RequestFormApprove> GetRequestFormApproveByDocNo(string docNo)
         {
-            List<RequestFormApprove> response = _database.RequestFormApproves.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormApprove> response = _database.RequestFormApproves.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormApprove CreateRequestFormApproveByDocNo(RequestFormApproveRequests request)
@@ -650,7 +650,7 @@ namespace App.SEC
         //----- RequestFormComment -----
         public List<RequestFormComment> GetRequestFormCommentByDocNo(string docNo)
         {
-            List<RequestFormComment> response = _database.RequestFormComments.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormComment> response = _database.RequestFormComments.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormComment CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
@@ -705,7 +705,7 @@ namespace App.SEC
         //----- RequestFormBorrowingMoney -----
         public List<RequestFormBorrowingMoney> GetRequestFormBorrowingMoneyByDocNo(string docNo)
         {
-            List<RequestFormBorrowingMoney> response = _database.RequestFormBorrowingMoneys.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormBorrowingMoney> response = _database.RequestFormBorrowingMoneys.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormBorrowingMoney CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request)
@@ -758,7 +758,7 @@ namespace App.SEC
         //----- RequestFormSchedule -----
         public List<RequestFormSchedule> GetRequestFormScheduleByDocNo(string docNo)
         {
-            List<RequestFormSchedule> response = _database.RequestFormSchedules.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormSchedule> response = _database.RequestFormSchedules.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormSchedule CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request)
@@ -813,7 +813,7 @@ namespace App.SEC
 
         public List<RequestFormExaminerForBudget> GetRequestFormExaminerForBudgetByDocNo(string docNo)
         {
-            List<RequestFormExaminerForBudget> response = _database.RequestFormExaminerForBudgets.Where(x => x.DocNo == docNo).ToList();
+            List<RequestFormExaminerForBudget> response = _database.RequestFormExaminerForBudgets.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
         public RequestFormExaminerForBudget CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)

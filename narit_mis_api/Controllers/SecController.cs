@@ -43,10 +43,10 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("Form/GetRequestBudgetById/{id}")]
-        public IActionResult GetRequestBudgetById(int id)
+        [Route("Form/GetRequestBudgetByDocNo/{docNo}")]
+        public IActionResult GetRequestBudgetByDocNo(string docNo)
         {
-            var data = _SecServices.GetRequestBudgetById(id);
+            var data = _SecServices.GetRequestBudgetByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]

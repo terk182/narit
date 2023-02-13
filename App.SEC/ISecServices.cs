@@ -20,14 +20,14 @@ namespace App.SEC
         List<ScheduleFisicalYear> GetScheduleFisicalYearByYears(int name, bool active);
 
         List<RequestBudget> GetRequestBudget();
-        RequestBudget GetRequestBudgetById(int id);
+        RequestBudget GetRequestBudgetByDocNo(string docNo);
         RequestBudget CreateRequestBudget(RequestBudgetRequests request);
         SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request);
 
         SecBaseResponse DeleteRequestBudgetById(int id);
 
         List<RequestFormResponse> GetRequestForm();
-        RequestForm GetRequestFormByDocNo(string docNo);
+        List<RequestForm> GetRequestFormByDocNo(string docNo);
         RequestForm CreateRequestFormByDocNo(RequestFormRequests request);
         SecBaseResponse DeleteRequestFormById(int id);
 
