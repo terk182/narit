@@ -347,7 +347,7 @@ namespace narit_mis_api.Models
                     .WithMany(p => p.RequestFormApproves)
                     .HasForeignKey(d => new { d.RequestBudgetId, d.DocNo })
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_RequestFormApprove_RequestBudget");
+                    .HasConstraintName("FK_RequestFormApprove_RequestFormApprove");
             });
 
             modelBuilder.Entity<RequestFormBorrowingMoney>(entity =>

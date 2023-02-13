@@ -586,11 +586,9 @@ namespace App.SEC
             }
             else
             {
-                RequestFormApprove getResult = _database.RequestFormApproves.Where(x => x.Id == request.Id
-                && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+                RequestFormApprove getResult = _database.RequestFormApproves.Where(x => x.Id == request.Id).FirstOrDefault();
 
                 getResult.DocNo = request.DocNo;
-                getResult.RequestBudgetId = request.RequestBudgetId;
                 getResult.JobPositionId = request.JobPositionId;
                 getResult.DepartmentId = request.DepartmentId;
                 getResult.StaffId = request.StaffId;
@@ -665,8 +663,7 @@ namespace App.SEC
             }
             else
             {
-                RequestFormComment getResult = _database.RequestFormComments.Where(x => x.Id == request.Id
-                && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+                RequestFormComment getResult = _database.RequestFormComments.Where(x => x.Id == request.Id).FirstOrDefault();
 
                 getResult.RequestBudgetId = getResult.RequestBudgetId;
                 getResult.DocNo = request.DocNo;
@@ -718,10 +715,8 @@ namespace App.SEC
             }
             else
             {
-                RequestFormBorrowingMoney getResult = _database.RequestFormBorrowingMoneys.Where(x => x.Id == request.Id
-                && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+                RequestFormBorrowingMoney getResult = _database.RequestFormBorrowingMoneys.Where(x => x.Id == request.Id).FirstOrDefault();
 
-                getResult.RequestBudgetId = getResult.RequestBudgetId;
                 getResult.DocNo = request.DocNo;
                 getResult.DateTime = getResult.DateTime;
                 getResult.StaffId = request.StaffId;
@@ -774,8 +769,7 @@ namespace App.SEC
             }
             else
             {
-                RequestFormSchedule getResult = _database.RequestFormSchedules.Where(x => x.Id == request.Id
-                && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+                RequestFormSchedule getResult = _database.RequestFormSchedules.Where(x => x.Id == request.Id).FirstOrDefault();
 
                 getResult.RequestBudgetId = getResult.RequestBudgetId;
                 getResult.DocNo = request.DocNo;
@@ -830,8 +824,7 @@ namespace App.SEC
             }
             else
             {
-                RequestFormExaminerForBudget getResult = _database.RequestFormExaminerForBudgets.Where(x => x.Id == request.Id
-                && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+                RequestFormExaminerForBudget getResult = _database.RequestFormExaminerForBudgets.Where(x => x.Id == request.Id).FirstOrDefault();
 
                 getResult.RequestBudgetId = getResult.RequestBudgetId;
                 getResult.DocNo = request.DocNo;
@@ -851,112 +844,7 @@ namespace App.SEC
             }
             return response;
 
-            //RequestFormExaminerForBudget response = new RequestFormExaminerForBudget();
-            //if (request.Id == 0 && request.RequestBudgetId != 0)
-            //{
-            //    response.RequestBudgetId = request.RequestBudgetId;
-            //    response.DocNo = request.DocNo;
-            //    response.Active = true;
-            //    response.Name = request.Name;
-            //    response.Descriptions = request.Descriptions;
-            //    response.ExaminerRole = request.ExaminerRole;
-            //    response.JobPositionId = request.JobPositionId;
-            //    response.DepartmentId = request.DepartmentId;
-            //    response.RebudgetId = request.RebudgetId;
-            //    _database.Entry(response).State = EntityState.Added;
-            //    var result = _database.SaveChanges();
-            //    if (result > 0)
-            //    {
-            //        return response;
-            //    }
-            //}
-            //else
-            //{
-            //    List<RequestFormExaminerForBudget> getRequestExam = _database.RequestFormExaminerForBudgets.Where(x => x.Id == request.Id
-            //        && x.RequestBudgetId == request.RequestBudgetId
-            //        && x.DocNo == request.DocNo).ToList();
-
-            //    foreach (RequestFormExaminerForBudget req in getRequestExam)
-            //    {
-            //        response.Id = req.Id;
-            //        response.RequestBudgetId = req.RequestBudgetId;
-            //        response.DocNo = request.DocNo;
-            //        response.Active = true;
-            //        response.Name = request.Name;
-            //        response.Descriptions = request.Descriptions;
-            //        response.ExaminerRole = request.ExaminerRole;
-            //        response.JobPositionId = request.JobPositionId;
-            //        response.DepartmentId = request.DepartmentId;
-            //        response.RebudgetId = request.RebudgetId;
-            //        _database.Entry(response).State = EntityState.Modified;
-            //        var result = _database.SaveChanges();
-            //        if (result > 0)
-            //        {
-            //            return response;
-            //        }
-            //    }
-            //}
-            //RequestFormExaminerForBudget res = new RequestFormExaminerForBudget();
-            //if (request.Id == 0)
-            //{
-            //    res.RequestFormId = request.RequestFormId;
-            //    res.DocNo = request.DocNo;
-            //    res.Active = true;
-            //    res.Name = request.Name;
-            //    res.Descriptions = request.Descriptions;
-            //    res.ExaminerRole = request.ExaminerRole;
-            //    res.JobPositionId = request.JobPositionId;
-            //    res.DepartmentId = request.DepartmentId;
-            //    res.RebudgetId = request.RebudgetId;
-            //    _database.Entry(res).State = EntityState.Added;
-            //    var result = _database.SaveChanges();
-            //    if (result > 0)
-            //    {
-            //        response.Success = true;
-            //        response.Messsage = "Add complete";
-            //    }
-            //    else
-            //    {
-            //        response.Success = false;
-            //        response.Messsage = "Fail";
-            //    }
-            //}
-            //else
-            //{
-            //    List<RequestFormExaminerForBudget> findData = _database.RequestFormExaminerForBudgets.Where(x => x.DocNo == request.DocNo).ToList();
-            //    if (findData.Count > 0)
-            //    {
-            //        findData.ForEach(x =>
-            //        {
-            //            x.RequestFormId = request.Id;
-            //            x.DocNo = request.DocNo;
-            //            x.Active = true;
-            //            x.Name = request.Name;
-            //            x.Descriptions = request.Descriptions;
-            //            x.ExaminerRole = request.ExaminerRole;
-            //            x.JobPositionId = request.JobPositionId;
-            //            x.DepartmentId = request.DepartmentId;
-            //            x.RebudgetId = request.RebudgetId;
-            //            _database.Entry(x).State = EntityState.Modified;
-            //            var result = _database.SaveChanges();
-            //            if (result > 0)
-            //            {
-            //                response.Success = true;
-            //                response.Messsage = "Edit complete";
-            //            }
-            //            else
-            //            {
-            //                response.Success = false;
-            //                response.Messsage = "Fail";
-            //            }
-            //        });
-            //    }
-            //}
-
-            return response;
         }
-
-
     }
 }
 
