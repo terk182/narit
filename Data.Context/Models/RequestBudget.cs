@@ -5,6 +5,17 @@ namespace narit_mis_api.Models
 {
     public partial class RequestBudget
     {
+        public RequestBudget()
+        {
+            RequestFormApproves = new HashSet<RequestFormApprove>();
+            RequestFormBorrowingMoneys = new HashSet<RequestFormBorrowingMoney>();
+            RequestFormComments = new HashSet<RequestFormComment>();
+            RequestFormExaminerForBudgets = new HashSet<RequestFormExaminerForBudget>();
+            RequestFormItems = new HashSet<RequestFormItem>();
+            RequestFormSchedules = new HashSet<RequestFormSchedule>();
+            RequestForms = new HashSet<RequestForm>();
+        }
+
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
         public string? DocStatus { get; set; }
@@ -22,5 +33,13 @@ namespace narit_mis_api.Models
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
+
+        public virtual ICollection<RequestFormApprove> RequestFormApproves { get; set; }
+        public virtual ICollection<RequestFormBorrowingMoney> RequestFormBorrowingMoneys { get; set; }
+        public virtual ICollection<RequestFormComment> RequestFormComments { get; set; }
+        public virtual ICollection<RequestFormExaminerForBudget> RequestFormExaminerForBudgets { get; set; }
+        public virtual ICollection<RequestFormItem> RequestFormItems { get; set; }
+        public virtual ICollection<RequestFormSchedule> RequestFormSchedules { get; set; }
+        public virtual ICollection<RequestForm> RequestForms { get; set; }
     }
 }

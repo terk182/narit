@@ -59,35 +59,35 @@ namespace narit_mis_api.Controllers
         }
         
         [HttpGet]
-        [Route("From/GetRequestBudget")]
+        [Route("Form/GetRequestBudget")]
         public IActionResult GetRequestBudget()
         {
             var data = _SecServices.GetRequestBudget();
             return Json(data);
         }
         [HttpGet]
-        [Route("From/GetRequestBudgetById{id}")]
+        [Route("Form/GetRequestBudgetById/{id}")]
         public IActionResult GetRequestBudgetById(int id)
         {
             var data = _SecServices.GetRequestBudgetById(id);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestBudget")]
+        [Route("Form/CreateRequestBudget")]
         public IActionResult CreateRequestBudget(RequestBudgetRequests request)
         {
             var data = _SecServices.CreateRequestBudget(request);
             return Json(data);
         }
         [HttpPut]
-        [Route("From/EditRequestBudgetById")]
+        [Route("Form/EditRequestBudgetById")]
         public IActionResult EditRequestBudgetById(RequestBudgetRequests request)
         {
             var data = _SecServices.EditRequestBudgetById(request);
             return Json(data);
         }
         [HttpDelete]
-        [Route("From/DeleteRequestBudgetById{id}")]
+        [Route("Form/DeleteRequestBudgetById/{id}")]
         public IActionResult DeleteRequestBudgetById(int id)
         {
             var data = _SecServices.DeleteRequestBudgetById(id);
@@ -95,66 +95,66 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestFrom")]
-        public IActionResult GetRequestFrom()
+        [Route("Form/GetRequestForm")]
+        public IActionResult GetRequestForm()
         {
-            var data = _SecServices.GetRequestFrom();
+            var data = _SecServices.GetRequestForm();
             return Json(data);
         }
         [HttpGet]
-        [Route("From/GetRequestFromByDocNo/{docNo}")]
-        public IActionResult GetRequestFromByDocNo(string docNo)
+        [Route("Form/GetRequestFormByDocNo/{docNo}")]
+        public IActionResult GetRequestFormByDocNo(string docNo)
         {
-            var data = _SecServices.GetRequestFromByDocNo(docNo);
+            var data = _SecServices.GetRequestFormByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFrom")]
-        public IActionResult CreateRequestFrom(RequestFormRequests? request)
+        [Route("Form/CreateRequestFormByDocNo")]
+        public IActionResult CreateRequestFormByDocNo(RequestFormRequests request)
         {
-            var data = _SecServices.CreateRequestFrom(request);
+            var data = _SecServices.CreateRequestFormByDocNo(request);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("From/GetRequestFromItemsByDocNo")]
-        public IActionResult GetRequestFromItemsByDocNo(string docNo)
+        [Route("Form/GetRequestFormItemsByDocNo/{docNo}")]
+        public IActionResult GetRequestFormItemsByDocNo(string docNo)
         {
-            var data = _SecServices.GetRequestFromItemsByDocNo(docNo);
+            var data = _SecServices.GetRequestFormItemsByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFromItemsByDocNo")]
-        public IActionResult CreateRequestFromItemsByDocNo(RequestFormItemsRequests request)
+        [Route("Form/CreateRequestFormItemsByDocNo")]
+        public IActionResult CreateRequestFormItemsByDocNo(RequestFormItemsRequests request)
         {
-            var data = _SecServices.CreateRequestFromItemsByDocNo(request);
+            var data = _SecServices.CreateRequestFormItemsByDocNo(request);
             return Json(data);
         }
         [HttpDelete]
-        [Route("From/DeleteRequestFromItemsByDocNo/{docNo}")]
-        public IActionResult DeleteRequestFromItemsById(string docNo)
+        [Route("Form/DeleteRequestFormItemsByDocNo/{docNo}")]
+        public IActionResult DeleteRequestFormItemsById(string docNo)
         {
-            var data = _SecServices.DeleteRequestFromItemsById(docNo);
+            var data = _SecServices.DeleteRequestFormItemsById(docNo);
             return Json(data);
         }
 
 
         [HttpGet]
-        [Route("From/GetRequestFormApproveByDocNo/{docNo}")]
+        [Route("Form/GetRequestFormApproveByDocNo/{docNo}")]
         public IActionResult GetRequestFormApproveByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormApproveByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFromApproveByDocNo")]
-        public IActionResult CreateRequestFormApproveByDocNo(RequestFormApproveRequest request)
+        [Route("Form/CreateRequestFormApproveByDocNo")]
+        public IActionResult CreateRequestFormApproveByDocNo(RequestFormApproveRequests request)
         {
             var data = _SecServices.CreateRequestFormApproveByDocNo(request);
             return Json(data);
         }
         [HttpDelete]
-        [Route("From/DeleteRequestFormApproveByDocNo/{docNo}")]
+        [Route("Form/DeleteRequestFormApproveByDocNo/{docNo}")]
         public IActionResult DeleteRequestFormApproveByDocNo(string docNo)
         {
             var data = _SecServices.DeleteRequestFormApproveByDocNo(docNo);
@@ -162,44 +162,44 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestCommentByDocNo/{docNo}")]
-        public IActionResult GetRequestCommentByDocNo(string docNo)
+        [Route("Form/GetRequestFormCommentByDocNo/{docNo}")]
+        public IActionResult GetRequestFormCommentByDocNo(string docNo)
         {
-            var data = _SecServices.GetRequestCommentByDocNo(docNo);
+            var data = _SecServices.GetRequestFormCommentByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFromCommentByDocNo")]
-        public IActionResult CreateRequestFromCommentByDocNo(RequestFormCommentRequests request)
+        [Route("Form/CreateRequestFormCommentByDocNo")]
+        public IActionResult CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
         {
-            var data = _SecServices.CreateRequestFromCommentByDocNo(request);
+            var data = _SecServices.CreateRequestFormCommentByDocNo(request);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormBorrowingMoneyByDocNo/{docNo}")]
+        [Route("Form/GetRequestFormBorrowingMoneyByDocNo/{docNo}")]
         public IActionResult GetRequestFormBorrowingMoneyByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormBorrowingMoneyByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFormBorrowingMoneyByDocNo")]
-        public IActionResult CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequest request)
+        [Route("Form/CreateRequestFormBorrowingMoneyByDocNo")]
+        public IActionResult CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request)
         {
             var data = _SecServices.CreateRequestFormBorrowingMoneyByDocNo(request);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormScheduleByDocNo/{docNo}")]
+        [Route("Form/GetRequestFormScheduleByDocNo/{docNo}")]
         public IActionResult GetRequestFormScheduleByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormScheduleByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFormScheduleByDocNo")]
+        [Route("Form/CreateRequestFormScheduleByDocNo")]
         public IActionResult CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request)
         {
             var data = _SecServices.CreateRequestFormScheduleByDocNo(request);
@@ -207,14 +207,14 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpGet]
-        [Route("From/GetRequestFormExaminerForBudgetByDocNo/{docNo}")]
+        [Route("Form/GetRequestFormExaminerForBudgetByDocNo/{docNo}")]
         public IActionResult GetRequestFormExaminerForBudgetByDocNo(string docNo)
         {
             var data = _SecServices.GetRequestFormExaminerForBudgetByDocNo(docNo);
             return Json(data);
         }
         [HttpPost]
-        [Route("From/CreateRequestFormExaminerForBudgetByDocNo")]
+        [Route("Form/CreateRequestFormExaminerForBudgetByDocNo")]
         public IActionResult CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)
         {
             var data = _SecServices.CreateRequestFormExaminerForBudgetByDocNo(request);

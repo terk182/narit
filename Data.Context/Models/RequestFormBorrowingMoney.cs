@@ -7,10 +7,12 @@ namespace narit_mis_api.Models
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int RequestFormId { get; set; }
+        public int RequestBudgetId { get; set; }
         public DateTime? DateTime { get; set; }
         public int? StaffId { get; set; }
         public string? StaffName { get; set; }
         public decimal? RequestLoan { get; set; }
+
+        public virtual RequestBudget RequestBudget { get; set; } = null!;
     }
 }

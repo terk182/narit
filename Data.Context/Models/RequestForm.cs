@@ -1,17 +1,13 @@
-﻿using narit_mis_api.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace App.SEC.Requests
+namespace narit_mis_api.Models
 {
-    public class RequestFormRequests
+    public partial class RequestForm
     {
         public int Id { get; set; }
-        public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
+        public string DocNo { get; set; } = null!;
         public int? BudgetTypeId { get; set; }
         public int? ProjectId { get; set; }
         public int? ProjectActivityId { get; set; }
@@ -19,8 +15,10 @@ namespace App.SEC.Requests
         public string? Name { get; set; }
         public string? Descriptions { get; set; }
         public string? Objective { get; set; }
-        public DateTime? DepartureDate { get; set; }
-        public DateTime? PracticalDate { get; set; }
+        public DateTime? StartDepartureDate { get; set; }
+        public DateTime? EndDepartureDate { get; set; }
+        public DateTime? StartPracticalDate { get; set; }
+        public DateTime? EndPracticalDate { get; set; }
         public DateTime? DateTime { get; set; }
         public bool? WorkingInCountry { get; set; }
         public string? Location { get; set; }
@@ -32,5 +30,7 @@ namespace App.SEC.Requests
         public string? Lecturer { get; set; }
         public string? SkillType { get; set; }
         public string? Reward { get; set; }
+
+        public virtual RequestBudget RequestBudget { get; set; } = null!;
     }
 }

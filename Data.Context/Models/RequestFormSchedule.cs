@@ -6,8 +6,8 @@ namespace narit_mis_api.Models
     public partial class RequestFormSchedule
     {
         public int Id { get; set; }
-        public int? RequestFormId { get; set; }
         public string DocNo { get; set; } = null!;
+        public int RequestBudgetId { get; set; }
         public int? DocYear { get; set; }
         public bool? Active { get; set; }
         public string? Name { get; set; }
@@ -17,6 +17,6 @@ namespace narit_mis_api.Models
         public DateTime? StartDateTime { get; set; }
         public DateTime? EndDateTime { get; set; }
 
-        public virtual RequestFrom? RequestFrom { get; set; }
+        public virtual RequestBudget RequestBudget { get; set; } = null!;
     }
 }
