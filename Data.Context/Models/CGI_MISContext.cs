@@ -333,6 +333,8 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.DatetimeApprove).HasColumnType("datetime");
 
                 entity.Property(e => e.DepartmentId).HasColumnName("DepartmentID");
@@ -363,6 +365,8 @@ namespace narit_mis_api.Models
                 entity.ToTable("RequestFormBorrowingMoney");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.DateTime).HasColumnType("datetime");
 
@@ -536,6 +540,8 @@ namespace narit_mis_api.Models
                 entity.ToTable("RequestFormSchedule");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.DocNo)
                     .HasMaxLength(10)

@@ -61,6 +61,12 @@ namespace App.SEC
                 response.FilePath = request.FilePath;
                 response.DepartmentId = request.DepartmentId;
                 response.TotalBudget = request.TotalBudget;
+
+                response.AnotherAction = request.AnotherAction;
+                response.Procurement = request.Procurement;
+                response.InspectorId = request.InspectorId;
+                response.InspectorName = request.InspectorName;
+
                 _database.Entry(response).State = EntityState.Added;
                 var result = _database.SaveChanges();
                 if (result > 0)
@@ -71,6 +77,7 @@ namespace App.SEC
 
             if (findResult.Id != 0 && findResult.Id != null)
             {
+                findResult.Active = request.Active;
                 findResult.DocNo = request.DocNo;
                 findResult.DocStatus = request.DocStatus;
                 findResult.Name = request.Name;
@@ -85,6 +92,12 @@ namespace App.SEC
                 findResult.FilePath = request.FilePath;
                 findResult.DepartmentId = request.DepartmentId;
                 findResult.TotalBudget = request.TotalBudget;
+
+                response.AnotherAction = request.AnotherAction;
+                response.Procurement = request.Procurement;
+                response.InspectorId = request.InspectorId;
+                response.InspectorName = request.InspectorName;
+
                 _database.Entry(findResult).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 if (result > 0)
@@ -413,6 +426,7 @@ namespace App.SEC
                 RequestForm getResult = _database.RequestForms.Where(x=>x.Id== request.Id 
                 && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
 
+                getResult.Active = request.Active;
                 getResult.DocNo = request.DocNo;
                 getResult.ProjectId = request.ProjectId;
                 getResult.ProjectActivityId = request.ProjectActivityId;
@@ -507,6 +521,7 @@ namespace App.SEC
                 RequestFormItem getResult = _database.RequestFormItems.Where(x => x.Id == request.Id
                 && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
 
+                getResult.Active = request.Active;
                 getResult.DocNo = request.DocNo;
                 getResult.RequestBudgetId = request.RequestBudgetId;
                 getResult.Name = request.Name;
@@ -588,6 +603,7 @@ namespace App.SEC
             {
                 RequestFormApprove getResult = _database.RequestFormApproves.Where(x => x.Id == request.Id).FirstOrDefault();
 
+                getResult.Active = request.Active;
                 getResult.DocNo = request.DocNo;
                 getResult.JobPositionId = request.JobPositionId;
                 getResult.DepartmentId = request.DepartmentId;
@@ -647,6 +663,7 @@ namespace App.SEC
 
             if (request.Id == 0)
             {
+                response.Active = true;
                 response.RequestBudgetId = request.RequestBudgetId;
                 response.DocNo = request.DocNo;
                 response.DateTime = DateTime.Now;
@@ -665,6 +682,7 @@ namespace App.SEC
             {
                 RequestFormComment getResult = _database.RequestFormComments.Where(x => x.Id == request.Id).FirstOrDefault();
 
+                getResult.Active = getResult.Active;
                 getResult.RequestBudgetId = getResult.RequestBudgetId;
                 getResult.DocNo = request.DocNo;
                 getResult.DateTime = getResult.DateTime;
@@ -700,6 +718,7 @@ namespace App.SEC
 
             if (request.Id == 0)
             {
+                response.Active = true;
                 response.RequestBudgetId = request.RequestBudgetId;
                 response.DocNo = request.DocNo;
                 response.DateTime = DateTime.Now;
@@ -717,6 +736,7 @@ namespace App.SEC
             {
                 RequestFormBorrowingMoney getResult = _database.RequestFormBorrowingMoneys.Where(x => x.Id == request.Id).FirstOrDefault();
 
+                getResult.Active = request.Active;
                 getResult.DocNo = request.DocNo;
                 getResult.DateTime = getResult.DateTime;
                 getResult.StaffId = request.StaffId;

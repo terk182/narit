@@ -8,6 +8,7 @@ namespace narit_mis_api.Models
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
+        public bool? Active { get; set; }
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
         public int? StaffId { get; set; }

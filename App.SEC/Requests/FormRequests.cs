@@ -26,6 +26,10 @@ namespace App.SEC.Requests
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
+        public string? AnotherAction { get; set; }
+        public string? Procurement { get; set; }
+        public int? InspectorId { get; set; }
+        public string? InspectorName { get; set; }
     }
     public class RequestFormRequests
     {
@@ -80,6 +84,8 @@ namespace App.SEC.Requests
         public string? StaffName { get; set; }
         public bool? StatusApprove { get; set; }
         public DateTime? DatetimeApprove { get; set; }
+        public bool? Active { get; set; }
+
     }
     public class RequestFormCommentRequests
     {
@@ -91,6 +97,8 @@ namespace App.SEC.Requests
         public string? StaffName { get; set; }
         public string? Comment { get; set; }
         public string? Descriptions { get; set; }
+        public bool? Active { get; set; }
+
     }
     public class RequestFormBorrowingMoneyRequests
     {
@@ -101,6 +109,8 @@ namespace App.SEC.Requests
         public int? StaffId { get; set; }
         public string? StaffName { get; set; }
         public decimal? RequestLoan { get; set; }
+        public bool? Active { get; set; }
+
     }
     public class RequestFormExaminerForBudgetRequests
     {

@@ -12,6 +12,7 @@ namespace narit_mis_api.Models
         public int? StaffId { get; set; }
         public string? StaffName { get; set; }
         public decimal? RequestLoan { get; set; }
+        public bool? Active { get; set; }
 
         public virtual RequestBudget RequestBudget { get; set; } = null!;
     }
