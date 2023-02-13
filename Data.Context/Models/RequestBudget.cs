@@ -33,6 +33,10 @@ namespace narit_mis_api.Models
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
+        public string? AnotherAction { get; set; }
+        public string? Procurement { get; set; }
+        public int? InspectorId { get; set; }
+        public string? InspectorName { get; set; }
 
         public virtual ICollection<RequestFormApprove> RequestFormApproves { get; set; }
         public virtual ICollection<RequestFormBorrowingMoney> RequestFormBorrowingMoneys { get; set; }

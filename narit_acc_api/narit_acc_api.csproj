@@ -16,8 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.ACC\App.ACC.csproj" />
-    <ProjectReference Include="..\App.AP\App.AP.csproj" />
-    <ProjectReference Include="..\App.AR\App.AR.csproj" />
     <ProjectReference Include="..\App.GL\App.GL.csproj" />
     <ProjectReference Include="..\App.Resolver\App.Resolver.csproj" />
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />

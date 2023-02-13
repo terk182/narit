@@ -225,6 +225,8 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
+                entity.Property(e => e.AnotherAction).IsUnicode(false);
+
                 entity.Property(e => e.CalculationDate).HasColumnType("datetime");
 
                 entity.Property(e => e.CreateByStaffId)
@@ -247,7 +249,13 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Inform).IsUnicode(false);
 
+                entity.Property(e => e.InspectorId).HasColumnName("InspectorID");
+
+                entity.Property(e => e.InspectorName).IsUnicode(false);
+
                 entity.Property(e => e.Name).IsUnicode(false);
+
+                entity.Property(e => e.Procurement).IsUnicode(false);
 
                 entity.Property(e => e.RelatedRegulation).IsUnicode(false);
 
