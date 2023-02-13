@@ -5665,6 +5665,11 @@ namespace App.SEC
         {
             return _database.MainGovtStatements.Where(x => x.Active).ToList();
         }
+        public List<MainGovtStatement> GetMainGovtStatementbyFisicalYear(int FisicalYear)
+        {
+            var data = _database.MainGovtStatements.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
+        }
         public List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId)
         {
             var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId && x.Active).ToList();
@@ -6607,7 +6612,7 @@ namespace App.SEC
             var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId && x.Active).ToList();
             return data;
         }
-        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId)
+        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbySubProjectId(int SubProjectId)
         {
             var data = _database.SubProjectResponsiblePersons.Where(x => x.SubProjectId == SubProjectId && x.Active).ToList();
             return data;

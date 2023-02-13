@@ -5,6 +5,7 @@ using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
 using App.SEC.Responses;
 using narit_mis_api.Models;
+using NPOI.POIFS.Crypt.Dsig;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -180,6 +181,7 @@ namespace App.SEC
         ////////////////////////////NEW NEW NEW by ardin///////////////////////////////
         //MainGovtStatement
         List<MainGovtStatement> GetAllMainGovtStatement();
+        List<MainGovtStatement> GetMainGovtStatementbyFisicalYear(int FisicalYear);
         List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId);
         SecBaseResponse MainGovtStatementSetup(MainGovtStatement request);
         SecBaseResponse DeleteMainGovtStatement(int MainGovtStatementId);
@@ -289,7 +291,7 @@ namespace App.SEC
         //SubProjectResponsiblePerson
         List<SubProjectResponsiblePerson> GetAllSubProjectResponsiblePerson();
         List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId);
-        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId);
+        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbySubProjectId(int SubProjectId);
         SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request);
         SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId);
         //IndicatorsStrategyForProjectActivity
