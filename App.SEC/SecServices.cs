@@ -208,10 +208,10 @@ namespace App.SEC
             //    return response;
             //}
         }
-        public SecBaseResponse DeleteRequestBudgetById(int id)
+        public SecBaseResponse DeleteRequestBudgetByDocNo(string docNo)
         {
             SecBaseResponse response = new SecBaseResponse();
-            RequestBudget findData = _database.RequestBudgets.Where(x => x.Id == id).FirstOrDefault();
+            RequestBudget findData = _database.RequestBudgets.Where(x => x.DocNo == docNo).FirstOrDefault();
             if (findData != null)
             {
                 findData.Active = false;
@@ -220,27 +220,23 @@ namespace App.SEC
                 if (result > 0)
                 {
                     response.Success = true;
-                    response.Messsage = "Edit complete";
+                    response.Messsage = "Delete success";
                 }
                 else
                 {
                     response.Success = false;
-                    response.Messsage = "Fail";
+                    response.Messsage = "Delete fail";
                 }
             }
-
-
-
             return response;
         }
         //----- RequestBudget -----
 
-
         //----- RequestForm -----
-        public List<RequestFormResponse> GetRequestForm()
+        public List<RequestForm> GetRequestForm()
         {
-            List<RequestFormResponse> response = new List<RequestFormResponse>();
-            //response = _database.RequestForms.OrderByDescending(x => x.DateTime).ToList();
+            List<RequestForm> response = new List<RequestForm>();
+            return response;
             //List<RequestForm> requestForm = _database.RequestForms.OrderByDescending(x => x.DateTime).ToList();
             //if (requestForm.Count > 0)
             //{
@@ -376,7 +372,6 @@ namespace App.SEC
 
 
             //}
-            return response;
         }
         public List<RequestForm> GetRequestFormByDocNo(string docNo)
         {
@@ -468,12 +463,12 @@ namespace App.SEC
                 if (result > 0)
                 {
                     response.Success = true;
-                    response.Messsage = "Edit complete";
+                    response.Messsage = "Delete success";
                 }
                 else
                 {
                     response.Success = false;
-                    response.Messsage = "Fail";
+                    response.Messsage = "Delete fail";
                 }
             }
 
@@ -541,28 +536,25 @@ namespace App.SEC
             }
             return response;
         }
-        public SecBaseResponse DeleteRequestFormItemsById(string docNo)
+        public SecBaseResponse DeleteRequestFormItemsById(int id)
         {
             SecBaseResponse response = new SecBaseResponse();
-            List<RequestFormItem> findData = _database.RequestFormItems.Where(x => x.DocNo == docNo).ToList();
-            if (findData.Count > 0)
+            RequestFormItem findData = _database.RequestFormItems.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
             {
-                findData.ForEach(item =>
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
                 {
-                    item.Active = false;
-                    _database.Entry(item).State = EntityState.Modified;
-                    var result = _database.SaveChanges();
-                    if (result > 0)
-                    {
-                        response.Success = true;
-                        response.Messsage = "Edit complete";
-                    }
-                    else
-                    {
-                        response.Success = false;
-                        response.Messsage = "Fail";
-                    }
-                });
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
             }
             return response;
         }
@@ -621,27 +613,25 @@ namespace App.SEC
             }
             return response;
         }
-        public SecBaseResponse DeleteRequestFormApproveByDocNo(string docNo)
+        public SecBaseResponse DeleteRequestFormApproveById(int id)
         {
             SecBaseResponse response = new SecBaseResponse();
-            List<RequestFormApprove> findData = _database.RequestFormApproves.Where(x => x.DocNo == docNo).ToList();
-            if (findData.Count > 0)
+            RequestFormApprove findData = _database.RequestFormApproves.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
             {
-                findData.ForEach(item =>
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
                 {
-                    _database.Entry(item).State = EntityState.Deleted;
-                    var result = _database.SaveChanges();
-                    if (result > 0)
-                    {
-                        response.Success = true;
-                        response.Messsage = "Delete complete";
-                    }
-                    else
-                    {
-                        response.Success = false;
-                        response.Messsage = "Fail";
-                    }
-                });
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
             }
             return response;
         }
@@ -700,6 +690,28 @@ namespace App.SEC
             }
             return response;
         }
+        public SecBaseResponse DeleteRequestFormCommentById(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestFormComment findData = _database.RequestFormComments.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
+            {
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
+            }
+            return response;
+        }
         //----- RequestFormComment -----
 
         //----- RequestFormBorrowingMoney -----
@@ -753,6 +765,29 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse DeleteRequestFormBorrowingMoneyById(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestFormBorrowingMoney findData = _database.RequestFormBorrowingMoneys.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
+            {
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
+            }
+            return response;
+        }
+
         //----- RequestFormBorrowingMoney -----
 
         //----- RequestFormSchedule -----
@@ -809,8 +844,30 @@ namespace App.SEC
             }
             return response;
         }
-        //----- RequestFormSchedule -----
+        public SecBaseResponse DeleteRequestFormScheduleById(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestFormSchedule findData = _database.RequestFormSchedules.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
+            {
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
+            }
+            return response;
+        }
 
+        //----- RequestFormSchedule -----
         public List<RequestFormExaminerForBudget> GetRequestFormExaminerForBudgetByDocNo(string docNo)
         {
             List<RequestFormExaminerForBudget> response = _database.RequestFormExaminerForBudgets.Where(x => x.DocNo == docNo && x.Active == true).ToList();
@@ -865,6 +922,29 @@ namespace App.SEC
             return response;
 
         }
+        public SecBaseResponse DeleteRequestFormExaminerForBudgetById(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestFormExaminerForBudget findData = _database.RequestFormExaminerForBudgets.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
+            {
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
+            }
+            return response;
+        }
+
     }
 }
 

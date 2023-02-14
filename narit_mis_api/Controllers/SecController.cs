@@ -34,7 +34,6 @@ namespace narit_mis_api.Controllers
         //    var data = _SecServices.GetScheduleFisicalYearByYears(name, active);
         //    return Json(data);
         //}
-        
         [HttpGet]
         [Route("Form/GetRequestBudget")]
         public IActionResult GetRequestBudget()
@@ -56,28 +55,28 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestBudget(request);
             return Json(data);
         }
-        [HttpPut]
-        [Route("Form/EditRequestBudgetById")]
-        public IActionResult EditRequestBudgetById(RequestBudgetRequests request)
-        {
-            var data = _SecServices.EditRequestBudgetById(request);
-            return Json(data);
-        }
+        //[HttpPut]
+        //[Route("Form/EditRequestBudgetById")]
+        //public IActionResult EditRequestBudgetById(RequestBudgetRequests request)
+        //{
+        //    var data = _SecServices.EditRequestBudgetById(request);
+        //    return Json(data);
+        //}
         [HttpDelete]
-        [Route("Form/DeleteRequestBudgetById/{id}")]
-        public IActionResult DeleteRequestBudgetById(int id)
+        [Route("Form/DeleteRequestBudgetByDocNo/{docNo}")]
+        public IActionResult DeleteRequestBudgetByDocNo(string docNo)
         {
-            var data = _SecServices.DeleteRequestBudgetById(id);
+            var data = _SecServices.DeleteRequestBudgetByDocNo(docNo);
             return Json(data);
         }
 
-        [HttpGet]
-        [Route("Form/GetRequestForm")]
-        public IActionResult GetRequestForm()
-        {
-            var data = _SecServices.GetRequestForm();
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("Form/GetRequestForm")]
+        //public IActionResult GetRequestForm()
+        //{
+        //    var data = _SecServices.GetRequestForm();
+        //    return Json(data);
+        //}
         [HttpGet]
         [Route("Form/GetRequestFormByDocNo/{docNo}")]
         public IActionResult GetRequestFormByDocNo(string docNo)
@@ -92,7 +91,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestFormByDocNo(request);
             return Json(data);
         }
-
+        [HttpDelete]
+        [Route("Form/DeleteRequestFormById/{id}")]
+        public IActionResult DeleteRequestFormById(int id)
+        {
+            var data = _SecServices.DeleteRequestFormById(id);
+            return Json(data);
+        }
         [HttpGet]
         [Route("Form/GetRequestFormItemsByDocNo/{docNo}")]
         public IActionResult GetRequestFormItemsByDocNo(string docNo)
@@ -108,14 +113,12 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpDelete]
-        [Route("Form/DeleteRequestFormItemsByDocNo/{docNo}")]
-        public IActionResult DeleteRequestFormItemsById(string docNo)
+        [Route("Form/DeleteRequestFormItemsById/{id}")]
+        public IActionResult DeleteRequestFormItemsById(int id)
         {
-            var data = _SecServices.DeleteRequestFormItemsById(docNo);
+            var data = _SecServices.DeleteRequestFormItemsById(id);
             return Json(data);
         }
-
-
         [HttpGet]
         [Route("Form/GetRequestFormApproveByDocNo/{docNo}")]
         public IActionResult GetRequestFormApproveByDocNo(string docNo)
@@ -131,10 +134,10 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpDelete]
-        [Route("Form/DeleteRequestFormApproveByDocNo/{docNo}")]
-        public IActionResult DeleteRequestFormApproveByDocNo(string docNo)
+        [Route("Form/DeleteRequestFormApproveById/{id}")]
+        public IActionResult DeleteRequestFormApproveById(int id)
         {
-            var data = _SecServices.DeleteRequestFormApproveByDocNo(docNo);
+            var data = _SecServices.DeleteRequestFormApproveById(id);
             return Json(data);
         }
 
@@ -152,6 +155,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestFormCommentByDocNo(request);
             return Json(data);
         }
+        [HttpDelete]
+        [Route("Form/DeleteRequestFormCommentById/{id}")]
+        public IActionResult DeleteRequestFormCommentById(int id)
+        {
+            var data = _SecServices.DeleteRequestFormCommentById(id);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("Form/GetRequestFormBorrowingMoneyByDocNo/{docNo}")]
@@ -165,6 +175,13 @@ namespace narit_mis_api.Controllers
         public IActionResult CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request)
         {
             var data = _SecServices.CreateRequestFormBorrowingMoneyByDocNo(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("Form/DeleteRequestFormBorrowingMoneyById/{id}")]
+        public IActionResult DeleteRequestFormBorrowingMoneyById(int id)
+        {
+            var data = _SecServices.DeleteRequestFormBorrowingMoneyById(id);
             return Json(data);
         }
 
@@ -182,6 +199,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestFormScheduleByDocNo(request);
             return Json(data);
         }
+        [HttpDelete]
+        [Route("Form/DeleteRequestFormScheduleById/{id}")]
+        public IActionResult DeleteRequestFormScheduleById(int id)
+        {
+            var data = _SecServices.DeleteRequestFormScheduleById(id);
+            return Json(data);
+        }
 
         [HttpGet]
         [Route("Form/GetRequestFormExaminerForBudgetByDocNo/{docNo}")]
@@ -195,6 +219,13 @@ namespace narit_mis_api.Controllers
         public IActionResult CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)
         {
             var data = _SecServices.CreateRequestFormExaminerForBudgetByDocNo(request);
+            return Json(data);
+        }
+        [HttpDelete]
+        [Route("Form/DeleteRequestFormExaminerForBudgetById/{id}")]
+        public IActionResult DeleteRequestFormExaminerForBudgetById(int id)
+        {
+            var data = _SecServices.DeleteRequestFormExaminerForBudgetById(id);
             return Json(data);
         }
     }
