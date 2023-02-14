@@ -35,6 +35,13 @@ namespace narit_mis_api.Controllers
         //    return Json(data);
         //}
         [HttpGet]
+        [Route("Form/GetRequestFormCommentStatus")]
+        public IActionResult GetRequestFormCommentStatus()
+        {
+            var data = _SecServices.GetRequestFormCommentStatus();
+            return Json(data);
+        }
+        [HttpGet]
         [Route("Form/GetRequestBudget")]
         public IActionResult GetRequestBudget()
         {
@@ -99,17 +106,17 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("Form/GetRequestFormItemsByDocNo/{docNo}")]
-        public IActionResult GetRequestFormItemsByDocNo(string docNo)
+        [Route("Form/GetRequestFormItemsByRequestFormId/{requestFormId}")]
+        public IActionResult GetRequestFormItemsByRequestFormId(int requestFormId)
         {
-            var data = _SecServices.GetRequestFormItemsByDocNo(docNo);
+            var data = _SecServices.GetRequestFormItemsByRequestFormId(requestFormId);
             return Json(data);
         }
         [HttpPost]
-        [Route("Form/CreateRequestFormItemsByDocNo")]
-        public IActionResult CreateRequestFormItemsByDocNo(RequestFormItemsRequests request)
+        [Route("Form/CreateRequestFormItemsByRequestFormId")]
+        public IActionResult CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request)
         {
-            var data = _SecServices.CreateRequestFormItemsByDocNo(request);
+            var data = _SecServices.CreateRequestFormItemsByRequestFormId(request);
             return Json(data);
         }
         [HttpDelete]
@@ -120,24 +127,24 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("Form/GetRequestFormApproveByDocNo/{docNo}")]
-        public IActionResult GetRequestFormApproveByDocNo(string docNo)
+        [Route("Form/GetRequestFormApproveByRequestFormId/{requestFormId}")]
+        public IActionResult GetRequestFormApproveByRequestFormId(int requestFormId)
         {
-            var data = _SecServices.GetRequestFormApproveByDocNo(docNo);
+            var data = _SecServices.GetRequestFormApproveByRequestFormId(requestFormId);
             return Json(data);
         }
         [HttpPost]
-        [Route("Form/CreateRequestFormApproveByDocNo")]
-        public IActionResult CreateRequestFormApproveByDocNo(RequestFormApproveRequests request)
+        [Route("Form/CreateRequestFormApproveByRequestFormId")]
+        public IActionResult CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request)
         {
-            var data = _SecServices.CreateRequestFormApproveByDocNo(request);
+            var data = _SecServices.CreateRequestFormApproveByRequestFormId(request);
             return Json(data);
         }
         [HttpDelete]
-        [Route("Form/DeleteRequestFormApproveById/{id}")]
-        public IActionResult DeleteRequestFormApproveById(int id)
+        [Route("Form/DeleteRequestFormApproveByDocNo/{docNo}")]
+        public IActionResult DeleteRequestFormApproveById(int docNo)
         {
-            var data = _SecServices.DeleteRequestFormApproveById(id);
+            var data = _SecServices.DeleteRequestFormApproveById(docNo);
             return Json(data);
         }
 

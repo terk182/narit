@@ -10,6 +10,7 @@ namespace App.SEC.Requests
     public class RequestBudgetRequests
     {
         public int Id { get; set; }
+        public int? DocYear { get; set; }
         public string DocNo { get; set; } = null!;
         public string? DocStatus { get; set; }
         public bool? Active { get; set; }
@@ -22,7 +23,7 @@ namespace App.SEC.Requests
         public DateTime? CalculationDate { get; set; }
         public string? StatmentName { get; set; }
         public string? RelatedRegulation { get; set; }
-        public string? CreateByStaffId { get; set; }
+        public int? CreateByStaffId { get; set; }
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
@@ -63,7 +64,7 @@ namespace App.SEC.Requests
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int RequestBudgetId { get; set; }
+        public int RequestFormId { get; set; }
         public int? LbActivityId { get; set; }
         public string? Name { get; set; }
         public string? Descriptions { get; set; }
@@ -77,14 +78,14 @@ namespace App.SEC.Requests
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int RequestBudgetId { get; set; }
+        public int RequestFormId { get; set; }
+        public bool? Active { get; set; }
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
         public int? StaffId { get; set; }
         public string? StaffName { get; set; }
         public bool? StatusApprove { get; set; }
         public DateTime? DatetimeApprove { get; set; }
-        public bool? Active { get; set; }
 
     }
     public class RequestFormCommentRequests
@@ -93,12 +94,12 @@ namespace App.SEC.Requests
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public DateTime? DateTime { get; set; }
-        public string? StaffId { get; set; }
+        public int? StaffId { get; set; }
         public string? StaffName { get; set; }
         public string? Comment { get; set; }
         public string? Descriptions { get; set; }
         public bool? Active { get; set; }
-
+        public string? Status { get; set; }
     }
     public class RequestFormBorrowingMoneyRequests
     {
@@ -124,19 +125,20 @@ namespace App.SEC.Requests
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
         public int? RebudgetId { get; set; }
+        public int? StaffId { get; set; }
+        public string? StaffName { get; set; }
     }
     public class RequestFormScheduleRequests
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
-        public int? DocYear { get; set; }
         public bool? Active { get; set; }
         public string? Name { get; set; }
-        public decimal? RequestLoan { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public DateTime? StartDateTime { get; set; }
         public DateTime? EndDateTime { get; set; }
+        public string? Remark { get; set; }
     }
 }

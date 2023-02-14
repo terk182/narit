@@ -19,6 +19,7 @@ namespace App.SEC
         List<ScheduleFisicalYear> GetScheduleFisicalYear();
         List<ScheduleFisicalYear> GetScheduleFisicalYearByYears(int name, bool active);
 
+        List<RequestFormCommentStatus> GetRequestFormCommentStatus();
         List<RequestBudget> GetRequestBudget();
         RequestBudget GetRequestBudgetByDocNo(string docNo);
         RequestBudget CreateRequestBudget(RequestBudgetRequests request);
@@ -30,12 +31,12 @@ namespace App.SEC
         RequestForm CreateRequestFormByDocNo(RequestFormRequests request);
         SecBaseResponse DeleteRequestFormById(int id);
 
-        List<RequestFormItem> GetRequestFormItemsByDocNo(string docNo);
-        RequestFormItem CreateRequestFormItemsByDocNo(RequestFormItemsRequests request);
+        List<RequestFormItem> GetRequestFormItemsByRequestFormId(int requestFormId);
+        RequestFormItem CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request);
         SecBaseResponse DeleteRequestFormItemsById(int id);
 
-        List<RequestFormApprove> GetRequestFormApproveByDocNo(string docNo);
-        RequestFormApprove CreateRequestFormApproveByDocNo(RequestFormApproveRequests request);
+        List<RequestFormApprove> GetRequestFormApproveByRequestFormId(int requestFormId);
+        RequestFormApprove CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request);
         SecBaseResponse DeleteRequestFormApproveById(int id);
 
         List<RequestFormComment> GetRequestFormCommentByDocNo(string docNo);

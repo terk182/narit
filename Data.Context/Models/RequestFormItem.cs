@@ -7,7 +7,7 @@ namespace narit_mis_api.Models
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int RequestBudgetId { get; set; }
+        public int RequestFormId { get; set; }
         public int? LbActivityId { get; set; }
         public string? Name { get; set; }
         public string? Descriptions { get; set; }
@@ -17,6 +17,6 @@ namespace narit_mis_api.Models
         public string? Unit { get; set; }
         public string? Remark { get; set; }
 
-        public virtual RequestBudget RequestBudget { get; set; } = null!;
+        public virtual RequestForm RequestForm { get; set; } = null!;
     }
 }

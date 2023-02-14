@@ -5,9 +5,15 @@ namespace narit_mis_api.Models
 {
     public partial class RequestForm
     {
+        public RequestForm()
+        {
+            RequestFormApproves = new HashSet<RequestFormApprove>();
+            RequestFormItems = new HashSet<RequestFormItem>();
+        }
+
         public int Id { get; set; }
-        public int RequestBudgetId { get; set; }
         public string DocNo { get; set; } = null!;
+        public int RequestBudgetId { get; set; }
         public int? BudgetTypeId { get; set; }
         public int? ProjectId { get; set; }
         public int? ProjectActivityId { get; set; }
@@ -32,5 +38,7 @@ namespace narit_mis_api.Models
         public string? Reward { get; set; }
 
         public virtual RequestBudget RequestBudget { get; set; } = null!;
+        public virtual ICollection<RequestFormApprove> RequestFormApproves { get; set; }
+        public virtual ICollection<RequestFormItem> RequestFormItems { get; set; }
     }
 }

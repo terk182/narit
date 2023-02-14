@@ -7,7 +7,7 @@ namespace narit_mis_api.Models
     {
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
-        public int RequestBudgetId { get; set; }
+        public int RequestFormId { get; set; }
         public bool? Active { get; set; }
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
@@ -16,6 +16,6 @@ namespace narit_mis_api.Models
         public bool? StatusApprove { get; set; }
         public DateTime? DatetimeApprove { get; set; }
 
-        public virtual RequestBudget RequestBudget { get; set; } = null!;
+        public virtual RequestForm RequestForm { get; set; } = null!;
     }
 }
