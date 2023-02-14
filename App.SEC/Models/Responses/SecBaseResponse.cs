@@ -12,9 +12,6 @@ namespace App.SEC.Responses
         public bool Success { get; set; }
         public string? Errors { get; set; }
         public string? Messsage { get; set; }
-
-
-        public List<SubProject>? SubProject { get; set; }
-        public List<ProjectActivity>? ProjectActivity { get; set; }
+        public object? Data { get; set; }
     }
 }

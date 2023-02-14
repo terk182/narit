@@ -6014,6 +6014,11 @@ namespace App.SEC
         {
             return _database.AnnualBudgets.Where(x => x.Active).ToList();
         }
+        public List<AnnualBudget> GetAnnualBudgetbyFisicalYear(int FisicalYear)
+        {
+            var data = _database.AnnualBudgets.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
+        }
         public List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId)
         {
             var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId && x.Active).ToList();
@@ -6057,6 +6062,11 @@ namespace App.SEC
         {
             return _database.SubAnnualBudgets.Where(x => x.Active).ToList();
         }
+        public List<SubAnnualBudget> GetSubAnnualBudgetbyFisicalYear(int FisicalYear)
+        {
+            var data = _database.SubAnnualBudgets.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
+        }
         public List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
         {
             var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId && x.Active).ToList();
@@ -6099,6 +6109,11 @@ namespace App.SEC
         public List<CapticalType> GetAllCapticalType()
         {
             return _database.CapticalTypes.Where(x => x.Active).ToList();
+        }
+        public List<CapticalType> GetCapticalTypebyFisicalYear(int FisicalYear)
+        {
+            var data = _database.CapticalTypes.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
         }
         public List<CapticalType> GetCapticalTypebyId(int CapticalTypeId)
         {
@@ -6164,14 +6179,14 @@ namespace App.SEC
                 GetSubProjectforProjectbyId(ProjectId);
                 response.Success = true;
                 response.Messsage = "Have SubProject";
-                response.SubProject = data;
+                response.Data = data;
             }
             else
             {
                 GetProjectActivityforProjectbyId(ProjectId);
                 response.Success = true;
                 response.Messsage = "Have ProjectActivity";
-                response.ProjectActivity = data2;
+                response.Data = data2;
             }
             return response;
         }
@@ -6370,6 +6385,12 @@ namespace App.SEC
         {
             return _database.ExternalBudgetStrategies.Where(x => x.Active).ToList();
         }
+        public List<ExternalBudgetStrategy> GetExternalBudgetStrategybyFisicalYear(int FisicalYear)
+        {
+            var data = _database.ExternalBudgetStrategies.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
+        }
+
         public List<ExternalBudgetStrategy> GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId)
         {
             var data = _database.ExternalBudgetStrategies.Where(x => x.Id == ExternalBudgetStrategyId && x.Active).ToList();
@@ -6412,6 +6433,11 @@ namespace App.SEC
         public List<InternalStrategy> GetAllInternalStrategy()
         {
             return _database.InternalStrategies.Where(x => x.Active).ToList();
+        }
+        public List<InternalStrategy> GetInternalStrategybyFisicalYear(int FisicalYear)
+        {
+            var data = _database.InternalStrategies.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
+            return data;
         }
         public List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId)
         {
@@ -6746,6 +6772,105 @@ namespace App.SEC
 
             return response;
         }
+        //ListBudgetForActivity
+        public List<ListBudgetForActivity> GetAllListBudgetForActivity()
+        {
+            return _database.ListBudgetForActivities.Where(x => x.Active).ToList();
+        }
+        public List<ListBudgetForActivity> GetListBudgetForActivitybyId(int ListBudgetForActivityId)
+        {
+            var data = _database.ListBudgetForActivities.Where(x => x.Id == ListBudgetForActivityId && x.Active).ToList();
+            return data;
+        }
+        public List<ListBudgetForActivity> GetListBudgetForActivitybyProjectActivityId(int ProjectActivityId)
+        {
+            var data = _database.ListBudgetForActivities.Where(x => x.ProjectActivitiyId == ProjectActivityId && x.Active).ToList();
+            return data;
+        }
+        public List<ListBudgetForActivity> GetListBudgetForActivitybysubProjectId(int subProjectId)
+        {
+            var data = _database.ListBudgetForActivities.Where(x => x.ProjectId == subProjectId && x.Active).ToList();
+            return data;
+        }
+        public SecBaseResponse ListBudgetForActivitySetup(ListBudgetForActivity request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteListBudgetForActivity(int ListBudgetForActivityId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.ListBudgetForActivities.Where(x => x.Id == ListBudgetForActivityId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
+
+        //BudgetDisbursementPlan
+        public List<BudgetDisbursementPlan> GetAllBudgetDisbursementPlan()
+        {
+            return _database.BudgetDisbursementPlans.Where(x => x.Active).ToList();
+        }
+        public List<BudgetDisbursementPlan> GetBudgetDisbursementPlanbyId(int BudgetDisbursementPlanId)
+        {
+            var data = _database.BudgetDisbursementPlans.Where(x => x.Id == BudgetDisbursementPlanId && x.Active).ToList();
+            return data;
+        }
+
+        public SecBaseResponse BudgetDisbursementPlanSetup(BudgetDisbursementPlan request)
+        {
+            _database.Entry(request).State = request.Id == 0 ?
+                           EntityState.Added :
+                           EntityState.Modified;
+
+
+            var result = _database.SaveChanges();
+            var response = new SecBaseResponse();
+            response.Success = result > 0 ? true : false;
+            response.Messsage = request.Id == 0 ? "update" : "insert";
+            return response;
+        }
+        public SecBaseResponse DeleteBudgetDisbursementPlan(int BudgetDisbursementPlanId)
+        {
+            var response = new SecBaseResponse();
+            var data = _database.BudgetDisbursementPlans.Where(x => x.Id == BudgetDisbursementPlanId).FirstOrDefault();
+            if (data != null)
+            {
+                data.Active = false;
+                _database.Entry(data).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                response.Success = result > 0 ? true : false;
+                response.Messsage = "Delete Complete";
+            }
+            else
+            {
+                response.Success = false;
+                response.Messsage = "not have data";
+            }
+
+            return response;
+        }
     }
+
 }
 

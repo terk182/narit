@@ -7,6 +7,7 @@ using App.EIS;
 using App.FIN;
 using App.General;
 using App.Individual;
+using App.NewCGIMIS;
 using App.PathDetail;
 using App.Plan;
 using App.Procure;
@@ -39,12 +40,13 @@ namespace App.Resolver
             services.AddScoped<IProcureServices, ProcureServices>();
             services.AddScoped<ICommonServices, CommonServices>();
             services.AddScoped<IAuthenticatorServices, AuthenticatorServices>();
+            services.AddScoped<INewCGIMISServices, NewCGIMISServices>();
 
 
-      
 
 
-            
+
+
             return services;
         }
     }

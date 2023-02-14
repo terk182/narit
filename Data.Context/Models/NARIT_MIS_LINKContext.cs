@@ -52,6 +52,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<BillingFile> BillingFiles { get; set; } = null!;
         public virtual DbSet<BillingLocation> BillingLocations { get; set; } = null!;
         public virtual DbSet<BtFormActionLog> BtFormActionLogs { get; set; } = null!;
+        public virtual DbSet<BudgetDisbursementPlan> BudgetDisbursementPlans { get; set; } = null!;
         public virtual DbSet<BudgetTransfer> BudgetTransfers { get; set; } = null!;
         public virtual DbSet<BudgetTransferForm> BudgetTransferForms { get; set; } = null!;
         public virtual DbSet<BudgetType> BudgetTypes { get; set; } = null!;
@@ -185,6 +186,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<LeaveCancellationForm> LeaveCancellationForms { get; set; } = null!;
         public virtual DbSet<LeaveType> LeaveTypes { get; set; } = null!;
         public virtual DbSet<LeaveTypeLimit> LeaveTypeLimits { get; set; } = null!;
+        public virtual DbSet<ListBudgetForActivity> ListBudgetForActivities { get; set; } = null!;
         public virtual DbSet<MainActivity> MainActivities { get; set; } = null!;
         public virtual DbSet<MainGovtStatement> MainGovtStatements { get; set; } = null!;
         public virtual DbSet<MainProject> MainProjects { get; set; } = null!;
@@ -1358,6 +1360,21 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.BudgetTransferFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_BudgetTransferFormBtFormActionLog");
+            });
+
+            modelBuilder.Entity<BudgetDisbursementPlan>(entity =>
+            {
+                entity.ToTable("BudgetDisbursementPlan", "Plan");
+
+                entity.Property(e => e.Amount).HasColumnName("amount");
+
+                entity.Property(e => e.LbActivityId).HasColumnName("LB_Activity_Id");
+
+                entity.Property(e => e.Month).HasColumnName("month");
+
+                entity.Property(e => e.PriceUnit)
+                    .HasColumnType("decimal(18, 0)")
+                    .HasColumnName("price_unit");
             });
 
             modelBuilder.Entity<BudgetTransfer>(entity =>
@@ -4591,6 +4608,25 @@ namespace narit_mis_api.Models
                     .HasForeignKey(d => d.LeaveTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LeaveTypeLeaveTypeLimit");
+            });
+
+            modelBuilder.Entity<ListBudgetForActivity>(entity =>
+            {
+                entity.ToTable("ListBudgetForActivity", "Plan");
+
+                entity.Property(e => e.ProjectActivitiyId).HasColumnName("ProjectActivitiy_Id");
+
+                entity.Property(e => e.ProjectId).HasColumnName("Project_Id");
+
+                entity.Property(e => e.SubAnnualBudgetId).HasColumnName("subAnnualBudget_Id");
+
+                entity.Property(e => e.TotalBudget)
+                    .HasColumnType("decimal(18, 0)")
+                    .HasColumnName("totalBudget");
+
+                entity.Property(e => e.TotalUnit)
+                    .HasColumnType("decimal(18, 0)")
+                    .HasColumnName("totalUnit");
             });
 
             modelBuilder.Entity<MainActivity>(entity =>
