@@ -4,7 +4,6 @@ using App.Authenticator;
 using App.Common;
 using App.EIS;
 using App.FIN;
-using App.General;
 using App.Individual;
 using App.PathDetail;
 using App.Plan;
@@ -19,7 +18,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using App.GL;
+using App.Acc.GL;
+using App.Acc.Contact;
 
 namespace App.Resolver
 {
@@ -29,6 +29,8 @@ namespace App.Resolver
         {
 
             services.AddScoped<IGlServices, GlServices>();
+            services.AddScoped<IContactServices, ContactServices>();
+
             //services.AddScoped<IApServices, ApServices>();
             //services.AddScoped<IArServices, ArServices>();
 

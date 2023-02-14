@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.GL.Responses
+namespace App.Acc.GL.Responses
 {
     public class TransectionResponse
     {
@@ -28,8 +28,10 @@ namespace App.GL.Responses
         public int? JournalId { get; set; }
         public int? SubJournalId { get; set; }
         public string? SubJournalName { get; set; }
-
-
+        public string? Description { get; set; }
+        public int? SubAnnualBudgetId { get; set; }
+        public string? SubAnnualBudgetName { get; set; }
+        public int? FundsTypeId { get; set; }
 
     }
 }

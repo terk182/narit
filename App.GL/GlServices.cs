@@ -1,7 +1,7 @@
 ﻿using App.Common.Models.Responses;
-using App.GL.DTO;
-using App.GL.Requests;
-using App.GL.Responses;
+using App.Acc.GL.DTO;
+using App.Acc.GL.Requests;
+using App.Acc.GL.Responses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.VisualBasic;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace App.GL
+namespace App.Acc.GL
 {
     public class GlServices : IGlServices
     {
@@ -1137,6 +1137,14 @@ namespace App.GL
             }
             return response;
         }
+        //FundsType
+        public List<FundsType> GetFundsType()
+        {
+            List<FundsType> FundsType = _databaseACC.FundsTypes.ToList();
+            return FundsType;
+        }
+
+
 
         //Transection
         public List<TransectionResponse> GetTransection()
@@ -1148,6 +1156,7 @@ namespace App.GL
                 var Transections = _databaseACC.TransectionTypes.ToList();
                 var subminors = _databaseACC.ChartMinors.ToList();
                 var subjournal = _databaseACC.SubJournals.ToList();
+                var subannualbudget = _databaseACC.SubAnnualBudgets.ToList();
                 var QSOuterJoin = from Tran in data
                                   join Transectiontype in Transections
                                   on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
@@ -1169,7 +1178,12 @@ namespace App.GL
                                   into SubJournalGroup
                                   from nsubjournal in SubJournalGroup.DefaultIfEmpty()
 
-                                  select new { Tran, Trantype, ncredit, ncdebitt, nsubjournal };
+                                  join submiannualbudget in subannualbudget
+                                  on Tran.SubAnnualBudgetId.ToString() equals submiannualbudget.Id.ToString()
+                                  into SubAnnualBudgetGroup
+                                  from nsubmiannualbudget in SubAnnualBudgetGroup.DefaultIfEmpty()
+
+                                  select new { Tran, Trantype, ncredit, ncdebitt, nsubjournal, nsubmiannualbudget };
                 foreach (var item in QSOuterJoin)
                     result.Add(new TransectionResponse
                     {
@@ -1191,8 +1205,11 @@ namespace App.GL
                         DebitName = item.ncdebitt.Name,
                         SubJournalId = item.Tran.SubJournalId,
                         SubJournalName = item.nsubjournal.Name,
-                        Status = item.Tran.Status
-
+                        Status = item.Tran.Status,
+                        Description= item.Tran.Description,
+                        SubAnnualBudgetId = item.Tran.SubAnnualBudgetId,
+                        SubAnnualBudgetName = item.nsubmiannualbudget.Name,
+                        FundsTypeId = item.Tran.FundsTypeId
                     });
                 return result;
             }
@@ -1205,6 +1222,7 @@ namespace App.GL
             var Transections = _databaseACC.TransectionTypes.ToList();
             var subminors = _databaseACC.ChartMinors.ToList();
             var subjournal = _databaseACC.SubJournals.ToList();
+            var subannualbudget = _databaseACC.SubAnnualBudgets.ToList();
             var QSOuterJoin = from Tran in data
                               join Transectiontype in Transections
                               on Tran.TransectionTypeId.ToString() equals Transectiontype.Id.ToString()
@@ -1226,9 +1244,12 @@ namespace App.GL
                               into SubJournalGroup
                               from nsubjournal in SubJournalGroup.DefaultIfEmpty()
 
+                              join submiannualbudget in subannualbudget
+                              on Tran.SubAnnualBudgetId.ToString() equals submiannualbudget.Id.ToString()
+                              into SubAnnualBudgetGroup
+                              from nsubmiannualbudget in SubAnnualBudgetGroup.DefaultIfEmpty()
 
-
-                              select new { Tran, Trantype, ncredit, ndebit, nsubjournal };
+                              select new { Tran, Trantype, ncredit, ndebit, nsubjournal, nsubmiannualbudget };
             foreach (var item in QSOuterJoin)
                 result.Add(new TransectionResponse
                 {
@@ -1251,7 +1272,11 @@ namespace App.GL
                     JournalId = item.nsubjournal.JournalId,
                     SubJournalId = item.Tran.SubJournalId,
                     SubJournalName = item.nsubjournal.Name,
-                    Status = item.Tran.Status
+                    Status = item.Tran.Status,
+                    Description = item.Tran.Description,
+                    SubAnnualBudgetId = item.Tran.SubAnnualBudgetId,
+                    SubAnnualBudgetName = item.nsubmiannualbudget.Name,
+                    FundsTypeId = item.Tran.FundsTypeId
                 });
             return result;
         }
@@ -1269,11 +1294,14 @@ namespace App.GL
                 result.TransectionTypeId = result.TransectionTypeId;
                 result.DetailDate = result.DetailDate;
                 result.RefNo = result.RefNo;
-
                 result.Debit = request.Debit;
                 result.Credit = request.Credit;
                 result.Status = request.Status;
                 result.SubJournalId = request.SubJournalId;
+                result.Description = request.Description;
+                result.FundsTypeId = request.FundsTypeId;
+
+
                 _databaseACC.Entry(result).State = EntityState.Modified;
                 int returnValue = _databaseACC.SaveChanges();
                 response.Success = returnValue > 0 ? true : false;

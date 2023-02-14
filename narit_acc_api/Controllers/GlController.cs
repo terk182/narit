@@ -1,7 +1,7 @@
-﻿using App.GL;
-using App.GL.DTO;
-using App.GL.Requests;
-using App.GL.Responses;
+﻿using App.Acc.GL;
+using App.Acc.GL.DTO;
+using App.Acc.GL.Requests;
+using App.Acc.GL.Responses;
 using Microsoft.AspNetCore.Mvc;
 using narit_acc_api.Models;
 
@@ -581,6 +581,17 @@ namespace narit_acc_api.Controllers
         public IActionResult DeleteCreditorId(int Id)
         {
             var data = _AccGlServices.DeleteCreditorId(Id);
+            return Json(data);
+        }
+
+        /// <summary>
+        /// ค้นหา กองทุน(FundsType)
+        /// </summary>
+        [HttpGet]
+        [Route("Chart/GetFundsType")]
+        public IActionResult GetFundsType()
+        {
+            var data = _AccGlServices.GetFundsType();
             return Json(data);
         }
 

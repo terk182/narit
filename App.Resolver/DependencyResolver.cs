@@ -5,7 +5,6 @@ using App.Authenticator;
 using App.Common;
 using App.EIS;
 using App.FIN;
-using App.General;
 using App.Individual;
 using App.PathDetail;
 using App.Plan;
@@ -33,7 +32,6 @@ namespace App.Resolver
             services.AddScoped<IEisServices, EisServices>(); 
             services.AddScoped<IFinServices, FinServices>(); 
             services.AddScoped<IIndividualServices, IndividualServices>();  
-            services.AddScoped<IGeneralServices, GeneralServices>(); 
             services.AddScoped<ISecServices, SecServices>(); 
             services.AddScoped<IPlanServices, PlanServices>(); 
             services.AddScoped<IProcureServices, ProcureServices>();

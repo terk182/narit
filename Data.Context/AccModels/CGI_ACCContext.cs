@@ -19,6 +19,7 @@ namespace narit_acc_api.Models
         public virtual DbSet<AccountForm> AccountForms { get; set; } = null!;
         public virtual DbSet<AccountType> AccountTypes { get; set; } = null!;
         public virtual DbSet<Accounting> Accountings { get; set; } = null!;
+        public virtual DbSet<AnnualBudget> AnnualBudgets { get; set; } = null!;
         public virtual DbSet<Bank> Banks { get; set; } = null!;
         public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
         public virtual DbSet<ChartAcc> ChartAccs { get; set; } = null!;
@@ -29,6 +30,12 @@ namespace narit_acc_api.Models
         public virtual DbSet<ChartMinorOld> ChartMinorOlds { get; set; } = null!;
         public virtual DbSet<ChartSubHeader> ChartSubHeaders { get; set; } = null!;
         public virtual DbSet<ChartSubMajor> ChartSubMajors { get; set; } = null!;
+        public virtual DbSet<ContactAcc> ContactAccs { get; set; } = null!;
+        public virtual DbSet<ContactBank> ContactBanks { get; set; } = null!;
+        public virtual DbSet<ContactMain> ContactMains { get; set; } = null!;
+        public virtual DbSet<ContactPerson> ContactPeople { get; set; } = null!;
+        public virtual DbSet<ContactRef> ContactRefs { get; set; } = null!;
+        public virtual DbSet<ContactSubtype> ContactSubtypes { get; set; } = null!;
         public virtual DbSet<Creditor> Creditors { get; set; } = null!;
         public virtual DbSet<CreditorType> CreditorTypes { get; set; } = null!;
         public virtual DbSet<Debtor> Debtors { get; set; } = null!;
@@ -38,6 +45,9 @@ namespace narit_acc_api.Models
         public virtual DbSet<FundsType> FundsTypes { get; set; } = null!;
         public virtual DbSet<Journal> Journals { get; set; } = null!;
         public virtual DbSet<JournalForm> JournalForms { get; set; } = null!;
+        public virtual DbSet<PaymentDueType> PaymentDueTypes { get; set; } = null!;
+        public virtual DbSet<PersonType> PersonTypes { get; set; } = null!;
+        public virtual DbSet<SubAnnualBudget> SubAnnualBudgets { get; set; } = null!;
         public virtual DbSet<SubJournal> SubJournals { get; set; } = null!;
         public virtual DbSet<TaxType> TaxTypes { get; set; } = null!;
         public virtual DbSet<Transection> Transections { get; set; } = null!;
@@ -171,6 +181,17 @@ namespace narit_acc_api.Models
                     .HasConstraintName("FK_Accounting_SubJournal");
             });
 
+            modelBuilder.Entity<AnnualBudget>(entity =>
+            {
+                entity.ToTable("AnnualBudget");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Bank>(entity =>
             {
                 entity.ToTable("Bank");
@@ -190,9 +211,9 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.EngName)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
+                entity.Property(e => e.ContactTypeId)
+                    .HasColumnName("ContactTypeID")
+                    .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
@@ -512,6 +533,193 @@ namespace narit_acc_api.Models
                     .HasConstraintName("FK_ChartSubMajor_ChartMajor");
             });
 
+            modelBuilder.Entity<ContactAcc>(entity =>
+            {
+                entity.ToTable("ContactACC");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ContactId).HasColumnName("ContactID");
+
+                entity.Property(e => e.CreditorTypeId).HasColumnName("CreditorTypeID");
+
+                entity.Property(e => e.DebtorTypeId).HasColumnName("DebtorTypeID");
+
+                entity.Property(e => e.PaymentDueTypeId).HasColumnName("PaymentDueTypeID");
+            });
+
+            modelBuilder.Entity<ContactBank>(entity =>
+            {
+                entity.ToTable("ContactBank");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AccountName)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.BankBranch)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.BankId).HasColumnName("BankID");
+
+                entity.Property(e => e.ContactId).HasColumnName("ContactID");
+            });
+
+            modelBuilder.Entity<ContactMain>(entity =>
+            {
+                entity.ToTable("ContactMain");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Code)
+                    .HasMaxLength(9)
+                    .IsUnicode(false)
+                    .HasColumnName("CODE")
+                    .HasDefaultValueSql("('C')");
+
+                entity.Property(e => e.ContactDate).HasColumnType("date");
+
+                entity.Property(e => e.ContactEmail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ContactName)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ContactPhone)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ContactPrefix)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ContactSubTypeId).HasColumnName("ContactSubTypeID");
+
+                entity.Property(e => e.ContactSurname)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ContactTypeId).HasColumnName("ContactTypeID");
+
+                entity.Property(e => e.ContactWebsite)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Country)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegisteredAddress)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegisteredDistrict)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegisteredName)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegisteredProvince)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegisteredSubdistrict)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegistrationNumber)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.ContactSubType)
+                    .WithMany(p => p.ContactMains)
+                    .HasForeignKey(d => d.ContactSubTypeId)
+                    .HasConstraintName("FK_ContactMain_ContactSubtype");
+            });
+
+            modelBuilder.Entity<ContactPerson>(entity =>
+            {
+                entity.ToTable("ContactPerson");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ContactId).HasColumnName("ContactID");
+
+                entity.Property(e => e.PersonDepartment)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonEmail)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonJobPosition)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonName)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonNickname)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonPrefix)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PersonSurname)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ContactRef>(entity =>
+            {
+                entity.ToTable("ContactRef");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ContactId).HasColumnName("ContactID");
+
+                entity.Property(e => e.DeliveryAddress)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DeliveryDistrict)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DeliveryProvince)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DeliverySubdistrict)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ContactSubtype>(entity =>
+            {
+                entity.ToTable("ContactSubtype");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ContactTypeId).HasColumnName("ContactTypeID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Creditor>(entity =>
             {
                 entity.ToTable("Creditor");
@@ -679,13 +887,17 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.Characters)
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
                 entity.Property(e => e.DocumentTypeId).HasColumnName("DocumentTypeID");
 
-                entity.Property(e => e.JournalId).HasColumnName("JournalID");
+                entity.Property(e => e.JournalId)
+                    .HasColumnName("JournalID")
+                    .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(250)
@@ -695,7 +907,9 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.Property(e => e.SubJournalId).HasColumnName("SubJournalID");
+                entity.Property(e => e.SubJournalId)
+                    .HasColumnName("SubJournalID")
+                    .HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.DocumentType)
                     .WithMany(p => p.Documents)
@@ -812,6 +1026,51 @@ namespace narit_acc_api.Models
                     .HasConstraintName("FK_JournalForm_JournalForm");
             });
 
+            modelBuilder.Entity<PaymentDueType>(entity =>
+            {
+                entity.ToTable("PaymentDueType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<PersonType>(entity =>
+            {
+                entity.ToTable("PersonType");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ContactTypeId)
+                    .HasColumnName("ContactTypeID")
+                    .HasDefaultValueSql("((2))");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<SubAnnualBudget>(entity =>
+            {
+                entity.ToTable("SubAnnualBudget");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AnnualBudgetId).HasColumnName("AnnualBudgetID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AnnualBudget)
+                    .WithMany(p => p.SubAnnualBudgets)
+                    .HasForeignKey(d => d.AnnualBudgetId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SubAnnualBudget_AnnualBudget");
+            });
+
             modelBuilder.Entity<SubJournal>(entity =>
             {
                 entity.ToTable("SubJournal");
@@ -892,6 +1151,10 @@ namespace narit_acc_api.Models
 
                 entity.Property(e => e.DebtorTypeId).HasColumnName("DebtorTypeID");
 
+                entity.Property(e => e.Description)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Detail)
                     .HasMaxLength(250)
                     .IsUnicode(false);
@@ -902,6 +1165,8 @@ namespace narit_acc_api.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
+                entity.Property(e => e.FundsTypeId).HasColumnName("FundsTypeID");
+
                 entity.Property(e => e.PaymentTypeId).HasColumnName("PaymentTypeID");
 
                 entity.Property(e => e.RefNo)
@@ -911,6 +1176,8 @@ namespace narit_acc_api.Models
                 entity.Property(e => e.Status)
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.Property(e => e.SubAnnualBudgetId).HasColumnName("SubAnnualBudgetID");
 
                 entity.Property(e => e.SubJournalId).HasColumnName("SubJournalID");
 
@@ -925,6 +1192,16 @@ namespace narit_acc_api.Models
                     .WithMany(p => p.TransectionDebitNavigations)
                     .HasForeignKey(d => d.Debit)
                     .HasConstraintName("FK_Transection_ChartSubMinor1");
+
+                entity.HasOne(d => d.FundsType)
+                    .WithMany(p => p.Transections)
+                    .HasForeignKey(d => d.FundsTypeId)
+                    .HasConstraintName("FK_Transection_FundsType");
+
+                entity.HasOne(d => d.SubAnnualBudget)
+                    .WithMany(p => p.Transections)
+                    .HasForeignKey(d => d.SubAnnualBudgetId)
+                    .HasConstraintName("FK_Transection_SubAnnualBudget");
 
                 entity.HasOne(d => d.SubJournal)
                     .WithMany(p => p.Transections)

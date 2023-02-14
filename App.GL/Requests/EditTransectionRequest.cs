@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.GL.Requests
+namespace App.Acc.GL.Requests
 {
     public class EditTransectionRequest
     {
@@ -13,5 +13,8 @@ namespace App.GL.Requests
         public int? Debit { get; set; }
         public string? Status { get; set; }
         public int? SubJournalId { get; set; }
+        public int? FundsTypeId { get; set; }
+        public string? Description { get; set; }
+
     }
 }

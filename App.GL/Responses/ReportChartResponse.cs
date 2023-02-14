@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.GL.Responses
+namespace App.Acc.GL.Responses
 {
     public class ReportChartResponse
     {

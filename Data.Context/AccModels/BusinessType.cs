@@ -7,6 +7,6 @@ namespace narit_acc_api.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public string? EngName { get; set; }
+        public int ContactTypeId { get; set; }
     }
 }

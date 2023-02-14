@@ -20,9 +20,14 @@ namespace narit_acc_api.Models
         public int? Debit { get; set; }
         public string? Status { get; set; }
         public int? SubJournalId { get; set; }
+        public string? Description { get; set; }
+        public int? SubAnnualBudgetId { get; set; }
+        public int? FundsTypeId { get; set; }
 
         public virtual ChartMinor? CreditNavigation { get; set; }
         public virtual ChartMinor? DebitNavigation { get; set; }
+        public virtual FundsType? FundsType { get; set; }
+        public virtual SubAnnualBudget? SubAnnualBudget { get; set; }
         public virtual SubJournal? SubJournal { get; set; }
     }
 }

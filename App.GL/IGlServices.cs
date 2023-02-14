@@ -1,7 +1,7 @@
 ﻿using App.Common.Models.Responses;
-using App.GL.DTO;
-using App.GL.Requests;
-using App.GL.Responses;
+using App.Acc.GL.DTO;
+using App.Acc.GL.Requests;
+using App.Acc.GL.Responses;
 using narit_acc_api.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.GL
+namespace App.Acc.GL
 {
     public interface IGlServices
     {
@@ -81,6 +81,9 @@ namespace App.GL
         CommonBaseResponse AddCreditor(CreditorRequest request);
         CommonBaseResponse EditCreditor(CreditorRequest request);
         CommonBaseResponse DeleteCreditorId(int Id);
+
+        //FundsType
+        List<FundsType> GetFundsType();
 
         //Transection
         List<TransectionResponse> GetTransection();

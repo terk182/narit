@@ -12,6 +12,8 @@ namespace App.Common.Models.Responses
         public string? Errors { get; set; }
         public string? Messsage { get; set; }
 
+        public object? Data { get; set; }
+
 
     }
 }
