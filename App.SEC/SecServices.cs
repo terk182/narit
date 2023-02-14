@@ -38,6 +38,11 @@ namespace App.SEC
             List<RequestBudget> response = _database.RequestBudgets.OrderByDescending(x => x.WriteDate).Take(10).ToList();
             return response;
         }
+        public RequestBudget GetRequestBudgetById(int id)
+        {
+            RequestBudget response = _database.RequestBudgets.Where(x => x.id == id).FirstOrDefault();
+            return response;
+        }
         public RequestBudget GetRequestBudgetByDocNo (string docNo)
         {
             RequestBudget response = _database.RequestBudgets.Where(x => x.DocNo == docNo).FirstOrDefault();

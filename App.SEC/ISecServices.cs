@@ -21,6 +21,7 @@ namespace App.SEC
 
         List<RequestFormCommentStatus> GetRequestFormCommentStatus();
         List<RequestBudget> GetRequestBudget();
+        RequestBudget GetRequestBudgetById(int id);
         RequestBudget GetRequestBudgetByDocNo(string docNo);
         RequestBudget CreateRequestBudget(RequestBudgetRequests request);
         SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request);
