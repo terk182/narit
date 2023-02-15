@@ -23,7 +23,7 @@ namespace App.SEC.Requests
         public DateTime? CalculationDate { get; set; }
         public string? StatmentName { get; set; }
         public string? RelatedRegulation { get; set; }
-        public int? CreateByStaffId { get; set; }
+        public string? CreateByStaffId { get; set; }
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
@@ -31,6 +31,7 @@ namespace App.SEC.Requests
         public string? Procurement { get; set; }
         public int? InspectorId { get; set; }
         public string? InspectorName { get; set; }
+        public string? ProcurementByStaff { get; set; }
     }
     public class RequestFormRequests
     {
@@ -82,7 +83,7 @@ namespace App.SEC.Requests
         public bool? Active { get; set; }
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
         public bool? StatusApprove { get; set; }
         public DateTime? DatetimeApprove { get; set; }

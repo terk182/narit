@@ -28,7 +28,7 @@ namespace narit_mis_api.Models
         public DateTime? CalculationDate { get; set; }
         public string? StatmentName { get; set; }
         public string? RelatedRegulation { get; set; }
-        public int? CreateByStaffId { get; set; }
+        public string? CreateByStaffId { get; set; }
         public string? FilePath { get; set; }
         public int? DepartmentId { get; set; }
         public decimal? TotalBudget { get; set; }
@@ -36,6 +36,7 @@ namespace narit_mis_api.Models
         public string? Procurement { get; set; }
         public int? InspectorId { get; set; }
         public string? InspectorName { get; set; }
+        public string? ProcurementByStaff { get; set; }
 
         public virtual ICollection<RequestFormBorrowingMoney> RequestFormBorrowingMoneys { get; set; }
         public virtual ICollection<RequestFormComment> RequestFormComments { get; set; }

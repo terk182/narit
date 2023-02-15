@@ -40,7 +40,7 @@ namespace App.SEC
         }
         public RequestBudget GetRequestBudgetById(int id)
         {
-            RequestBudget response = _database.RequestBudgets.Where(x => x.id == id).FirstOrDefault();
+            RequestBudget response = _database.RequestBudgets.Where(x => x.Id == id).FirstOrDefault();
             return response;
         }
         public RequestBudget GetRequestBudgetByDocNo (string docNo)
@@ -78,6 +78,8 @@ namespace App.SEC
                 response.Procurement = request.Procurement;
                 response.InspectorId = request.InspectorId;
                 response.InspectorName = request.InspectorName;
+                response.ProcurementByStaff = request.ProcurementByStaff;
+
 
                 _database.Entry(response).State = EntityState.Added;
                 var result = _database.SaveChanges();
@@ -112,6 +114,7 @@ namespace App.SEC
                 response.Procurement = request.Procurement;
                 response.InspectorId = request.InspectorId;
                 response.InspectorName = request.InspectorName;
+                response.ProcurementByStaff = request.ProcurementByStaff;
 
                 _database.Entry(findResult).State = EntityState.Modified;
                 var result = _database.SaveChanges();

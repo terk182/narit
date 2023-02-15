@@ -230,7 +230,9 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.CalculationDate).HasColumnType("datetime");
 
-                entity.Property(e => e.CreateByStaffId).HasColumnName("CreateByStaffID");
+                entity.Property(e => e.CreateByStaffId)
+                    .IsUnicode(false)
+                    .HasColumnName("CreateByStaffID");
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
@@ -256,6 +258,8 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Procurement).IsUnicode(false);
 
+                entity.Property(e => e.ProcurementByStaff).IsUnicode(false);
+
                 entity.Property(e => e.RelatedRegulation).IsUnicode(false);
 
                 entity.Property(e => e.StatmentName).IsUnicode(false);
@@ -267,18 +271,9 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<RequestForm>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.DocNo })
-                    .HasName("PK_RequestFrom");
-
                 entity.ToTable("RequestForm");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID");
-
-                entity.Property(e => e.DocNo)
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
@@ -289,6 +284,10 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.DateTime).HasColumnType("datetime");
 
                 entity.Property(e => e.Descriptions).IsUnicode(false);
+
+                entity.Property(e => e.DocNo)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.EndDepartureDate).HasColumnType("datetime");
 
@@ -351,7 +350,9 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.RequestFormId).HasColumnName("RequestFormID");
 
-                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+                entity.Property(e => e.StaffId)
+                    .IsUnicode(false)
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.StaffName).IsUnicode(false);
 
@@ -359,9 +360,9 @@ namespace narit_mis_api.Models
 
                 entity.HasOne(d => d.RequestForm)
                     .WithMany(p => p.RequestFormApproves)
-                    .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .HasForeignKey(d => d.RequestFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_RequestFormApprove_RequestFormApprove");
+                    .HasConstraintName("FK_RequestFormApprove_RequestForm");
             });
 
             modelBuilder.Entity<RequestFormBorrowingMoney>(entity =>
@@ -547,7 +548,7 @@ namespace narit_mis_api.Models
 
                 entity.HasOne(d => d.RequestForm)
                     .WithMany(p => p.RequestFormItems)
-                    .HasForeignKey(d => new { d.RequestFormId, d.DocNo })
+                    .HasForeignKey(d => d.RequestFormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestFormItem_RequestForm");
             });
