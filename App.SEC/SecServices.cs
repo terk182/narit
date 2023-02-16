@@ -48,11 +48,12 @@ namespace App.SEC
             RequestBudget response = _database.RequestBudgets.Where(x => x.DocNo == docNo).FirstOrDefault();
             return response;
         }
-        public RequestBudget CreateRequestBudget(RequestBudgetRequests request)
+        public SecBaseResponse CreateRequestBudget(RequestBudgetRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
             RequestBudget response = new RequestBudget();
-            RequestBudget findResult = _database.RequestBudgets.Where(x => x.DocNo == request.DocNo).FirstOrDefault();
-            if(findResult == null)
+
+            if(request.Id == 0)
             {
                 response.Active = true;
                 response.DocNo = request.DocNo;
@@ -79,18 +80,19 @@ namespace App.SEC
                 response.InspectorId = request.InspectorId;
                 response.InspectorName = request.InspectorName;
                 response.ProcurementByStaff = request.ProcurementByStaff;
-
-
                 _database.Entry(response).State = EntityState.Added;
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
-
-            if (findResult.Id != 0 && findResult.Id != null)
+            else
             {
+                RequestBudget findResult = _database.RequestBudgets.Where(x => x.Id == request.Id && x.DocNo == request.DocNo).FirstOrDefault();
                 findResult.Active = request.Active;
                 findResult.DocNo = request.DocNo;
                 findResult.DocYear = request.DocYear;
@@ -110,21 +112,27 @@ namespace App.SEC
                 findResult.DepartmentId = request.DepartmentId;
                 findResult.TotalBudget = request.TotalBudget;
 
-                response.AnotherAction = request.AnotherAction;
-                response.Procurement = request.Procurement;
-                response.InspectorId = request.InspectorId;
-                response.InspectorName = request.InspectorName;
-                response.ProcurementByStaff = request.ProcurementByStaff;
+                findResult.AnotherAction = request.AnotherAction;
+                findResult.Procurement = request.Procurement;
+                findResult.InspectorId = request.InspectorId;
+                findResult.InspectorName = request.InspectorName;
+                findResult.ProcurementByStaff = request.ProcurementByStaff;
 
                 _database.Entry(findResult).State = EntityState.Modified;
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = findResult;
+                    return res;
                 }
             }
-            return response;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
+
         public SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request)
         {
             SecBaseResponse response = new SecBaseResponse();
@@ -396,13 +404,14 @@ namespace App.SEC
             List<RequestForm> response = _database.RequestForms.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
-        public RequestForm CreateRequestFormByDocNo(RequestFormRequests request)
+        public SecBaseResponse CreateRequestFormByDocNo(RequestFormRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
             RequestForm requestForm = new RequestForm();
             if (request.RequestBudgetId == 0) 
-                return requestForm;
+                return res;
             if (request.DocNo == null)
-                return requestForm;
+                return res;
 
             if (request.Id == 0)
             {
@@ -431,12 +440,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return requestForm;
+                    res.Success = true;
+                    res.Messsage = "Create Success";
+                    res.data = requestForm;
+                    return res;
                 }
             }
             else
             {
-                RequestForm getResult = _database.RequestForms.Where(x=>x.Id== request.Id 
+                RequestForm getResult = _database.RequestForms.Where(x=>x.Id == request.Id 
                 && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
 
                 getResult.Active = request.Active;
@@ -463,11 +475,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = getResult;
+                    return res;
                 }
-
             }
-            return requestForm;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormById(int id)
         {
@@ -502,13 +518,14 @@ namespace App.SEC
             List<RequestFormItem> response = _database.RequestFormItems.Where(x => x.RequestFormId == requestFormId && x.Active == true).ToList();
             return response;
         }
-        public RequestFormItem CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request)
+        public SecBaseResponse CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request)
         {
+            SecBaseResponse res =new SecBaseResponse();
             RequestFormItem response = new RequestFormItem();
             if (request.RequestFormId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -526,7 +543,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Create Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -548,11 +568,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = getResult;
+                    return res;
                 }
-
             }
-            return response;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormItemsById(int id)
         {
@@ -584,13 +608,14 @@ namespace App.SEC
             List<RequestFormApprove> response = _database.RequestFormApproves.Where(x => x.RequestFormId == requestFormId && x.Active == true).ToList();
             return response;
         }
-        public RequestFormApprove CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request)
+        public SecBaseResponse CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
             RequestFormApprove response = new RequestFormApprove();
             if (request.RequestFormId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -606,7 +631,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -625,11 +653,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = getResult;
+                    return res;
                 }
-
             }
-            return response;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormApproveById(int id)
         {
@@ -661,13 +693,14 @@ namespace App.SEC
             List<RequestFormComment> response = _database.RequestFormComments.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
-        public RequestFormComment CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
+        public SecBaseResponse CreateRequestFormCommentByDocNo(RequestFormCommentRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
             RequestFormComment response = new RequestFormComment();
             if (request.RequestBudgetId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -684,7 +717,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -704,11 +740,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = false;
+                    res.Messsage = "Edit Success";
+                    res.data = getResult;
+                    return res;
                 }
-
             }
-            return response;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormCommentById(int id)
         {
@@ -740,13 +780,14 @@ namespace App.SEC
             List<RequestFormBorrowingMoney> response = _database.RequestFormBorrowingMoneys.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
-        public RequestFormBorrowingMoney CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request)
+        public SecBaseResponse CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request)
         {
+            SecBaseResponse res =new SecBaseResponse ();
             RequestFormBorrowingMoney response = new RequestFormBorrowingMoney();
             if (request.RequestBudgetId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -761,7 +802,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -779,12 +823,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = getResult;
+                    return res;
                 }
-
             }
-            return response;
-
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormBorrowingMoneyById(int id)
         {
@@ -817,13 +864,15 @@ namespace App.SEC
             List<RequestFormSchedule> response = _database.RequestFormSchedules.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
-        public RequestFormSchedule CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request)
+        public SecBaseResponse CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
+
             RequestFormSchedule response = new RequestFormSchedule();
             if (request.RequestBudgetId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -841,7 +890,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -861,10 +913,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
-            return response;
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormScheduleById(int id)
         {
@@ -895,13 +952,15 @@ namespace App.SEC
             List<RequestFormExaminerForBudget> response = _database.RequestFormExaminerForBudgets.Where(x => x.DocNo == docNo && x.Active == true).ToList();
             return response;
         }
-        public RequestFormExaminerForBudget CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)
+        public SecBaseResponse CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request)
         {
+            SecBaseResponse res = new SecBaseResponse();
+
             RequestFormExaminerForBudget response = new RequestFormExaminerForBudget();
             if (request.RequestBudgetId == 0)
-                return response;
+                return res;
             if (request.DocNo == null)
-                return response;
+                return res;
 
             if (request.Id == 0)
             {
@@ -920,7 +979,10 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return response;
+                    res.Success = true;
+                    res.Messsage = "Save Success";
+                    res.data = response;
+                    return res;
                 }
             }
             else
@@ -942,11 +1004,15 @@ namespace App.SEC
                 var result = _database.SaveChanges();
                 if (result > 0)
                 {
-                    return getResult;
+                    res.Success = true;
+                    res.Messsage = "Edit Success";
+                    res.data = response;
+                    return res;
                 }
             }
-            return response;
-
+            res.Success = false;
+            res.Messsage = "Cannot Save and Edit Result.";
+            return res;
         }
         public SecBaseResponse DeleteRequestFormExaminerForBudgetById(int id)
         {

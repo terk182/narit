@@ -23,40 +23,40 @@ namespace App.SEC
         List<RequestBudget> GetRequestBudget();
         RequestBudget GetRequestBudgetById(int id);
         RequestBudget GetRequestBudgetByDocNo(string docNo);
-        RequestBudget CreateRequestBudget(RequestBudgetRequests request);
+        SecBaseResponse CreateRequestBudget(RequestBudgetRequests request);
         SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request);
         SecBaseResponse DeleteRequestBudgetByDocNo(string docNo);
 
         //List<RequestForm> GetRequestForm();
         List<RequestForm> GetRequestFormByDocNo(string docNo);
-        RequestForm CreateRequestFormByDocNo(RequestFormRequests request);
+        SecBaseResponse CreateRequestFormByDocNo(RequestFormRequests request);
         SecBaseResponse DeleteRequestFormById(int id);
 
         List<RequestFormItem> GetRequestFormItemsByRequestFormId(int requestFormId);
-        RequestFormItem CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request);
+        SecBaseResponse CreateRequestFormItemsByRequestFormId(RequestFormItemsRequests request);
         SecBaseResponse DeleteRequestFormItemsById(int id);
 
         List<RequestFormApprove> GetRequestFormApproveByRequestFormId(int requestFormId);
-        RequestFormApprove CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request);
+        SecBaseResponse CreateRequestFormApproveByRequestFormId(RequestFormApproveRequests request);
         SecBaseResponse DeleteRequestFormApproveById(int id);
 
         List<RequestFormComment> GetRequestFormCommentByDocNo(string docNo);
-        RequestFormComment CreateRequestFormCommentByDocNo(RequestFormCommentRequests request);
+        SecBaseResponse CreateRequestFormCommentByDocNo(RequestFormCommentRequests request);
         SecBaseResponse DeleteRequestFormCommentById(int id);
 
 
         List<RequestFormBorrowingMoney> GetRequestFormBorrowingMoneyByDocNo(string docNo);
-        RequestFormBorrowingMoney CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request);
+        SecBaseResponse CreateRequestFormBorrowingMoneyByDocNo(RequestFormBorrowingMoneyRequests request);
         SecBaseResponse DeleteRequestFormBorrowingMoneyById(int id);
 
 
         List<RequestFormSchedule> GetRequestFormScheduleByDocNo(string docNo);
-        RequestFormSchedule CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request);
+        SecBaseResponse CreateRequestFormScheduleByDocNo(RequestFormScheduleRequests request);
         SecBaseResponse DeleteRequestFormScheduleById(int id);
 
 
         List<RequestFormExaminerForBudget> GetRequestFormExaminerForBudgetByDocNo(string docNo);
-        RequestFormExaminerForBudget CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request);
+        SecBaseResponse CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request);
         SecBaseResponse DeleteRequestFormExaminerForBudgetById(int id);
 
     }

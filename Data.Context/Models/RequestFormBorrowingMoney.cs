@@ -9,7 +9,7 @@ namespace narit_mis_api.Models
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public DateTime? DateTime { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
         public decimal? RequestLoan { get; set; }
         public bool? Active { get; set; }

@@ -15,8 +15,8 @@ namespace narit_mis_api.Models
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public int? BudgetTypeId { get; set; }
-        public int? ProjectId { get; set; }
-        public int? ProjectActivityId { get; set; }
+        public string? ProjectId { get; set; }
+        public string? ProjectActivityId { get; set; }
         public bool? Active { get; set; }
         public string? Name { get; set; }
         public string? Descriptions { get; set; }

@@ -39,8 +39,8 @@ namespace App.SEC.Requests
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public int? BudgetTypeId { get; set; }
-        public int? ProjectId { get; set; }
-        public int? ProjectActivityId { get; set; }
+        public string? ProjectId { get; set; }
+        public string? ProjectActivityId { get; set; }
         public bool? Active { get; set; }
         public string? Name { get; set; }
         public string? Descriptions { get; set; }
@@ -95,7 +95,7 @@ namespace App.SEC.Requests
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public DateTime? DateTime { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
         public string? Comment { get; set; }
         public string? Descriptions { get; set; }
@@ -108,7 +108,7 @@ namespace App.SEC.Requests
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
         public DateTime? DateTime { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
         public decimal? RequestLoan { get; set; }
         public bool? Active { get; set; }
@@ -126,7 +126,7 @@ namespace App.SEC.Requests
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
         public int? RebudgetId { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
     }
     public class RequestFormScheduleRequests

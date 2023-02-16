@@ -307,9 +307,13 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Place).IsUnicode(false);
 
-                entity.Property(e => e.ProjectActivityId).HasColumnName("ProjectActivityID");
+                entity.Property(e => e.ProjectActivityId)
+                    .IsUnicode(false)
+                    .HasColumnName("ProjectActivityID");
 
-                entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+                entity.Property(e => e.ProjectId)
+                    .IsUnicode(false)
+                    .HasColumnName("ProjectID");
 
                 entity.Property(e => e.Remark).IsUnicode(false);
 
@@ -383,7 +387,9 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.RequestLoan).HasColumnType("decimal(10, 2)");
 
-                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+                entity.Property(e => e.StaffId)
+                    .IsUnicode(false)
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.StaffName).IsUnicode(false);
 
@@ -423,7 +429,9 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.RequestBudgetId).HasColumnName("RequestBudgetID");
 
-                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+                entity.Property(e => e.StaffId)
+                    .IsUnicode(false)
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.StaffName).IsUnicode(false);
 
@@ -507,7 +515,9 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.RequestBudgetId).HasColumnName("RequestBudgetID");
 
-                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+                entity.Property(e => e.StaffId)
+                    .IsUnicode(false)
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.StaffName).IsUnicode(false);
 

@@ -15,7 +15,7 @@ namespace narit_mis_api.Models
         public int? JobPositionId { get; set; }
         public int? DepartmentId { get; set; }
         public int? RebudgetId { get; set; }
-        public int? StaffId { get; set; }
+        public string? StaffId { get; set; }
         public string? StaffName { get; set; }
 
         public virtual RequestBudget RequestBudget { get; set; } = null!;
