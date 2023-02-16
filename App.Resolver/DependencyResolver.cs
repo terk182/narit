@@ -1,4 +1,5 @@
 ﻿using App.Common;
+using App.EDU;
 using App.PathDetail;
 using App.SEC;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,13 +14,8 @@ namespace App.Resolver
             //---------MIS-------------------------
             services.AddScoped<IPathDetailService, PathDetailService>(); 
             services.AddScoped<ISecServices, SecServices>(); 
-            services.AddScoped<ICommonServices, CommonServices>();
-
-
-      
-
-
-            
+            services.AddScoped<ICommonServices, CommonServices>();  
+            services.AddScoped<IEDUServices, EDUServices>();
             return services;
         }
     }
