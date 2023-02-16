@@ -4150,6 +4150,8 @@ namespace narit_mis_api.Models
             {
                 entity.ToTable("IndicatorsStrategyForProjectActivity", "Plan");
 
+                entity.Property(e => e.Detail).HasColumnType("text");
+
                 entity.Property(e => e.IndicatorStrategyId).HasColumnName("IndicatorStrategy_Id");
 
                 entity.Property(e => e.ProjectActivityId).HasColumnName("ProjectActivity_Id");

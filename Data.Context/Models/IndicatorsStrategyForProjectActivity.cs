@@ -10,5 +10,6 @@ namespace narit_mis_api.Models
         public int StrategyId { get; set; }
         public int IndicatorStrategyId { get; set; }
         public bool Active { get; set; }
+        public string Detail { get; set; } = null!;
     }
 }

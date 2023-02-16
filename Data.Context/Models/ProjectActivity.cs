@@ -12,5 +12,6 @@ namespace narit_mis_api.Models
         public int ProjectId { get; set; }
         public bool Active { get; set; }
         public int ProjectStatus { get; set; }
+        public double? Weight { get; set; }
     }
 }

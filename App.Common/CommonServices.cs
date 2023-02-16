@@ -182,17 +182,17 @@ namespace App.Common
             var list1 = new List<PlanTypeCommonDto>();
             var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
             var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
-            foreach (var item in data)
+            foreach (var item in data)//ตัวแม่ 
             {
-                var list2 = new List<PlanTypeCommonDto>();
-                foreach (var s in PlanTypes)
+                var list2 = new List<PlanTypeCommonDto>();//ประกาศตัวแปร
+                foreach (var s in PlanTypes)//วนหาลูก
                 {
-                    if (s.ParentPlanTypeId == item.Id)
+                    if (s.ParentPlanTypeId == item.Id)//วนลูกเพื่อหาแม่
                     {
                         var list3 = new List<PlanTypeCommonDto>();
-                        foreach (var s1 in PlanTypes)
+                        foreach (var s1 in PlanTypes)//วนหาหลาน
                         {
-                            if (s1.ParentPlanTypeId == s.Id)
+                            if (s1.ParentPlanTypeId == s.Id)//วนหลานหาลูก
                             {
                                 list3.Add(new PlanTypeCommonDto
                                 {
@@ -206,7 +206,6 @@ namespace App.Common
                                     // PrinciplePlanTag { get; set; }
                                 });
                             }
-
                         }
                         list2.Add(new PlanTypeCommonDto
                         {
@@ -232,9 +231,6 @@ namespace App.Common
                     Weight = item.Weight,
                     ParentPlanType = list2
                 });
-
-
-
             }
 
             return list1;

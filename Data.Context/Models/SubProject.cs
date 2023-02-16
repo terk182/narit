@@ -23,5 +23,6 @@ namespace narit_mis_api.Models
         public DateTime CreateDate { get; set; }
         public int Code { get; set; }
         public bool Active { get; set; }
+        public double? Weight { get; set; }
     }
 }
