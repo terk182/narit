@@ -86,6 +86,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<DeFormActionLog> DeFormActionLogs { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<DepartmentInternalFilingNumber> DepartmentInternalFilingNumbers { get; set; } = null!;
+        public virtual DbSet<DepartmentsGroup> DepartmentsGroups { get; set; } = null!;
         public virtual DbSet<DevelopmentRecord> DevelopmentRecords { get; set; } = null!;
         public virtual DbSet<DevelopmentRecordCancellation> DevelopmentRecordCancellations { get; set; } = null!;
         public virtual DbSet<DevelopmentRecordFollowUpForm> DevelopmentRecordFollowUpForms { get; set; } = null!;
@@ -195,7 +196,9 @@ namespace narit_mis_api.Models
         public virtual DbSet<MedicalRightRequestForm> MedicalRightRequestForms { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<MessageHistory> MessageHistories { get; set; } = null!;
+        public virtual DbSet<MisAccMatching> MisAccMatchings { get; set; } = null!;
         public virtual DbSet<MisGeneralExpenseMemoFormsSignList> MisGeneralExpenseMemoFormsSignLists { get; set; } = null!;
+        public virtual DbSet<MisProcureMatching> MisProcureMatchings { get; set; } = null!;
         public virtual DbSet<MisSsoMatching> MisSsoMatchings { get; set; } = null!;
         public virtual DbSet<Mission> Missions { get; set; } = null!;
         public virtual DbSet<MonthlyForecast> MonthlyForecasts { get; set; } = null!;
@@ -236,6 +239,7 @@ namespace narit_mis_api.Models
         public virtual DbSet<PlanCore> PlanCores { get; set; } = null!;
         public virtual DbSet<PlanCoreActionLog> PlanCoreActionLogs { get; set; } = null!;
         public virtual DbSet<PlanCoreStaffPermission> PlanCoreStaffPermissions { get; set; } = null!;
+        public virtual DbSet<PlanCoresGroup> PlanCoresGroups { get; set; } = null!;
         public virtual DbSet<PlanCrudpolicy> PlanCrudpolicies { get; set; } = null!;
         public virtual DbSet<PlanDepartmentStaffPermission> PlanDepartmentStaffPermissions { get; set; } = null!;
         public virtual DbSet<PlanFile> PlanFiles { get; set; } = null!;
@@ -334,7 +338,9 @@ namespace narit_mis_api.Models
         public virtual DbSet<StaffWorkShiftSpecificHoliday> StaffWorkShiftSpecificHolidays { get; set; } = null!;
         public virtual DbSet<StrategicIndicator> StrategicIndicators { get; set; } = null!;
         public virtual DbSet<StrategicIssue> StrategicIssues { get; set; } = null!;
+        public virtual DbSet<StrategiesBudgetGroup> StrategiesBudgetGroups { get; set; } = null!;
         public virtual DbSet<StrategiesFisicalYear> StrategiesFisicalYears { get; set; } = null!;
+        public virtual DbSet<StrategiesGroup> StrategiesGroups { get; set; } = null!;
         public virtual DbSet<Strategy> Strategies { get; set; } = null!;
         public virtual DbSet<Strategy1> Strategies1 { get; set; } = null!;
         public virtual DbSet<SubAnnualBudget> SubAnnualBudgets { get; set; } = null!;
@@ -372,7 +378,7 @@ namespace narit_mis_api.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=192.168.2.176,49176;Database=NARIT_MIS_LINK;User ID=admin;Password=Aa!12345;Trusted_Connection=false ;");
+                optionsBuilder.UseSqlServer("Server=192.168.2.176,49176;Initial Catalog=NARIT_MIS_LINK;Persist Security Info=True;User ID=admin;Password=Aa!12345");
             }
         }
 
@@ -2341,6 +2347,17 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.HrdepartmentId).HasColumnName("HRDepartmentId");
 
                 entity.Property(e => e.HrdepartmentName).HasColumnName("HRDepartmentName");
+            });
+
+            modelBuilder.Entity<DepartmentsGroup>(entity =>
+            {
+                entity.ToTable("DepartmentsGroup");
+
+                entity.Property(e => e.Seq).HasColumnName("seq");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
             });
 
             modelBuilder.Entity<DevelopmentRecord>(entity =>
@@ -4796,6 +4813,15 @@ namespace narit_mis_api.Models
                     .HasConstraintName("FK_MessageMessageHistory");
             });
 
+            modelBuilder.Entity<MisAccMatching>(entity =>
+            {
+                entity.ToTable("MisAccMatching");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
             modelBuilder.Entity<MisGeneralExpenseMemoFormsSignList>(entity =>
             {
                 entity.ToTable("MisGeneralExpenseMemoFormsSignList", "Plan");
@@ -4805,6 +4831,15 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.ProjectManagerSignDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Seq).HasColumnName("seq");
+            });
+
+            modelBuilder.Entity<MisProcureMatching>(entity =>
+            {
+                entity.ToTable("MisProcureMatching");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
             });
 
             modelBuilder.Entity<MisSsoMatching>(entity =>
@@ -5923,6 +5958,14 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
+                entity.Property(e => e.DurationDateEnd1)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Duration_DateEnd");
+
+                entity.Property(e => e.DurationDateStart1)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Duration_DateStart");
+
                 entity.Property(e => e.FundCategoryEnum).HasDefaultValueSql("((10))");
 
                 entity.Property(e => e.FundSourceEnum).HasDefaultValueSql("((10))");
@@ -5999,6 +6042,17 @@ namespace narit_mis_api.Models
             modelBuilder.Entity<PlanCoreStaffPermission>(entity =>
             {
                 entity.ToTable("PlanCoreStaffPermissions", "Plan");
+            });
+
+            modelBuilder.Entity<PlanCoresGroup>(entity =>
+            {
+                entity.ToTable("PlanCoresGroup");
+
+                entity.Property(e => e.Seq).HasColumnName("seq");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
             });
 
             modelBuilder.Entity<PlanCrudpolicy>(entity =>
@@ -8912,6 +8966,17 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.Startyear).HasColumnName("startyear");
             });
 
+            modelBuilder.Entity<StrategiesBudgetGroup>(entity =>
+            {
+                entity.ToTable("StrategiesBudgetGroup");
+
+                entity.Property(e => e.Seq).HasColumnName("seq");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
             modelBuilder.Entity<StrategiesFisicalYear>(entity =>
             {
                 entity.ToTable("StrategiesFisicalYear", "Plan");
@@ -8919,11 +8984,30 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<StrategiesGroup>(entity =>
+            {
+                entity.ToTable("StrategiesGroup");
+
+                entity.Property(e => e.Seq).HasColumnName("seq");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
             modelBuilder.Entity<Strategy>(entity =>
             {
                 entity.ToTable("Strategies", "Plan");
 
                 entity.HasIndex(e => e.ParentStrategyId, "IX_FK_StrategySubStrategies");
+
+                entity.Property(e => e.Category)
+                    .HasMaxLength(255)
+                    .HasColumnName("category");
+
+                entity.Property(e => e.Type)
+                    .HasMaxLength(50)
+                    .HasColumnName("type");
 
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
 

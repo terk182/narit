@@ -14,5 +14,6 @@ namespace App.SEC.Models.Requests
         public bool Active { get; set; }
         public int? ParentDepartmentId { get; set; }
         public int? ReferenceOldId { get; set; }
+        public int? BudgetLimit { get; set; }
     }
 }

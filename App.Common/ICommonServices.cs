@@ -18,6 +18,9 @@ namespace App.Common
         List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId);
         CommonBaseResponse GeFormActionLog(GeFormActionLogsRequests GeFormActionLog);
         List<GeFormActionLog> GetGeFormActionLog(int GeneralExpenseMemoFormId );
-
+        List<PlanTypeCommonDto> SubGetPlanType(List<PlanType> PlanType, int? ParentStrategyId, int? mainStrategyId);
+        List<RegisterProcureItemTypeDto> GetRegisterProcureItemType();
+        List<CapticalType> GetCapticalType(int fiscalYear);
+        List<FundSource> GetFundSource(int fiscalYear);
     }
 }

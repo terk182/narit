@@ -50,6 +50,8 @@ namespace narit_mis_api.Models
         public int? StrategyId { get; set; }
         public string? DurationDateStart { get; set; }
         public string? DurationDateEnd { get; set; }
+        public DateTime? DurationDateStart1 { get; set; }
+        public DateTime? DurationDateEnd1 { get; set; }
 
         public virtual Department Department { get; set; } = null!;
         public virtual FundType? FundType { get; set; }

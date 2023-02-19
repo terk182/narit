@@ -18,6 +18,8 @@ namespace narit_mis_api.Models
         public DateTime? UpdatedDate { get; set; }
         public int? ParentStrategyId { get; set; }
         public int? ReferenceOldId { get; set; }
+        public string? Type { get; set; }
+        public string? Category { get; set; }
 
         public virtual Strategy? ParentStrategy { get; set; }
         public virtual ICollection<Strategy> InverseParentStrategy { get; set; }

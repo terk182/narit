@@ -10,5 +10,14 @@ namespace App.SEC.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
+        public string? Unit { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal TotalBudgetCache { get; set; }
+
+        public decimal NetBudgetCache { get; set; }
+
+        public decimal UsedBudgetCache { get; set; }
+
+        public decimal RemainBudgetCache { get; set; }
     }
 }

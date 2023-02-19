@@ -43,7 +43,7 @@ namespace App.SEC.Dtos
 
         public List<Budgetmode>? Budgetmode { get; set; }
 
-        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? BudgetDetail { get; set; }
+        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? PlanCoreTotal { get; set; }
     }
 
     public class Team

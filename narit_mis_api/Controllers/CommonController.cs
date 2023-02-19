@@ -109,20 +109,26 @@ namespace narit_mis_api.Controllers
             var data = _CommonServices.GetPlanType(fiscalYear);
             return Json(data);
         }
-
         [HttpGet]
-        [Route("/Common/PlanTypeChildrenDetails/{year}/{ParentPlantypeId}")]
-        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int ParentPlantypeId)
+        [Route("/Common/FundSource/{fiscalYear}")]
+        public IActionResult FundSource(int fiscalYear)
         {
-            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, ParentPlantypeId);
+            var data = _CommonServices.GetFundSource(fiscalYear);
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("/Common/CapticalType/{fiscalYear}")]
+        public IActionResult CapticalType(int fiscalYear)
+        {
+            var data = _CommonServices.GetCapticalType(fiscalYear);
             return Json(data);
         }
 
         [HttpGet]
-        [Route("/Common/PlanTypeDetail/{PlanTypeId}")]
-        public IActionResult PlanTypeDetailGetByPlanTypeid(int PlanTypeId)
+        [Route("/Common/PlanTypeDetails/{year}/{id}")]
+        public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYearandPlanTypeid(int year, int id)
         {
-            var data = _SecServices.PlanTypeDetailGetByPlanTypeid(PlanTypeId);
+            var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
             return Json(data);
         }
 
@@ -171,6 +177,14 @@ namespace narit_mis_api.Controllers
             var data = _CommonServices.GetGeFormActionLog(GeneralExpenseMemoFormsId);
             return Json(data);
         }
+        [HttpGet]
+        [Route("/Common/GetRegisterProcureItemType")]
+        public IActionResult GetRegisterProcureItemType()
+        {
+            var data = _CommonServices.GetRegisterProcureItemType();
+            return Json(data);
+        }
+        
 
     }
 }

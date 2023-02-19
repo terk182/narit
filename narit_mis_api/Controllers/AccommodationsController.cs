@@ -50,25 +50,25 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
-        //[HttpPost]
-        //[Route("create")]
-        //public IActionResult create(Accommodation Request)
-        //{
+        [HttpPost]
+        [Route("create")]
+        public IActionResult create(Accommodation Request)
+        {
 
-        //    var data = _Service.Add(Request);
+            var data = _Service.Add(Request);
 
-        //    return Json(data);
-        //}
+            return Json(data);
+        }
 
-        //[HttpPut]
+        [HttpPut]
 
-        //public IActionResult updateAccommodations(Accommodation Request)
-        //{
-        //    _Logger.LogInformation("test Logger");
-        //    var data = _Service.update(Request);
+        public IActionResult updateAccommodations(Accommodation Request)
+        {
+            _Logger.LogInformation("test Logger");
+            var data = _Service.update(Request);
 
-        //    return Json(data);
-        //}
+            return Json(data);
+        }
 
         [HttpDelete]
         [Route("{Id}")]

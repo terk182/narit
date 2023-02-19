@@ -19,6 +19,12 @@ namespace App.PathDetail
         List<MisSsoMatching> GetMisSsoMatching(MisSsoMatching request);
         List<MisSsoMatching> search(MisUsers request);
         List<StaffSecurityDto> searchStaff(MisUsers request);
+
+        CommonBaseResponse SetMisAccMatching(List<MisAccMatching> request);
+        List<MisAccMatching> GetMisAccMatching(MisAccMatching request);
+
+        CommonBaseResponse SetMisProcureItemMatching(List<MisProcureMatching> request);
+        List<MisProcureMatching> GetMisProcureItemMatching(MisProcureMatching request);
     }
     
 }

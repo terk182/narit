@@ -10,7 +10,6 @@ using App.SEC.Responses;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Storage;
 using narit_mis_api.Models;
 using System;
 using System.Collections;
@@ -56,6 +55,7 @@ namespace App.SEC
 
         public List<ScheduleFisicalYear> GetScheduleFisicalYear()
         {
+
             return _database.ScheduleFisicalYears.ToList();
         }
         public List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year)
@@ -137,55 +137,111 @@ namespace App.SEC
             var strategy = new List<StrategySetupDto>();
             var strategy_Parent = new List<StrategySetupDto>();
             var result = _database.Strategies.Where(x => x.FiscalYear == FiscalYear && x.Active).ToList();
-            foreach (var item in result)
+
+            var result_null = result.Where(x => x.ParentStrategyId == null).ToList();
+
+
+
+            foreach (var s1 in result_null)
             {
-                // department.Id = item.ParentDepartment;
-                //if (item.ParentStrategyId != null)
-                //{
-                foreach (var sub_strategy in item.InverseParentStrategy)
+                strategy_Parent.Add(new StrategySetupDto
                 {
+                    Id = s1.Id,
+                    Name = s1.Name,
+                    FiscalYear = s1.FiscalYear,
+                    Active = s1.Active,
+                    ParentStrategyId = s1.ParentStrategyId,
+                    Type = s1.Type,
+                    Category = s1.Category,
+                    Strategy = sub_strategy(result, s1.Id, s1.Id)
+                }); 
+
+            }
 
 
-                    foreach (var sub1_strategy in sub_strategy.InverseParentStrategy)
-                    {
-                        strategy_Parent.Add(new StrategySetupDto
-                        {
-                            Id = sub1_strategy.Id,
-                            Name = sub1_strategy.Name,
-                            FiscalYear = sub1_strategy.FiscalYear,
-                            Active = sub1_strategy.Active,
-                            ParentStrategyId = sub1_strategy.ParentStrategyId
-                        });
-                    }
+          
 
 
-                    strategy.Add(new StrategySetupDto
-                    {
-                        Id = sub_strategy.Id,
-                        Name = sub_strategy.Name,
-                        FiscalYear = sub_strategy.FiscalYear,
-                        Active = sub_strategy.Active,
-                        ParentStrategyId = sub_strategy.ParentStrategyId,
-                        Strategy = strategy_Parent,
-                    }
-                    );
 
-                }
-                //}
-                response.Add(new StrategySetupDto
+
+            //foreach (var item in result)
+            //{
+            //    // department.Id = item.ParentDepartment;
+            //    //if (item.ParentStrategyId != null)
+            //    //{
+            //    foreach (var sub_strateg in item.InverseParentStrategy)
+            //    {
+
+
+            //        foreach (var sub1_strategy in sub_strateg.InverseParentStrategy)
+            //        {
+            //            strategy_Parent.Add(new StrategySetupDto
+            //            {
+            //                Id = sub1_strategy.Id,
+            //                Name = sub1_strategy.Name,
+            //                FiscalYear = sub1_strategy.FiscalYear,
+            //                Active = sub1_strategy.Active,
+            //                ParentStrategyId = sub1_strategy.ParentStrategyId,
+
+            //                Strategy = sub_strategy(result, sub1_strategy.ParentStrategyId, sub_strateg.Id)
+            //            }); ;
+            //        }
+
+
+            //        strategy.Add(new StrategySetupDto
+            //        {
+            //            Id = sub_strateg.Id,
+            //            Name = sub_strateg.Name,
+            //            FiscalYear = sub_strateg.FiscalYear,
+            //            Active = sub_strateg.Active,
+            //            ParentStrategyId = sub_strateg.ParentStrategyId,
+            //            Strategy = strategy_Parent,
+            //        }
+            //        );
+
+            //    }
+            //    //}
+            //    response.Add(new StrategySetupDto
+            //    {
+            //        Id = item.Id,
+            //        Name = item.Name,
+            //        FiscalYear = item.FiscalYear,
+            //        Active = item.Active,
+            //        ParentStrategyId = item.ParentStrategyId,
+            //        Strategy = strategy
+            //    });
+
+            // }
+            return strategy_Parent;
+        }
+        public List<StrategySetupDto> TryGetStrategyAddIndicator(int fiscalYear)
+        {
+            var response = new List<StrategySetupDto>();
+            var strategy = new List<StrategySetupDto>();
+            var strategy_Parent = new List<StrategySetupDto>();
+            var result = _database.Strategies.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
+
+            var result_null = result.Where(x => x.ParentStrategyId == null).ToList();
+
+
+
+            foreach (var s1 in result_null)
+            {
+                strategy_Parent.Add(new StrategySetupDto
                 {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentStrategyId = item.ParentStrategyId,
-                    Strategy = strategy
+                    Id = s1.Id,
+                    Name = s1.Name,
+                    FiscalYear = s1.FiscalYear,
+                    Active = s1.Active,
+                    ParentStrategyId = s1.ParentStrategyId,
+                    Type = s1.Type,
+                    Strategy = sub_strategyAddIndicator(result, s1.Id, s1.Id)
                 });
 
             }
-            return response;
-        }
+            return strategy_Parent;
 
+        }
         public List<DepartmentRespone> DepartmentListGetByFiscalYear(int FiscalYear)
         {
             var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear && x.Active);
@@ -256,6 +312,7 @@ namespace App.SEC
             _Department.Name = request.Name;
             _Department.FiscalYear = request.FiscalYear;
             _Department.Active = request.Active;
+            _Department.BudgetLimit = request.BudgetLimit;
 
             if (request.ParentDepartmentId != 0)
             {
@@ -324,12 +381,13 @@ namespace App.SEC
             _Mission.Name = request.Name;
             _Mission.FiscalYear = request.FiscalYear;
             _Mission.Active = request.Active;
-
-            //if (request.ParentFundTypeId != 0)
-            //{
-            //    _FundType.ParentFundTypeId = request.ParentFundTypeId;
-            //}
-            _database.Entry(_Mission).State = _Mission.Id == 0 ?
+            _Mission.CapticalTypeId = request.CapticalTypeId;
+            _Mission.FundSourceId = request.FundSourceId;
+        //if (request.ParentFundTypeId != 0)
+        //{
+        //    _FundType.ParentFundTypeId = request.ParentFundTypeId;
+        //}
+        _database.Entry(_Mission).State = _Mission.Id == 0 ?
                                       EntityState.Added :
                                       EntityState.Modified;
 
@@ -366,16 +424,19 @@ namespace App.SEC
         public List<FundTypeRespone> FundTypeSetupByFiscalYear(int FiscalYear)
         {
             var _result = new List<FundTypeRespone>();
-            var data = _database.FundTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
-            foreach (var item in data)
+            var _FundTypes = _database.FundTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var _FundTypesMain = _FundTypes.Where(x => x.ParentFundTypeId == null).ToList();
+            foreach (var item in _FundTypesMain)
             {
                 _result.Add(new FundTypeRespone
                 {
                     Id = item.Id,
                     Name = item.Name,
+                    FiscalYear = item.FiscalYear,
                     Active = item.Active,
+                    ReferenceOldId = item.ReferenceOldId,
                     ParentFundTypeId = item.ParentFundTypeId,
-                    ReferenceOldId = item.ReferenceOldId
+                    fundTypeRespone = sub_FundTypes(_FundTypes, item.Id, item.Id),
                 });
             }
             return _result;
@@ -384,18 +445,21 @@ namespace App.SEC
         {
             var _result = new List<FundSourceResponse>();
             var data = _database.FundSources.Where(x => x.FiscalYear == FiscalYear).ToList();
-            foreach (var item in data)
+            var _FundFundSource = data.Where(x => x.ParentFundSourceId == null).ToList();
+            foreach (var item in _FundFundSource)
             {
                 _result.Add(new FundSourceResponse
                 {
                     Id = item.Id,
                     Name = item.Name,
                     Active = item.Active,
-                    FiscalYear= item.FiscalYear,
+                    FiscalYear = item.FiscalYear,
                     ReferenceOldId = item.ReferenceOldId,
-                    ParentFundSourceId = item.ParentFundSourceId
+                    ParentFundSourceId = item.ParentFundSourceId,
+                    ParentFundSource = sub_FundSourceSetupByFiscalYear(data, item.Id, item.Id)
 
-                });
+
+                }); ;
             }
             return _result;
         }
@@ -416,9 +480,29 @@ namespace App.SEC
             }
             return _result;
         }
-        public List<BudgetType> GetByFiscalYear(int FiscalYear)
+        public List<BudgetTypeData> GetByFiscalYear(int FiscalYear)
         {
-            return _database.BudgetTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var _result = new List<BudgetTypeData>();
+            var data = _database.BudgetTypes.Where(x => x.FiscalYear == FiscalYear).ToList();
+            var _FundTypesMain = data.Where(x => x.ParentBudgetTypeId == null).ToList();
+            foreach (var item in _FundTypesMain)
+            {
+                _result.Add(new BudgetTypeData
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Active = item.Active,
+                    FiscalYear = item.FiscalYear,
+                    ParentBudgetTypeId = item.ParentBudgetTypeId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    ExpenseTypeEnum = item.ExpenseTypeEnum,
+                    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+                    FundSourceId = item.FundSourceId,
+                    BudgetType = sub_BudgetType(data, item.Id, item.Id)
+
+                }); ; 
+            }
+            return _result;
 
         }
 
@@ -699,6 +783,8 @@ namespace App.SEC
             _Strategy.Name = request.Name;
             _Strategy.Active = request.Active;
             _Strategy.FiscalYear = (int)request.FiscalYear;
+            _Strategy.Type = request.Type;
+            _Strategy.Category = request.Category;
             if (request.ParentStrategyId != 0)
             {
                 _Strategy.ParentStrategyId = request.ParentStrategyId;
@@ -717,32 +803,32 @@ namespace App.SEC
             response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
             return response;
         }
-        public SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request)
-        {
+        //public SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request)
+        //{
 
-            var _Strategy = new StrategiesFisicalYear();
-            _Strategy.Id = (int)request.Id;
-            _Strategy.Name = request.Name;
-            _Strategy.Active = request.Active;
-            _Strategy.FiscalYear = (int)request.FiscalYear;
-            if (request.ParentStrategyBudgetId != 0)
-            {
-                _Strategy.ParentStrategyBudgetId = request.ParentStrategyBudgetId;
-            }
-
-
-
-            _database.Entry(_Strategy).State = _Strategy.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
+        //    var _Strategy = new StrategiesBudget();
+        //    _Strategy.Id = (int)request.Id;
+        //    _Strategy.Name = request.Name;
+        //    _Strategy.Active = request.Active;
+        //    _Strategy.FiscalYear = (int)request.FiscalYear;
+        //    if (request.ParentStrategyBudgetId != 0)
+        //    {
+        //        _Strategy.ParentStrategyBudgetId = request.ParentStrategyBudgetId;
+        //    }
 
 
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
-            return response;
-        }
+
+        //    _database.Entry(_Strategy).State = _Strategy.Id == 0 ?
+        //                   EntityState.Added :
+        //                   EntityState.Modified;
+
+
+        //    var result = _database.SaveChanges();
+        //    var response = new SecBaseResponse();
+        //    response.Success = result > 0 ? true : false;
+        //    response.Messsage = _Strategy.Id == 0 ? "update" : "insert";
+        //    return response;
+        //}
         public List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear)
         {
 
@@ -761,24 +847,24 @@ namespace App.SEC
             }
             return result;
         }
-        public List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear)
-        {
+        //public List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear)
+        //{
 
-            var result = new List<StrategyBudgetDto>();
-            var data = _database.StrategiesFisicalYears.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new StrategyBudgetDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
-                });
-            }
-            return result;
-        }
+        //    var result = new List<StrategyBudgetDto>();
+        //    var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.Active == true).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        result.Add(new StrategyBudgetDto
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            FiscalYear = item.FiscalYear,
+        //            Active = item.Active,
+        //            ParentStrategyBudgetId = item.ParentStrategyBudgetId,
+        //        });
+        //    }
+        //    return result;
+        //}
         public List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id)
         {
 
@@ -798,25 +884,25 @@ namespace App.SEC
             }
             return result;
         }
-        public List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id)
-        {
+        //public List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id)
+        //{
 
-            var result = new List<StrategyBudgetDto>();
-            var data = _database.StrategiesFisicalYears.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new StrategyBudgetDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentStrategyBudgetId = item.ParentStrategyBudgetId,
-                });
+        //    var result = new List<StrategyBudgetDto>();
+        //    var data = _database.StrategiesBudgets.Where(x => x.FiscalYear == FiscalYear & x.ParentStrategyBudgetId == id).ToList();
+        //    foreach (var item in data)
+        //    {
+        //        result.Add(new StrategyBudgetDto
+        //        {
+        //            Id = item.Id,
+        //            Name = item.Name,
+        //            FiscalYear = item.FiscalYear,
+        //            Active = item.Active,
+        //            ParentStrategyBudgetId = item.ParentStrategyBudgetId,
+        //        });
 
-            }
-            return result;
-        }
+        //    }
+        //    return result;
+        //}
         public List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id)
         {
 
@@ -838,74 +924,11 @@ namespace App.SEC
             }
             return result;
         }
-
-        public List<PlanTypeDto> PlanTypeDetailGetByPlanTypeid(int id)
-        {
-
-            var result = new List<PlanTypeDto>();
-            var data = _database.PlanTypes.Where(x => x.Id == id && x.Active).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new PlanTypeDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentPlanTypeId = item.ParentPlanTypeId,
-                    ReferenceOldId = item.ReferenceOldId,
-                    Weight = item.Weight
-                });
-
-            }
-            return result;
-        }
-        public List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id)
-        {
-
-            var result = new List<PlanTypeDto>();
-            var data = _database.PlanTypes.Where(x => x.Id == id).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new PlanTypeDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentPlanTypeId = item.ParentPlanTypeId,
-                    ReferenceOldId = item.ReferenceOldId,
-                    Weight = item.Weight
-                });
-
-            }
-            return result;
-        }
         public List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id)
         {
 
             var result = new List<DepartmentDto>();
             var data = _database.Departments.Where(x => x.FiscalYear == FiscalYear & x.ParentDepartmentId == id).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new DepartmentDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ReferenceOldId = item.ReferenceOldId,
-                    ParentDepartmentId = item.ParentDepartmentId
-                });
-
-            }
-            return result;
-        }
-        public List<DepartmentDto> DepartmentNameGetByDepartmentid(int id)
-        {
-
-            var result = new List<DepartmentDto>();
-            var data = _database.Departments.Where(x => x.Id == id).ToList();
             foreach (var item in data)
             {
                 result.Add(new DepartmentDto
@@ -983,28 +1006,30 @@ namespace App.SEC
 
         }
 
-        public List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
+        public List<StrategySetupDto> StrategicIndicatorSetupByFiscalYear(int FiscalYear)
         {
             var result = new List<StrategicIndicatorResponse>();
-            var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear && x.Active == true).ToList();
-            foreach (var item in data)
-            {
-                result.Add(new StrategicIndicatorResponse
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    FiscalYear = item.FiscalYear,
-                    Active = item.Active,
-                    ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
-                    Unit = item.Unit,
-                    Amount = item.Amount,
-                    Weight = item.Weight,
-                    StrategyId = item.StrategyId,
-                    ParentStrategyId = item.ParentStrategyId
 
-                });
-            }
-            return result;
+            var _Strategy = TryGetStrategyAddIndicator(FiscalYear);
+            //var data = _database.StrategicIndicators.Where(x => x.FiscalYear == FiscalYear && x.Active == true).ToList();
+            //foreach (var item in data)
+            //{
+            //    result.Add(new StrategicIndicatorResponse
+            //    {
+            //        Id = item.Id,
+            //        Name = item.Name,
+            //        FiscalYear = item.FiscalYear,
+            //        Active = item.Active,
+            //        ParentStrategicIndicatorId = item.ParentStrategicIndicatorId,
+            //        Unit = item.Unit,
+            //        Amount = item.Amount,
+            //        Weight = item.Weight,
+            //        StrategyId = item.StrategyId,
+            //        ParentStrategyId = item.ParentStrategyId
+
+            //    });
+            //}
+            return _Strategy;
         }
         public List<StrategicIndicatorResponse> StrategicIndicatorGetbyStrategyId(int StrategyId)
         {
@@ -1687,7 +1712,7 @@ namespace App.SEC
                                 NetBudgetCache = _list1.Sum(x => x.NetBudgetCache),
                                 UsedBudgetCache = _list1.Sum(x => x.UsedBudgetCache),
                                 RemainBudgetCache = _list1.Sum(x => x.RemainBudgetCache),
-                                subdata = _list1
+                                PlanActivityList = _list1
                             });
                         }
                         _list3.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
@@ -1700,7 +1725,7 @@ namespace App.SEC
                             NetBudgetCache = _list2.Sum(x => x.NetBudgetCache),
                             UsedBudgetCache = _list2.Sum(x => x.UsedBudgetCache),
                             RemainBudgetCache = _list2.Sum(x => x.RemainBudgetCache),
-                            subdata = _list2
+                            PlanActivityList = _list2
                         });
                     }
                     _list_m.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
@@ -1713,7 +1738,7 @@ namespace App.SEC
                         NetBudgetCache = _list3.Sum(x => x.NetBudgetCache),
                         UsedBudgetCache = _list3.Sum(x => x.UsedBudgetCache),
                         RemainBudgetCache = _list3.Sum(x => x.RemainBudgetCache),
-                        subdata = _list3
+                        PlanActivityList = _list3
                     });
                 }
                 return _list_m;
@@ -1772,7 +1797,7 @@ namespace App.SEC
                             NetBudgetCache = _list1.Sum(x => x.NetBudgetCache),
                             UsedBudgetCache = _list1.Sum(x => x.UsedBudgetCache),
                             RemainBudgetCache = _list1.Sum(x => x.RemainBudgetCache),
-                            subdata = _list1
+                            PlanActivityList = _list1
                         });
                     }
                     _list_m.Add(new ViewPlanForActivityByPlanTypeBudgetTypeTable
@@ -1785,7 +1810,7 @@ namespace App.SEC
                         NetBudgetCache = _list2.Sum(x => x.NetBudgetCache),
                         UsedBudgetCache = _list2.Sum(x => x.UsedBudgetCache),
                         RemainBudgetCache = _list2.Sum(x => x.RemainBudgetCache),
-                        subdata = _list2
+                        PlanActivityList = _list2
                     });
                 }
             }
@@ -1855,7 +1880,7 @@ namespace App.SEC
                         NetBudgetCache = _list_last.Sum(x => x.NetBudgetCache),
                         UsedBudgetCache = _list_last.Sum(x => x.UsedBudgetCache),
                         RemainBudgetCache = _list_last.Sum(x => x.RemainBudgetCache),
-                        subdata = _list_last
+                        PlanActivityList = _list_last
                     });
                 }
 
@@ -1869,7 +1894,7 @@ namespace App.SEC
                     NetBudgetCache = _list1.Sum(x => x.NetBudgetCache),
                     UsedBudgetCache = _list1.Sum(x => x.UsedBudgetCache),
                     RemainBudgetCache = _list1.Sum(x => x.RemainBudgetCache),
-                    subdata = _list1
+                    PlanActivityList = _list1
                 });
             }
             result.data = _list_main;
@@ -1924,7 +1949,7 @@ namespace App.SEC
                 decimal _UsedBudgetCache = 0;
                 decimal _RemainBudgetPlanView = 0;
                 decimal _TotalBudget = 0;
-                var PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == s1.Id && x.Active).Include(x => x.SummaryStatementCaches).ToList();
+                var PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == s1.Id && x.Active).Include(x => x.SummaryStatementCaches).Include(x => x.MonthlyForecasts).ToList();
                 var _list = new List<ViewPlanForActivityByPlanTypeBudgetTypeTable>();
                 foreach (var item in PlanItems)
                 {
@@ -1940,11 +1965,12 @@ namespace App.SEC
                         FiscalYear = item.FiscalYear,
                         Unit = item.Unit,
                         BudgetTypeId = item.BudgetTypeId,
+                        TotalAmount = item.MonthlyForecasts.Count > 0 ? item.MonthlyForecasts.Where(c => c.Active).Sum(c => c.Amount):0,             //TotalAmount => MonthlyForecasts.Where((MonthlyForecast c) => c.Active).Sum((MonthlyForecast c) => c.Amount);
                         TotalBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().TotalBudgetPlanView : 0,
                         NetBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().NetBudgetPlanView : 0,
                         UsedBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().UsedBudgetPlanView : 0,
                         RemainBudgetCache = item.SummaryStatementCaches.Count > 0 ? item.SummaryStatementCaches.Where(x => x.Active && x.Month == 10).SingleOrDefault().RemainBudgetPlanView : 0,
-                    });
+                    }); ;
                     b_num.Add((int)item.BudgetTypeId);
                     b_list.Add(new butgetW
                     {
@@ -1959,15 +1985,18 @@ namespace App.SEC
                 {
                     Id = s1.Id,
                     Name = s1.Name,
+                    Unit = _list.Select(x => x.Unit).FirstOrDefault(),
                     FiscalYear = s1.FiscalYear,
                     TotalBudget = _list.Sum(x => x.TotalBudget),
                     TotalBudgetCache = _list.Sum(x => x.TotalBudgetCache),
                     NetBudgetCache = _list.Sum(x => x.NetBudgetCache),
                     UsedBudgetCache = _list.Sum(x => x.UsedBudgetCache),
                     RemainBudgetCache = _list.Sum(x => x.RemainBudgetCache),
-                    subdata = _list
+                    PlanActivityList = _list,
+                  
+                    
                 });
-
+                    
 
 
                 foreach (var s2 in s1.PlanMonthlyOperations)
@@ -2028,8 +2057,9 @@ namespace App.SEC
                 NetBudgetCache = _list_main.Sum(x => x.NetBudgetCache),
                 UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache),
                 RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache),
-                subdata = _list_main
-            });
+                PlanActivityList = _list_main,
+         
+            }); ;
 
 
             var Budgetmode = new List<Budgetmode>();
@@ -2052,10 +2082,10 @@ namespace App.SEC
 
 
 
-            _projectDetailDto.BudgetDetail = _list_result;
+            _projectDetailDto.PlanCoreTotal = _list_result;
             _projectDetailDto.Budgetmode = Budgetmode;
             result.data = _List_PlanMonthlyOperation;
-            result.Persons = _Team;
+            result.Persons = _Team.DistinctBy(x => x.Name).ToList(); 
             result.Detail = _projectDetailDto;
             return result;
         }
@@ -2272,7 +2302,7 @@ namespace App.SEC
                 }
             }
             var budget_list = calbudget(planCore.SelectMany(x => x.PlanActivities).ToList());
-            PerformanceIndicatorData.BugetDetail = budget_list.Budget;
+            PerformanceIndicatorData.BugetDetail = budget_list.PlanForActivityList;
             PerformanceIndicatorData.PerformanceIndicatorDetail = data_result;
             PerformanceIndicatorData.ResponsiblePeople = ResponsiblePeopleData(planCore.SelectMany(x => x.ResponsiblePeople).ToList());
             PerformanceIndicatorData.budgetmodes = budget_list.budgetmodes;
@@ -2369,7 +2399,7 @@ namespace App.SEC
             _list_result.UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache);
             _list_result.RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache);
 
-            calBudgetDetail.Budget = _list_result;
+            calBudgetDetail.PlanForActivityList = _list_result;
             calBudgetDetail.budgetmodes = Budgetmode;
 
             return calBudgetDetail;
@@ -2464,7 +2494,7 @@ namespace App.SEC
             _list_result.UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache);
             _list_result.RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache);
 
-            calBudgetDetail.Budget = _list_result;
+            calBudgetDetail.PlanForActivityList = _list_result;
            // calBudgetDetail.budgetmodes = Budgetmode;
 
             return calBudgetDetail;
@@ -2553,14 +2583,14 @@ namespace App.SEC
             }
 
 
-
+            
             _list_result.TotalBudget = _list_main.Sum(x => x.TotalBudget);
             _list_result.TotalBudgetCache = _list_main.Sum(x => x.TotalBudgetCache);
             _list_result.NetBudgetCache = _list_main.Sum(x => x.NetBudgetCache);
             _list_result.UsedBudgetCache = _list_main.Sum(x => x.UsedBudgetCache);
             _list_result.RemainBudgetCache = _list_main.Sum(x => x.RemainBudgetCache);
-
-            calBudgetDetail.Budget = _list_result;
+            _list_result.PlanActivityList = _list_main;
+            calBudgetDetail.PlanForActivityList = _list_result;
             calBudgetDetail.budgetmodes = Budgetmode;
 
             return calBudgetDetail;
@@ -2599,7 +2629,7 @@ namespace App.SEC
             {
 
 
-                decimal pcBudget = calbudget(pCore.PlanActivities).Budget.TotalBudgetCache;
+                decimal pcBudget = calbudget(pCore.PlanActivities).PlanForActivityList.TotalBudgetCache;
                 resTotalBudget += pcBudget;
                 decimal tb = tBudget != 0.00m ? pcBudget / tBudget : 0.00m;
 
@@ -2638,7 +2668,7 @@ namespace App.SEC
                     Id = s1.Id,
                     DepartmentId = s1.DepartmentId,
                     PlanTypeId = s1.PlanTypeId,
-                    TotalBudget = calbudget(s1.PlanActivities).Budget.TotalBudgetCache
+                    TotalBudget = calbudget(s1.PlanActivities).PlanForActivityList.TotalBudgetCache
 
                 });
 
@@ -2727,15 +2757,28 @@ namespace App.SEC
         }
         public List<PlanActivityGetAllDto> GetPlanActivityfromPlanCoreId(int plancoreId)
         {
-            var data = _database.PlanActivities.Where(x => x.PlanCoreId == plancoreId && x.Active == true);
+            var data = ViewPlanActivityOperationPeriodByPlanCore(plancoreId);
+
+            var _sum = data.Detail.PlanCoreTotal.SelectMany(x => x.PlanActivityList).ToList();
             var result = new List<PlanActivityGetAllDto>();
-            foreach (var item in data)
+            foreach (var item in _sum)
             {
+                //var PlanItems = _database.PlanItems.Where(x => x.PlanActivityId == item.Id && x.Active).Include(x => x.SummaryStatementCaches).ToList();
+
+                // var _SummaryStatementCaches =  PlanItems.Select(x => x.SummaryStatementCaches).ToList();
+
+
                 result.Add(new PlanActivityGetAllDto
                 {
                     Id = item.Id,
-                    Name = item.Name
-                });
+                    Name = item.Name,
+                    Unit = item.Unit,
+                    TotalAmount = item.TotalAmount,
+                    TotalBudgetCache = item.TotalBudgetCache,
+                    NetBudgetCache = item.NetBudgetCache,
+                    UsedBudgetCache = item.UsedBudgetCache,
+                    RemainBudgetCache = item.RemainBudgetCache,
+                }); ;
 
 
             }
@@ -2849,20 +2892,19 @@ namespace App.SEC
                     result.DurationDateEnd = item.DurationDateEnd;
         //---------เพิ่ม การแสดงผล --------------------------------------
         var cal = calbudget_v1(item.PlanActivities);
-                    result.TotalBudget = cal.Budget.TotalBudget;
-                    result.TotalBudgetCache = cal.Budget.TotalBudgetCache;
-                    result.NetBudgetCache = cal.Budget.NetBudgetCache;
-                    result.UsedBudgetCache = cal.Budget.UsedBudgetCache;
-                    result.RemainBudgetCache = cal.Budget.RemainBudgetCache;
+                    result.TotalBudget = cal.PlanForActivityList.TotalBudget;
+                    result.TotalBudgetCache = cal.PlanForActivityList.TotalBudgetCache;
+                    result.NetBudgetCache = cal.PlanForActivityList.NetBudgetCache;
+                    result.UsedBudgetCache = cal.PlanForActivityList.UsedBudgetCache;
+                    result.RemainBudgetCache = cal.PlanForActivityList.RemainBudgetCache;
                     var ResponsiblePerson = new List<ResponsiblePerson>();
                 //-------------------------------------------------------------
 
 
                 //---------เพิ่ม Strategy --------------------------------------
                 var strategy = new List<StrategyDto>();
-                var strategydatabase = _database.Strategies.Where(x => x.Active == true && x.Id == item.StrategyId).ToList();
-                //foreach (var _strategy in item.Strategies)
-                foreach (var _strategy in strategydatabase)
+
+                foreach (var _strategy in item.Strategies)
                 {
                     strategy.Add(new StrategyDto
                     {
@@ -2878,11 +2920,11 @@ namespace App.SEC
                 result.strategy = strategy;
                 //-----fundSource------------------
 
-                result.fundSource = _database.FundSources.Where(x => x.Active == true && x.Id == item.FundSourceId).ToList();
+                result.fundSource = _database.FundSources.Where(x => x.Active == true && x.Id == 1).ToList();
 
 
                 //------mission--------------------
-                result.mission = _database.Missions.Where(x => x.Active == true && x.Id == item.MissionId).ToList();
+                result.mission = _database.Missions.Where(x => x.Active == true && x.Id == 1).ToList();
 
 
                
@@ -3214,38 +3256,22 @@ namespace App.SEC
                 var list1 = new List<DepartmentListDto>();
                 var Departments = _database.Departments.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
                 var data = Departments.Where(x => x.ParentDepartmentId == null).ToList();
-                foreach (var item in data)
+            foreach (var item in data)
+            {
+                list1.Add(new DepartmentListDto
                 {
-                    var list2 = new List<DepartmentListDto>();
-                    foreach (var s in Departments)
-                    {
-                        if (s.ParentDepartmentId == item.Id)
-                        {
-                            list2.Add(new DepartmentListDto
-                            {
-                                Id = s.Id,
-                                Name = s.Name,
-                                FiscalYear = s.FiscalYear,
-                                Active = s.Active,
-                                ParentDepartmentId = s.ParentDepartmentId,
-                                ReferenceOldId = s.ReferenceOldId,
-
-                            });
-                        }
-                    }
-                    list1.Add(new DepartmentListDto
-                    {
-                        Id = item.Id,
-                        Name = item.Name,
-                        FiscalYear = item.FiscalYear,
-                        Active = item.Active,
-                        ParentDepartmentId = item.ParentDepartmentId,
-                        ReferenceOldId = item.ReferenceOldId,
-                        ParentDepartment = list2
-                    });
+                    Id = item.Id,
+                    Name = item.Name,
+                    FiscalYear = item.FiscalYear,
+                    Active = item.Active,
+                    ParentDepartmentId = item.ParentDepartmentId,
+                    ReferenceOldId = item.ReferenceOldId,
+                    BudgetLimit = item.BudgetLimit,
+                    ParentDepartment = sub_GetDepartments(Departments, item.Id, item.Id)
 
 
 
+                });
                 }
 
                 return list1;
@@ -3265,7 +3291,7 @@ namespace App.SEC
                 foreach (var s in PlanTypes.InverseParentPlanType)
                 {
                     var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id && x.Active).Include(x => x.PlanActivities).ToList();
-                    _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.NetBudgetCache;
+                    _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).PlanForActivityList.NetBudgetCache;
 
                 }
 
@@ -3293,12 +3319,12 @@ namespace App.SEC
                                 Id = s.Id,
                                 Name = s.Name,
                                 FiscalYear = s.FiscalYear,
-                                TotalBudgetCache = d.Budget.TotalBudgetCache,
-                                NetBudgetCache = d.Budget.NetBudgetCache,
-                                UsedBudgetCache = d.Budget.UsedBudgetCache,
-                                RemainBudgetCache = d.Budget.RemainBudgetCache,
-                                TotalBudget = d.Budget.TotalBudget,
-                                NetBudget = d.Budget.NetBudget,
+                                TotalBudgetCache = d.PlanForActivityList.TotalBudgetCache,
+                                NetBudgetCache = d.PlanForActivityList.NetBudgetCache,
+                                UsedBudgetCache = d.PlanForActivityList.UsedBudgetCache,
+                                RemainBudgetCache = d.PlanForActivityList.RemainBudgetCache,
+                                TotalBudget = d.PlanForActivityList.TotalBudget,
+                                NetBudget = d.PlanForActivityList.NetBudget,
 
                             });
                         }
@@ -3314,7 +3340,7 @@ namespace App.SEC
                         RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
                         TotalBudget = list2.Sum(x => x.TotalBudget),
                         NetBudget = list2.Sum(x => x.NetBudget),
-                        subdata = list2
+                        PlanActivityList = list2
                     });
 
 
@@ -3344,12 +3370,12 @@ namespace App.SEC
                                 Id = s.Id,
                                 Name = s.Name,
                                 FiscalYear = s.FiscalYear,
-                                TotalBudgetCache = d.Budget.TotalBudgetCache,
-                                NetBudgetCache = d.Budget.NetBudgetCache,
-                                UsedBudgetCache = d.Budget.UsedBudgetCache,
-                                RemainBudgetCache = d.Budget.RemainBudgetCache,
-                                TotalBudget = d.Budget.TotalBudget,
-                                NetBudget = d.Budget.NetBudget,
+                                TotalBudgetCache = d.PlanForActivityList.TotalBudgetCache,
+                                NetBudgetCache = d.PlanForActivityList.NetBudgetCache,
+                                UsedBudgetCache = d.PlanForActivityList.UsedBudgetCache,
+                                RemainBudgetCache = d.PlanForActivityList.RemainBudgetCache,
+                                TotalBudget = d.PlanForActivityList.TotalBudget,
+                                NetBudget = d.PlanForActivityList.NetBudget,
                                 PlanTypeId = planCore.Select(x => x.PlanTypeId).FirstOrDefault()
                             });
                         }
@@ -3375,10 +3401,10 @@ namespace App.SEC
                         foreach (var s in PlanTypes.InverseParentPlanType)
                         {
                             var planCore = _database.PlanCores.Where(x => x.PlanTypeId == s.Id && x.Active).Include(x => x.PlanActivities).ToList();
-                            _TotalBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.TotalBudgetCache;
-                            _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.NetBudgetCache;
-                            _UsedBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.UsedBudgetCache;
-                            _RemainBudgetPlanView += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).Budget.RemainBudgetCache;
+                            _TotalBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).PlanForActivityList.TotalBudgetCache;
+                            _NetBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).PlanForActivityList.NetBudgetCache;
+                            _UsedBudgetCache += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).PlanForActivityList.UsedBudgetCache;
+                            _RemainBudgetPlanView += calbudget(planCore.SelectMany(x => x.PlanActivities).ToList()).PlanForActivityList.RemainBudgetCache;
                         }
 
 
@@ -3393,7 +3419,7 @@ namespace App.SEC
                             RemainBudgetCache = _RemainBudgetPlanView,
                             //TotalBudget = list2.Sum(x => x.TotalBudget),
                             //NetBudget = list2.Sum(x => x.NetBudget),
-                            subdata = list2
+                            PlanActivityList = list2
                         });
                     }
                     else
@@ -3409,7 +3435,7 @@ namespace App.SEC
                             RemainBudgetCache = list2.Sum(x => x.RemainBudgetCache),
                             TotalBudget = list2.Sum(x => x.TotalBudget),
                             NetBudget = list2.Sum(x => x.NetBudget),
-                            subdata = list2
+                            PlanActivityList = list2
                         });
                     }
 
@@ -4319,27 +4345,27 @@ namespace App.SEC
 
                 return response;
             }
-            public SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId)
-            {
-                var response = new SecBaseResponse();
-                var data = _database.StrategiesFisicalYears.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
-                if (data != null)
-                {
-                    //_database.Remove(data);
-                    data.Active = false;
-                    _database.Entry(data).State = EntityState.Modified;
-                    var result = _database.SaveChanges();
-                    response.Success = result > 0 ? true : false;
-                    response.Messsage = "Delete Complete";
-                }
-                else
-                {
-                    response.Success = false;
-                    response.Messsage = "not have data";
-                }
+            //public SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId)
+            //{
+            //    var response = new SecBaseResponse();
+            //    var data = _database.StrategiesBudgets.Where(x => x.Id == StrategyBudgetId).FirstOrDefault();
+            //    if (data != null)
+            //    {
+            //        //_database.Remove(data);
+            //        data.Active = false;
+            //        _database.Entry(data).State = EntityState.Modified;
+            //        var result = _database.SaveChanges();
+            //        response.Success = result > 0 ? true : false;
+            //        response.Messsage = "Delete Complete";
+            //    }
+            //    else
+            //    {
+            //        response.Success = false;
+            //        response.Messsage = "not have data";
+            //    }
 
-                return response;
-            }
+            //    return response;
+            //}
             public SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId)
             {
                 var response = new SecBaseResponse();
@@ -4587,7 +4613,7 @@ namespace App.SEC
             public SecBaseResponse ResponsiblePersonSetUp(ResponsiblePersonRequest request)
             {
                 var _ResponsiblePerson = new ResponsiblePerson();
-                //_ResponsiblePerson.Id = request.Id;
+                _ResponsiblePerson.Id = request.Id;
                 _ResponsiblePerson.Name = request.Name;
                 _ResponsiblePerson.Active = request.Active;
                 _ResponsiblePerson.FiscalYear = request.FiscalYear;
@@ -4598,11 +4624,11 @@ namespace App.SEC
                 _ResponsiblePerson.HrdepartmentId = request.HrdepartmentId;
                 _ResponsiblePerson.HrdepartmentName = request.HrdepartmentName;
 
-            if (request.Id != 0)
-            {
-                _ResponsiblePerson.Id = request.Id;
-            }
-            _database.Entry(_ResponsiblePerson).State = _ResponsiblePerson.Id == 0 ?
+                //if (request.ParentDepartmentId != 0)
+                //{
+                //    _Department.ParentDepartmentId = request.ParentDepartmentId;
+                //}
+                _database.Entry(_ResponsiblePerson).State = _ResponsiblePerson.Id == 0 ?
                                                   EntityState.Added :
                                                   EntityState.Modified;
 
@@ -5611,1266 +5637,495 @@ namespace App.SEC
                 return _OutsideDutyGroupRequest;
             }
 
-        public SecBaseResponse EditScheduleFisicalYear(string name, bool active)
+        public List<StrategySetupDto> sub_strategy(List<Strategy> Strategy, int? ParentStrategyId, int? mainStrategyId)
         {
-            SecBaseResponse response = new SecBaseResponse();
-            List<ScheduleFisicalYear> scheduleFisicalYear = _database.ScheduleFisicalYears.OrderByDescending(x => x.Name).ToList();
-            if (name == null)
-            {
-                scheduleFisicalYear.ForEach(item =>
+
+
+            var StrategySetupDto = new List<StrategySetupDto>();
+
+          
+                foreach (var sub1_strategy in Strategy)
                 {
-                    item.Active = false;
-                    item.AddPlanCoreStatus = false;
-                    item.EditPlanCoreStatus = false;
-                    item.ApprovePlanCoreStatus = false;
-                    item.DisplayPlanCoreStatus = false;
-                });
-            }
-            else
-            {
-                scheduleFisicalYear.ForEach(item =>
-                {
-                    if (item.Name == name)
-                    {
-                        item.Active = active;
-                        item.AddPlanCoreStatus = active;
-                        item.EditPlanCoreStatus = active;
-                        item.ApprovePlanCoreStatus = active;
-                        item.DisplayPlanCoreStatus = active;
-                    }
-                    else
-                    {
-                        item.Active = false;
-                        item.AddPlanCoreStatus = false;
-                        item.EditPlanCoreStatus = false;
-                        item.ApprovePlanCoreStatus = false;
-                        item.DisplayPlanCoreStatus = false;
-                    }
-                });
-                scheduleFisicalYear.ForEach(items =>
-                {
-                    _database.Entry(items).State = EntityState.Modified;
-                    var returnValue = _database.SaveChanges();
-                    response.Success = returnValue > 0 ? true : false;
-                    response.Messsage = "Success";
-                });
-            }
-            return response;
-        }
+                        if (sub1_strategy.Id == ParentStrategyId)
+                        {
+                            continue;
+                        }
+                        if (sub1_strategy.ParentStrategyId == ParentStrategyId)
+                        {
 
-
-        ///////////////////////new new new by ardin/////////////////////////////
-        //MainGovtStatement
-        public List<MainGovtStatement> GetAllMainGovtStatement()
-        {
-            return _database.MainGovtStatements.Where(x => x.Active).ToList();
-        }
-        public List<MainGovtStatement> GetMainGovtStatementbyFisicalYear(int FisicalYear)
-        {
-            var data = _database.MainGovtStatements.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId)
-        {
-            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse MainGovtStatementSetup(MainGovtStatement request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteMainGovtStatement(int MainGovtStatementId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.MainGovtStatements.Where(x => x.Id == MainGovtStatementId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //GovtStrategic
-        public List<GovtStrategic> GetAllGovtStrategic()
-        {
-            return _database.GovtStrategics.Where(x => x.Active).ToList();
-        }
-        public List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId)
-        {
-            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse GovtStrategicSetup(GovtStrategic request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteGovtStrategic(int GovtStrategicId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.GovtStrategics.Where(x => x.Id == GovtStrategicId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //GovtPlan
-        public List<GovtPlan> GetAllGovtPlan()
-        {
-            return _database.GovtPlans.Where(x => x.Active).ToList();
-        }
-        public List<GovtPlan> GetGovtPlanbyId(int GovtPlanId)
-        {
-            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse GovtPlanSetup(GovtPlan request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteGovtPlan(int GovtPlanId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.GovtPlans.Where(x => x.Id == GovtPlanId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //MainProject
-        public List<MainProject> GetAllMainProject()
-        {
-            return _database.MainProjects.Where(x => x.Active).ToList();
-        }
-        public List<MainProject> GetMainProjectbyId(int MainProjectId)
-        {
-            var data = _database.MainProjects.Where(x => x.Id == MainProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse MainProjectSetup(MainProject request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteMainProject(int MainProjectId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.MainProjects.Where(x => x.Id == MainProjectId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //MainActivity
-        public List<MainActivity> GetAllMainActivity()
-        {
-            return _database.MainActivities.Where(x => x.Active).ToList();
-        }
-        public List<MainActivity> GetMainActivitybyId(int MainActivityId)
-        {
-            var data = _database.MainActivities.Where(x => x.Id == MainActivityId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse MainActivitySetup(MainActivity request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteMainActivity(int MainActivityId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.MainActivities.Where(x => x.Id == MainActivityId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //StrategicIssue
-        public List<StrategicIssue> GetAllStrategicIssue()
-        {
-            return _database.StrategicIssues.Where(x => x.Active).ToList();
-        }
-        public List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId)
-        {
-            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse StrategicIssueSetup(StrategicIssue request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteStrategicIssue(int StrategicIssueId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.StrategicIssues.Where(x => x.Id == StrategicIssueId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //Strategy1
-        public List<Strategy1> GetAllStrategy1()
-        {
-            return _database.Strategies1.Where(x => x.Active).ToList();
-        }
-        public List<Strategy1> GetStrategy1byId(int Strategy1Id)
-        {
-            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse Strategy1Setup(Strategy1 request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteStrategy1(int Strategy1Id)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.Strategies1.Where(x => x.Id == Strategy1Id).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //Measure
-        public List<Measure> GetAllMeasure()
-        {
-            return _database.Measures.Where(x => x.Active).ToList();
-        }
-        public List<Measure> GetMeasurebyId(int MeasureId)
-        {
-            var data = _database.Measures.Where(x => x.Id == MeasureId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse MeasureSetup(Measure request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteMeasure(int MeasureId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.Measures.Where(x => x.Id == MeasureId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //AnnualBudget
-        public List<AnnualBudget> GetAllAnnualBudget()
-        {
-            return _database.AnnualBudgets.Where(x => x.Active).ToList();
-        }
-        public List<AnnualBudget> GetAnnualBudgetbyFisicalYear(int FisicalYear)
-        {
-            var data = _database.AnnualBudgets.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId)
-        {
-            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse AnnualBudgetSetup(AnnualBudget request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteAnnualBudget(int AnnualBudgetId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.AnnualBudgets.Where(x => x.Id == AnnualBudgetId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //SubAnnualBudget
-        public List<SubAnnualBudget> GetAllSubAnnualBudget()
-        {
-            return _database.SubAnnualBudgets.Where(x => x.Active).ToList();
-        }
-        public List<SubAnnualBudget> GetSubAnnualBudgetbyFisicalYear(int FisicalYear)
-        {
-            var data = _database.SubAnnualBudgets.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
-        {
-            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse SubAnnualBudgetSetup(SubAnnualBudget request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteSubAnnualBudget(int SubAnnualBudgetId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.SubAnnualBudgets.Where(x => x.Id == SubAnnualBudgetId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //CapticalType
-        public List<CapticalType> GetAllCapticalType()
-        {
-            return _database.CapticalTypes.Where(x => x.Active).ToList();
-        }
-        public List<CapticalType> GetCapticalTypebyFisicalYear(int FisicalYear)
-        {
-            var data = _database.CapticalTypes.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<CapticalType> GetCapticalTypebyId(int CapticalTypeId)
-        {
-            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse CapticalTypeSetup(CapticalType request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteCapticalType(int CapticalTypeId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.CapticalTypes.Where(x => x.Id == CapticalTypeId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //Project
-        public List<Project> GetAllProject()
-        {
-            return _database.Projects.Where(x => x.Active).ToList();
-        }
-        public List<Project> GetProjectbyFisicalYear(int FisicalYear)
-        {
-            var data = _database.Projects.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<Project> GetProjectbyId(int ProjectId)
-        {
-            var data = _database.Projects.Where(x => x.Id == ProjectId && x.Active).ToList();
-            return data;
-        }
-
-        public SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
-            var data2 = _database.ProjectActivities.Where(x => x.ProjectId == ProjectId && x.ProjectStatus == 0 && x.Active).ToList();
-            if (data.Count != 0)
-            {
-                GetSubProjectforProjectbyId(ProjectId);
-                response.Success = true;
-                response.Messsage = "Have SubProject";
-                response.Data = data;
-            }
-            else
-            {
-                GetProjectActivityforProjectbyId(ProjectId);
-                response.Success = true;
-                response.Messsage = "Have ProjectActivity";
-                response.Data = data2;
-            }
-            return response;
-        }
-
-        //public SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId)
-        //{
-        //    var response = new SecBaseResponse();
-        //    var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
-        //    if(data.Count != 0)
-        //    {
-        //        GetSubProjectforProjectbyId(ProjectId);
-        //        response.Messsage = "Have SubProject";
-        //    }
-        //    else
-        //    {
-        //        GetProjectActivityforProjectbyId(ProjectId);
-        //        response.Messsage = "Have ProjectActivity";
-        //    }
-        //    return response;
-        //}
-        public SecBaseResponse ProjectSetup(Project request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteProject(int ProjectId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.Projects.Where(x => x.Id == ProjectId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //ProjectCaptical
-        public List<ProjectCaptical> GetAllProjectCaptical()
-        {
-            return _database.ProjectCapticals.Where(x => x.Active).ToList();
-        }
-        public List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId)
-        {
-            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ProjectCapticalSetup(ProjectCaptical request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteProjectCaptical(int ProjectCapticalId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ProjectCapticals.Where(x => x.Id == ProjectCapticalId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //ProjectResponsiblePerson
-        public List<ProjectResponsiblePerson> GetAllProjectResponsiblePersons()
-        {
-            return _database.ProjectResponsiblePersons.Where(x => x.Active).ToList();
-        }
-        public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
-        {
-            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId && x.Active).ToList();
-            return data;
-        }
-        public List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyProjectId(int ProjectId)
-        {
-            var data = _database.ProjectResponsiblePersons.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ProjectResponsiblePersons.Where(x => x.Id == ProjectResponsiblePersonsId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-
-        //IndicatorsStrategyForProject
-        public List<IndicatorsStrategyForProject> GetAllIndicatorsStrategyForProject()
-        {
-            return _database.IndicatorsStrategyForProjects.Where(x => x.Active).ToList();
-        }
-        public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
-        {
-            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId && x.Active).ToList();
-            return data;
-        }
-        public List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyProjectId(int ProjectId)
-        {
-            var data = _database.IndicatorsStrategyForProjects.Where(x => x.ProjectId == ProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.IndicatorsStrategyForProjects.Where(x => x.Id == IndicatorsStrategyForProjectId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //ExternalBudgetStrategy
-        public List<ExternalBudgetStrategy> GetAllExternalBudgetStrategy()
-        {
-            return _database.ExternalBudgetStrategies.Where(x => x.Active).ToList();
-        }
-        public List<ExternalBudgetStrategy> GetExternalBudgetStrategybyFisicalYear(int FisicalYear)
-        {
-            var data = _database.ExternalBudgetStrategies.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-
-        public List<ExternalBudgetStrategy> GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId)
-        {
-            var data = _database.ExternalBudgetStrategies.Where(x => x.Id == ExternalBudgetStrategyId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ExternalBudgetStrategySetup(ExternalBudgetStrategy request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ExternalBudgetStrategies.Where(x => x.Id == ExternalBudgetStrategyId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //InternalStrategy
-        public List<InternalStrategy> GetAllInternalStrategy()
-        {
-            return _database.InternalStrategies.Where(x => x.Active).ToList();
-        }
-        public List<InternalStrategy> GetInternalStrategybyFisicalYear(int FisicalYear)
-        {
-            var data = _database.InternalStrategies.Where(x => x.FiscalYear == FisicalYear && x.Active).ToList();
-            return data;
-        }
-        public List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId)
-        {
-            var data = _database.InternalStrategies.Where(x => x.Id == InternalStrategyId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse InternalStrategySetup(InternalStrategy request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteInternalStrategy(int InternalStrategyId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.InternalStrategies.Where(x => x.Id == InternalStrategyId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //ProjectActivity
-        public List<ProjectActivity> GetAllProjectActivity()
-        {
-            return _database.ProjectActivities.Where(x => x.Active).ToList();
-        }
-       
-        public List<ProjectActivity> GetProjectActivitybyId(int ProjectActivityId)
-        {
-            var data = _database.ProjectActivities.Where(x => x.Id == ProjectActivityId && x.Active).ToList();
-            return data;
-        }
-        public List<ProjectActivity> GetProjectActivityforProjectbyId(int ProjectId)
-        {
-            var data = _database.ProjectActivities.Where(x => x.ProjectId == ProjectId && x.ProjectStatus == 0 && x.Active).ToList();
-            return data;
-        }
-        public List<ProjectActivity> GetProjectActivityfromSubProjectId(int SubProjectId)
-        {
-            var data = _database.ProjectActivities.Where(x => x.ProjectId == SubProjectId && x.ProjectStatus == 1 && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ProjectActivitySetup(ProjectActivity request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteProjectActivity(int ProjectActivityId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ProjectActivities.Where(x => x.Id == ProjectActivityId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //SubProject
-        public List<SubProject> GetAllSubProject()
-        {
-            return _database.SubProjects.Where(x => x.Active).ToList();
-        }
       
-        public List<SubProject> GetSubProjectbyId(int SubProjectId)
-        {
-            var data = _database.SubProjects.Where(x => x.Id == SubProjectId && x.Active).ToList();
-            return data;
+                            StrategySetupDto.Add(new StrategySetupDto
+                            {
+                                Id = sub1_strategy.Id,
+                                Name = sub1_strategy.Name,
+                                FiscalYear = sub1_strategy.FiscalYear,
+                                Active = sub1_strategy.Active,
+                                ParentStrategyId = sub1_strategy.ParentStrategyId,
+                                Type = sub1_strategy.Type,
+                                Category = sub1_strategy.Category,
+                                Strategy = sub_strategy(Strategy, sub1_strategy.Id, sub1_strategy.Id)
+                            });
+                        }
+              
+
+                }
+                return StrategySetupDto;
+          
+           
         }
-        public List<SubProject> GetSubProjectforProjectbyId(int ProjectId)
+
+        public List<StrategySetupDto> sub_strategyAddIndicator(List<Strategy> Strategy, int? ParentStrategyId, int? mainStrategyId)
         {
-            var data = _database.SubProjects.Where(x => x.ProjectId == ProjectId  && x.Active).ToList();
-            return data;
+            var StrategySetupDto = new List<StrategySetupDto>();
+
+
+            foreach (var sub1_strategy in Strategy)
+            {
+                if (sub1_strategy.Id == ParentStrategyId)
+                {
+                    continue;
+                }
+                if (sub1_strategy.ParentStrategyId == ParentStrategyId)
+                {
+                    var _trategicIndicators_data = new List<StrategicIndicatorResponse>();
+                    var _trategicIndicators = _database.StrategicIndicators.Where(x => x.StrategyId == sub1_strategy.Id && x.Active == true).ToList();
+                    foreach (var t in _trategicIndicators)
+                    {
+                        _trategicIndicators_data.Add(new StrategicIndicatorResponse
+                        {
+                            Id = t.Id,
+                            Name = t.Name,
+                            FiscalYear = t.FiscalYear,
+                            Active = t.Active,
+                            ParentStrategicIndicatorId = t.ParentStrategicIndicatorId,
+                            Unit = t.Unit,
+                            Amount = t.Amount,
+                            Weight = t.Weight,
+                            StrategyId = t.StrategyId,
+                            ParentStrategyId = t.ParentStrategyId
+                        } );
+                    }
+                    StrategySetupDto.Add(new StrategySetupDto
+                    {
+                        Id = sub1_strategy.Id,
+                        Name = sub1_strategy.Name,
+                        FiscalYear = sub1_strategy.FiscalYear,
+                        Active = sub1_strategy.Active,
+                        ParentStrategyId = sub1_strategy.ParentStrategyId,
+                        //Strategy = sub_strategy(Strategy, sub1_strategy.Id, sub1_strategy.Id)
+                        StrategicIndicator = _trategicIndicators_data
+                    }) ;
+                }
+
+
+            }
+            return StrategySetupDto;
         }
-        public SecBaseResponse SubProjectSetup(SubProject request)
+
+        public List<DepartmentListDto> sub_GetDepartments(List<Department> Department, int? DepartmentId, int? mainStrategyId)
+        {
+            var DepartmentListDto = new List<DepartmentListDto>();
+
+
+            foreach (var sub1_strategy in Department)
+            {
+                if (sub1_strategy.Id == DepartmentId)
+                {
+                    continue;
+                }
+                if (sub1_strategy.ParentDepartmentId == DepartmentId)
+                {
+
+
+                    DepartmentListDto.Add(new DepartmentListDto
+                    {
+                        Id = sub1_strategy.Id,
+                        Name = sub1_strategy.Name,
+                        FiscalYear = sub1_strategy.FiscalYear,
+                        Active =  sub1_strategy.Active,
+                        ParentDepartmentId = sub1_strategy.ParentDepartmentId,
+                        ReferenceOldId=  sub1_strategy.ReferenceOldId,
+                        BudgetLimit = sub1_strategy.BudgetLimit,
+                        ParentDepartment = sub_GetDepartments(Department, sub1_strategy.Id, sub1_strategy.Id)
+                        //ParentDepartment { get; set; }
+                    });
+                }
+
+
+            }
+            return DepartmentListDto;
+            
+        }
+
+        public List<FundTypeRespone> sub_FundTypes(List<FundType> FundType, int? FundTypeId, int? mainFundTypeId)
+        {
+            var FundTypeDto = new List<FundTypeRespone>();
+
+
+            foreach (var sub1_strategy in FundType)
+            {
+                if (sub1_strategy.Id == FundTypeId)
+                {
+                    continue;
+                }
+                if (sub1_strategy.ParentFundTypeId == FundTypeId)
+                {
+
+
+                    FundTypeDto.Add(new FundTypeRespone
+                    {
+                        Id = sub1_strategy.Id,
+                        Name = sub1_strategy.Name,
+                        FiscalYear = sub1_strategy.FiscalYear,
+                        Active = sub1_strategy.Active,
+                        ReferenceOldId = sub1_strategy.ReferenceOldId,
+                        ParentFundTypeId = sub1_strategy.ParentFundTypeId,
+                        fundTypeRespone = sub_FundTypes(FundType, sub1_strategy.Id, sub1_strategy.Id)
+                        //fundTypeRespone = sub1_strategy.fundTypeRespone,
+                        ////ParentDepartment { get; set; }
+                    }) ;
+                }
+            }
+                return FundTypeDto;
+      
+        }
+
+        public List<FundSourceResponse> sub_FundSourceSetupByFiscalYear(List<FundSource> FundSource, int? FundSourceId, int? FundSourceTypeId)
+        {
+            var FundTypeDto = new List<FundSourceResponse>();
+
+
+            foreach (var item in FundSource)
+            {
+                if (item.Id == FundSourceId)
+                {
+                    continue;
+                }
+                if (item.ParentFundSourceId == FundSourceId)
+                {
+
+
+                    FundTypeDto.Add(new FundSourceResponse
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Active = item.Active,
+                        FiscalYear = item.FiscalYear,
+                        ReferenceOldId = item.ReferenceOldId,
+                        ParentFundSourceId = item.ParentFundSourceId,
+                        ParentFundSource = sub_FundSourceSetupByFiscalYear (FundSource, item.Id, item.Id)
+
+                        }); 
+                }
+            }
+            return FundTypeDto;
+        }
+
+        public List<BudgetTypeData> sub_BudgetType(List<BudgetType> BudgetType, int? BudgetTypeId, int? mainBudgetTypeId)
+        {
+            var _BudgetTypeData = new List<BudgetTypeData>();
+
+
+            foreach (var item in BudgetType)
+            {
+                if (item.Id == BudgetTypeId)
+                {
+                    continue;
+                }
+                if (item.ParentBudgetTypeId == BudgetTypeId)
+                {
+
+
+                    _BudgetTypeData.Add(new BudgetTypeData
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Active = item.Active,
+                        FiscalYear = item.FiscalYear,
+                        ParentBudgetTypeId = item.ParentBudgetTypeId,
+                        ReferenceOldId = item.ReferenceOldId,
+                        ExpenseTypeEnum = item.ExpenseTypeEnum,
+                        GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+                        FundSourceId = item.FundSourceId,
+                        BudgetType = sub_BudgetType(BudgetType, item.Id, item.Id)
+
+                    });
+                }
+            }
+            return _BudgetTypeData;
+          
+        }
+
+        public SecBaseResponse EditCapticalType(CapticalType request)
         {
             _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
+                      EntityState.Added :
+                      EntityState.Modified;
             var result = _database.SaveChanges();
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
             response.Messsage = request.Id == 0 ? "update" : "insert";
             return response;
+
         }
-        public SecBaseResponse DeleteSubProject(int ProjectId)
+
+        public List<StrategiesGroupDto> GetStrategiesGroup(int fiscalYear)
         {
-            var response = new SecBaseResponse();
-            var data = _database.SubProjects.Where(x => x.Id == ProjectId).FirstOrDefault();
-            if (data != null)
+            var result = new List<StrategiesGroupDto>();
+            var data = _database.StrategiesGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Seq).Distinct().ToList();
+            foreach (var item in data)
             {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
+                result.Add(new StrategiesGroupDto
+                {
+                    Id = item.Id,
+                    Active = item.Active,
+                    GroupName = item.GroupName,
+                    StrategiesId = item.StrategiesId,
+                    Seq = item.Seq,
+                    Year = item.Year,
+                    Type = item.Type,
+                    StrategiesGroup = _database.StrategiesGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Id).ToList(),
+                });
+
+
             }
-            else
+            return result;
+        }
+
+        public SecBaseResponse SetStrategiesGroup(List<StrategiesGroup> request)
+        {
+            int result = 0;
+            var db = new StrategiesGroup();
+            var seq = _database.StrategiesGroups.OrderByDescending(x => x.Seq).FirstOrDefault();
+            foreach (var item in request)
             {
-                response.Success = false;
-                response.Messsage = "not have data";
+
+
+
+
+                if (item.Id == 0)
+                {
+                    db.Id = item.Id;
+
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.StrategiesId = item.StrategiesId;
+                    db.Seq = seq != null ? seq.Seq + 1 : 0;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                else
+                {
+                    db = _database.StrategiesGroups.Where(x => x.Id == item.Id).FirstOrDefault();
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.StrategiesId = item.StrategiesId;
+                    db.Seq = item.Seq;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+
+
+
+                _database.Entry(db).State = item.Id == 0 ?
+                          EntityState.Added :
+                          EntityState.Modified;
+                result = _database.SaveChanges();
             }
-
-            return response;
-        }
-        //ProjectActivityResponsiblePerson
-        public List<ProjectActivityResponsiblePerson> GetAllProjectActivityResponsiblePerson()
-        {
-            return _database.ProjectActivityResponsiblePersons.Where(x => x.Active).ToList();
-        }
-        public List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId)
-        {
-            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.Id == ProjectActivityResponsiblePersonId && x.Active).ToList();
-            return data;
-        }
-        public List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId)
-        {
-            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.ProjectActivityId == ProjectActivityId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ProjectActivityResponsiblePersons.Where(x => x.Id == ProjectActivityResponsiblePersonId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //SubProjectResponsiblePerson
-        public List<SubProjectResponsiblePerson> GetAllSubProjectResponsiblePerson()
-        {
-            return _database.SubProjectResponsiblePersons.Where(x => x.Active).ToList();
-        }
-        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId)
-        {
-            var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId && x.Active).ToList();
-            return data;
-        }
-        public List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbySubProjectId(int SubProjectId)
-        {
-            var data = _database.SubProjectResponsiblePersons.Where(x => x.SubProjectId == SubProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.SubProjectResponsiblePersons.Where(x => x.Id == SubProjectResponsiblePersonId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
 
             return response;
         }
-        //IndicatorsStrategyForProjectActivity
-        public List<IndicatorsStrategyForProjectActivity> GetAllIndicatorsStrategyForProjectActivity()
-        {
-            return _database.IndicatorsStrategyForProjectActivities.Where(x => x.Active).ToList();
-        }
-        public List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId)
-        {
-            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.Id == IndicatorsStrategyForProjectActivityId && x.Active).ToList();
-            return data;
-        }
-        public List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId)
-        {
-            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.ProjectActivityId == ProjectActivityId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
 
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId)
+        public List<DepartmentsGroupDto> GetDepartmentsGroup(int fiscalYear)
         {
-            var response = new SecBaseResponse();
-            var data = _database.IndicatorsStrategyForProjectActivities.Where(x => x.Id == IndicatorsStrategyForProjectActivityId).FirstOrDefault();
-            if (data != null)
+            var data = _database.DepartmentsGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Seq).Distinct().ToList();
+            var result = new List<DepartmentsGroupDto>();
+
+            foreach (var item in data)
             {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
+                result.Add(new DepartmentsGroupDto
+                {
+                    Id = item.Id,
+                    Active = item.Active,
+                    GroupName = item.GroupName,
+                    DepartmentsId = item.DepartmentsId,
+                    Seq = item.Seq,
+                    Year = item.Year,
+                    Type = item.Type,
+                    DepartmentsGroup = _database.DepartmentsGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Id).ToList(),
+                });
+
+
             }
-            else
+            return result;
+
+        }
+
+        public SecBaseResponse SetDepartmentsGroup(List<DepartmentsGroup> request)
+        {
+            int result = 0;
+            var db = new DepartmentsGroup();
+            var seq = _database.DepartmentsGroups.OrderByDescending(x => x.Seq).FirstOrDefault();
+            foreach (var item in request)
             {
-                response.Success = false;
-                response.Messsage = "not have data";
+                if (item.Id == 0)
+                {
+                    db.Id = item.Id;
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.DepartmentsId = item.DepartmentsId;
+                    db.Seq = seq != null ? seq.Seq + 1 : 0;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                else
+                {
+                    db = _database.DepartmentsGroups.Where(x => x.Id == item.Id).FirstOrDefault();
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.DepartmentsId = item.DepartmentsId;
+                    db.Seq = item.Seq;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                _database.Entry(db).State = item.Id == 0 ?
+                          EntityState.Added :
+                          EntityState.Modified;
+                result = _database.SaveChanges();
             }
-
-            return response;
-        }
-        //IndicatorsStrategyForSubProject
-        public List<IndicatorsStrategyForSubProject> GetAllIndicatorsStrategyForSubProject()
-        {
-            return _database.IndicatorsStrategyForSubProjects.Where(x => x.Active).ToList();
-        }
-        public List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId)
-        {
-            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.Id == IndicatorsStrategyForSubProjectId && x.Active).ToList();
-            return data;
-        }
-        public List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId)
-        {
-            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.SubProjectId == SubProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.IndicatorsStrategyForSubProjects.Where(x => x.Id == IndicatorsStrategyForSubProjectId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
-
-            return response;
-        }
-        //ListBudgetForActivity
-        public List<ListBudgetForActivity> GetAllListBudgetForActivity()
-        {
-            return _database.ListBudgetForActivities.Where(x => x.Active).ToList();
-        }
-        public List<ListBudgetForActivity> GetListBudgetForActivitybyId(int ListBudgetForActivityId)
-        {
-            var data = _database.ListBudgetForActivities.Where(x => x.Id == ListBudgetForActivityId && x.Active).ToList();
-            return data;
-        }
-        public List<ListBudgetForActivity> GetListBudgetForActivitybyProjectActivityId(int ProjectActivityId)
-        {
-            var data = _database.ListBudgetForActivities.Where(x => x.ProjectActivitiyId == ProjectActivityId && x.Active).ToList();
-            return data;
-        }
-        public List<ListBudgetForActivity> GetListBudgetForActivitybysubProjectId(int subProjectId)
-        {
-            var data = _database.ListBudgetForActivities.Where(x => x.ProjectId == subProjectId && x.Active).ToList();
-            return data;
-        }
-        public SecBaseResponse ListBudgetForActivitySetup(ListBudgetForActivity request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
-            var response = new SecBaseResponse();
-            response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
-            return response;
-        }
-        public SecBaseResponse DeleteListBudgetForActivity(int ListBudgetForActivityId)
-        {
-            var response = new SecBaseResponse();
-            var data = _database.ListBudgetForActivities.Where(x => x.Id == ListBudgetForActivityId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
 
             return response;
         }
 
-        //BudgetDisbursementPlan
-        public List<BudgetDisbursementPlan> GetAllBudgetDisbursementPlan()
+        public List<PlanCoresGroupDto> GetPlanCoresGroup(int fiscalYear)
         {
-            return _database.BudgetDisbursementPlans.Where(x => x.Active).ToList();
+            var data = _database.PlanCoresGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Seq).Distinct().ToList();
+            var result = new List<PlanCoresGroupDto>();
+
+            foreach (var item in data)
+            {
+                result.Add(new PlanCoresGroupDto
+                {
+                    Id = item.Id,
+                    Active = item.Active,
+                    GroupName = item.GroupName,
+                    PlanCoresId = item.PlanCoresId,
+                    Seq = item.Seq,
+                    Year = item.Year,
+                    Type = item.Type,
+                    PlanCoresGroup = _database.PlanCoresGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Id).ToList(),
+                });
+
+
+            }
+            return result;
+
         }
-        public List<BudgetDisbursementPlan> GetBudgetDisbursementPlanbyId(int BudgetDisbursementPlanId)
+
+        public SecBaseResponse SetPlanCoresGroup(List<PlanCoresGroup> request)
         {
-            var data = _database.BudgetDisbursementPlans.Where(x => x.Id == BudgetDisbursementPlanId && x.Active).ToList();
-            return data;
-        }
-
-        public SecBaseResponse BudgetDisbursementPlanSetup(BudgetDisbursementPlan request)
-        {
-            _database.Entry(request).State = request.Id == 0 ?
-                           EntityState.Added :
-                           EntityState.Modified;
-
-
-            var result = _database.SaveChanges();
+            int result = 0;
+            var db = new PlanCoresGroup();
+            var seq = _database.PlanCoresGroups.OrderByDescending(x => x.Seq).FirstOrDefault();
+            foreach (var item in request)
+            {
+                if (item.Id == 0)
+                {
+                    db.Id = item.Id;
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.PlanCoresId = item.PlanCoresId;
+                    db.Seq = seq != null ? seq.Seq + 1 : 0;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                else
+                {
+                    db = _database.PlanCoresGroups.Where(x => x.Id == item.Id).FirstOrDefault();
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.PlanCoresId = item.PlanCoresId;
+                    db.Seq = item.Seq;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                _database.Entry(db).State = item.Id == 0 ?
+                          EntityState.Added :
+                          EntityState.Modified;
+                result = _database.SaveChanges();
+            }
             var response = new SecBaseResponse();
             response.Success = result > 0 ? true : false;
-            response.Messsage = request.Id == 0 ? "update" : "insert";
+
             return response;
         }
-        public SecBaseResponse DeleteBudgetDisbursementPlan(int BudgetDisbursementPlanId)
+
+        public List<StrategiesBudgetGroupDto> GetStrategiesBudgetGroup(int fiscalYear)
         {
+            var data = _database.StrategiesBudgetGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Seq).Distinct().ToList();
+            var result = new List<StrategiesBudgetGroupDto>();
+
+            foreach (var item in data)
+            {
+                result.Add(new StrategiesBudgetGroupDto
+                {
+                    Id = item.Id,
+                    Active = item.Active,
+                    GroupName = item.GroupName,
+                    StrategiesId = item.StrategiesId,
+                    Seq = item.Seq,
+                    Year = item.Year,
+                    Type = item.Type,
+                    strategiesBudgetGroups = _database.StrategiesBudgetGroups.Where(x => x.Active == true && x.Year == fiscalYear).OrderBy(x => x.Id).ToList(),
+                });
+
+
+            }
+            return result;
+
+        }
+
+        public SecBaseResponse SetStrategiesBudgetGroup(List<StrategiesBudgetGroup> request)
+        {
+            int result = 0;
+            var db = new StrategiesBudgetGroup();
+            var seq = _database.StrategiesBudgetGroups.OrderByDescending(x => x.Seq).FirstOrDefault();
+            foreach (var item in request)
+            {
+                if (item.Id == 0)
+                {
+                    db.Id = item.Id;
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.StrategiesId = item.StrategiesId;
+                    db.Seq = seq != null ? seq.Seq + 1 : 0;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                else
+                {
+                    db = _database.StrategiesBudgetGroups.Where(x => x.Id == item.Id).FirstOrDefault();
+                    db.Active = item.Active;
+                    db.GroupName = item.GroupName;
+                    db.StrategiesId = item.StrategiesId;
+                    db.Seq = item.Seq;
+                    db.Year = item.Year;
+                    db.Type = item.Type;
+                }
+                _database.Entry(db).State = item.Id == 0 ?
+                          EntityState.Added :
+                          EntityState.Modified;
+                result = _database.SaveChanges();
+            }
             var response = new SecBaseResponse();
-            var data = _database.BudgetDisbursementPlans.Where(x => x.Id == BudgetDisbursementPlanId).FirstOrDefault();
-            if (data != null)
-            {
-                data.Active = false;
-                _database.Entry(data).State = EntityState.Modified;
-                var result = _database.SaveChanges();
-                response.Success = result > 0 ? true : false;
-                response.Messsage = "Delete Complete";
-            }
-            else
-            {
-                response.Success = false;
-                response.Messsage = "not have data";
-            }
+            response.Success = result > 0 ? true : false;
 
             return response;
         }
     }
-
 }
 

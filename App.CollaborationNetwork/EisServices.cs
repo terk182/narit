@@ -106,30 +106,30 @@ namespace App.EIS
                        // {
 
                             var result = _SecServices.calbudget(l1.PlanActivities);
-                            netBudgetByFYear += result.Budget.NetBudgetCache;
-                        paidBudget += result.Budget.UsedBudgetCache;
-                        TotalBudgetCache += result.Budget.TotalBudgetCache;
+                            netBudgetByFYear += result.PlanForActivityList.NetBudgetCache;
+                        paidBudget += result.PlanForActivityList.UsedBudgetCache;
+                        TotalBudgetCache += result.PlanForActivityList.TotalBudgetCache;
 
-                        NetBudgetCache += result.Budget.NetBudgetCache;
+                        NetBudgetCache += result.PlanForActivityList.NetBudgetCache;
 
-                        UsedBudgetCache += result.Budget.UsedBudgetCache;
+                        UsedBudgetCache += result.PlanForActivityList.UsedBudgetCache;
 
-                        RemainBudgetCache += result.Budget.RemainBudgetCache;
+                        RemainBudgetCache += result.PlanForActivityList.RemainBudgetCache;
 
-                        TotalBudget += result.Budget.TotalBudget;
-                        TotalAmount += result.Budget.TotalAmount;
-                        NetAmount += result.Budget.NetAmount;
-                        EntireTotalBudget += result.Budget.EntireTotalBudget;
+                        TotalBudget += result.PlanForActivityList.TotalBudget;
+                        TotalAmount += result.PlanForActivityList.TotalAmount;
+                        NetAmount += result.PlanForActivityList.NetAmount;
+                        EntireTotalBudget += result.PlanForActivityList.EntireTotalBudget;
 
-                        NetBudget += result.Budget.NetBudget;
+                        NetBudget += result.PlanForActivityList.NetBudget;
 
-                        EntireNetBudget += result.Budget.EntireNetBudget;
+                        EntireNetBudget += result.PlanForActivityList.EntireNetBudget;
 
-                        InProcessBudget += result.Budget.InProcessBudget;
-                        CheckViewUsedBudget += result.Budget.CheckViewUsedBudget;
-                        UsedBudget += result.Budget.UsedBudget;
-                        Amount += result.Budget.Amount;
-                        BudgetPerPiece += result.Budget.BudgetPerPiece;
+                        InProcessBudget += result.PlanForActivityList.InProcessBudget;
+                        CheckViewUsedBudget += result.PlanForActivityList.CheckViewUsedBudget;
+                        UsedBudget += result.PlanForActivityList.UsedBudget;
+                        Amount += result.PlanForActivityList.Amount;
+                        BudgetPerPiece += result.PlanForActivityList.BudgetPerPiece;
                         //  }
                     }
                 }

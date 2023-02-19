@@ -182,60 +182,137 @@ namespace App.Common
             var list1 = new List<PlanTypeCommonDto>();
             var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
             var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
-            foreach (var item in data)//ตัวแม่ 
+            foreach (var item in data)
             {
-                var list2 = new List<PlanTypeCommonDto>();//ประกาศตัวแปร
-                foreach (var s in PlanTypes)//วนหาลูก
-                {
-                    if (s.ParentPlanTypeId == item.Id)//วนลูกเพื่อหาแม่
-                    {
-                        var list3 = new List<PlanTypeCommonDto>();
-                        foreach (var s1 in PlanTypes)//วนหาหลาน
-                        {
-                            if (s1.ParentPlanTypeId == s.Id)//วนหลานหาลูก
-                            {
-                                list3.Add(new PlanTypeCommonDto
-                                {
-                                    Id = s1.Id,
-                                    Name = s1.Name,
-                                    FiscalYear = s1.FiscalYear,
-                                    Active = s1.Active,
-                                    ParentPlanTypeId = s1.ParentPlanTypeId,
-                                    ReferenceOldId = s1.ReferenceOldId,
-                                    Weight = s1.Weight,
-                                    // PrinciplePlanTag { get; set; }
-                                });
-                            }
-                        }
-                        list2.Add(new PlanTypeCommonDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            FiscalYear = s.FiscalYear,
-                            Active = s.Active,
-                            ParentPlanTypeId = s.ParentPlanTypeId,
-                            ReferenceOldId = s.ReferenceOldId,
-                            Weight = s.Weight,
-                            ParentPlanType = list3
-                        });
-                    }
-                }
+
                 list1.Add(new PlanTypeCommonDto
                 {
-                    Id = item.Id,
+                     Id = item.Id,
                     Name = item.Name,
                     FiscalYear = item.FiscalYear,
                     Active = item.Active,
                     ParentPlanTypeId = item.ParentPlanTypeId,
                     ReferenceOldId = item.ReferenceOldId,
                     Weight = item.Weight,
-                    ParentPlanType = list2
-                });
+                    ParentPlanType = SubGetPlanType(PlanTypes, item.Id, item.Id),
+                }
+                    );
+                //var list2 = new List<PlanTypeCommonDto>();
+                //foreach (var s in PlanTypes)
+                //{
+                //    if (s.ParentPlanTypeId == item.Id)
+                //    {
+                //        var list3 = new List<PlanTypeCommonDto>();
+                //        foreach (var s1 in PlanTypes)
+                //        {
+                //            if (s1.ParentPlanTypeId == s.Id)
+                //            {
+                //                list3.Add(new PlanTypeCommonDto
+                //                {
+                //                    Id = s1.Id,
+                //                    Name = s1.Name,
+                //                    FiscalYear = s1.FiscalYear,
+                //                    Active = s1.Active,
+                //                    ParentPlanTypeId = s1.ParentPlanTypeId,
+                //                    ReferenceOldId = s1.ReferenceOldId,
+                //                    Weight = s1.Weight,
+                //                    // PrinciplePlanTag { get; set; }
+                //                });
+                //            }
+
+                //        }
+                //        list2.Add(new PlanTypeCommonDto
+                //        {
+                //            Id = s.Id,
+                //            Name = s.Name,
+                //            FiscalYear = s.FiscalYear,
+                //            Active = s.Active,
+                //            ParentPlanTypeId = s.ParentPlanTypeId,
+                //            ReferenceOldId = s.ReferenceOldId,
+                //            Weight = s.Weight,
+                //            ParentPlanType = list3
+                //        });
+                //    }
+                //}
+                //list1.Add(new PlanTypeCommonDto
+                //{
+                //    Id = item.Id,
+                //    Name = item.Name,
+                //    FiscalYear = item.FiscalYear,
+                //    Active = item.Active,
+                //    ParentPlanTypeId = item.ParentPlanTypeId,
+                //    ReferenceOldId = item.ReferenceOldId,
+                //    Weight = item.Weight,
+                //    ParentPlanType = list2
+                //});
+
+
+
             }
 
             return list1;
         }
 
-       
+        public List<PlanTypeCommonDto> SubGetPlanType(List<PlanType> PlanType, int? ParentStrategyId, int? mainStrategyId)
+        {
+            var list2 = new List<PlanTypeCommonDto>();
+            foreach (var s in PlanType)
+            {
+                if (s.Id == ParentStrategyId)
+                {
+                    continue;
+                }
+                if (s.ParentPlanTypeId == ParentStrategyId)
+                {
+                   
+                            list2.Add(new PlanTypeCommonDto
+                            {
+                                Id = s.Id,
+                                Name = s.Name,
+                                FiscalYear = s.FiscalYear,
+                                Active = s.Active,
+                                ParentPlanTypeId = s.ParentPlanTypeId,
+                                ReferenceOldId = s.ReferenceOldId,
+                                Weight = s.Weight,
+                                ParentPlanType = SubGetPlanType(PlanType, s.Id, s.Id),
+                            });
+                }
+            }
+            return list2;
+
+
+        }
+
+        public List<RegisterProcureItemTypeDto> GetRegisterProcureItemType()
+        {
+            var response = new List<RegisterProcureItemTypeDto>();
+            var data = _database.RegisterProcureItemTypes.ToList();
+            foreach (var item in data)
+            {
+                response.Add(new RegisterProcureItemTypeDto
+                {
+            Id = item.Id,
+            Name = item.Name,
+                    Active = item.Active,
+                    EnduranceTypeEnum = item.EnduranceTypeEnum,
+                    ParentRegisterProcureItemTypeId = item.ParentRegisterProcureItemTypeId,
+                    TypeCode = item.TypeCode,
+                    UsefulLife = item.UsefulLife,
+                });
+            }
+            return response;
+        }
+
+        public List<CapticalType> GetCapticalType(int fiscalYear)
+        {
+            var response = _database.CapticalTypes.Where(x => x.Active == true && x.FiscalYear == fiscalYear).ToList();
+            return response;
+        }
+
+        public List<FundSource> GetFundSource(int fiscalYear)
+        {
+            var response = _database.FundSources.Where(x => x.Active == true && x.FiscalYear == fiscalYear).ToList();
+            return response;
+        }
     }
 }

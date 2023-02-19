@@ -1,4 +1,5 @@
-﻿using System;
+﻿using narit_mis_api.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace App.SEC.Dtos
     public class calBudgetDetail
     {
         public List<Budgetmode>? budgetmodes { get; set; }
-        public  ViewPlanForActivityByPlanTypeBudgetTypeTable? Budget { get;set;}
+        public  ViewPlanForActivityByPlanTypeBudgetTypeTable? PlanForActivityList { get;set;}
     }
     public class ViewPlanForActivityByPlanTypeBudgetTypeTable
     {
@@ -46,7 +47,8 @@ namespace App.SEC.Dtos
         public string? Unit { get; set; }
         public int? BudgetTypeId { get; set; }
         public int? PlanTypeId { get; set; }
-        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? subdata { get; set; }
+        public List<ViewPlanForActivityByPlanTypeBudgetTypeTable>? PlanActivityList { get; set; }
+        public List<ResponsiblePerson>? Persons { get; set; }
     }
     public class planItemCal
     {

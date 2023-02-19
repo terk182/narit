@@ -12,5 +12,7 @@ namespace App.SEC.Models.Requests
         public string Name { get; set; } = null!;
         public int FiscalYear { get; set; }
         public bool Active { get; set; }
+        public int? CapticalTypeId { get; set; }
+        public int? FundSourceId { get; set; }
     }
 }

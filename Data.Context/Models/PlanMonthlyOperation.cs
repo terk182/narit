@@ -55,6 +55,8 @@ namespace narit_mis_api.Models
         public string DetailNovember { get; set; } = null!;
         public string DetailDecember { get; set; } = null!;
         public int? ParentPlanMonthlyOperationId { get; set; }
+        public int? PlanActivitiesId { get; set; }
+        public int? PlanItemId { get; set; }
 
         public virtual PlanMonthlyOperation? ParentPlanMonthlyOperation { get; set; }
         public virtual PlanActivity PlanActivity { get; set; } = null!;

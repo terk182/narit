@@ -23,12 +23,6 @@ namespace narit_mis_api.Controllers
             //_configuration = Configuration;
             // connecttion = _configuration.GetConnectionString("Defaultconnectton");
         }
-
-    
-        /// <remarks>
-        /// หากต้องการลบการพูก Mis=>Sso 
-        /// ให้ส่งข้อมูลเดิม และใส่ "type":"reject"
-        /// </remarks>
         [HttpPost]
         [Route("SetMisSsoMatching")]
         public IActionResult SetMisSsoMatching(List<MisSsoMatching> req)
@@ -40,10 +34,46 @@ namespace narit_mis_api.Controllers
         }
         [HttpPost]
         [Route("GetMisSsoMatching")]
-        public IActionResult getMisSsoMatching(MisSsoMatching req)
+        public IActionResult SetMisSsoMatching(MisSsoMatching req)
         {
             _Logger.LogInformation("sql");
             var data = _Service.GetMisSsoMatching(req);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("SetMisAccMatching")]
+        public IActionResult SetMisAccMatching(List<MisAccMatching> req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.SetMisAccMatching(req);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("GetMisAccMatching")]
+        public IActionResult GetMisAccoMatching(MisAccMatching req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.GetMisAccMatching(req);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("SetMisRegisterProcureItemTypesMatching")]
+        public IActionResult SetMisRegisterProcureItemTypesMatching(List<MisProcureMatching> req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.SetMisProcureItemMatching(req);
+
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("GetMisRegisterProcureItemTypesMatching")]
+        public IActionResult GetMisRegisterProcureItemTypesoMatching(MisProcureMatching req)
+        {
+            _Logger.LogInformation("sql");
+            var data = _Service.GetMisProcureItemMatching(req);
 
             return Json(data);
         }
@@ -65,7 +95,7 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
-        
+       //egisterProcureItemType
 
 
     }

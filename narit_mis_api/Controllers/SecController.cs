@@ -458,14 +458,6 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.GetScheduleFisicalYear();
             return Json(data);
         }
-
-        [HttpPost]
-        [Route("/Plan/Operate/EditScheduleFisicalYearByYear")]
-        public IActionResult EditScheduleFisicalYear(string name, bool active)
-        {
-            var data = _SecServices.EditScheduleFisicalYear(name, active);
-            return Json(data);
-        }
         [HttpGet]
         [Route("/Plan/Operate/EditScheduleFisicalYear/GetbyYear/{year}")]
         public IActionResult GetScheduleFisicalYearbyYear(int year)
@@ -753,13 +745,7 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentGetByFiscalYearandDepartmentid(year, id);
             return Json(data);
         }
-        [HttpGet]
-        [Route("/Plan/Operate/DepartmentNameGetByDepartmentid/{id}")]
-        public IActionResult DepartmentNameGetByDepartmentid(int id)
-        {
-            var data = _SecServices.DepartmentNameGetByDepartmentid(id);
-            return Json(data);
-        }
+
         [HttpGet]
         [Route("/Plan/Operate/SelectViewPlanForActivityByPlanType/GetByFiscalYear/{year}")]
         public IActionResult SelectViewPlanForActivityByPlanTypeGetByFiscalYear(int year)
@@ -775,15 +761,7 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.PlanTypeGetByFiscalYearandPlanTypeid(year, id);
             return Json(data);
         }
-       
 
-        [HttpGet]
-        [Route("/Plan/Operate/PlanTypeNameGetByPlanTypeid/GetByPlanTypeid/{id}")]
-        public IActionResult PlanTypeNameGetByPlanTypeid(int id)
-        {
-            var data = _SecServices.PlanTypeNameGetByPlanTypeid(id);
-            return Json(data);
-        }
 
         [HttpPost]
         [Route("/Plan/Operate/ViewChangedPlanItemRecordList")]
@@ -1608,7 +1586,7 @@ namespace narit_mis_api.Controllers
         }
 
 
-        
+
         [HttpGet]
         [Route("/Plan/Report/SummarizeReportByPlanCore")]
         public IActionResult SummarizeReportByPlanCore()
@@ -1679,25 +1657,9 @@ namespace narit_mis_api.Controllers
         public IActionResult BudgetTypeSetupGetByFiscalYear(int GetByFiscalYear)
         {
             var data = _SecServices.GetByFiscalYear(GetByFiscalYear);
-            var _BudgetType = new List<BudgetTypeDto>();
-            foreach (var item in data)
-            {
-                _BudgetType.Add(new BudgetTypeDto
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    Active = item.Active,
-                    FiscalYear = item.FiscalYear,
-                    ParentBudgetTypeId = item.ParentBudgetTypeId,
-                    ReferenceOldId = item.ReferenceOldId,
-                    ExpenseTypeEnum = item.ExpenseTypeEnum,
-                    GovExpenseTypeEnum = item.GovExpenseTypeEnum,
+            
 
-                });
-
-            }
-
-            return Json(_BudgetType);
+            return Json(data);
         }
 
         [HttpPost]
@@ -1724,8 +1686,6 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentBudgetLimitSetup(request);
             return Json(data);
         }
-
-
         [HttpGet]
         [Route("/Plan/Setup/DepartmentSetup/GetByFiscalYear/{year}")]
         public IActionResult DepartmentSetupGetByFiscalYear(int year)
@@ -1733,10 +1693,6 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DepartmentListGetByFiscalYear(year);
             return Json(data);
         }
-
-
-
-
         [HttpGet]
         [Route("/Plan/Setup/DepartmentBudgetLimitSetup/GetByFiscalYear/{year}")]
         public IActionResult DepartmentBudgetLimitGetByFiscalYear(int year)
@@ -1764,6 +1720,13 @@ namespace narit_mis_api.Controllers
         public IActionResult FundSourceSetup(FundSourceRequest request)
         {
             var data = _SecServices.FundSourceSetup(request);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/EditCapticalType")]
+        public IActionResult EditCapticalType(CapticalType request)
+        {
+            var data = _SecServices.EditCapticalType(request);
             return Json(data);
         }
         [HttpGet]
@@ -1909,7 +1872,7 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpGet]
-        [Route("/Plan/Setup/GetStrategicIndicatorbyStrategyId/{StrategyId}")]
+        [Route("/Plan/Setup/StrategicIndicatorSetup/StrategyId/{StrategyId}")]
         public IActionResult StrategicIndicatorGetbyStrategyId(int StrategyId)
         {
             var data = _SecServices.StrategicIndicatorGetbyStrategyId(StrategyId);
@@ -1919,16 +1882,17 @@ namespace narit_mis_api.Controllers
         [Route("/Plan/Setup/StrategySetup/FiscalYear/{year}")]
         public IActionResult StrategySetupByFiscalYear(int year)
         {
-            var data = _SecServices.StrategySetupByFiscalYear(year);
+            var data = _SecServices.TryGetStrategy(year);
             return Json(data);
+          
         }
-        [HttpGet]
-        [Route("/Plan/Setup/StrategyBudget/FiscalYear/{year}")]
-        public IActionResult StrategyBudgetByFiscalYear(int year)
-        {
-            var data = _SecServices.StrategyBudgetByFiscalYear(year);
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("/Plan/Setup/StrategyBudget/FiscalYear/{year}")]
+        //public IActionResult StrategyBudgetByFiscalYear(int year)
+        //{
+        //    var data = _SecServices.StrategyBudgetByFiscalYear(year);
+        //    return Json(data);
+        //}
         [HttpGet]
         [Route("/Plan/Setup/StrategySetup/FiscalYearandStrategyId/{year}/{id}")]
         public IActionResult StrategySetupByFiscalYearandStrategyId(int year, int id)
@@ -1936,13 +1900,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategySetupByFiscalYearandStrategyId(year,id);
             return Json(data);
         }
-        [HttpGet]
-        [Route("/Plan/Setup/StrategyBudget/FiscalYearandStrategyId/{year}/{id}")]
-        public IActionResult StrategyBudgetByFiscalYearandStrategyId(int year, int id)
-        {
-            var data = _SecServices.StrategyBudgetByFiscalYearandStrategyId(year, id);
-            return Json(data);
-        }
+        //[HttpGet]
+        //[Route("/Plan/Setup/StrategyBudget/FiscalYearandStrategyId/{year}/{id}")]
+        //public IActionResult StrategyBudgetByFiscalYearandStrategyId(int year, int id)
+        //{
+        //    var data = _SecServices.StrategyBudgetByFiscalYearandStrategyId(year, id);
+        //    return Json(data);
+        //}
         [HttpPost]
         [Route("/Plan/Setup/StrategySetup")]
         public IActionResult StrategySetup(StrategySetupModel request)
@@ -1950,13 +1914,104 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.StrategySetup(request);
             return Json(data);
         }
-        [HttpPost]
-        [Route("/Plan/Setup/StrategyBudgetSetup")]
-        public IActionResult StrategyBudgetSetup(StrategyBudgetDto request)
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("/Plan/Setup/GetStrategiesGroup/{year}")]
+        public IActionResult GetStrategiesGroup(int year)
         {
-            var data = _SecServices.StrategyBudgetSetup(request);
+            var data = _SecServices.GetStrategiesGroup(year);
             return Json(data);
         }
+        [HttpPost]
+        [Route("/Plan/Setup/SetStrategiesGroup")]
+        public IActionResult SetStrategiesGroup(List<StrategiesGroup> request)
+        {
+            var data = _SecServices.SetStrategiesGroup(request);
+            return Json(data);
+        }
+
+
+        [HttpGet]
+        [Route("/Plan/Setup/GetDepartmentsGroup/{year}")]
+        public IActionResult GetDepartmentsGroup(int year)
+        {
+            var data = _SecServices.GetDepartmentsGroup(year);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/SetDepartmentsGroup")]
+        public IActionResult SetDepartmentsGroup(List<DepartmentsGroup> request)
+        {
+            var data = _SecServices.SetDepartmentsGroup(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Setup/GetPlanCoresGroup/{year}")]
+        public IActionResult GePlanCoresGroup(int year)
+        {
+            var data = _SecServices.GetPlanCoresGroup(year);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/SetPlanCoresGroup")]
+        public IActionResult SetPlanCoresGroup(List<PlanCoresGroup> request)
+        {
+            var data = _SecServices.SetPlanCoresGroup(request);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("/Plan/Setup/GetStrategiesBudgetGroup/{year}")]
+        public IActionResult GetStrategiesBudgetGroup(int year)
+        {
+            var data = _SecServices.GetStrategiesBudgetGroup(year);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("/Plan/Setup/setStrategiesBudgetGroup")]
+        public IActionResult setStrategiesBudgetGroup(List<StrategiesBudgetGroup> request)
+        {
+            var data = _SecServices.SetStrategiesBudgetGroup(request);
+            return Json(data);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //[HttpPost]
+        //[Route("/Plan/Setup/StrategyBudgetSetup")]
+        //public IActionResult StrategyBudgetSetup(StrategyBudgetDto request)
+        //{
+        //    var data = _SecServices.StrategyBudgetSetup(request);
+        //    return Json(data);
+        //}
         [HttpDelete]
         [Route("/Plan/Setup/StrategySetup/DeleteStrategy/{Id}")]
         public IActionResult DeleteStrategy(int Id)
@@ -1966,15 +2021,15 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
-        [HttpDelete]
-        [Route("/Plan/Setup/StrategyBudget/DeleteStrategy/{Id}")]
-        public IActionResult DeleteStrategyBudget(int Id)
-        {
+        //[HttpDelete]
+        //[Route("/Plan/Setup/StrategyBudget/DeleteStrategy/{Id}")]
+        //public IActionResult DeleteStrategyBudget(int Id)
+        //{
 
-            var data = _SecServices.DeleteStrategyBudget(Id);
+        //    var data = _SecServices.DeleteStrategyBudget(Id);
 
-            return Json(data);
-        }
+        //    return Json(data);
+        //}
         [HttpDelete]
         [Route("/Plan/Setup/StrategicIndicatorSetup/DeleteStrategicIndicator/{Id}")]
         public IActionResult DeleteStrategicIndicator(int Id)
@@ -2083,914 +2138,6 @@ namespace narit_mis_api.Controllers
         //    return Json(_BudgetType);
         //}
 
-        /////////////////////////////////new new new by ardin/////////////////////////////////
-        //MainGovtStatement
-        [HttpGet]
-        [Route("/Sec/MainGovtStatement/GetAll")]
-        public IActionResult GetAllMainGovtStatement()
-        {
-            var data = _SecServices.GetAllMainGovtStatement();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/MainGovtStatement/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetMainGovtStatementbyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetMainGovtStatementbyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/MainGovtStatement/GetbyId/{MainGovtStatementId}")]
-        public IActionResult GetMainGovtStatementbyId(int MainGovtStatementId)
-        {
-            var data = _SecServices.GetMainGovtStatementbyId(MainGovtStatementId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/MainGovtStatement/Setup")]
-        public IActionResult MainGovtStatementSetup(MainGovtStatement request)
-        {
-            var data = _SecServices.MainGovtStatementSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/MainGovtStatement/Delete/{MainGovtStatementId}")]
-        public IActionResult DeleteMainGovtStatement(int MainGovtStatementId)
-        {
 
-            var data = _SecServices.DeleteMainGovtStatement(MainGovtStatementId);
-
-            return Json(data);
-        }
-        //GovtStrategic
-        [HttpGet]
-        [Route("/Sec/GovtStrategic/GetAll")]
-        public IActionResult GetAllGovtStrategic()
-        {
-            var data = _SecServices.GetAllGovtStrategic();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/GovtStrategic/GetbyId/{GovtStrategicId}")]
-        public IActionResult GetGovtStrategicbyId(int GovtStrategicId)
-        {
-            var data = _SecServices.GetGovtStrategicbyId(GovtStrategicId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/GovtStrategic/Setup")]
-        public IActionResult GovtStrategicSetup(GovtStrategic request)
-        {
-            var data = _SecServices.GovtStrategicSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/GovtStrategic/Delete/{GovtStrategicId}")]
-        public IActionResult DeleteGovtStrategic(int GovtStrategicId)
-        {
-
-            var data = _SecServices.DeleteGovtStrategic(GovtStrategicId);
-
-            return Json(data);
-        }
-        //GovtPlan
-        [HttpGet]
-        [Route("/Sec/GovtPlan/GetAll")]
-        public IActionResult GetAllGovtPlan()
-        {
-            var data = _SecServices.GetAllGovtPlan();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/GovtPlan/GetbyId/{GovtPlanId}")]
-        public IActionResult GetGovtPlanbyId(int GovtPlanId)
-        {
-            var data = _SecServices.GetGovtPlanbyId(GovtPlanId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/GovtPlan/Setup")]
-        public IActionResult GovtPlanSetup(GovtPlan request)
-        {
-            var data = _SecServices.GovtPlanSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/GovtPlan/Delete/{GovtPlanId}")]
-        public IActionResult DeleteGovtPlan(int GovtPlanId)
-        {
-
-            var data = _SecServices.DeleteGovtPlan(GovtPlanId);
-
-            return Json(data);
-        }
-        //MainProject
-        [HttpGet]
-        [Route("/Sec/MainProject/GetAll")]
-        public IActionResult GetAllMainProject()
-        {
-            var data = _SecServices.GetAllMainProject();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/MainProject/GetbyId/{MainProjectId}")]
-        public IActionResult GetMainProjectbyId(int MainProjectId)
-        {
-            var data = _SecServices.GetMainProjectbyId(MainProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/MainProject/Setup")]
-        public IActionResult MainProjectSetup(MainProject request)
-        {
-            var data = _SecServices.MainProjectSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/MainProject/Delete/{MainProjectId}")]
-        public IActionResult DeleteMainProject(int MainProjectId)
-        {
-
-            var data = _SecServices.DeleteMainProject(MainProjectId);
-
-            return Json(data);
-        }
-        //MainActivity
-        [HttpGet]
-        [Route("/Sec/MainActivity/GetAll")]
-        public IActionResult GetAllMainActivity()
-        {
-            var data = _SecServices.GetAllMainActivity();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/MainActivity/GetbyId/{MainActivityId}")]
-        public IActionResult GetMainActivitybyId(int MainActivityId)
-        {
-            var data = _SecServices.GetMainActivitybyId(MainActivityId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/MainActivity/Setup")]
-        public IActionResult MainActivitySetup(MainActivity request)
-        {
-            var data = _SecServices.MainActivitySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/MainActivity/Delete/{MainActivityId}")]
-        public IActionResult DeleteMainActivity(int MainActivityId)
-        {
-
-            var data = _SecServices.DeleteMainActivity(MainActivityId);
-
-            return Json(data);
-        }
-        //StrategicIssue
-        [HttpGet]
-        [Route("/Sec/StrategicIssue/GetAll")]
-        public IActionResult GetAllStrategicIssue()
-        {
-            var data = _SecServices.GetAllStrategicIssue();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/StrategicIssue/GetbyId/{StrategicIssueId}")]
-        public IActionResult GetStrategicIssuebyId(int StrategicIssueId)
-        {
-            var data = _SecServices.GetStrategicIssuebyId(StrategicIssueId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/StrategicIssue/Setup")]
-        public IActionResult StrategicIssueSetup(StrategicIssue request)
-        {
-            var data = _SecServices.StrategicIssueSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/StrategicIssue/Delete/{StrategicIssueId}")]
-        public IActionResult DeleteStrategicIssue(int StrategicIssueId)
-        {
-
-            var data = _SecServices.DeleteStrategicIssue(StrategicIssueId);
-
-            return Json(data);
-        }
-        ////Strategy1
-        //[HttpGet]
-        //[Route("/Strategy1/GetAll")]
-        //public IActionResult GetAllStrategy1()
-        //{
-        //    var data = _SecServices.GetAllStrategy1();
-        //    return Json(data);
-        //}
-        //[HttpGet]
-        //[Route("/Strategy1/GetbyId/{Strategy1Id}")]
-        //public IActionResult GetStrategy1byId(int Strategy1Id)
-        //{
-        //    var data = _SecServices.GetStrategy1byId(Strategy1Id);
-        //    return Json(data);
-        //}
-        //[HttpPost]
-        //[Route("/Strategy1/Setup")]
-        //public IActionResult Strategy1Setup(Strategy1 request)
-        //{
-        //    var data = _SecServices.Strategy1Setup(request);
-        //    return Json(data);
-        //}
-        //[HttpDelete]
-        //[Route("/Strategy1/Delete/{Strategy1Id}")]
-        //public IActionResult DeleteStrategy1(int Strategy1Id)
-        //{
-
-        //    var data = _SecServices.DeleteStrategy1(Strategy1Id);
-
-        //    return Json(data);
-        //}
-        ////Measure
-        //[HttpGet]
-        //[Route("/Measure/GetAll")]
-        //public IActionResult GetAllMeasure()
-        //{
-        //    var data = _SecServices.GetAllMeasure();
-        //    return Json(data);
-        //}
-        //[HttpGet]
-        //[Route("/Measure/GetbyId/{MeasureId}")]
-        //public IActionResult GetMeasurebyId(int MeasureId)
-        //{
-        //    var data = _SecServices.GetMeasurebyId(MeasureId);
-        //    return Json(data);
-        //}
-        //[HttpPost]
-        //[Route("/Measure/Setup")]
-        //public IActionResult MeasureSetup(Measure request)
-        //{
-        //    var data = _SecServices.MeasureSetup(request);
-        //    return Json(data);
-        //}
-        //[HttpDelete]
-        //[Route("/Measure/Delete/{MeasureId}")]
-        //public IActionResult DeleteMeasure(int MeasureId)
-        //{
-
-        //    var data = _SecServices.DeleteMeasure(MeasureId);
-
-        //    return Json(data);
-        //}
-        //AnnualBudget
-        [HttpGet]
-        [Route("/Sec/AnnualBudget/GetAll")]
-        public IActionResult GetAllAnnualBudget()
-        {
-            var data = _SecServices.GetAllAnnualBudget();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/AnnualBudget/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetAnnualBudgetbyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetAnnualBudgetbyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/AnnualBudget/GetbyId/{AnnualBudgetId}")]
-        public IActionResult GetAnnualBudgetbyId(int AnnualBudgetId)
-        {
-            var data = _SecServices.GetAnnualBudgetbyId(AnnualBudgetId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/AnnualBudget/Setup")]
-        public IActionResult AnnualBudgetSetup(AnnualBudget request)
-        {
-            var data = _SecServices.AnnualBudgetSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/AnnualBudget/Delete/{AnnualBudgetId}")]
-        public IActionResult DeleteAnnualBudget(int AnnualBudgetId)
-        {
-
-            var data = _SecServices.DeleteAnnualBudget(AnnualBudgetId);
-
-            return Json(data);
-        }
-        //SubAnnualBudget
-        [HttpGet]
-        [Route("/Sec/SubAnnualBudget/GetAll")]
-        public IActionResult GetAllSubAnnualBudget()
-        {
-            var data = _SecServices.GetAllSubAnnualBudget();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubAnnualBudget/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetSubAnnualBudgetbyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetSubAnnualBudgetbyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubAnnualBudget/GetbyId/{SubAnnualBudgetId}")]
-        public IActionResult GetSubAnnualBudgetbyId(int SubAnnualBudgetId)
-        {
-            var data = _SecServices.GetSubAnnualBudgetbyId(SubAnnualBudgetId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/SubAnnualBudget/Setup")]
-        public IActionResult SubAnnualBudgetSetup(SubAnnualBudget request)
-        {
-            var data = _SecServices.SubAnnualBudgetSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/SubAnnualBudget/Delete/{SubAnnualBudgetId}")]
-        public IActionResult DeleteSubAnnualBudget(int SubAnnualBudgetId)
-        {
-
-            var data = _SecServices.DeleteSubAnnualBudget(SubAnnualBudgetId);
-
-            return Json(data);
-        }
-        //CapticalType
-        [HttpGet]
-        [Route("/Sec/CapticalType/GetAll")]
-        public IActionResult GetAllCapticalType()
-        {
-            var data = _SecServices.GetAllCapticalType();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/CapticalType/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetCapticalTypebyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetCapticalTypebyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/CapticalType/GetbyId/{CapticalTypeId}")]
-        public IActionResult GetCapticalTypebyId(int CapticalTypeId)
-        {
-            var data = _SecServices.GetCapticalTypebyId(CapticalTypeId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/CapticalType/Setup")]
-        public IActionResult CapticalTypeSetup(CapticalType request)
-        {
-            var data = _SecServices.CapticalTypeSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/CapticalType/Delete/{CapticalTypeId}")]
-        public IActionResult DeleteCapticalType(int CapticalTypeId)
-        {
-
-            var data = _SecServices.DeleteCapticalType(CapticalTypeId);
-
-            return Json(data);
-        }
-        //Project
-        [HttpGet]
-        [Route("/Sec/Project/GetAll")]
-        public IActionResult GetAllProject()
-        {
-            var data = _SecServices.GetAllProject();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/Project/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetProjectbyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetProjectbyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/Project/GetbyId/{ProjectId}")]
-        public IActionResult GetProjectbyId(int ProjectId)
-        {
-            var data = _SecServices.GetProjectbyId(ProjectId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/Project/GetsubProjectorProjectActivitybyProjectId/{ProjectId}")]
-        public IActionResult GetsubProjectorProjectActivitybyProjectId(int ProjectId)
-        {
-            var data = _SecServices.GetsubProjectorProjectActivitybyProjectId(ProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/Project/Setup")]
-        public IActionResult ProjectSetup(Project request)
-        {
-            var data = _SecServices.ProjectSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/Project/Delete/{ProjectId}")]
-        public IActionResult DeleteProject(int ProjectId)
-        {
-
-            var data = _SecServices.DeleteProject(ProjectId);
-
-            return Json(data);
-        }
-        //ProjectCaptical
-        [HttpGet]
-        [Route("/Sec/ProjectCaptical/GetAll")]
-        public IActionResult GetAllProjectCaptical()
-        {
-            var data = _SecServices.GetAllProjectCaptical();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectCaptical/GetbyId/{ProjectCapticalId}")]
-        public IActionResult GetProjectCapticalbyId(int ProjectCapticalId)
-        {
-            var data = _SecServices.GetProjectCapticalbyId(ProjectCapticalId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/ProjectCaptical/Setup")]
-        public IActionResult ProjectCapticalSetup(ProjectCaptical request)
-        {
-            var data = _SecServices.ProjectCapticalSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/ProjectCaptical/Delete/{ProjectCapticalId}")]
-        public IActionResult DeleteProjectCaptical(int ProjectCapticalId)
-        {
-
-            var data = _SecServices.DeleteProjectCaptical(ProjectCapticalId);
-
-            return Json(data);
-        }
-        //ProjectResponsiblePerson
-        [HttpGet]
-        [Route("/Sec/ProjectResponsiblePerson/GetAll")]
-        public IActionResult GetAllProjectResponsiblePersons()
-        {
-            var data = _SecServices.GetAllProjectResponsiblePersons();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectResponsiblePerson/GetbyId/{ProjectResponsiblePersonsId}")]
-        public IActionResult GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId)
-        {
-            var data = _SecServices.GetProjectResponsiblePersonsbyId(ProjectResponsiblePersonsId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectResponsiblePerson/GetbyProjectId/{ProjectId}")]
-        public IActionResult GetProjectResponsiblePersonsbyProjectId(int ProjectId)
-        {
-            var data = _SecServices.GetProjectResponsiblePersonsbyProjectId(ProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/ProjectResponsiblePerson/Setup")]
-        public IActionResult ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request)
-        {
-            var data = _SecServices.ProjectResponsiblePersonsSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/ProjectResponsiblePerson/Delete/{ProjectResponsiblePersonsId}")]
-        public IActionResult DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId)
-        {
-
-            var data = _SecServices.DeleteProjectResponsiblePersons(ProjectResponsiblePersonsId);
-
-            return Json(data);
-        }
-        //IndicatorsStrategyForProject
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProject/GetAll")]
-        public IActionResult GetAllIndicatorsStrategyForProject()
-        {
-            var data = _SecServices.GetAllIndicatorsStrategyForProject();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProject/GetbyId/{IndicatorsStrategyForProjectId}")]
-        public IActionResult GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForProjectbyId(IndicatorsStrategyForProjectId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProject/GetbyProjectId/{ProjectId}")]
-        public IActionResult GetIndicatorsStrategyForProjectbyProjectId(int ProjectId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForProjectbyProjectId(ProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/IndicatorsStrategyForProject/Setup")]
-        public IActionResult IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request)
-        {
-            var data = _SecServices.IndicatorsStrategyForProjectSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/IndicatorsStrategyForProject/Delete/{IndicatorsStrategyForProjectId}")]
-        public IActionResult DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId)
-        {
-
-            var data = _SecServices.DeleteIndicatorsStrategyForProject(IndicatorsStrategyForProjectId);
-
-            return Json(data);
-        }
-        //ExternalBudgetStrategy
-        [HttpGet]
-        [Route("/sec/ExternalBudgetStrategy/GetAll")]
-        public IActionResult GetAllExternalBudgetStrategy()
-        {
-            var data = _SecServices.GetAllExternalBudgetStrategy();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/sec/ExternalBudgetStrategy/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetExternalBudgetStrategybyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetExternalBudgetStrategybyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/sec/ExternalBudgetStrategy/GetbyId/{ExternalBudgetStrategyId}")]
-        public IActionResult GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId)
-        {
-            var data = _SecServices.GetExternalBudgetStrategybyId(ExternalBudgetStrategyId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/sec/ExternalBudgetStrategy/Setup")]
-        public IActionResult ExternalBudgetStrategySetup(ExternalBudgetStrategy request)
-        {
-            var data = _SecServices.ExternalBudgetStrategySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/sec/ExternalBudgetStrategy/Delete/{ExternalBudgetStrategyId}")]
-        public IActionResult DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId)
-        {
-
-            var data = _SecServices.DeleteExternalBudgetStrategy(ExternalBudgetStrategyId);
-
-            return Json(data);
-        }
-        //InternalStrategy
-        [HttpGet]
-        [Route("/sec/InternalStrategy/GetAll")]
-        public IActionResult GetAllInternalStrategy()
-        {
-            var data = _SecServices.GetAllInternalStrategy();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/sec/InternalStrategy/GetbyFisicalYear/{FisicalYear}")]
-        public IActionResult GetInternalStrategybyFisicalYear(int FisicalYear)
-        {
-            var data = _SecServices.GetInternalStrategybyFisicalYear(FisicalYear);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/sec/InternalStrategy/GetbyId/{InternalStrategyId}")]
-        public IActionResult GetInternalStrategybyId(int InternalStrategyId)
-        {
-            var data = _SecServices.GetInternalStrategybyId(InternalStrategyId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/sec/InternalStrategy/Setup")]
-        public IActionResult InternalStrategySetup(InternalStrategy request)
-        {
-            var data = _SecServices.InternalStrategySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/sec/InternalStrategy/Delete/{InternalStrategyId}")]
-        public IActionResult DeleteInternalStrategy(int InternalStrategyId)
-        {
-
-            var data = _SecServices.DeleteInternalStrategy(InternalStrategyId);
-
-            return Json(data);
-        }
-        //ProjectActivity
-        [HttpGet]
-        [Route("/Sec/ProjectActivity/GetAll")]
-        public IActionResult GetAllProjectActivity()
-        {
-            var data = _SecServices.GetAllProjectActivity();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectActivity/GetbyId/{ProjectActivityId}")]
-        public IActionResult GetProjectActivitybyId(int ProjectActivityId)
-        {
-            var data = _SecServices.GetProjectActivitybyId(ProjectActivityId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectActivity/GetProjectActivityforProjectbyId/{ProjectId}")]
-        public IActionResult GetProjectActivityforProjectbyId(int ProjectId)
-        {
-            var data = _SecServices.GetProjectActivityforProjectbyId(ProjectId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectActivity/GetbySubProjectId/{SubProjectId}")]
-        public IActionResult GetProjectActivityfromSubProjectId(int SubProjectId)
-        {
-            var data = _SecServices.GetProjectActivityfromSubProjectId(SubProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/ProjectActivity/Setup")]
-        public IActionResult ProjectActivitySetup(ProjectActivity request)
-        {
-            var data = _SecServices.ProjectActivitySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/ProjectActivity/Delete/{ProjectActivityId}")]
-        public IActionResult DeleteProjectActivity(int ProjectActivityId)
-        {
-
-            var data = _SecServices.DeleteProjectActivity(ProjectActivityId);
-
-            return Json(data);
-        }
-        //SubProject
-        [HttpGet]
-        [Route("/Sec/SubProject/GetAll")]
-        public IActionResult GetAllSubProject()
-        {
-            var data = _SecServices.GetAllSubProject();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubProject/GetbyId/{SubProjectId}")]
-        public IActionResult GetSubProjectbyId(int SubProjectId)
-        {
-            var data = _SecServices.GetSubProjectbyId(SubProjectId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubProject/GetSubProjectforProjectbyId/{ProjectId}")]
-        public IActionResult GetSubProjectforProjectbyId(int ProjectId)
-        {
-            var data = _SecServices.GetSubProjectforProjectbyId(ProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/SubProject/Setup")]
-        public IActionResult SubProjectSetup(SubProject request)
-        {
-            var data = _SecServices.SubProjectSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/SubProject/Delete/{SubProjectId}")]
-        public IActionResult DeleteSubProject(int SubProjectId)
-        {
-
-            var data = _SecServices.DeleteSubProject(SubProjectId);
-
-            return Json(data);
-        }
-        //ProjectActivityResponsiblePerson
-        [HttpGet]
-        [Route("/Sec/ProjectActivityResponsiblePerson/GetAll")]
-        public IActionResult GetAllProjectActivityResponsiblePerson()
-        {
-            var data = _SecServices.GetAllProjectActivityResponsiblePerson();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectActivityResponsiblePerson/GetbyId/{ProjectActivityResponsiblePersonId}")]
-        public IActionResult GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId)
-        {
-            var data = _SecServices.GetProjectActivityResponsiblePersonbyId(ProjectActivityResponsiblePersonId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ProjectActivityResponsiblePerson/GetbyProjectId/{ProjectActivityId}")]
-        public IActionResult GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId)
-        {
-            var data = _SecServices.GetProjectActivityResponsiblePersonsbyProjectId(ProjectActivityId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/ProjectActivityResponsiblePerson/Setup")]
-        public IActionResult ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request)
-        {
-            var data = _SecServices.ProjectActivityResponsiblePersonSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/ProjectActivityResponsiblePerson/Delete/{ProjectActivityResponsiblePersonId}")]
-        public IActionResult DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId)
-        {
-
-            var data = _SecServices.DeleteProjectActivityResponsiblePerson(ProjectActivityResponsiblePersonId);
-
-            return Json(data);
-        }
-        //SubProjectResponsiblePerson
-        [HttpGet]
-        [Route("/Sec/SubProjectResponsiblePerson/GetAll")]
-        public IActionResult GetAllSubProjectResponsiblePerson()
-        {
-            var data = _SecServices.GetAllSubProjectResponsiblePerson();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubProjectResponsiblePerson/GetbyId/{SubProjectResponsiblePersonId}")]
-        public IActionResult GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId)
-        {
-            var data = _SecServices.GetSubProjectResponsiblePersonbyId(SubProjectResponsiblePersonId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/SubProjectResponsiblePerson/GetbySubProjectId/{SubProjectId}")]
-        public IActionResult GetSubProjectResponsiblePersonsbyProjectId(int SubProjectId)
-        {
-            var data = _SecServices.GetSubProjectResponsiblePersonsbySubProjectId(SubProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/SubProjectResponsiblePerson/Setup")]
-        public IActionResult SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request)
-        {
-            var data = _SecServices.SubProjectResponsiblePersonSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/SubProjectResponsiblePerson/Delete/{SubProjectResponsiblePersonId}")]
-        public IActionResult DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId)
-        {
-
-            var data = _SecServices.DeleteSubProjectResponsiblePerson(SubProjectResponsiblePersonId);
-
-            return Json(data);
-        }
-        //IndicatorsStrategyForProjectActivity
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProjectActivity/GetAll")]
-        public IActionResult GetAllIndicatorsStrategyForProjectActivity()
-        {
-            var data = _SecServices.GetAllIndicatorsStrategyForProjectActivity();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProjectActivity/GetbyId/{IndicatorsStrategyForProjectActivityId}")]
-        public IActionResult GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForProjectActivitybyId(IndicatorsStrategyForProjectActivityId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForProjectActivity/GetbyProjectActivityId/{ProjectActivityId}")]
-        public IActionResult GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForProjectActivitybyProjectActivityId(ProjectActivityId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/IndicatorsStrategyForProjectActivity/Setup")]
-        public IActionResult IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request)
-        {
-            var data = _SecServices.IndicatorsStrategyForProjectActivitySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/IndicatorsStrategyForProjectActivity/Delete/{IndicatorsStrategyForProjectActivityId}")]
-        public IActionResult DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId)
-        {
-
-            var data = _SecServices.DeleteIndicatorsStrategyForProjectActivity(IndicatorsStrategyForProjectActivityId);
-
-            return Json(data);
-        }
-        //IndicatorsStrategyForSubProject
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForSubProject/GetAll")]
-        public IActionResult GetAllIndicatorsStrategyForSubProject()
-        {
-            var data = _SecServices.GetAllIndicatorsStrategyForSubProject();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForSubProject/GetbyId/{IndicatorsStrategyForSubProjectId}")]
-        public IActionResult GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForSubProjectbyId(IndicatorsStrategyForSubProjectId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/IndicatorsStrategyForSubProject/GetbySubProjectId/{SubProjectId}")]
-        public IActionResult GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId)
-        {
-            var data = _SecServices.GetIndicatorsStrategyForSubProjectbySubProjectId(SubProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/IndicatorsStrategyForSubProject/Setup")]
-        public IActionResult IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request)
-        {
-            var data = _SecServices.IndicatorsStrategyForSubProjectSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/IndicatorsStrategyForSubProject/Delete/{IndicatorsStrategyForSubProjectId}")]
-        public IActionResult DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId)
-        {
-
-            var data = _SecServices.DeleteIndicatorsStrategyForSubProject(IndicatorsStrategyForSubProjectId);
-
-            return Json(data);
-        }
-        //ListBudgetForActivity
-        [HttpGet]
-        [Route("/Sec/ListBudgetForActivity/GetAll")]
-        public IActionResult GetAllListBudgetForActivity()
-        {
-            var data = _SecServices.GetAllListBudgetForActivity();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ListBudgetForActivity/GetbyId/{ListBudgetForActivityId}")]
-        public IActionResult GetListBudgetForActivitybyId(int ListBudgetForActivityId)
-        {
-            var data = _SecServices.GetListBudgetForActivitybyId(ListBudgetForActivityId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ListBudgetForActivity/GetbyProjectActivityId/{ProjectActivityId}")]
-        public IActionResult GetListBudgetForActivitybyProjectActivityId(int ProjectActivityId)
-        {
-            var data = _SecServices.GetListBudgetForActivitybyProjectActivityId(ProjectActivityId);
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/ListBudgetForActivity/GetbysubProjectId/{subProjectId}")]
-        public IActionResult GetListBudgetForActivitybysubProjectId(int subProjectId)
-        {
-            var data = _SecServices.GetListBudgetForActivitybysubProjectId(subProjectId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/ListBudgetForActivity/Setup")]
-        public IActionResult ListBudgetForActivitySetup(ListBudgetForActivity request)
-        {
-            var data = _SecServices.ListBudgetForActivitySetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/ListBudgetForActivity/Delete/{ListBudgetForActivityId}")]
-        public IActionResult DeleteListBudgetForActivity(int ListBudgetForActivityId)
-        {
-
-            var data = _SecServices.DeleteListBudgetForActivity(ListBudgetForActivityId);
-
-            return Json(data);
-        }
-        //BudgetDisbursementPlan
-        [HttpGet]
-        [Route("/Sec/BudgetDisbursementPlan/GetAll")]
-        public IActionResult GetAllBudgetDisbursementPlan()
-        {
-            var data = _SecServices.GetAllBudgetDisbursementPlan();
-            return Json(data);
-        }
-        [HttpGet]
-        [Route("/Sec/BudgetDisbursementPlan/GetbyId/{BudgetDisbursementPlanId}")]
-        public IActionResult GetBudgetDisbursementPlanbyId(int BudgetDisbursementPlanId)
-        {
-            var data = _SecServices.GetBudgetDisbursementPlanbyId(BudgetDisbursementPlanId);
-            return Json(data);
-        }
-        [HttpPost]
-        [Route("/Sec/BudgetDisbursementPlan/Setup")]
-        public IActionResult BudgetDisbursementPlanSetup(BudgetDisbursementPlan request)
-        {
-            var data = _SecServices.BudgetDisbursementPlanSetup(request);
-            return Json(data);
-        }
-        [HttpDelete]
-        [Route("/Sec/BudgetDisbursementPlan/Delete/{BudgetDisbursementPlanId}")]
-        public IActionResult DeleteBudgetDisbursementPlan(int BudgetDisbursementPlanId)
-        {
-
-            var data = _SecServices.DeleteBudgetDisbursementPlan(BudgetDisbursementPlanId);
-
-            return Json(data);
-        }
     }
 }

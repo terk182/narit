@@ -17,6 +17,7 @@ namespace App.SEC.Dtos
         public int? ReferenceOldId { get; set; }
         public int ExpenseTypeEnum { get; set; }
         public int GovExpenseTypeEnum { get; set; }
-
+        public int? FundSourceId { get; set; }
+        public List<BudgetTypeData>? BudgetType { get; set; }
     }
 }

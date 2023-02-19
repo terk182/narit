@@ -77,19 +77,19 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
-        //[HttpPost]
-        //[Route("WaitForDeliveryAmount")]
-        //public IActionResult getApproveItemsbyYear(List<OrderFormDto> OrderForm)
-        //{
-        //    _Logger.LogInformation("sql");
-        //    var config = new MapperConfiguration(cfg =>cfg.CreateMap<List<OrderFormDto>, List<OrderForm>>());
-        //    var mapper = new Mapper(config);
+        [HttpPost]
+        [Route("WaitForDeliveryAmount")]
+        public IActionResult getApproveItemsbyYear(List<OrderFormDto> OrderForm)
+        {
+            _Logger.LogInformation("sql");
+            var config = new MapperConfiguration(cfg =>cfg.CreateMap<List<OrderFormDto>, List<OrderForm>>());
+            var mapper = new Mapper(config);
 
-        //    var OrderForm_cv = mapper.Map< List<OrderForm>>(OrderForm);
-        //    var data = _Service.WaitForDeliveryAmount(OrderForm_cv);
+            var OrderForm_cv = mapper.Map< List<OrderForm>>(OrderForm);
+            var data = _Service.WaitForDeliveryAmount(OrderForm_cv);
 
-        //    return Json(data);
-        //}
+            return Json(data);
+        }
        
 
 

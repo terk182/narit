@@ -5,7 +5,6 @@ using App.SEC.Models.Requests;
 using App.SEC.Models.Responses;
 using App.SEC.Responses;
 using narit_mis_api.Models;
-using NPOI.POIFS.Crypt.Dsig;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,31 +15,27 @@ namespace App.SEC
 {
     public interface ISecServices
     {
-        SecBaseResponse EditScheduleFisicalYear(string name, bool active);
         List<ScheduleFisicalYear> GetScheduleFisicalYear();
         List<ScheduleFisicalYear> GetScheduleFisicalYearbyYear(int year);
         SecBaseResponse ScheduleFisicalYearSetUp(ScheduleFisicalYear Request);
-        List<BudgetType> GetByFiscalYear(int FiscalYear);
+        List<BudgetTypeData> GetByFiscalYear(int FiscalYear);
         PlanCrudpolicy GetPolicy(int year);
         SecBaseResponse AddUpdatePlanCrudpolicy(PlanCrudpolicy policy);
         List<DepartmentDto> DepartmentGetByFiscalYear(int FiscalYear);
 
         List<DepartmentDto> DepartmentGetByFiscalYearandDepartmentid(int FiscalYear, int id);
-        List<DepartmentDto> DepartmentNameGetByDepartmentid(int id);
         List<ViewPlanForActivityByDepartmentTable> GetById(int departmentId, int FiscalYear);
         List<PlanTypeDto> PlanTypeGetAll(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYear(int FiscalYear);
         List<PlanTypeDto> PlanTypeGetByFiscalYearandPlanTypeid(int FiscalYear, int id);
-        List<PlanTypeDto> PlanTypeDetailGetByPlanTypeid(int id);
-        List<PlanTypeDto> PlanTypeNameGetByPlanTypeid(int id);
 
 
         SecBaseResponse StrategySetup(StrategySetupModel request);
         List<StrategySetupModel> StrategySetupByFiscalYear(int FiscalYear);
         List<StrategySetupModel> StrategySetupByFiscalYearandStrategyId(int FiscalYear, int id);
-        SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request);
-        List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear);
-        List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id);
+        //SecBaseResponse StrategyBudgetSetup(StrategyBudgetDto request);
+        //List<StrategyBudgetDto> StrategyBudgetByFiscalYear(int FiscalYear);
+        //List<StrategyBudgetDto> StrategyBudgetByFiscalYearandStrategyId(int FiscalYear, int id);
 
         SecBaseResponse PlanTypeSetup(PlanTypeRequest request);
 
@@ -61,7 +56,7 @@ namespace App.SEC
         SecBaseResponse BudgetTypeSetup(BudgetTypeRequest request);
 
         SecBaseResponse StrategicIndicatorSetup(StrategicIndicatorRequest request);
-        List<StrategicIndicatorResponse> StrategicIndicatorSetupByFiscalYear(int FiscalYear);
+        List<StrategySetupDto> StrategicIndicatorSetupByFiscalYear(int FiscalYear);
         List<StrategicIndicatorResponse> StrategicIndicatorGetbyStrategyId(int StrategyId);
         List<PrinciplePlanTagsResponse> PrinciplePlanTagSetup();
 
@@ -119,6 +114,7 @@ namespace App.SEC
         List<StrategicIndicatorResponse> EditPerformanceIndicator(int fiscalYear);
         List<DepartmentListDto> GetDepartments(int fiscalYear);
         List<StrategySetupDto> TryGetStrategy(int fiscalYear);
+        List<StrategySetupDto> TryGetStrategyAddIndicator(int fiscalYear);
         List<ResponsiblePerson> getResponsiblePerson();
         SecBaseResponse PlanCoreAddUpdate(PlanCoreListDto request);
         SecBaseResponse PlanItemByBudgetTypeAndPlanTypeReport(int fiscalYear, int month, int planTypeId, int budgetTypeId);
@@ -136,7 +132,7 @@ namespace App.SEC
         List<GeneralExpenseMemoFormDto> ViewGeneralExpenseMemoFormList(ViewGeneralExpenseMemoFormListRequest request);
         List<BudgetTransferFormDto> ViewPlanItemBudgetTransferList(ViewPlanItemBudgetTransferListRespons request);
         SecBaseResponse DeleteStrategy(int StrategyId);
-        SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId);
+        //SecBaseResponse DeleteStrategyBudget(int StrategyBudgetId);
         SecBaseResponse DeleteStrategicIndicator(int StrategicIndicatorId);
         SecBaseResponse DeletePlanType(int PlanTypeId);
         SecBaseResponse DeleteDepartment(int DepartmentId);
@@ -178,150 +174,27 @@ namespace App.SEC
         SecBaseResponse EditOutsideDutyGroup(List<OutsideDutyGroupRequest> request);
         List<OutsideDutyGroupRequest> GetditOutsideDutyGroup(int GeneralExpenseMemoFormsId);
 
-        ////////////////////////////NEW NEW NEW by ardin///////////////////////////////
-        //MainGovtStatement
-        List<MainGovtStatement> GetAllMainGovtStatement();
-        List<MainGovtStatement> GetMainGovtStatementbyFisicalYear(int FisicalYear);
-        List<MainGovtStatement> GetMainGovtStatementbyId(int MainGovtStatementId);
-        SecBaseResponse MainGovtStatementSetup(MainGovtStatement request);
-        SecBaseResponse DeleteMainGovtStatement(int MainGovtStatementId);
-        //GovtStrategic
-        List<GovtStrategic> GetAllGovtStrategic();
-        List<GovtStrategic> GetGovtStrategicbyId(int GovtStrategicId);
-        SecBaseResponse GovtStrategicSetup(GovtStrategic request);
-        SecBaseResponse DeleteGovtStrategic(int GovtStrategicId);
-        //GovtPlan
-        List<GovtPlan> GetAllGovtPlan();
-        List<GovtPlan> GetGovtPlanbyId(int GovtPlanId);
-        SecBaseResponse GovtPlanSetup(GovtPlan request);
-        SecBaseResponse DeleteGovtPlan(int GovtPlanId);
-        //MainProject
-        List<MainProject> GetAllMainProject();
-        List<MainProject> GetMainProjectbyId(int MainProjectId);
-        SecBaseResponse MainProjectSetup(MainProject request);
-        SecBaseResponse DeleteMainProject(int MainProjectId);
-        //MainActivity
-        List<MainActivity> GetAllMainActivity();
-        List<MainActivity> GetMainActivitybyId(int MainActivityId);
-        SecBaseResponse MainActivitySetup(MainActivity request);
-        SecBaseResponse DeleteMainActivity(int MainActivityId);
-        //StrategicIssue
-        List<StrategicIssue> GetAllStrategicIssue();
-        List<StrategicIssue> GetStrategicIssuebyId(int StrategicIssueId);
-        SecBaseResponse StrategicIssueSetup(StrategicIssue request);
-        SecBaseResponse DeleteStrategicIssue(int StrategicIssueId);
-        ////Strategy1
-        //List<Strategy1> GetAllStrategy1();
-        //List<Strategy1> GetStrategy1byId(int Strategy1Id);
-        //SecBaseResponse Strategy1Setup(Strategy1 request);
-        //SecBaseResponse DeleteStrategy1(int Strategy1Id);
-        ////Measure
-        //List<Measure> GetAllMeasure();
-        //List<Measure> GetMeasurebyId(int MeasureId);
-        //SecBaseResponse MeasureSetup(Measure request);
-        //SecBaseResponse DeleteMeasure(int MeasureId);
-        //AnnualBudget
-        List<AnnualBudget> GetAllAnnualBudget();
-        List<AnnualBudget> GetAnnualBudgetbyFisicalYear(int FisicalYear);
-        List<AnnualBudget> GetAnnualBudgetbyId(int AnnualBudgetId);
-        SecBaseResponse AnnualBudgetSetup(AnnualBudget request);
-        SecBaseResponse DeleteAnnualBudget(int AnnualBudgetId);
-        //SubAnnualBudget
-        List<SubAnnualBudget> GetAllSubAnnualBudget();
-        List<SubAnnualBudget> GetSubAnnualBudgetbyFisicalYear(int FisicalYear);
-        List<SubAnnualBudget> GetSubAnnualBudgetbyId(int SubAnnualBudgetId);
-        SecBaseResponse SubAnnualBudgetSetup(SubAnnualBudget request);
-        SecBaseResponse DeleteSubAnnualBudget(int SubAnnualBudgetId);
-        //CapticalType
-        List<CapticalType> GetAllCapticalType();
-        List<CapticalType> GetCapticalTypebyFisicalYear(int FisicalYear);
-        List<CapticalType> GetCapticalTypebyId(int CapticalTypeId);
-        SecBaseResponse CapticalTypeSetup(CapticalType request);
-        SecBaseResponse DeleteCapticalType(int CapticalTypeId);
-        //Project
-        List<Project> GetAllProject();
-        List<Project> GetProjectbyFisicalYear(int FisicalYear);
-        List<Project> GetProjectbyId(int ProjectId);
-        SecBaseResponse GetsubProjectorProjectActivitybyProjectId(int ProjectId);
-        SecBaseResponse ProjectSetup(Project request);
-        SecBaseResponse DeleteProject(int ProjectId);
-        //ProjectCaptical
-        List<ProjectCaptical> GetAllProjectCaptical();
-        List<ProjectCaptical> GetProjectCapticalbyId(int ProjectCapticalId);
-        SecBaseResponse ProjectCapticalSetup(ProjectCaptical request);
-        SecBaseResponse DeleteProjectCaptical(int ProjectCapticalId);
-        //ProjectResponsiblePerson
-        List<ProjectResponsiblePerson> GetAllProjectResponsiblePersons();
-        List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyId(int ProjectResponsiblePersonsId);
-        List<ProjectResponsiblePerson> GetProjectResponsiblePersonsbyProjectId(int ProjectId);
-        SecBaseResponse ProjectResponsiblePersonsSetup(ProjectResponsiblePerson request);
-        SecBaseResponse DeleteProjectResponsiblePersons(int ProjectResponsiblePersonsId);
-        //IndicatorsStrategyForProject
-        List<IndicatorsStrategyForProject> GetAllIndicatorsStrategyForProject();
-        List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyId(int IndicatorsStrategyForProjectId);
-        List<IndicatorsStrategyForProject> GetIndicatorsStrategyForProjectbyProjectId(int ProjectId);
-        SecBaseResponse IndicatorsStrategyForProjectSetup(IndicatorsStrategyForProject request);
-        SecBaseResponse DeleteIndicatorsStrategyForProject(int IndicatorsStrategyForProjectId);
-        //ExternalBudgetStrategy
-        List<ExternalBudgetStrategy> GetAllExternalBudgetStrategy();
-        List<ExternalBudgetStrategy> GetExternalBudgetStrategybyFisicalYear(int FisicalYear);
-        List<ExternalBudgetStrategy> GetExternalBudgetStrategybyId(int ExternalBudgetStrategyId);
-        SecBaseResponse ExternalBudgetStrategySetup(ExternalBudgetStrategy request);
-        SecBaseResponse DeleteExternalBudgetStrategy(int ExternalBudgetStrategyId);
-        //InternalStrategy
-        List<InternalStrategy> GetAllInternalStrategy();
-        List<InternalStrategy> GetInternalStrategybyFisicalYear(int FisicalYear);
-        List<InternalStrategy> GetInternalStrategybyId(int InternalStrategyId);
-        SecBaseResponse InternalStrategySetup(InternalStrategy request);
-        SecBaseResponse DeleteInternalStrategy(int InternalStrategyId);
-        //ProjectActivity
-        List<ProjectActivity> GetAllProjectActivity();
-        List<ProjectActivity> GetProjectActivitybyId(int ProjectActivityId);
-        List<ProjectActivity> GetProjectActivityforProjectbyId(int ProjectId);
-        List<ProjectActivity> GetProjectActivityfromSubProjectId(int SubProjectId);
-        SecBaseResponse ProjectActivitySetup(ProjectActivity request);
-        SecBaseResponse DeleteProjectActivity(int ProjectActivityId);
-        //SubProject
-        List<SubProject> GetAllSubProject();
-        List<SubProject> GetSubProjectbyId(int SubProjectId);
-        List<SubProject> GetSubProjectforProjectbyId(int ProjectId);
-        SecBaseResponse SubProjectSetup(SubProject request);
-        SecBaseResponse DeleteSubProject(int SubProjectId);
-        //ProjectActivityResponsiblePerson
-        List<ProjectActivityResponsiblePerson> GetAllProjectActivityResponsiblePerson();
-        List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonbyId(int ProjectActivityResponsiblePersonId);
-        List<ProjectActivityResponsiblePerson> GetProjectActivityResponsiblePersonsbyProjectId(int ProjectActivityId);
-        SecBaseResponse ProjectActivityResponsiblePersonSetup(ProjectActivityResponsiblePerson request);
-        SecBaseResponse DeleteProjectActivityResponsiblePerson(int ProjectActivityResponsiblePersonId);
-        //SubProjectResponsiblePerson
-        List<SubProjectResponsiblePerson> GetAllSubProjectResponsiblePerson();
-        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonbyId(int SubProjectResponsiblePersonId);
-        List<SubProjectResponsiblePerson> GetSubProjectResponsiblePersonsbySubProjectId(int SubProjectId);
-        SecBaseResponse SubProjectResponsiblePersonSetup(SubProjectResponsiblePerson request);
-        SecBaseResponse DeleteSubProjectResponsiblePerson(int SubProjectResponsiblePersonId);
-        //IndicatorsStrategyForProjectActivity
-        List<IndicatorsStrategyForProjectActivity> GetAllIndicatorsStrategyForProjectActivity();
-        List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyId(int IndicatorsStrategyForProjectActivityId);
-        List<IndicatorsStrategyForProjectActivity> GetIndicatorsStrategyForProjectActivitybyProjectActivityId(int ProjectActivityId);
-        SecBaseResponse IndicatorsStrategyForProjectActivitySetup(IndicatorsStrategyForProjectActivity request);
-        SecBaseResponse DeleteIndicatorsStrategyForProjectActivity(int IndicatorsStrategyForProjectActivityId);
-        //IndicatorsStrategyForSubProject
-        List<IndicatorsStrategyForSubProject> GetAllIndicatorsStrategyForSubProject();
-        List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbyId(int IndicatorsStrategyForSubProjectId);
-        List<IndicatorsStrategyForSubProject> GetIndicatorsStrategyForSubProjectbySubProjectId(int SubProjectId);
-        SecBaseResponse IndicatorsStrategyForSubProjectSetup(IndicatorsStrategyForSubProject request);
-        SecBaseResponse DeleteIndicatorsStrategyForSubProject(int IndicatorsStrategyForSubProjectId);
-        //ListBudgetForActivity
-        List<ListBudgetForActivity> GetAllListBudgetForActivity();
-        List<ListBudgetForActivity> GetListBudgetForActivitybyId(int ListBudgetForActivityId);
-        List<ListBudgetForActivity> GetListBudgetForActivitybyProjectActivityId(int ProjectActivityId);
-        List<ListBudgetForActivity> GetListBudgetForActivitybysubProjectId(int subProjectId);
-        SecBaseResponse ListBudgetForActivitySetup(ListBudgetForActivity request);
-        SecBaseResponse DeleteListBudgetForActivity(int ListBudgetForActivityId);
-        //BudgetDisbursementPlan
-        List<BudgetDisbursementPlan> GetAllBudgetDisbursementPlan();
-        List<BudgetDisbursementPlan> GetBudgetDisbursementPlanbyId(int BudgetDisbursementPlanId);
-        SecBaseResponse BudgetDisbursementPlanSetup(BudgetDisbursementPlan request);
-        SecBaseResponse DeleteBudgetDisbursementPlan(int BudgetDisbursementPlanId);
+        List<StrategySetupDto> sub_strategy(List<Strategy> Strategy,int? ParentStrategyId, int? mainStrategyId);
+
+        List<StrategySetupDto> sub_strategyAddIndicator(List<Strategy> Strategy, int? ParentStrategyId, int? mainStrategyId);
+
+        List<DepartmentListDto> sub_GetDepartments(List<Department> Department, int? DepartmentId, int? mainStrategyId);
+        List<FundTypeRespone> sub_FundTypes(List<FundType> FundType, int? FundTypeId, int? mainFundTypeId);
+        List<FundSourceResponse> sub_FundSourceSetupByFiscalYear(List<FundSource> FundSource, int? FundSourceId, int? FundSourceTypeId);
+        List<BudgetTypeData> sub_BudgetType(List<BudgetType> BudgetType, int? BudgetTypeId, int? mainBudgetTypeId);
+        SecBaseResponse EditCapticalType(CapticalType request);
+
+        List<StrategiesGroupDto> GetStrategiesGroup(int fiscalYear);
+        SecBaseResponse SetStrategiesGroup(List<StrategiesGroup> request);
+
+        List<DepartmentsGroupDto> GetDepartmentsGroup(int fiscalYear);
+        SecBaseResponse SetDepartmentsGroup(List<DepartmentsGroup> request);
+
+        List<PlanCoresGroupDto> GetPlanCoresGroup(int fiscalYear);
+        SecBaseResponse SetPlanCoresGroup(List<PlanCoresGroup> request);
+
+
+        List<StrategiesBudgetGroupDto> GetStrategiesBudgetGroup(int fiscalYear);
+        SecBaseResponse SetStrategiesBudgetGroup(List<StrategiesBudgetGroup> request);
     }
 }

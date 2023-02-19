@@ -26,7 +26,6 @@
     <ProjectReference Include="..\App.Plan\App.Plan.csproj" />
     <ProjectReference Include="..\App.Procure\App.Procure.csproj" />
     <ProjectReference Include="..\App.SEC\App.SEC.csproj" />
-    <ProjectReference Include="..\NewCGIMIS\App.NewCGIMIS.csproj" />
   </ItemGroup>
 
 </Project>

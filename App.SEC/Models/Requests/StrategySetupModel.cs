@@ -13,6 +13,8 @@ namespace App.SEC.Models.Requests
         public int? FiscalYear { get; set; }
         public bool Active { get; set; }
         public int? ParentStrategyId { get; set; }
+        public string? Type { get; set; }
+        public string? Category { get; set; }
 
     }
 }

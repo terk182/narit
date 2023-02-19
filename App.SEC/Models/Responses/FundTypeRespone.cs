@@ -14,5 +14,6 @@ namespace App.SEC.Models.Responses
         public bool Active { get; set; }
         public int? ReferenceOldId { get; set; }
         public int? ParentFundTypeId { get; set; }
+        public List<FundTypeRespone>? fundTypeRespone { get; set; }
     }
 }
