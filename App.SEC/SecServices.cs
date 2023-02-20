@@ -234,10 +234,10 @@ namespace App.SEC
             //    return response;
             //}
         }
-        public SecBaseResponse DeleteRequestBudgetByDocNo(string docNo)
+        public SecBaseResponse DeleteRequestBudgetById(int id)
         {
             SecBaseResponse response = new SecBaseResponse();
-            RequestBudget findData = _database.RequestBudgets.Where(x => x.DocNo == docNo).FirstOrDefault();
+            RequestBudget findData = _database.RequestBudgets.Where(x => x.Id == id).FirstOrDefault();
             if (findData != null)
             {
                 findData.Active = false;
@@ -420,6 +420,7 @@ namespace App.SEC
                 requestForm.RequestBudgetId = request.RequestBudgetId;
                 requestForm.ProjectId = request.ProjectId;
                 requestForm.ProjectActivityId = request.ProjectActivityId;
+                requestForm.CodeBudgetTypeId = request.CodeBudgetTypeId;
                 requestForm.Name = request.Name;
                 requestForm.Descriptions = request.Descriptions;
                 requestForm.Objective = request.Objective;
@@ -455,6 +456,7 @@ namespace App.SEC
                 getResult.DocNo = request.DocNo;
                 getResult.ProjectId = request.ProjectId;
                 getResult.ProjectActivityId = request.ProjectActivityId;
+                getResult.CodeBudgetTypeId = request.CodeBudgetTypeId;
                 getResult.Name = request.Name;
                 getResult.Descriptions = request.Descriptions;
                 getResult.Objective = request.Objective;

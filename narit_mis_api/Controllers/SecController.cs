@@ -77,10 +77,10 @@ namespace narit_mis_api.Controllers
         //    return Json(data);
         //}
         [HttpDelete]
-        [Route("Form/DeleteRequestBudgetByDocNo/{docNo}")]
-        public IActionResult DeleteRequestBudgetByDocNo(string docNo)
+        [Route("Form/DeleteRequestBudgetById/{docNo}")]
+        public IActionResult DeleteRequestBudgetById(int id)
         {
-            var data = _SecServices.DeleteRequestBudgetByDocNo(docNo);
+            var data = _SecServices.DeleteRequestBudgetById(id);
             return Json(data);
         }
         //[HttpGet]
@@ -147,7 +147,7 @@ namespace narit_mis_api.Controllers
             return Json(data);
         }
         [HttpDelete]
-        [Route("Form/DeleteRequestFormApproveByDocNo/{docNo}")]
+        [Route("Form/DeleteRequestFormApproveById/{id}")]
         public IActionResult DeleteRequestFormApproveById(int docNo)
         {
             var data = _SecServices.DeleteRequestFormApproveById(docNo);

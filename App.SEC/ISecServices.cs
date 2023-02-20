@@ -25,7 +25,7 @@ namespace App.SEC
         RequestBudget GetRequestBudgetByDocNo(string docNo);
         SecBaseResponse CreateRequestBudget(RequestBudgetRequests request);
         SecBaseResponse EditRequestBudgetById(RequestBudgetRequests request);
-        SecBaseResponse DeleteRequestBudgetByDocNo(string docNo);
+        SecBaseResponse DeleteRequestBudgetById(int id);
 
         //List<RequestForm> GetRequestForm();
         List<RequestForm> GetRequestFormByDocNo(string docNo);

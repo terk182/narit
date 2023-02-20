@@ -14,7 +14,7 @@ namespace narit_mis_api.Models
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
-        public int? BudgetTypeId { get; set; }
+        public int? CodeBudgetTypeId { get; set; }
         public string? ProjectId { get; set; }
         public string? ProjectActivityId { get; set; }
         public bool? Active { get; set; }
@@ -37,6 +37,7 @@ namespace narit_mis_api.Models
         public string? SkillType { get; set; }
         public string? Reward { get; set; }
 
+        public virtual BudgetType? CodeBudgetType { get; set; }
         public virtual RequestBudget RequestBudget { get; set; } = null!;
         public virtual ICollection<RequestFormApprove> RequestFormApproves { get; set; }
         public virtual ICollection<RequestFormItem> RequestFormItems { get; set; }

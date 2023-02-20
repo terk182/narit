@@ -38,7 +38,7 @@ namespace App.SEC.Requests
         public int Id { get; set; }
         public string DocNo { get; set; } = null!;
         public int RequestBudgetId { get; set; }
-        public int? BudgetTypeId { get; set; }
+        public int? CodeBudgetTypeId { get; set; }
         public string? ProjectId { get; set; }
         public string? ProjectActivityId { get; set; }
         public bool? Active { get; set; }

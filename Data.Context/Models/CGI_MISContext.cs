@@ -122,15 +122,23 @@ namespace narit_mis_api.Models
 
             modelBuilder.Entity<BudgetType>(entity =>
             {
+                entity.HasKey(e => e.CodeBudgetTypeId);
+
                 entity.ToTable("BudgetType");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.CodeBudgetTypeId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("CodeBudgetTypeID");
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.DateTime)
                     .IsRowVersion()
                     .IsConcurrencyToken();
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.Name).IsUnicode(false);
             });
@@ -277,7 +285,7 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.BudgetTypeId).HasColumnName("BudgetTypeID");
+                entity.Property(e => e.CodeBudgetTypeId).HasColumnName("CodeBudgetTypeID");
 
                 entity.Property(e => e.Country).IsUnicode(false);
 
@@ -326,6 +334,11 @@ namespace narit_mis_api.Models
                 entity.Property(e => e.StartDepartureDate).HasColumnType("datetime");
 
                 entity.Property(e => e.StartPracticalDate).HasColumnType("datetime");
+
+                entity.HasOne(d => d.CodeBudgetType)
+                    .WithMany(p => p.RequestForms)
+                    .HasForeignKey(d => d.CodeBudgetTypeId)
+                    .HasConstraintName("FK_RequestForm_BudgetType");
 
                 entity.HasOne(d => d.RequestBudget)
                     .WithMany(p => p.RequestForms)
