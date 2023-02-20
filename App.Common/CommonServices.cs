@@ -169,8 +169,6 @@ namespace App.Common
             return list1;
         }
 
-
-
         public List<MisGeneralExpenseMemoFormsSignList> GetMisGeneralExpenseMemoFormsSignList(int GeneralExpenseMemoFormsId)
         {
             var data = _database.MisGeneralExpenseMemoFormsSignLists.Where(x => x.GeneralExpenseMemoFormsId == GeneralExpenseMemoFormsId).ToList();
@@ -182,44 +180,9 @@ namespace App.Common
             var list1 = new List<PlanTypeCommonDto>();
             var PlanTypes = _database.PlanTypes.Where(x => x.FiscalYear == fiscalYear && x.Active).ToList();
             var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
-            foreach (var item in data)//ตัวแม่ 
+            foreach (var item in data)
             {
-                var list2 = new List<PlanTypeCommonDto>();//ประกาศตัวแปร
-                foreach (var s in PlanTypes)//วนหาลูก
-                {
-                    if (s.ParentPlanTypeId == item.Id)//วนลูกเพื่อหาแม่
-                    {
-                        var list3 = new List<PlanTypeCommonDto>();
-                        foreach (var s1 in PlanTypes)//วนหาหลาน
-                        {
-                            if (s1.ParentPlanTypeId == s.Id)//วนหลานหาลูก
-                            {
-                                list3.Add(new PlanTypeCommonDto
-                                {
-                                    Id = s1.Id,
-                                    Name = s1.Name,
-                                    FiscalYear = s1.FiscalYear,
-                                    Active = s1.Active,
-                                    ParentPlanTypeId = s1.ParentPlanTypeId,
-                                    ReferenceOldId = s1.ReferenceOldId,
-                                    Weight = s1.Weight,
-                                    // PrinciplePlanTag { get; set; }
-                                });
-                            }
-                        }
-                        list2.Add(new PlanTypeCommonDto
-                        {
-                            Id = s.Id,
-                            Name = s.Name,
-                            FiscalYear = s.FiscalYear,
-                            Active = s.Active,
-                            ParentPlanTypeId = s.ParentPlanTypeId,
-                            ReferenceOldId = s.ReferenceOldId,
-                            Weight = s.Weight,
-                            ParentPlanType = list3
-                        });
-                    }
-                }
+                var parent = SubGetPlanType(PlanTypes, item.Id, item.Id);
                 list1.Add(new PlanTypeCommonDto
                 {
                     Id = item.Id,
@@ -229,13 +192,37 @@ namespace App.Common
                     ParentPlanTypeId = item.ParentPlanTypeId,
                     ReferenceOldId = item.ReferenceOldId,
                     Weight = item.Weight,
-                    ParentPlanType = list2
+                    ParentPlanType = parent.Count > 0 ? parent : null,
                 });
             }
-
             return list1;
         }
+        public List<PlanTypeCommonDto> SubGetPlanType(List<PlanType> PlanType, int? ParentStrategyId, int? mainStrategyId)
+        {
+            var list2 = new List<PlanTypeCommonDto>();
+            foreach (var s in PlanType)
+            {
+                if (s.Id == ParentStrategyId)
+                {
+                    continue;
+                }
+                if (s.ParentPlanTypeId == ParentStrategyId)
+                {
+                    list2.Add(new PlanTypeCommonDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name,
+                        FiscalYear = s.FiscalYear,
+                        Active = s.Active,
+                        ParentPlanTypeId = s.ParentPlanTypeId,
+                        ReferenceOldId = s.ReferenceOldId,
+                        Weight = s.Weight,
+                        ParentPlanType = SubGetPlanType(PlanType, s.Id, s.Id),
+                    });
+                }
+            }
+            return list2;
+        }
 
-       
     }
 }
