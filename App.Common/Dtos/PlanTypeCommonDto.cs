@@ -16,7 +16,7 @@ namespace App.Common.Dtos
         public int? ParentPlanTypeId { get; set; }
         public int? ReferenceOldId { get; set; }
         public decimal Weight { get; set; }
-
+        public string? ParentPlanType_txt { get; set; }
         public  List<PlanTypeCommonDto>? ParentPlanType { get; set; }
     }
 }

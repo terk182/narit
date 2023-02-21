@@ -22,6 +22,7 @@
     <ProjectReference Include="..\App.Resolver\App.Resolver.csproj" />
     <ProjectReference Include="..\App.SEC\App.SEC.csproj" />
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />
+    <ProjectReference Include="..\NewCGIMIS\App.NewCGIMIS.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

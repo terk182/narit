@@ -5402,15 +5402,67 @@ namespace App.SEC
                 return response;
             }
 
-            public SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request)
+            public SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperationDto request)
             {
-                _database.Entry(request).State = request.Id == 0 ?
+            var db = new PlanMonthlyOperation();
+            db.Id = request.Id;
+            db.Name = request.Name;
+            db.Active = request.Active;
+            db.FiscalYear = request.FiscalYear;
+            db.January = request.January;
+            db.February = request.February;
+            db.March = request.March;
+            db.April = request.April;
+            db.May = request.May;
+            db.June = request.June;
+            db.July = request.July;
+            db.August = request.August;
+            db.September = request.September;
+            db.October = request.October;
+            db.November = request.November;
+            db.December = request.December;
+            db.Weight = request.Weight;
+            db.PlanActivityId = request.PlanActivityId;
+            db.ResultJanuary = request.ResultJanuary;
+            db.ResultFebruary = request.ResultFebruary;
+            db.ResultMarch = request.ResultMarch;
+            db.ResultApril = request.ResultApril;
+            db.ResultMay = request.ResultMay;
+            db.ResultJune = request.ResultJune;
+            db.ResultJuly = request.ResultJuly;
+            db.ResultAugust = request.ResultAugust;
+            db.ResultSeptember = request.ResultSeptember;
+            db.ResultOctober = request.ResultOctober;
+            db.ResultNovember = request.ResultNovember;
+            db.ResultDecember = request.ResultDecember;
+            db.DetailJanuary = request.DetailJanuary;
+            db.DetailFebruary = request.DetailFebruary;
+            db.DetailMarch = request.DetailMarch;
+            db.DetailApril = request.DetailApril;
+            db.DetailMay = request.DetailMay;
+            db.DetailJune = request.DetailJune;
+            db.DetailJuly = request.DetailJuly;
+            db.DetailAugust = request.DetailAugust;
+            db.DetailSeptember = request.DetailSeptember;
+            db.DetailOctober = request.DetailOctober;
+            db.DetailNovember = request.DetailNovember;
+            db.DetailDecember = request.DetailDecember;
+            if(request.ParentPlanMonthlyOperationId == 0)
+            {
+                db.ParentPlanMonthlyOperationId = null;
+            }
+            else
+            {
+                db.ParentPlanMonthlyOperationId = request.ParentPlanMonthlyOperationId;
+            }
+
+            _database.Entry(db).State = request.Id == 0 ?
                                       EntityState.Added :
                                       EntityState.Modified;
                 var result = _database.SaveChanges();
                 var response = new SecBaseResponse();
                 response.Success = result > 0 ? true : false;
-                response.Messsage = request.Id == 0 ? "update" : "insert";
+                response.Messsage = request.Id != 0 ? "update" : "insert";
                 return response;
             }
 

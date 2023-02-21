@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace App.Common
@@ -184,7 +185,7 @@ namespace App.Common
             var data = PlanTypes.Where(x => x.ParentPlanTypeId == null).ToList();
             foreach (var item in data)
             {
-
+                var _SubGetPlanType = SubGetPlanType(PlanTypes, item.Id, item.Id);
                 list1.Add(new PlanTypeCommonDto
                 {
                      Id = item.Id,
@@ -193,8 +194,10 @@ namespace App.Common
                     Active = item.Active,
                     ParentPlanTypeId = item.ParentPlanTypeId,
                     ReferenceOldId = item.ReferenceOldId,
+                    ParentPlanType = _SubGetPlanType,
+                    ParentPlanType_txt = JsonSerializer.Serialize(_SubGetPlanType),
                     Weight = item.Weight,
-                    ParentPlanType = SubGetPlanType(PlanTypes, item.Id, item.Id),
+                    
                 }
                     );
                 //var list2 = new List<PlanTypeCommonDto>();
@@ -249,7 +252,42 @@ namespace App.Common
 
 
             }
-
+            //string jsonString = JsonSerializer.Serialize(list1);
+            //string[] words = jsonString.Split(',');
+            //string txt_response = "";
+            //string s1 = "[]";
+            //bool pp = false;
+            //foreach (var loop in words) //"ParentPlanType":[]}
+            //{
+            //    bool b = loop.Contains(s1);
+            //    if (b ==  true)
+            //    {
+            //        //txt_response += "}},";
+            //        pp = true;
+            //    }
+            //    else
+            //    {
+            //        string[] words_check = loop.Split(':');
+            //        if(words_check[0] != "Weight")
+            //        {
+            //            txt_response += String.Format("{0}", loop);
+            //        }
+            //        else
+            //        {
+            //            if (pp == true)
+            //            {
+            //                txt_response += String.Format("{0}", loop) + "}]},";
+            //            }
+            //            else
+            //            {
+            //                txt_response += String.Format("{0}", loop) + "}]},";
+            //            }
+            //            pp = false;
+            //        }
+                    
+            //    }
+            //}
+            //var f = txt_response ;
             return list1;
         }
 

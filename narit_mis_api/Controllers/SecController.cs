@@ -632,7 +632,7 @@ namespace narit_mis_api.Controllers
 
         [HttpPost]
         [Route("/Plan/Operate/EditPlanMonthlyOperation")]
-        public IActionResult EditPlanMonthlyOperation(PlanMonthlyOperation request)
+        public IActionResult EditPlanMonthlyOperation(PlanMonthlyOperationDto request)
         {
             var data = _SecServices.EditPlanMonthlyOperation(request);
             return Json(data);

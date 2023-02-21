@@ -162,7 +162,7 @@ namespace App.SEC
         SecBaseResponse EditPerformanceIndicatorResult(PerformanceIndicator request);
         SecBaseResponse EditPlanActivity(PlanActivityRequest request);
         SecBaseResponse EditPlanItem(PlanItemRequest request);
-        SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperation request);
+        SecBaseResponse EditPlanMonthlyOperation(PlanMonthlyOperationDto request);
         SecBaseResponse EditSettleReceiptForm(SettleReceiptForm request);
         List<PlanActivity> SearchPlanActivity(SearchPlanActivityRequest request);
         List<PlanItem> SearchPlanItem(SearchPlanItemRequest request);
