@@ -2,6 +2,7 @@
 using App.NewCGIMIS.Models.Requests;
 using App.Plan;
 using App.SEC;
+using App.SEC.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using narit_mis_api.Models;
 
@@ -13,10 +14,12 @@ namespace narit_mis_api.Controllers
     {
         protected readonly INewCGIMISServices _Services;
         private readonly ILogger _Logger;
-        public AAA_NewCGIMISController(ILogger<AAA_NewCGIMISController> logger, INewCGIMISServices Services)
+        private readonly ISecServices _SecService;
+        public AAA_NewCGIMISController(ILogger<AAA_NewCGIMISController> logger, INewCGIMISServices Services, ISecServices SecServices)
         {
             _Services = Services;
             _Logger = logger;
+            _SecService = SecServices;
         }
         /////////////////////////////////new new new by ardin/////////////////////////////////
         #region MainGovtStatement
@@ -1061,6 +1064,20 @@ namespace narit_mis_api.Controllers
 
             return Json(data);
         }
+        #endregion
+        #region PlanMonthlyOperations
+
+        [HttpPost]
+        [Route("/PlanMonthlyOperation/Setup")]
+        public IActionResult EditPlanMonthlyOperation(PlanMonthlyOperationDto request)
+        {
+            var data = _SecService.EditPlanMonthlyOperation(request);
+            return Json(data);
+        }
+
+
+
+
         #endregion
     }
 }
