@@ -14,7 +14,7 @@ namespace narit_mis_api.Models
         public int CodeBudgetTypeId { get; set; }
         public string? Name { get; set; }
         public bool? Active { get; set; }
-        public byte[]? DateTime { get; set; }
+        public DateTime? DateTime { get; set; }
 
         public virtual ICollection<RequestForm> RequestForms { get; set; }
     }

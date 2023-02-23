@@ -50,7 +50,7 @@ namespace narit_mis_api.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=192.168.2.176,49176;Database=CGI_MIS;User ID=admin;Password=Aa!12345;Trusted_Connection=false ;");
+                optionsBuilder.UseSqlServer("Server=192.168.2.176,49176;Database=CGI_MIS;User ID=admin;Password=Amagedon786#!;Trusted_Connection=false ;");
             }
         }
 
@@ -132,9 +132,7 @@ namespace narit_mis_api.Models
 
                 entity.Property(e => e.Active).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.DateTime)
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
 
                 entity.Property(e => e.Id)
                     .ValueGeneratedOnAdd()

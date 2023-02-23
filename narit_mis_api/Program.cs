@@ -8,6 +8,7 @@ using narit_acc_api.Models;
 using narit_mis_api.Models;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,8 +33,10 @@ builder.Services.AddAuthentication(opt => {
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
         };
     });
+
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
 });
 

@@ -27,6 +27,8 @@ namespace App.SEC
             return schedules;
         }
 
+        #region RequestForm
+        //----- RequestFormComment -----
         public List<RequestFormCommentStatus> GetRequestFormCommentStatus()
         {
             List<RequestFormCommentStatus> response = _database.RequestFormCommentStatuses.OrderBy(x => x.CodeEnum).ToList();
@@ -59,6 +61,7 @@ namespace App.SEC
                 response.DocNo = request.DocNo;
                 response.DocYear = request.DocYear;
                 response.DocStatus = request.DocStatus;
+                response.BudgetTypeCode = request.BudgetTypeCode;
                 response.Name = request.Name;
                 response.Inform = request.Inform;
                 response.Descriptions = request.Descriptions;
@@ -97,6 +100,7 @@ namespace App.SEC
                 findResult.DocNo = request.DocNo;
                 findResult.DocYear = request.DocYear;
                 findResult.DocStatus = request.DocStatus;
+                findResult.BudgetTypeCode = request.BudgetTypeCode;
                 findResult.Name = request.Name;
                 findResult.Inform = request.Inform;
                 findResult.Descriptions = request.Descriptions;
@@ -1038,6 +1042,259 @@ namespace App.SEC
             }
             return response;
         }
+        #endregion
+
+        #region RequestForm_Education
+        public SecBaseResponse GetAllRequestBudgetByTypeEducations()
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            List<RequestBudget> getResult = _database.RequestBudgets.Where(x=>x.BudgetTypeCode == 50).OrderByDescending(x=>x.CreateDate).Take(10).ToList();
+            if(getResult.Count() > 0)
+            {
+                response.Success = true;
+                response.Messsage = "Success";
+                response.data = getResult;
+                return response;
+            }
+            response.Success = false;
+            response.Messsage = "Not Result";
+            response.data = null;
+            return response;
+        }
+        public SecBaseResponse GetRequestBudgetByIdTypeEducations(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestBudget getResult = _database.RequestBudgets.Where(x=>x.Id == id).FirstOrDefault();
+            if (getResult != null)
+            {
+                response.Success = true;
+                response.Messsage = "Success";
+                response.data = getResult;
+                return response;
+            }
+            response.Success = false;
+            response.Messsage = "Not Result";
+            response.data = null;
+            return response;
+        }
+        public SecBaseResponse CreateRequestBudgetByTypeEducations(RequestBudgetEduRequests request)
+        {
+            SecBaseResponse res = new SecBaseResponse();
+            RequestBudget resBudget = new RequestBudget();
+            RequestForm resForm = new RequestForm();
+
+            if (request.Id == 0)
+            {
+                resBudget.Active = true;
+                resBudget.DocNo = request.DocNo;
+                resBudget.DocYear = request.DocYear;
+
+                //--- Fix Code Create By Type Educations ---
+                resBudget.DocStatus = "35";
+                resBudget.BudgetTypeCode = 50;
+                //--- Fix Code Create By Type Educations ---
+
+                resBudget.Name = request.Name;
+                resBudget.Inform = request.Inform;
+                resBudget.Descriptions = request.Descriptions;
+
+                resBudget.WriteDate = request.WriteDate;
+                resBudget.DateTime = request.DateTime;
+                resBudget.CreateDate = DateTime.Now;
+                resBudget.CalculationDate = request.CalculationDate;
+
+                resBudget.CreateByStaffId = request.CreateByStaffId;
+                resBudget.StatmentName = request.StatmentName;
+                resBudget.RelatedRegulation = request.RelatedRegulation;
+                resBudget.FilePath = request.FilePath;
+                resBudget.DepartmentId = request.DepartmentId;
+                resBudget.TotalBudget = request.TotalBudget;
+
+                resBudget.AnotherAction = request.AnotherAction;
+                resBudget.Procurement = request.Procurement;
+                resBudget.InspectorId = request.InspectorId;
+                resBudget.InspectorName = request.InspectorName;
+                resBudget.ProcurementByStaff = request.ProcurementByStaff;
+                _database.Entry(resBudget).State = EntityState.Added;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    if(resBudget.Id != 0)
+                    {
+                        if(request.requestFormEdu.Count > 0)
+                        {
+                            request.requestFormEdu.ForEach(edu =>
+                            {
+                                edu.RequestBudgetId = resBudget.Id;
+                                edu.DocNo = resBudget.DocNo;
+                                var eduForm = CreateRequestFormByTypeEducations(edu);
+                                if (eduForm.Success == true)
+                                {
+                                    res.Success = eduForm.Success;
+                                    res.Messsage = "Save Success.";
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+            else
+            {
+                RequestBudget findResult = _database.RequestBudgets.Where(x => x.Id == request.Id && x.DocNo == request.DocNo).FirstOrDefault();
+                if (findResult != null)
+                {
+                    findResult.Active = request.Active;
+                    findResult.DocNo = request.DocNo;
+                    findResult.DocYear = request.DocYear;
+                    findResult.DocStatus = request.DocStatus;
+                    findResult.BudgetTypeCode = 50;
+
+                    findResult.Name = request.Name;
+                    findResult.Inform = request.Inform;
+                    findResult.Descriptions = request.Descriptions;
+                    findResult.WriteDate = request.WriteDate;
+                    findResult.DateTime = request.DateTime;
+                    findResult.CreateDate = DateTime.Now;
+                    findResult.CalculationDate = request.CalculationDate;
+
+                    findResult.CreateByStaffId = request.CreateByStaffId;
+                    findResult.StatmentName = request.StatmentName;
+                    findResult.RelatedRegulation = request.RelatedRegulation;
+                    findResult.FilePath = request.FilePath;
+                    findResult.DepartmentId = request.DepartmentId;
+                    findResult.TotalBudget = request.TotalBudget;
+
+                    findResult.AnotherAction = request.AnotherAction;
+                    findResult.Procurement = request.Procurement;
+                    findResult.InspectorId = request.InspectorId;
+                    findResult.InspectorName = request.InspectorName;
+                    findResult.ProcurementByStaff = request.ProcurementByStaff;
+
+                    _database.Entry(findResult).State = EntityState.Modified;
+                    var result = _database.SaveChanges();
+                    if (result > 0)
+                    {
+                        if (request.requestFormEdu.Count > 0)
+                        {
+                            request.requestFormEdu.ForEach(edu =>
+                            {
+                                edu.RequestBudgetId = resBudget.Id;
+                                edu.DocNo = resBudget.DocNo;
+                                var eduForm = CreateRequestFormByTypeEducations(edu);
+                                if (eduForm.Success == true)
+                                {
+                                    res.Success = eduForm.Success;
+                                    res.Messsage = "Edit Success.";
+                                }
+                            });
+                        }
+                        res.data = findResult;
+                        res.Success = true;
+                        res.Messsage = "Edit Success.";
+                    }
+                    else {
+                        res.data = null;
+                        res.Success = false;
+                        res.Messsage = "Cannot Save and Edit Result.";
+                    }
+
+                }
+            }
+            return res;
+        }
+        public SecBaseResponse CreateRequestFormByTypeEducations(RequestFormRequests request)
+        {
+            SecBaseResponse res = new SecBaseResponse();
+            RequestForm resForm = new RequestForm();
+
+            if (request.Id == 0)
+            {
+                resForm.Active = true;
+                resForm.DocNo = request.DocNo;
+                resForm.RequestBudgetId = request.RequestBudgetId;
+                resForm.ProjectId = request.ProjectId;
+                resForm.ProjectActivityId = request.ProjectActivityId;
+                resForm.CodeBudgetTypeId = 50;
+
+                resForm.Name = request.Name;
+                resForm.Descriptions = request.Descriptions;
+                resForm.Objective = request.Objective;
+                resForm.StartDepartureDate = request.StartDepartureDate;
+                resForm.EndDepartureDate = request.EndDepartureDate;
+                resForm.StartPracticalDate = request.StartPracticalDate;
+                resForm.EndPracticalDate = request.EndPracticalDate;
+                resForm.WorkingInCountry = request.WorkingInCountry;
+                resForm.Location = request.Location;
+                resForm.Place = request.Place;
+                resForm.Country = request.Country;
+                resForm.Remark = request.Remark;
+                resForm.PersonRemark = request.PersonRemark;
+                resForm.MakeBy = request.MakeBy;
+                resForm.Lecturer = request.Lecturer;
+                resForm.Reward = request.Reward;
+                _database.Entry(resForm).State = EntityState.Added;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    res.Success = true;
+                    res.Messsage = "Save Success.";
+                    return res;
+                }
+                else
+                {
+                    res.Success = true;
+                    res.Messsage = "Save Success.";
+                    return res;
+                }
+            }
+            else
+            {
+                RequestForm getResult = _database.RequestForms.Where(x => x.Id == request.Id
+               && x.RequestBudgetId == request.RequestBudgetId).FirstOrDefault();
+
+                if(getResult != null)
+                {
+                    getResult.Active = request.Active;
+                    getResult.DocNo = request.DocNo;
+                    getResult.ProjectId = request.ProjectId;
+                    getResult.ProjectActivityId = request.ProjectActivityId;
+                    getResult.CodeBudgetTypeId = request.CodeBudgetTypeId;
+                    getResult.Name = request.Name;
+                    getResult.Descriptions = request.Descriptions;
+                    getResult.Objective = request.Objective;
+                    getResult.StartDepartureDate = request.StartDepartureDate;
+                    getResult.EndDepartureDate = request.EndDepartureDate;
+                    getResult.StartPracticalDate = request.StartPracticalDate;
+                    getResult.EndPracticalDate = request.EndPracticalDate;
+                    getResult.WorkingInCountry = request.WorkingInCountry;
+                    getResult.Location = request.Location;
+                    getResult.Place = request.Place;
+                    getResult.Country = request.Country;
+                    getResult.Remark = request.Remark;
+                    getResult.PersonRemark = request.PersonRemark;
+                    getResult.MakeBy = request.MakeBy;
+                    getResult.Lecturer = request.Lecturer;
+                    getResult.Reward = request.Reward;
+                    _database.Entry(getResult).State = EntityState.Modified;
+                    var result = _database.SaveChanges();
+                    if (result > 0)
+                    {
+                        res.Success = true;
+                        res.Messsage = "Edit Success";
+                        res.data = getResult;
+                    }
+                    else
+                    {
+                        res.Success = true;
+                        res.Messsage = "Edit Success";
+                        res.data = null;
+                    }
+                }
+            }
+            return res;
+        }
+        #endregion
+
 
     }
 }

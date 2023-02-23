@@ -19,6 +19,7 @@ namespace App.SEC
         List<ScheduleFisicalYear> GetScheduleFisicalYear();
         List<ScheduleFisicalYear> GetScheduleFisicalYearByYears(int name, bool active);
 
+        #region RequestForm
         List<RequestFormCommentStatus> GetRequestFormCommentStatus();
         List<RequestBudget> GetRequestBudget();
         RequestBudget GetRequestBudgetById(int id);
@@ -58,6 +59,17 @@ namespace App.SEC
         List<RequestFormExaminerForBudget> GetRequestFormExaminerForBudgetByDocNo(string docNo);
         SecBaseResponse CreateRequestFormExaminerForBudgetByDocNo(RequestFormExaminerForBudgetRequests request);
         SecBaseResponse DeleteRequestFormExaminerForBudgetById(int id);
+
+        #endregion
+
+        #region RequestForm_Education
+        SecBaseResponse GetAllRequestBudgetByTypeEducations();
+        SecBaseResponse GetRequestBudgetByIdTypeEducations(int id);
+        SecBaseResponse CreateRequestBudgetByTypeEducations(RequestBudgetEduRequests request);
+        SecBaseResponse CreateRequestFormByTypeEducations(RequestFormRequests request);
+
+        #endregion
+
 
     }
 }

@@ -6,13 +6,13 @@ namespace narit_mis_api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class SecController : Controller
+    public class RequestFormController : Controller
     {
         protected readonly ISecServices _SecServices;
        
         private readonly ILogger _Logger;
 
-        public SecController(ILogger<SecController> logger, ISecServices SecServices)
+        public RequestFormController(ILogger<RequestFormController> logger, ISecServices SecServices)
         {
             _SecServices = SecServices;
             _Logger = logger;
@@ -69,13 +69,7 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestBudget(request);
             return Json(data);
         }
-        //[HttpPut]
-        //[Route("Form/EditRequestBudgetById")]
-        //public IActionResult EditRequestBudgetById(RequestBudgetRequests request)
-        //{
-        //    var data = _SecServices.EditRequestBudgetById(request);
-        //    return Json(data);
-        //}
+
         [HttpDelete]
         [Route("Form/DeleteRequestBudgetById/{docNo}")]
         public IActionResult DeleteRequestBudgetById(int id)
@@ -83,13 +77,7 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DeleteRequestBudgetById(id);
             return Json(data);
         }
-        //[HttpGet]
-        //[Route("Form/GetRequestForm")]
-        //public IActionResult GetRequestForm()
-        //{
-        //    var data = _SecServices.GetRequestForm();
-        //    return Json(data);
-        //}
+
         [HttpGet]
         [Route("Form/GetRequestFormByDocNo/{docNo}")]
         public IActionResult GetRequestFormByDocNo(string docNo)
@@ -239,6 +227,28 @@ namespace narit_mis_api.Controllers
         public IActionResult DeleteRequestFormExaminerForBudgetById(int id)
         {
             var data = _SecServices.DeleteRequestFormExaminerForBudgetById(id);
+            return Json(data);
+        }
+
+        [HttpGet]
+        [Route("Form/GetAllRequestBudgetByTypeEducations")]
+        public IActionResult GetAllRequestBudgetByTypeEducations()
+        {
+            var data = _SecServices.GetAllRequestBudgetByTypeEducations();
+            return Json(data);
+        }
+        [HttpGet]
+        [Route("Form/GetRequestBudgetByIdTypeEducations/{id}")]
+        public IActionResult GetRequestBudgetByIdTypeEducations(int id)
+        {
+            var data = _SecServices.GetRequestBudgetByIdTypeEducations(id);
+            return Json(data);
+        }
+        [HttpPost]
+        [Route("FormEdu/CreateRequestBudgetByTypeEducations")]
+        public IActionResult CreateRequestBudgetByTypeEducations(RequestBudgetEduRequests request)
+        {
+            var data = _SecServices.CreateRequestBudgetByTypeEducations(request);
             return Json(data);
         }
     }

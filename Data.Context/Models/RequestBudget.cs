@@ -18,6 +18,7 @@ namespace narit_mis_api.Models
         public int? DocYear { get; set; }
         public string DocNo { get; set; } = null!;
         public string? DocStatus { get; set; }
+        public int? BudgetTypeCode { get; set; }
         public bool? Active { get; set; }
         public string? Name { get; set; }
         public string? Inform { get; set; }
