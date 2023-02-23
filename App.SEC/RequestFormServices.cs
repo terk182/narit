@@ -1048,7 +1048,9 @@ namespace App.SEC
         public SecBaseResponse GetAllRequestBudgetByTypeEducations()
         {
             SecBaseResponse response = new SecBaseResponse();
-            List<RequestBudget> getResult = _database.RequestBudgets.Where(x=>x.BudgetTypeCode == 50).OrderByDescending(x=>x.CreateDate).Take(10).ToList();
+            List<RequestBudget> getResult = _database.RequestBudgets
+                .Where(x=>x.BudgetTypeCode == 50 && x.Active == true)
+                .OrderByDescending(x=>x.CreateDate).Take(10).ToList();
             if(getResult.Count() > 0)
             {
                 response.Success = true;
@@ -1064,7 +1066,7 @@ namespace App.SEC
         public SecBaseResponse GetRequestBudgetByIdTypeEducations(int id)
         {
             SecBaseResponse response = new SecBaseResponse();
-            RequestBudget getResult = _database.RequestBudgets.Where(x=>x.Id == id).FirstOrDefault();
+            RequestBudget getResult = _database.RequestBudgets.Where(x=>x.Id == id && x.Active == true).FirstOrDefault();
             if (getResult != null)
             {
                 response.Success = true;
@@ -1292,6 +1294,28 @@ namespace App.SEC
                 }
             }
             return res;
+        }
+        public SecBaseResponse DeleteRequestBudgetByIdTypeEducations(int id)
+        {
+            SecBaseResponse response = new SecBaseResponse();
+            RequestBudget findData = _database.RequestBudgets.Where(x => x.Id == id).FirstOrDefault();
+            if (findData != null)
+            {
+                findData.Active = false;
+                _database.Entry(findData).State = EntityState.Modified;
+                var result = _database.SaveChanges();
+                if (result > 0)
+                {
+                    response.Success = true;
+                    response.Messsage = "Delete success";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Messsage = "Delete fail";
+                }
+            }
+            return response;
         }
         #endregion
 

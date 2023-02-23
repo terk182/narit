@@ -34,6 +34,7 @@ namespace narit_mis_api.Controllers
         //    var data = _SecServices.GetScheduleFisicalYearByYears(name, active);
         //    return Json(data);
         //}
+        #region RequestForm
         [HttpGet]
         [Route("Form/GetRequestFormCommentStatus")]
         public IActionResult GetRequestFormCommentStatus()
@@ -71,7 +72,7 @@ namespace narit_mis_api.Controllers
         }
 
         [HttpDelete]
-        [Route("Form/DeleteRequestBudgetById/{docNo}")]
+        [Route("Form/DeleteRequestBudgetById/{id}")]
         public IActionResult DeleteRequestBudgetById(int id)
         {
             var data = _SecServices.DeleteRequestBudgetById(id);
@@ -229,16 +230,18 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.DeleteRequestFormExaminerForBudgetById(id);
             return Json(data);
         }
+        #endregion
 
+        #region RequestBudget By Type Educations
         [HttpGet]
-        [Route("Form/GetAllRequestBudgetByTypeEducations")]
+        [Route("FormEdu/GetAllRequestBudgetByTypeEducations")]
         public IActionResult GetAllRequestBudgetByTypeEducations()
         {
             var data = _SecServices.GetAllRequestBudgetByTypeEducations();
             return Json(data);
         }
         [HttpGet]
-        [Route("Form/GetRequestBudgetByIdTypeEducations/{id}")]
+        [Route("FormEdu/GetRequestBudgetByIdTypeEducations/{id}")]
         public IActionResult GetRequestBudgetByIdTypeEducations(int id)
         {
             var data = _SecServices.GetRequestBudgetByIdTypeEducations(id);
@@ -251,5 +254,13 @@ namespace narit_mis_api.Controllers
             var data = _SecServices.CreateRequestBudgetByTypeEducations(request);
             return Json(data);
         }
+        [HttpDelete]
+        [Route("FormEdu/DeleteRequestBudgetByIdTypeEducations/{id}")]
+        public IActionResult DeleteRequestBudgetByIdTypeEducations(int id)
+        {
+            var data = _SecServices.DeleteRequestBudgetByIdTypeEducations(id);
+            return Json(data);
+        }
+        #endregion
     }
 }

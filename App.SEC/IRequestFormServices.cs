@@ -67,7 +67,7 @@ namespace App.SEC
         SecBaseResponse GetRequestBudgetByIdTypeEducations(int id);
         SecBaseResponse CreateRequestBudgetByTypeEducations(RequestBudgetEduRequests request);
         SecBaseResponse CreateRequestFormByTypeEducations(RequestFormRequests request);
-
+        SecBaseResponse DeleteRequestBudgetByIdTypeEducations(int id);
         #endregion
 
 
